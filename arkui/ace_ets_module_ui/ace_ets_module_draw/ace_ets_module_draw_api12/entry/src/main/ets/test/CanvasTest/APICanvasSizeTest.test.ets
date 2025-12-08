@@ -41,12 +41,12 @@ export default function APICanvasSizeTest() {
       done();
     });
     /**
-     * @tc.number
-     * @tc.name      APICanvasSizeTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APICanvasSizeTest_0100
+     * @tc.number APICanvasSizeTest_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('APICanvasSizeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('APICanvasSizeTest_0100 START');
@@ -72,12 +72,12 @@ export default function APICanvasSizeTest() {
       done();
     });
     /**
-     * @tc.number
-    * @tc.name      APICanvasSizeTest_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APICanvasSizeTest_0200
+     * @tc.number APICanvasSizeTest_0200
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('APICanvasSizeTest_0200', Level.LEVEL2, async (done: Function) => {
       console.info('APICanvasSizeTest_0200 START');

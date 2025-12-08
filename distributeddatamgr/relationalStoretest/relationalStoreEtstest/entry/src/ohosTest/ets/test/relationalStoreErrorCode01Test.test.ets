@@ -43,12 +43,12 @@ export default function relationalStoreErrorCode01Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -67,12 +67,12 @@ export default function relationalStoreErrorCode01Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
       console.info(TAG + "************* relationalStoreTest002 start *************");
@@ -95,12 +95,12 @@ export default function relationalStoreErrorCode01Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest003 start *************");
@@ -118,12 +118,12 @@ export default function relationalStoreErrorCode01Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @tc.name   relationalStoreTest004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
       console.info(TAG + "************* relationalStoreTest004 start *************");

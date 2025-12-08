@@ -34,9 +34,12 @@ export default function drawingCodeTest() {
       console.info('afterAll');
     })
     /**
+     * @tc.name   PathMoveTo
      * @tc.number SUB_GRAPHIC_DrawingCode_PathMoveTo
-     * @tc.name Test PathMoveTo
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PathMoveTo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test PathMoveTo begin');
@@ -57,9 +60,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   PathLineTo
      * @tc.number SUB_GRAPHIC_DrawingCode_PathLineTo
-     * @tc.name Test PathLineTo
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PathLineTo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -80,9 +86,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   PathArcTo
      * @tc.number SUB_GRAPHIC_DrawingCode_PathArcTo
-     * @tc.name Test PathArcTo
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PathArcTo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -103,9 +112,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   PathQuadTo
      * @tc.number SUB_GRAPHIC_DrawingCode_PathQuadTo
-     * @tc.name Test PathQuadTo
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PathQuadTo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -126,9 +138,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   PathCubicTo
      * @tc.number SUB_GRAPHIC_DrawingCode_PathCubicTo
-     * @tc.name Test PathCubicTo
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PathCubicTo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -149,9 +164,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   FontEnableSubpixel
      * @tc.number SUB_GRAPHIC_DrawingCode_FontEnableSubpixel
-     * @tc.name Test FontEnableSubpixel
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FontEnableSubpixel', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -172,9 +190,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   FontEnableEmbolden
      * @tc.number SUB_GRAPHIC_DrawingCode_FontEnableEmbolden
-     * @tc.name Test FontEnableEmbolden
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FontEnableEmbolden', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -195,9 +216,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   FontEnableLinearMetrics
      * @tc.number SUB_GRAPHIC_DrawingCode_FontEnableLinearMetrics
-     * @tc.name Test FontEnableLinearMetrics
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FontEnableLinearMetrics', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -218,9 +242,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   FontSetSize
      * @tc.number SUB_GRAPHIC_DrawingCode_FontSetSize
-     * @tc.name Test FontSetSize
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FontSetSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -241,9 +268,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   FontSetTypeface
      * @tc.number SUB_GRAPHIC_DrawingCode_FontSetTypeface
-     * @tc.name Test FontSetTypeface
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FontSetTypeface', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -264,9 +294,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   ColorFilterCreateBlendModeColorFilter
      * @tc.number SUB_GRAPHIC_DrawingCode_ColorFilterCreateBlendModeColorFilter
-     * @tc.name Test ColorFilterCreateBlendModeColorFilter
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ColorFilterCreateBlendModeColorFilter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -288,9 +321,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   ColorFilterCreateComposeColorFilter
      * @tc.number SUB_GRAPHIC_DrawingCode_ColorFilterCreateComposeColorFilter
-     * @tc.name Test ColorFilterCreateComposeColorFilter
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ColorFilterCreateComposeColorFilter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -314,9 +350,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   PenSetColor
      * @tc.number SUB_GRAPHIC_DrawingCode_PenSetColor
-     * @tc.name Test PenSetColor
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PenSetColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -337,9 +376,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   PenSetStrokeWidth
      * @tc.number SUB_GRAPHIC_DrawingCode_PenSetStrokeWidth
-     * @tc.name Test PenSetStrokeWidth
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PenSetStrokeWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -360,9 +402,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   PenSetStrokeWidth
      * @tc.number SUB_GRAPHIC_DrawingCode_PenSetStrokeWidth
-     * @tc.name Test PenSetStrokeWidth
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PenSetStrokeWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -383,9 +428,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   PenSetAntiAlias
      * @tc.number SUB_GRAPHIC_DrawingCode_PenSetAntiAlias
-     * @tc.name Test PenSetAntiAlias
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PenSetAntiAlias', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -406,9 +454,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   PenSetBlendMode
      * @tc.number SUB_GRAPHIC_DrawingCode_PenSetBlendMode
-     * @tc.name Test PenSetBlendMode
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PenSetBlendMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -429,9 +480,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   PenSetJoinStyle
      * @tc.number SUB_GRAPHIC_DrawingCode_PenSetJoinStyle
-     * @tc.name Test PenSetJoinStyle
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PenSetJoinStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -454,9 +508,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   PenSetCapStyle
      * @tc.number SUB_GRAPHIC_DrawingCode_PenSetCapStyle
-     * @tc.name Test PenSetCapStyle
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PenSetCapStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -477,9 +534,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   PenSetDither
      * @tc.number SUB_GRAPHIC_DrawingCode_PenSetDither
-     * @tc.name Test PenSetDither
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PenSetDither', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -498,9 +558,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   BrushSetColor
      * @tc.number SUB_GRAPHIC_DrawingCode_BrushSetColor
-     * @tc.name Test BrushSetColor
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BrushSetColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -519,9 +582,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   BrushSetAntiAlias
      * @tc.number SUB_GRAPHIC_DrawingCode_BrushSetAntiAlias
-     * @tc.name Test BrushSetAntiAlias
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BrushSetAntiAlias', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -540,9 +606,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   BrushSetAlpha
      * @tc.number SUB_GRAPHIC_DrawingCode_BrushSetAlpha
-     * @tc.name Test BrushSetAlpha
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BrushSetAlpha', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -561,9 +630,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   BrushSetColorFilter
      * @tc.number SUB_GRAPHIC_DrawingCode_BrushSetColorFilter
-     * @tc.name Test BrushSetColorFilter
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BrushSetColorFilter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -583,9 +655,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   BrushSetMaskFilter
      * @tc.number SUB_GRAPHIC_DrawingCode_BrushSetMaskFilter
-     * @tc.name Test BrushSetMaskFilter
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BrushSetMaskFilter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -605,9 +680,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   BrushSetShadowLayer
      * @tc.number SUB_GRAPHIC_DrawingCode_BrushSetShadowLayer
-     * @tc.name Test BrushSetShadowLayer
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BrushSetShadowLayer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -626,9 +704,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   BrushSetShadowLayer
      * @tc.number SUB_GRAPHIC_DrawingCode_BrushSetShadowLayer
-     * @tc.name Test BrushSetShadowLayer
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BrushSetShadowLayer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -647,9 +728,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   BrushSetBlendMode
      * @tc.number SUB_GRAPHIC_DrawingCode_BrushSetBlendMode
-     * @tc.name Test BrushSetBlendMode
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BrushSetBlendMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -668,9 +752,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   RegionIsPointContained
      * @tc.number SUB_GRAPHIC_DrawingCode_RegionIsPointContained
-     * @tc.name Test RegionIsPointContained
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RegionIsPointContained', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -691,9 +778,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   RegionIsRegionContained
      * @tc.number SUB_GRAPHIC_DrawingCode_RegionIsRegionContained
-     * @tc.name Test RegionIsRegionContained
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RegionIsRegionContained', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -714,9 +804,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   RegionOp
      * @tc.number SUB_GRAPHIC_DrawingCode_RegionOp
-     * @tc.name Test RegionOp
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RegionOp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -739,9 +832,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   RegionQuickReject
      * @tc.number SUB_GRAPHIC_DrawingCode_RegionQuickReject
-     * @tc.name Test RegionQuickReject
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RegionQuickReject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -762,9 +858,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   RegionSetPath
      * @tc.number SUB_GRAPHIC_DrawingCode_RegionSetPath
-     * @tc.name Test RegionSetPath
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RegionSetPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -787,9 +886,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   RegionSetPathTwo
      * @tc.number SUB_GRAPHIC_DrawingCode_RegionSetPathTwo
-     * @tc.name Test RegionSetPath
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RegionSetPathTwo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -812,9 +914,12 @@ export default function drawingCodeTest() {
       }
     })
     /**
+     * @tc.name   RegionSetRect
      * @tc.number SUB_GRAPHIC_DrawingCode_RegionSetRect
-     * @tc.name Test RegionSetRect
-     * @tc.desc test the drawing of create
+     * @tc.desc   test the drawing of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RegionSetRect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {

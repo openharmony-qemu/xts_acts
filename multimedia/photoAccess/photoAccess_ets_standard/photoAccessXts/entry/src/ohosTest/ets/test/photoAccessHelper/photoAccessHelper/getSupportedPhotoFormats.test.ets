@@ -70,12 +70,12 @@ export default function getSupportedPhotoFormatsTest() {
     });
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_SUPPORTED_PHOTO_FORMATS_001
-     * @tc.name      : getSupportedPhotoFormats_promise_001
-     * @tc.desc      : getSupportedPhotoFormats
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getSupportedPhotoFormats_promise_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_SUPPORTED_PHOTO_FORMATS_001
+     * @tc.desc   getSupportedPhotoFormats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSupportedPhotoFormats_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getSupportedPhotoFormats_promise_001';
@@ -84,12 +84,12 @@ export default function getSupportedPhotoFormatsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_SUPPORTED_PHOTO_FORMATS_002
-     * @tc.name      : getSupportedPhotoFormats_promise_002
-     * @tc.desc      : getSupportedPhotoFormats
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getSupportedPhotoFormats_promise_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_SUPPORTED_PHOTO_FORMATS_002
+     * @tc.desc   getSupportedPhotoFormats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSupportedPhotoFormats_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getSupportedPhotoFormats_promise_002';

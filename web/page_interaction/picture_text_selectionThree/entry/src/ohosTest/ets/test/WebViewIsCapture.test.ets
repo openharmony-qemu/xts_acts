@@ -59,28 +59,28 @@ export default function WebViewIsCapture() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWISCAPTURE_0100
-    * @tc.name       : testWebViewIsCapture01
-    * @tc.desc       : test onShowFileSelector
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewIsCapture01
+     * @tc.number SUB_WEB_WEBVIEWISCAPTURE_0100
+     * @tc.desc   test onShowFileSelector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewIsCapture01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebViewIsCapture01", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebViewIsCapture01", false, 20251113, done);
       await Utils.waitAndClickComponent(driver, "WebViewIsCaptureButton","testWebViewIsCapture01");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWISCAPTURE_0200
-    * @tc.name       : testWebViewIsCapture02
-    * @tc.desc       : test onShowFileSelector
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewIsCapture02
+     * @tc.number SUB_WEB_WEBVIEWISCAPTURE_0200
+     * @tc.desc   test onShowFileSelector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewIsCapture02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebViewIsCapture02", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebViewIsCapture02", true, 20251114, done);

@@ -44,6 +44,14 @@ export default function canvasJsunit() {
       console.info("canvas after each called");
     });
 
+    /**
+     * @tc.name   testCanvas01
+     * @tc.number testCanvas01
+     * @tc.desc   testCanvas01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testCanvas01', Level.LEVEL0, async (done: Function) => {
       console.info('[testCanvas01] START');
       await Utils.sleep(1000);

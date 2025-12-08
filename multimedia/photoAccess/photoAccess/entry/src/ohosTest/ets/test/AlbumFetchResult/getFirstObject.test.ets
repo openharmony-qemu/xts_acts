@@ -42,12 +42,12 @@ export default function albumGetFirstObjectTest () {
 
     //callback
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_FIRST_OBJECT_0000
-     * @tc.name      : album_getFirstObject_callback_000
-     * @tc.desc      : getFirstObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getFirstObject_callback_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_FIRST_OBJECT_0000
+     * @tc.desc   getFirstObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getFirstObject_callback_000', Level.LEVEL0, async (done: Function) => {
 			const testNum = 'album_getFirstObject_callback_000';
@@ -89,12 +89,12 @@ export default function albumGetFirstObjectTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_FIRST_OBJECT_0100
-     * @tc.name      : album_getFirstObject_callback_001
-     * @tc.desc      : getFirstObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getFirstObject_callback_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_FIRST_OBJECT_0100
+     * @tc.desc   getFirstObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getFirstObject_callback_001', Level.LEVEL0, async (done: Function) => {
 			const testNum = 'album_getFirstObject_callback_001';
@@ -129,12 +129,12 @@ export default function albumGetFirstObjectTest () {
 
     //promise
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_ALBUM_GET_FIRST_OBJECT_0000
-     * @tc.name      : album_getFirstObject_promise_000
-     * @tc.desc      : getFirstObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getFirstObject_promise_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_ALBUM_GET_FIRST_OBJECT_0000
+     * @tc.desc   getFirstObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getFirstObject_promise_000', Level.LEVEL0, async (done: Function) => {
 			const testNum = 'album_getFirstObject_promise_000';
@@ -165,12 +165,12 @@ export default function albumGetFirstObjectTest () {
     });
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_ALBUM_GET_FIRST_OBJECT_0100
-     * @tc.name      : album_getFirstObject_promise_001
-     * @tc.desc      : getFirstObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getFirstObject_promise_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_ALBUM_GET_FIRST_OBJECT_0100
+     * @tc.desc   getFirstObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getFirstObject_promise_001', Level.LEVEL0, async (done: Function) => {
 			const testNum = 'album_getFirstObject_promise_001';

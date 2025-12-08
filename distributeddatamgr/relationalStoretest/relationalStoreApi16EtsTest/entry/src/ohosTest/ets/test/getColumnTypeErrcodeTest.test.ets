@@ -98,12 +98,12 @@ export default function getColumnTypeErrcodeTest() {
 
 
     /**
-     * @tc.name getColumnTypeSync errcode is 14800032
+     * @tc.name   testgetColumnTypeSyncErrcode0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_5000
-     * @tc.desc getColumnTypeSync errcode is 14800032
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getColumnTypeSync errcode is 14800032
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSyncErrcode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSyncErrcode0100 start *************");
@@ -157,12 +157,12 @@ export default function getColumnTypeErrcodeTest() {
 
 
     /**
-     * @tc.name getColumnTypeSync errcode is 14800033
+     * @tc.name   testgetColumnTypeSyncErrcode0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_5100
-     * @tc.desc getColumnTypeSync errcode is 14800033
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getColumnTypeSync errcode is 14800033
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSyncErrcode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSyncErrcode0200 start *************");
@@ -214,12 +214,12 @@ export default function getColumnTypeErrcodeTest() {
       console.log(TAG + "************* testgetColumnTypeSyncErrcode0200 end *************");
     });
     /**
-     * @tc.name getColumnTypeSync errcode is 14800027
+     * @tc.name   testgetColumnTypeSyncErrcode0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_5200
-     * @tc.desc getColumnTypeSync errcode is 14800027
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getColumnTypeSync errcode is 14800027
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSyncErrcode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSyncErrcode0300 start *************");
@@ -272,12 +272,12 @@ export default function getColumnTypeErrcodeTest() {
     });
 
     /**
-     * @tc.name getColumnType errcode is 14800032
+     * @tc.name   testgetColumnTypeErrcode0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_5300
-     * @tc.desc getColumnType errcode is 14800032
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getColumnType errcode is 14800032
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeErrcode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeErrcode0100 start *************");
@@ -331,12 +331,12 @@ export default function getColumnTypeErrcodeTest() {
 
 
     /**
-     * @tc.name getColumnType errcode is 14800033
+     * @tc.name   testgetColumnTypeErrcode0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_5400
-     * @tc.desc getColumnType errcode is 14800033
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getColumnType errcode is 14800033
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeErrcode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeErrcode0200 start *************");
@@ -388,12 +388,12 @@ export default function getColumnTypeErrcodeTest() {
       console.log(TAG + "************* testgetColumnTypeErrcode0200 end *************");
     });
     /**
-     * @tc.name getColumnType errcode is 14800027
+     * @tc.name   testgetColumnTypeErrcode0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_5500
-     * @tc.desc getColumnType errcode is 14800027
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getColumnType errcode is 14800027
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeErrcode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeErrcode0300 start *************");

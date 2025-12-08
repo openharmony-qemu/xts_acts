@@ -56,11 +56,14 @@ describe('CalendarInI18nTest', function () {
         + ' syslocale: ' + I18n.System.getSystemLocale());
     })
 
-    /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_0100
-    * @tc.name    test isWeekend interface
-    * @tc.desc    get the isWeekend value
-    */
+     /**
+      * @tc.name   i18n_calendar_test_0100
+      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_0100
+      * @tc.desc   get the isWeekend value
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('i18n_calendar_test_0100', Level.LEVEL0, function () {
         console.log('i18n_calendar_test_0100 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -69,11 +72,14 @@ describe('CalendarInI18nTest', function () {
         expect(value).assertFalse();
     })
 
-    /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_0200
-    * @tc.name    test getCalendar interface
-    * @tc.desc    get the getCalendar value
-    */
+     /**
+      * @tc.name   i18n_calendar_test_0200
+      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_0200
+      * @tc.desc   get the getCalendar value
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('i18n_calendar_test_0200', Level.LEVEL0, function () {
         console.log('i18n_calendar_test_0200 ' + 'start');
         let calendar = I18n.getCalendar('ja', 'japanese');
@@ -95,10 +101,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_0300
-    * @tc.name    test getCalendar interface with zh param
-    * @tc.desc    get the getCalendar value
-    */
+     * @tc.name   i18n_calendar_test_0300
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_0300
+     * @tc.desc   get the getCalendar value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_calendar_test_0300', Level.LEVEL2, function () {
         console.log('i18n_calendar_test_0300 ' + 'start');
         let calendar = I18n.getCalendar('zh', 'chinese');
@@ -108,10 +117,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_0400
-    * @tc.name    test getCalendar interface with zh param
-    * @tc.desc    get the getCalendar value
-    */
+     * @tc.name   i18n_calendar_test_0400
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_0400
+     * @tc.desc   get the getCalendar value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_calendar_test_0400', Level.LEVEL2, function () {
         console.log('i18n_calendar_test_0400 ' + 'start');
         let calendar = I18n.getCalendar('zh', 'japanese');
@@ -121,10 +133,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_0500
-    * @tc.name    test getDisplayName interface
-    * @tc.desc    get the getDisplayName value
-    */
+     * @tc.name   i18n_calendar_test_0500
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_0500
+     * @tc.desc   get the getDisplayName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_calendar_test_0500', Level.LEVEL0, function () {
         console.log('i18n_calendar_test_0500 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -134,10 +149,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_0600
-    * @tc.name    test getDisplayName interface with en param
-    * @tc.desc    get the getDisplayName value
-    */
+     * @tc.name   i18n_calendar_test_0600
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_0600
+     * @tc.desc   get the getDisplayName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_calendar_test_0600', Level.LEVEL2, function () {
         console.log('i18n_calendar_test_0600 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -147,10 +165,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_0700
-    * @tc.name    test get interface
-    * @tc.desc    get the get value
-    */
+     * @tc.name   i18n_calendar_test_0700
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_0700
+     * @tc.desc   get the get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_calendar_test_0700', Level.LEVEL0, function () {
         console.log('i18n_calendar_test_0700 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -159,11 +180,14 @@ describe('CalendarInI18nTest', function () {
         expect(value).assertLarger(0);
     })
 
-    /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_0800
-    * @tc.name    test get interface with month param
-    * @tc.desc    get the get value
-    */
+     /**
+      * @tc.name   i18n_calendar_test_0800
+      * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_0800
+      * @tc.desc   get the get value
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('i18n_calendar_test_0800', Level.LEVEL2, function () {
         console.log('i18n_calendar_test_0800 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -175,10 +199,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_0900
-    * @tc.name    test get interface with day_of_year param
-    * @tc.desc    get the get value
-    */
+     * @tc.name   i18n_calendar_test_0900
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_0900
+     * @tc.desc   get the get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_calendar_test_0900', Level.LEVEL2, function () {
         console.log('i18n_calendar_test_0900 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -188,10 +215,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_1000
-    * @tc.name    test setMinimalDaysInFirstWeek and getMinimalDaysInFirstWeek interface
-    * @tc.desc    get the setMinimalDaysInFirstWeek and getMinimalDaysInFirstWeek value
-    */
+     * @tc.name   i18n_calendar_test_1000
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1000
+     * @tc.desc   get the setMinimalDaysInFirstWeek and getMinimalDaysInFirstWeek value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_calendar_test_1000', Level.LEVEL0, function () {
         console.log('i18n_calendar_test_1000 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -202,10 +232,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_1100
-    * @tc.name    test setMinimalDaysInFirstWeek with 0 param and getMinimalDaysInFirstWeek interface
-    * @tc.desc    get the setMinimalDaysInFirstWeek and getMinimalDaysInFirstWeek value
-    */
+     * @tc.name   i18n_calendar_test_1100
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1100
+     * @tc.desc   get the setMinimalDaysInFirstWeek and getMinimalDaysInFirstWeek value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_calendar_test_1100', Level.LEVEL2, function () {
         console.log('i18n_calendar_test_1100 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -216,10 +249,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_1200
-    * @tc.name    test setMinimalDaysInFirstWeek with 8 param and getMinimalDaysInFirstWeek interface
-    * @tc.desc    get the setMinimalDaysInFirstWeek and getMinimalDaysInFirstWeek value
-    */
+     * @tc.name   i18n_calendar_test_1200
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1200
+     * @tc.desc   get the setMinimalDaysInFirstWeek and getMinimalDaysInFirstWeek value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_calendar_test_1200', Level.LEVEL2, function () {
         console.log('i18n_calendar_test_1200 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -230,10 +266,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_1300
-    * @tc.name    test setMinimalDaysInFirstWeek with 7 param and getMinimalDaysInFirstWeek interface
-    * @tc.desc    get the setMinimalDaysInFirstWeek and getMinimalDaysInFirstWeek value
-    */
+     * @tc.name   i18n_calendar_test_1300
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1300
+     * @tc.desc   get the setMinimalDaysInFirstWeek and getMinimalDaysInFirstWeek value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_calendar_test_1300', Level.LEVEL2, function () {
         console.log('i18n_calendar_test_1300 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -244,10 +283,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_1400
-    * @tc.name    test setFirstDayOfWeek and getFirstDayOfWeek interface
-    * @tc.desc    get the setFirstDayOfWeek and getFirstDayOfWeek value
-    */
+     * @tc.name   i18n_calendar_test_1400
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1400
+     * @tc.desc   get the setFirstDayOfWeek and getFirstDayOfWeek value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_calendar_test_1400', Level.LEVEL0, function () {
         console.log('i18n_calendar_test_1400 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -258,10 +300,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_1500
-    * @tc.name    test setFirstDayOfWeek with 0 param and getFirstDayOfWeek interface
-    * @tc.desc    get the setFirstDayOfWeek and getFirstDayOfWeek value
-    */
+     * @tc.name   i18n_calendar_test_1500
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1500
+     * @tc.desc   get the setFirstDayOfWeek and getFirstDayOfWeek value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_calendar_test_1500', Level.LEVEL2, function () {
         console.log('i18n_calendar_test_1500 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -272,10 +317,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_1600
-    * @tc.name    test setFirstDayOfWeek with 7 param and getFirstDayOfWeek interface
-    * @tc.desc    get the setFirstDayOfWeek and getFirstDayOfWeek value
-    */
+     * @tc.name   i18n_calendar_test_1600
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1600
+     * @tc.desc   get the setFirstDayOfWeek and getFirstDayOfWeek value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_calendar_test_1600', Level.LEVEL2, function () {
         console.log('i18n_calendar_test_1600 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -286,10 +334,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_1700
-    * @tc.name    test setFirstDayOfWeek with 8 param and getFirstDayOfWeek interface
-    * @tc.desc    get the setFirstDayOfWeek and getFirstDayOfWeek value
-    */
+     * @tc.name   i18n_calendar_test_1700
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1700
+     * @tc.desc   get the setFirstDayOfWeek and getFirstDayOfWeek value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_calendar_test_1700', Level.LEVEL2, function () {
         console.log('i18n_calendar_test_1700 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -300,10 +351,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_1800
-    * @tc.name    test setTimeZone and getTimeZone interface
-    * @tc.desc    get the setTimeZone and getTimeZone value
-    */
+     * @tc.name   i18n_calendar_test_1800
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1800
+     * @tc.desc   get the setTimeZone and getTimeZone value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_calendar_test_1800', Level.LEVEL0, function () {
         console.log('i18n_calendar_test_1800 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -314,10 +368,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_1900
-    * @tc.name    test setTimeZone with AAA param and getTimeZone interface
-    * @tc.desc    get the setTimeZone and getTimeZone value
-    */
+     * @tc.name   i18n_calendar_test_1900
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_1900
+     * @tc.desc   get the setTimeZone and getTimeZone value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_calendar_test_1900', Level.LEVEL2, function () {
         console.log('i18n_calendar_test_1900 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -328,10 +385,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_2000
-    * @tc.name    test set interface
-    * @tc.desc    get the set value
-    */
+     * @tc.name   i18n_calendar_test_2000
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_2000
+     * @tc.desc   get the set value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_calendar_test_2000', Level.LEVEL2, function () {
         console.log('i18n_calendar_test_2000 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -342,10 +402,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_2100
-    * @tc.name    test set interface with hour,minute,second param
-    * @tc.desc    get the set value
-    */
+     * @tc.name   i18n_calendar_test_2100
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_2100
+     * @tc.desc   get the set value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_calendar_test_2100', Level.LEVEL0, function () {
         console.log('i18n_calendar_test_2100 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -356,10 +419,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_2200
-    * @tc.name    test set interface with hour,minute param
-    * @tc.desc    get the set value
-    */
+     * @tc.name   i18n_calendar_test_2200
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_2200
+     * @tc.desc   get the set value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_calendar_test_2200', Level.LEVEL2, function () {
         console.log('i18n_calendar_test_2200 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -370,10 +436,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_2300
-    * @tc.name    test setTime interface with date param
-    * @tc.desc    get the setTime value
-    */
+     * @tc.name   i18n_calendar_test_2300
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_2300
+     * @tc.desc   get the setTime value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_calendar_test_2300', Level.LEVEL0, function () {
         console.log('i18n_calendar_test_2300 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -386,10 +455,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_2400
-    * @tc.name    test setTime interface with wrong month param
-    * @tc.desc    get the setTime value
-    */
+     * @tc.name   i18n_calendar_test_2400
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_2400
+     * @tc.desc   get the setTime value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_calendar_test_2400', Level.LEVEL2, function () {
         console.log('i18n_calendar_test_2400 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -401,10 +473,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_CALENDAR_JS_2500
-    * @tc.name    test setTime interface
-    * @tc.desc    get the setTime value
-    */
+     * @tc.name   i18n_calendar_test_2500
+     * @tc.number SUB_GLOBAL_I18N_CALENDAR_JS_2500
+     * @tc.desc   get the setTime value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_calendar_test_2500', Level.LEVEL2, function () {
         console.log('i18n_calendar_test_2500 ' + 'start');
         let calendar = I18n.getCalendar('zh');
@@ -415,13 +490,13 @@ describe('CalendarInI18nTest', function () {
     })
 
     /**
-    *@tc.number   :SUB_GLOBAL_I18N_SR000IFGNH_0010
-    *@tc.name     :HolidayManager-input.ics file
-    *@tc.desc     :HolidayManager
-    *@tc.size     :MEDIUM
-    *@tc.type     :Function
-    *@tc.level    :Level 0
-    */
+     * @tc.name   SUB_GLOBAL_I18N_SR000IFGNH_0010
+     * @tc.number SUB_GLOBAL_I18N_SR000IFGNH_0010
+     * @tc.desc   HolidayManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_GLOBAL_I18N_SR000IFGNH_0010', Level.LEVEL0, function(done){
         try{
           let holidayManager = new I18n.HolidayManager("/system/lib/TR.ics");

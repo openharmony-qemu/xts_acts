@@ -40,12 +40,12 @@ export default function RoundRectTest() {
       done();
     });
     /**
-     * @tc.number
-     * @tc.name      RoundRectTest_0100
-     * @tc.desc      draw roundRect
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RoundRectTest_0100
+     * @tc.number RoundRectTest_0100
+     * @tc.desc   draw roundRect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RoundRectTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[RoundRectTest_0100] START');

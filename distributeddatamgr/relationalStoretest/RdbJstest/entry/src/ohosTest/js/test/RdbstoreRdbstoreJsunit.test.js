@@ -52,12 +52,12 @@ describe('rdbStoreTest', function () {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @tc.name testRdbStore0001
+     * @tc.name   testRdbStore0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_0900
-     * @tc.desc rdb store getRdbStore test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.desc   rdb store getRdbStore test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRdbStore0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG + "************* testRdbStore0001 start *************");
@@ -75,12 +75,12 @@ describe('rdbStoreTest', function () {
     })
 
     /**
-     * @tc.name testRdbStore0002
+     * @tc.name   testRdbStore0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_1000
-     * @tc.desc rdb store getRdbStore and create table
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.desc   rdb store getRdbStore and create table
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRdbStore0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG + "************* testRdbStore0002 start *************");
@@ -102,12 +102,12 @@ describe('rdbStoreTest', function () {
     })
 
     /**
-     * @tc.name testRdbStore0003
+     * @tc.name   testRdbStore0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_1100
-     * @tc.desc rdb store getRdbStore with wrong path
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   rdb store getRdbStore with wrong path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStore0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStore0003 start *************");
@@ -132,12 +132,12 @@ describe('rdbStoreTest', function () {
     })
 
     /**
-     * @tc.name testRdbStore0004
+     * @tc.name   testRdbStore0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_1200
-     * @tc.desc rdb store deleteRdbStore
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.desc   rdb store deleteRdbStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRdbStore0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG + "************* testRdbStore0004 start *************");
@@ -153,12 +153,12 @@ describe('rdbStoreTest', function () {
     })
 
     /**
-     * @tc.name testRdbStore0005
+     * @tc.name   testRdbStore0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_1300
-     * @tc.desc rdb store deleteRdbStore
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.desc   rdb store deleteRdbStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRdbStore0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG + "************* testRdbStore0005 start *************");
@@ -174,14 +174,14 @@ describe('rdbStoreTest', function () {
         console.info(TAG + "************* testRdbStore0005 end   *************");
     })
 
-    /**
-     * @tc.name testRdbStore0006
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_1400
-     * @tc.desc rdb store getRdbStore test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
-     */
+     /**
+      * @tc.name   testRdbStore0006
+      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_1400
+      * @tc.desc   rdb store getRdbStore test
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('testRdbStore0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStore0006 start *************");
         let rdbstore = null;
@@ -203,12 +203,12 @@ describe('rdbStoreTest', function () {
     })
 
     /**
-     * @tc.name testRdbStore0007
+     * @tc.name   testRdbStore0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_1500
-     * @tc.desc rdb store getRdbStore test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   rdb store getRdbStore test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStore0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStore0007 start *************");
@@ -231,12 +231,12 @@ describe('rdbStoreTest', function () {
     })
 
     /**
-     * @tc.name testRdbStore0008
+     * @tc.name   testRdbStore0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_1600
-     * @tc.desc rdb store deleteRdbStore test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   rdb store deleteRdbStore test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStore0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStore0008 start *************");
@@ -252,12 +252,12 @@ describe('rdbStoreTest', function () {
     })
 
     /**
-     * @tc.name testRdbStore0009
+     * @tc.name   testRdbStore0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_1700
-     * @tc.desc rdb store deleteRdbStore test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   rdb store deleteRdbStore test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStore0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done){
         console.info(TAG + "************* testRdbStore0009 start *************");

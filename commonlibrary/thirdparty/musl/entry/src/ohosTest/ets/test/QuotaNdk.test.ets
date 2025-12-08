@@ -23,13 +23,13 @@ export default function muslQuotaNdkTest() {
       await Utils.sleep(50)
     })
 
-    /**quotactl
-     * @tc.number     : SUB_THIRDPARTY_MUSL_QUOTA_QUOTACTL_0100
-     * @tc.name       : testMuslQuotaQuotactl001
-     * @tc.desc       : quotactl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testMuslQuotaQuotactl001
+     * @tc.number SUB_THIRDPARTY_MUSL_QUOTA_QUOTACTL_0100
+     * @tc.desc   quotactl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslQuotaQuotactl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let trueResult = 0

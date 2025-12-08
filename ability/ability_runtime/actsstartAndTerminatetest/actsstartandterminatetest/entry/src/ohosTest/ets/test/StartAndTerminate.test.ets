@@ -139,13 +139,13 @@ export default function startAndTerminateTest() {
     afterAll(() => {
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0100
-     * @tc.name   : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0100
-     * @tc.desc   : Within the same application and HAP package, Ability1 launches Ability2 and then terminates itself.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0100
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0100
+     * @tc.desc   Within the same application and HAP package, Ability1 launches Ability2 and then terminates itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0100', Level.LEVEL0,(done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0100`;
@@ -245,14 +245,13 @@ export default function startAndTerminateTest() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0900
-     * @tc.name   : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0900
-     * @tc.desc   : Under the same application and same HAP, the ability chain-based launch mechanism works as
-     * follows: Ability 1 launches Ability 2, and Ability 2 then launches Ability 3.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0900
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0900
+     * @tc.desc   Under the same application and same HAP, the ability chain-based launch mechanism works as
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0900', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_0900`;
@@ -435,13 +434,13 @@ export default function startAndTerminateTest() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1200
-     * @tc.name   : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1200
-     * @tc.desc   : Ability loop launch: 1 calls 2, and 2 calls back to 1 (singleton);
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1200
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1200
+     * @tc.desc   Ability loop launch: 1 calls 2, and 2 calls back to 1 (singleton);
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1200', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1200`;
@@ -539,13 +538,13 @@ export default function startAndTerminateTest() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_2200
-     * @tc.name   : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_2200
-     * @tc.desc   : Start an ability, and after it ends, restart the ability (singleton);
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_2200
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_2200
+     * @tc.desc   Start an ability, and after it ends, restart the ability (singleton);
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_2200', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_2200`;
@@ -669,13 +668,13 @@ export default function startAndTerminateTest() {
     });
 
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_5100
-     * @tc.name   : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_5100
-     * @tc.desc   : Carry one key-value pair, where the key, and the value is a JSON object;
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_5100
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_5100
+     * @tc.desc   Carry one key-value pair, where the key, and the value is a JSON object;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_5100', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_5100`;
@@ -743,13 +742,13 @@ export default function startAndTerminateTest() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_5400
-     * @tc.name   : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_5400
-     * @tc.desc   : The ability with corresponding entities (custom, array length > 1) starts successfully.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_5400
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_5400
+     * @tc.desc   The ability with corresponding entities (custom, array length > 1) starts successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_5400', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_5400`;
@@ -812,13 +811,13 @@ export default function startAndTerminateTest() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3800
-     * @tc.name   : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3800
-     * @tc.desc   : FVerify system service startup of the ability;
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3800
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3800
+     * @tc.desc   FVerify system service startup of the ability;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3800', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3800`;

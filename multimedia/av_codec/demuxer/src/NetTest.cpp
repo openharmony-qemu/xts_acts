@@ -163,9 +163,12 @@ static void CountAudioFrames(OH_AVDemuxer *audioDemuxer, OH_AVMemory *mem,
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_NET_FUNC_0001
- * @tc.name      : DEMUXER_WAV_ALAW_NET_FUNC_0001
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_NET_FUNC_0001
+ * @tc.number DEMUXER_WAV_ALAW_NET_FUNC_0001
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0001, TestSize.Level2)
 {
@@ -177,9 +180,12 @@ HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0001, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_NET_FUNC_0002
- * @tc.name      : DEMUXER_WAV_ALAW_NET_FUNC_0002
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_NET_FUNC_0002
+ * @tc.number DEMUXER_WAV_ALAW_NET_FUNC_0002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0002, TestSize.Level2)
 {
@@ -193,9 +199,12 @@ HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0002, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_NET_FUNC_0003
- * @tc.name      : DEMUXER_WAV_ALAW_NET_FUNC_0003
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_NET_FUNC_0003
+ * @tc.number DEMUXER_WAV_ALAW_NET_FUNC_0003
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0003, TestSize.Level2)
 {
@@ -207,9 +216,12 @@ HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0003, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_NET_FUNC_0004
- * @tc.name      : DEMUXER_WAV_ALAW_NET_FUNC_0004
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_NET_FUNC_0004
+ * @tc.number DEMUXER_WAV_ALAW_NET_FUNC_0004
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0004, TestSize.Level2)
 {
@@ -224,9 +236,12 @@ HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0004, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_NET_FUNC_0005
- * @tc.name      : DEMUXER_WAV_ALAW_NET_FUNC_0005
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_NET_FUNC_0005
+ * @tc.number DEMUXER_WAV_ALAW_NET_FUNC_0005
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0005, TestSize.Level2)
 {
@@ -238,9 +253,12 @@ HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0005, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_NET_FUNC_0006
- * @tc.name      : DEMUXER_WAV_ALAW_NET_FUNC_0006
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_NET_FUNC_0006
+ * @tc.number DEMUXER_WAV_ALAW_NET_FUNC_0006
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0006, TestSize.Level2)
 {
@@ -255,9 +273,12 @@ HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0006, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_NET_FUNC_0007
- * @tc.name      : DEMUXER_WAV_ALAW_NET_FUNC_0007
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_NET_FUNC_0007
+ * @tc.number DEMUXER_WAV_ALAW_NET_FUNC_0007
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0007, TestSize.Level2)
 {
@@ -269,9 +290,12 @@ HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0007, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_NET_FUNC_0008
- * @tc.name      : DEMUXER_WAV_ALAW_NET_FUNC_0008
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_NET_FUNC_0008
+ * @tc.number DEMUXER_WAV_ALAW_NET_FUNC_0008
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0008, TestSize.Level2)
 {
@@ -286,9 +310,12 @@ HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0008, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_NET_FUNC_0009
- * @tc.name      : DEMUXER_WAV_ALAW_NET_FUNC_0009
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_NET_FUNC_0009
+ * @tc.number DEMUXER_WAV_ALAW_NET_FUNC_0009
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0009, TestSize.Level2)
 {
@@ -300,9 +327,12 @@ HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0009, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_NET_FUNC_0010
- * @tc.name      : DEMUXER_WAV_ALAW_NET_FUNC_0010
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_NET_FUNC_0010
+ * @tc.number DEMUXER_WAV_ALAW_NET_FUNC_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerNetNdkTest, DEMUXER_WAV_ALAW_NET_FUNC_0010, TestSize.Level2)
 {

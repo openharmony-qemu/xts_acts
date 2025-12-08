@@ -29,13 +29,12 @@ function delay() {
 export default function storageStatisticsTest() {
   describe("storageStatisticsTest", () => {
     /**
+     * @tc.name   storage_statistics_test_get_current_bundle_stats_async_000
      * @tc.number SUB_DF_STORAGE_STATISTICS_GET_CURRENT_BUNDLE_STATS_0000
-     * @tc.name storage_statistics_test_get_current_bundle_stats_async_000
-     * @tc.desc Test getCurrentBundleStats() interfaces, returned in promise mode.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getCurrentBundleStats() interfaces, returned in promise mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("storage_statistics_test_get_current_bundle_stats_async_000", Level.LEVEL0, async (done: Function) => {
       try {
@@ -51,13 +50,12 @@ export default function storageStatisticsTest() {
     });
 
     /**
+     * @tc.name   storage_statistics_test_get_current_bundle_stats_async_001
      * @tc.number SUB_DF_STORAGE_STATISTICS_GET_CURRENT_BUNDLE_STATS_0010
-     * @tc.name storage_statistics_test_get_current_bundle_stats_async_001
-     * @tc.desc Test getCurrentBundleStats() interfaces , returned in callback mode.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getCurrentBundleStats() interfaces , returned in callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("storage_statistics_test_get_current_bundle_stats_async_001", Level.LEVEL0, async (done: Function) => {
       try {
@@ -74,13 +72,12 @@ export default function storageStatisticsTest() {
     });
 
     /**
+     * @tc.name   storage_statistics_test_get_current_bundle_stats_async_002
      * @tc.number SUB_DF_STORAGE_STATISTICS_GET_CURRENT_BUNDLE_STATS_0020
-     * @tc.name storage_statistics_test_get_current_bundle_stats_async_002
-     * @tc.desc Test getCurrentBundleStats() interfaces,Concurrent requests.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getCurrentBundleStats() interfaces,Concurrent requests.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("storage_statistics_test_get_current_bundle_stats_async_002", Level.LEVEL0, async (done: Function) => {
       try {
@@ -103,13 +100,12 @@ export default function storageStatisticsTest() {
     })
 
     /**
+     * @tc.name   storage_statistics_test_getTotalSize_async_001
      * @tc.number SUB_DF_STORAGE_STATISTICS_GET_CURRENT_BUNDLE_STATS_0030
-     * @tc.name storage_statistics_test_getTotalSize_async_001
-     * @tc.desc Test getTotalSize() interfaces, Promise
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getTotalSize() interfaces, Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("storage_statistics_test_getTotalSize_async_001", Level.LEVEL0, async (done: Function) => {
       try {
@@ -127,13 +123,12 @@ export default function storageStatisticsTest() {
     })
 
     /**
+     * @tc.name   storage_statistics_test_getTotalSize_async_002
      * @tc.number SUB_DF_STORAGE_STATISTICS_GET_CURRENT_BUNDLE_STATS_0040
-     * @tc.name storage_statistics_test_getTotalSize_async_002
-     * @tc.desc Test getTotalSize() interfaces, callback
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getTotalSize() interfaces, callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("storage_statistics_test_getTotalSize_async_002", Level.LEVEL0, async (done: Function) => {
       try {
@@ -153,13 +148,12 @@ export default function storageStatisticsTest() {
     })
 
     /**
+     * @tc.name   storage_statistics_test_getTotalSize_async_003
      * @tc.number SUB_DF_STORAGE_STATISTICS_GET_CURRENT_BUNDLE_STATS_0050
-     * @tc.name storage_statistics_test_getTotalSize_async_003
-     * @tc.desc Test getTotalSize() interfaces
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getTotalSize() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("storage_statistics_test_getTotalSize_async_003", Level.LEVEL0, async () => {
       try {
@@ -173,13 +167,12 @@ export default function storageStatisticsTest() {
     })
 
     /**
+     * @tc.name   storage_statistics_test_getFreeSize_async_001
      * @tc.number SUB_DF_STORAGE_STATISTICS_GET_CURRENT_BUNDLE_STATS_0060
-     * @tc.name storage_statistics_test_getFreeSize_async_001
-     * @tc.desc Test getFreeSize() interfaces, Promise
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getFreeSize() interfaces, Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("storage_statistics_test_getFreeSize_async_001", Level.LEVEL0, async (done: Function) => {
       try {
@@ -197,13 +190,12 @@ export default function storageStatisticsTest() {
     })
 
     /**
+     * @tc.name   storage_statistics_test_getFreeSize_async_002
      * @tc.number SUB_DF_STORAGE_STATISTICS_GET_CURRENT_BUNDLE_STATS_0070
-     * @tc.name storage_statistics_test_getFreeSize_async_002
-     * @tc.desc Test getFreeSize() interfaces, callback
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getFreeSize() interfaces, callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("storage_statistics_test_getFreeSize_async_002", Level.LEVEL0, async (done: Function) => {
       try {
@@ -223,13 +215,12 @@ export default function storageStatisticsTest() {
     })
 
     /**
+     * @tc.name   storage_statistics_test_getFreeSize_async_003
      * @tc.number SUB_DF_STORAGE_STATISTICS_GET_CURRENT_BUNDLE_STATS_0080
-     * @tc.name storage_statistics_test_getFreeSize_async_003
-     * @tc.desc Test getFreeSize() interfaces
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getFreeSize() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("storage_statistics_test_getFreeSize_async_003", Level.LEVEL0, async () => {
       try {

@@ -370,12 +370,12 @@ export default function cameraSecureSessionTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_OPEN_SECURE_CAMERA_0100
-     * @tc.name      : Check open secure cameraid
-     * @tc.desc      : Check open secure cameraid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_OPEN_SECURE_CAMERA_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_OPEN_SECURE_CAMERA_0100
+     * @tc.desc   Check open secure cameraid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_OPEN_SECURE_CAMERA_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_OPEN_SECURE_CAMERA_0100--------------");
@@ -414,12 +414,12 @@ export default function cameraSecureSessionTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_ADD_SECURE_CAMERA_0100
-     * @tc.name      : Check add secure output flag
-     * @tc.desc      : Check add secure output flag
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_ADD_SECURE_CAMERA_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_ADD_SECURE_CAMERA_0100
+     * @tc.desc   Check add secure output flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_ADD_SECURE_CAMERA_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_ADD_SECURE_CAMERA_0100--------------");
@@ -456,12 +456,12 @@ export default function cameraSecureSessionTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ON_CALLBACK_ERROR_0100
-     * @tc.name      : Test secure session on callback error
-     * @tc.desc      : Test secure session on callback error
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ON_CALLBACK_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ON_CALLBACK_ERROR_0100
+     * @tc.desc   Test secure session on callback error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ON_CALLBACK_ERROR_0100', Level.LEVEL1, async (done: Function) => {
       console.info("--------------Enter SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ON_CALLBACK_ERROR_0100--------------");
@@ -485,12 +485,12 @@ export default function cameraSecureSessionTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_ERROR_0100
-     * @tc.name      : Test secure session off callback error
-     * @tc.desc      : Test secure session off callback error
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_ERROR_0100
+     * @tc.desc   Test secure session off callback error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_ERROR_0100', Level.LEVEL1, async (done: Function) => {
       console.info("--------------Enter SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_ERROR_0100--------------");
@@ -524,12 +524,12 @@ export default function cameraSecureSessionTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ON_CALLBACK_FOCUS_STATE_CHANGE_0100
-     * @tc.name      : Test secure session on callback focusStateChange
-     * @tc.desc      : Test secure session on callback focusStateChange
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ON_CALLBACK_FOCUS_STATE_CHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ON_CALLBACK_FOCUS_STATE_CHANGE_0100
+     * @tc.desc   Test secure session on callback focusStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ON_CALLBACK_FOCUS_STATE_CHANGE_0100', Level.LEVEL1, async (done: Function) => {
       console.info("--------------Enter SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ON_CALLBACK_FOCUS_STATE_CHANGE_0100--------------");
@@ -554,12 +554,12 @@ export default function cameraSecureSessionTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_FOCUS_STATE_CHANGE_0100
-     * @tc.name      : Test secure session off callback focusStateChange
-     * @tc.desc      : Test secure session off callback focusStateChange
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_FOCUS_STATE_CHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_FOCUS_STATE_CHANGE_0100
+     * @tc.desc   Test secure session off callback focusStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_FOCUS_STATE_CHANGE_0100', Level.LEVEL1, async (done: Function) => {
       console.info("--------------Enter SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_OFF_CALLBACK_FOCUS_STATE_CHANGE_0100--------------");
@@ -590,12 +590,12 @@ export default function cameraSecureSessionTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_0100
-     * @tc.name      : Test secure session addSecureOutput
-     * @tc.desc      : Test secure session addSecureOutput
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_0100
+     * @tc.desc   Test secure session addSecureOutput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_0100', Level.LEVEL1, async (done: Function) => {
       console.info("--------------Enter SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_0100--------------");
@@ -638,12 +638,12 @@ export default function cameraSecureSessionTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_0200
-     * @tc.name      : Test secure session addSecureOutput with errorCode 7400101
-     * @tc.desc      : Test secure session addSecureOutput with errorCode 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_0200
+     * @tc.desc   Test secure session addSecureOutput with errorCode 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_0200', Level.LEVEL2, async (done: Function) => {
       console.info("--------------Enter SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_0200--------------");

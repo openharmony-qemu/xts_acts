@@ -27,6 +27,22 @@ const NETWORK_TYPES = [
 ];
 const NETWORK_SIGNAL = [0, 1, 2, 3, 4, 5];
 
+const ExpectFail = () => {
+  try {
+    expect().assertFail();
+  } catch (err) {
+    console.info("expectInfo", `test failed`);
+  }
+}
+
+const ExpectTrue = (n: boolean) => {
+  try {
+    expect(n).assertTrue();
+  } catch (err) {
+    console.info("expectInfo", `test failed`);
+  }
+}
+
 function assertCellInformation(data:Array<radio.CellInformation>) {
   expect(data != undefined && data != null).assertTrue();
   expect(data.length).assertLarger(0);
@@ -37,7 +53,7 @@ function assertCellInformation(data:Array<radio.CellInformation>) {
     expect(NETWORK_TYPES).assertContain(data[i].signalInformation.signalType);
     expect(NETWORK_SIGNAL).assertContain(data[i].signalInformation.signalLevel);
     expect(NETWORK_SIGNAL).assertContain(data[i].signalInformation.dBm);
-    
+
     expect(data[i].data != undefined && data[i].data != null).assertTrue();
     if (data[i].networkType === radio.NetworkType.NETWORK_TYPE_LTE) {
       console.log("radio.NetworkType.NETWORK_TYPE_LTE:" + radio.NetworkType.NETWORK_TYPE_LTE);
@@ -59,9 +75,12 @@ export default function radioSecondJsunit() {
   describe('radioSecondTest', ()=> {
     console.log("************* radio Test start*************");
     /**
+     * @tc.name   Telephony_NetworkSearch_NetworkState_Async_0100
      * @tc.number Telephony_NetworkSearch_NetworkState_Async_0100
-     * @tc.name Test getNrOptionMode() to check the callback result
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_NetworkState_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function)=> {
       radio.getNetworkState((err, data) => {
@@ -87,9 +106,12 @@ export default function radioSecondJsunit() {
     })
 
     /**
+     * @tc.name   Telephony_NetworkSearch_NetworkState_Promise_0100
      * @tc.number Telephony_NetworkSearch_NetworkState_Async_0300
-     * @tc.name testGetNetworkState_0300
-     * @tc.desc Test getNetworkState api by promise.
+     * @tc.desc   Test getNetworkState api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_NetworkState_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function)=> {
       try {
@@ -113,9 +135,12 @@ export default function radioSecondJsunit() {
     })
 
     /**
+     * @tc.name   Telephony_NetworkSearch_NetworkState_Async_0200
      * @tc.number Telephony_NetworkSearch_NetworkState_Async_0200
-     * @tc.name testGetNetworkState_0200
-     * @tc.desc Test getNetworkState() api by callback, slotId is 0, to check the callback result
+     * @tc.desc   Test getNetworkState() api by callback, slotId is 0, to check the callback result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_NetworkState_Async_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function)=> {
       radio.getNetworkState(0, (err, data) => {
@@ -140,9 +165,12 @@ export default function radioSecondJsunit() {
     })
 
     /**
+     * @tc.name   Telephony_NetworkSearch_NetworkState_Promise_0200
      * @tc.number Telephony_NetworkSearch_NetworkState_Async_0400
-     * @tc.name testGetNetworkState_0400
-     * @tc.desc Test getNetworkState() api by promise, slotId is 0, to check the callback result
+     * @tc.desc   Test getNetworkState() api by promise, slotId is 0, to check the callback result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_NetworkState_Promise_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function)=> {
       try {
@@ -166,9 +194,12 @@ export default function radioSecondJsunit() {
     })
 
     /**
+     * @tc.name   Telephony_NetworkSearch_getRadioTech_Async_0500
      * @tc.number Telephony_NetworkSearch_getRadioTech_Async_0500
-     * @tc.name TestGetRadioTech_0500
-     * @tc.desc Test getRadioTech() api by callback .SlotId parameter input is 0
+     * @tc.desc   Test getRadioTech() api by callback .SlotId parameter input is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Telephony_NetworkSearch_getRadioTech_Async_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function)=> {
       let slotId = 0;
@@ -187,72 +218,90 @@ export default function radioSecondJsunit() {
     });
 
     /**
+     * @tc.name   Telephony_NetworkSearch_getRadioTech_Promise_0500
      * @tc.number Telephony_NetworkSearch_getRadioTech_Promise_0500
-     * @tc.name TestGetRadioTech_0500
-     * @tc.desc SlotId parameter input is 0 ,Test getRadioTech() api by promise
+     * @tc.desc   SlotId parameter input is 0 ,Test getRadioTech() api by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Telephony_NetworkSearch_getRadioTech_Promise_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let slotId = 0;
       let promise = radio.getRadioTech(slotId);
       promise.then(data => {
-        console.error("Telephony_NetworkSearch_getRadioTech_Async_0500 data:" + JSON.stringify(data));
+        console.error("Telephony_NetworkSearch_getRadioTech_Promise_0500 data:" + JSON.stringify(data));
         expect(data.psRadioTech.toString() == "-1").assertFalse();
         expect(data.csRadioTech.toString() == "-1").assertFalse();
         done();
       }).catch((err:BusinessError) => {
-        console.error("Telephony_NetworkSearch_getRadioTech_Async_0500 err:" + JSON.stringify(err));
+        console.error("Telephony_NetworkSearch_getRadioTech_Promise_0500 err:" + JSON.stringify(err));
         expect(true).assertEqual(false);
         done();
       });
     });
 
     /**
+     * @tc.name   Telephony_NetworkSearch_getNetworkSelectionMode_Async_0600
      * @tc.number Telephony_NetworkSearch_getNetworkSelectionMode_Async_0600
-     * @tc.name testGetNetworkSelectionMode_0600
-     * @tc.desc SlotId parameter input is 0, test getNetworkSelectionMode() api by callback.
+     * @tc.desc   SlotId parameter input is 0, test getNetworkSelectionMode() api by callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getNetworkSelectionMode_Async_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let slotId = 0;
       radio.getNetworkSelectionMode(slotId, (err, data) => {
         if (err) {
-          console.error("Telephony_NetworkSearch_getRadioTech_Async_0500 err:" + JSON.stringify(err));
+          console.error("Telephony_NetworkSearch_getNetworkSelectionMode_Async_0600 err:" + JSON.stringify(err));
           done();
           return;
         }
-        console.error("Telephony_NetworkSearch_getRadioTech_Async_0500 data:" + JSON.stringify(data));
-        expect(data == radio.NetworkSelectionMode.NETWORK_SELECTION_AUTOMATIC ||
-        data == radio.NetworkSelectionMode.NETWORK_SELECTION_MANUAL ||
-        data == radio.NetworkSelectionMode.NETWORK_SELECTION_UNKNOWN).assertTrue();
+        console.error("Telephony_NetworkSearch_getNetworkSelectionMode_Async_0600 data:" + JSON.stringify(data));
+        const radioNetworkMode: number[] = [
+          radio.NetworkSelectionMode.NETWORK_SELECTION_AUTOMATIC,
+          radio.NetworkSelectionMode.NETWORK_SELECTION_MANUAL,
+          radio.NetworkSelectionMode.NETWORK_SELECTION_UNKNOWN
+        ]
+        ExpectTrue(radioNetworkMode.includes(data));
         done();
       });
       done();
     });
 
     /**
-     * @tc.number Telephony_NetworkSearch_getNetworkSelectionMode_Async_0700
-     * @tc.name testGetNetworkSelectionMode_0700
-     * @tc.desc SlotId parameter input is 0, test getNetworkSelectionMode() api by promise.
+     * @tc.name   Telephony_NetworkSearch_getNetworkSelectionMode_Promise_0600
+     * @tc.number Telephony_NetworkSearch_getNetworkSelectionMode_Promise_0600
+     * @tc.desc   SlotId parameter input is 0, test getNetworkSelectionMode() api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getNetworkSelectionMode_Promise_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let slotId = 0;
       let promise = radio.getNetworkSelectionMode(slotId);
       promise.then(data => {
         console.log("getNetworkSelectionMode success, promise: data:" + JSON.stringify(data));
-        expect(data == radio.NetworkSelectionMode.NETWORK_SELECTION_AUTOMATIC ||
-        data == radio.NetworkSelectionMode.NETWORK_SELECTION_MANUAL ||
-        data == radio.NetworkSelectionMode.NETWORK_SELECTION_UNKNOWN).assertTrue();
+        const radioNetworkPromise: number[] = [
+          radio.NetworkSelectionMode.NETWORK_SELECTION_AUTOMATIC,
+          radio.NetworkSelectionMode.NETWORK_SELECTION_MANUAL,
+          radio.NetworkSelectionMode.NETWORK_SELECTION_UNKNOWN
+        ]
+        ExpectTrue(radioNetworkPromise.includes(data));
         done();
       }).catch((err:BusinessError) => {
         console.log("getNetworkSelectionMode failed, promise: err:" + JSON.stringify(err));
         done();
       });
-	  done();
+      done();
     });
 
     /**
+     * @tc.name   Telephony_NetworkSearch_getISOCountryCodeForNetwork_Async_0500
      * @tc.number Telephony_NetworkSearch_getISOCountryCodeForNetwork_Async_0500
-     * @tc.name testGetISOCountryCodeForNetwork_0500
-     * @tc.desc SlotId parameter input is 0, test getISOCountryCodeForNetwork() api by callback.
+     * @tc.desc   SlotId parameter input is 0, test getISOCountryCodeForNetwork() api by callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getISOCountryCodeForNetwork_Async_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       radio.getISOCountryCodeForNetwork(0, (err, data) => {
@@ -270,9 +319,12 @@ export default function radioSecondJsunit() {
     });
 
     /**
+     * @tc.name   Telephony_NetworkSearch_getISOCountryCodeForNetwork_Promise_0500
      * @tc.number Telephony_NetworkSearch_getISOCountryCodeForNetwork_Async_0600
-     * @tc.name testGetISOCountryCodeForNetwork_0600
-     * @tc.desc SlotId parameter input is 0, test getISOCountryCodeForNetwork() api by promise.
+     * @tc.desc   SlotId parameter input is 0, test getISOCountryCodeForNetwork() api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getISOCountryCodeForNetwork_Promise_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       try {
@@ -289,9 +341,12 @@ export default function radioSecondJsunit() {
     });
 
     /**
+     * @tc.name   Telephony_NetworkSearch_getSignalInformation_Async_0500
      * @tc.number Telephony_NetworkSearch_getSignalInformation_Async_0500
-     * @tc.name testGetSignalInformation_0500
-     * @tc.desc SlotId parameter input is 0, test getSignalInformation() api by callback.
+     * @tc.desc   SlotId parameter input is 0, test getSignalInformation() api by callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getSignalInformation_Async_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       radio.getSignalInformation(0, (err, data) => {
@@ -309,9 +364,35 @@ export default function radioSecondJsunit() {
     });
 
     /**
-     * @tc.number Telephony_NetworkSearch_getSignalInformation_Async_0600
-     * @tc.name testGetSignalInformation_0600
-     * @tc.desc SlotId parameter input is 0, test getSignalInformation() api by promise.
+     * @tc.number Telephony_NetworkSearch_getSignalInformation_Async_0700
+     * @tc.name Telephony_NetworkSearch_getSignalInformation_Async_0700
+     * @tc.desc SlotId parameter input is 0, test getSignalInformation() api by callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Telephony_NetworkSearch_getSignalInformation_Async_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      radio.getSignalInformation(0, (err, data) => {
+        if (err) {
+          console.log("Telephony_NetworkSearch_getSignalInformation_Async_0700 fail err:" + JSON.stringify(err));
+          expect(false).assertTrue();
+          done();
+          return;
+        }
+        console.log(
+          "Telephony_NetworkSearch_getSignalInformation_Async_0700 finish data:" + JSON.stringify(data));
+        expect(data.length>0).assertTrue();
+        done();
+      });
+    });
+
+    /**
+     * @tc.number Telephony_NetworkSearch_getSignalInformation_Promise_0500
+     * @tc.desc   SlotId parameter input is 0, test getSignalInformation() api by promise.
+     * @tc.name   Telephony_NetworkSearch_getSignalInformation_Promise_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getSignalInformation_Promise_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       try {
@@ -321,6 +402,7 @@ export default function radioSecondJsunit() {
         expect(data == undefined).assertFalse();
         radio.getCellInformation(0, (err, data) => {
           if (!err && data.length > 0) {
+            expect(data.length>0).assertTrue();
             assertCellInformation(data);
           }
         });

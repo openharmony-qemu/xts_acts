@@ -81,14 +81,14 @@ export default function inputMethodDrawnControlJSUnit() {
       await driver.click(cursor_x, cursor_y)
     }
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_onHandleExtendAction_0010
-    * @tc.name   SUB_Misc_inputMethod_onHandleExtendAction_0010
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_onHandleExtendAction_0010
+     * @tc.number SUB_Misc_inputMethod_onHandleExtendAction_0010
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_onHandleExtendAction_0010', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -126,14 +126,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_offHandleExtendAction_0020
-    * @tc.name   SUB_Misc_inputMethod_offHandleExtendAction_0020
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_offHandleExtendAction_0020
+     * @tc.number SUB_Misc_inputMethod_offHandleExtendAction_0020
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_offHandleExtendAction_0020', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -184,14 +184,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_onSendFunctionKey_0030
-    * @tc.name   SUB_Misc_inputMethod_onSendFunctionKey_0030
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_onSendFunctionKey_0030
+     * @tc.number SUB_Misc_inputMethod_onSendFunctionKey_0030
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_onSendFunctionKey_0030', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -227,14 +227,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_offSendFunctionKey_0040
-    * @tc.name   SUB_Misc_inputMethod_offSendFunctionKey_0040
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_offSendFunctionKey_0040
+     * @tc.number SUB_Misc_inputMethod_offSendFunctionKey_0040
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_offSendFunctionKey_0040', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -285,14 +285,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_onGetLeftTextOfCursor_0050
-    * @tc.name   SUB_Misc_InputMethod_onGetLeftTextOfCursor_0050
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_InputMethod_onGetLeftTextOfCursor_0050
+     * @tc.number SUB_Misc_InputMethod_onGetLeftTextOfCursor_0050
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_onGetLeftTextOfCursor_0050', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -371,14 +371,14 @@ export default function inputMethodDrawnControlJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_onGetLeftTextOfCursor_0060
-    * @tc.name   SUB_Misc_InputMethod_onGetLeftTextOfCursor_0060
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_InputMethod_onGetLeftTextOfCursor_0060
+     * @tc.number SUB_Misc_InputMethod_onGetLeftTextOfCursor_0060
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_onGetLeftTextOfCursor_0060', Level.LEVEL2, async (done: Function) => {
       try {
         inputMethod.getController().on('getLeftTextOfCursor', (length) => {
@@ -393,14 +393,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_offGetLeftTextOfCursor_0070
-    * @tc.name   SUB_Misc_InputMethod_offGetLeftTextOfCursor_0070
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_InputMethod_offGetLeftTextOfCursor_0070
+     * @tc.number SUB_Misc_InputMethod_offGetLeftTextOfCursor_0070
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_offGetLeftTextOfCursor_0070', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -482,14 +482,14 @@ export default function inputMethodDrawnControlJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_onGetRightTextOfCursor_0080
-    * @tc.name   SUB_Misc_InputMethod_onGetRightTextOfCursor_0080
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level1
-    */
+    /**
+     * @tc.name   SUB_Misc_InputMethod_onGetRightTextOfCursor_0080
+     * @tc.number SUB_Misc_InputMethod_onGetRightTextOfCursor_0080
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Misc_InputMethod_onGetRightTextOfCursor_0080', Level.LEVEL1, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -568,14 +568,14 @@ export default function inputMethodDrawnControlJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_onGetRightTextOfCursor_0090
-    * @tc.name   SUB_Misc_InputMethod_onGetRightTextOfCursor_0090
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_InputMethod_onGetRightTextOfCursor_0090
+     * @tc.number SUB_Misc_InputMethod_onGetRightTextOfCursor_0090
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_onGetRightTextOfCursor_0090', Level.LEVEL2, async (done: Function) => {
       try {
         inputMethod.getController().on('getRightTextOfCursor', (length) => {
@@ -590,14 +590,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_offGetRightTextOfCursor_0100
-    * @tc.name   SUB_Misc_InputMethod_offGetRightTextOfCursor_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level1
-    */
+    /**
+     * @tc.name   SUB_Misc_InputMethod_offGetRightTextOfCursor_0100
+     * @tc.number SUB_Misc_InputMethod_offGetRightTextOfCursor_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Misc_InputMethod_offGetRightTextOfCursor_0100', Level.LEVEL1, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -679,14 +679,14 @@ export default function inputMethodDrawnControlJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_onGetTextIndexAtCursor_0110
-    * @tc.name   SUB_Misc_InputMethod_onGetTextIndexAtCursor_0110
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_InputMethod_onGetTextIndexAtCursor_0110
+     * @tc.number SUB_Misc_InputMethod_onGetTextIndexAtCursor_0110
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_onGetTextIndexAtCursor_0110', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -764,14 +764,14 @@ export default function inputMethodDrawnControlJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_onGetTextIndexAtCursor_0120
-    * @tc.name   SUB_Misc_InputMethod_onGetTextIndexAtCursor_0120
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_InputMethod_onGetTextIndexAtCursor_0120
+     * @tc.number SUB_Misc_InputMethod_onGetTextIndexAtCursor_0120
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_onGetTextIndexAtCursor_0120', Level.LEVEL2, async (done: Function) => {
       try {
         inputMethod.getController().on('getTextIndexAtCursor', () => {
@@ -786,14 +786,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_offGetTextIndexAtCursor_0130
-    * @tc.name   SUB_Misc_InputMethod_offGetTextIndexAtCursor_0130
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_InputMethod_offGetTextIndexAtCursor_0130
+     * @tc.number SUB_Misc_InputMethod_offGetTextIndexAtCursor_0130
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_offGetTextIndexAtCursor_0130', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -874,14 +874,14 @@ export default function inputMethodDrawnControlJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_onEditorAttributeChanged_0140
-    * @tc.name   SUB_Misc_inputMethod_onEditorAttributeChanged_0140
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_onEditorAttributeChanged_0140
+     * @tc.number SUB_Misc_inputMethod_onEditorAttributeChanged_0140
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_onEditorAttributeChanged_0140', Level.LEVEL2, async (done: Function) => {
       let inputAttribute: inputMethod.InputAttribute = {
         textInputType: 0, enterKeyType: 3
@@ -971,14 +971,14 @@ export default function inputMethodDrawnControlJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_onEditorAttributeChanged_0150
-    * @tc.name   SUB_Misc_inputMethod_onEditorAttributeChanged_0150
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_onEditorAttributeChanged_0150
+     * @tc.number SUB_Misc_inputMethod_onEditorAttributeChanged_0150
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_onEditorAttributeChanged_0150', Level.LEVEL2, async (done: Function) => {
       let inputAttribute: inputMethod.InputAttribute = {
         textInputType: 0, enterKeyType: 0
@@ -994,14 +994,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_offEditorAttributeChanged_0160
-    * @tc.name   SUB_Misc_inputMethod_offEditorAttributeChanged_0160
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_offEditorAttributeChanged_0160
+     * @tc.number SUB_Misc_inputMethod_offEditorAttributeChanged_0160
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_offEditorAttributeChanged_0160', Level.LEVEL2, async (done: Function) => {
       let inputAttribute: inputMethod.InputAttribute = {
         textInputType: 0, enterKeyType: 3
@@ -1089,14 +1089,14 @@ export default function inputMethodDrawnControlJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_onInsertText_0170
-    * @tc.name   SUB_Misc_inputMethod_onInsertText_0170
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_onInsertText_0170
+     * @tc.number SUB_Misc_inputMethod_onInsertText_0170
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_onInsertText_0170', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1138,14 +1138,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_offInsertText_0180
-    * @tc.name   SUB_Misc_inputMethod_offInsertText_0180
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_offInsertText_0180
+     * @tc.number SUB_Misc_inputMethod_offInsertText_0180
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_offInsertText_0180', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1197,14 +1197,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_onDeleteLeft_0190
-    * @tc.name   SUB_Misc_inputMethod_onDeleteLeft_0190
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_onDeleteLeft_0190
+     * @tc.number SUB_Misc_inputMethod_onDeleteLeft_0190
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_onDeleteLeft_0190', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1245,14 +1245,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_offDeleteLeft_0200
-    * @tc.name   SUB_Misc_inputMethod_offDeleteLeft_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_offDeleteLeft_0200
+     * @tc.number SUB_Misc_inputMethod_offDeleteLeft_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_offDeleteLeft_0200', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1304,14 +1304,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_onDeleteRight_0210
-    * @tc.name   SUB_Misc_inputMethod_onDeleteRight_0210
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_onDeleteRight_0210
+     * @tc.number SUB_Misc_inputMethod_onDeleteRight_0210
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_onDeleteRight_0210', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1353,14 +1353,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_offDeleteRight_0220
-    * @tc.name   SUB_Misc_inputMethod_offDeleteRight_0220
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_offDeleteRight_0220
+     * @tc.number SUB_Misc_inputMethod_offDeleteRight_0220
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_offDeleteRight_0220', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1413,14 +1413,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_onSendKeyboardStatus_0230
-    * @tc.name   SUB_Misc_inputMethod_onSendKeyboardStatus_0230
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_onSendKeyboardStatus_0230
+     * @tc.number SUB_Misc_inputMethod_onSendKeyboardStatus_0230
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_onSendKeyboardStatus_0230', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1451,14 +1451,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_offSendKeyboardStatus_0240
-    * @tc.name   SUB_Misc_inputMethod_offSendKeyboardStatus_0240
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_offSendKeyboardStatus_0240
+     * @tc.number SUB_Misc_inputMethod_offSendKeyboardStatus_0240
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_offSendKeyboardStatus_0240', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1492,14 +1492,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_onMoveCursor_0250
-    * @tc.name   SUB_Misc_inputMethod_onMoveCursor_0250
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_onMoveCursor_0250
+     * @tc.number SUB_Misc_inputMethod_onMoveCursor_0250
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_onMoveCursor_0250', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1541,14 +1541,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_offMoveCursor_0260
-    * @tc.name   SUB_Misc_inputMethod_offMoveCursor_0260
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_offMoveCursor_0260
+     * @tc.number SUB_Misc_inputMethod_offMoveCursor_0260
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_offMoveCursor_0260', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1601,14 +1601,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_insertText_Async_0100
-    * @tc.name   SUB_Misc_inputMethod_on_off_insertText_Async_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_insertText_Async_0100
+     * @tc.number SUB_Misc_inputMethod_on_off_insertText_Async_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_insertText_Async_0100', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1652,14 +1652,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_insertText_Async_0200
-    * @tc.name   SUB_Misc_inputMethod_on_off_insertText_Async_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_insertText_Async_0200
+     * @tc.number SUB_Misc_inputMethod_on_off_insertText_Async_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_insertText_Async_0200', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1719,14 +1719,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_insertText_Async_0300
-    * @tc.name   SUB_Misc_inputMethod_on_off_insertText_Async_0300
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_insertText_Async_0300
+     * @tc.number SUB_Misc_inputMethod_on_off_insertText_Async_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_insertText_Async_0300', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1750,14 +1750,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_deleteLeft_Async_0100
-    * @tc.name   SUB_Misc_inputMethod_on_off_deleteLeft_Async_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_deleteLeft_Async_0100
+     * @tc.number SUB_Misc_inputMethod_on_off_deleteLeft_Async_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_deleteLeft_Async_0100', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1801,14 +1801,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_deleteLeft_Async_0200
-    * @tc.name   SUB_Misc_inputMethod_on_off_deleteLeft_Async_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_deleteLeft_Async_0200
+     * @tc.number SUB_Misc_inputMethod_on_off_deleteLeft_Async_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_deleteLeft_Async_0200', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1868,14 +1868,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_deleteLeft_Async_0300
-    * @tc.name   SUB_Misc_inputMethod_on_off_deleteLeft_Async_0300
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_deleteLeft_Async_0300
+     * @tc.number SUB_Misc_inputMethod_on_off_deleteLeft_Async_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_deleteLeft_Async_0300', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1899,14 +1899,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_deleteRight_Async_0100
-    * @tc.name   SUB_Misc_inputMethod_on_off_deleteRight_Async_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_deleteRight_Async_0100
+     * @tc.number SUB_Misc_inputMethod_on_off_deleteRight_Async_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_deleteRight_Async_0100', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -1950,14 +1950,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_deleteRight_Async_0200
-    * @tc.name   SUB_Misc_inputMethod_on_off_deleteRight_Async_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_deleteRight_Async_0200
+     * @tc.number SUB_Misc_inputMethod_on_off_deleteRight_Async_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_deleteRight_Async_0200', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -2017,14 +2017,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_deleteRight_Async_0300
-    * @tc.name   SUB_Misc_inputMethod_on_off_deleteRight_Async_0300
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_deleteRight_Async_0300
+     * @tc.number SUB_Misc_inputMethod_on_off_deleteRight_Async_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_deleteRight_Async_0300', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -2048,14 +2048,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0100
-    * @tc.name   SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0100
+     * @tc.number SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0100', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -2089,14 +2089,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0200
-    * @tc.name   SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0200
+     * @tc.number SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0200', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -2146,14 +2146,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0300
-    * @tc.name   SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0300
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0300
+     * @tc.number SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0300', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -2177,14 +2177,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_0100
-    * @tc.name   SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_0100
+     * @tc.number SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_0100', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -2228,14 +2228,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_0200
-    * @tc.name   SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_0200
+     * @tc.number SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_0200', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -2295,14 +2295,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_0300
-    * @tc.name   SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_0300
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_0300
+     * @tc.number SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_0300', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -2326,14 +2326,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_moveCursor_Async_0100
-    * @tc.name   SUB_Misc_inputMethod_on_off_moveCursor_Async_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_moveCursor_Async_0100
+     * @tc.number SUB_Misc_inputMethod_on_off_moveCursor_Async_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_moveCursor_Async_0100', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -2377,14 +2377,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_moveCursor_Async_0200
-    * @tc.name   SUB_Misc_inputMethod_on_off_moveCursor_Async_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_moveCursor_Async_0200
+     * @tc.number SUB_Misc_inputMethod_on_off_moveCursor_Async_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_moveCursor_Async_0200', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -2444,14 +2444,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_moveCursor_Async_0300
-    * @tc.name   SUB_Misc_inputMethod_on_off_moveCursor_Async_0300
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_moveCursor_Async_0300
+     * @tc.number SUB_Misc_inputMethod_on_off_moveCursor_Async_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_moveCursor_Async_0300', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -2475,14 +2475,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_handleExtendAction_Async_0100
-    * @tc.name   SUB_Misc_inputMethod_on_off_handleExtendAction_Async_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_handleExtendAction_Async_0100
+     * @tc.number SUB_Misc_inputMethod_on_off_handleExtendAction_Async_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_handleExtendAction_Async_0100', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -2526,14 +2526,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_handleExtendAction_Async_0200
-    * @tc.name   SUB_Misc_inputMethod_on_off_handleExtendAction_Async_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_handleExtendAction_Async_0200
+     * @tc.number SUB_Misc_inputMethod_on_off_handleExtendAction_Async_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_handleExtendAction_Async_0200', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -2593,14 +2593,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_on_off_handleExtendAction_Async_0300
-    * @tc.name   SUB_Misc_inputMethod_on_off_handleExtendAction_Async_0300
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_on_off_handleExtendAction_Async_0300
+     * @tc.number SUB_Misc_inputMethod_on_off_handleExtendAction_Async_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_on_off_handleExtendAction_Async_0300', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -2624,14 +2624,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_updateAttribute_Async_0600
-    * @tc.name   SUB_Misc_inputMethod_updateAttribute_Async_0600
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_updateAttribute_Async_0600
+     * @tc.number SUB_Misc_inputMethod_updateAttribute_Async_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_updateAttribute_Async_0600', Level.LEVEL2, async (done: Function) => {
       let inputAttribute: ESObject = {
         textInputType: 0, enterKeyType: 0
@@ -2660,14 +2660,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_inputMethod_IMF_InputMethodSettings_1000
-    * @tc.name   SUB_inputMethod_IMF_InputMethodSettings_1000
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_inputMethod_IMF_InputMethodSettings_1000
+     * @tc.number SUB_inputMethod_IMF_InputMethodSettings_1000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_inputMethod_IMF_InputMethodSettings_1000', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -2708,14 +2708,14 @@ export default function inputMethodDrawnControlJSUnit() {
       commoneventmanager.publish('inputMethodDrawnControlTest', commonEventPublishData, publishCallback);
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethodEngine_Direction_0100
-    * @tc.name   Sub_Misc_inputMethodEngine_Direction_0100
-    * @tc.desc    Function test
-    * @tc.size    MEDIUMTEST
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @tc.name   Sub_Misc_inputMethodEngine_Direction_0100
+     * @tc.number Sub_Misc_inputMethodEngine_Direction_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_Direction_0100', Level.LEVEL2, async (done: Function) => {
       let cursor_up = inputmethodengine.Direction.CURSOR_UP;
       console.info("====>Sub_Misc_inputMethodEngine_Direction_0100 cursor_up:" + cursor_up);
@@ -2732,14 +2732,14 @@ export default function inputMethodDrawnControlJSUnit() {
       done();
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethodEngine_panelInfo_0100
-    * @tc.name   Sub_Misc_inputMethodEngine_panelInfo_0100
-    * @tc.desc    Function test
-    * @tc.size    MEDIUMTEST
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @tc.name   Sub_Misc_inputMethodEngine_panelInfo_0100
+     * @tc.number Sub_Misc_inputMethodEngine_panelInfo_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_panelInfo_0100', Level.LEVEL2, async (done: Function) => {
       let FLG_FLOATING = inputmethodengine.PanelFlag.FLG_FLOATING
       console.info('====>Sub_Misc_inputMethodEngine_panelInfo_0100 FLG_FLOATING: ' + FLG_FLOATING);
@@ -2759,13 +2759,14 @@ export default function inputMethodDrawnControlJSUnit() {
       done();
     });
 
-    /*
-     * @tc.number  inputmethod_test_switchInputMethod_0010
-     * @tc.name    inputmethod_test_switchInputMethod_0010.
-     * @tc.desc    401 Function test
-     * @tc.type    Function
-     * @tc.level   2
-    */
+    /**
+     * @tc.name   inputmethod_test_switchInputMethod_0010
+     * @tc.number inputmethod_test_switchInputMethod_0010
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputmethod_test_switchInputMethod_0010', Level.LEVEL2, async (done: Function) => {
       try{
         inputMethod.switchInputMethod(undefined).then(data => {
@@ -2784,13 +2785,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-     * @tc.number  inputmethod_test_switchInputMethod_0020
-     * @tc.name    inputmethod_test_switchInputMethod_0020.
-     * @tc.desc    401 Function test
-     * @tc.type    Function
-     * @tc.level   2
-    */
+    /**
+     * @tc.name   inputmethod_test_switchInputMethod_0020
+     * @tc.number inputmethod_test_switchInputMethod_0020
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputmethod_test_switchInputMethod_0020', Level.LEVEL2, async (done: Function) => {
       try{
         inputMethod.switchInputMethod(undefined, (err, data) => {
@@ -2810,13 +2812,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-     * @tc.number  inputmethod_test_switchCurrentInputMethodSubtype_0010
-     * @tc.name    inputmethod_test_switchCurrentInputMethodSubtype_0010.
-     * @tc.desc    401 Function test
-     * @tc.type    Function
-     * @tc.level   2
-    */
+    /**
+     * @tc.name   inputmethod_test_switchCurrentInputMethodSubtype_0010
+     * @tc.number inputmethod_test_switchCurrentInputMethodSubtype_0010
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputmethod_test_switchCurrentInputMethodSubtype_0010', Level.LEVEL2, async (done: Function) => {
       try{
         inputMethod.switchCurrentInputMethodSubtype(undefined).then(data => {
@@ -2835,13 +2838,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-     * @tc.number  inputmethod_test_switchCurrentInputMethodSubtype_0020
-     * @tc.name    inputmethod_test_switchCurrentInputMethodSubtype_0020.
-     * @tc.desc    401 Function test
-     * @tc.type    Function
-     * @tc.level   2
-    */
+    /**
+     * @tc.name   inputmethod_test_switchCurrentInputMethodSubtype_0020
+     * @tc.number inputmethod_test_switchCurrentInputMethodSubtype_0020
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputmethod_test_switchCurrentInputMethodSubtype_0020', Level.LEVEL2, async (done: Function) => {
       try{
         inputMethod.switchCurrentInputMethodSubtype(undefined, (err, data) => {
@@ -2861,13 +2865,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-     * @tc.number  inputmethod_test_switchCurrentInputMethodAndSubtype_0010
-     * @tc.name    inputmethod_test_switchCurrentInputMethodAndSubtype_0010.
-     * @tc.desc    401 Function test
-     * @tc.type    Function
-     * @tc.level   2
-    */
+    /**
+     * @tc.name   inputmethod_test_switchCurrentInputMethodAndSubtype_0010
+     * @tc.number inputmethod_test_switchCurrentInputMethodAndSubtype_0010
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputmethod_test_switchCurrentInputMethodAndSubtype_0010', Level.LEVEL2, async (done: Function) => {
       try{
         inputMethod.switchCurrentInputMethodAndSubtype(undefined,undefined).then(data => {
@@ -2886,13 +2891,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-     * @tc.number  inputmethod_test_switchCurrentInputMethodAndSubtype_0020
-     * @tc.name    inputmethod_test_switchCurrentInputMethodAndSubtype_0020.
-     * @tc.desc    401 Function test
-     * @tc.type    Function
-     * @tc.level   2
-    */
+    /**
+     * @tc.name   inputmethod_test_switchCurrentInputMethodAndSubtype_0020
+     * @tc.number inputmethod_test_switchCurrentInputMethodAndSubtype_0020
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputmethod_test_switchCurrentInputMethodAndSubtype_0020', Level.LEVEL2, async (done: Function) => {
       try{
         inputMethod.switchCurrentInputMethodAndSubtype(undefined, undefined,(err, data) => {
@@ -2912,13 +2918,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-     * @tc.number  inputmethod_test_listInputMethodSubtype_0010
-     * @tc.name    inputmethod_test_listInputMethodSubtype_0010.
-     * @tc.desc    401 Function test
-     * @tc.type    Function
-     * @tc.level   2
-    */
+    /**
+     * @tc.name   inputmethod_test_listInputMethodSubtype_0010
+     * @tc.number inputmethod_test_listInputMethodSubtype_0010
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputmethod_test_listInputMethodSubtype_0010', Level.LEVEL2, async (done: Function) => {
       try{
         let inputMethodSetting = inputMethod.getSetting();
@@ -2938,13 +2945,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-     * @tc.number  inputmethod_test_listInputMethodSubtype_0020
-     * @tc.name    inputmethod_test_listInputMethodSubtype_0020.
-     * @tc.desc    401 Function test
-     * @tc.type    Function
-     * @tc.level   2
-    */
+    /**
+     * @tc.name   inputmethod_test_listInputMethodSubtype_0020
+     * @tc.number inputmethod_test_listInputMethodSubtype_0020
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputmethod_test_listInputMethodSubtype_0020', Level.LEVEL2, async (done: Function) => {
       try{
         let inputMethodSetting = inputMethod.getSetting();
@@ -2965,13 +2973,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-     * @tc.number  inputmethod_test_getInputMethods_0010
-     * @tc.name    inputmethod_test_getInputMethods_0010.
-     * @tc.desc    401 Function test
-     * @tc.type    Function
-     * @tc.level   2
-    */
+    /**
+     * @tc.name   inputmethod_test_getInputMethods_0010
+     * @tc.number inputmethod_test_getInputMethods_0010
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputmethod_test_getInputMethods_0010', Level.LEVEL2, async (done: Function) => {
       try{
         let inputMethodSetting = inputMethod.getSetting();
@@ -2991,13 +3000,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-     * @tc.number  inputmethod_test_getInputMethods_0020
-     * @tc.name    inputmethod_test_getInputMethods_0020.
-     * @tc.desc    401 Function test
-     * @tc.type    Function
-     * @tc.level   2
-    */
+    /**
+     * @tc.name   inputmethod_test_getInputMethods_0020
+     * @tc.number inputmethod_test_getInputMethods_0020
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputmethod_test_getInputMethods_0020', Level.LEVEL2, async (done: Function) => {
       try{
         let inputMethodSetting = inputMethod.getSetting();
@@ -3018,13 +3028,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-     * @tc.number  inputmethod_test_updateAttribute_0010
-     * @tc.name    inputmethod_test_updateAttribute_0010.
-     * @tc.desc    401 Function test
-     * @tc.type    Function
-     * @tc.level   2
-    */
+    /**
+     * @tc.name   inputmethod_test_updateAttribute_0010
+     * @tc.number inputmethod_test_updateAttribute_0010
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputmethod_test_updateAttribute_0010', Level.LEVEL2, async (done: Function) => {
       try{
         let inputMethodController = inputMethod.getController()
@@ -3044,13 +3055,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-     * @tc.number  inputmethod_test_updateAttribute_0020
-     * @tc.name    inputmethod_test_updateAttribute_0020.
-     * @tc.desc    401 Function test
-     * @tc.type    Function
-     * @tc.level   2
-    */
+    /**
+     * @tc.name   inputmethod_test_updateAttribute_0020
+     * @tc.number inputmethod_test_updateAttribute_0020
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputmethod_test_updateAttribute_0020', Level.LEVEL2, async (done: Function) => {
       try{
         let inputMethodController = inputMethod.getController()
@@ -3071,13 +3083,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-     * @tc.number  inputmethod_test_updateCursor_0010
-     * @tc.name    inputmethod_test_updateCursor_0010.
-     * @tc.desc    401 Function test
-     * @tc.type    Function
-     * @tc.level   2
-    */
+    /**
+     * @tc.name   inputmethod_test_updateCursor_0010
+     * @tc.number inputmethod_test_updateCursor_0010
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputmethod_test_updateCursor_0010', Level.LEVEL2, async (done: Function) => {
       try{
         let inputMethodController = inputMethod.getController()
@@ -3097,13 +3110,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-     * @tc.number  inputmethod_test_updateCursor_0020
-     * @tc.name    inputmethod_test_updateCursor_0020.
-     * @tc.desc    401 Function test
-     * @tc.type    Function
-     * @tc.level   2
-    */
+    /**
+     * @tc.name   inputmethod_test_updateCursor_0020
+     * @tc.number inputmethod_test_updateCursor_0020
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputmethod_test_updateCursor_0020', Level.LEVEL2, async (done: Function) => {
       try{
         let inputMethodController = inputMethod.getController();
@@ -3124,14 +3138,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_oninsertText_0100
-    * @tc.name    SUB_Misc_InputMethod_oninsertText_0100
-    * @tc.desc    12800009 Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_InputMethod_oninsertText_0100
+     * @tc.number SUB_Misc_InputMethod_oninsertText_0100
+     * @tc.desc   12800009 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_oninsertText_0100', Level.LEVEL2, async (done: Function) => {
       try {
         let inputMethodController = inputMethod.getController()
@@ -3149,14 +3163,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_ondeleteLeft_0100
-    * @tc.name    SUB_Misc_InputMethod_ondeleteLeft_0100
-    * @tc.desc    12800009 Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_InputMethod_ondeleteLeft_0100
+     * @tc.number SUB_Misc_InputMethod_ondeleteLeft_0100
+     * @tc.desc   12800009 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_ondeleteLeft_0100', Level.LEVEL2, async (done: Function) => {
       try {
         let inputMethodController = inputMethod.getController()
@@ -3174,14 +3188,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_ondeleteRight_0100
-    * @tc.name    SUB_Misc_InputMethod_ondeleteRight_0100
-    * @tc.desc    12800009 Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_InputMethod_ondeleteRight_0100
+     * @tc.number SUB_Misc_InputMethod_ondeleteRight_0100
+     * @tc.desc   12800009 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_ondeleteRight_0100', Level.LEVEL2, async (done: Function) => {
       try {
         let inputMethodController = inputMethod.getController()
@@ -3199,14 +3213,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_onsendKeyboardStatus_0100
-    * @tc.name    SUB_Misc_InputMethod_onsendKeyboardStatus_0100
-    * @tc.desc    12800009 Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_InputMethod_onsendKeyboardStatus_0100
+     * @tc.number SUB_Misc_InputMethod_onsendKeyboardStatus_0100
+     * @tc.desc   12800009 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_onsendKeyboardStatus_0100', Level.LEVEL2, async (done: Function) => {
       try {
         let inputMethodController = inputMethod.getController()
@@ -3224,14 +3238,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_onsendFunctionKey_0100
-    * @tc.name    SUB_Misc_InputMethod_onsendFunctionKey_0100
-    * @tc.desc    12800009 Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_InputMethod_onsendFunctionKey_0100
+     * @tc.number SUB_Misc_InputMethod_onsendFunctionKey_0100
+     * @tc.desc   12800009 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_onsendFunctionKey_0100', Level.LEVEL2, async (done: Function) => {
       try {
         let inputMethodController = inputMethod.getController()
@@ -3249,14 +3263,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_onmoveCursor_0100
-    * @tc.name    SUB_Misc_InputMethod_onmoveCursor_0100
-    * @tc.desc    12800009 Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_InputMethod_onmoveCursor_0100
+     * @tc.number SUB_Misc_InputMethod_onmoveCursor_0100
+     * @tc.desc   12800009 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_onmoveCursor_0100', Level.LEVEL2, async (done: Function) => {
       try {
         let inputMethodController = inputMethod.getController()
@@ -3274,14 +3288,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_InputMethod_onhandleExtendAction_0100
-    * @tc.name    SUB_Misc_InputMethod_onhandleExtendAction_0100
-    * @tc.desc    12800009 Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_InputMethod_onhandleExtendAction_0100
+     * @tc.number SUB_Misc_InputMethod_onhandleExtendAction_0100
+     * @tc.desc   12800009 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_InputMethod_onhandleExtendAction_0100', Level.LEVEL2, async (done: Function) => {
       try {
         let inputMethodController = inputMethod.getController()
@@ -3299,14 +3313,14 @@ export default function inputMethodDrawnControlJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_Misc_inputMethod_showTextInput_Promise_0101
-    * @tc.name    SUB_Misc_inputMethod_showTextInput_Promise_0101
-    * @tc.desc    12800009 Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @tc.name   SUB_Misc_inputMethod_showTextInput_Promise_0101
+     * @tc.number SUB_Misc_inputMethod_showTextInput_Promise_0101
+     * @tc.desc   12800009 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_Misc_inputMethod_showTextInput_Promise_0101', Level.LEVEL2, async (done: Function) => {
       try {
         let inputMethodController = inputMethod.getController()

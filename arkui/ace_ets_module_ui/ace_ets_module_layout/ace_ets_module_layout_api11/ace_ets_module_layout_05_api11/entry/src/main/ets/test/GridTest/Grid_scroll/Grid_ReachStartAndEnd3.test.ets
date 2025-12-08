@@ -56,9 +56,12 @@ export default function Grid_ReachStartAndEnd3() {
     });
 
     /**
+     * @tc.name   Grid_ReachStartAndEnd3_0400
      * @tc.number SUB_ACE_Grid_ReachStartAndEnd3_0400
-     * @tc.name testGrid
-     * @tc.desc When initializing the Grid, an initialIndex of 0 will trigger an onReachStart event
+     * @tc.desc   When initializing the Grid, an initialIndex of 0 will trigger an onReachStart event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ReachStartAndEnd3_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ReachStartAndEnd3_0400] START');

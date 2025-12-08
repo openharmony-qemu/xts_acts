@@ -57,15 +57,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbNotSupport0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_0100
-     * @tc.desc not support test case of memory db
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbNotSupport0100
+     * @tc.number testMemoryDbNotSupport0100
+     * @tc.desc   testMemoryDbNotSupport0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbNotSupport0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testMemoryDbNotSupport0001 start *************");
       let predicates = new data_relationalStore.RdbPredicates("test");
@@ -81,15 +81,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbNotSupport0200
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_0200
-     * @tc.desc not support test case of memory db
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbNotSupport0200
+     * @tc.number testMemoryDbNotSupport0200
+     * @tc.desc   testMemoryDbNotSupport0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbNotSupport0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await (rdbStore as data_relationalStore.RdbStore).backup("memoryBackup");
@@ -103,15 +103,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbNotSupport0300
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_0300
-     * @tc.desc not support test case of memory db
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbNotSupport0300
+     * @tc.number testMemoryDbNotSupport0300
+     * @tc.desc   testMemoryDbNotSupport0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbNotSupport0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await (rdbStore as data_relationalStore.RdbStore).restore("memoryBackup");
@@ -125,15 +125,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbNotSupport0400
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_0400
-     * @tc.desc not support test case of memory db
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbNotSupport0400
+     * @tc.number testMemoryDbNotSupport0400
+     * @tc.desc   testMemoryDbNotSupport0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbNotSupport0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await (rdbStore as data_relationalStore.RdbStore).setDistributedTables(["test"]);
@@ -147,15 +147,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbNotSupport0500
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_0500
-     * @tc.desc not support test case of memory db
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbNotSupport0500
+     * @tc.number testMemoryDbNotSupport0500
+     * @tc.desc   testMemoryDbNotSupport0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbNotSupport0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let predicates = new data_relationalStore.RdbPredicates("test");
       try {
@@ -170,15 +170,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbInsert100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_0600
-     * @tc.desc not support test case of memory db
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbInsert0100
+     * @tc.number testMemoryDbInsert0100
+     * @tc.desc   testMemoryDbInsert0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbInsert0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testMemoryDbInsert0100 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -241,15 +241,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbInsert0200
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_0700
-     * @tc.desc not support test case of memory db
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbInsert0200
+     * @tc.number testMemoryDbInsert0200
+     * @tc.desc   testMemoryDbInsert0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbInsert0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testMemoryDbInsert0200 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -273,15 +273,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbInsertWithConflictResolution0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_0800
-     * @tc.desc Insert data with ON_CONFLICT_ROLLBACK
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbInsertWithConflictResolution0100
+     * @tc.number testMemoryDbInsertWithConflictResolution0100
+     * @tc.desc   testMemoryDbInsertWithConflictResolution0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbInsertWithConflictResolution0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testMemoryDbInsertWithConflictResolution0100 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -332,15 +332,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbBatchInsert0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_0900
-     * @tc.desc Normal test case of batchInsert
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbBatchInsert0100
+     * @tc.number testMemoryDbBatchInsert0100
+     * @tc.desc   testMemoryDbBatchInsert0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbBatchInsert0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testMemoryDbBatchInsert0100 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -363,15 +363,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbBatchInsertWithConflictResolution0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_1000
-     * @tc.desc normal batch insert with conflict resolution
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbBatchInsertWithConflictResolution0100
+     * @tc.number testMemoryDbBatchInsertWithConflictResolution0100
+     * @tc.desc   testMemoryDbBatchInsertWithConflictResolution0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbBatchInsertWithConflictResolution0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testMemoryDbBatchInsertWithConflictResolution0100 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -425,15 +425,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbExecute0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_1100
-     * @tc.desc Execute sql: PRAGMA user_version,Check returned value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbExecute0100
+     * @tc.number testMemoryDbExecute0100
+     * @tc.desc   testMemoryDbExecute0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbExecute0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testMemoryDbExecute0100 start *************");
       try {
@@ -450,15 +450,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbExecute0200
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_1200
-     * @tc.desc Execute select sql,Check returned value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbExecute0200
+     * @tc.number testMemoryDbExecute0200
+     * @tc.desc   testMemoryDbExecute0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbExecute0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testMemoryDbExecute0200 start *************");
       try {
@@ -474,15 +474,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbExecute0300
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_1300
-     * @tc.desc Execute select sql,Check returned value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbExecute0300
+     * @tc.number testMemoryDbExecute0300
+     * @tc.desc   testMemoryDbExecute0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbExecute0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testMemoryDbExecute0300 start *************");
       try {
@@ -498,15 +498,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbExecute0400
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_1400
-     * @tc.desc Execute select sql,Check returned value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbExecute0400
+     * @tc.number testMemoryDbExecute0400
+     * @tc.desc   testMemoryDbExecute0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbExecute0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testMemoryDbExecute0400 start *************");
       try {
@@ -523,15 +523,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbExecute0500
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_1500
-     * @tc.desc Execute select sql,Check returned value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbExecute0500
+     * @tc.number testMemoryDbExecute0500
+     * @tc.desc   testMemoryDbExecute0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbExecute0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testMemoryDbExecute0500 start *************");
       try {
@@ -551,15 +551,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbExecute0600
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_1600
-     * @tc.desc Execute select sql,Check returned value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbExecute0600
+     * @tc.number testMemoryDbExecute0600
+     * @tc.desc   testMemoryDbExecute0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbExecute0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testMemoryDbExecute0600 start *************");
       try {
@@ -579,15 +579,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbUpdate0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_1700
-     * @tc.desc Insert data,Update data,Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbUpdate0100
+     * @tc.number testMemoryDbUpdate0100
+     * @tc.desc   testMemoryDbUpdate0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbUpdate0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testMemoryDbUpdate0100 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -647,15 +647,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbUpdate0200
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_1800
-     * @tc.desc Insert data,Update data,Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbUpdate0200
+     * @tc.number testMemoryDbUpdate0200
+     * @tc.desc   testMemoryDbUpdate0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbUpdate0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testMemoryDbUpdate0200 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -705,15 +705,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbDelete0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_1900
-     * @tc.desc Insert data,Execute delete
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbDelete0100
+     * @tc.number testMemoryDbDelete0100
+     * @tc.desc   testMemoryDbDelete0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbDelete0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testMemoryDbDelete0100 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -760,15 +760,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbDelete0200
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_2000
-     * @tc.desc Configure predicates ("aaa id", 1)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbDelete0200
+     * @tc.number testMemoryDbDelete0200
+     * @tc.desc   testMemoryDbDelete0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbDelete0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testMemoryDbDelete0200 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -814,15 +814,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbPluginLibs0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_2100
-     * @tc.desc Test pluginLibs are empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbPluginLibs0100
+     * @tc.number testMemoryDbPluginLibs0100
+     * @tc.desc   testMemoryDbPluginLibs0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbPluginLibs0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testMemoryDbPluginLibs0100 start *************");
       try {
@@ -843,15 +843,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbTokenizer0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_2200
-     * @tc.desc Test pluginLibs are empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbTokenizer0100
+     * @tc.number testMemoryDbTokenizer0100
+     * @tc.desc   testMemoryDbTokenizer0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbTokenizer0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testMemoryDbTokenizer0100 start *************");
       try {
@@ -872,15 +872,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbTransaction0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_2300
-     * @tc.desc Normal test case of transactions, insert a row of data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbTransaction0100
+     * @tc.number testMemoryDbTransaction0100
+     * @tc.desc   testMemoryDbTransaction0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbTransaction0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testMemoryDbTransaction0100 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -928,15 +928,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbTransactionIsolation0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_2400
-     * @tc.desc testTransactionIsolation. DEFERRED and EXCLUSIVE
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbTransactionIsolation0100
+     * @tc.number testMemoryDbTransactionIsolation0100
+     * @tc.desc   testMemoryDbTransactionIsolation0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbTransactionIsolation0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testMemoryDbTransactionIsolation0100 start *************");
       let deferredTrans = await (rdbStore as data_relationalStore.RdbStore).createTransaction({
@@ -992,15 +992,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbTransactionIsolation0200
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_2500
-     * @tc.desc testTransactionIsolation. IMMEDIATE and rdbStore
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbTransactionIsolation0200
+     * @tc.number testMemoryDbTransactionIsolation0200
+     * @tc.desc   testMemoryDbTransactionIsolation0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbTransactionIsolation0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testMemoryDbTransactionIsolation0200 start *************");
       let immediateTrans = await (rdbStore as data_relationalStore.RdbStore).createTransaction({
@@ -1041,15 +1041,15 @@ export default function MemoryDbEtsTest() {
     })
 
 
-    /**
-     * @tc.name testMemoryDbTransactionIsolation0300
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_MemoryDbEtsTest_2600
-     * @tc.desc testTransactionIsolation. DEFERRED and rdbStore
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testMemoryDbTransactionIsolation0300
+     * @tc.number testMemoryDbTransactionIsolation0300
+     * @tc.desc   testMemoryDbTransactionIsolation0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMemoryDbTransactionIsolation0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testMemoryDbTransactionIsolation0300 start *************");
       let deferredTrans = await (rdbStore as data_relationalStore.RdbStore).createTransaction({

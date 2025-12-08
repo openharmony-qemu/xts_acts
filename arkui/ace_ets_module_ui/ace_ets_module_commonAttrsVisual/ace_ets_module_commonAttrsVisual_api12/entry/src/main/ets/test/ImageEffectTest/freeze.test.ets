@@ -61,12 +61,12 @@ export default function freezeTest() {
     });
 
     /**
+     * @tc.name   freezeTest_0100
      * @tc.number freezeTest_0100
-     * @tc.name freezeTest_0100
-     * @tc.desc test api of freeze
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   test api of freeze
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('freezeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('freezeTest_0100 START');

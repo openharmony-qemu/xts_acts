@@ -39,12 +39,12 @@ const TEST_ARKWEB_BLANKLESS_ERR_DEVICE_NOT_SUPPORT = 801;
 export default function ActsWebErrorCodeTest() {
   describe('ActsWebErrorCodeTest', () => {
     /**
-     * @tc.number  : SUB_OH_Web_Error_Code_0100
-     * @tc.name    : testArkWebErrorCode0100
-     * @tc.desc    : test OH_Web_Error_Code Test Normal Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrorCode0100
+     * @tc.number SUB_OH_Web_Error_Code_0100
+     * @tc.desc   test OH_Web_Error_Code Test Normal Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrorCode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -59,12 +59,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_Web_Error_Code_0200
-     * @tc.name    : testArkWebErrorCode0200
-     * @tc.desc    : test OH_Web_Error_Code Test Normal Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrorCode0200
+     * @tc.number SUB_OH_Web_Error_Code_0200
+     * @tc.desc   test OH_Web_Error_Code Test Normal Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrorCode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -79,12 +79,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_Web_Error_Code_0300
-     * @tc.name    : testArkWebErrorCode0300
-     * @tc.desc    : test OH_Web_Error_Code Test UNKNOWN
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrorCode0300
+     * @tc.number SUB_OH_Web_Error_Code_0300
+     * @tc.desc   test OH_Web_Error_Code Test UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrorCode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -99,12 +99,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_Web_Error_Code_0400
-     * @tc.name    : testArkWebErrorCode0400
-     * @tc.desc    : test OH_Web_Error_Code Test ARKWEB_INVALID_PARAM
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrorCode0400
+     * @tc.number SUB_OH_Web_Error_Code_0400
+     * @tc.desc   test OH_Web_Error_Code Test ARKWEB_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrorCode0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -119,12 +119,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_Web_Error_Code_0500
-     * @tc.name    : testArkWebErrorCode0500
-     * @tc.desc    : test OH_Web_Error_Code Test ARKWEB_SCHEME_REGISTER_FAILED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrorCode0500
+     * @tc.number SUB_OH_Web_Error_Code_0500
+     * @tc.desc   test OH_Web_Error_Code Test ARKWEB_SCHEME_REGISTER_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrorCode0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -139,12 +139,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_Web_Error_Code_0600
-     * @tc.name    : testArkWebErrorCode0600
-     * @tc.desc    : test OH_Web_Error_Code Test ARKWEB_INVALID_URL
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrorCode0600
+     * @tc.number SUB_OH_Web_Error_Code_0600
+     * @tc.desc   test OH_Web_Error_Code Test ARKWEB_INVALID_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrorCode0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -159,12 +159,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_Web_Error_Code_0700
-     * @tc.name    : testArkWebErrorCode0700
-     * @tc.desc    : test OH_Web_Error_Code Test ARKWEB_INVALID_COOKIE_VALUE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrorCode0700
+     * @tc.number SUB_OH_Web_Error_Code_0700
+     * @tc.desc   test OH_Web_Error_Code Test ARKWEB_INVALID_COOKIE_VALUE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrorCode0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -179,12 +179,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_Web_Error_Code_0800
-     * @tc.name    : testArkWebErrorCode0800
-     * @tc.desc    : test OH_Web_Error_Code Test ARKWEB_LIBRARY_OPEN_FAILURE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrorCode0800
+     * @tc.number SUB_OH_Web_Error_Code_0800
+     * @tc.desc   test OH_Web_Error_Code Test ARKWEB_LIBRARY_OPEN_FAILURE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrorCode0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -199,12 +199,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_Web_Error_Code_0900
-     * @tc.name    : testArkWebErrorCode0900
-     * @tc.desc    : test OH_Web_Error_Code Test ARKWEB_LIBRARY_SYMBOL_NOT_FOUND
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrorCode0900
+     * @tc.number SUB_OH_Web_Error_Code_0900
+     * @tc.desc   test OH_Web_Error_Code Test ARKWEB_LIBRARY_SYMBOL_NOT_FOUND
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrorCode0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -219,12 +219,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_Web_Error_Code_1000
-     * @tc.name    : testArkWebErrorCode1000
-     * @tc.desc    : test OH_Web_Error_Code Test ARKWEB_COOKIE_MANAGER_NOT_INITIALIZED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebErrorCode1000
+     * @tc.number SUB_OH_Web_Error_Code_1000
+     * @tc.desc   test OH_Web_Error_Code Test ARKWEB_COOKIE_MANAGER_NOT_INITIALIZED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebErrorCode1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -239,12 +239,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_BLANKLESS_Code_0100
-     * @tc.name    : testArkWebBlanklessErrorCode100
-     * @tc.desc    : test OH_Web_Error_Code Test ARKWEB_BLANKLESS_SUCCESS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebBlanklessErrorCode100
+     * @tc.number SUB_OH_BLANKLESS_Code_0100
+     * @tc.desc   test OH_Web_Error_Code Test ARKWEB_BLANKLESS_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebBlanklessErrorCode100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -259,12 +259,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_BLANKLESS_Code_0200
-     * @tc.name    : testArkWebBlanklessErrorCode200
-     * @tc.desc    : test OH_Web_Error_Code Test ARKWEB_BLANKLESS_SUCCESS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebBlanklessErrorCode200
+     * @tc.number SUB_OH_BLANKLESS_Code_0200
+     * @tc.desc   test OH_Web_Error_Code Test ARKWEB_BLANKLESS_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebBlanklessErrorCode200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -279,12 +279,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_BLANKLESS_Code_0300
-     * @tc.name    : testArkWebBlanklessErrorCode300
-     * @tc.desc    : test OH_Web_Error_Code Test ARKWEB_BLANKLESS_ERR_INVALID_ARGS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebBlanklessErrorCode300
+     * @tc.number SUB_OH_BLANKLESS_Code_0300
+     * @tc.desc   test OH_Web_Error_Code Test ARKWEB_BLANKLESS_ERR_INVALID_ARGS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebBlanklessErrorCode300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -299,12 +299,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_BLANKLESS_Code_0400
-     * @tc.name    : testArkWebBlanklessErrorCode400
-     * @tc.desc    : test OH_Web_Error_Code Test ARKWEB_BLANKLESS_ERR_INVALID_ARGS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebBlanklessErrorCode400
+     * @tc.number SUB_OH_BLANKLESS_Code_0400
+     * @tc.desc   test OH_Web_Error_Code Test ARKWEB_BLANKLESS_ERR_INVALID_ARGS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebBlanklessErrorCode400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -319,12 +319,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_BLANKLESS_Code_0500
-     * @tc.name    : testArkWebBlanklessErrorCode500
-     * @tc.desc    : test OH_Web_Error_Code Test ARKWEB_BLANKLESS_ERR_INVALID_ARGS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebBlanklessErrorCode500
+     * @tc.number SUB_OH_BLANKLESS_Code_0500
+     * @tc.desc   test OH_Web_Error_Code Test ARKWEB_BLANKLESS_ERR_INVALID_ARGS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebBlanklessErrorCode500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -339,12 +339,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_BLANKLESS_Code_0600
-     * @tc.name    : testArkWebBlanklessErrorCode600
-     * @tc.desc    : test OH_Web_Error_Code Test ARKWEB_BLANKLESS_ERR_INVALID_ARGS
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebBlanklessErrorCode600
+     * @tc.number SUB_OH_BLANKLESS_Code_0600
+     * @tc.desc   test OH_Web_Error_Code Test ARKWEB_BLANKLESS_ERR_INVALID_ARGS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebBlanklessErrorCode600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -359,12 +359,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_BLANKLESS_Code_0700
-     * @tc.name    : testArkWebBlanklessErrorCode700
-     * @tc.desc    : test OH_Web_Error_Code Test ARKWEB_BLANKLESS_ERR_DEVICE_NOT_SUPPORT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebBlanklessErrorCode700
+     * @tc.number SUB_OH_BLANKLESS_Code_0700
+     * @tc.desc   test OH_Web_Error_Code Test ARKWEB_BLANKLESS_ERR_DEVICE_NOT_SUPPORT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebBlanklessErrorCode700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -379,12 +379,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_WebAnyNativeAPI_100
-     * @tc.name    : testArkWebNativeAnyNativeAPI
-     * @tc.desc    : test ArkWeb_AnyNativeAPI Test size
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebNativeAnyNativeAPI
+     * @tc.number SUB_OH_WebAnyNativeAPI_100
+     * @tc.desc   test ArkWeb_AnyNativeAPI Test size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebNativeAnyNativeAPI', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -399,12 +399,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_NATIVE_APIVariantKind_100
-     * @tc.name    : testArkWebNativeCompent
-     * @tc.desc    : test ARKWEB_NATIVE_COMPONENT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebNativeCompent
+     * @tc.number SUB_OH_NATIVE_APIVariantKind_100
+     * @tc.desc   test ARKWEB_NATIVE_COMPONENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebNativeCompent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -419,12 +419,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_NATIVE_APIVariantKind_200
-     * @tc.name    : testArkWebNativeController
-     * @tc.desc    : test ARKWEB_NATIVE_CONTROLLER
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebNativeController
+     * @tc.number SUB_OH_NATIVE_APIVariantKind_200
+     * @tc.desc   test ARKWEB_NATIVE_CONTROLLER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebNativeController', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -439,12 +439,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_NATIVE_APIVariantKind_300
-     * @tc.name    : testArkWebNativeWebMessagePort
-     * @tc.desc    : test ARKWEB_NATIVE_WEB_MESSAGE_PORT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebNativeWebMessagePort
+     * @tc.number SUB_OH_NATIVE_APIVariantKind_300
+     * @tc.desc   test ARKWEB_NATIVE_WEB_MESSAGE_PORT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebNativeWebMessagePort', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -459,12 +459,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_NATIVE_APIVariantKind_400
-     * @tc.name    : testArkWebNativeWebMessage
-     * @tc.desc    : test ARKWEB_NATIVE_WEB_MESSAGE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebNativeWebMessage
+     * @tc.number SUB_OH_NATIVE_APIVariantKind_400
+     * @tc.desc   test ARKWEB_NATIVE_WEB_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebNativeWebMessage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -479,12 +479,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_NATIVE_APIVariantKind_500
-     * @tc.name    : testArkWebNativeCookieManger
-     * @tc.desc    : test ARKWEB_NATIVE_COOKIE_MANAGER
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebNativeCookieManger
+     * @tc.number SUB_OH_NATIVE_APIVariantKind_500
+     * @tc.desc   test ARKWEB_NATIVE_COOKIE_MANAGER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebNativeCookieManger', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -499,12 +499,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_NATIVE_APIVariantKind_600
-     * @tc.name    : testArkWebNativeJavascriptValue
-     * @tc.desc    : test ARKWEB_NATIVE_JAVASCRIPT_VALUE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebNativeJavascriptValue
+     * @tc.number SUB_OH_NATIVE_APIVariantKind_600
+     * @tc.desc   test ARKWEB_NATIVE_JAVASCRIPT_VALUE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebNativeJavascriptValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -520,12 +520,12 @@ export default function ActsWebErrorCodeTest() {
 
 
     /**
-     * @tc.number  : SUB_OH_ArkWeb_RegisterCustomSchemes0100
-     * @tc.name    : testArkWebRegisterCustomSchemes0100
-     * @tc.desc    : test SUB_OH_ArkWeb_RegisterCustomSchemes0100
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebRegisterCustomSchemes0100
+     * @tc.number SUB_OH_ArkWeb_RegisterCustomSchemes0100
+     * @tc.desc   test SUB_OH_ArkWeb_RegisterCustomSchemes0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebRegisterCustomSchemes0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -541,12 +541,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWeb_RegisterCustomSchemes0101
-     * @tc.name    : testArkWebRegisterCustomSchemes0101
-     * @tc.desc    : test SUB_OH_ArkWeb_RegisterCustomSchemes0101
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebRegisterCustomSchemes0101
+     * @tc.number SUB_OH_ArkWeb_RegisterCustomSchemes0101
+     * @tc.desc   test SUB_OH_ArkWeb_RegisterCustomSchemes0101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebRegisterCustomSchemes0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -562,12 +562,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebServiceWorker_ClearSchemeHandlers0100
-     * @tc.name    : testArkWebServiceWorkerClearSchemeHandlers0100
-     * @tc.desc    : test SUB_OH_ArkWebServiceWorker_ClearSchemeHandlers0100
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebServiceWorkerClearSchemeHandlers0100
+     * @tc.number SUB_OH_ArkWebServiceWorker_ClearSchemeHandlers0100
+     * @tc.desc   test SUB_OH_ArkWebServiceWorker_ClearSchemeHandlers0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebServiceWorkerClearSchemeHandlers0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -583,12 +583,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWeb_ClearSchemeHandlers0100
-     * @tc.name    : testArkWebClearSchemeHandlers0100
-     * @tc.desc    : test SUB_OH_ArkWeb_ClearSchemeHandlers0100
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebClearSchemeHandlers0100
+     * @tc.number SUB_OH_ArkWeb_ClearSchemeHandlers0100
+     * @tc.desc   test SUB_OH_ArkWeb_ClearSchemeHandlers0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebClearSchemeHandlers0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -604,12 +604,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWeb_ClearSchemeHandlers0101
-     * @tc.name    : testArkWebClearSchemeHandlers0101
-     * @tc.desc    : test SUB_OH_ArkWeb_ClearSchemeHandlers0101
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebClearSchemeHandlers0101
+     * @tc.number SUB_OH_ArkWeb_ClearSchemeHandlers0101
+     * @tc.desc   test SUB_OH_ArkWeb_ClearSchemeHandlers0101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebClearSchemeHandlers0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -625,12 +625,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebSchemeHandler_SetUserData0100
-     * @tc.name    : testArkWebSchemeHandlerSetUserData0100
-     * @tc.desc    : test SUB_OH_ArkWebSchemeHandler_SetUserData0100
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSchemeHandlerSetUserData0100
+     * @tc.number SUB_OH_ArkWebSchemeHandler_SetUserData0100
+     * @tc.desc   test SUB_OH_ArkWebSchemeHandler_SetUserData0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSchemeHandlerSetUserData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -646,12 +646,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebSchemeHandler_SetUserData0101
-     * @tc.name    : testArkWebSchemeHandlerSetUserData0101
-     * @tc.desc    : test SUB_OH_ArkWebSchemeHandler_SetUserData0101
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSchemeHandlerSetUserData0101
+     * @tc.number SUB_OH_ArkWebSchemeHandler_SetUserData0101
+     * @tc.desc   test SUB_OH_ArkWebSchemeHandler_SetUserData0101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSchemeHandlerSetUserData0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -667,12 +667,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebSchemeHandler_SetOnRequestStart0100
-     * @tc.name    : testArkWebSchemeHandlerSetOnRequestStart0100
-     * @tc.desc    : test ARKWEB_NATIVE_JAVASCRIPT_VALUE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSchemeHandlerSetOnRequestStart0100
+     * @tc.number SUB_OH_ArkWebSchemeHandler_SetOnRequestStart0100
+     * @tc.desc   test ARKWEB_NATIVE_JAVASCRIPT_VALUE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSchemeHandlerSetOnRequestStart0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -688,12 +688,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebSchemeHandler_SetOnRequestStart0101
-     * @tc.name    : testArkWebSchemeHandlerSetOnRequestStart0101
-     * @tc.desc    : test ARKWEB_NATIVE_JAVASCRIPT_VALUE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSchemeHandlerSetOnRequestStart0101
+     * @tc.number SUB_OH_ArkWebSchemeHandler_SetOnRequestStart0101
+     * @tc.desc   test ARKWEB_NATIVE_JAVASCRIPT_VALUE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSchemeHandlerSetOnRequestStart0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -709,12 +709,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebSchemeHandler_SetOnRequestStop0100
-     * @tc.name    : testArkWebSchemeHandlerSetOnRequestStop0100
-     * @tc.desc    : test ARKWEB_NATIVE_JAVASCRIPT_VALUE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSchemeHandlerSetOnRequestStop0100
+     * @tc.number SUB_OH_ArkWebSchemeHandler_SetOnRequestStop0100
+     * @tc.desc   test ARKWEB_NATIVE_JAVASCRIPT_VALUE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSchemeHandlerSetOnRequestStop0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -730,12 +730,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebSchemeHandler_SetOnRequestStop0101
-     * @tc.name    : testArkWebSchemeHandlerSetOnRequestStop0101
-     * @tc.desc    : test ARKWEB_NATIVE_JAVASCRIPT_VALUE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebSchemeHandlerSetOnRequestStop0101
+     * @tc.number SUB_OH_ArkWebSchemeHandler_SetOnRequestStop0101
+     * @tc.desc   test ARKWEB_NATIVE_JAVASCRIPT_VALUE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebSchemeHandlerSetOnRequestStop0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -751,12 +751,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResponse_SetUrl0100
-     * @tc.name    : testArkWebResponseSetUrl0100
-     * @tc.desc    : test ARKWEB_NATIVE_JAVASCRIPT_VALUE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResponseSetUrl0100
+     * @tc.number SUB_OH_ArkWebResponse_SetUrl0100
+     * @tc.desc   test ARKWEB_NATIVE_JAVASCRIPT_VALUE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseSetUrl0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -772,12 +772,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResponse_SetUrl0101
-     * @tc.name    : testArkWebResponseSetUrl0101
-     * @tc.desc    : test ARKWEB_NATIVE_JAVASCRIPT_VALUE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResponseSetUrl0101
+     * @tc.number SUB_OH_ArkWebResponse_SetUrl0101
+     * @tc.desc   test ARKWEB_NATIVE_JAVASCRIPT_VALUE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseSetUrl0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -793,12 +793,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResponse_SetError0100
-     * @tc.name    : testArkWebResponseSetError0100
-     * @tc.desc    : test SUB_OH_ArkWebResponse_SetError0100
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResponseSetError0100
+     * @tc.number SUB_OH_ArkWebResponse_SetError0100
+     * @tc.desc   test SUB_OH_ArkWebResponse_SetError0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseSetError0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -814,12 +814,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResponse_SetStatus0100
-     * @tc.name    : testArkWebResponseSetStatus0100
-     * @tc.desc    : test SUB_OH_ArkWebResponse_SetStatus0100
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResponseSetStatus0100
+     * @tc.number SUB_OH_ArkWebResponse_SetStatus0100
+     * @tc.desc   test SUB_OH_ArkWebResponse_SetStatus0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseSetStatus0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -835,12 +835,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResponse_SetStatus0101
-     * @tc.name    : testArkWebResponseSetStatus0101
-     * @tc.desc    : test SUB_OH_ArkWebResponse_SetStatus0101
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResponseSetStatus0101
+     * @tc.number SUB_OH_ArkWebResponse_SetStatus0101
+     * @tc.desc   test SUB_OH_ArkWebResponse_SetStatus0101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseSetStatus0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -856,12 +856,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResponse_SetStatusText0100
-     * @tc.name    : testArkWebResponseSetStatusText0100
-     * @tc.desc    : test SUB_OH_ArkWebResponse_SetStatusText0100
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResponseSetStatusText0100
+     * @tc.number SUB_OH_ArkWebResponse_SetStatusText0100
+     * @tc.desc   test SUB_OH_ArkWebResponse_SetStatusText0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseSetStatusText0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -877,12 +877,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResponse_SetStatusText0101
-     * @tc.name    : testArkWebResponseSetStatusText0101
-     * @tc.desc    : test SUB_OH_ArkWebResponse_SetStatusText0101
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResponseSetStatusText0101
+     * @tc.number SUB_OH_ArkWebResponse_SetStatusText0101
+     * @tc.desc   test SUB_OH_ArkWebResponse_SetStatusText0101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseSetStatusText0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -898,12 +898,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResponse_SetMimeType0100
-     * @tc.name    : testArkWebResponseSetMimeType0100
-     * @tc.desc    : test SUB_OH_ArkWebResponse_SetMimeType0100
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResponseSetMimeType0100
+     * @tc.number SUB_OH_ArkWebResponse_SetMimeType0100
+     * @tc.desc   test SUB_OH_ArkWebResponse_SetMimeType0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseSetMimeType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -919,12 +919,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResponse_SetMimeType0101
-     * @tc.name    : testArkWebResponseSetMimeType0101
-     * @tc.desc    : test SUB_OH_ArkWebResponse_SetMimeType0101
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResponseSetMimeType0101
+     * @tc.number SUB_OH_ArkWebResponse_SetMimeType0101
+     * @tc.desc   test SUB_OH_ArkWebResponse_SetMimeType0101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseSetMimeType0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -940,12 +940,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResponse_SetCharset0100
-     * @tc.name    : testArkWebResponseSetCharset0100
-     * @tc.desc    : test SUB_OH_ArkWebResponse_SetCharset0100
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResponseSetCharset0100
+     * @tc.number SUB_OH_ArkWebResponse_SetCharset0100
+     * @tc.desc   test SUB_OH_ArkWebResponse_SetCharset0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseSetCharset0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -961,12 +961,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResponse_SetCharset0101
-     * @tc.name    : testArkWebResponseSetCharset0101
-     * @tc.desc    : test SUB_OH_ArkWebResponse_SetCharset0101
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResponseSetCharset0101
+     * @tc.number SUB_OH_ArkWebResponse_SetCharset0101
+     * @tc.desc   test SUB_OH_ArkWebResponse_SetCharset0101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseSetCharset0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -982,12 +982,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResponse_SetHeaderByName0100
-     * @tc.name    : testArkWebResponseSetHeaderByName0100
-     * @tc.desc    : test SUB_OH_ArkWebResponse_SetHeaderByName0100
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResponseSetHeaderByName0100
+     * @tc.number SUB_OH_ArkWebResponse_SetHeaderByName0100
+     * @tc.desc   test SUB_OH_ArkWebResponse_SetHeaderByName0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseSetHeaderByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1003,12 +1003,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResponse_SetHeaderByName0101
-     * @tc.name    : testArkWebResponseSetHeaderByName0101
-     * @tc.desc    : test SUB_OH_ArkWebResponse_SetHeaderByName0101
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResponseSetHeaderByName0101
+     * @tc.number SUB_OH_ArkWebResponse_SetHeaderByName0101
+     * @tc.desc   test SUB_OH_ArkWebResponse_SetHeaderByName0101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResponseSetHeaderByName0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1024,12 +1024,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResourceHandler_Destroy0100
-     * @tc.name    : testArkWebResourceHandlerDestroy0100
-     * @tc.desc    : test SUB_OH_ArkWebResourceHandler_Destroy0100
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResourceHandlerDestroy0100
+     * @tc.number SUB_OH_ArkWebResourceHandler_Destroy0100
+     * @tc.desc   test SUB_OH_ArkWebResourceHandler_Destroy0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResourceHandlerDestroy0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1045,12 +1045,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResourceHandler_DidReceiveResponse0100
-     * @tc.name    : testArkWebResourceHandlerDidReceiveResponse0100
-     * @tc.desc    : test SUB_OH_ArkWebResourceHandler_DidReceiveResponse0100
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResourceHandlerDidReceiveResponse0100
+     * @tc.number SUB_OH_ArkWebResourceHandler_DidReceiveResponse0100
+     * @tc.desc   test SUB_OH_ArkWebResourceHandler_DidReceiveResponse0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResourceHandlerDidReceiveResponse0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1066,12 +1066,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResourceHandler_DidReceiveData0100
-     * @tc.name    : testArkWebResourceHandlerDidReceiveData0100
-     * @tc.desc    : test SUB_OH_ArkWebResourceHandler_DidReceiveData0100
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResourceHandlerDidReceiveData0100
+     * @tc.number SUB_OH_ArkWebResourceHandler_DidReceiveData0100
+     * @tc.desc   test SUB_OH_ArkWebResourceHandler_DidReceiveData0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResourceHandlerDidReceiveData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1087,12 +1087,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResourceHandler_DidFinish0100
-     * @tc.name    : testArkWebResourceHandlerDidFinish0100
-     * @tc.desc    : test SUB_OH_ArkWebResourceHandler_DidFinish0100
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResourceHandlerDidFinish0100
+     * @tc.number SUB_OH_ArkWebResourceHandler_DidFinish0100
+     * @tc.desc   test SUB_OH_ArkWebResourceHandler_DidFinish0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResourceHandlerDidFinish0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1108,12 +1108,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResourceHandler_DidFailWithError0100
-     * @tc.name    : testArkWebResourceHandlerDidFailWithError0100
-     * @tc.desc    : test SUB_OH_ArkWebResourceHandler_DidFinish0100
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResourceHandlerDidFailWithError0100
+     * @tc.number SUB_OH_ArkWebResourceHandler_DidFailWithError0100
+     * @tc.desc   test SUB_OH_ArkWebResourceHandler_DidFinish0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResourceHandlerDidFailWithError0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1129,12 +1129,12 @@ export default function ActsWebErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_ArkWebResourceHandler_DidFailWithErrorV20100
-     * @tc.name    : testArkWebResourceHandlerDidFailWithErrorV20100
-     * @tc.desc    : test SUB_OH_ArkWebResourceHandler_DidFinish0100
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkWebResourceHandlerDidFailWithErrorV20100
+     * @tc.number SUB_OH_ArkWebResourceHandler_DidFailWithErrorV20100
+     * @tc.desc   test SUB_OH_ArkWebResourceHandler_DidFinish0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkWebResourceHandlerDidFailWithErrorV20100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

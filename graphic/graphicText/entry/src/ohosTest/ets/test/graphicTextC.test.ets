@@ -26,14 +26,14 @@ export default function graphicTextCTest() {
     })
     
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_065
-     * @tc.name      : testGetSystemFontFullNamesByType
-     * @tc.desc      : Returns the names of all fonts corresponding to the font type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetSystemFontFullNamesByType
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_065
+     * @tc.desc   Returns the names of all fonts corresponding to the font type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testGetSystemFontFullNamesByType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetSystemFontFullNamesByType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = "====testGetSystemFontFullNamesByType===="
       console.info(msg + ' begin ');
@@ -59,14 +59,14 @@ export default function graphicTextCTest() {
     })
     
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_066
-     * @tc.name      : testGetFontDescriptorByFullName
-     * @tc.desc      : Obtain the corresponding font descriptor based on the font name and font type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetFontDescriptorByFullName
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_066
+     * @tc.desc   Obtain the corresponding font descriptor based on the font name and font type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testGetFontDescriptorByFullName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testGetFontDescriptorByFullName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testGetFontDescriptorByFullName===="
       console.info(msg + ' begin ');
       try{
@@ -91,14 +91,14 @@ export default function graphicTextCTest() {
     })
     
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_067
-     * @tc.name      : testMatchFontDescriptors
-     * @tc.desc      : Returns all system font descriptors that meet requirements based on the specified font descriptor
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMatchFontDescriptors
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_067
+     * @tc.desc   Returns all system font descriptors that meet requirements based on the specified font descriptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testMatchFontDescriptors', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testMatchFontDescriptors', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testMatchFontDescriptors===="
       console.info(msg + ' begin ');
       try{
@@ -123,14 +123,14 @@ export default function graphicTextCTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_068
-     * @tc.name      : testWordBreak
-     * @tc.desc      : Enumeration of the word breaking policy.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWordBreak
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_068
+     * @tc.desc   Enumeration of the word breaking policy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testWordBreak', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function)=> {
+    it('testWordBreak', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testWordBreak===="
       console.info(msg + ' begin ');
       try {
@@ -146,14 +146,14 @@ export default function graphicTextCTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_069
-     * @tc.name      : testWordBreak_write
-     * @tc.desc      : Enumeration of the word breaking policy.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWordBreak_write
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_069
+     * @tc.desc   Enumeration of the word breaking policy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testWordBreak_write', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function)=> {
+    it('testWordBreak_write', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "testWordBreak_write"
       console.info(msg + 'begin');
       let decoration : text.Decoration = {
@@ -217,14 +217,14 @@ export default function graphicTextCTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_070
-     * @tc.name      : testSystemFontType
-     * @tc.desc      : Enumeration of font types, which can be combined through bit or operation.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSystemFontType
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_070
+     * @tc.desc   Enumeration of font types, which can be combined through bit or operation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testSystemFontType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done:Function)=> {
+    it('testSystemFontType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done:Function)=> {
       let msg = "====testSystemFontType===="
       console.info(msg + ' begin ');
       try {
@@ -249,14 +249,14 @@ export default function graphicTextCTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_071
-     * @tc.name      : testStrutStyle
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testStrutStyle
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_071
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testStrutStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function)=> {
+    it('testStrutStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testStrutStyle===="
       console.info(msg + ' begin');
       let myTextShadow: text.TextShadow = {
@@ -358,14 +358,14 @@ export default function graphicTextCTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_072
-     * @tc.name      : testFontDescriptor
-     * @tc.desc      : To test interface matchFontDescriptors of text.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testFontDescriptor
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_072
+     * @tc.desc   To test interface matchFontDescriptors of text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testFontDescriptor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testFontDescriptor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msg = "====testFontDescriptor===="
       console.info(msg + ' begin');
       try {
@@ -398,14 +398,14 @@ export default function graphicTextCTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_073
-     * @tc.name      : testParagraphLayoutErrorCode
-     * @tc.desc      : Perform typesetting and calculate the position of all glyphs
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testParagraphLayoutErrorCode
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_073
+     * @tc.desc   Perform typesetting and calculate the position of all glyphs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testParagraphLayoutErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function)=> {
+    it('testParagraphLayoutErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testParagraphLayoutErrorCode===="
       console.info(msg + ' begin');
       let myTextShadow: text.TextShadow = {
@@ -523,14 +523,14 @@ export default function graphicTextCTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_074
-     * @tc.name      : testGetLineBreakErrorCode
-     * @tc.desc      : Perform typesetting and calculate the position of all glyphs
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetLineBreakErrorCode
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_074
+     * @tc.desc   Perform typesetting and calculate the position of all glyphs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testGetLineBreakErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function)=> {
+    it('testGetLineBreakErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testGetLineBreakErrorCode===="
       console.info(msg + ' begin');
       let myTextShadow: text.TextShadow = {
@@ -650,14 +650,14 @@ export default function graphicTextCTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_075
-     * @tc.name      : testCreateLineErrorCode
-     * @tc.desc      : Perform typesetting and calculate the position of all glyphs
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testCreateLineErrorCode
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_075
+     * @tc.desc   Perform typesetting and calculate the position of all glyphs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testCreateLineErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function)=> {
+    it('testCreateLineErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testCreateLineErrorCode===="
       console.info(msg + ' begin');
       let myTextShadow: text.TextShadow = {

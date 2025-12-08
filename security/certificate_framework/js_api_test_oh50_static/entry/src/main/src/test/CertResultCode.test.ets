@@ -58,12 +58,12 @@ export default function certFrameworkResultCodeTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_0100
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_0100
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_0100
-     * @tc.desc The X509 Cert Format is PEM
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The X509 Cert Format is PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_0100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -84,12 +84,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_0200
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_0200
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_0200
-     * @tc.desc The X509 Cert Format is PEM
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The X509 Cert Format is PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_0200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -110,12 +110,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_0300
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_0300
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_0300
-     * @tc.desc The X509 Cert Format is PEM
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The X509 Cert Format is PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_0300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -147,12 +147,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_0400
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_0400
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_0400
-     * @tc.desc The X509 Cert Format is PEM
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The X509 Cert Format is PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_0400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -179,12 +179,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_0700
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_0700
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_0700
-     * @tc.desc The X509 CRL Format is PEM
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The X509 CRL Format is PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_0700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -212,12 +212,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_1300
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_1300
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_1300
-     * @tc.desc The X509 Cert Format is PEM
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The X509 Cert Format is PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_1300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -237,12 +237,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_1400
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_1400
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_1400
-     * @tc.desc The X509 Cert Format is PEM, return ERR_CRYPTO_OPERATION
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The X509 Cert Format is PEM, return ERR_CRYPTO_OPERATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_1400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -263,12 +263,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_1600
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_1600
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_1600
-     * @tc.desc The X509 Cert Format is PEM, return ERR_CRYPTO_OPERATION
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The X509 Cert Format is PEM, return ERR_CRYPTO_OPERATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_1600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -289,12 +289,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_1800
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_1800
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_1800
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_1800",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -314,12 +314,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_1900
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_1900
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_1900
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_1900",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -339,12 +339,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_2000
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_2000
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_2000
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_2000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -364,12 +364,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_2100
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_2100
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_2100
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_2100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -396,12 +396,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_2200
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_2200
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_2200
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_2200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -421,12 +421,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_2300
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_2300
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_2300
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_2300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -445,12 +445,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_2400
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_2400
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_2400
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_2400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -470,12 +470,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_2500
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_2500
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_2500
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_2500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -495,12 +495,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_2600
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_2600
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_2600
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_2600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -520,12 +520,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_2700
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_2700
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_2700
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_2700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -545,12 +545,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_2800
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_2800
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_2800
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_2800",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -570,12 +570,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_3000
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3000
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3000
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_3000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -595,12 +595,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_3100
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3100
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3100
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_3100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -620,12 +620,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_3200
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3200
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3200
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_3200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -645,12 +645,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_3300
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3300
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3300
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_3300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -671,12 +671,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_3400
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3400
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3400
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_3400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -696,12 +696,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_3500
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3500
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3500
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_3500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -722,12 +722,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_3600
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3600
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3600
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_3600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -764,12 +764,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_3700
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3700
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3700
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_3700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -801,12 +801,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_3800
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3800
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3800
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_3800",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -820,12 +820,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_3900
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_3900
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_3900
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_3900",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -845,12 +845,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_4000
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_4000
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_4000
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_4000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -871,12 +871,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_4100
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_4100
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_4100
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_4100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -897,12 +897,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_4200
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_4200
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_4200
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_4200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -941,12 +941,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_5100
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_5100
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_5100
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_5100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -967,12 +967,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_5200
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_5200
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_5200
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_5200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -993,12 +993,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_5500
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_5500
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_5500
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_5500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1018,12 +1018,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_5600
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_5600
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_5600
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_5600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1043,12 +1043,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_5700
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_5700
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_5700
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_5700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1069,12 +1069,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_5800
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_5800
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_5800
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_5800",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1095,12 +1095,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_6900
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_6900
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_6900
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_6900",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1120,12 +1120,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_7000
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_7000
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_7000
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_7000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1145,12 +1145,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_7300
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_7300
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_7300
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_7300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1171,12 +1171,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_7500
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_7500
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_7500
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_7500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1201,12 +1201,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_7900
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_7900
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_7900
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_7900",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1226,12 +1226,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_8200
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_8200
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_8200
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_8200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1251,12 +1251,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_8300
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_8300
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_8300
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_8300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1277,12 +1277,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_8600
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_8600
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_8600
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_8600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1302,12 +1302,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_8700
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_8700
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_8700
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_8700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1336,12 +1336,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_8800
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_8800
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_8800
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_8800",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1372,12 +1372,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_8900
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_8900
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_8900
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_8900",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1405,12 +1405,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_9000
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_9000
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_9000
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_9000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1429,12 +1429,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_9100
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_9100
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_9100
-     * @tc.desc Use Promise Type
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_9100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1478,12 +1478,12 @@ export default function certFrameworkResultCodeTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_ErrorCode_Func_9200
      * @tc.number SUB_Security_Cert_Framework_ErrorCode_Func_9200
-     * @tc.name SUB_Security_Cert_Framework_ErrorCode_Func_9200
-     * @tc.desc The X509 CSR
-     * @tc.size Medium
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   The X509 CSR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_ErrorCode_Func_9200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {

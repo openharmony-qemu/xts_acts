@@ -47,14 +47,14 @@ export default function TextShaderStyleTest() {
       console.info("TextShaderStyleTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_TextShaderStyleTest_0010
-    * @tc.name         TextShaderStyleTest_0010
-    * @tc.desc         test Text shaderStyle: LinearGradientStyle
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   TextShaderStyleTest_0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_TextShaderStyleTest_0010
+     * @tc.desc   test Text shaderStyle: LinearGradientStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextShaderStyleTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[TextShaderStyleTest_0010] START');
       let strJson = getInspectorByKey('Text_linearGradientStyle');
@@ -68,14 +68,14 @@ export default function TextShaderStyleTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_TextShaderStyleTest_0020
-    * @tc.name         TextShaderStyleTest_0020
-    * @tc.desc         test Text shaderStyle: radialGradientStyle
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   TextShaderStyleTest_0020
+     * @tc.number SUB_ACE_BASIC_ETS_API_TextShaderStyleTest_0020
+     * @tc.desc   test Text shaderStyle: radialGradientStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextShaderStyleTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[TextShaderStyleTest_0020] START');
       let strJson = getInspectorByKey('Text_radialGradientStyle');

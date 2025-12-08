@@ -25,12 +25,12 @@ export default function inNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_IN_NTOHL_0100
-     * @tc.name       : testMuslInNtohl001
-     * @tc.desc       : test ntohl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslInNtohl001
+     * @tc.number SUB_THIRDPARTY_MUSL_IN_NTOHL_0100
+     * @tc.desc   test ntohl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInNtohl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = inndk.ntohl();
@@ -40,12 +40,12 @@ export default function inNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_IN_NTOHS_0100
-     * @tc.name       : testMuslInNtohs001
-     * @tc.desc       : test ntohs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslInNtohs001
+     * @tc.number SUB_THIRDPARTY_MUSL_IN_NTOHS_0100
+     * @tc.desc   test ntohs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInNtohs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = inndk.ntohs();
@@ -55,12 +55,12 @@ export default function inNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_IN_HTONL_0100
-     * @tc.name       : testMuslInHtonl001
-     * @tc.desc       : test htonl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslInHtonl001
+     * @tc.number SUB_THIRDPARTY_MUSL_IN_HTONL_0100
+     * @tc.desc   test htonl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInHtonl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = inndk.htonl();
@@ -69,12 +69,12 @@ export default function inNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_IN_HTONS_0100
-     * @tc.name       : testMuslInHtons001
-     * @tc.desc       : test htons
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslInHtons001
+     * @tc.number SUB_THIRDPARTY_MUSL_IN_HTONS_0100
+     * @tc.desc   test htons
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInHtons001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = inndk.htons();
@@ -84,12 +84,12 @@ export default function inNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_IN6ADDR_ANY_0100
-     * @tc.name       : testMuslIn6addrAny001
-     * @tc.desc       : test __in6addr_any
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslIn6addrAny001
+     * @tc.number SUB_THIRDPARTY_MUSL_IN6ADDR_ANY_0100
+     * @tc.desc   test __in6addr_any
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslIn6addrAny001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = inndk.in6addrAny();
@@ -99,12 +99,12 @@ export default function inNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_IN6ADDR_LOOPBACK_0100
-     * @tc.name       : testMuslIn6addrLoopback001
-     * @tc.desc       : test __in6addr_loopback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslIn6addrLoopback001
+     * @tc.number SUB_THIRDPARTY_MUSL_IN6ADDR_LOOPBACK_0100
+     * @tc.desc   test __in6addr_loopback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslIn6addrLoopback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = inndk.in6addrLoopback();

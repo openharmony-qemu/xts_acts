@@ -22,12 +22,12 @@ const OS_ACCOUNT_ERR_INVALID_PARAMETER = 12300002;
 export default function SnapshotOptionsSetScaleTest() {
   describe('SnapshotOptionsSetScaleTest', () => {
     /**
-     * @tc.number  : SUB_ArkUI_ACE_SnapshotOptionsSetScaleTest_0100
-     * @tc.name    : testArkUIACESnapshotOptionsSetScaleTest0100
-     * @tc.desc    : testing OH_ArkUI_SnapshotOptions_SetScale interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACESnapshotOptionsSetScaleTest0100
+     * @tc.number SUB_ArkUI_ACE_SnapshotOptionsSetScaleTest_0100
+     * @tc.desc   testing OH_ArkUI_SnapshotOptions_SetScale interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACESnapshotOptionsSetScaleTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -44,12 +44,12 @@ export default function SnapshotOptionsSetScaleTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_SnapshotOptionsSetScaleTest_0200
-     * @tc.name    : testArkUIACESnapshotOptionsSetScaleTest0200
-     * @tc.desc    : testing OH_ArkUI_SnapshotOptions_SetScale interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACESnapshotOptionsSetScaleTest0200
+     * @tc.number SUB_ArkUI_ACE_SnapshotOptionsSetScaleTest_0200
+     * @tc.desc   testing OH_ArkUI_SnapshotOptions_SetScale interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACESnapshotOptionsSetScaleTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

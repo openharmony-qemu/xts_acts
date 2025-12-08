@@ -55,17 +55,18 @@ export default function onChildTouchTest() {
       done();
     });
     /**
+     * @tc.name   onChildTouchTest_0100
      * @tc.number onChildTouch
-     * @tc.name onChildTouchTest_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onChildTouchTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('onChildTouchTest_0100 START');
+      await CommonFunc.sleep(1000);
       let driver = await Driver.create()
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('onChild_list'));
       await button.click();
       await CommonFunc.sleep(1000);

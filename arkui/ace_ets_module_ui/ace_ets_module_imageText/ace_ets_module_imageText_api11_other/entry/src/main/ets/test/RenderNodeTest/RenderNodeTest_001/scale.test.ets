@@ -41,12 +41,12 @@ export default function scale() {
     });
 
     /**
-     * @tc.number    SUB_ACE_scale_0100
-     * @tc.name      scale_0100
-     * @tc.desc      getScale api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   scale_0100
+     * @tc.number SUB_ACE_scale_0100
+     * @tc.desc   getScale api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('scale_0100', Level.LEVEL2, async (done: Function) => {
       console.info('scale_0100 START');
@@ -65,12 +65,12 @@ export default function scale() {
     });
     
     /**
-     * @tc.number    SUB_ACE_scale_0200
-     * @tc.name      scale_0200
-     * @tc.desc      setscale api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   scale_0200
+     * @tc.number SUB_ACE_scale_0200
+     * @tc.desc   setscale api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('scale_0200', Level.LEVEL2, async (done: Function) => {
       console.info('scale_0200 START');

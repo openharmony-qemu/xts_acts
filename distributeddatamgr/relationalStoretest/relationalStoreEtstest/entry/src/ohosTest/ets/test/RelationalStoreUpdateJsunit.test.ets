@@ -51,12 +51,12 @@ export default function relationalStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdate0001
+         * @tc.name   testRdbStoreUpdate0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateEtsAPITest_0100
-         * @tc.desc resultSet Update test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdate0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreUpdate0001 start *************");
@@ -123,12 +123,12 @@ export default function relationalStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdate0002
+         * @tc.name   testRdbStoreUpdate0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateEtsAPITest_0200
-         * @tc.desc resultSet Update test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdate0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
             console.info(TAG + "************* testRdbStoreUpdate0002 start *************");
@@ -177,12 +177,12 @@ export default function relationalStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdate0003
+         * @tc.name   testRdbStoreUpdate0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateEtsAPITest_0300
-         * @tc.desc resultSet Update test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdate0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreUpdate0003 start *************");
@@ -224,12 +224,12 @@ export default function relationalStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdate0004
+         * @tc.name   testRdbStoreUpdate0004
          * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateEtsAPITest_0400
-         * @tc.desc resultSet Update test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdate0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info(TAG + "************* testRdbStoreUpdate0004 start *************");
@@ -271,12 +271,12 @@ export default function relationalStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdateWithConflictResolution0001
+         * @tc.name   testRdbStoreUpdateWithConflictResolution0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateEtsAPITest_0500
-         * @tc.desc resultSet Update test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdateWithConflictResolution0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testRdbStoreUpdateWithConflictResolution0001 start *************");
@@ -370,12 +370,12 @@ export default function relationalStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdateWithConflictResolution0002
+         * @tc.name   testRdbStoreUpdateWithConflictResolution0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateEtsAPITest_0600
-         * @tc.desc resultSet Update test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdateWithConflictResolution0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testRdbStoreUpdateWithConflictResolution0002 start *************");
@@ -468,12 +468,12 @@ export default function relationalStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdateWithConflictResolution0003
+         * @tc.name   testRdbStoreUpdateWithConflictResolution0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateEtsAPITest_0700
-         * @tc.desc resultSet Update test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdateWithConflictResolution0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testRdbStoreUpdateWithConflictResolution0003 start *************");
@@ -566,12 +566,12 @@ export default function relationalStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdateWithConflictResolution0004
+         * @tc.name   testRdbStoreUpdateWithConflictResolution0004
          * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateEtsAPITest_0800
-         * @tc.desc resultSet Update test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdateWithConflictResolution0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testRdbStoreUpdateWithConflictResolution0004 start *************");
@@ -664,12 +664,12 @@ export default function relationalStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdateWithConflictResolution0005
+         * @tc.name   testRdbStoreUpdateWithConflictResolution0005
          * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateEtsAPITest_0900
-         * @tc.desc resultSet Update test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdateWithConflictResolution0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testRdbStoreUpdateWithConflictResolution0005 start *************");
@@ -762,12 +762,12 @@ export default function relationalStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdateWithConflictResolution0006
+         * @tc.name   testRdbStoreUpdateWithConflictResolution0006
          * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateEtsAPITest_1000
-         * @tc.desc resultSet Update test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdateWithConflictResolution0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testRdbStoreUpdateWithConflictResolution0006 start *************");
@@ -843,12 +843,12 @@ export default function relationalStoreUpdateTest() {
 
 
         /**
-         * @tc.name testRdbStoreUpdateWithConflictResolution0007
+         * @tc.name   testRdbStoreUpdateWithConflictResolution0007
          * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateEtsAPITest_1100
-         * @tc.desc resultSet Update test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdateWithConflictResolution0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testRdbStoreUpdateWithConflictResolution0007 start *************");
@@ -942,12 +942,12 @@ export default function relationalStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdateWithConflictResolution0008
+         * @tc.name   testRdbStoreUpdateWithConflictResolution0008
          * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateEtsAPITest_1200
-         * @tc.desc resultSet Update test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdateWithConflictResolution0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testRdbStoreUpdateWithConflictResolution0008 start *************");
@@ -1022,12 +1022,12 @@ export default function relationalStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdateWithConflictResolution0009
+         * @tc.name   testRdbStoreUpdateWithConflictResolution0009
          * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateEtsAPITest_1300
-         * @tc.desc resultSet Update test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdateWithConflictResolution0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testRdbStoreUpdateWithConflictResolution0009 start *************");
@@ -1121,12 +1121,12 @@ export default function relationalStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdateWithConflictResolution0010
+         * @tc.name   testRdbStoreUpdateWithConflictResolution0010
          * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateEtsAPITest_1400
-         * @tc.desc resultSet Update test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdateWithConflictResolution0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testRdbStoreUpdateWithConflictResolution0010 start *************");
@@ -1201,12 +1201,12 @@ export default function relationalStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdateWithConflictResolution0011
+         * @tc.name   testRdbStoreUpdateWithConflictResolution0011
          * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateEtsAPITest_1500
-         * @tc.desc resultSet Update test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdateWithConflictResolution0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testRdbStoreUpdateWithConflictResolution0011 start *************");
@@ -1300,12 +1300,12 @@ export default function relationalStoreUpdateTest() {
         })
 
         /**
-         * @tc.name testRdbStoreUpdateWithConflictResolution0012
+         * @tc.name   testRdbStoreUpdateWithConflictResolution0012
          * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateEtsAPITest_1600
-         * @tc.desc resultSet Update test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdateWithConflictResolution0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testRdbStoreUpdateWithConflictResolution0012 start *************");
@@ -1382,12 +1382,12 @@ export default function relationalStoreUpdateTest() {
 
 
         /**
-         * @tc.name testRdbStoreUpdateWithConflictResolution0013
+         * @tc.name   testRdbStoreUpdateWithConflictResolution0013
          * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateEtsAPITest_1700
-         * @tc.desc resultSet Update test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   resultSet Update test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreUpdateWithConflictResolution0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* testRdbStoreUpdateWithConflictResolution0013 start *************");

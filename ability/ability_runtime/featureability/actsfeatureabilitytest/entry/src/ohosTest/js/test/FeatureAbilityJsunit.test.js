@@ -115,9 +115,12 @@ describe('ActsFeatureAbilityTest', function () {
     }, 500);
 });
     /**
-     * @tc.number: ACTS_wantConstant_0100
-     * @tc.name: ACTS_wantConstant_0100
-     * @tc.desc: wantConstant : Check specific enum
+     * @tc.name   ACTS_wantConstant_0100
+     * @tc.number ACTS_wantConstant_0100
+     * @tc.desc   wantConstant : Check specific enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_wantConstant_0100', Level.LEVEL0, async function (done) {
         expect(wantconstant.Action.ACTION_HOME).assertEqual("ohos.want.action.home");
@@ -156,9 +159,12 @@ describe('ActsFeatureAbilityTest', function () {
 
 
     /**
-     * @tc.number: ACTS_wantConstant_0200
-     * @tc.name: ACTS_wantConstant_0200
-     * @tc.desc: wantConstant : Check specific enum (by Promise)
+     * @tc.name   ACTS_wantConstant_0200
+     * @tc.number ACTS_wantConstant_0200
+     * @tc.desc   wantConstant : Check specific enum (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_wantConstant_0200', Level.LEVEL0, async function (done) {
         expect(wantConstantNew.Action.ACTION_HOME).assertEqual("ohos.want.action.home");
@@ -197,9 +203,12 @@ describe('ActsFeatureAbilityTest', function () {
     })
 
     /**
-     * @tc.number: ACTS_GetContext_0100
-     * @tc.name: GetContext : Obtains the Context object
-     * @tc.desc: Check the return value of the interface (by Promise)
+     * @tc.name   ACTS_GetContext_0100
+     * @tc.number ACTS_GetContext_0100
+     * @tc.desc   Check the return value of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetContext_0100', Level.LEVEL0, async function (done) {
         let promise = await featureAbility.getContext()
@@ -208,9 +217,12 @@ describe('ActsFeatureAbilityTest', function () {
     })
 
     /**
-     * @tc.number: ACTS_HasWindowFocus_0100
-     * @tc.name: ACTS_HasWindowFocus_0100
-     * @tc.desc: HasWindowFocus : Checks whether the main window of this ability has window focus (by Promise)
+     * @tc.name   ACTS_HasWindowFocus_0100
+     * @tc.number ACTS_HasWindowFocus_0100
+     * @tc.desc   HasWindowFocus : Checks whether the main window of this ability has window focus (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_HasWindowFocus_0100', Level.LEVEL0, async function (done) {
         let info = await featureAbility.hasWindowFocus();
@@ -220,9 +232,12 @@ describe('ActsFeatureAbilityTest', function () {
     })
 
     /**
-     * @tc.number: ACTS_HasWindowFocus_0300
-     * @tc.name: ACTS_HasWindowFocus_0300
-     * @tc.desc: HasWindowFocus : Checks whether the main window of this ability has window focus
+     * @tc.name   ACTS_HasWindowFocus_0300
+     * @tc.number ACTS_HasWindowFocus_0300
+     * @tc.desc   HasWindowFocus : Checks whether the main window of this ability has window focus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_HasWindowFocus_0300', Level.LEVEL0, async function (done) {
         let result = featureAbility.hasWindowFocus(
@@ -235,11 +250,13 @@ describe('ActsFeatureAbilityTest', function () {
         console.info('AceApplication : hasWindowFocus : ' + result);
     })
 
-   /**
-     * @tc.number  ACTS_StartAbility_1000
-     * @tc.name    ACTS_StartAbility_1000
-     * @tc.desc    The configured URI is started and the page is not configured
-     * @tc.level   0
+    /**
+     * @tc.name   ACTS_StartAbility_1000
+     * @tc.number ACTS_StartAbility_1000
+     * @tc.desc   The configured URI is started and the page is not configured
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_StartAbility_1000", Level.LEVEL0, async function(done){
         console.info("------------------logMessage ACTS_StartAbility_1000-------------------");
@@ -294,9 +311,12 @@ describe('ActsFeatureAbilityTest', function () {
     })
 
     /**
-     * @tc.number: ACTS_StartAbility_0100
-     * @tc.name: ACTS_StartAbility_0100
-     * @tc.desc: StartAbility : A Page or Service ability uses this method to start a specific ability.(by Promise)
+     * @tc.name   ACTS_StartAbility_0100
+     * @tc.number ACTS_StartAbility_0100
+     * @tc.desc   StartAbility : A Page or Service ability uses this method to start a specific ability.(by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StartAbility_0100', Level.LEVEL0, async function (done) {
         let Subscriber;
@@ -305,15 +325,17 @@ describe('ActsFeatureAbilityTest', function () {
         function SubscribeCallBack(err, data) {
             clearTimeout(id);
             expect(data.event).assertEqual("ACTS_StartAbility_0100_CommonEvent");
-            featureAbility.hasWindowFocus().then((data)=>{
-              try{expect(data).assertFalse()}catch{};
-              console.info("====>Subscribe CallBack data:====>" + JSON.stringify(data));
-              commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
-              done();
-            }).catch((err)=>{
-              console.info("====>ACTS_StartAbility_0100 hasWindowFocus fail :====>" + JSON.stringify(err));
-              expect(true).assertEqual(false);
-            })
+            setTimeout(()=>{
+                featureAbility.hasWindowFocus().then((data)=>{
+                    try{expect(data).assertFalse()}catch{};
+                    console.info("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+                    commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
+                    done();
+                  }).catch((err)=>{
+                    console.info("====>ACTS_StartAbility_0100 hasWindowFocus fail :====>" + JSON.stringify(err));
+                    expect(true).assertEqual(false);
+                  })
+            }, 300)
         }
 
         commonEvent.createSubscriber(subscriberInfoActsStartAbility0100).then(async (data) => {
@@ -324,7 +346,9 @@ describe('ActsFeatureAbilityTest', function () {
 
         function UnSubscribeCallback() {
             console.info("====>UnSubscribe CallBack====>");
-            done();
+            setTimeout(()=>{
+                done();
+            }, 1000)
         }
 
         function timeout() {
@@ -382,9 +406,12 @@ describe('ActsFeatureAbilityTest', function () {
     })
 
     /**
-     * @tc.number: ACTS_StartAbility_0201
-     * @tc.name: ACTS_StartAbility_0201
-     * @tc.desc: StartAbility : A Page or Service ability uses this method to start a specific ability.
+     * @tc.name   ACTS_StartAbility_0201
+     * @tc.number ACTS_StartAbility_0201
+     * @tc.desc   StartAbility : A Page or Service ability uses this method to start a specific ability.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StartAbility_0201', Level.LEVEL0, async function (done) {
         let Subscriber;
@@ -394,14 +421,14 @@ describe('ActsFeatureAbilityTest', function () {
             clearTimeout(id);
             expect(promise).assertEqual(0);
             expect(data.event).assertEqual("ACTS_StartAbility_0201_CommonEvent");
-            featureAbility.hasWindowFocus(
-              (err, data) => {
-                console.info("hasWindowFocus asyncCallback code data: " + data);
-                try{expect(data).assertFalse()}catch{};
-                console.info("====>Subscribe CallBack data:====>" + JSON.stringify(data));
-                commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
-              }
-          );
+            setTimeout(()=>{
+                featureAbility.hasWindowFocus((err, data) => {
+                    console.info("hasWindowFocus asyncCallback code data: " + data);
+                    try{expect(data).assertFalse()}catch{};
+                    console.info("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+                    commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
+                });
+            }, 300)
         }
 
         await commonEvent.createSubscriber(subscriberInfoActsStartAbility0201).then(async (data) => {
@@ -412,7 +439,9 @@ describe('ActsFeatureAbilityTest', function () {
 
         function UnSubscribeCallback() {
             console.info("====>UnSubscribe CallBack====>");
-            done();
+            setTimeout(()=>{
+                done();
+            }, 1000)
         }
 
         function timeout() {
@@ -481,10 +510,12 @@ describe('ActsFeatureAbilityTest', function () {
     })
 
     /**
-     * @tc.number: ACTS_StartAbility_0301
-     * @tc.name: ACTS_StartAbility_0301
-     * @tc.desc: StartAbility : A Page or Service ability uses this method to start a specific ability.
-     *           Passing null, Check the return value of the interface (by Promise)
+     * @tc.name   ACTS_StartAbility_0301
+     * @tc.number ACTS_StartAbility_0301
+     * @tc.desc   StartAbility : A Page or Service ability uses this method to start a specific ability.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StartAbility_0301', Level.LEVEL0, async function (done) {
         let Subscriber;
@@ -564,9 +595,12 @@ describe('ActsFeatureAbilityTest', function () {
     })
 
     /**
-     * @tc.number: ACTS_StartAbility_0401
-     * @tc.name: ACTS_StartAbility_0401
-     * @tc.desc: StartAbility : A Page or Service ability uses this method to start a specific ability. (by AsyncCallback)
+     * @tc.name   ACTS_StartAbility_0401
+     * @tc.number ACTS_StartAbility_0401
+     * @tc.desc   StartAbility : A Page or Service ability uses this method to start a specific ability. (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StartAbility_0401', Level.LEVEL0, async function (done) {
         let Subscriber;
@@ -649,10 +683,12 @@ describe('ActsFeatureAbilityTest', function () {
     })
 
     /**
-     * @tc.number: ACTS_StartAbility_0501
-     * @tc.name: ACTS_StartAbility_0501
-     * @tc.desc: StartAbility : A Page or Service ability uses this method to start a specific ability.
-     *           Pass the parameters, Check the return value of the interface (by AsyncCallback)
+     * @tc.name   ACTS_StartAbility_0501
+     * @tc.number ACTS_StartAbility_0501
+     * @tc.desc   StartAbility : A Page or Service ability uses this method to start a specific ability.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StartAbility_0501', Level.LEVEL0, async function (done) {
         let Subscriber;
@@ -746,10 +782,12 @@ describe('ActsFeatureAbilityTest', function () {
     })
 
     /**
-     * @tc.number: ACTS_StartAbility_0601
-     * @tc.name: ACTS_StartAbility_0601
-     * @tc.desc: StartAbility : A Page or Service ability uses this method to start a specific ability.
-     *           Passing null, Check the return value of the interface (by AsyncCallback)
+     * @tc.name   ACTS_StartAbility_0601
+     * @tc.number ACTS_StartAbility_0601
+     * @tc.desc   StartAbility : A Page or Service ability uses this method to start a specific ability.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StartAbility_0601', Level.LEVEL0, async function (done) {
         let Subscriber;
@@ -831,9 +869,12 @@ describe('ActsFeatureAbilityTest', function () {
     })
 
     /**
-     * @tc.number: ACTS_TerminateAbility_0200
-     * @tc.name: ACTS_TerminateAbility_0200
-     * @tc.desc: TerminateAbility : Destroys ability.Check the return value of the interface (by promise)
+     * @tc.name   ACTS_TerminateAbility_0200
+     * @tc.number ACTS_TerminateAbility_0200
+     * @tc.desc   TerminateAbility : Destroys ability.Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_TerminateAbility_0200', Level.LEVEL0, async function (done) {
         let Subscriber;
@@ -923,9 +964,12 @@ describe('ActsFeatureAbilityTest', function () {
     }
 
     /**
-     * @tc.number: ACTS_GetApplicationInfo_0100
-     * @tc.name: ACTS_GetApplicationInfo_0100
-     * @tc.desc: GetApplicationInfo : Obtains information about the current application. (by Promise)
+     * @tc.name   ACTS_GetApplicationInfo_0100
+     * @tc.number ACTS_GetApplicationInfo_0100
+     * @tc.desc   GetApplicationInfo : Obtains information about the current application. (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetApplicationInfo_0100', Level.LEVEL0, async function (done) {
         let context = featureAbility.getContext();
@@ -942,9 +986,12 @@ describe('ActsFeatureAbilityTest', function () {
     })
 
     /**
-     * @tc.number: ACTS_GetApplicationInfo_0200
-     * @tc.name: ACTS_GetApplicationInfo_0200
-     * @tc.desc: GetApplicationInfo : Obtains information about the current application. (by AsyncCallback)
+     * @tc.name   ACTS_GetApplicationInfo_0200
+     * @tc.number ACTS_GetApplicationInfo_0200
+     * @tc.desc   GetApplicationInfo : Obtains information about the current application. (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetApplicationInfo_0200', Level.LEVEL0, async function (done) {
         let context = featureAbility.getContext()
@@ -973,9 +1020,12 @@ describe('ActsFeatureAbilityTest', function () {
     }
 
     /**
-     * @tc.number: ACTS_GetProcessInfo_0100
-     * @tc.name: ACTS_GetProcessInfo_0100
-     * @tc.desc: GetProcessInfo : Called when getting the ProcessInfo (by promise)
+     * @tc.name   ACTS_GetProcessInfo_0100
+     * @tc.number ACTS_GetProcessInfo_0100
+     * @tc.desc   GetProcessInfo : Called when getting the ProcessInfo (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetProcessInfo_0100', Level.LEVEL0, async function (done) {
         let context = featureAbility.getContext()
@@ -992,9 +1042,12 @@ describe('ActsFeatureAbilityTest', function () {
     })
 
     /**
-     * @tc.number: ACTS_GetProcessInfo_0200
-     * @tc.name: ACTS_GetProcessInfo_0200
-     * @tc.desc: GetProcessInfo : Called when getting the ProcessInfo. (by AsyncCallback)
+     * @tc.name   ACTS_GetProcessInfo_0200
+     * @tc.number ACTS_GetProcessInfo_0200
+     * @tc.desc   GetProcessInfo : Called when getting the ProcessInfo. (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetProcessInfo_0200', Level.LEVEL0, async function (done) {
         let context = featureAbility.getContext()
@@ -1032,9 +1085,12 @@ describe('ActsFeatureAbilityTest', function () {
     }
 
     /**
-     * @tc.number: ACTS_GetElementName_0100
-     * @tc.name: ACTS_GetElementName_0100
-     * @tc.desc: GetElementName : Obtains the ohos.bundle.ElementName object of the current ability. (by promise)
+     * @tc.name   ACTS_GetElementName_0100
+     * @tc.number ACTS_GetElementName_0100
+     * @tc.desc   GetElementName : Obtains the ohos.bundle.ElementName object of the current ability. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetElementName_0100', Level.LEVEL0, async function (done) {
         let context = featureAbility.getContext()
@@ -1051,10 +1107,13 @@ describe('ActsFeatureAbilityTest', function () {
     })
 
     /**
-    * @tc.number: ACTS_GetElementName_0200
-    * @tc.name: ACTS_GetElementName_0200
-    * @tc.desc: GetElementName : Obtains the ohos.bundle.ElementName object of the current ability. (by AsyncCallback)
-    */
+     * @tc.name   ACTS_GetElementName_0200
+     * @tc.number ACTS_GetElementName_0200
+     * @tc.desc   GetElementName : Obtains the ohos.bundle.ElementName object of the current ability. (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetElementName_0200', Level.LEVEL0, async function (done) {
         let context = featureAbility.getContext()
         context.getElementName(
@@ -1079,9 +1138,12 @@ describe('ActsFeatureAbilityTest', function () {
     }
 
     /**
-     * @tc.number: ACTS_GetAppType_0100
-     * @tc.name: ACTS_GetAppType_0100
-     * @tc.desc: GetAppType : Obtains the type of this application.(by promise)
+     * @tc.name   ACTS_GetAppType_0100
+     * @tc.number ACTS_GetAppType_0100
+     * @tc.desc   GetAppType : Obtains the type of this application.(by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetAppType_0100', Level.LEVEL0, async function (done) {
         await featureAbility.getContext().getAppType().then((data)=>{
@@ -1097,9 +1159,12 @@ describe('ActsFeatureAbilityTest', function () {
     })
 
     /**
-     * @tc.number: ACTS_GetAppType_0200
-     * @tc.name: ACTS_GetAppType_0200
-     * @tc.desc: GetAppType : Obtains the type of this application. (by AsyncCallback)
+     * @tc.name   ACTS_GetAppType_0200
+     * @tc.number ACTS_GetAppType_0200
+     * @tc.desc   GetAppType : Obtains the type of this application. (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetAppType_0200', Level.LEVEL0, async function (done) {
         featureAbility.getContext().getAppType((err, data) => {
@@ -1184,9 +1249,12 @@ describe('ActsFeatureAbilityTest', function () {
     }
 
     /**
-     * @tc.number: ACTS_GetAbilityInfo_0100
-     * @tc.name: ACTS_GetAbilityInfo_0100
-     * @tc.desc: GetAbilityInfo : Obtains the HapModuleInfo object of the application. (by promise)
+     * @tc.name   ACTS_GetAbilityInfo_0100
+     * @tc.number ACTS_GetAbilityInfo_0100
+     * @tc.desc   GetAbilityInfo : Obtains the HapModuleInfo object of the application. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetAbilityInfo_0100', Level.LEVEL0, async function (done) {
         await featureAbility.getContext().getAbilityInfo().then((data)=>{
@@ -1201,9 +1269,12 @@ describe('ActsFeatureAbilityTest', function () {
     })
 
     /**
-     * @tc.number: ACTS_GetAbilityInfo_0200
-     * @tc.name: ACTS_GetAbilityInfo_0200
-     * @tc.desc: GetAbilityInfo : Obtains the HapModuleInfo object of the application.(by AsyncCallback)
+     * @tc.name   ACTS_GetAbilityInfo_0200
+     * @tc.number ACTS_GetAbilityInfo_0200
+     * @tc.desc   GetAbilityInfo : Obtains the HapModuleInfo object of the application.(by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetAbilityInfo_0200', Level.LEVEL0, async function (done) {
         featureAbility.getContext().getAbilityInfo(
@@ -1258,9 +1329,12 @@ describe('ActsFeatureAbilityTest', function () {
     }
 
     /**
-     * @tc.number: ACTS_GetHapModuleInfo_0100
-     * @tc.name: ACTS_GetHapModuleInfo_0100
-     * @tc.desc: GetHapModuleInfo : Obtains the HapModuleInfo object of the application. (by promise)
+     * @tc.name   ACTS_GetHapModuleInfo_0100
+     * @tc.number ACTS_GetHapModuleInfo_0100
+     * @tc.desc   GetHapModuleInfo : Obtains the HapModuleInfo object of the application. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetHapModuleInfo_0100', Level.LEVEL0, async function (done) {
         await featureAbility.getContext().getHapModuleInfo().then((data)=>{
@@ -1276,10 +1350,13 @@ describe('ActsFeatureAbilityTest', function () {
     })
 
     /**
-    * @tc.number: ACTS_GetHapModuleInfo_0200
-    * @tc.name: ACTS_GetHapModuleInfo_0200
-    * @tc.desc: GetHapModuleInfo : Obtains the HapModuleInfo object of the application. (by AsyncCallback)
-    */
+     * @tc.name   ACTS_GetHapModuleInfo_0200
+     * @tc.number ACTS_GetHapModuleInfo_0200
+     * @tc.desc   GetHapModuleInfo : Obtains the HapModuleInfo object of the application. (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetHapModuleInfo_0200', Level.LEVEL0, async function (done) {
         let tempInfo
         featureAbility.getContext().getHapModuleInfo(
@@ -1305,9 +1382,12 @@ describe('ActsFeatureAbilityTest', function () {
     }
 
     /**
-     * @tc.number: ACTS_GetProcessName_0100
-     * @tc.name: ACTS_GetProcessName_0100
-     * @tc.desc: GetProcessName : Obtains the name of the current process. (by promise)
+     * @tc.name   ACTS_GetProcessName_0100
+     * @tc.number ACTS_GetProcessName_0100
+     * @tc.desc   GetProcessName : Obtains the name of the current process. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetProcessName_0100', Level.LEVEL0, async function (done) {
         let context = featureAbility.getContext();
@@ -1323,9 +1403,12 @@ describe('ActsFeatureAbilityTest', function () {
     })
 
     /**
-     * @tc.number: ACTS_GetProcessName_0200
-     * @tc.name: ACTS_GetProcessName_0200
-     * @tc.desc: GetProcessName : Obtains the name of the current process. (by AsyncCallback)
+     * @tc.name   ACTS_GetProcessName_0200
+     * @tc.number ACTS_GetProcessName_0200
+     * @tc.desc   GetProcessName : Obtains the name of the current process. (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetProcessName_0200', Level.LEVEL0, async function (done) {
         let tempInfo
@@ -1345,11 +1428,14 @@ describe('ActsFeatureAbilityTest', function () {
         );
     })
 
-    /**
-     * @tc.number: ACTS_GetCallingBundle_0100
-     * @tc.name: ACTS_GetCallingBundle_0100
-     * @tc.desc: GetCallingBundle : Obtains the bundle name of the ability that called the current ability.(by AsyncCallback)
-     */
+     /**
+      * @tc.name   ACTS_GetCallingBundle_0100
+      * @tc.number ACTS_GetCallingBundle_0100
+      * @tc.desc   GetCallingBundle : Obtains the bundle name of the ability that called the current ability.(by AsyncCallback)
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('ACTS_GetCallingBundle_0100', Level.LEVEL0, async function (done) {
         let Subscriber;
         let id;
@@ -1410,11 +1496,14 @@ describe('ActsFeatureAbilityTest', function () {
         expect(info).assertEqual("/data/storage/el2/base/haps/entry_test");
     }
 
-  /**
-    * @tc.number: ACTS_GetOrCreateLocalDir_0100
-    * @tc.name: ACTS_GetOrCreateLocalDir_0100
-    * @tc.desc: GetProcessName : Obtains the name of the current process. (by promise)
-    */
+    /**
+     * @tc.name   ACTS_GetOrCreateLocalDir_0100
+     * @tc.number ACTS_GetOrCreateLocalDir_0100
+     * @tc.desc   GetProcessName : Obtains the name of the current process. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetOrCreateLocalDir_0100', Level.LEVEL0, async function (done) {
         let context = featureAbility.getContext();
         await context.getOrCreateLocalDir().then((data)=>{
@@ -1428,11 +1517,14 @@ describe('ActsFeatureAbilityTest', function () {
         })
     })
 
-  /**
-    * @tc.number: ACTS_GetOrCreateLocalDir_0200
-    * @tc.name: ACTS_GetOrCreateLocalDir_0200
-    * @tc.desc: GetProcessName : Obtains the name of the current process.(by AsyncCallback)
-    */
+    /**
+     * @tc.name   ACTS_GetOrCreateLocalDir_0200
+     * @tc.number ACTS_GetOrCreateLocalDir_0200
+     * @tc.desc   GetProcessName : Obtains the name of the current process.(by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_GetOrCreateLocalDir_0200', Level.LEVEL0, async function (done) {
         let context = featureAbility.getContext();
         context.getOrCreateLocalDir(
@@ -1449,11 +1541,13 @@ describe('ActsFeatureAbilityTest', function () {
          });
     })
 
-   /**
-     * @tc.number  ACTS_StartAbility_0700
-     * @tc.name    ACTS_StartAbility_0700
-     * @tc.desc    Configures the wrong abilityname validation
-     * @tc.level   0
+    /**
+     * @tc.name   ACTS_StartAbility_0700
+     * @tc.number ACTS_StartAbility_0700
+     * @tc.desc   Configures the wrong abilityname validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_StartAbility_0700", Level.LEVEL0, async function(done){
         console.info("------------------logMessage ACTS_StartAbility_0700-------------------");
@@ -1483,11 +1577,13 @@ describe('ActsFeatureAbilityTest', function () {
         }
     });
 
-   /**
-     * @tc.number  ACTS_StartAbility_0800
-     * @tc.name    ACTS_StartAbility_0800
-     * @tc.desc    Misconfigured bundlename validation
-     * @tc.level   0
+    /**
+     * @tc.name   ACTS_StartAbility_0800
+     * @tc.number ACTS_StartAbility_0800
+     * @tc.desc   Misconfigured bundlename validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_StartAbility_0800", Level.LEVEL0, async function(done){
         console.info("------------------logMessage startAbilityTest_0300-------------------");
@@ -1517,11 +1613,13 @@ describe('ActsFeatureAbilityTest', function () {
         }
     });
 
-   /**
-     * @tc.number  ACTS_StartAbility_0900
-     * @tc.name    ACTS_StartAbility_0900
-     * @tc.desc    Misconfigured deviceid validation
-     * @tc.level   0
+    /**
+     * @tc.name   ACTS_StartAbility_0900
+     * @tc.number ACTS_StartAbility_0900
+     * @tc.desc   Misconfigured deviceid validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_StartAbility_0900", Level.LEVEL0, async function(done){
         console.info("------------------logMessage ACTS_StartAbility_0900-------------------");
@@ -1551,11 +1649,13 @@ describe('ActsFeatureAbilityTest', function () {
         }
     });
 
-   /**
-     * @tc.number  ACTS_StartAbility_1100
-     * @tc.name    ACTS_StartAbility_1100
-     * @tc.desc    Verify the ability of implicitly starting through action without configuring action
-     * @tc.level   0
+    /**
+     * @tc.name   ACTS_StartAbility_1100
+     * @tc.number ACTS_StartAbility_1100
+     * @tc.desc   Verify the ability of implicitly starting through action without configuring action
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_StartAbility_1100", Level.LEVEL0, async function(done){
         console.info("------------------logMessage ACTS_StartAbility_1100-------------------");
@@ -1583,11 +1683,13 @@ describe('ActsFeatureAbilityTest', function () {
         }
     });
 
-   /**
-     * @tc.number  ACTS_StartAbility_1200
-     * @tc.name    ACTS_StartAbility_1200
-     * @tc.desc    Verify that the ability without configured entities is started through action and entities
-     * @tc.level   0
+    /**
+     * @tc.name   ACTS_StartAbility_1200
+     * @tc.number ACTS_StartAbility_1200
+     * @tc.desc   Verify that the ability without configured entities is started through action and entities
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_StartAbility_1200", Level.LEVEL0, async function(done){
         console.info("------------------logMessage ACTS_StartAbility_1200-------------------");
@@ -1616,11 +1718,13 @@ describe('ActsFeatureAbilityTest', function () {
         }
     });
 
-   /**
-     * @tc.number  ACTS_StartAbility_1300
-     * @tc.name    ACTS_StartAbility_1300
-     * @tc.desc    Start ability through action and entities. Entities is configured as an empty array
-     * @tc.level   0
+    /**
+     * @tc.name   ACTS_StartAbility_1300
+     * @tc.number ACTS_StartAbility_1300
+     * @tc.desc   Start ability through action and entities. Entities is configured as an empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_StartAbility_1300", Level.LEVEL0, async function(done){
         console.info("------------------logMessage ACTS_StartAbility_1300-------------------");
@@ -1675,11 +1779,13 @@ describe('ActsFeatureAbilityTest', function () {
         }
     });
 
-   /**
-     * @tc.number  ACTS_StartAbility_1600
-     * @tc.name    ACTS_StartAbility_1600
-     * @tc.desc    Startability input parameter want is {}
-     * @tc.level   0
+    /**
+     * @tc.name   ACTS_StartAbility_1600
+     * @tc.number ACTS_StartAbility_1600
+     * @tc.desc   Startability input parameter want is {}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_StartAbility_1600", Level.LEVEL0, async function(done){
         console.info("------------------logMessage ACTS_StartAbility_1600-------------------");
@@ -1704,11 +1810,13 @@ describe('ActsFeatureAbilityTest', function () {
         }
     });
 
-   /**
-     * @tc.number  ACTS_StartAbility_1700
-     * @tc.name    ACTS_StartAbility_1700
-     * @tc.desc    The startability input parameter is not configured with want
-     * @tc.level   0
+    /**
+     * @tc.name   ACTS_StartAbility_1700
+     * @tc.number ACTS_StartAbility_1700
+     * @tc.desc   The startability input parameter is not configured with want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_StartAbility_1700", Level.LEVEL0, async function(done){
         console.info("------------------logMessage ACTS_StartAbility_1700-------------------");
@@ -1729,11 +1837,13 @@ describe('ActsFeatureAbilityTest', function () {
         } 
     });
 
-   /**
-     * @tc.number  ACTS_StartAbility_1800
-     * @tc.name    ACTS_StartAbility_1800
-     * @tc.desc    The startability input parameter is undefined
-     * @tc.level   0
+    /**
+     * @tc.name   ACTS_StartAbility_1800
+     * @tc.number ACTS_StartAbility_1800
+     * @tc.desc   The startability input parameter is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_StartAbility_1800", Level.LEVEL0, async function(done){
         console.info("------------------logMessage ACTS_StartAbility_1800-------------------");

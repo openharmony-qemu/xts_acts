@@ -37,12 +37,12 @@ export default function albumIsAfterLastTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_IS_AFTER_LAST_0000
-     * @tc.name      : album_isAfterLast_000
-     * @tc.desc      : isAfterLast
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_isAfterLast_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_IS_AFTER_LAST_0000
+     * @tc.desc   isAfterLast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_isAfterLast_000', Level.LEVEL0, async (done: Function) => {
 			const testNum = 'album_isAfterLast_000';
@@ -77,12 +77,12 @@ export default function albumIsAfterLastTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_IS_AFTER_LAST_0100
-     * @tc.name      : album_isAfterLast_001
-     * @tc.desc      : isAfterLast
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_isAfterLast_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_IS_AFTER_LAST_0100
+     * @tc.desc   isAfterLast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_isAfterLast_001', Level.LEVEL0, async (done: Function) => {
 			const testNum = 'album_isAfterLast_001';

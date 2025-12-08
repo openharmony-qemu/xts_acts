@@ -46,6 +46,22 @@ let mPreferences: dataPreferences.Preferences;
 let context: common.UIAbilityContext;
 const TAG = '[PREFERENCES_CALLBACK_JSUNIT_TEST]'
 
+class User {
+  name: string = '';
+  age: int;
+  salary: double
+};
+
+class Company {
+  cName: string = '';
+  enName: string = '';
+  year: int;
+  money: BigInt = 0n;
+  isActive: boolean = false;
+  groups: string[] = [];
+  users: User[] = [];
+}
+
 export default function preferenceTest() {
   describe('preferenceTest', (): void =>  {
     beforeAll (() => {
@@ -88,12 +104,12 @@ export default function preferenceTest() {
     })
 
     /**
-     * @tc.name testPreferencesGetPreferences0001
+     * @tc.name   testPreferencesGetPreferences0001
      * @tc.number SUB_DistributedData_Preference_SDK_GetSyn_strong_basis_EtsApiTest_2200
-     * @tc.desc GetSyn promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   GetSyn promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesGetPreferences0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const NAME = 'getPreferencesTest'
@@ -112,12 +128,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesDeletePreferencesOptionsPromise_0100
+     * @tc.name   testPreferencesDeletePreferencesOptionsPromise_0100
      * @tc.number SUB_DistributedData_Preference_SDK_GetSyn_strong_basis_EtsApiTest_2300
-     * @tc.desc GetSyn promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   GetSyn promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesDeletePreferencesOptionsPromise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const options_ : dataPreferences.Options = {
@@ -147,12 +163,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesDeletePreferencesOptionsPromise_0200
+     * @tc.name   testPreferencesDeletePreferencesOptionsPromise_0200
      * @tc.number SUB_DistributedData_Preference_SDK_GetSyn_strong_basis_EtsApiTest_2400
-     * @tc.desc GetSyn promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   GetSyn promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesDeletePreferencesOptionsPromise_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const options_ : dataPreferences.Options = {
@@ -199,12 +215,12 @@ export default function preferenceTest() {
     })
 
     /**
-     * @tc.name PreferencesGetSync0100
+     * @tc.name   PreferencesGetSync0100
      * @tc.number SUB_DistributedData_Preference_SDK_GetSyn_strong_basis_EtsApiTest_0100
-     * @tc.desc GetSyn promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   GetSyn promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PreferencesGetSync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       mPreferences.clearSync();
@@ -214,12 +230,12 @@ export default function preferenceTest() {
     })
 
     /**
-     * @tc.name PreferencesPutSync0100
+     * @tc.name   PreferencesPutSync0100
      * @tc.number SUB_DistributedData_Preference_SDK_PutSync_strong_basis_EtsApiTest_0200
-     * @tc.desc PutSync promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   PutSync promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PreferencesPutSync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'ttt  PreferencesPutSync0100 start');
@@ -292,12 +308,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesPutArrayNumber001
+     * @tc.name   testPreferencesPutArrayNumber001
      * @tc.number SUB_DistributedData_Preference_SDK_PutSync_strong_basis_EtsApiTest_2500
-     * @tc.desc PutArrayNumber promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   PutArrayNumber promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesPutArrayNumber001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await mPreferences.clear();
@@ -310,12 +326,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesPutFlushRemoveGet_0300
+     * @tc.name   testPreferencesPutFlushRemoveGet_0300
      * @tc.number SUB_DistributedData_Preference_SDK_Flush_strong_basis_EtsApiTest_0300
-     * @tc.desc Flush promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Flush promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesPutFlushRemoveGet_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', TAG + "start_test_0300");
@@ -361,12 +377,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesGetFloat0100
+     * @tc.name   testPreferencesGetFloat0100
      * @tc.number SUB_DistributedData_Preference_SDK_GetFloat_strong_basis_EtsApiTest_0400
-     * @tc.desc GetFloat promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   GetFloat promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesGetFloat0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await mPreferences.clear();
@@ -379,12 +395,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesPutInt0100
+     * @tc.name   testPreferencesPutInt0100
      * @tc.number SUB_DistributedData_Preference_SDK_PutInt_strong_basis_EtsApiTest_0500
-     * @tc.desc PutInt promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   PutInt promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesPutInt0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await mPreferences.clear();
@@ -408,12 +424,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesDelete0010
+     * @tc.name   testPreferencesDelete0010
      * @tc.number SUB_DistributedData_Preference_SDK_Delete_strong_basis_EtsApiTest_0600
-     * @tc.desc Delete promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delete promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesDelete0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await mPreferences.put(KEY_TEST_FLOAT_ELEMENT, 3.0);
@@ -435,12 +451,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesHasKey0036
+     * @tc.name   testPreferencesHasKey0036
      * @tc.number SUB_DistributedData_Preference_SDK_HasKey_strong_basis_EtsApiTest_0700
-     * @tc.desc HasKey promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HasKey promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesHasKey0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await mPreferences.put(KEY_TEST_BOOLEAN_ELEMENT, false);
@@ -452,12 +468,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesHasKey0031
+     * @tc.name   testPreferencesHasKey0031
      * @tc.number SUB_DistributedData_Preference_SDK_HasKey_strong_basis_EtsApiTest_0800
-     * @tc.desc HasKey promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HasKey promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesHasKey0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await mPreferences.put(KEY_TEST_STRING_ELEMENT, "test");
@@ -472,12 +488,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testRemovePreferencesFromCache0001
+     * @tc.name   testRemovePreferencesFromCache0001
      * @tc.number SUB_DistributedData_Preference_SDK_HasKey_strong_basis_EtsApiTest_0900
-     * @tc.desc HasKey promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HasKey promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRemovePreferencesFromCache0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       dataPreferences.getPreferences(context, NAME, (err : BusinessError | null, preferences : dataPreferences.Preferences | undefined): void => {
@@ -504,12 +520,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name SUB_DDM_Preferences_removePreferencesFromCacheSync_0400
+     * @tc.name   SUB_DDM_Preferences_removePreferencesFromCacheSync_0400
      * @tc.number SUB_DistributedData_Preference_SDK_removePreferencesFromCacheSync_strong_basis_EtsApiTest_1000
-     * @tc.desc removePreferencesFromCacheSync promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   removePreferencesFromCacheSync promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_removePreferencesFromCacheSync_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "SUB_DDM_Preferences_removePreferencesFromCacheSync_0100 begin.");
@@ -550,12 +566,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name SUB_DDM_Preferences_deleteSync_0100
+     * @tc.name   SUB_DDM_Preferences_deleteSync_0100
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_strong_basis_EtsApiTest_1100
-     * @tc.desc deleteSync promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   deleteSync promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_deleteSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       mPreferences.putSync(KEY_TEST_STRING_ELEMENT, "abc");
@@ -567,12 +583,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name SUB_DDM_Preferences_GetPreferencesSync_0100
+     * @tc.name   SUB_DDM_Preferences_GetPreferencesSync_0100
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_sGetPreferencesSync_basis_EtsApiTest_1200
-     * @tc.desc GetPreferencesSync promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   GetPreferencesSync promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_GetPreferencesSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const Options : dataPreferences.Options = {
@@ -590,12 +606,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name PreferencesHasSync0100
+     * @tc.name   PreferencesHasSync0100
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_HasSync_basis_EtsApiTest_1300
-     * @tc.desc HasSync promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HasSync promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PreferencesHasSync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       mPreferences.clearSync();
@@ -607,12 +623,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name SUB_DDM_Preferences_GetAllSync_0100
+     * @tc.name   SUB_DDM_Preferences_GetAllSync_0100
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAllSync_basis_EtsApiTest_1400
-     * @tc.desc GetAllSync promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   GetAllSync promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_GetAllSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       mPreferences.clearSync();
@@ -658,12 +674,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesClear0012
+     * @tc.name   testPreferencesClear0012
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_Clear_basis_EtsApiTest_1500
-     * @tc.desc Clear promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Clear promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesClear0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await mPreferences.put(KEY_TEST_STRING_ELEMENT, "test");
@@ -677,12 +693,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesClear0011
+     * @tc.name   testPreferencesClear0011
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_Clear_basis_EtsApiTest_1600
-     * @tc.desc Clear promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Clear promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesClear0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await mPreferences.put(KEY_TEST_STRING_ELEMENT, "test");
@@ -699,12 +715,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesDeletePreferences0001
+     * @tc.name   testPreferencesDeletePreferences0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_DeletePreferences_basis_EtsApiTest_1700
-     * @tc.desc DeletePreferences promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   DeletePreferences promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesDeletePreferences0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const NAME = 'getPreferencesTest'
@@ -731,18 +747,18 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesGetPreferencesPromise0010
+     * @tc.name   testPreferencesGetPreferencesPromise0010
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetPreferences_basis_EtsApiTest_1800
-     * @tc.desc GetPreferences promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   GetPreferences promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesGetPreferencesPromise0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       dataPreferences.getPreferences(context, NAME1).then(async (preferences : dataPreferences.Preferences) => {
         hilog.info(domain, tag, '%{public}s', TAG + "Get preferences success" + preferences);
         await preferences.put(KEY_TEST_STRING_ELEMENT, "test");
-        preferences.get(KEY_TEST_STRING_ELEMENT, "defaultvalue", (err: BusinessError | null, ret: Object|undefined) => {
+        preferences.get(KEY_TEST_STRING_ELEMENT, "defaultvalue", (err: BusinessError | null, ret: dataPreferences.ValueType | undefined) => {
           expect("test").assertEqual(ret);
         });
         await dataPreferences.deletePreferences(context, NAME1).then<void, void>((): void => {});
@@ -755,12 +771,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name PreferencesRemovePreferencesFromCacheSync0100
+     * @tc.name   PreferencesRemovePreferencesFromCacheSync0100
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_RemovePreferencesFromCacheSync_basis_EtsApiTest_1900
-     * @tc.desc RemovePreferencesFromCacheSync promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   RemovePreferencesFromCacheSync promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PreferencesRemovePreferencesFromCacheSync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log("PreferencesRemovePreferencesFromCacheSync0100 begin.");
@@ -786,12 +802,12 @@ export default function preferenceTest() {
     
     
     /**
-     * @tc.name testPreferencesGetAllCallBackTest0001
+     * @tc.name   testPreferencesGetAllCallBackTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_2000
-     * @tc.desc GetAll promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   GetAll promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesGetAllCallBackTest0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await mPreferences.clear();
@@ -840,12 +856,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesGetAllPromiseTest0001
+     * @tc.name   testPreferencesGetAllPromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_2100
-     * @tc.desc GetAllPromise promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   GetAllPromise promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesGetAllPromiseTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await mPreferences.clear();
@@ -896,12 +912,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesOnChangePromiseTest0001
+     * @tc.name   testPreferencesOnChangePromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_2600
-     * @tc.desc GetAllPromise promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   GetAllPromise promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesOnChangePromiseTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOnChangePromiseTest0001 start");
@@ -934,12 +950,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesOffChangePromiseTest0001
+     * @tc.name   testPreferencesOffChangePromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_2700
-     * @tc.desc GetAllPromise promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   GetAllPromise promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesOffChangePromiseTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOffChangePromiseTest0001 start");
@@ -965,12 +981,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesOnMultiprocessPromiseTest0001
+     * @tc.name   testPreferencesOnMultiprocessPromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_2800
-     * @tc.desc GetAllPromise promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   GetAllPromise promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesOnMultiprocessPromiseTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOnMultiprocessPromiseTest0001 start");
@@ -998,12 +1014,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesOffMultiprocessPromiseTest0001
+     * @tc.name   testPreferencesOffMultiprocessPromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_2900
-     * @tc.desc GetAllPromise promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   GetAllPromise promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesOffMultiprocessPromiseTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOffMultiprocessPromiseTest0001 start");
@@ -1029,12 +1045,12 @@ export default function preferenceTest() {
 
 
     /**
-     * @tc.name testPreferencesOnDatachangePromiseTest0001
+     * @tc.name   testPreferencesOnDatachangePromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_3000
-     * @tc.desc GetAllPromise promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   GetAllPromise promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesOnDatachangePromiseTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOnDatachangePromiseTest0001 start");
@@ -1058,12 +1074,12 @@ export default function preferenceTest() {
     })
 
     /**
-     * @tc.name testPreferencesOnMultiprocessErrPromiseTest0001
+     * @tc.name   testPreferencesOnMultiprocessErrPromiseTest0001
      * @tc.number SUB_DistributedData_Preference_SDK_deleteSync_GetAll_basis_EtsApiTest_3100
-     * @tc.desc GetAllPromise promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   GetAllPromise promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesOnMultiprocessErrPromiseTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOnMultiprocessErrPromiseTest0001 start");
@@ -1091,14 +1107,14 @@ export default function preferenceTest() {
     })
 
 
-    /**
-     * @tc.name testPreferencesMxaKeyLengthPromiseTest0001
-     * @tc.number SUB_DistributedData_Preference_SDK_MxaKeyLength_basis_EtsApiTest_3200
-     * @tc.desc MxaKeyLength promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
+     /**
+      * @tc.name   testPreferencesMxaKeyLengthPromiseTest0001
+      * @tc.number SUB_DistributedData_Preference_SDK_MxaKeyLength_basis_EtsApiTest_3200
+      * @tc.desc   MxaKeyLength promise interface test
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('testPreferencesMxaKeyLengthPromiseTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try{
         await mPreferences.clear();
@@ -1111,6 +1127,178 @@ export default function preferenceTest() {
         expect().assertFail();
         done();
       }
+    })
+
+    const userArrVar: User[] = [];
+    userArrVar.push({ name: 'zhangSan', age: 18, salary: 3000.5 });
+    userArrVar.push({ name: 'lisi', age: 20, salary: 5000.4 });
+    const moneyNum = BigInt("-12345678912345678912345678971234567123456");
+    let company: Company = {
+      cName: '我的公司',
+      enName: 'myCompany',
+      year: 1998,
+      groups: ['dp1', 'dp2'],
+      users: userArrVar,
+      isActive: true,
+      money: moneyNum
+    };
+
+    /**
+     * @tc.name   testPreferencesObjectPromiseTestGet
+     * @tc.number SUB_DistributedData_Preference_SDK_ObjectGet_basis_EtsApiTest_3300
+     * @tc.desc   MxaKeyLength promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPreferencesObjectPromiseTestGet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await mPreferences.clear();
+        mPreferences.flushSync();
+
+        await mPreferences.put("object_key", company);
+        let compJson = await mPreferences.get("object_key", {});
+        let compJsonElement = JSON.parseJsonElement(compJson!.toString());
+        expect("我的公司").assertEqual(compJsonElement.getElement("cName").asString());
+        expect("myCompany").assertEqual(compJsonElement.getElement("enName").asString());
+        expect(1998).assertEqual(compJsonElement.getElement("year").asInteger());
+        expect(true).assertEqual(compJsonElement.getElement("isActive").asBoolean());
+
+        let groups = compJsonElement.getArray("groups");
+        expect("dp1").assertEqual(groups[0].asString());
+        expect("dp2").assertEqual(groups[1].asString());
+        let users = compJsonElement.getArray("users");
+        expect(18).assertEqual(users[0].getElement("age").asInteger());
+        expect("zhangSan").assertEqual(users[0].getElement("name").asString());
+        expect(3000.5).assertEqual(users[0].getElement("salary").asDouble());
+        expect(20).assertEqual(users[1].getElement("age").asInteger());
+        expect("lisi").assertEqual(users[1].getElement("name").asString());
+        expect(5000.4).assertEqual(users[1].getElement("salary").asDouble());
+        done();
+      } catch(err : BusinessError) {
+        hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesObjectPromiseTestGet :" + err.code + err.message );
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testPreferencesObjectPromiseTestGetAll
+     * @tc.number SUB_DistributedData_Preference_SDK_ObjectGetAll_basis_EtsApiTest_3400
+     * @tc.desc   MxaKeyLength promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPreferencesObjectPromiseTestGetAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await mPreferences.clear();
+        mPreferences.flushSync();
+
+        await mPreferences.put("object_key", company);
+        await mPreferences.put("string_key", 'test_string');
+        await mPreferences.put("double_key", 3.14);
+
+        mPreferences.getAll((err: BusinessError | null, value: Object | undefined) => {
+          let obj = value as Record<string, object>;
+          expect("test_string").assertEqual(obj.get("string_key"));
+          expect(3.14).assertEqual(obj.get("double_key"));
+          let allJson = obj.get("object_key");
+          let compJsonElement = JSON.parseJsonElement(allJson?.toString() as string);
+
+          expect("我的公司").assertEqual(compJsonElement.getElement("cName").asString());
+          expect("myCompany").assertEqual(compJsonElement.getElement("enName").asString());
+          expect(1998).assertEqual(compJsonElement.getElement("year").asInteger());
+          expect(true).assertEqual(compJsonElement.getElement("isActive").asBoolean());
+
+          let groups = compJsonElement.getArray("groups");
+          expect("dp1").assertEqual(groups[0].asString());
+          expect("dp2").assertEqual(groups[1].asString());
+          let users = compJsonElement.getArray("users");
+          expect(18).assertEqual(users[0].getElement("age").asInteger());
+          expect("zhangSan").assertEqual(users[0].getElement("name").asString());
+          expect(3000.5).assertEqual(users[0].getElement("salary").asDouble());
+          expect(20).assertEqual(users[1].getElement("age").asInteger());
+          expect("lisi").assertEqual(users[1].getElement("name").asString());
+          expect(5000.4).assertEqual(users[1].getElement("salary").asDouble());
+          done();
+        })
+        done();
+      } catch(err : BusinessError) {
+        hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesObjectPromiseTestGetAll :" + err.code + err.message );
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @generated.time 2025-11-27 20:49:48
+     * @tc.name   PreferencesBaseDataType001
+     * @tc.number SUB_DistributedData_Preference_SDK_PreferencesBaseDataType001_basis_EtsApiTest_3500
+     * @tc.desc   Preferences Base DataType test int
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('PreferencesBaseDataType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let preferences = await dataPreferences.getPreferences(context, 'test_preferences_base_int');
+      let baseInt: int = 123;
+      await preferences.put('base_int', baseInt);
+      await preferences.flush();
+      let ret = preferences.getSync("base_int", 0);
+      expect(baseInt).assertEqual(ret);
+      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType001 key base_int, ret instanceof int:" + (ret instanceof int));
+      expect(true).assertEqual(ret instanceof int);
+      await dataPreferences.deletePreferences(context, 'test_preferences_base_int');
+      done();
+    })
+
+    /**
+     * @generated.time 2025-11-27 20:49:48
+     * @tc.name   PreferencesBaseDataType002
+     * @tc.number SUB_DistributedData_Preference_SDK_PreferencesBaseDataType002_basis_EtsApiTest_3600
+     * @tc.desc   Preferences Base DataType test number/double
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('PreferencesBaseDataType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let preferences = await dataPreferences.getPreferences(context, 'test_preferences_base_double');
+      let baseDouble: double = 1239999999.1;
+      await preferences.put('base_double', baseDouble);
+      await preferences.flush();
+      let ret = preferences.getSync("base_double", 0.0);
+      expect(baseDouble).assertEqual(ret);
+      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType002 key base_double, typeof(ret):" + typeof(ret));
+      expect(typeof(ret)).assertEqual("number");
+      let numberData: number = 777;
+      expect(true).assertEqual(typeof(ret) == typeof(numberData));
+      expect(true).assertEqual(typeof(ret) == typeof(baseDouble));
+      expect(true).assertEqual(typeof(numberData) == typeof(baseDouble));
+      await dataPreferences.deletePreferences(context, 'test_preferences_base_double');
+      done();
+    })
+
+    /**
+     * @generated.time 2025-11-27 20:49:48
+     * @tc.name   PreferencesBaseDataType003
+     * @tc.number SUB_DistributedData_Preference_SDK_PreferencesBaseDataType003_basis_EtsApiTest_3700
+     * @tc.desc   Preferences Base DataType test long
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('PreferencesBaseDataType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let preferences = await dataPreferences.getPreferences(context, 'test_preferences_base_long');
+      let baseLong: long = 123888888888;
+      await preferences.put('base_long', baseLong);
+      await preferences.flush();
+      let ret = preferences.getSync("base_long", 0);
+      expect(baseLong).assertEqual(ret);
+      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType003 key base_long, (ret instanceof long):" + (ret instanceof long));
+      expect(true).assertEqual(ret instanceof long);
+      await dataPreferences.deletePreferences(context, 'test_preferences_base_long');
+      done();
     })
   })
 }

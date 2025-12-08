@@ -56,10 +56,13 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info("gestureParallel after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testgestureParallel0001
-     * @tc.desic         acegestureParallelEtsTest0001
+    /**
+     * @tc.name   testgestureParallel0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testgestureParallel0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgestureParallel0001', Level.LEVEL0, async (done: Function) => {
       console.info('gestureParallel testgestureParallel0001 START');

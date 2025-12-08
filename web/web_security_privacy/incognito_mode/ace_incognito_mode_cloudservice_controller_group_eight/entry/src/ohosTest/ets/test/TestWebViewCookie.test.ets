@@ -50,12 +50,12 @@ export default function ActsWebViewTest1() {
 
 
     /**
+     * @tc.name   SUB_ACE_WEB_INCOGNITO_API_0015
      * @tc.number SUB_ACE_WEB_INCOGNITO_API_0015
-     * @tc.name testWebView_existCookie0001
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_WEB_INCOGNITO_API_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("configCookieSync1", 160210)
@@ -67,12 +67,12 @@ export default function ActsWebViewTest1() {
     });
 
     /**
+     * @tc.name   SUB_ACE_WEB_INCOGNITO_API_0016
      * @tc.number SUB_ACE_WEB_INCOGNITO_API_0016
-     * @tc.name testWebView_existCookie0002
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_WEB_INCOGNITO_API_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("configCookieSync2", 160210)
@@ -84,12 +84,12 @@ export default function ActsWebViewTest1() {
     });
 
     /**
+     * @tc.name   SUB_ACE_WEB_INCOGNITO_API_0013
      * @tc.number SUB_ACE_WEB_INCOGNITO_API_0013
-     * @tc.name testWebView_configCookieSync0001
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_WEB_INCOGNITO_API_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("existCookie1", 160210)
@@ -101,12 +101,12 @@ export default function ActsWebViewTest1() {
     });
 
     /**
+     * @tc.name   SUB_ACE_WEB_INCOGNITO_API_0014
      * @tc.number SUB_ACE_WEB_INCOGNITO_API_0014
-     * @tc.name testWebView_configCookieSync0002
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_WEB_INCOGNITO_API_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("existCookie2", 160210)

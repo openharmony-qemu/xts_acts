@@ -21,37 +21,37 @@ export default function listItemGroupSetHeaderTest() {
 
   describe('ListItemGroupSetHeaderTest', () => {
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_HEADER_0001
-     * @tc.name       : testListItemGroupSetHeader001
-     * @tc.desc       : testing item group set header for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemGroupSetHeader001
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_HEADER_0001
+     * @tc.desc   testing item group set header for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupSetHeader001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemGroupSetHeader001()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_HEADER_0002
-     * @tc.name       : testListItemGroupSetHeader002
-     * @tc.desc       : testing item group set header for list with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemGroupSetHeader002
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_HEADER_0002
+     * @tc.desc   testing item group set header for list with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupSetHeader002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemGroupSetHeader002()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_HEADER_0003
-     * @tc.name       : testListItemGroupSetHeader003
-     * @tc.desc       : testing item group set header for list with resetAttribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemGroupSetHeader003
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_HEADER_0003
+     * @tc.desc   testing item group set header for list with resetAttribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupSetHeader003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemGroupSetHeader003()).assertEqual(0)

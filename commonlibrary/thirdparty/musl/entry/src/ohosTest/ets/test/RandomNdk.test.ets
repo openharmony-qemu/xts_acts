@@ -26,13 +26,13 @@ export default function muslRandomNdkTest() {
       await Utils.sleep(50)
     })
 
-    /**getopt
-     * @tc.number   : SUB_THIRDPARTY_MUSL_RANDOM_GETRANDOM_0100
-     * @tc.name     : testMuslRandomGetrandom001
-     * @tc.desc     : test getrandom
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+    /**
+     * @tc.name   testMuslRandomGetrandom001
+     * @tc.number SUB_THIRDPARTY_MUSL_RANDOM_GETRANDOM_0100
+     * @tc.desc   test getrandom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslRandomGetrandom001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret:number = random.getrandom();

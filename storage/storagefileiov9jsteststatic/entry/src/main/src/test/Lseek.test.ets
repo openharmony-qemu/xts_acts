@@ -31,14 +31,12 @@ export default function fileIOLseek() {
     hilog.info(domain, tag, '%{public}s', 'fileIO_fs_lseek start');
 
     /**
+     * @tc.name   fileIO_test_lseek_static_001
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_0100
-     * @tc.name fileIO_test_lseek_static_001
-     * @tc.desc Test lseek() interface.
-     * Get the file offset pointer position by fd and offset = 5 parameter, verify the normal function.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test lseek() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_lseek_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_001 start');
@@ -59,14 +57,12 @@ export default function fileIOLseek() {
     });
 
     /**
+     * @tc.name   fileIO_test_lseek_static_002
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_0200
-     * @tc.name fileIO_test_lseek_static_002
-     * @tc.desc Test lseek() interface.
-     * Get the file offset pointer position by fd,offset = 3 and whence = 0(SEEK_SET) parameter, verify the normal function.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test lseek() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_lseek_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_002 start');
@@ -89,14 +85,12 @@ export default function fileIOLseek() {
     });
 
     /**
+     * @tc.name   fileIO_test_lseek_static_003
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_0300
-     * @tc.name fileIO_test_lseek_static_003
-     * @tc.desc Test lseek() interface.
-     * Get the file offset pointer position by fd,offset = 3 and whence = 1(SEEK_CUR) parameter, verify the normal function.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test lseek() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_lseek_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_003 start');
@@ -121,14 +115,12 @@ export default function fileIOLseek() {
     });
 
     /**
+     * @tc.name   fileIO_test_lseek_static_004
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_0400
-     * @tc.name fileIO_test_lseek_static_004
-     * @tc.desc Test lseek() interface.
-     * Get the file offset pointer position by fd,offset = 3 and whence = 2(SEEK_END) parameter, verify the normal function.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test lseek() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_lseek_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_004 start');
@@ -151,14 +143,12 @@ export default function fileIOLseek() {
     });
 
     /**
+     * @tc.name   fileIO_test_lseek_static_005
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_0500
-     * @tc.name fileIO_test_lseek_static_005
-     * @tc.desc Test lseek() interface.
-     * Illegal type of parameter.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test lseek() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_lseek_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       try {
@@ -171,14 +161,12 @@ export default function fileIOLseek() {
     });
 
     /**
+     * @tc.name   fileIO_test_lseek_static_006
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_0600
-     * @tc.name fileIO_test_lseek_static_006
-     * @tc.desc Test lseek() interface.
-     * The file content is empty
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test lseek() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_lseek_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_006 start');
@@ -200,14 +188,12 @@ export default function fileIOLseek() {
     });
 
     /**
+     * @tc.name   fileIO_test_lseek_static_007
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_0700
-     * @tc.name fileIO_test_lseek_static_007
-     * @tc.desc Test lseek() interface.
-     * Get the file offset pointer position repeatedly
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test lseek() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_lseek_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_007 start');
@@ -233,14 +219,12 @@ export default function fileIOLseek() {
     });
 
     /**
+     * @tc.name   fileIO_test_lseek_static_008
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_0800
-     * @tc.name fileIO_test_lseek_static_008
-     * @tc.desc Test lseek() interface.
-     * Undefined whence arguments,use default whence = SEEK_SET.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test lseek() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_lseek_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_008 start');
@@ -261,14 +245,12 @@ export default function fileIOLseek() {
     });
 
     /**
+     * @tc.name   fileIO_test_lseek_static_009
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_0900
-     * @tc.name fileIO_test_lseek_static_009
-     * @tc.desc Test lseek() interface.
-     * Get the file offset pointer position by fd, offset = -1 and whence = 1(SEEK_SET) parameter
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test lseek() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_lseek_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_009 start');
@@ -289,14 +271,12 @@ export default function fileIOLseek() {
     });
 
     /**
+     * @tc.name   fileIO_test_lseek_static_010
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_1000
-     * @tc.name fileIO_test_lseek_static_010
-     * @tc.desc Test lseek() interface.
-     * Get the file offset pointer position by fd, offset = -1 and whence = 1(SEEK_CUR) parameter
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test lseek() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_lseek_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_010 start');
@@ -322,14 +302,12 @@ export default function fileIOLseek() {
     });
 
     /**
+     * @tc.name   fileIO_test_lseek_static_011
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_1100
-     * @tc.name fileIO_test_lseek_static_011
-     * @tc.desc Test lseek() interface.
-     * Get the file offset pointer position by fd, offset = -2 and whence = 2(SEEK_END) parameter
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test lseek() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_lseek_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_011 start');
@@ -352,14 +330,12 @@ export default function fileIOLseek() {
     });
 
     /**
+     * @tc.name   fileIO_test_lseek_static_012
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_1200
-     * @tc.name fileIO_test_lseek_static_012
-     * @tc.desc Test lseek() interface.
-     * Get the file offset pointer position by bad fd, offset = 5 and whence = 1(SEEK_CUR) parameter
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test lseek() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_lseek_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_012 start');
@@ -369,10 +345,12 @@ export default function fileIOLseek() {
       let offsetnum = 5;
       try {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
+        let fd = file.fd;
         fs.closeSync(file);
-        fs.lseek(file.fd, offsetnum, fs.WhenceType.SEEK_CUR);
+        fs.lseek(fd, offsetnum, fs.WhenceType.SEEK_CUR);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_012 has failed for' + JSON.stringify(e));
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
@@ -380,14 +358,12 @@ export default function fileIOLseek() {
     });
 
     /**
+     * @tc.name   fileIO_test_lseek_static_013
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_1300
-     * @tc.name fileIO_test_lseek_static_013
-     * @tc.desc Test lseek() interface.
-     * Get the file offset pointer position by fd, offset = -100 and whence = 1(SEEK_CUR) parameter
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test lseek() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_lseek_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_013 start');

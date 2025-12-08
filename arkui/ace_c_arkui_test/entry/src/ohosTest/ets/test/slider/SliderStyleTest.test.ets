@@ -26,66 +26,66 @@ export default function sliderStyleTest() {
       done();
     });
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_STYLE_0100
-    * @tc.name: testSliderStyle001
-    * @tc.desc: testing style for slider with default value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderStyle001
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_STYLE_0100
+     * @tc.desc   testing style for slider with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderStyle001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderStyle001()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_STYLE_0200
-    * @tc.name: testSliderStyle002
-    * @tc.desc: testing style for slider with normal value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderStyle002
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_STYLE_0200
+     * @tc.desc   testing style for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderStyle002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderStyle002()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_STYLE_0300
-    * @tc.name: testSliderStyle003
-    * @tc.desc: testing style for slider with normal value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderStyle003
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_STYLE_0300
+     * @tc.desc   testing style for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderStyle003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderStyle003()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_STYLE_0400
-    * @tc.name: testSliderStyle004
-    * @tc.desc: testing style for slider with abnormal value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 2
-    */
+    /**
+     * @tc.name   testSliderStyle004
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_STYLE_0400
+     * @tc.desc   testing style for slider with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderStyle004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderStyle004()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_STYLE_0500
-    * @tc.name: testSliderStyle005
-    * @tc.desc: testing style for slider with negative value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 2
-    */
+    /**
+     * @tc.name   testSliderStyle005
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_STYLE_0500
+     * @tc.desc   testing style for slider with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderStyle005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderStyle005()).assertEqual(0)
       done()

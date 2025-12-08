@@ -124,13 +124,13 @@ export default function geolocationTest_geo8() {
 
 
         /**
-        * @tc.number    : SUB_HSS_LOCATIONSYSTEM_BLUE_TOOTH_SCAN_0001
-        * @tc.name      : testBlueToothScan01
-        * @tc.desc      : Test Report Fence Transition.
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 2
-        */
+         * @tc.name   testBlueToothScan01
+         * @tc.number SUB_HSS_LOCATIONSYSTEM_BLUE_TOOTH_SCAN_0001
+         * @tc.desc   Test Report Fence Transition.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testBlueToothScan01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let bluetoothScanResult = (result) => {
                 console.info("[lbs_js] testBlueToothScan01 bluetoothScanResult" + JSON.stringify(result));
@@ -174,13 +174,13 @@ export default function geolocationTest_geo8() {
         })
 
         /**
-        * @tc.number    : SUB_HSS_LOCATIONSYSTEM_SINGLELOC_4100
-        * @tc.name      : testGetCurrentLocation40
-        * @tc.desc      : Initiate a specified single location request and set the exception location timeout interval.
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 2
-        */
+         * @tc.name   testGetCurrentLocation41
+         * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_4100
+         * @tc.desc   Initiate a specified single location request and set the exception location timeout interval.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testGetCurrentLocation41', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 await geolocationm.getCurrentLocation().then((result) => {
@@ -202,13 +202,13 @@ export default function geolocationTest_geo8() {
         })
 
         /**
-        * @tc.number    : SUB_HSS_LOCATIONSYSTEM_GETWIFIBSSID_0001
-        * @tc.name      : testGetCurrentWifiBssidForLocating01
-        * @tc.desc      : Obtain the Actual Bssid of the Wifi Network.
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 2
-        */
+         * @tc.name   testGetCurrentWifiBssidForLocating01
+         * @tc.number SUB_HSS_LOCATIONSYSTEM_GETWIFIBSSID_0001
+         * @tc.desc   Obtain the Actual Bssid of the Wifi Network.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testGetCurrentWifiBssidForLocating01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 let mac = geolocationm.getCurrentWifiBssidForLocating();
@@ -224,13 +224,13 @@ export default function geolocationTest_geo8() {
         })
 
         /**
-        * @tc.number    : SUB_HSS_LOCATIONSYSTEM_GET_DISTANCE_BETWEEN_LOCATIONS_0001
-        * @tc.name      : testGetDistanceBetweenLocations01
-        * @tc.desc      : Obtain the 
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 2
-        */
+         * @tc.name   testGetDistanceBetweenLocations01
+         * @tc.number SUB_HSS_LOCATIONSYSTEM_GET_DISTANCE_BETWEEN_LOCATIONS_0001
+         * @tc.desc   Obtain the
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testGetDistanceBetweenLocations01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 let location1 = {"latitude": 30.12, "longitude": 120.11, "altitude": 0, "accuracy": 0,
@@ -247,13 +247,13 @@ export default function geolocationTest_geo8() {
         })
 
         /**
-        * @tc.number    : SUB_HSS_LOCATIONSYSTEM_IS_POI_SERVICE_SUPPORTED_0001
-        * @tc.name      : testIsPoiServiceSupported001
-        * @tc.desc      : Obtain the 
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 2
-        */
+         * @tc.name   testIsPoiServiceSupported001
+         * @tc.number SUB_HSS_LOCATIONSYSTEM_IS_POI_SERVICE_SUPPORTED_0001
+         * @tc.desc   Obtain the
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testIsPoiServiceSupported001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 let poiServiceState = geolocationm.isPoiServiceSupported()

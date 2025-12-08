@@ -26,78 +26,78 @@ export default function scrollShadowTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SHADOW_0100
-     * @tc.name       : testScrollShadow001
-     * @tc.desc       : testing shadow for scroll with min shadow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollShadow001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SHADOW_0100
+     * @tc.desc   testing shadow for scroll with min shadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollShadow001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollShadow001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SHADOW_0200
-     * @tc.name       : testScrollShadow002
-     * @tc.desc       : testing shadow for scroll with little shadow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollShadow002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SHADOW_0200
+     * @tc.desc   testing shadow for scroll with little shadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollShadow002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollShadow002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SHADOW_0300
-     * @tc.name       : testScrollShadow003
-     * @tc.desc       : testing shadow for scroll with middle value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollShadow003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SHADOW_0300
+     * @tc.desc   testing shadow for scroll with middle value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollShadow003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollShadow003()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SHADOW_0400
-     * @tc.name       : testScrollShadow004
-     * @tc.desc       : testing shadow for scroll with big value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollShadow004
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SHADOW_0400
+     * @tc.desc   testing shadow for scroll with big value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollShadow004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollShadow004()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SHADOW_0500
-     * @tc.name       : testScrollShadow005
-     * @tc.desc       : testing shadow for scroll with float little shadow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollShadow005
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SHADOW_0500
+     * @tc.desc   testing shadow for scroll with float little shadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollShadow005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollShadow005()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SHADOW_0600
-     * @tc.name       : testScrollShadow006
-     * @tc.desc       : testing shadow for scroll with float middle shadow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollShadow006
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SHADOW_0600
+     * @tc.desc   testing shadow for scroll with float middle shadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollShadow006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollShadow006()).assertEqual(0)

@@ -95,12 +95,12 @@ export default function relationalStoreBackupRestorePromiseTest() {
     console.info(TAG + "*************Unit Test Begin*************")
 
     /**
-     * @tc.name RdbBackupRestoreTest0010
+     * @tc.name   RdbBackupRestoreTest0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_1400
-     * @tc.desc RelationalStore backup and restore function test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   RelationalStore backup and restore function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RdbBackupRestoreTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       console.info(TAG + "************* RdbBackupRestoreTest_0010 start *************")
@@ -163,12 +163,12 @@ export default function relationalStoreBackupRestorePromiseTest() {
     })
 
     /**
-     * @tc.name RdbBackupRestoreTest0020
+     * @tc.name   RdbBackupRestoreTest0020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_1500
-     * @tc.desc RelationalStore backup function test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   RelationalStore backup function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RdbBackupRestoreTest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       console.info(TAG + "************* RdbBackupRestoreTest_0020 start *************")
@@ -196,12 +196,12 @@ export default function relationalStoreBackupRestorePromiseTest() {
     })
 
     /**
-     * @tc.name RdbBackupRestoreTest0030
+     * @tc.name   RdbBackupRestoreTest0030
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_1600
-     * @tc.desc RelationalStore restore function test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   RelationalStore restore function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RdbBackupRestoreTest0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       console.info(TAG + "************* RdbBackupRestoreTest_0030 start *************")
@@ -238,12 +238,12 @@ export default function relationalStoreBackupRestorePromiseTest() {
     })
 
     /**
-     * @tc.name RdbBackupRestoreTest0040
+     * @tc.name   RdbBackupRestoreTest0040
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_1700
-     * @tc.desc RelationalStore restore function test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   RelationalStore restore function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RdbBackupRestoreTest0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       console.info(TAG + "************* RdbBackupRestoreTest_0040 start *************")
@@ -269,12 +269,12 @@ export default function relationalStoreBackupRestorePromiseTest() {
     })
 
     /**
-     * @tc.name RdbBackupRestoreTest0050
+     * @tc.name   RdbBackupRestoreTest0050
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_1800
-     * @tc.desc RelationalStore restore function test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   RelationalStore restore function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RdbBackupRestoreTest0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       console.info(TAG + "************* RdbBackupRestoreTest_0050 start *************")
@@ -308,12 +308,12 @@ export default function relationalStoreBackupRestorePromiseTest() {
     })
 
     /**
-     * @tc.name RdbBackupRestoreTest0060
+     * @tc.name   RdbBackupRestoreTest0060
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_1900
-     * @tc.desc RelationalStore restore function test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   RelationalStore restore function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RdbBackupRestoreTest0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       console.info(TAG + "************* RdbBackupRestoreTest_0060 start *************")
@@ -328,12 +328,12 @@ export default function relationalStoreBackupRestorePromiseTest() {
       })
     })
     /**
-     * @tc.name RdbBackupRestoreTest0070
+     * @tc.name   RdbBackupRestoreTest0070
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_2000
-     * @tc.desc RelationalStore restore function test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   RelationalStore restore function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RdbBackupRestoreTest0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       console.info(TAG + "************* RdbBackupRestoreTest_0070 start *************")
@@ -353,12 +353,12 @@ export default function relationalStoreBackupRestorePromiseTest() {
     })
 
     /**
-     * @tc.name RdbBackupRestoreTest0090
+     * @tc.name   RdbBackupRestoreTest0090
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_2200
-     * @tc.desc RelationalStore restore function test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   RelationalStore restore function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RdbBackupRestoreTest0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       console.info(TAG + "************* RdbBackupRestoreTest_0090 start *************")
@@ -376,12 +376,12 @@ export default function relationalStoreBackupRestorePromiseTest() {
     })
 
     /**
-     * @tc.name RdbBackupRestoreTest0100
+     * @tc.name   RdbBackupRestoreTest0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_2300
-     * @tc.desc RelationalStore restore function test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   RelationalStore restore function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RdbBackupRestoreTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       console.info(TAG + "************* RdbBackupRestoreTest_0100 start *************")
@@ -404,12 +404,12 @@ export default function relationalStoreBackupRestorePromiseTest() {
     })
 
     /**
-     * @tc.name RdbBackupRestoreTest0120
+     * @tc.name   RdbBackupRestoreTest0120
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_2500
-     * @tc.desc RelationalStore restore function test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   RelationalStore restore function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RdbBackupRestoreTest0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       console.info(TAG + "************* RdbBackupRestoreTest_0120 start *************")
@@ -435,12 +435,12 @@ export default function relationalStoreBackupRestorePromiseTest() {
     })
 
     /**
-     * @tc.name RdbBackupRestoreTest0130
+     * @tc.name   RdbBackupRestoreTest0130
      * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreEtsAPITest_2600
-     * @tc.desc RelationalStore restore function test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   RelationalStore restore function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RdbBackupRestoreTest0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       console.info(TAG + "************* RdbBackupRestoreTest_0130 start *************")

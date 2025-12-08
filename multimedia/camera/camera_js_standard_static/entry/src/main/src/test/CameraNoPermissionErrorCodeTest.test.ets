@@ -28,7 +28,7 @@ let mCameraSession: camera.PhotoSession;
 let mVideoSession: camera.VideoSession
 let mPhotoSurface: string | camera.Profile;
 let mCameraNum: number;
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 
 export default function cameraNoPermissionErrorCodeTest() {
 
@@ -66,7 +66,7 @@ export default function cameraNoPermissionErrorCodeTest() {
     console.log(TAG + 'before receiver check')
     if (receiver !== undefined) {
       console.log(TAG + 'Photo receiver is created successfully')
-      mPhotoSurface = await receiver.getReceivingSurfaceId()
+      mPhotoSurface = await receiver!.getReceivingSurfaceId()
       console.log(TAG + 'Photo received id: ' + JSON.stringify(mPhotoSurface))
     } else {
       console.log(TAG + 'Photo receiver is created failed')
@@ -169,12 +169,12 @@ export default function cameraNoPermissionErrorCodeTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0200
-      * @tc.desc   test Photo session canpreconfig api with error code 7400201
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0200
+     * @tc.desc   test Photo session canpreconfig api with error code 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0200--------------");
@@ -192,12 +192,12 @@ export default function cameraNoPermissionErrorCodeTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_STATIC_0200
-      * @tc.desc   test Photo session preconfig api with error code 7400201
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_STATIC_0200
+     * @tc.desc   test Photo session preconfig api with error code 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_STATIC_0200--------------");
@@ -215,12 +215,12 @@ export default function cameraNoPermissionErrorCodeTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_STATIC_0100
-      * @tc.desc   test video session preconfig api with error code 7400201
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_STATIC_0100
+     * @tc.desc   test video session preconfig api with error code 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_STATIC_0100--------------");
@@ -238,12 +238,12 @@ export default function cameraNoPermissionErrorCodeTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0100
-      * @tc.desc   test video session canpreconfig api with error code 7400201
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0100
+     * @tc.desc   test video session canpreconfig api with error code 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0100--------------");

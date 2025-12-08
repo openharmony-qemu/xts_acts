@@ -25,12 +25,12 @@ export default function UserAuthTipTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_userIam_authWidget_Func_skip_0190
-     * @tc.name   : SUB_Security_userIam_authWidget_Func_skip_0190
-     * @tc.desc   : authWidget
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_userIam_authWidget_Func_skip_0190
+     * @tc.number SUB_Security_userIam_authWidget_Func_skip_0190
+     * @tc.desc   authWidget
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_userIam_authWidget_Func_skip_0190', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_Security_userIam_authWidget_Func_skip_0190 start')
@@ -63,12 +63,12 @@ export default function UserAuthTipTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_userIam_authWidget_Func_Tip_0031
-     * @tc.name   : SUB_Security_userIam_authWidget_Func_Tip_0031
-     * @tc.desc   : authWidget
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_userIam_authWidget_Func_Tip_0031
+     * @tc.number SUB_Security_userIam_authWidget_Func_Tip_0031
+     * @tc.desc   authWidget
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_userIam_authWidget_Func_Tip_0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_Security_userIam_authWidget_Func_Tip_0031 start')
@@ -84,12 +84,12 @@ export default function UserAuthTipTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_userIam_authWidget_Func_Tip_0032
-     * @tc.name   : SUB_Security_userIam_authWidget_Func_Tip_0032
-     * @tc.desc   : authWidget
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_userIam_authWidget_Func_Tip_0032
+     * @tc.number SUB_Security_userIam_authWidget_Func_Tip_0032
+     * @tc.desc   authWidget
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_userIam_authWidget_Func_Tip_0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_Security_userIam_authWidget_Func_Tip_0032 start')

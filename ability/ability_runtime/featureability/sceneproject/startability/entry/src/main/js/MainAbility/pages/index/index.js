@@ -60,9 +60,11 @@ export default {
         commonEvent.publish("ACTS_StartAbility_0601_CommonEvent", PublishCallBackSix);
         commonEvent.publish("ACTS_StartAbility_1000_CommonEvent", PublishCallBackTen);
         commonEvent.publish("ACTS_StartAbility_1300_CommonEvent", PublishCallBackThirteen);
-        featureAbility.terminateSelf((err, data)=>{
-            console.debug('==========Terminate Ability Success==========')
-        });
+        setTimeout(()=>{
+            featureAbility.terminateSelf((err, data)=>{
+                console.debug('==========Terminate Ability Success==========')
+            });
+        }, 1000)
     },
     onReady() {
     },

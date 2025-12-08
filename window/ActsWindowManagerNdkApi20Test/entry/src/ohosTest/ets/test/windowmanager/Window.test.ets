@@ -91,12 +91,12 @@ export default function WindowTest() {
       await Utils.pushPageNoClear("Window/Window", done);
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_GETWINDOWAVOIDAREA_0100
-     * @tc.name    : testGetWindowAvoidAreaInvalidParam
-     * @tc.desc    : Test get GetWindowAvoidAreaInvalidParam's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetWindowAvoidAreaInvalidParam
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_GETWINDOWAVOIDAREA_0100
+     * @tc.desc   Test get GetWindowAvoidAreaInvalidParam's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetWindowAvoidAreaInvalidParam', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -112,12 +112,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_ISWINDOWSHOWN_0100
-     * @tc.name    : testIsWindowShownInvalidParam
-     * @tc.desc    : Test get IsWindowShownInvalidParam's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testIsWindowShownInvalidParam
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_ISWINDOWSHOWN_0100
+     * @tc.desc   Test get IsWindowShownInvalidParam's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsWindowShownInvalidParam', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -133,12 +133,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_SETWINDOWPRIVACYMODE_0100
-     * @tc.name    : testSetWindowPrivacyModeNoPermission
-     * @tc.desc    : Test get SetWindowPrivacyModeNoPermission's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testSetWindowPrivacyModeNoPermission
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_SETWINDOWPRIVACYMODE_0100
+     * @tc.desc   Test get SetWindowPrivacyModeNoPermission's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetWindowPrivacyModeNoPermission', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -154,12 +154,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_GETWINDOWPROPERTIES_0100
-     * @tc.name    : testGetWindowPropertiesInvalidParam
-     * @tc.desc    : Test get GetWindowPropertiesInvalidParam's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetWindowPropertiesInvalidParam
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_GETWINDOWPROPERTIES_0100
+     * @tc.desc   Test get GetWindowPropertiesInvalidParam's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetWindowPropertiesInvalidParam', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -175,12 +175,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_SNAPSHOT_0100
-     * @tc.name    : testSnapshotOk
-     * @tc.desc    : Test get SnapshotOk's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testSnapshotOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_SNAPSHOT_0100
+     * @tc.desc   Test get SnapshotOk's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSnapshotOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -196,12 +196,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_SNAPSHOT_0200
-     * @tc.name    : testSnapshotInvalidParam
-     * @tc.desc    : Test get SnapshotInvalidParam's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testSnapshotInvalidParam
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_SNAPSHOT_0200
+     * @tc.desc   Test get SnapshotInvalidParam's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSnapshotInvalidParam', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -217,12 +217,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_GETALLWINDOWLAYOUTINFOLIST_0100
-     * @tc.name    : testGetAllWindowLayoutInfoListParameterOverride
-     * @tc.desc    : Test get GetAllWindowLayoutInfoListParameterOverride's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetAllWindowLayoutInfoListParameterOverride
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_GETALLWINDOWLAYOUTINFOLIST_0100
+     * @tc.desc   Test get GetAllWindowLayoutInfoListParameterOverride's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetAllWindowLayoutInfoListParameterOverride', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -238,12 +238,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_GETALLWINDOWLAYOUTINFOLIST_0200
-     * @tc.name    : testGetAllWindowLayoutInfoListOkOrDeviceNotSupported
-     * @tc.desc    : Test get GetAllWindowLayoutInfoListOkOrDeviceNotSupported's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetAllWindowLayoutInfoListOkOrDeviceNotSupported
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_GETALLWINDOWLAYOUTINFOLIST_0200
+     * @tc.desc   Test get GetAllWindowLayoutInfoListOkOrDeviceNotSupported's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetAllWindowLayoutInfoListOkOrDeviceNotSupported', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -259,12 +259,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_INJECTTOUCHEVENT_0200
-     * @tc.name    : testInjectTouchEventSystemAbnormal
-     * @tc.desc    : Test get InjectTouchEventSystemAbnormal's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testInjectTouchEventSystemAbnormal
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_INJECTTOUCHEVENT_0200
+     * @tc.desc   Test get InjectTouchEventSystemAbnormal's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testInjectTouchEventSystemAbnormal', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -280,12 +280,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OK_0100
-     * @tc.name    : testWindowManagerErrorCodeOk
-     * @tc.desc    : Test get WindowManagerErrorCodeOk's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testWindowManagerErrorCodeOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OK_0100
+     * @tc.desc   Test get WindowManagerErrorCodeOk's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWindowManagerErrorCodeOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -301,12 +301,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_ERRORCODE_NO_PERMISSION_0100
-     * @tc.name    : testWindowManagerErrorCodeNoPermission
-     * @tc.desc    : Test get WindowManagerErrorCodeNoPermission's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testWindowManagerErrorCodeNoPermission
+     * @tc.number SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_ERRORCODE_NO_PERMISSION_0100
+     * @tc.desc   Test get WindowManagerErrorCodeNoPermission's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWindowManagerErrorCodeNoPermission', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -322,12 +322,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_ERRORCODE_INVALID_PARAM_0100
-     * @tc.name    : testWindowManagerErrorCodeInvalidParam
-     * @tc.desc    : Test get WindowManagerErrorCodeInvalidParam's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testWindowManagerErrorCodeInvalidParam
+     * @tc.number SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_ERRORCODE_INVALID_PARAM_0100
+     * @tc.desc   Test get WindowManagerErrorCodeInvalidParam's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWindowManagerErrorCodeInvalidParam', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -343,12 +343,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED_0100
-     * @tc.name    : testWindowManagerErrorCodeDeviceNotSupported
-     * @tc.desc    : Test get WindowManagerErrorCodeDeviceNotSupported's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testWindowManagerErrorCodeDeviceNotSupported
+     * @tc.number SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED_0100
+     * @tc.desc   Test get WindowManagerErrorCodeDeviceNotSupported's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWindowManagerErrorCodeDeviceNotSupported', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -364,12 +364,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_INVAILD_WINDOW_ID_0100
-     * @tc.name    : testWindowManagerErrorCodeInvalidWindowId
-     * @tc.desc    : Test get WindowManagerErrorCodeInvalidWindowId's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testWindowManagerErrorCodeInvalidWindowId
+     * @tc.number SUB_ARKUI_ACE_ENGINE_INVAILD_WINDOW_ID_0100
+     * @tc.desc   Test get WindowManagerErrorCodeInvalidWindowId's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWindowManagerErrorCodeInvalidWindowId', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -385,12 +385,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_ERRORCODE_STATE_ABNORMAL_0100
-     * @tc.name    : testWindowManagerErrorCodeStateAbnormal
-     * @tc.desc    : Test get WindowManagerErrorCodeStateAbnormal's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testWindowManagerErrorCodeStateAbnormal
+     * @tc.number SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_ERRORCODE_STATE_ABNORMAL_0100
+     * @tc.desc   Test get WindowManagerErrorCodeStateAbnormal's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWindowManagerErrorCodeStateAbnormal', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -406,12 +406,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_ERRORCODE_SYSTEM_ABNORMAL_0100
-     * @tc.name    : testWindowManagerErrorCodeSystemAbnormal
-     * @tc.desc    : Test get WindowManagerErrorCodeSystemAbnormal's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testWindowManagerErrorCodeSystemAbnormal
+     * @tc.number SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_ERRORCODE_SYSTEM_ABNORMAL_0100
+     * @tc.desc   Test get WindowManagerErrorCodeSystemAbnormal's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWindowManagerErrorCodeSystemAbnormal', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -427,12 +427,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_AVOID_AREA_TYPE_SYSTEM_0100
-     * @tc.name    : testGetWindowAvoidAreaType0100
-     * @tc.desc    : Test get GetWindowAvoidAreaType0100's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetWindowAvoidAreaType0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_AVOID_AREA_TYPE_SYSTEM_0100
+     * @tc.desc   Test get GetWindowAvoidAreaType0100's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetWindowAvoidAreaType0100', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -448,12 +448,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_AVOID_AREA_TYPE_CUTOUT_0100
-     * @tc.name    : testGetWindowAvoidAreaType0200
-     * @tc.desc    : Test get GetWindowAvoidAreaType0200's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetWindowAvoidAreaType0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_AVOID_AREA_TYPE_CUTOUT_0100
+     * @tc.desc   Test get GetWindowAvoidAreaType0200's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetWindowAvoidAreaType0200', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -469,12 +469,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_AVOID_AREA_TYPE_SYSTEM_GESTURE_0100
-     * @tc.name    : testGetWindowAvoidAreaType0300
-     * @tc.desc    : Test get GetWindowAvoidAreaType0300's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetWindowAvoidAreaType0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_AVOID_AREA_TYPE_SYSTEM_GESTURE_0100
+     * @tc.desc   Test get GetWindowAvoidAreaType0300's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetWindowAvoidAreaType0300', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -490,12 +490,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_AVOID_AREA_TYPE_KEYBOARD_0100
-     * @tc.name    : testGetWindowAvoidAreaType0400
-     * @tc.desc    : Test get GetWindowAvoidAreaType0400's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetWindowAvoidAreaType0400
+     * @tc.number SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_AVOID_AREA_TYPE_KEYBOARD_0100
+     * @tc.desc   Test get GetWindowAvoidAreaType0400's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetWindowAvoidAreaType0400', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -511,12 +511,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_AVOID_AREA_TYPE_NAVIGATION_INDICATOR_0100
-     * @tc.name    : testGetWindowAvoidAreaType0500
-     * @tc.desc    : Test get GetWindowAvoidAreaType0500's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetWindowAvoidAreaType0500
+     * @tc.number SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_AVOID_AREA_TYPE_NAVIGATION_INDICATOR_0100
+     * @tc.desc   Test get GetWindowAvoidAreaType0500's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetWindowAvoidAreaType0500', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -532,12 +532,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_WINDOW_TYPE_APP_0100
-     * @tc.name    : testGetWindowType0100
-     * @tc.desc    : Test get GetWindowType0100's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetWindowType0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_WINDOW_TYPE_APP_0100
+     * @tc.desc   Test get GetWindowType0100's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetWindowType0100', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -558,12 +558,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_WINDOW_TYPE_MAIN_0100
-     * @tc.name    : testGetWindowType0200
-     * @tc.desc    : Test get GetWindowType0200's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetWindowType0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_WINDOW_TYPE_MAIN_0100
+     * @tc.desc   Test get GetWindowType0200's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetWindowType0200', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -580,12 +580,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_WINDOW_TYPE_DIALOG_0100
-     * @tc.name    : testGetWindowType0400
-     * @tc.desc    : Test get GetWindowType0400's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetWindowType0400
+     * @tc.number SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_WINDOW_TYPE_DIALOG_0100
+     * @tc.desc   Test get GetWindowType0400's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetWindowType0400', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -605,12 +605,12 @@ export default function WindowTest() {
       }
     })
     /**
-     * @tc.number  : SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_REGISTERMOUSEEVENTFILTER_0100
-     * @tc.name    : testRegisterMouseEventFilterOkOrServiceError
-     * @tc.desc    : Test get native xcomopnent key event action works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testRegisterMouseEventFilterOkOrServiceError
+     * @tc.number SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_REGISTERMOUSEEVENTFILTER_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegisterMouseEventFilterOkOrServiceError', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -627,12 +627,12 @@ export default function WindowTest() {
     })
 
     /**
-     * @tc.number  : SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_REGISTERMOUSEEVENTFILTER_0200
-     * @tc.name    : testRegisterMouseEventFilterInvaildWindowId
-     * @tc.desc    : Test get native xcomopnent key event action works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testRegisterMouseEventFilterInvaildWindowId
+     * @tc.number SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_REGISTERMOUSEEVENTFILTER_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegisterMouseEventFilterInvaildWindowId', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -649,12 +649,12 @@ export default function WindowTest() {
     })
 
     /**
-     * @tc.number  : SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_UNREGISTERMOUSEEVENTFILTER_0100
-     * @tc.name    : testUnregisterMouseEventFilterOkOrServiceError
-     * @tc.desc    : Test get native xcomopnent key event action works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testUnregisterMouseEventFilterOkOrServiceError
+     * @tc.number SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_UNREGISTERMOUSEEVENTFILTER_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnregisterMouseEventFilterOkOrServiceError', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -671,12 +671,12 @@ export default function WindowTest() {
     })
 
     /**
-     * @tc.number  : SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_UNREGISTERMOUSEEVENTFILTER_0200
-     * @tc.name    : testUnregisterMouseEventFilterInvaildWindowId
-     * @tc.desc    : Test get native xcomopnent key event action works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testUnregisterMouseEventFilterInvaildWindowId
+     * @tc.number SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_UNREGISTERMOUSEEVENTFILTER_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnregisterMouseEventFilterInvaildWindowId', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -693,12 +693,12 @@ export default function WindowTest() {
     })
 
     /**
-     * @tc.number  : SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_REGISTERTOUCHEVENTFILTER_0100
-     * @tc.name    : testRegisterTouchEventFilterOkOrServiceError
-     * @tc.desc    : Test get native xcomopnent key event action works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testRegisterTouchEventFilterOkOrServiceError
+     * @tc.number SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_REGISTERTOUCHEVENTFILTER_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegisterTouchEventFilterOkOrServiceError', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -715,12 +715,12 @@ export default function WindowTest() {
     })
 
     /**
-     * @tc.number  : SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_REGISTERTOUCHEVENTFILTER_0200
-     * @tc.name    : testRegisterTouchEventFilterInvaildWindowId
-     * @tc.desc    : Test get native xcomopnent key event action works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testRegisterTouchEventFilterInvaildWindowId
+     * @tc.number SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_REGISTERTOUCHEVENTFILTER_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegisterTouchEventFilterInvaildWindowId', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -737,12 +737,12 @@ export default function WindowTest() {
     })
 
     /**
-     * @tc.number  : SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_UNREGISTERTOUCHEVENTFILTER_0100
-     * @tc.name    : testUnregisterTouchEventFilterOkOrServiceError
-     * @tc.desc    : Test get native xcomopnent key event action works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testUnregisterTouchEventFilterOkOrServiceError
+     * @tc.number SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_UNREGISTERTOUCHEVENTFILTER_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnregisterTouchEventFilterOkOrServiceError', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -759,12 +759,12 @@ export default function WindowTest() {
     })
 
     /**
-     * @tc.number  : SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_UNREGISTERTOUCHEVENTFILTER_0200
-     * @tc.name    : testUnregisterTouchEventFilterInvaildWindowId
-     * @tc.desc    : Test get native xcomopnent key event action works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testUnregisterTouchEventFilterInvaildWindowId
+     * @tc.number SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_UNREGISTERTOUCHEVENTFILTER_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnregisterTouchEventFilterInvaildWindowId', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -782,12 +782,12 @@ export default function WindowTest() {
 
 
     /**
-     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200
-     * @tc.name    : test_OH_WindowManager_GetAllMainWindowInfo_0200
-     * @tc.desc    : OH_WindowManager_GetAllMainWindowInfo测试返回值覆盖
-     * @tc.level   : LEVEL0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   test_OH_WindowManager_GetAllMainWindowInfo_0200
+     * @tc.number SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200
+     * @tc.desc   OH_WindowManager_GetAllMainWindowInfo测试返回值覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_WindowManager_GetAllMainWindowInfo_0200', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -814,12 +814,12 @@ export default function WindowTest() {
     })
 
     /**
-     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0200
-     * @tc.name    : test_OH_WindowManager_GetMainWindowSnapshot_0200
-     * @tc.desc    : test_OH_WindowManager_GetMainWindowSnapshot_0200
-     * @tc.level   : LEVEL0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   test_OH_WindowManager_GetMainWindowSnapshot_0200
+     * @tc.number SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0200
+     * @tc.desc   test_OH_WindowManager_GetMainWindowSnapshot_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_WindowManager_GetMainWindowSnapshot_0200', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -844,12 +844,12 @@ export default function WindowTest() {
     })
 
     /**
-     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0300
-     * @tc.name    : test_OH_WindowManager_GetMainWindowSnapshot_0300
-     * @tc.desc    : test_OH_WindowManager_GetMainWindowSnapshot_0300
-     * @tc.level   : LEVEL0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   test_OH_WindowManager_GetMainWindowSnapshot_0300
+     * @tc.number SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0300
+     * @tc.desc   test_OH_WindowManager_GetMainWindowSnapshot_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_WindowManager_GetMainWindowSnapshot_0300', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -874,12 +874,12 @@ export default function WindowTest() {
     })
 
     /**
-     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0400
-     * @tc.name    : test_OH_WindowManager_GetMainWindowSnapshot_0400
-     * @tc.desc    : test_OH_WindowManager_GetMainWindowSnapshot_0400
-     * @tc.level   : LEVEL0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   test_OH_WindowManager_GetMainWindowSnapshot_0400
+     * @tc.number SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0400
+     * @tc.desc   test_OH_WindowManager_GetMainWindowSnapshot_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_WindowManager_GetMainWindowSnapshot_0400', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -904,12 +904,12 @@ export default function WindowTest() {
     })
 
     /**
-     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0500
-     * @tc.name    : test_OH_WindowManager_GetMainWindowSnapshot_0500
-     * @tc.desc    : test_OH_WindowManager_GetMainWindowSnapshot_0500
-     * @tc.level   : LEVEL0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   test_OH_WindowManager_GetMainWindowSnapshot_0500
+     * @tc.number SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0500
+     * @tc.desc   test_OH_WindowManager_GetMainWindowSnapshot_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_WindowManager_GetMainWindowSnapshot_0500', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -934,12 +934,12 @@ export default function WindowTest() {
     })
 
     /**
-     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0600
-     * @tc.name    : test_OH_WindowManager_GetMainWindowSnapshot_0600
-     * @tc.desc    : test_OH_WindowManager_GetMainWindowSnapshot_0600
-     * @tc.level   : LEVEL0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   test_OH_WindowManager_GetMainWindowSnapshot_0600
+     * @tc.number SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0600
+     * @tc.desc   test_OH_WindowManager_GetMainWindowSnapshot_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_WindowManager_GetMainWindowSnapshot_0600', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -964,12 +964,12 @@ export default function WindowTest() {
     })
 
     /**
-     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0700
-     * @tc.name    : test_OH_WindowManager_GetMainWindowSnapshot_0700
-     * @tc.desc    : test_OH_WindowManager_GetMainWindowSnapshot_0700
-     * @tc.level   : LEVEL0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   test_OH_WindowManager_GetMainWindowSnapshot_0700
+     * @tc.number SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0700
+     * @tc.desc   test_OH_WindowManager_GetMainWindowSnapshot_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_WindowManager_GetMainWindowSnapshot_0700', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -994,12 +994,12 @@ export default function WindowTest() {
     })
 
     /**
-     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800
-     * @tc.name    : test_OH_WindowManager_GetMainWindowSnapshot_0800
-     * @tc.desc    : test_OH_WindowManager_GetMainWindowSnapshot_0800
-     * @tc.level   : LEVEL0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   test_OH_WindowManager_GetMainWindowSnapshot_0800
+     * @tc.number SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800
+     * @tc.desc   test_OH_WindowManager_GetMainWindowSnapshot_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_WindowManager_GetMainWindowSnapshot_0800', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {

@@ -58,6 +58,14 @@ export default function ListOffSet01Jsunit() {
     });
 
     // end set -2
+    /**
+     * @tc.name   ListOffSet01Jsunit_0010
+     * @tc.number ListOffSet01Jsunit_0010
+     * @tc.desc   ListOffSet01Jsunit_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListOffSet01Jsunit_0010',  Level.LEVEL0, async (done: Function) => {
       console.info('[ListOffSet01Jsunit_0010] START');
       let driver = Driver.create();
@@ -76,6 +84,14 @@ export default function ListOffSet01Jsunit() {
     });
 
     // end set 5
+    /**
+     * @tc.name   ListOffSet01Jsunit_0020
+     * @tc.number ListOffSet01Jsunit_0020
+     * @tc.desc   ListOffSet01Jsunit_0020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListOffSet01Jsunit_0020',  Level.LEVEL0, async (done: Function) => {
       console.info('[ListOffSet01Jsunit_0020] START');
       let driver = Driver.create();
@@ -94,6 +110,14 @@ export default function ListOffSet01Jsunit() {
     });
 
     // end set 10,start set 10
+    /**
+     * @tc.name   ListOffSet01Jsunit_0030
+     * @tc.number ListOffSet01Jsunit_0030
+     * @tc.desc   ListOffSet01Jsunit_0030
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListOffSet01Jsunit_0030',  Level.LEVEL0, async (done: Function) => {
       console.info('[ListOffSet01Jsunit_0030] START');
       let driver = Driver.create();
@@ -122,6 +146,14 @@ export default function ListOffSet01Jsunit() {
     });
 
     // start set -2
+    /**
+     * @tc.name   ListOffSet01Jsunit_0040
+     * @tc.number ListOffSet01Jsunit_0040
+     * @tc.desc   ListOffSet01Jsunit_0040
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListOffSet01Jsunit_0040',  Level.LEVEL0, async (done: Function) => {
       console.info('[ListOffSet01Jsunit_0040] START');
       let driver = Driver.create();
@@ -141,6 +173,14 @@ export default function ListOffSet01Jsunit() {
     });
 
     // start set 5
+    /**
+     * @tc.name   ListOffSet01Jsunit_0050
+     * @tc.number ListOffSet01Jsunit_0050
+     * @tc.desc   ListOffSet01Jsunit_0050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListOffSet01Jsunit_0050',  Level.LEVEL0, async (done: Function) => {
       console.info('[ListOffSet01Jsunit_0050] START');
       let driver = Driver.create();
@@ -160,6 +200,14 @@ export default function ListOffSet01Jsunit() {
     });
 
     // start set 5 , end set 0 , padding set 5
+    /**
+     * @tc.name   ListOffSet01Jsunit_0060
+     * @tc.number ListOffSet01Jsunit_0060
+     * @tc.desc   ListOffSet01Jsunit_0060
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListOffSet01Jsunit_0060',  Level.LEVEL0, async (done: Function) => {
       console.info('[ListOffSet01Jsunit_0060] START');
       let driver = Driver.create();
@@ -185,6 +233,14 @@ export default function ListOffSet01Jsunit() {
     });
 
     // start set 0 , end set 5 , padding set 5
+    /**
+     * @tc.name   ListOffSet01Jsunit_0070
+     * @tc.number ListOffSet01Jsunit_0070
+     * @tc.desc   ListOffSet01Jsunit_0070
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListOffSet01Jsunit_0070',  Level.LEVEL0, async (done: Function) => {
       console.info('[ListOffSet01Jsunit_0070] START');
       let driver = Driver.create();
@@ -210,6 +266,14 @@ export default function ListOffSet01Jsunit() {
     });
 
     // start set 10 , end set 10 , padding set 0 , get currentOffset value
+    /**
+     * @tc.name   ListOffSet01Jsunit_0080
+     * @tc.number ListOffSet01Jsunit_0080
+     * @tc.desc   ListOffSet01Jsunit_0080
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListOffSet01Jsunit_0080',  Level.LEVEL0, async (done: Function) => {
       console.info('[ListOffSet01Jsunit_0080] START');
       let driver = Driver.create();

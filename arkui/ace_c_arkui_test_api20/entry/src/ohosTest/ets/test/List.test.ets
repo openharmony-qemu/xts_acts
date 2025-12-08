@@ -43,9 +43,17 @@ import StackTypeNodeTest from './Stack/StackTypeNodeTest.test'
 import StackCNodeTest from './Stack/StackCNodeTest.test'
 import RelativeContainerTypeNodeTest from './RelativeContainer/RelativeContainerTypeNodeTest.test'
 import RelativeContainerCNodeTest from './RelativeContainer/RelativeContainerCNodeTest.test'
+import CapiPostAsyncUITaskF from './capi/CapiPostAsyncUITaskResultValueF.test'
+import CapiPostUITaskF from './capi/CapiPostUITaskResultValueF.test'
+import CapiPostUITaskAndWaitF from './capi/CapiPostUITaskAndWaitResultValueF.test'
+import CapiPostAsyncUITaskS from './capi/CapiPostAsyncUITaskResultValueS.test'
+import CapiPostUITaskS from './capi/CapiPostUITaskResultValueS.test'
+import CapiPostUITaskAndWaitS from './capi/CapiPostUITaskAndWaitResultValueS.test'
 import CapiPostAsyncUITask from './capi/CapiPostAsyncUITask.test'
 import CapiPostUITask from './capi/CapiPostUITask.test'
 import CapiPostUITaskAndWait from './capi/CapiPostUITaskAndWait.test'
+import ScrollZoomSampleTest from './scroll/ScrollZoomSampleTest.test'
+import AccessibilityProviderCreateTest from './Accessibility/AccessibilityProviderCreateTest.test'
 
 export default function testsuite() {
   PostOnIdleTest();
@@ -82,4 +90,12 @@ export default function testsuite() {
   CapiPostAsyncUITask();
   CapiPostUITask();
   CapiPostUITaskAndWait();
+  CapiPostAsyncUITaskS();
+  CapiPostUITaskS();
+  CapiPostUITaskAndWaitS();
+  CapiPostAsyncUITaskF();
+  CapiPostUITaskF();
+  CapiPostUITaskAndWaitF();
+  ScrollZoomSampleTest();
+  AccessibilityProviderCreateTest();
 }

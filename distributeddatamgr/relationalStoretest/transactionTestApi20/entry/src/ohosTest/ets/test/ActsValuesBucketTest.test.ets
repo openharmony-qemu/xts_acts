@@ -22,12 +22,12 @@ const RDB_E_INVALID_ARGS = 14800001;
 export default function ActsValuesBucketTest() {
   describe('ActsValuesBucketTest', () => {
     /**
-     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAsset_0100
-     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAsset_0100
-     * @tc.desc    : test OH_VBucket_PutAsset Test Illegal Parameter Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAsset_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAsset_0100
+     * @tc.desc   test OH_VBucket_PutAsset Test Illegal Parameter Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAsset_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -45,12 +45,12 @@ export default function ActsValuesBucketTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAsset_0200
-     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAsset_0200
-     * @tc.desc    : test OH_VBucket_PutAsset Test Normal Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAsset_0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAsset_0200
+     * @tc.desc   test OH_VBucket_PutAsset Test Normal Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAsset_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -68,12 +68,12 @@ export default function ActsValuesBucketTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAssets_0300
-     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAssets_0300
-     * @tc.desc    : test OH_VBucket_PutAssets Test Illegal Parameter Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAssets_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAssets_0300
+     * @tc.desc   test OH_VBucket_PutAssets Test Illegal Parameter Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAssets_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -91,12 +91,12 @@ export default function ActsValuesBucketTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAssets_0400
-     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAssets_0400
-     * @tc.desc    : test OH_VBucket_PutAssets Test Normal Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAssets_0400
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAssets_0400
+     * @tc.desc   test OH_VBucket_PutAssets Test Normal Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutAssets_0400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -114,12 +114,12 @@ export default function ActsValuesBucketTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutFloatVector_0500
-     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutFloatVector_0500
-     * @tc.desc    : test OH_VBucket_PutFloatVector Test Illegal Parameter Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutFloatVector_0500
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutFloatVector_0500
+     * @tc.desc   test OH_VBucket_PutFloatVector Test Illegal Parameter Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutFloatVector_0500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -140,12 +140,12 @@ export default function ActsValuesBucketTest() {
       })
 
     /**
-     * @tc.number  : SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutUnlimitedInt_0600
-     * @tc.name    : SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutUnlimitedInt_0600
-     * @tc.desc    : test OH_VBucket_PutUnlimitedInt Test Illegal Parameter Scene
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutUnlimitedInt_0600
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutUnlimitedInt_0600
+     * @tc.desc   test OH_VBucket_PutUnlimitedInt Test Illegal Parameter Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DistributedData_RelationalStore_SDK_OH_VBucket_PutUnlimitedInt_0600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,

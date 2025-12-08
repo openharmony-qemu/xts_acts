@@ -69,12 +69,12 @@ export default function createIncrementalSourceTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_CREATE_INCREMENTAL_SOURCE_001
-     * @tc.name      : createIncrementalSource_promise_001
-     * @tc.desc      : createIncrementalSource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createIncrementalSource_promise_001
+     * @tc.number IMAGE_CREATE_INCREMENTAL_SOURCE_001
+     * @tc.desc   createIncrementalSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createIncrementalSource_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createIncrementalSource_promise_001';
@@ -82,12 +82,12 @@ export default function createIncrementalSourceTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_INCREMENTAL_SOURCE_002
-     * @tc.name      : createIncrementalSource_promise_002
-     * @tc.desc      : createIncrementalSource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createIncrementalSource_promise_002
+     * @tc.number IMAGE_CREATE_INCREMENTAL_SOURCE_002
+     * @tc.desc   createIncrementalSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createIncrementalSource_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createIncrementalSource_promise_002';
@@ -96,12 +96,12 @@ export default function createIncrementalSourceTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_INCREMENTAL_SOURCE_003
-     * @tc.name      : createIncrementalSource_promise_003
-     * @tc.desc      : createIncrementalSource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createIncrementalSource_promise_003
+     * @tc.number IMAGE_CREATE_INCREMENTAL_SOURCE_003
+     * @tc.desc   createIncrementalSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createIncrementalSource_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'createIncrementalSource_promise_003';

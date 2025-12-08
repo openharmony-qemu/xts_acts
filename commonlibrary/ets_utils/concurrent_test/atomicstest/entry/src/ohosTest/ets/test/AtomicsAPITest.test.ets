@@ -49,12 +49,12 @@ export default function AtomicsAPITest() {
     })
 
     /**
+     * @tc.name   AtomicsAddApiTest0100
      * @tc.number SUB_ATOMICS_API_TEST_0100
-     * @tc.name AtomicsAddApiTest0100
-     * @tc.desc Test Atomics.add method which adds a given value to the value at a specific index in an array, and returns the old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.add method which adds a given value to the value at a specific index in an array, and returns the old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsAddApiTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsAddApiTest0100';
@@ -82,12 +82,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsAddApiTest0200
      * @tc.number SUB_ATOMICS_API_TEST_0200
-     * @tc.name AtomicsAddApiTest0200
-     * @tc.desc Test Atomics.add method with different values including -1, 0, 1, 7, Integer.MAX_VALUE, Integer.MAX_VALUE+1. Note: null and undefined cannot be used as values because they fail to compile in ArkTS
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.add method with different values including -1, 0, 1, 7, Integer.MAX_VALUE, Integer.MAX_VALUE+1. Note: null and undefined cannot be used as values because they fail to compile in ArkTS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsAddApiTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsAddApiTest0200';
@@ -136,12 +136,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsAddApiTest0300
      * @tc.number SUB_ATOMICS_API_TEST_0300
-     * @tc.name AtomicsAddApiTest0300
-     * @tc.desc Test Atomics.add method with different indices including -1, 0, length, length+1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.add method with different indices including -1, 0, length, length+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsAddApiTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsAddApiTest0300';
@@ -196,12 +196,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsAndApiTest0400
      * @tc.number SUB_ATOMICS_API_TEST_0400
-     * @tc.name AtomicsAndApiTest0400
-     * @tc.desc Test Atomics.and method which performs a bitwise AND operation on a value at a specific index in an array, and returns the old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.and method which performs a bitwise AND operation on a value at a specific index in an array, and returns the old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsAndApiTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsAndApiTest0400';
@@ -229,12 +229,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsAndApiTest0500
      * @tc.number SUB_ATOMICS_API_TEST_0500
-     * @tc.name AtomicsAndApiTest0500
-     * @tc.desc Test Atomics.and method with different values including -1, 0, 1, 7, Integer.MAX_VALUE, Integer.MAX_VALUE+1. Note: null and undefined values are not tested as they fail to compile in ArkTS
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.and method with different values including -1, 0, 1, 7, Integer.MAX_VALUE, Integer.MAX_VALUE+1. Note: null and undefined values are not tested as they fail to compile in ArkTS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsAndApiTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsAndApiTest0500';
@@ -284,12 +284,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsAndApiTest0600
      * @tc.number SUB_ATOMICS_API_TEST_0600
-     * @tc.name AtomicsAndApiTest0600
-     * @tc.desc Test Atomics.and method with different indices including -1, 0, length, length+1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.and method with different indices including -1, 0, length, length+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsAndApiTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsAndApiTest0600';
@@ -344,12 +344,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsCompareExchangeApiTest0700
      * @tc.number SUB_ATOMICS_API_TEST_0700
-     * @tc.name AtomicsCompareExchangeApiTest0700
-     * @tc.desc Test Atomics.compareExchange method which compares the value at a specific index with an expected value and replaces it with a new value if equal, returning the old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.compareExchange method which compares the value at a specific index with an expected value and replaces it with a new value if equal, returning the old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsCompareExchangeApiTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsCompareExchangeApiTest0700';
@@ -379,12 +379,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsCompareExchangeApiTest0800
      * @tc.number SUB_ATOMICS_API_TEST_0800
-     * @tc.name AtomicsCompareExchangeApiTest0800
-     * @tc.desc Test Atomics.compareExchange method with different values including -1, 0, 1, 7, Integer.MAX_VALUE, Integer.MAX_VALUE+1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.compareExchange method with different values including -1, 0, 1, 7, Integer.MAX_VALUE, Integer.MAX_VALUE+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsCompareExchangeApiTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsCompareExchangeApiTest0800';
@@ -437,12 +437,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsCompareExchangeApiTest0900
      * @tc.number SUB_ATOMICS_API_TEST_0900
-     * @tc.name AtomicsCompareExchangeApiTest0900
-     * @tc.desc Test Atomics.compareExchange method with different indices including -1, 0, length, length+1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.compareExchange method with different indices including -1, 0, length, length+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsCompareExchangeApiTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsCompareExchangeApiTest0900';
@@ -497,12 +497,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsCompareExchangeApiTest1000
      * @tc.number SUB_ATOMICS_API_TEST_1000
-     * @tc.name AtomicsCompareExchangeApiTest1000
-     * @tc.desc Test Atomics.compareExchange method with cases where the value equals and does not equal the expected value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.compareExchange method with cases where the value equals and does not equal the expected value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsCompareExchangeApiTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsCompareExchangeApiTest1000';
@@ -555,12 +555,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsExchangeApiTest1100
      * @tc.number SUB_ATOMICS_API_TEST_1100
-     * @tc.name AtomicsExchangeApiTest1100
-     * @tc.desc Test Atomics.exchange method which replaces the value at a specific index in an array with a given value, and returns the old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.exchange method which replaces the value at a specific index in an array with a given value, and returns the old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsExchangeApiTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsExchangeApiTest1100';
@@ -587,12 +587,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsExchangeApiTest1200
      * @tc.number SUB_ATOMICS_API_TEST_1200
-     * @tc.name AtomicsExchangeApiTest1200
-     * @tc.desc Test Atomics.exchange method with different values including -1, 0, 1, 7, Integer.MAX_VALUE, Integer.MIN_VALUE
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.exchange method with different values including -1, 0, 1, 7, Integer.MAX_VALUE, Integer.MIN_VALUE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsExchangeApiTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsExchangeApiTest1200';
@@ -642,12 +642,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsExchangeApiTest1300
      * @tc.number SUB_ATOMICS_API_TEST_1300
-     * @tc.name AtomicsExchangeApiTest1300
-     * @tc.desc Test Atomics.exchange method with different indices including -1, 0, length, length+1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.exchange method with different indices including -1, 0, length, length+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsExchangeApiTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsExchangeApiTest1300';
@@ -702,12 +702,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsExchangeApiTest1400
      * @tc.number SUB_ATOMICS_API_TEST_1400
-     * @tc.name AtomicsExchangeApiTest1400
-     * @tc.desc Test Atomics.exchange method with cases where the new value equals and does not equal the old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.exchange method with cases where the new value equals and does not equal the old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsExchangeApiTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsExchangeApiTest1400';
@@ -753,12 +753,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsLoadApiTest1500
      * @tc.number SUB_ATOMICS_API_TEST_1500
-     * @tc.name AtomicsLoadApiTest1500
-     * @tc.desc Test Atomics.load method which returns the value at a specific index in an array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.load method which returns the value at a specific index in an array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsLoadApiTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsLoadApiTest1500';
@@ -793,12 +793,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsLoadApiTest1600
      * @tc.number SUB_ATOMICS_API_TEST_1600
-     * @tc.name AtomicsLoadApiTest1600
-     * @tc.desc Test Atomics.load method with different indices including -1, 0, length, length+1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.load method with different indices including -1, 0, length, length+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsLoadApiTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsLoadApiTest1600';
@@ -851,12 +851,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsLoadApiTest1700
      * @tc.number SUB_ATOMICS_API_TEST_1700
-     * @tc.name AtomicsLoadApiTest1700
-     * @tc.desc Test Atomics.load method after using other atomic operations like add, and, exchange
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.load method after using other atomic operations like add, and, exchange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsLoadApiTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsLoadApiTest1700';
@@ -892,12 +892,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsOrApiTest1800
      * @tc.number SUB_ATOMICS_API_TEST_1800
-     * @tc.name AtomicsOrApiTest1800
-     * @tc.desc Test Atomics.or method which performs a bitwise OR operation on a value at a specific index in an array, and returns the old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.or method which performs a bitwise OR operation on a value at a specific index in an array, and returns the old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsOrApiTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsOrApiTest1800';
@@ -925,12 +925,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsOrApiTest1900
      * @tc.number SUB_ATOMICS_API_TEST_1900
-     * @tc.name AtomicsOrApiTest1900
-     * @tc.desc Test Atomics.or method with different values including -1, 0, 1, 7, Integer.MAX_VALUE, Integer.MIN_VALUE
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.or method with different values including -1, 0, 1, 7, Integer.MAX_VALUE, Integer.MIN_VALUE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsOrApiTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsOrApiTest1900';
@@ -980,12 +980,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsOrApiTest2000
      * @tc.number SUB_ATOMICS_API_TEST_2000
-     * @tc.name AtomicsOrApiTest2000
-     * @tc.desc Test Atomics.or method with different indices including -1, 0, length, length+1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.or method with different indices including -1, 0, length, length+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsOrApiTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsOrApiTest2000';
@@ -1040,12 +1040,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsStoreApiTest2100
      * @tc.number SUB_ATOMICS_API_TEST_2100
-     * @tc.name AtomicsStoreApiTest2100
-     * @tc.desc Test Atomics.store method which stores a given value at a specific index in an array and returns the value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.store method which stores a given value at a specific index in an array and returns the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsStoreApiTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsStoreApiTest2100';
@@ -1073,12 +1073,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsStoreApiTest2200
      * @tc.number SUB_ATOMICS_API_TEST_2200
-     * @tc.name AtomicsStoreApiTest2200
-     * @tc.desc Test Atomics.store method with different values including -1, 0, 1, 7, Integer.MAX_VALUE, Integer.MIN_VALUE
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.store method with different values including -1, 0, 1, 7, Integer.MAX_VALUE, Integer.MIN_VALUE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsStoreApiTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsStoreApiTest2200';
@@ -1128,12 +1128,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsStoreApiTest2300
      * @tc.number SUB_ATOMICS_API_TEST_2300
-     * @tc.name AtomicsStoreApiTest2300
-     * @tc.desc Test Atomics.store method with different indices including -1, 0, length, length+1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.store method with different indices including -1, 0, length, length+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsStoreApiTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsStoreApiTest2300';
@@ -1188,12 +1188,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsStoreApiTest2400
      * @tc.number SUB_ATOMICS_API_TEST_2400
-     * @tc.name AtomicsStoreApiTest2400
-     * @tc.desc Test Atomics.store method with cases where the new value equals and does not equal the old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.store method with cases where the new value equals and does not equal the old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsStoreApiTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsStoreApiTest2400';
@@ -1238,12 +1238,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsSubApiTest2500
      * @tc.number SUB_ATOMICS_API_TEST_2500
-     * @tc.name AtomicsSubApiTest2500
-     * @tc.desc Test Atomics.sub method which subtracts a given value from the value at a specific index in an array, and returns the old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.sub method which subtracts a given value from the value at a specific index in an array, and returns the old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsSubApiTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsSubApiTest2500';
@@ -1271,12 +1271,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsSubApiTest2600
      * @tc.number SUB_ATOMICS_API_TEST_2600
-     * @tc.name AtomicsSubApiTest2600
-     * @tc.desc Test Atomics.sub method with different values including -1, 0, 1, 7, Integer.MAX_VALUE, Integer.MIN_VALUE
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.sub method with different values including -1, 0, 1, 7, Integer.MAX_VALUE, Integer.MIN_VALUE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsSubApiTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsSubApiTest2600';
@@ -1331,12 +1331,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsSubApiTest2700
      * @tc.number SUB_ATOMICS_API_TEST_2700
-     * @tc.name AtomicsSubApiTest2700
-     * @tc.desc Test Atomics.sub method with different indices including -1, 0, length, length+1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.sub method with different indices including -1, 0, length, length+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsSubApiTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsSubApiTest2700';
@@ -1391,12 +1391,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsXorApiTest2800
      * @tc.number SUB_ATOMICS_API_TEST_2800
-     * @tc.name AtomicsXorApiTest2800
-     * @tc.desc Test Atomics.xor method which performs a bitwise XOR operation on a value at a specific index in an array, and returns the old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.xor method which performs a bitwise XOR operation on a value at a specific index in an array, and returns the old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsXorApiTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsXorApiTest2800';
@@ -1424,12 +1424,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsXorApiTest2900
      * @tc.number SUB_ATOMICS_API_TEST_2900
-     * @tc.name AtomicsXorApiTest2900
-     * @tc.desc Test Atomics.xor method with different values including -1, 0, 1, 7, Integer.MAX_VALUE, Integer.MIN_VALUE
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.xor method with different values including -1, 0, 1, 7, Integer.MAX_VALUE, Integer.MIN_VALUE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsXorApiTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsXorApiTest2900';
@@ -1479,12 +1479,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsXorApiTest3000
      * @tc.number SUB_ATOMICS_API_TEST_3000
-     * @tc.name AtomicsXorApiTest3000
-     * @tc.desc Test Atomics.xor method with different indices including -1, 0, length, length+1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.xor method with different indices including -1, 0, length, length+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsXorApiTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsXorApiTest3000';
@@ -1539,12 +1539,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsWaitApiTest3100
      * @tc.number SUB_ATOMICS_API_TEST_3100
-     * @tc.name AtomicsWaitApiTest3100
-     * @tc.desc Test Atomics.wait method which checks whether the value at a specific index in a shared memory is still a given value and if so sleeps, waiting to be woken up or timeout
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.wait method which checks whether the value at a specific index in a shared memory is still a given value and if so sleeps, waiting to be woken up or timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsWaitApiTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsWaitApiTest3100';
@@ -1576,12 +1576,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsWaitApiTest3200
      * @tc.number SUB_ATOMICS_API_TEST_3200
-     * @tc.name AtomicsWaitApiTest3200
-     * @tc.desc Test Atomics.wait method with different values including -1, 0, 1, 7, Integer.MAX_VALUE, Integer.MIN_VALUE
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.wait method with different values including -1, 0, 1, 7, Integer.MAX_VALUE, Integer.MIN_VALUE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsWaitApiTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsWaitApiTest3200';
@@ -1632,12 +1632,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsWaitApiTest3300
      * @tc.number SUB_ATOMICS_API_TEST_3300
-     * @tc.name AtomicsWaitApiTest3300
-     * @tc.desc Test Atomics.wait method with different indices including -1, 0, length, length+1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.wait method with different indices including -1, 0, length, length+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsWaitApiTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsWaitApiTest3300';
@@ -1690,12 +1690,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsWaitApiTest3400
      * @tc.number SUB_ATOMICS_API_TEST_3400
-     * @tc.name AtomicsWaitApiTest3400
-     * @tc.desc Test Atomics.wait method with different timeout values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.wait method with different timeout values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsWaitApiTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsWaitApiTest3400';
@@ -1732,12 +1732,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsWaitApiTest3500
      * @tc.number SUB_ATOMICS_API_TEST_3500
-     * @tc.name AtomicsWaitApiTest3500
-     * @tc.desc Test Atomics.wait method when a new value is written while waiting
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.wait method when a new value is written while waiting
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsWaitApiTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsWaitApiTest3500';
@@ -1784,12 +1784,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsWaitApiTest3600
      * @tc.number SUB_ATOMICS_API_TEST_3600
-     * @tc.name AtomicsWaitApiTest3600
-     * @tc.desc Test Atomics.wait method with Atomics.notify to wake up waiters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.wait method with Atomics.notify to wake up waiters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsWaitApiTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsWaitApiTest3600';
@@ -1831,12 +1831,12 @@ export default function AtomicsAPITest() {
     });
 
     /**
+     * @tc.name   AtomicsWaitApiTest3700
      * @tc.number SUB_ATOMICS_API_TEST_3700
-     * @tc.name AtomicsWaitApiTest3700
-     * @tc.desc Test Atomics.wait method called multiple times on the same location
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.wait method called multiple times on the same location
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsWaitApiTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'AtomicsWaitApiTest3700';

@@ -71,10 +71,13 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         console.info(`${TAG} afterEach END`)
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_3850
-     * @tc.name: NotificationRequest、NotificationContent、NotificationBasicContent
-     * @tc.desc: use NotificationRequest type
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_3850
+     * @tc.number Sub_Notification_Ans_Publish_Publish_3850
+     * @tc.desc   use NotificationRequest type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_3850', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3850 START`);
@@ -131,10 +134,13 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3850 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_3950
-     * @tc.name: NotificationLongTextContent 
-     * @tc.desc: use NotificationLongTextContent type
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_3950
+     * @tc.number Sub_Notification_Ans_Publish_Publish_3950
+     * @tc.desc   use NotificationLongTextContent type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_3950', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3950 START`);
@@ -179,10 +185,13 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3950 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_4050
-     * @tc.name: NotificationBasicContent
-     * @tc.desc: use NotificationBasicContent type
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_4050
+     * @tc.number Sub_Notification_Ans_Publish_Publish_4050
+     * @tc.desc   use NotificationBasicContent type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_4050', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4050 START`);
@@ -224,10 +233,13 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4050 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_4150
-     * @tc.name: NotificationMultiLineContent
-     * @tc.desc: use NotificationMultiLineContent type
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_4150
+     * @tc.number Sub_Notification_Ans_Publish_Publish_4150
+     * @tc.desc   use NotificationMultiLineContent type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_4150', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4150 START`);
@@ -271,10 +283,13 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4150 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_4250
-     * @tc.name: NotificationActionButton、NotificationUserInput
-     * @tc.desc: use NotificationActionButton type
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_4250
+     * @tc.number Sub_Notification_Ans_Publish_Publish_4250
+     * @tc.desc   use NotificationActionButton type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_4250', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4250 START`);
@@ -375,10 +390,13 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4250 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_4350
-     * @tc.name: NotificationTemplate
-     * @tc.desc: use NotificationTemplate type
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_4350
+     * @tc.number Sub_Notification_Ans_Publish_Publish_4350
+     * @tc.desc   use NotificationTemplate type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Publish_Publish_4350', Level.LEVEL1, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4350 START`);
@@ -429,10 +447,13 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4350 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_4450
-     * @tc.name: DistributedOptions
-     * @tc.desc: use DistributedOptions type
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_4450
+     * @tc.number Sub_Notification_Ans_Publish_Publish_4450
+     * @tc.desc   use DistributedOptions type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_4450', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4450 START`);
@@ -480,10 +501,13 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4450 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_4550
-     * @tc.name: NotificationBasicContent
-     * @tc.desc: use NotificationBasicContent type
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_4550
+     * @tc.number Sub_Notification_Ans_Publish_Publish_4550
+     * @tc.desc   use NotificationBasicContent type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_4550', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4550 START`);
@@ -544,10 +568,13 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4550 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_4650
-     * @tc.name: NotificationMultiLineContent
-     * @tc.desc: use NotificationMultiLineContent type
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_4650
+     * @tc.number Sub_Notification_Ans_Publish_Publish_4650
+     * @tc.desc   use NotificationMultiLineContent type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_4650', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4650 START`);
@@ -585,10 +612,13 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4650 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_4750
-     * @tc.name: BundleOption
-     * @tc.desc: use BundleOption type
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_4750
+     * @tc.number Sub_Notification_Ans_Publish_Publish_4750
+     * @tc.desc   use BundleOption type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_4750', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4750 START`);
@@ -606,10 +636,13 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4750 END`);
     });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_4850
-     * @tc.name: NotificationFlags
-     * @tc.desc: use NotificationFlags type
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_4850
+     * @tc.number Sub_Notification_Ans_Publish_Publish_4850
+     * @tc.desc   use NotificationFlags type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_4850', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4850 START`);

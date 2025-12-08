@@ -81,12 +81,12 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0100
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0100
-         * @tc.name Test getHistoricalBytes IsoDep
-         * @tc.desc Obtains the history bytes of a label.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Obtains the history bytes of a label.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcIsoDep_js_0100', Level.LEVEL0, function ()  { 
             if (IsoDepTag != null && IsoDepTag != undefined) {
@@ -105,12 +105,12 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0101
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0101
-         * @tc.name Test getHistoricalBytes IsoDep
-         * @tc.desc Obtains the history bytes of a label.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Obtains the history bytes of a label.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcIsoDep_js_0101', Level.LEVEL0, function ()  { 
             if (IsoDepTag1 != null && IsoDepTag1 != undefined) {
@@ -129,12 +129,12 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0200
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0200
-         * @tc.name Test getHiLayerResponse IsoDep
-         * @tc.desc HiLayer response byte for obtaining the tag.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   HiLayer response byte for obtaining the tag.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcIsoDep_js_0200', Level.LEVEL0, function ()  {
             if (IsoDepTag != null && IsoDepTag != undefined) {
@@ -153,12 +153,12 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0201
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0201
-         * @tc.name Test getHiLayerResponse IsoDep
-         * @tc.desc HiLayer response byte for obtaining the tag.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   HiLayer response byte for obtaining the tag.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcIsoDep_js_0201', Level.LEVEL0, function ()  {
             if (IsoDepTag1 != null && IsoDepTag1 != undefined) {
@@ -177,12 +177,12 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0300
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0300
-         * @tc.name Test isExtendedApduSupported IsoDep
-         * @tc.desc Check whether extended APDUs are supported.Promise
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Check whether extended APDUs are supported.Promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcIsoDep_js_0300', Level.LEVEL0, async function (done) {
             if (IsoDepTag != null && IsoDepTag != undefined) {
@@ -223,12 +223,12 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0400
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0400
-         * @tc.name Test isExtendedApduSupported IsoDep
-         * @tc.desc Check whether extended APDUs are supported.callback
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Check whether extended APDUs are supported.callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcIsoDep_js_0400', Level.LEVEL0, async function (done) {
             if (IsoDepTag != null && IsoDepTag != undefined) {
@@ -263,14 +263,14 @@ export default function nfcIsoDepTagTest() {
             done();
         })
 
-        /**
-         * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0500
-         * @tc.name Test cardEmulationnfc
-         * @tc.desc Whether to support a certain type of card emulation.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
-         */
+         /**
+          * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_0500
+          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0500
+          * @tc.desc   Whether to support a certain type of card emulation.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it('SUB_Communication_NFC_nfccardEmulationnfc_js_0500', Level.LEVEL0, function ()  {
             if (IsoDepTag != null && IsoDepTag != undefined) {
                 try {
@@ -292,13 +292,13 @@ export default function nfcIsoDepTagTest() {
             }
         })
 
-       /**
+        /**
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_0600
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0600
-         * @tc.name Test cardEmulationnfc
-         * @tc.desc hasHceCapability to support a certain type of card emulation.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   hasHceCapability to support a certain type of card emulation.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfccardEmulationnfc_js_0600', Level.LEVEL0, function ()  {
             try {
@@ -317,12 +317,12 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_0700
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0700
-         * @tc.name Test cardEmulationnfc
-         * @tc.desc Whether to support a certain type of card isDefaultService.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Whether to support a certain type of card isDefaultService.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfccardEmulationnfc_js_0700', Level.LEVEL0, function ()  {
             let cardEmulationnfc ;
@@ -358,14 +358,14 @@ export default function nfcIsoDepTagTest() {
             }
         })
 
-        /**
-         * @tc.number SUB_Communication_NFC_Enumerated_js_0800
-         * @tc.name Test Enumerated
-         * @tc.desc Enumeration return value test
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 2
-         */
+         /**
+          * @tc.name   SUB_Communication_NFC_Enumerated_js_0800
+          * @tc.number SUB_Communication_NFC_Enumerated_js_0800
+          * @tc.desc   Enumeration return value test
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_Communication_NFC_Enumerated_js_0800', Level.LEVEL2, function ()  {
             console.info('[nfc_test]1 PAYMENT Enumerated value test pass:' + cardEmulation.CardType.PAYMENT)
             expect(cardEmulation.CardType.PAYMENT).assertEqual("payment");
@@ -456,12 +456,12 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_0900
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0900
-         * @tc.name Test cardEmulationnfc
-         * @tc.desc Whether to support a certain type of card HceService on/off
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Whether to support a certain type of card HceService on/off
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfccardEmulationnfc_js_0900', Level.LEVEL0, function ()  {
             let hceService = new cardEmulation.HceService();
@@ -508,12 +508,12 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_1000
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_1000
-         * @tc.name Test cardEmulationnfc
-         * @tc.desc Whether to support a certain type of card HceService transmit
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Whether to support a certain type of card HceService transmit
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfccardEmulationnfc_js_1000', Level.LEVEL0,async function (done)  {
             let hceService = new cardEmulation.HceService();
@@ -530,12 +530,12 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_1100
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_1100
-         * @tc.name Test cardEmulationnfc
-         * @tc.desc Whether to support a certain type of card HceService transmit
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Whether to support a certain type of card HceService transmit
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfccardEmulationnfc_js_1100', Level.LEVEL0,async function (done)  {
             let hceService = new cardEmulation.HceService();
@@ -554,12 +554,12 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_1200
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_1200
-         * @tc.name Test cardEmulationnfc
-         * @tc.desc Whether to support a certain type of card HceService on/off
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Whether to support a certain type of card HceService on/off
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfccardEmulationnfc_js_1200', Level.LEVEL0, function ()  {
             let hceService = new cardEmulation.HceService();
@@ -592,12 +592,12 @@ export default function nfcIsoDepTagTest() {
         })      
 
         /**
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_1400
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_1400
-         * @tc.name Test cardEmulationnfc
-         * @tc.desc Whether to support a certain type of card HceService startHCE/stopHCE/sendResponse
-         * @tc.size since 8
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Whether to support a certain type of card HceService startHCE/stopHCE/sendResponse
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfccardEmulationnfc_js_1400', Level.LEVEL0, function ()  {
             let hceService = new cardEmulation.HceService();

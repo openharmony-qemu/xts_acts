@@ -58,13 +58,15 @@ export default function columnMonopolizeFalse() {
       console.log("columnMonopolizeFalse after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_ACTION_GESTURE_MONOPOLIZE_0160_columnMonopolize_001
-     * @tc.desc columnMonopolize false->true test
-     * @tc.level Level 0
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   columnMonopolizeFalse_001
+     * @tc.number columnMonopolizeFalse_001
+     * @tc.desc   columnMonopolizeFalse_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('columnMonopolizeFalse_001', Level.LEVEL0, async (done: Function) => {
       console.log('[columnMonopolizeFalse_001] START');
       // get column left and top on screen

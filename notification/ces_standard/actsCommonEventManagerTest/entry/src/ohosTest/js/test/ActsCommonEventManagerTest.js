@@ -20,10 +20,13 @@ export default function ActsCommonEventManagerTest() {
     let TAG = 'SUB_NOTIFICATION_CES_MANAGER_TEST ===>'
     console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_TEST START`)
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_4700
-     * @tc.name: publish(event: string, callback: AsyncCallback<void>): void
-     * @tc.desc: verify the callback function of publish
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_4700
+     * @tc.number Sub_Notification_Ans_Publish_Publish_4700
+     * @tc.desc   verify the callback function of publish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_4700', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4700 START`)
@@ -47,10 +50,13 @@ export default function ActsCommonEventManagerTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4700 END`)
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_4800
-     * @tc.name: publish(event: string, options: CommonEventPublishData, callback: AsyncCallback<void>): void
-     * @tc.desc: publish options
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_4800
+     * @tc.number Sub_Notification_Ans_Publish_Publish_4800
+     * @tc.desc   publish options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Publish_Publish_4800', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4800 START`)
@@ -82,10 +88,13 @@ export default function ActsCommonEventManagerTest() {
 
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_1500
-     * @tc.name: createSubscriber(subscribeInfo: CommonEventSubscribeInfo, callback: AsyncCallback<CommonEventSubscriber>): void
-     * @tc.desc: createSubscriber
+    /**
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_1500
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_1500
+     * @tc.desc   createSubscriber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_1500', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_1500 START`)
@@ -119,10 +128,13 @@ export default function ActsCommonEventManagerTest() {
 
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_1600
-     * @tc.name: createSubscriber(subscribeInfo: CommonEventSubscribeInfo): Promise<CommonEventSubscriber>
-     * @tc.desc: createSubscriber
+    /**
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_1600
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_1600
+     * @tc.desc   createSubscriber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_1600', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_1600 START`)
@@ -148,11 +160,14 @@ export default function ActsCommonEventManagerTest() {
 
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_0400
-    * @tc.name: subscribe(subscriber: CommonEventSubscriber, callback: AsyncCallback<CommonEventData>): void
-    * @tc.desc: subscribe
-    */
+    /**
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_0400
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_0400
+     * @tc.desc   subscribe
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Notification_Ans_Subscriber_Subscribe_0400', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_0400 START`)
 
@@ -200,6 +215,14 @@ export default function ActsCommonEventManagerTest() {
 
     })
 
+    /**
+     * @tc.name   Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401
+     * @tc.number Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401
+     * @tc.desc   Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_0400 START`)
 
@@ -250,10 +273,13 @@ export default function ActsCommonEventManagerTest() {
     })
 
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Unsubscribe_0200
-     * @tc.name: unsubscribe(subscriber: CommonEventSubscriber, callback?: AsyncCallback<void>): void
-     * @tc.desc: unsubscribe
+    /**
+     * @tc.name   Sub_Notification_Ans_Subscriber_Unsubscribe_0200
+     * @tc.number Sub_Notification_Ans_Subscriber_Unsubscribe_0200
+     * @tc.desc   unsubscribe
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Subscriber_Unsubscribe_0200', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Unsubscribe_0200 START`)
@@ -362,10 +388,13 @@ export default function ActsCommonEventManagerTest() {
 
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_1700
-     * @tc.name: getCode setCode setData getData setCodeAndData getSubscribeInfo finishCommonEvent
-     * @tc.desc: verify the callback function
+    /**
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_1700
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_1700
+     * @tc.desc   verify the callback function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_1700', Level.LEVEL3, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_1700 START`)
@@ -480,10 +509,13 @@ export default function ActsCommonEventManagerTest() {
 
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_1800
-     * @tc.name: getCode setCode setData getData setCodeAndData getSubscribeInfo finishCommonEvent
-     * @tc.desc: verify the promise function
+    /**
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_1800
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_1800
+     * @tc.desc   verify the promise function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_1800', Level.LEVEL3, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_1800 START`)

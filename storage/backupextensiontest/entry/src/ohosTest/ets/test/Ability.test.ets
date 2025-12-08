@@ -29,12 +29,12 @@ export class BackupExt extends BackupExtensionAbility {
 export default function abilityTest() {
   describe("backupExtension", () => {
     /**
-     * @tc.number    : SUB_BACKUP_EXTENSION_CALL_0000
-     * @tc.name      : backup_extension_test_call_000
-     * @tc.desc      : select with option
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   backup_extension_test_call_000
+     * @tc.number SUB_BACKUP_EXTENSION_CALL_0000
+     * @tc.desc   select with option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("backup_extension_test_call_000", Level.LEVEL3, () => {
       try {

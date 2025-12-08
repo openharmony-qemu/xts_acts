@@ -26,39 +26,39 @@ export default function imageWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_WIDTH_0100
-     * @tc.name       : testImageWidth001
-     * @tc.desc       : testing width for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageWidth001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_WIDTH_0100
+     * @tc.desc   testing width for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_WIDTH_0200
-     * @tc.name       : testImageWidth002
-     * @tc.desc       : testing width for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testImageWidth002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_WIDTH_0200
+     * @tc.desc   testing width for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_WIDTH_0300
-     * @tc.name       : testImageWidth003
-     * @tc.desc       : testing width for image with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageWidth003
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_WIDTH_0300
+     * @tc.desc   testing width for image with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageWidth003()).assertEqual(0)

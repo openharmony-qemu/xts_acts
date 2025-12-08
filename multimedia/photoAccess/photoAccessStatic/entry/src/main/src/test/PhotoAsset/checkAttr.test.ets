@@ -52,12 +52,12 @@ export default function checkAttrTest() {
     });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_FILE_ASSET_CHECK_ASSET_ATTR_STATIC_0000
-      * @tc.name    photoAsset_static_000
-      * @tc.desc    check image uri displayName photoType
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   photoAsset_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_FILE_ASSET_CHECK_ASSET_ATTR_STATIC_0000
+     * @tc.desc   check image uri displayName photoType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('photoAsset_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -68,12 +68,12 @@ export default function checkAttrTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_FILE_ASSET_CHECK_ASSET_ATTR_STATIC_0100
-      * @tc.name    photoAsset_static_001
-      * @tc.desc    check video uri displayName photoType
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   photoAsset_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_FILE_ASSET_CHECK_ASSET_ATTR_STATIC_0100
+     * @tc.desc   check video uri displayName photoType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('photoAsset_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

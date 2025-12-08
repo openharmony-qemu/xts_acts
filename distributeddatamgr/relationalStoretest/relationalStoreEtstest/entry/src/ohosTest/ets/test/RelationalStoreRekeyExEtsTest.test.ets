@@ -43,12 +43,12 @@ export default function rdbStoreRekeyExEtsTest() {
     console.log(TAG + "*************Unit Test Begin*************");
 
     /**
+     * @tc.name   testRekeyEx0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_0100
-     * @tc.name testRekeyEx0001
-     * @tc.desc invalid iterationCount test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   invalid iterationCount test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0001 start *************");
@@ -78,12 +78,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_0200
-     * @tc.name testRekeyEx0002
-     * @tc.desc invalid encryptionAlgo test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   invalid encryptionAlgo test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0002 start *************");
@@ -113,12 +113,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_0300
-     * @tc.name testRekeyEx0003
-     * @tc.desc invalid parameters test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   invalid parameters test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0003 start *************");
@@ -148,12 +148,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_0400
-     * @tc.name testRekeyEx0004
-     * @tc.desc invalid kdfAlgo test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   invalid kdfAlgo test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0004 start *************");
@@ -183,12 +183,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_0500
-     * @tc.name testRekeyEx0005
-     * @tc.desc invalid cryptoPageSize test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   invalid cryptoPageSize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0005 start *************");
@@ -218,12 +218,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_0600
-     * @tc.name testRekeyEx0006
-     * @tc.desc non-encrypted database rekey to encrypted database test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   non-encrypted database rekey to encrypted database test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0006 start *************");
@@ -279,12 +279,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_0700
-     * @tc.name testRekeyEx0007
-     * @tc.desc rekey iterationCount test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rekey iterationCount test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0007 start *************");
@@ -337,12 +337,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_0800
-     * @tc.name testRekeyEx0008
-     * @tc.desc rekey encryptionAlgo test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rekey encryptionAlgo test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0008 start *************");
@@ -396,12 +396,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_0900
-     * @tc.name testRekeyEx0009
-     * @tc.desc rekey hmacAlgo test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rekey hmacAlgo test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0009 start *************");
@@ -455,12 +455,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1000
-     * @tc.name testRekeyEx0010
-     * @tc.desc rekey kdfAlgo test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rekey kdfAlgo test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0010 start *************");
@@ -514,12 +514,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1100
-     * @tc.name testRekeyEx0011
-     * @tc.desc rekey cryptoPageSize test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rekey cryptoPageSize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0011 start *************");
@@ -573,12 +573,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0013
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1300
-     * @tc.name testRekeyEx0013
-     * @tc.desc default encrypt rekey to custom test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   default encrypt rekey to custom test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0013 start *************");
@@ -628,12 +628,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1400
-     * @tc.name testRekeyEx0014
-     * @tc.desc default rekey to default test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   default rekey to default test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0014 start *************");
@@ -683,12 +683,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0015
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1500
-     * @tc.name testRekeyEx0015
-     * @tc.desc custom rekey to fault test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   custom rekey to fault test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0015 start *************");
@@ -742,12 +742,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0016
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1600
-     * @tc.name testRekeyEx0016
-     * @tc.desc transaction rekey test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   transaction rekey test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0016 start *************");
@@ -788,12 +788,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0016 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0017
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1700
-     * @tc.name testRekeyEx0017
-     * @tc.desc default encry to custom encry rekey 14800011 test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   default encry to custom encry rekey 14800011 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0017 start *************");
@@ -836,12 +836,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0018
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1800
-     * @tc.name testRekeyEx0018
-     * @tc.desc undefined parameters rekey test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   undefined parameters rekey test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0018 start *************");
@@ -865,12 +865,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0019
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1900
-     * @tc.name testRekeyEx0019
-     * @tc.desc null parameters rekey test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   null parameters rekey test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0019 start *************");
@@ -894,12 +894,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2000
-     * @tc.name testRekeyEx0020
-     * @tc.desc not close resultSet  rekey test 14800024
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   not close resultSet  rekey test 14800024
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0020 start *************");
@@ -940,12 +940,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0020 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0021
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2100
-     * @tc.name testRekeyEx0021
-     * @tc.desc no encry to encry rekey 14800011 test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   no encry to encry rekey 14800011 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0021 start *************");
@@ -986,12 +986,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0021 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0022
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2200
-     * @tc.name testRekeyEx0022
-     * @tc.desc encry database to no encry database 14800011 test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   encry database to no encry database 14800011 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0022 start *************");
@@ -1047,12 +1047,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0022 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0023
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2300
-     * @tc.name testRekeyEx0023
-     * @tc.desc custom encry to default encry rekey 14800011 test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   custom encry to default encry rekey 14800011 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0023 start *************");
@@ -1095,12 +1095,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0023 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0025
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2500
-     * @tc.name testRekeyEx0025
-     * @tc.desc default encry to custom encry test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   default encry to custom encry test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0025 start *************");
@@ -1147,12 +1147,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0026
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2600
-     * @tc.name testRekeyEx0026
-     * @tc.desc non-encrypted database to encrypted database test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   non-encrypted database to encrypted database test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0026 start *************");
@@ -1198,12 +1198,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0027
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2700
-     * @tc.name testRekeyEx0027
-     * @tc.desc encrypted database to non-encrypted database test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   encrypted database to non-encrypted database test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0027 start *************");
@@ -1252,12 +1252,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0028
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2800
-     * @tc.name testRekeyEx0028
-     * @tc.desc encryptionAlgo is plain_test create database test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   encryptionAlgo is plain_test create database test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0028 start *************");
@@ -1297,12 +1297,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0029
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2900
-     * @tc.name testRekeyEx0029
-     * @tc.desc default encry to custom encry
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   default encry to custom encry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0029 start *************");
@@ -1363,12 +1363,12 @@ export default function rdbStoreRekeyExEtsTest() {
 
 
     /**
+     * @tc.name   testRekeyEx0030
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3000
-     * @tc.name testRekeyEx0030
-     * @tc.desc default encry to custom encry
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   default encry to custom encry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0030 start *************");
@@ -1428,12 +1428,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0031
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3100
-     * @tc.name testRekeyEx0031
-     * @tc.desc errcode is 801
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   errcode is 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0031 start *************");
@@ -1481,12 +1481,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0031 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0032
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3200
-     * @tc.name testRekeyEx0032
-     * @tc.desc errcode is 14800014
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   errcode is 14800014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0032 start *************");
@@ -1514,12 +1514,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0032 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0033
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3300
-     * @tc.name testRekeyEx0033
-     * @tc.desc custom encry to default encry
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   custom encry to default encry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0033 start *************");
@@ -1576,12 +1576,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0033 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0034
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3400
-     * @tc.name testRekeyEx0034
-     * @tc.desc encry database to no encry database
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   encry database to no encry database
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0034 start *************");
@@ -1652,12 +1652,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0034 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0035
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3500
-     * @tc.name testRekeyEx0035
-     * @tc.desc no encry database to encry database
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   no encry database to encry database
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0035 start *************");
@@ -1721,12 +1721,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0035 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0036
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3600
-     * @tc.name testRekeyEx0036
-     * @tc.desc custom encry to default encry
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   custom encry to default encry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0036 start *************");
@@ -1794,12 +1794,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0036 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0037
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3700
-     * @tc.name testRekeyEx0037
-     * @tc.desc custom encry to default encry
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   custom encry to default encry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0037 start *************");
@@ -1865,12 +1865,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0037 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0038
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3800
-     * @tc.name testRekeyEx0038
-     * @tc.desc custom encry to custom encry
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   custom encry to custom encry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0038 start *************");
@@ -1950,12 +1950,12 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
+     * @tc.name   testRekeyEx0039
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3900
-     * @tc.name testRekeyEx0039
-     * @tc.desc all enum test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   all enum test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0039',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) =>{
       console.log(TAG + "************* testRekeyEx0039 start *************");
@@ -2018,12 +2018,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0039 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0040
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_4000
-     * @tc.name testRekeyEx0040
-     * @tc.desc all enum test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   all enum test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0040 start *************");
@@ -2097,12 +2097,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0040 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0041
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_4100
-     * @tc.name testRekeyEx0041
-     * @tc.desc all enum test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   all enum test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0041 start *************");
@@ -2177,12 +2177,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0041 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0042
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_4200
-     * @tc.name testRekeyEx0042
-     * @tc.desc all enum test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   all enum test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0042 start *************");
@@ -2257,12 +2257,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0042 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0043
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_4300
-     * @tc.name testRekeyEx0043
-     * @tc.desc invalid kdfAlgo test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   invalid kdfAlgo test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0043 start *************");
@@ -2294,12 +2294,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0043 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0044
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_4400
-     * @tc.name testRekeyEx0044
-     * @tc.desc invalid encryptionAlgo test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   invalid encryptionAlgo test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0044 start *************");
@@ -2332,12 +2332,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0044 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0045
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_4500
-     * @tc.name testRekeyEx0045
-     * @tc.desc invalid hmacAlgo test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   invalid hmacAlgo test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0045 start *************");
@@ -2370,12 +2370,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0045 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0046
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_4600
-     * @tc.name testRekeyEx0046
-     * @tc.desc encryptionAlgo all enum test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   encryptionAlgo all enum test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0046 start *************");
@@ -2423,12 +2423,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0046 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0047
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_4700
-     * @tc.name testRekeyEx0047
-     * @tc.desc hmacAlgo all enum test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   hmacAlgo all enum test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0047 start *************");
@@ -2476,12 +2476,12 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0047 end *************");
     });
     /**
+     * @tc.name   testRekeyEx0048
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_4800
-     * @tc.name testRekeyEx0048
-     * @tc.desc kdfAlgo all enum test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   kdfAlgo all enum test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekeyEx0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0048 start *************");

@@ -20,14 +20,14 @@ import sim from '@ohos.telephony.sim';
 
 export default function dataManagerEmptyTest() {
   describe("testEmpty", () => {
-    /*
-        * @tc.number: SUB_Data_Manager_Empty_0100
-        * @tc.name  : telephonyRadioNoPermissionEmptyTest0100
-        * @tc.desc  : Obtain the wireless access technologies for the CS and PS domains currently accessed. Using callback for asynchronous callback
-        * @tc.size  : MediumTest
-        * @tc.type  : Function
-        * @tc.level : Level 3
-        */
+    /**
+     * @tc.name   telephonyDataManagerEmptyTest0100
+     * @tc.number SUB_Data_Manager_Empty_0100
+     * @tc.desc   Obtain the wireless access technologies for the CS and PS domains currently accessed. Using callback for asynchronous callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('telephonyDataManagerEmptyTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let a: number = 1;
       let b: number = 2;

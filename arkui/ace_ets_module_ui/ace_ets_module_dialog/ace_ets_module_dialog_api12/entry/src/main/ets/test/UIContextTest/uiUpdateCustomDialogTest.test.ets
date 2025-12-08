@@ -41,12 +41,12 @@ export default function uiUpdateCustomDialogTest() {
     });
 
     /**
-     * @tc.number    updateCustomDialog
-     * @tc.name      uiUpdateCustomDialogTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   uiUpdateCustomDialogTest_0100
+     * @tc.number updateCustomDialog
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('uiUpdateCustomDialogTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('uiUpdateCustomDialogTest_0100 START');

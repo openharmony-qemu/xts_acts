@@ -86,14 +86,14 @@ export default function MindSporeTypesTest() {
         err.message + ", error code: " + err.code);
       });
     })
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_DEVICETYPE_GPU_0100
-       * @tc.name       : testOH_AI_DEVICETYPE_GPU0100
-       * @tc.desc       : testing OH_AI_DEVICETYPE_GPU interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_DEVICETYPE_GPU0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_DEVICETYPE_GPU_0100
+     * @tc.desc   testing OH_AI_DEVICETYPE_GPU interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_DEVICETYPE_GPU0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -109,14 +109,14 @@ export default function MindSporeTypesTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_MODELTYPE_INVALID_0100
-       * @tc.name       : testOH_AI_MODELTYPE_INVALID0100
-       * @tc.desc       : testing OH_AI_MODELTYPE_INVALID interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_MODELTYPE_INVALID0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_MODELTYPE_INVALID_0100
+     * @tc.desc   testing OH_AI_MODELTYPE_INVALID interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_MODELTYPE_INVALID0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -132,14 +132,14 @@ export default function MindSporeTypesTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_NNRTDEVICE_OTHERS_0100
-       * @tc.name       : testOH_AI_NNRTDEVICE_OTHERS0100
-       * @tc.desc       : testing OH_AI_NNRTDEVICE_OTHERS interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_NNRTDEVICE_OTHERS0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_NNRTDEVICE_OTHERS_0100
+     * @tc.desc   testing OH_AI_NNRTDEVICE_OTHERS interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_NNRTDEVICE_OTHERS0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -155,14 +155,14 @@ export default function MindSporeTypesTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_NNRTDEVICE_CPU_0100
-       * @tc.name       : testOH_AI_NNRTDEVICE_CPU0100
-       * @tc.desc       : testing OH_AI_NNRTDEVICE_CPU interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_NNRTDEVICE_CPU0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_NNRTDEVICE_CPU_0100
+     * @tc.desc   testing OH_AI_NNRTDEVICE_CPU interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_NNRTDEVICE_CPU0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -178,14 +178,14 @@ export default function MindSporeTypesTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_NNRTDEVICE_GPU_0100
-       * @tc.name       : testOH_AI_NNRTDEVICE_GPU0100
-       * @tc.desc       : testing OH_AI_NNRTDEVICE_GPU interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_NNRTDEVICE_GPU0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_NNRTDEVICE_GPU_0100
+     * @tc.desc   testing OH_AI_NNRTDEVICE_GPU interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_NNRTDEVICE_GPU0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -201,14 +201,14 @@ export default function MindSporeTypesTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_NNRTDEVICE_ACCELERATOR_0100
-       * @tc.name       : testOH_AI_NNRTDEVICE_ACCELERATOR0100
-       * @tc.desc       : testing OH_AI_NNRTDEVICE_ACCELERATOR interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_NNRTDEVICE_ACCELERATOR0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_NNRTDEVICE_ACCELERATOR_0100
+     * @tc.desc   testing OH_AI_NNRTDEVICE_ACCELERATOR interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_NNRTDEVICE_ACCELERATOR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -224,14 +224,14 @@ export default function MindSporeTypesTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_KO0_0100
-       * @tc.name       : testOH_AI_KO00100
-       * @tc.desc       : testing OH_AI_KO0 interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_KO00100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_KO0_0100
+     * @tc.desc   testing OH_AI_KO0 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_KO00100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -247,14 +247,14 @@ export default function MindSporeTypesTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_KO2_0100
-       * @tc.name       : testOH_AI_KO20100
-       * @tc.desc       : testing OH_AI_KO2 interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_KO20100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_KO2_0100
+     * @tc.desc   testing OH_AI_KO2 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_KO20100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -270,14 +270,14 @@ export default function MindSporeTypesTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_KO3_0100
-       * @tc.name       : testOH_AI_KO30100
-       * @tc.desc       : testing OH_AI_KO3 interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_KO30100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_KO3_0100
+     * @tc.desc   testing OH_AI_KO3 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_KO30100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -293,14 +293,14 @@ export default function MindSporeTypesTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_KAUTO_0100
-       * @tc.name       : testOH_AI_KAUTO0100
-       * @tc.desc       : testing OH_AI_KAUTO interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_KAUTO0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_KAUTO_0100
+     * @tc.desc   testing OH_AI_KAUTO interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_KAUTO0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -316,14 +316,14 @@ export default function MindSporeTypesTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_KOPTIMIZATIONTYPE_0100
-       * @tc.name       : testOH_AI_KOPTIMIZATIONTYPE0100
-       * @tc.desc       : testing OH_AI_KOPTIMIZATIONTYPE interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_KOPTIMIZATIONTYPE0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_KOPTIMIZATIONTYPE_0100
+     * @tc.desc   testing OH_AI_KOPTIMIZATIONTYPE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_KOPTIMIZATIONTYPE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -339,14 +339,14 @@ export default function MindSporeTypesTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_NO_QUANT_0100
-       * @tc.name       : testOH_AI_NO_QUANT0100
-       * @tc.desc       : testing OH_AI_NO_QUANT interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_NO_QUANT0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_NO_QUANT_0100
+     * @tc.desc   testing OH_AI_NO_QUANT interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_NO_QUANT0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -362,14 +362,14 @@ export default function MindSporeTypesTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_WEIGHT_QUANT_0100
-       * @tc.name       : testOH_AI_WEIGHT_QUANT0100
-       * @tc.desc       : testing OH_AI_WEIGHT_QUANT interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_WEIGHT_QUANT0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_WEIGHT_QUANT_0100
+     * @tc.desc   testing OH_AI_WEIGHT_QUANT interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_WEIGHT_QUANT0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -385,14 +385,14 @@ export default function MindSporeTypesTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_FULL_QUANT_0100
-       * @tc.name       : testOH_AI_FULL_QUANT0100
-       * @tc.desc       : testing OH_AI_FULL_QUANT interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_FULL_QUANT0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_FULL_QUANT_0100
+     * @tc.desc   testing OH_AI_FULL_QUANT interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_FULL_QUANT0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -408,14 +408,14 @@ export default function MindSporeTypesTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_UNKNOWN_QUANT_TYPE_0100
-       * @tc.name       : testOH_AI_UNKNOWN_QUANT_TYPE0100
-       * @tc.desc       : testing OH_AI_UNKNOWN_QUANT_TYPE interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_UNKNOWN_QUANT_TYPE0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_UNKNOWN_QUANT_TYPE_0100
+     * @tc.desc   testing OH_AI_UNKNOWN_QUANT_TYPE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_UNKNOWN_QUANT_TYPE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

@@ -23,13 +23,13 @@ export default function SettingNopTest() {
     beforeEach(async (done: Function) => {
       await CommonFunc.sleep(2000);
     });
-    /*
-     * @tc.number:SUB_Setting_nop_test_0100
-     * @tc.name: Setting_nop_test_0100
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Setting_nop_test_0100
+     * @tc.number SUB_Setting_nop_test_0100
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Setting_nop_test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
       console.info('Setting_nop_test_0100 START');
@@ -41,13 +41,13 @@ export default function SettingNopTest() {
 
       done();
     })
-    /*
-     * @tc.number:SUB_Setting_nop_test_0200
-     * @tc.name: Setting_nop_test_0200
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Setting_nop_test_0200
+     * @tc.number SUB_Setting_nop_test_0200
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Setting_nop_test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
       console.info('Setting_nop_test_0200 START');
@@ -59,13 +59,13 @@ export default function SettingNopTest() {
 
       done();
     })
-    /*
-     * @tc.number:SUB_Setting_nop_test_0300
-     * @tc.name: Setting_nop_test_0300
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Setting_nop_test_0300
+     * @tc.number SUB_Setting_nop_test_0300
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Setting_nop_test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
       console.info('Setting_nop_test_0300 START');

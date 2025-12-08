@@ -57,9 +57,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitor_Callback_0100
-     * @tc.name: Verify that the addAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add a monitor then use startAbility to trigger onAbilityCreate (Callback).
+     * @tc.name   ACTS_AddAbilityMonitor_Callback_0100
+     * @tc.number ACTS_AddAbilityMonitor_Callback_0100
+     * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility to trigger onAbilityCreate (Callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitor_Callback_0100', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_AddAbilityMonitor_Callback_0100";
@@ -89,10 +92,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitor_Callback_0200
-     * @tc.name: Verify that the addAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add a monitor then use startAbility to
-     * trigger onAbilityForeground (Callback).
+     * @tc.name   ACTS_AddAbilityMonitor_Callback_0200
+     * @tc.number ACTS_AddAbilityMonitor_Callback_0200
+     * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitor_Callback_0200', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_AddAbilityMonitor_Callback_0200";
@@ -125,10 +130,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitor_Callback_0300
-     * @tc.name: Verify that the addAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add a monitor then use startAbility to trigger
-     * onAbilityBackground (Callback).
+     * @tc.name   ACTS_AddAbilityMonitor_Callback_0300
+     * @tc.number ACTS_AddAbilityMonitor_Callback_0300
+     * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility to trigger
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitor_Callback_0300', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_AddAbilityMonitor_Callback_0300";
@@ -156,10 +163,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitor_Callback_0400
-     * @tc.name: Verify that the addAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityDestroy (Callback).
+     * @tc.name   ACTS_AddAbilityMonitor_Callback_0400
+     * @tc.number ACTS_AddAbilityMonitor_Callback_0400
+     * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitor_Callback_0400', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_AddAbilityMonitor_Callback_0400";
@@ -189,10 +198,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitor_Callback_0500
-     * @tc.name: Verify that the addAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add a monitor then use startAbility
-     * to trigger onWindowStageCreate (Callback).
+     * @tc.name   ACTS_AddAbilityMonitor_Callback_0500
+     * @tc.number ACTS_AddAbilityMonitor_Callback_0500
+     * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitor_Callback_0500', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_AddAbilityMonitor_Callback_0500";
@@ -222,10 +233,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitor_Callback_0600
-     * @tc.name: Verify that the addAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add a monitor then use startAbility
-     * to trigger onWindowStageDestroy (Callback).
+     * @tc.name   ACTS_AddAbilityMonitor_Callback_0600
+     * @tc.number ACTS_AddAbilityMonitor_Callback_0600
+     * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitor_Callback_0600', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_AddAbilityMonitor_Callback_0600";
@@ -255,11 +268,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitor_Callback_0700
-     * @tc.name: Verify that the addAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityCreate with many
-     *           a time (Callback).
+     * @tc.name   ACTS_AddAbilityMonitor_Callback_0700
+     * @tc.number ACTS_AddAbilityMonitor_Callback_0700
+     * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitor_Callback_0700', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_AddAbilityMonitor_Callback_0700";
@@ -296,10 +310,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitor_Promise_0100
-     * @tc.name: Verify that the addAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityCreate (promise).
+     * @tc.name   ACTS_AddAbilityMonitor_Promise_0100
+     * @tc.number ACTS_AddAbilityMonitor_Promise_0100
+     * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitor_Promise_0100', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_AddAbilityMonitor_Promise_0100";
@@ -329,10 +345,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitor_Promise_0200
-     * @tc.name: Verify that the addAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityForeground (promise).
+     * @tc.name   ACTS_AddAbilityMonitor_Promise_0200
+     * @tc.number ACTS_AddAbilityMonitor_Promise_0200
+     * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitor_Promise_0200', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_AddAbilityMonitor_Promise_0200";
@@ -362,10 +380,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitor_Promise_0300
-     * @tc.name: Verify that the addAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add a monitor with onAbilityBackground callback,
-     * then use startAbility to start the target ability and verify the monitor is triggered (promise).
+     * @tc.name   ACTS_AddAbilityMonitor_Promise_0300
+     * @tc.number ACTS_AddAbilityMonitor_Promise_0300
+     * @tc.desc   Use addAbilityMonitor to add a monitor with onAbilityBackground callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitor_Promise_0300', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_AddAbilityMonitor_Promise_0300";
@@ -393,10 +413,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitor_Promise_0400
-     * @tc.name: Verify that the addAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityDestroy (promise).
+     * @tc.name   ACTS_AddAbilityMonitor_Promise_0400
+     * @tc.number ACTS_AddAbilityMonitor_Promise_0400
+     * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitor_Promise_0400', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_AddAbilityMonitor_Promise_0400";
@@ -427,10 +449,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitor_Promise_0500
-     * @tc.name: Verify that the addAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add a monitor then use startAbility
-     * to trigger onWindowStageCreate (promise).
+     * @tc.name   ACTS_AddAbilityMonitor_Promise_0500
+     * @tc.number ACTS_AddAbilityMonitor_Promise_0500
+     * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitor_Promise_0500', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_AddAbilityMonitor_Promise_0500";
@@ -460,10 +484,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitor_Promise_0600
-     * @tc.name: Verify that the addAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add a monitor then use startAbility
-     * to trigger onWindowStageDestroy (promise).
+     * @tc.name   ACTS_AddAbilityMonitor_Promise_0600
+     * @tc.number ACTS_AddAbilityMonitor_Promise_0600
+     * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitor_Promise_0600', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_AddAbilityMonitor_Promise_0600";
@@ -493,11 +519,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AddAbilityMonitor_Promise_0700
-     * @tc.name: Verify that the addAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityCreate with many
-     *           a time (promise).
+     * @tc.name   ACTS_AddAbilityMonitor_Promise_0700
+     * @tc.number ACTS_AddAbilityMonitor_Promise_0700
+     * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitor_Promise_0700', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_AddAbilityMonitor_Promise_0700";
@@ -533,11 +560,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitor_Callback_0100
-     * @tc.name: Verify that the removeAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add monitor and use removeAbilityMonitor
-     * to remove monitor then trigger
-     *           onAbilityCreate (Callback).
+     * @tc.name   ACTS_RemoveAbilityMonitor_Callback_0100
+     * @tc.number ACTS_RemoveAbilityMonitor_Callback_0100
+     * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitor_Callback_0100', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_RemoveAbilityMonitor_Callback_0100";
@@ -573,11 +601,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitor_Callback_0200
-     * @tc.name: Verify that the removeAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add monitor and use removeAbilityMonitor
-     * to remove monitor then trigger
-     *           onAbilityForeground (Callback).
+     * @tc.name   ACTS_RemoveAbilityMonitor_Callback_0200
+     * @tc.number ACTS_RemoveAbilityMonitor_Callback_0200
+     * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitor_Callback_0200', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_RemoveAbilityMonitor_Callback_0200";
@@ -613,11 +642,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitor_Callback_0300
-     * @tc.name: Verify that the removeAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add monitor and use removeAbilityMonitor
-     * to remove monitor then trigger
-     *           onAbilityBackground (Callback).
+     * @tc.name   ACTS_RemoveAbilityMonitor_Callback_0300
+     * @tc.number ACTS_RemoveAbilityMonitor_Callback_0300
+     * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitor_Callback_0300', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_RemoveAbilityMonitor_Callback_0300";
@@ -653,11 +683,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitor_Callback_0400
-     * @tc.name: Verify that the removeAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add monitor and use removeAbilityMonitor
-     * to remove monitor then trigger
-     *           onAbilityDestroy (Callback).
+     * @tc.name   ACTS_RemoveAbilityMonitor_Callback_0400
+     * @tc.number ACTS_RemoveAbilityMonitor_Callback_0400
+     * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitor_Callback_0400', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_RemoveAbilityMonitor_Callback_0400";
@@ -693,11 +724,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitor_Callback_0500
-     * @tc.name: Verify that the removeAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add monitor and use removeAbilityMonitor
-     * to remove monitor then trigger
-     *           onWindowStageCreate (Callback).
+     * @tc.name   ACTS_RemoveAbilityMonitor_Callback_0500
+     * @tc.number ACTS_RemoveAbilityMonitor_Callback_0500
+     * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitor_Callback_0500', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_RemoveAbilityMonitor_Callback_0500";
@@ -733,11 +765,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitor_Callback_0600
-     * @tc.name: Verify that the removeAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add monitor and use removeAbilityMonitor
-     * to remove monitor then trigger
-     *           onWindowStageDestroy (Callback).
+     * @tc.name   ACTS_RemoveAbilityMonitor_Callback_0600
+     * @tc.number ACTS_RemoveAbilityMonitor_Callback_0600
+     * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitor_Callback_0600', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_RemoveAbilityMonitor_Callback_0600";
@@ -773,11 +806,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitor_Callback_0700
-     * @tc.name: Verify that the removeAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add monitor and use removeAbilityMonitor
-     * to remove monitor then trigger
-     *           onAbilityCreate (Callback).
+     * @tc.name   ACTS_RemoveAbilityMonitor_Callback_0700
+     * @tc.number ACTS_RemoveAbilityMonitor_Callback_0700
+     * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitor_Callback_0700', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_RemoveAbilityMonitor_Callback_0700";
@@ -801,11 +835,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitor_Callback_0800
-     * @tc.name: Verify that the removeAbilityMonitor interface functions normally.
-     * @tc.desc: Use waitAbilityMonitor to add monitor and use removeAbilityMonitor
-     * to remove monitor then trigger
-     *           onAbilityCreate (Callback).
+     * @tc.name   ACTS_RemoveAbilityMonitor_Callback_0800
+     * @tc.number ACTS_RemoveAbilityMonitor_Callback_0800
+     * @tc.desc   Use waitAbilityMonitor to add monitor and use removeAbilityMonitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitor_Callback_0800', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_RemoveAbilityMonitor_Callback_0800";
@@ -842,11 +877,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitor_Promise_0100
-     * @tc.name: Verify that the removeAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add monitor and use removeAbilityMonitor
-     * to remove monitor then trigger
-     *           onAbilityCreate (promise).
+     * @tc.name   ACTS_RemoveAbilityMonitor_Promise_0100
+     * @tc.number ACTS_RemoveAbilityMonitor_Promise_0100
+     * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitor_Promise_0100', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_RemoveAbilityMonitor_Promise_0100";
@@ -882,11 +918,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitor_Promise_0200
-     * @tc.name: Verify that the removeAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add monitor and use removeAbilityMonitor
-     * to remove monitor then trigger
-     *           onAbilityForeground (promise).
+     * @tc.name   ACTS_RemoveAbilityMonitor_Promise_0200
+     * @tc.number ACTS_RemoveAbilityMonitor_Promise_0200
+     * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitor_Promise_0200', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_RemoveAbilityMonitor_Promise_0200";
@@ -922,11 +959,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitor_Promise_0300
-     * @tc.name: Verify that the removeAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add monitor and use removeAbilityMonitor
-     * to remove monitor then trigger
-     *           onAbilityBackground (promise).
+     * @tc.name   ACTS_RemoveAbilityMonitor_Promise_0300
+     * @tc.number ACTS_RemoveAbilityMonitor_Promise_0300
+     * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitor_Promise_0300', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_RemoveAbilityMonitor_Promise_0300";
@@ -962,11 +1000,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitor_Promise_0400
-     * @tc.name: Verify that the removeAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add monitor and use removeAbilityMonitor
-     * to remove monitor then trigger
-     *           onAbilityDestroy (promise).
+     * @tc.name   ACTS_RemoveAbilityMonitor_Promise_0400
+     * @tc.number ACTS_RemoveAbilityMonitor_Promise_0400
+     * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitor_Promise_0400', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_RemoveAbilityMonitor_Promise_0400";
@@ -1002,11 +1041,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitor_Promise_0500
-     * @tc.name: Verify that the removeAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add monitor and use removeAbilityMonitor
-     * to remove monitor then trigger
-     *           onWindowStageCreate (promise).
+     * @tc.name   ACTS_RemoveAbilityMonitor_Promise_0500
+     * @tc.number ACTS_RemoveAbilityMonitor_Promise_0500
+     * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitor_Promise_0500', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_RemoveAbilityMonitor_Promise_0500";
@@ -1042,11 +1082,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitor_Promise_0600
-     * @tc.name: Verify that the removeAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add monitor and use removeAbilityMonitor
-     * to remove monitor then trigger
-     *           onWindowStageDestroy (promise).
+     * @tc.name   ACTS_RemoveAbilityMonitor_Promise_0600
+     * @tc.number ACTS_RemoveAbilityMonitor_Promise_0600
+     * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitor_Promise_0600', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_RemoveAbilityMonitor_Promise_0600";
@@ -1082,11 +1123,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitor_Promise_0700
-     * @tc.name: Verify that the removeAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add monitor and use removeAbilityMonitor
-     * to remove monitor then trigger
-     *           onAbilityCreate (promise).
+     * @tc.name   ACTS_RemoveAbilityMonitor_Promise_0700
+     * @tc.number ACTS_RemoveAbilityMonitor_Promise_0700
+     * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitor_Promise_0700', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_RemoveAbilityMonitor_Promise_0700";
@@ -1116,11 +1158,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_RemoveAbilityMonitor_Promise_0800
-     * @tc.name: Verify that the removeAbilityMonitor interface functions normally.
-     * @tc.desc: Use waitAbilityMonitor to add monitor and use removeAbilityMonitor
-     * to remove monitor then trigger
-     *           onAbilityCreate (promise).
+     * @tc.name   ACTS_RemoveAbilityMonitor_Promise_0800
+     * @tc.number ACTS_RemoveAbilityMonitor_Promise_0800
+     * @tc.desc   Use waitAbilityMonitor to add monitor and use removeAbilityMonitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_RemoveAbilityMonitor_Promise_0800', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_RemoveAbilityMonitor_Promise_0800";
@@ -1156,10 +1199,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_WaitAbilityMonitor_Callback_0100
-     * @tc.name: Verify that the waitAbilityMonitor interface functions normally.
-     * @tc.desc: Use waitAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityCreate (Callback).
+     * @tc.name   ACTS_WaitAbilityMonitor_Callback_0100
+     * @tc.number ACTS_WaitAbilityMonitor_Callback_0100
+     * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_WaitAbilityMonitor_Callback_0100', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WaitAbilityMonitor_Callback_0100";
@@ -1190,11 +1235,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_WaitAbilityMonitor_Callback_0200
-     * @tc.name: Verify that the waitAbilityMonitor interface functions normally.
-     * @tc.desc: Use waitAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityCreate exceed
-     *           5s(Callback).
+     * @tc.name   ACTS_WaitAbilityMonitor_Callback_0200
+     * @tc.number ACTS_WaitAbilityMonitor_Callback_0200
+     * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_WaitAbilityMonitor_Callback_0200', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WaitAbilityMonitor_Callback_0200";
@@ -1228,11 +1274,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_WaitAbilityMonitor_Callback_0300
-     * @tc.name: Verify that the waitAbilityMonitor interface functions normally.
-     * @tc.desc: Use waitAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityCreate in
-     *           1s(Callback).
+     * @tc.name   ACTS_WaitAbilityMonitor_Callback_0300
+     * @tc.number ACTS_WaitAbilityMonitor_Callback_0300
+     * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_WaitAbilityMonitor_Callback_0300', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WaitAbilityMonitor_Callback_0300";
@@ -1264,11 +1311,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_WaitAbilityMonitor_Callback_0400
-     * @tc.name: Verify that the waitAbilityMonitor interface functions normally.
-     * @tc.desc: Use waitAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityCreate exceed
-     *           1s (Callback).
+     * @tc.name   ACTS_WaitAbilityMonitor_Callback_0400
+     * @tc.number ACTS_WaitAbilityMonitor_Callback_0400
+     * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_WaitAbilityMonitor_Callback_0400', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WaitAbilityMonitor_Callback_0400";
@@ -1303,11 +1351,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_WaitAbilityMonitor_Callback_0500
-     * @tc.name: Verify that the waitAbilityMonitor interface functions normally.
-     * @tc.desc: Use waitAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityCreate in
-     *           5s (Callback).
+     * @tc.name   ACTS_WaitAbilityMonitor_Callback_0500
+     * @tc.number ACTS_WaitAbilityMonitor_Callback_0500
+     * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_WaitAbilityMonitor_Callback_0500', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WaitAbilityMonitor_Callback_0500";
@@ -1340,11 +1389,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_WaitAbilityMonitor_Callback_0600
-     * @tc.name: Verify that the waitAbilityMonitor interface functions normally.
-     * @tc.desc: Use waitAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityCreate in
-     *           5s (Callback).
+     * @tc.name   ACTS_WaitAbilityMonitor_Callback_0600
+     * @tc.number ACTS_WaitAbilityMonitor_Callback_0600
+     * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_WaitAbilityMonitor_Callback_0600', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WaitAbilityMonitor_Callback_0600";
@@ -1377,10 +1427,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_WaitAbilityMonitor_Promise_0100
-     * @tc.name: Verify that the waitAbilityMonitor interface functions normally.
-     * @tc.desc: Use waitAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityCreate (promise).
+     * @tc.name   ACTS_WaitAbilityMonitor_Promise_0100
+     * @tc.number ACTS_WaitAbilityMonitor_Promise_0100
+     * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_WaitAbilityMonitor_Promise_0100', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WaitAbilityMonitor_Promise_0100";
@@ -1412,11 +1464,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_WaitAbilityMonitor_Promise_0200
-     * @tc.name: Verify that the waitAbilityMonitor interface functions normally.
-     * @tc.desc: Use waitAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityCreate exceed
-     *           5s (promise).
+     * @tc.name   ACTS_WaitAbilityMonitor_Promise_0200
+     * @tc.number ACTS_WaitAbilityMonitor_Promise_0200
+     * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_WaitAbilityMonitor_Promise_0200', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WaitAbilityMonitor_Promise_0200";
@@ -1451,11 +1504,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_WaitAbilityMonitor_Promise_0300
-     * @tc.name: Verify that the waitAbilityMonitor interface functions normally.
-     * @tc.desc: Use waitAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityCreate in
-     *           1s (promise).
+     * @tc.name   ACTS_WaitAbilityMonitor_Promise_0300
+     * @tc.number ACTS_WaitAbilityMonitor_Promise_0300
+     * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_WaitAbilityMonitor_Promise_0300', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WaitAbilityMonitor_Promise_0300";
@@ -1486,11 +1540,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_WaitAbilityMonitor_Promise_0400
-     * @tc.name: Verify that the waitAbilityMonitor interface functions normally.
-     * @tc.desc: Use waitAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityCreate exceed
-     *           1s (promise).
+     * @tc.name   ACTS_WaitAbilityMonitor_Promise_0400
+     * @tc.number ACTS_WaitAbilityMonitor_Promise_0400
+     * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_WaitAbilityMonitor_Promise_0400', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WaitAbilityMonitor_Promise_0400";
@@ -1526,11 +1581,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_WaitAbilityMonitor_Promise_0500
-     * @tc.name: Verify that the waitAbilityMonitor interface functions normally.
-     * @tc.desc: Use waitAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityCreate in
-     *           5s (promise).
+     * @tc.name   ACTS_WaitAbilityMonitor_Promise_0500
+     * @tc.number ACTS_WaitAbilityMonitor_Promise_0500
+     * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_WaitAbilityMonitor_Promise_0500', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WaitAbilityMonitor_Promise_0500";
@@ -1561,11 +1617,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_WaitAbilityMonitor_Promise_0600
-     * @tc.name: Verify that the waitAbilityMonitor interface functions normally.
-     * @tc.desc: Use waitAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityCreate in
-     *           5s (promise).
+     * @tc.name   ACTS_WaitAbilityMonitor_Promise_0600
+     * @tc.number ACTS_WaitAbilityMonitor_Promise_0600
+     * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_WaitAbilityMonitor_Promise_0600', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WaitAbilityMonitor_Promise_0600";

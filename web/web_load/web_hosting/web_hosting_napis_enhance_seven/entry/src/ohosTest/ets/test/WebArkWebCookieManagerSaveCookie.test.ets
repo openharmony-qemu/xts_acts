@@ -60,14 +60,14 @@ export default function WebArkWebCookieManagerSaveCookie() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_SAVECOOKIESYNC_0001
-    * @tc.name       : testOH_ArkWebCookieManager_SaveCookieSync001
-    * @tc.desc       : test OH_ArkWebCookieManager_SaveCookieSync no cookie ok
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testOH_ArkWebCookieManager_SaveCookieSync001
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_SAVECOOKIESYNC_0001
+     * @tc.desc   test OH_ArkWebCookieManager_SaveCookieSync no cookie ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testOH_ArkWebCookieManager_SaveCookieSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("OH_ArkWebCookieManager_SaveCookieSync001", 147511)
       let isReturn = false;
@@ -79,14 +79,14 @@ export default function WebArkWebCookieManagerSaveCookie() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_SAVECOOKIESYNC_0002
-    * @tc.name       : testOH_ArkWebCookieManager_SaveCookieSync002
-    * @tc.desc       : test OH_ArkWebCookieManager_SaveCookieSync  set cookie ok
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testOH_ArkWebCookieManager_SaveCookieSync002
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_SAVECOOKIESYNC_0002
+     * @tc.desc   test OH_ArkWebCookieManager_SaveCookieSync  set cookie ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testOH_ArkWebCookieManager_SaveCookieSync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("OH_ArkWebCookieManager_SaveCookieSync002", 147511)
       let isReturn = false;
@@ -98,14 +98,14 @@ export default function WebArkWebCookieManagerSaveCookie() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_SAVECOOKIESYNC_0003
-    * @tc.name       : testOH_ArkWebCookieManager_SaveCookieSync003
-    * @tc.desc       : test OH_ArkWebCookieManager_SaveCookieSync  非ui线程 ok
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOH_ArkWebCookieManager_SaveCookieSync003
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_SAVECOOKIESYNC_0003
+     * @tc.desc   test OH_ArkWebCookieManager_SaveCookieSync  非ui线程 ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_ArkWebCookieManager_SaveCookieSync003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("OH_ArkWebCookieManager_SaveCookieSync003", 147511)
       let isReturn = false;
@@ -117,14 +117,14 @@ export default function WebArkWebCookieManagerSaveCookie() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_SAVECOOKIEASYNC_0001
-    * @tc.name       : testOH_ArkWebCookieManager_SaveCookieAsync001
-    * @tc.desc       : test OH_ArkWebCookieManager_SaveCookieAsync  set nullptr
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testOH_ArkWebCookieManager_SaveCookieAsync001
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_SAVECOOKIEASYNC_0001
+     * @tc.desc   test OH_ArkWebCookieManager_SaveCookieAsync  set nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testOH_ArkWebCookieManager_SaveCookieAsync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("OH_ArkWebCookieManager_SaveCookieAsync001", 147511)
       let isReturn = false;
@@ -136,14 +136,14 @@ export default function WebArkWebCookieManagerSaveCookie() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_SAVECOOKIEASYNC_0002
-    * @tc.name       : testOH_ArkWebCookieManager_SaveCookieAsync002
-    * @tc.desc       : test OH_ArkWebCookieManager_SaveCookieAsync  OH_ArkWeb_OnCookieSaveCallback ok
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testOH_ArkWebCookieManager_SaveCookieAsync002
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_SAVECOOKIEASYNC_0002
+     * @tc.desc   test OH_ArkWebCookieManager_SaveCookieAsync  OH_ArkWeb_OnCookieSaveCallback ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOH_ArkWebCookieManager_SaveCookieAsync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("OH_ArkWebCookieManager_SaveCookieAsync002", 147511)
       let isReturn = false;
@@ -155,14 +155,14 @@ export default function WebArkWebCookieManagerSaveCookie() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_SAVECOOKIEASYNC_0003
-    * @tc.name       : testOH_ArkWebCookieManager_SaveCookieAsync003
-    * @tc.desc       : test OH_ArkWebCookieManager_SaveCookieAsync  OH_ArkWeb_OnCookieSaveCallback 非ui线程 ok
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testOH_ArkWebCookieManager_SaveCookieAsync003
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_SAVECOOKIEASYNC_0003
+     * @tc.desc   test OH_ArkWebCookieManager_SaveCookieAsync  OH_ArkWeb_OnCookieSaveCallback 非ui线程 ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOH_ArkWebCookieManager_SaveCookieAsync003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("OH_ArkWebCookieManager_SaveCookieAsync003", 147511)
       let isReturn = false;

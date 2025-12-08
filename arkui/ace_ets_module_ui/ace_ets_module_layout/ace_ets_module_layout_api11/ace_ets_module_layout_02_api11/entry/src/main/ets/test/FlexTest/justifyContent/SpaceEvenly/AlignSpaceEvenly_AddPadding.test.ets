@@ -47,10 +47,12 @@ export default function AlignSpaceEvenly_AddPadding() {
     });
 
     /**
+     * @tc.name   testAlignSpaceEvenlyFlexPadMeet
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEEVENLY_TEST_0300
-     * @tc.name testAlignSpaceEvenlyFlexPadMeet
-     * @tc.desc After subtracting the padding from the parent component layout space, the interface
-     * display that does not meet the spindle layout of the child component
+     * @tc.desc   After subtracting the padding from the parent component layout space, the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceEvenlyFlexPadMeet',  Level.LEVEL0, async () => {
       console.info('[testAlignSpaceEvenlyFlexPadMeet] START');
@@ -93,10 +95,12 @@ export default function AlignSpaceEvenly_AddPadding() {
 
     });
     /**
+     * @tc.name   testAlignSpaceEvenlyFlexPadOverflow
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEEVENLY_TEST_0400
-     * @tc.name testAlignSpaceEvenlyFlexPadOverflow
-     * @tc.desc After subtracting the padding from the parent component layout space, the interface that
-     * satisfies the spindle layout of the child component is displayed
+     * @tc.desc   After subtracting the padding from the parent component layout space, the interface that
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceEvenlyFlexPadOverflow',  Level.LEVEL0, async () => {
       console.info('[testAlignSpaceEvenlyFlexPadOverflow] START');

@@ -21,10 +21,13 @@ const DOMAIN: number = 0x0000;
 
 export default function setShortcutVisible() {
   describe('setShortcutVisible', () => {
-    /*
-     * @tc.number: Sub_Bms_Framework_Icon_ShortcutVisible_0200
-     * @tc.name: Sub_Bms_Framework_Icon_ShortcutVisible_0200
-     * @tc.desc: Test setShortcutVisibleForSelf with shortcut id is null.
+    /**
+     * @tc.name   Sub_Bms_Framework_Icon_ShortcutVisible_0200
+     * @tc.number Sub_Bms_Framework_Icon_ShortcutVisible_0200
+     * @tc.desc   Test setShortcutVisibleForSelf with shortcut id is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_Icon_ShortcutVisible_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -42,10 +45,13 @@ export default function setShortcutVisible() {
         }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Icon_ShortcutVisible_0300
-     * @tc.name: Sub_Bms_Framework_Icon_ShortcutVisible_0300
-     * @tc.desc: Test setShortcutVisibleForSelf with shortcut id is empty string.
+    /**
+     * @tc.name   Sub_Bms_Framework_Icon_ShortcutVisible_0300
+     * @tc.number Sub_Bms_Framework_Icon_ShortcutVisible_0300
+     * @tc.desc   Test setShortcutVisibleForSelf with shortcut id is empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_Icon_ShortcutVisible_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -63,10 +69,13 @@ export default function setShortcutVisible() {
         }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Icon_ShortcutVisible_0400
-     * @tc.name: Sub_Bms_Framework_Icon_ShortcutVisible_0400
-     * @tc.desc: Test setShortcutVisibleForSelf with shortcut id is undefined.
+    /**
+     * @tc.name   Sub_Bms_Framework_Icon_ShortcutVisible_0400
+     * @tc.number Sub_Bms_Framework_Icon_ShortcutVisible_0400
+     * @tc.desc   Test setShortcutVisibleForSelf with shortcut id is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_Icon_ShortcutVisible_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -84,10 +93,13 @@ export default function setShortcutVisible() {
         }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Icon_ShortcutVisible_0500
-     * @tc.name: Sub_Bms_Framework_Icon_ShortcutVisible_0500
-     * @tc.desc: Test setShortcutVisibleForSelf with shortcut id is nonexistent.
+    /**
+     * @tc.name   Sub_Bms_Framework_Icon_ShortcutVisible_0500
+     * @tc.number Sub_Bms_Framework_Icon_ShortcutVisible_0500
+     * @tc.desc   Test setShortcutVisibleForSelf with shortcut id is nonexistent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_Icon_ShortcutVisible_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -105,10 +117,13 @@ export default function setShortcutVisible() {
         }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Icon_ShortcutVisible_0600
-     * @tc.name: Sub_Bms_Framework_Icon_ShortcutVisible_0600
-     * @tc.desc: Test setShortcutVisibleForSelf with shortcut id is valid.
+    /**
+     * @tc.name   Sub_Bms_Framework_Icon_ShortcutVisible_0600
+     * @tc.number Sub_Bms_Framework_Icon_ShortcutVisible_0600
+     * @tc.desc   Test setShortcutVisibleForSelf with shortcut id is valid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_Icon_ShortcutVisible_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

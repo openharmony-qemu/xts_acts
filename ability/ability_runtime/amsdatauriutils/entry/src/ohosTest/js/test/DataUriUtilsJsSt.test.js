@@ -18,11 +18,14 @@ import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level 
 export default function ActsDataUriUtilsTest() {
 describe('ActsDataUriUtilsTest', function () {
 
-/*
-* @tc.number: ACTS_getId_0100
-* @tc.name: getId : Obtains the ID attached to the end of the path component of the given URI.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_getId_0100
+     * @tc.number ACTS_getId_0100
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_getId_0100', Level.LEVEL0, function (done) {
         console.log('dataUriUtils getId start1');
         var result = dataUriUtils.getId("com.ix.dataUriUtils/1221");
@@ -34,11 +37,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_getId_0200
-* @tc.name: getId : Obtains the ID attached to the end of the path component of the given URI.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_getId_0200
+     * @tc.number ACTS_getId_0200
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_getId_0200', Level.LEVEL0, function (done) {
         console.log('dataUriUtils getId start2 ');
         var result = dataUriUtils.getId("com.ix.dataUriUtils1221");
@@ -51,11 +57,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_getId_0300
-* @tc.name: getId : Obtains the ID attached to the end of the path component of the given URI.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_getId_0300
+     * @tc.number ACTS_getId_0300
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_getId_0300', Level.LEVEL0, function (done) {
         console.log('dataUriUtils getId start3 ');
         var result = dataUriUtils.getId("com.ix.dataUriUtils/11234567890");
@@ -68,11 +77,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_getId_0400
-* @tc.name: getId : Obtains the ID attached to the end of the path component of the given URI.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_getId_0400
+     * @tc.number ACTS_getId_0400
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_getId_0400', Level.LEVEL0, function (done) {
         console.log('dataUriUtils getId start4 ');
         var result = dataUriUtils.getId("com.ix.dataUriUtils");
@@ -85,11 +97,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_getId_0500
-* @tc.name: getId : Obtains the ID attached to the end of the path component of the given URI.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_getId_0500
+     * @tc.number ACTS_getId_0500
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_getId_0500', Level.LEVEL0, function (done) {
         console.log('dataUriUtils getId start5 ');
         var result = dataUriUtils.getId("com.ix.dataUriUtils/-777");
@@ -102,11 +117,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_attachId_0100
-* @tc.name: Attaches the given ID to the end of the path component of the given URI.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_attachId_0100
+     * @tc.number ACTS_attachId_0100
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_attachId_0100', Level.LEVEL0, function (done) {
         console.log('dataUriUtils attachId start1 ');
         var idint = 1122;
@@ -120,11 +138,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_attachId_0200
-* @tc.name: Attaches the given ID to the end of the path component of the given URI.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_attachId_0200
+     * @tc.number ACTS_attachId_0200
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_attachId_0200', Level.LEVEL0, function (done) {
         console.log('dataUriUtils attachId start2 ');
         var idint = 0;
@@ -138,11 +159,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_attachId_0300
-* @tc.name: Attaches the given ID to the end of the path component of the given URI.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_attachId_0300
+     * @tc.number ACTS_attachId_0300
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_attachId_0300', Level.LEVEL0, function (done) {
         console.log('dataUriUtils attachId start3 ');
         var idint = 456789;
@@ -156,11 +180,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_attachId_0400
-* @tc.name: Attaches the given ID to the end of the path component of the given URI.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_attachId_0400
+     * @tc.number ACTS_attachId_0400
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_attachId_0400', Level.LEVEL0, function (done) {
         console.log('dataUriUtils attachId start4 ');
         var idint = 123456789011;
@@ -174,11 +201,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_attachId_0500
-* @tc.name: Attaches the given ID to the end of the path component of the given URI.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_attachId_0500
+     * @tc.number ACTS_attachId_0500
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_attachId_0500', Level.LEVEL0, function (done) {
         console.log('dataUriUtils attachId start5 ');
         var idint = -1;
@@ -192,11 +222,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_deleteId_0100
-* @tc.name: Deletes the ID from the end of the path component of the given URI.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_deleteId_0100
+     * @tc.number ACTS_deleteId_0100
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_deleteId_0100', Level.LEVEL0, function (done) {
         console.log('dataUriUtils deleteId start1 ');
         var result = dataUriUtils.deleteId("com.ix.dataUriUtils");
@@ -209,11 +242,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_deleteId_0200
-* @tc.name: Deletes the ID from the end of the path component of the given URI.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_deleteId_0200
+     * @tc.number ACTS_deleteId_0200
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_deleteId_0200', Level.LEVEL0, function (done) {
         console.log('dataUriUtils deleteId start2 ');
         var result = dataUriUtils.deleteId("com.ix.dataUriUtils/1122");
@@ -226,11 +262,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_deleteId_0300
-* @tc.name: Deletes the ID from the end of the path component of the given URI.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_deleteId_0300
+     * @tc.number ACTS_deleteId_0300
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_deleteId_0300', Level.LEVEL0, function (done) {
         console.log('dataUriUtils deleteId start3 ');
         var result = dataUriUtils.deleteId("com.ix.dataUriUtils1122");
@@ -243,11 +282,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_deleteId_0400
-* @tc.name: Deletes the ID from the end of the path component of the given URI.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_deleteId_0400
+     * @tc.number ACTS_deleteId_0400
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_deleteId_0400', Level.LEVEL0, function (done) {
         console.log('dataUriUtils deleteId start4 ');
         var result = dataUriUtils.deleteId("com.ix.dataUriUtils/-1");
@@ -260,11 +302,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_deleteId_0500
-* @tc.name: Deletes the ID from the end of the path component of the given URI.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_deleteId_0500
+     * @tc.number ACTS_deleteId_0500
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_deleteId_0500', Level.LEVEL0, function (done) {
         console.log('dataUriUtils deleteId start5 ');
         var result = dataUriUtils.deleteId("com.ix.dataUriUtils/1122/2211");
@@ -277,11 +322,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_updateId_0100
-* @tc.name: Updates the ID in the specified dataUri.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_updateId_0100
+     * @tc.number ACTS_updateId_0100
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_updateId_0100', Level.LEVEL0, function (done) {
         console.log('dataUriUtils updateId start1 ');
         var idint = 1122;
@@ -295,11 +343,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_updateId_0200
-* @tc.name: Updates the ID in the specified dataUri.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_updateId_0200
+     * @tc.number ACTS_updateId_0200
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_updateId_0200', Level.LEVEL0, function (done) {
         console.log('dataUriUtils updateId start2 ');
         var idint = 1122;
@@ -313,11 +364,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_updateId_0300
-* @tc.name: Updates the ID in the specified dataUri.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_updateId_0300
+     * @tc.number ACTS_updateId_0300
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_updateId_0300', Level.LEVEL0, function (done) {
         console.log('dataUriUtils updateId start3 ');
         var idint = 3344;
@@ -331,11 +385,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_updateId_0400
-* @tc.name: Updates the ID in the specified dataUri.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_updateId_0400
+     * @tc.number ACTS_updateId_0400
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_updateId_0400', Level.LEVEL0, function (done) {
         console.log('dataUriUtils updateId start4 ');
         var idint = 5566;
@@ -349,11 +406,14 @@ describe('ActsDataUriUtilsTest', function () {
         done();
     })
 
-/*
-* @tc.number: ACTS_updateId_0500
-* @tc.name: Updates the ID in the specified dataUri.
-* @tc.desc: Check the return value of the interface
-*/
+    /**
+     * @tc.name   ACTS_updateId_0500
+     * @tc.number ACTS_updateId_0500
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_updateId_0500', Level.LEVEL0, function (done) {
         console.log('dataUriUtils updateId start5 ');
 

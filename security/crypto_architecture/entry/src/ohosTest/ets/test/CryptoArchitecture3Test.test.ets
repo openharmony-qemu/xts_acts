@@ -20,12 +20,12 @@ export default function CryptoArchitecture3Test() {
   describe('CryptoArchitecture3Test', () => {
 
     /**
-     * @tc.number  SUB_CRYPTOVERIFY_SETPARAM_0300
-     * @tc.name    OHCryptoVerifySetParam003
-     * @tc.desc    test OH_CryptoVerify_SetParam
-     * @tc.level   Level1
-     * @tc.size    MediumTest
-     * @tc.type    Function
+     * @tc.name   OHCryptoVerifySetParam003
+     * @tc.number SUB_CRYPTOVERIFY_SETPARAM_0300
+     * @tc.desc   test OH_CryptoVerify_SetParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('OHCryptoVerifySetParam003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -41,12 +41,12 @@ export default function CryptoArchitecture3Test() {
     })
 
     /**
-     * @tc.number  SUB_CRYPTOSIGN_INIT_0300
-     * @tc.name    OHCryptoSignInit003
-     * @tc.desc    test OH_CryptoSign_Init
-     * @tc.level   Level1
-     * @tc.size    MediumTest
-     * @tc.type    Function
+     * @tc.name   OHCryptoSignInit003
+     * @tc.number SUB_CRYPTOSIGN_INIT_0300
+     * @tc.desc   test OH_CryptoSign_Init
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('OHCryptoSignInit003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -62,12 +62,12 @@ export default function CryptoArchitecture3Test() {
     })
 
     /**
-     * @tc.number  SUB_CRYPTOSIGN_UPDATE_0300
-     * @tc.name    OHCryptoSignUpdate003
-     * @tc.desc    test OH_CryptoSign_Update
-     * @tc.level   Level1
-     * @tc.size    MediumTest
-     * @tc.type    Function
+     * @tc.name   OHCryptoSignUpdate003
+     * @tc.number SUB_CRYPTOSIGN_UPDATE_0300
+     * @tc.desc   test OH_CryptoSign_Update
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('OHCryptoSignUpdate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -83,12 +83,12 @@ export default function CryptoArchitecture3Test() {
     })
 
     /**
-     * @tc.number  SUB_CRYPTOVERIFY_RECOVER_0300
-     * @tc.name    OHCryptoVerifyRecover003
-     * @tc.desc    test OH_CryptoVerify_Recover
-     * @tc.level   Level1
-     * @tc.size    MediumTest
-     * @tc.type    Function
+     * @tc.name   OHCryptoVerifyRecover003
+     * @tc.number SUB_CRYPTOVERIFY_RECOVER_0300
+     * @tc.desc   test OH_CryptoVerify_Recover
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('OHCryptoVerifyRecover003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -104,12 +104,12 @@ export default function CryptoArchitecture3Test() {
     })
 
     /**
-     * @tc.number  SUB_CRYPTOSIGN_FINAL_0300
-     * @tc.name    OHCryptoSignFinal003
-     * @tc.desc    test OH_CryptoSign_Final
-     * @tc.level   Level1
-     * @tc.size    MediumTest
-     * @tc.type    Function
+     * @tc.name   OHCryptoSignFinal003
+     * @tc.number SUB_CRYPTOSIGN_FINAL_0300
+     * @tc.desc   test OH_CryptoSign_Final
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('OHCryptoSignFinal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -125,12 +125,12 @@ export default function CryptoArchitecture3Test() {
     })
 
     /**
-     * @tc.number  SUB_CRYPTOSIGN_SETPARAM_0300
-     * @tc.name    OHCryptoSignSetParam003
-     * @tc.desc    test OH_CryptoSign_SetParam
-     * @tc.level   Level1
-     * @tc.size    MediumTest
-     * @tc.type    Function
+     * @tc.name   OHCryptoSignSetParam003
+     * @tc.number SUB_CRYPTOSIGN_SETPARAM_0300
+     * @tc.desc   test OH_CryptoSign_SetParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('OHCryptoSignSetParam003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -146,12 +146,12 @@ export default function CryptoArchitecture3Test() {
     })
 
     /**
-     * @tc.number  SUB_CRYPTOSIGN_GETPARAM_0300
-     * @tc.name    OHCryptoSignGetParam003
-     * @tc.desc    test OH_CryptoSign_GetParam
-     * @tc.level   Level1
-     * @tc.size    MediumTest
-     * @tc.type    Function
+     * @tc.name   OHCryptoSignGetParam003
+     * @tc.number SUB_CRYPTOSIGN_GETPARAM_0300
+     * @tc.desc   test OH_CryptoSign_GetParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('OHCryptoSignGetParam003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -167,12 +167,12 @@ export default function CryptoArchitecture3Test() {
     })
 
     /**
-     * @tc.number  SUB_CRYPTOECCSIGNATURESPEC_CREATE_0300
-     * @tc.name    OHCryptoEccSignatureSpecCreate003
-     * @tc.desc    test OH_CryptoEccSignatureSpec_Create
-     * @tc.level   Level1
-     * @tc.size    MediumTest
-     * @tc.type    Function
+     * @tc.name   OHCryptoEccSignatureSpecCreate003
+     * @tc.number SUB_CRYPTOECCSIGNATURESPEC_CREATE_0300
+     * @tc.desc   test OH_CryptoEccSignatureSpec_Create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('OHCryptoEccSignatureSpecCreate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -189,12 +189,12 @@ export default function CryptoArchitecture3Test() {
     })
 
     /**
-     * @tc.number  SUB_CRYPTOSYMCIPHER_CREATE_0300
-     * @tc.name    OHCryptoSymCipherCreate003
-     * @tc.desc    test OH_CryptoSymCipher_Create
-     * @tc.level   Level1
-     * @tc.size    MediumTest
-     * @tc.type    Function
+     * @tc.name   OHCryptoSymCipherCreate003
+     * @tc.number SUB_CRYPTOSYMCIPHER_CREATE_0300
+     * @tc.desc   test OH_CryptoSymCipher_Create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('OHCryptoSymCipherCreate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -210,12 +210,12 @@ export default function CryptoArchitecture3Test() {
     })
 
     /**
-     * @tc.number  SUB_CRYPTOSYMKEYGENERATOR_CREATE_0300
-     * @tc.name    OHCryptoSymKeyGeneratorCreate003
-     * @tc.desc    test OH_CryptoSymKeyGenerator_Create
-     * @tc.level   Level1
-     * @tc.size    MediumTest
-     * @tc.type    Function
+     * @tc.name   OHCryptoSymKeyGeneratorCreate003
+     * @tc.number SUB_CRYPTOSYMKEYGENERATOR_CREATE_0300
+     * @tc.desc   test OH_CryptoSymKeyGenerator_Create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('OHCryptoSymKeyGeneratorCreate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

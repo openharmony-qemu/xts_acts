@@ -56,11 +56,14 @@ describe('PhoneNumberFormatInI18nTest', function () {
         + ' syslocale: ' + I18n.System.getSystemLocale());
     })
 
-    /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_0100
-    * @tc.name    test isValidNumber interface with 13510574676 param
-    * @tc.desc    get the isValidNumber value
-    */
+     /**
+      * @tc.name   i18n_phonenumberformat_test_0100
+      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_0100
+      * @tc.desc   get the isValidNumber value
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('i18n_phonenumberformat_test_0100', Level.LEVEL0, function () {
         console.log('i18n_phonenumberformat_test_0100 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -71,11 +74,14 @@ describe('PhoneNumberFormatInI18nTest', function () {
         expect(valid).assertEqual(true);
     })
 
-    /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_0200
-    * @tc.name    test isValidNumber interface with 13510574676 and undefined param
-    * @tc.desc    get the isValidNumber value
-    */
+     /**
+      * @tc.name   i18n_phonenumberformat_test_0200
+      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_0200
+      * @tc.desc   get the isValidNumber value
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('i18n_phonenumberformat_test_0200', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_0200 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN', undefined);
@@ -86,11 +92,14 @@ describe('PhoneNumberFormatInI18nTest', function () {
         expect(valid).assertEqual(true);
     })
 
-    /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_0300
-    * @tc.name    test isValidNumber interface with 13510574676 and null param
-    * @tc.desc    get the isValidNumber value
-    */
+     /**
+      * @tc.name   i18n_phonenumberformat_test_0300
+      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_0300
+      * @tc.desc   get the isValidNumber value
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('i18n_phonenumberformat_test_0300', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_0300 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN', null);
@@ -101,11 +110,14 @@ describe('PhoneNumberFormatInI18nTest', function () {
         expect(valid).assertEqual(true);
     })
 
-    /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_0400
-    * @tc.name    test isValidNumber interface with 0755-6100088X param
-    * @tc.desc    get the isValidNumber value
-    */
+     /**
+      * @tc.name   i18n_phonenumberformat_test_0400
+      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_0400
+      * @tc.desc   get the isValidNumber value
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('i18n_phonenumberformat_test_0400', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_0400 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -116,11 +128,14 @@ describe('PhoneNumberFormatInI18nTest', function () {
         expect(valid).assertEqual(true);
     })
 
-    /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_0500
-    * @tc.name    test isValidNumber interface with 110 param
-    * @tc.desc    get the isValidNumber value
-    */
+     /**
+      * @tc.name   i18n_phonenumberformat_test_0500
+      * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_0500
+      * @tc.desc   get the isValidNumber value
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('i18n_phonenumberformat_test_0500', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_0500 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -130,10 +145,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_0600
-    * @tc.name    test isValidNumber interface with 135 1057 4676 param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_0600
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_0600
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_0600', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_0600 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -145,10 +163,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_0700
-    * @tc.name    test isValidNumber interface with +86 135 1057 4676 param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_0700
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_0700
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_0700', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_0700 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -160,10 +181,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_0800
-    * @tc.name    test isValidNumber interface with 135-1057-4676 param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_0800
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_0800
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_0800', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_0800 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -175,10 +199,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_0900
-    * @tc.name    test isValidNumber interface with tel:+86-135-1057-4676 param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_0900
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_0900
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_0900', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_0900 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -190,10 +217,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1000
-    * @tc.name    test isValidNumber interface with 86-135-1057-4676 param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_1000
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1000
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_1000', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_1000 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -205,10 +235,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1100
-    * @tc.name    test isValidNumber interface with +8613510574676 param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_1100
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1100
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_1100', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_1100 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -220,10 +253,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1200
-    * @tc.name    test isValidNumber interface with 8613510574676 param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_1200
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1200
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_1200', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_1200 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -235,10 +271,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1300
-    * @tc.name    test isValidNumber interface with 1351057467 param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_1300
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1300
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_1300', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_1300 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -250,10 +289,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1400
-    * @tc.name    test isValidNumber interface with 135105746761 param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_1400
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1400
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_1400', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_1400 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -265,10 +307,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1500
-    * @tc.name    test isValidNumber interface with 1351057467a param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_1500
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1500
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_1500', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_1500 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -280,10 +325,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1600
-    * @tc.name    test isValidNumber interface with 6262023379 param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_1600
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1600
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_1600', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_1600 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('US');
@@ -295,10 +343,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1700
-    * @tc.name    test isValidNumber interface with 626202337 param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_1700
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1700
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_1700', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_1700 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('US');
@@ -310,10 +361,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1800
-    * @tc.name    test isValidNumber interface with 62620233791 param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_1800
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1800
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_1800', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_1800 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('US');
@@ -325,10 +379,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1900
-    * @tc.name    test isValidNumber interface with 626202337a param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_1900
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_1900
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_1900', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_1900 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('US');
@@ -340,10 +397,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2000
-    * @tc.name    test format interface with 13510574676 param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_2000
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2000
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_2000', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_2000 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -355,10 +415,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2100
-    * @tc.name    test format interface with 6262023379 param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_2100
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2100
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_2100', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_2100 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('US');
@@ -370,10 +433,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2200
-    * @tc.name    test format interface with 13510574676 and NATIONAL type param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_2200
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2200
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_2200', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_2200 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN', {'type': 'NATIONAL'});
@@ -385,10 +451,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2300
-    * @tc.name    test format interface with 1351057467 and NATIONAL type param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_2300
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2300
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_2300', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_2300 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN', {'type': 'NATIONAL'});
@@ -400,10 +469,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2400
-    * @tc.name    test format interface with 135105746761 and NATIONAL type param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_2400
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2400
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_2400', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_2400 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN', {'type': 'NATIONAL'});
@@ -415,10 +487,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2500
-    * @tc.name    test format interface with 135 1057 4676 and NATIONAL type param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_2500
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2500
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_2500', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_2500 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN', {'type': 'NATIONAL'});
@@ -430,10 +505,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2600
-    * @tc.name    test format interface with 13510574676 and INTERNATIONAL type param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_2600
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2600
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_2600', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_2600 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN', {'type': 'INTERNATIONAL'});
@@ -445,10 +523,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2700
-    * @tc.name    test format interface with 13510574676 and RFC3966 type param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_2700
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2700
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_2700', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_2700 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN', {'type': 'RFC3966'});
@@ -460,10 +541,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2800
-    * @tc.name    test format interface with 13510574676 and E164 type param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_2800
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2800
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_2800', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_2800 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN', {'type': 'E164'});
@@ -475,10 +559,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2900
-    * @tc.name    test format interface with 6262023379 and NATIONAL type param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_2900
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_2900
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_2900', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_2900 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('US', {'type': 'NATIONAL'});
@@ -490,10 +577,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3000
-    * @tc.name    test format interface with 6262023379 and INTERNATIONAL type param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_3000
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3000
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_3000', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_3000 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('US', {'type': 'INTERNATIONAL'});
@@ -505,10 +595,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3100
-    * @tc.name    test format interface with 6262023379 and RFC3966 type param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_3100
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3100
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_3100', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_3100 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('US', {'type': 'RFC3966'});
@@ -520,10 +613,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3200
-    * @tc.name    test format interface with 6262023379 and E164 type param
-    * @tc.desc    get the isValidNumber value
-    */
+     * @tc.name   i18n_phonenumberformat_test_3200
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3200
+     * @tc.desc   get the isValidNumber value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_3200', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_3200 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('US', {'type': 'E164'});
@@ -535,10 +631,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3300
-    * @tc.name test getLocationName method with 135... num in zh-CN locale
-    * @tc.desc get the getLocationName value
-    */
+     * @tc.name   i18n_phonenumberformat_test_3300
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3300
+     * @tc.desc   get the getLocationName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_3300', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_3300 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -550,10 +649,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3400
-    * @tc.name test getLocationName method with 135... num in en-US locale
-    * @tc.desc get the getLocationName value
-    */
+     * @tc.name   i18n_phonenumberformat_test_3400
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3400
+     * @tc.desc   get the getLocationName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_3400', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_3400 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -568,10 +670,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3500
-    * @tc.name test getLocationName method with 158... num in en-US locale
-    * @tc.desc get the getLocationName value
-    */
+     * @tc.name   i18n_phonenumberformat_test_3500
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3500
+     * @tc.desc   get the getLocationName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_3500', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_3500 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -586,10 +691,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3600
-    * @tc.name test getLocationName method with 027... num in zh-CN locale
-    * @tc.desc get the getLocationName value
-    */
+     * @tc.name   i18n_phonenumberformat_test_3600
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3600
+     * @tc.desc   get the getLocationName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_3600', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_3600 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -601,10 +709,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3700
-    * @tc.name test getLocationName method with 0728... num in zh-CN locale
-    * @tc.desc get the getLocationName value
-    */
+     * @tc.name   i18n_phonenumberformat_test_3700
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3700
+     * @tc.desc   get the getLocationName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_3700', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_3700 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -616,10 +727,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3800
-    * @tc.name test getLocationName method with +34... num in en-US locale
-    * @tc.desc get the getLocationName value
-    */
+     * @tc.name   i18n_phonenumberformat_test_3800
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3800
+     * @tc.desc   get the getLocationName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_3800', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_3800 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -634,10 +748,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3900
-    * @tc.name test getLocationName method with +39... num in en-US locale
-    * @tc.desc get the getLocationName value
-    */
+     * @tc.name   i18n_phonenumberformat_test_3900
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_3900
+     * @tc.desc   get the getLocationName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_3900', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_3900 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -652,10 +769,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_4000
-    * @tc.name test getLocationName method with +39... num in zh-CN locale
-    * @tc.desc get the getLocationName value
-    */
+     * @tc.name   i18n_phonenumberformat_test_4000
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_4000
+     * @tc.desc   get the getLocationName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_4000', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_4000 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');
@@ -670,10 +790,13 @@ describe('PhoneNumberFormatInI18nTest', function () {
     })
 
     /**
-    * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_4100
-    * @tc.name test getLocationName method with +34... num in zh-CN locale
-    * @tc.desc get the getLocationName value
-    */
+     * @tc.name   i18n_phonenumberformat_test_4100
+     * @tc.number SUB_GLOBAL_I18N_PHONENUMBERFORMAT_JS_4100
+     * @tc.desc   get the getLocationName value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_phonenumberformat_test_4100', Level.LEVEL2, function () {
         console.log('i18n_phonenumberformat_test_4100 ' + 'start');
         let phonenumber = new I18n.PhoneNumberFormat('CN');

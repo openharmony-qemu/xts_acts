@@ -26,6 +26,7 @@ const domain = 0x0000;
 const testTag = 'PixelmapNdkTest';
 const twoParametersFile = "test_DMA_1801_4041.jpg";
 const test_DMA_3071_4095 = "test_DMA_3071_4095.jpg";
+const test_wbmp = "test.wbmp";
 const PARAMETER_ERROR = 401;
 const UNSUPPORTED_ALLOCATOR_TYPE = 7700201;
 const DECODE_FAILED = 7700301;
@@ -182,16 +183,37 @@ export default function pixelmapNdkForDMATest() {
       return ret;
     }
 
+    const DecodeWbmpImageTest = (
+      logger: Logger,
+      fileName: string,
+      expectInfo: ndkTest.decodeOptions,
+      allocatorType: image.AllocatorType = AUTO
+    ): boolean => {
+      let filePath = filesDir + "/" + fileName;
+      let imageInfo: ndkTest.decodeOptions | number;
+      logger.log("filePath is: " + filePath);
+      imageInfo = ndkTest.CreatePixelMapForDMAAndGetInfo(filePath, allocatorType, expectInfo);
+      if (typeof imageInfo == 'object') {
+        let ret = (imageInfo.width == expectInfo.width) &&
+                  (imageInfo.height == expectInfo.height) &&
+                  (imageInfo.mimeType == expectInfo.mimeType);
+        logger.log("check result is: " + ret);
+        logger.log("expect info: " + JSON.stringify(expectInfo));
+        logger.log("Actual info: " + JSON.stringify(imageInfo));
+        return ret;
+      } else {
+        logger.log("CreatePixelMapForDMAAndGetInfo result is not object!");
+        return false;
+      }
+    }
+
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: RGBA_F16
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -207,15 +229,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 256, height: 256},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -231,15 +250,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0400
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 512, height: 512},
-     *                       desiredPixelFormat: NV21
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0400
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -255,15 +271,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0500
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 4000, height: 4096},
-     *                       desiredPixelFormat: NV12
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -279,15 +292,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0600
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3072, height: 4096},
-     *                       desiredPixelFormat: RGBA_1010102
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0600
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -303,15 +313,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0700
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0700
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -327,15 +334,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0800
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 256, height: 256},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0800
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -351,15 +355,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0900
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0900
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -375,15 +376,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0901
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3072, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0901
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0901
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_0901', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -399,15 +397,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1000
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1000
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -423,15 +418,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3072, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -447,15 +439,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1101
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1101
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1101
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -471,15 +460,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1102
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 256, height: 256},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1102
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1102
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -495,16 +481,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -525,16 +507,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 4001, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -555,16 +533,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1400
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1400
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -585,16 +559,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1500
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -616,15 +586,12 @@ export default function pixelmapNdkForDMATest() {
 
     /**覆盖格式 */
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_PNG_NATIVE_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_PNG_NATIVE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_PNG_NATIVE_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_PNG_NATIVE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -640,15 +607,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_PNG_NATIVE_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_PNG_NATIVE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_PNG_NATIVE_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_PNG_NATIVE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -664,15 +628,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_PNG_NATIVE_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_PNG_NATIVE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_PNG_NATIVE_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_PNG_NATIVE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -688,15 +649,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_GIF_NATIVE_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_GIF_NATIVE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_GIF_NATIVE_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_GIF_NATIVE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -712,15 +670,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_GIF_NATIVE_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_GIF_NATIVE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_GIF_NATIVE_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_GIF_NATIVE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -736,15 +691,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_GIF_NATIVE_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_GIF_NATIVE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_GIF_NATIVE_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_GIF_NATIVE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -760,15 +712,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_ICO_NATIVE_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_ICO_NATIVE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_ICO_NATIVE_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_ICO_NATIVE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -784,15 +733,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_ICO_NATIVE_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_ICO_NATIVE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_ICO_NATIVE_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_ICO_NATIVE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -808,15 +754,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_ICO_NATIVE_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_ICO_NATIVE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_ICO_NATIVE_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_ICO_NATIVE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -832,15 +775,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_BMP_NATIVE_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_BMP_NATIVE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_BMP_NATIVE_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_BMP_NATIVE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -856,15 +796,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_BMP_NATIVE_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_BMP_NATIVE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_BMP_NATIVE_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_BMP_NATIVE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -880,15 +817,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_BMP_NATIVE_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_BMP_NATIVE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_BMP_NATIVE_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_BMP_NATIVE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -904,15 +838,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_WEBP_NATIVE_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_WEBP_NATIVE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_WEBP_NATIVE_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_WEBP_NATIVE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -928,15 +859,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_WEBP_NATIVE_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_WEBP_NATIVE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_WEBP_NATIVE_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_WEBP_NATIVE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -952,15 +880,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_WEBP_NATIVE_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_WEBP_NATIVE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_WEBP_NATIVE_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_WEBP_NATIVE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -976,15 +901,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_DNG_NATIVE_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_DNG_NATIVE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_DNG_NATIVE_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_DNG_NATIVE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1005,15 +927,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_DNG_NATIVE_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_DNG_NATIVE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_DNG_NATIVE_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_DNG_NATIVE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1034,15 +953,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_DNG_NATIVE_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_DNG_NATIVE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_DNG_NATIVE_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_DNG_NATIVE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1063,15 +979,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_HEIF_NATIVE_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_HEIF_NATIVE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_HEIF_NATIVE_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_HEIF_NATIVE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1092,15 +1005,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_HEIF_NATIVE_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_HEIF_NATIVE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_HEIF_NATIVE_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_HEIF_NATIVE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1121,15 +1031,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_HEIF_NATIVE_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_HEIF_NATIVE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_HEIF_NATIVE_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_HEIF_NATIVE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1150,12 +1057,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_ERROR_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_ERROR_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1168,16 +1075,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_ERROR_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_ERROR_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1196,16 +1099,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_ERROR_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_ERROR_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_ERROR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1224,15 +1123,12 @@ export default function pixelmapNdkForDMATest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_ERROR_0400
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_ERROR_0400
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_JPEG_NATIVE_ERROR_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1242,6 +1138,138 @@ export default function pixelmapNdkForDMATest() {
       const result: number = ndkTest.CreatePixelMapUsingAllocator(path, AUTO, size, RGBA_8888);
       logger.log("create pixelmap error code is: " + result);
       expect(result == DECODE_FAILED).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0100', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0100");
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 99,
+        height: 200,
+        pixelFormat: RGB_565,
+        dynamicRange: RANGE_SDR,
+        mimeType: "image/wbmp"
+      };
+      let ret = DecodeWbmpImageTest(logger, test_wbmp, expectInfo, AUTO);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0200', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0200");
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 512,
+        height: 512,
+        pixelFormat: BGRA_8888,
+        dynamicRange: RANGE_HDR,
+        mimeType: "image/wbmp"
+      };
+      let ret = DecodeWbmpImageTest(logger, test_wbmp, expectInfo, AUTO);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0300', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0300");
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 4001,
+        height: 4096,
+        pixelFormat: NV21,
+        dynamicRange: RANGE_SDR,
+        mimeType: "image/wbmp"
+      };
+      let ret = DecodeWbmpImageTest(logger, test_wbmp, expectInfo, SHARE_MEMORY);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0400
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0400', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0400");
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 99,
+        height: 200,
+        pixelFormat: NV12,
+        dynamicRange: RANGE_SDR,
+        mimeType: "image/wbmp"
+      };
+      let ret = DecodeWbmpImageTest(logger, test_wbmp, expectInfo, SHARE_MEMORY);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0500', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0500");
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 512,
+        height: 512,
+        pixelFormat: YCBCR_P010,
+        dynamicRange: RANGE_SDR,
+        mimeType: "image/wbmp"
+      };
+      let ret = DecodeWbmpImageTest(logger, test_wbmp, expectInfo, DMA);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0600
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0600', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0600");
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 3072,
+        height: 4096,
+        pixelFormat: YCRCB_P010,
+        dynamicRange: RANGE_HDR,
+        mimeType: "image/wbmp"
+      };
+      let ret = DecodeWbmpImageTest(logger, test_wbmp, expectInfo, DMA);
+      expect(ret).assertTrue();
       done();
     })
   })

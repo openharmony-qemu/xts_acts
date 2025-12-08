@@ -34,12 +34,12 @@ export default function DecimalTest009() {
     });
         console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST_001
-     * @tc.name      : Decimal_isFinite_Func_001
-     * @tc.desc      : Test isFinite
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_isFinite_Func_001
+     * @tc.number DECIMAL_TEST_001
+     * @tc.desc   Test isFinite
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_isFinite_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
           Decimal.set ({

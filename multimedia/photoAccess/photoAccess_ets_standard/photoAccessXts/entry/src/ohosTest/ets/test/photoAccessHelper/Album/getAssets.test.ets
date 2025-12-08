@@ -104,12 +104,12 @@ export default function albumGetAssetsTest() {
     const albumUri = "file://media/PhotoAlbum/68";
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_001
-     * @tc.name      : album_getAssets_callback_001
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_001
+     * @tc.number ALBUM_GET_ASSETS_001
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_001';
@@ -119,12 +119,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_002
-     * @tc.name      : album_getAssets_callback_002
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_002
+     * @tc.number ALBUM_GET_ASSETS_002
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_002';
@@ -134,12 +134,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_003
-     * @tc.name      : album_getAssets_callback_003
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_003
+     * @tc.number ALBUM_GET_ASSETS_003
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_003';
@@ -149,12 +149,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_004
-     * @tc.name      : album_getAssets_callback_004
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_004
+     * @tc.number ALBUM_GET_ASSETS_004
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_004';
@@ -164,12 +164,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_005
-     * @tc.name      : album_getAssets_callback_005
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_005
+     * @tc.number ALBUM_GET_ASSETS_005
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_005';
@@ -179,12 +179,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_006
-     * @tc.name      : album_getAssets_callback_006
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_006
+     * @tc.number ALBUM_GET_ASSETS_006
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_006';
@@ -194,12 +194,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_007
-     * @tc.name      : album_getAssets_callback_007
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_007
+     * @tc.number ALBUM_GET_ASSETS_007
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_007';
@@ -209,12 +209,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_008
-     * @tc.name      : album_getAssets_callback_008
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_008
+     * @tc.number ALBUM_GET_ASSETS_008
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_008';
@@ -224,12 +224,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_009
-     * @tc.name      : album_getAssets_callback_009
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_009
+     * @tc.number ALBUM_GET_ASSETS_009
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_009';
@@ -239,12 +239,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_010
-     * @tc.name      : album_getAssets_callback_010
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_010
+     * @tc.number ALBUM_GET_ASSETS_010
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_010';
@@ -254,12 +254,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_011
-     * @tc.name      : album_getAssets_callback_011
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_011
+     * @tc.number ALBUM_GET_ASSETS_011
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_011';
@@ -269,12 +269,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_012
-     * @tc.name      : album_getAssets_callback_012
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_012
+     * @tc.number ALBUM_GET_ASSETS_012
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_012';
@@ -284,12 +284,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_013
-     * @tc.name      : album_getAssets_callback_013
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_013
+     * @tc.number ALBUM_GET_ASSETS_013
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_013';
@@ -299,12 +299,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_014
-     * @tc.name      : album_getAssets_callback_014
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_014
+     * @tc.number ALBUM_GET_ASSETS_014
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_014';
@@ -314,12 +314,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_015
-     * @tc.name      : album_getAssets_callback_015
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_015
+     * @tc.number ALBUM_GET_ASSETS_015
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_015';
@@ -329,12 +329,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_016
-     * @tc.name      : album_getAssets_callback_016
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_016
+     * @tc.number ALBUM_GET_ASSETS_016
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_016';
@@ -344,12 +344,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_017
-     * @tc.name      : album_getAssets_callback_017
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_017
+     * @tc.number ALBUM_GET_ASSETS_017
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_017';
@@ -359,12 +359,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_018
-     * @tc.name      : album_getAssets_callback_018
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_018
+     * @tc.number ALBUM_GET_ASSETS_018
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_018';
@@ -374,12 +374,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_019
-     * @tc.name      : album_getAssets_callback_019
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_019
+     * @tc.number ALBUM_GET_ASSETS_019
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_019';
@@ -389,12 +389,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_020
-     * @tc.name      : album_getAssets_callback_020
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_020
+     * @tc.number ALBUM_GET_ASSETS_020
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_020';
@@ -404,12 +404,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_021
-     * @tc.name      : album_getAssets_callback_021
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_021
+     * @tc.number ALBUM_GET_ASSETS_021
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_021';
@@ -419,12 +419,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_022
-     * @tc.name      : album_getAssets_callback_022
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_022
+     * @tc.number ALBUM_GET_ASSETS_022
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_022', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_022';
@@ -434,12 +434,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_023
-     * @tc.name      : album_getAssets_callback_023
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_023
+     * @tc.number ALBUM_GET_ASSETS_023
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_023', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_023';
@@ -449,12 +449,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_024
-     * @tc.name      : album_getAssets_callback_024
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_024
+     * @tc.number ALBUM_GET_ASSETS_024
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_024', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_024';
@@ -464,12 +464,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_025
-     * @tc.name      : album_getAssets_callback_025
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_025
+     * @tc.number ALBUM_GET_ASSETS_025
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_025', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_025';
@@ -479,12 +479,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_026
-     * @tc.name      : album_getAssets_callback_026
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_026
+     * @tc.number ALBUM_GET_ASSETS_026
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_026', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_026';
@@ -494,12 +494,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_027
-     * @tc.name      : album_getAssets_callback_027
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_027
+     * @tc.number ALBUM_GET_ASSETS_027
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_027', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_027';
@@ -509,12 +509,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_028
-     * @tc.name      : album_getAssets_callback_028
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_028
+     * @tc.number ALBUM_GET_ASSETS_028
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_028', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_028';
@@ -524,12 +524,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_029
-     * @tc.name      : album_getAssets_callback_029
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_029
+     * @tc.number ALBUM_GET_ASSETS_029
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_029', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_029';
@@ -539,12 +539,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_030
-     * @tc.name      : album_getAssets_callback_030
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_callback_030
+     * @tc.number ALBUM_GET_ASSETS_030
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_callback_030', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_callback_030';
@@ -554,12 +554,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_031
-     * @tc.name      : album_getAssets_promise_001
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_001
+     * @tc.number ALBUM_GET_ASSETS_031
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_001';
@@ -569,12 +569,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_032
-     * @tc.name      : album_getAssets_promise_002
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_002
+     * @tc.number ALBUM_GET_ASSETS_032
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_002';
@@ -584,12 +584,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_033
-     * @tc.name      : album_getAssets_promise_003
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_003
+     * @tc.number ALBUM_GET_ASSETS_033
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_003';
@@ -599,12 +599,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_034
-     * @tc.name      : album_getAssets_promise_004
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_004
+     * @tc.number ALBUM_GET_ASSETS_034
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_004';
@@ -614,12 +614,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_035
-     * @tc.name      : album_getAssets_promise_005
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_005
+     * @tc.number ALBUM_GET_ASSETS_035
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_005';
@@ -629,12 +629,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_036
-     * @tc.name      : album_getAssets_promise_006
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_006
+     * @tc.number ALBUM_GET_ASSETS_036
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_006';
@@ -644,12 +644,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_037
-     * @tc.name      : album_getAssets_promise_007
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_007
+     * @tc.number ALBUM_GET_ASSETS_037
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_007';
@@ -659,12 +659,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_038
-     * @tc.name      : album_getAssets_promise_008
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_008
+     * @tc.number ALBUM_GET_ASSETS_038
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_008';
@@ -674,12 +674,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_039
-     * @tc.name      : album_getAssets_promise_009
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_009
+     * @tc.number ALBUM_GET_ASSETS_039
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_009';
@@ -689,12 +689,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_040
-     * @tc.name      : album_getAssets_promise_010
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_010
+     * @tc.number ALBUM_GET_ASSETS_040
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_010';
@@ -704,12 +704,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_041
-     * @tc.name      : album_getAssets_promise_011
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_011
+     * @tc.number ALBUM_GET_ASSETS_041
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_011';
@@ -719,12 +719,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_042
-     * @tc.name      : album_getAssets_promise_012
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_012
+     * @tc.number ALBUM_GET_ASSETS_042
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_012';
@@ -734,12 +734,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_043
-     * @tc.name      : album_getAssets_promise_013
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_013
+     * @tc.number ALBUM_GET_ASSETS_043
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_013';
@@ -749,12 +749,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_044
-     * @tc.name      : album_getAssets_promise_014
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_014
+     * @tc.number ALBUM_GET_ASSETS_044
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_014';
@@ -764,12 +764,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_045
-     * @tc.name      : album_getAssets_promise_015
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_015
+     * @tc.number ALBUM_GET_ASSETS_045
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_015';
@@ -779,12 +779,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_046
-     * @tc.name      : album_getAssets_promise_016
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_016
+     * @tc.number ALBUM_GET_ASSETS_046
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_016';
@@ -794,12 +794,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_047
-     * @tc.name      : album_getAssets_promise_017
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_017
+     * @tc.number ALBUM_GET_ASSETS_047
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_017';
@@ -809,12 +809,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_048
-     * @tc.name      : album_getAssets_promise_018
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_018
+     * @tc.number ALBUM_GET_ASSETS_048
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_018';
@@ -824,12 +824,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_049
-     * @tc.name      : album_getAssets_promise_019
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_019
+     * @tc.number ALBUM_GET_ASSETS_049
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_019';
@@ -839,12 +839,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_050
-     * @tc.name      : album_getAssets_promise_020
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_020
+     * @tc.number ALBUM_GET_ASSETS_050
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_020';
@@ -854,12 +854,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_051
-     * @tc.name      : album_getAssets_promise_021
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_021
+     * @tc.number ALBUM_GET_ASSETS_051
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_021';
@@ -869,12 +869,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_052
-     * @tc.name      : album_getAssets_promise_022
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_022
+     * @tc.number ALBUM_GET_ASSETS_052
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_022', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_022';
@@ -884,12 +884,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_053
-     * @tc.name      : album_getAssets_promise_023
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_023
+     * @tc.number ALBUM_GET_ASSETS_053
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_023', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_023';
@@ -899,12 +899,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_054
-     * @tc.name      : album_getAssets_promise_024
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_024
+     * @tc.number ALBUM_GET_ASSETS_054
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_024', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_024';
@@ -914,12 +914,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_055
-     * @tc.name      : album_getAssets_promise_025
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_025
+     * @tc.number ALBUM_GET_ASSETS_055
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_025', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_025';
@@ -929,12 +929,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_056
-     * @tc.name      : album_getAssets_promise_026
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_026
+     * @tc.number ALBUM_GET_ASSETS_056
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_026', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_026';
@@ -944,12 +944,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_057
-     * @tc.name      : album_getAssets_promise_027
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_027
+     * @tc.number ALBUM_GET_ASSETS_057
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_027', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_027';
@@ -959,12 +959,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_058
-     * @tc.name      : album_getAssets_promise_028
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_028
+     * @tc.number ALBUM_GET_ASSETS_058
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_028', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_028';
@@ -974,12 +974,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_059
-     * @tc.name      : album_getAssets_promise_029
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_029
+     * @tc.number ALBUM_GET_ASSETS_059
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_029', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_029';
@@ -989,12 +989,12 @@ export default function albumGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_GET_ASSETS_060
-     * @tc.name      : album_getAssets_promise_030
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getAssets_promise_030
+     * @tc.number ALBUM_GET_ASSETS_060
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAssets_promise_030', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_getAssets_promise_030';

@@ -43,13 +43,13 @@ export default function outline() {
       done();
     });
     
-     /**
-     * @tc.number    SUB_ACE_outline_0100
-     * @tc.name      outline_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+    /**
+     * @tc.name   outlineStyle_0100
+     * @tc.number SUB_ACE_outline_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('outlineStyle_0100', Level.LEVEL2, async (done: Function) => {
       console.info('outlineStyle_0100 START');
@@ -64,12 +64,12 @@ export default function outline() {
     });
 
     /**
-     * @tc.number    SUB_ACE_outline_0100
-     * @tc.name      outline_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   outlineWidth_0200
+     * @tc.number SUB_ACE_outline_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('outlineWidth_0200', Level.LEVEL2, async (done: Function) => {
       console.info('outlineWidth_0200 START');
@@ -84,12 +84,12 @@ export default function outline() {
     });
 
     /**
-     * @tc.number    SUB_ACE_outline_0100
-     * @tc.name      outline_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   outlineColor_0300
+     * @tc.number SUB_ACE_outline_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('outlineColor_0300', Level.LEVEL2, async (done: Function) => {
       console.info('outlineColor_0300 START');
@@ -104,12 +104,12 @@ export default function outline() {
     });
 
     /**
-     * @tc.number    SUB_ACE_outline_0100
-     * @tc.name      outline_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   outlineRadius_0400
+     * @tc.number SUB_ACE_outline_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('outlineRadius_0400', Level.LEVEL2, async (done: Function) => {
       console.info('outlineRadius_0400 START');

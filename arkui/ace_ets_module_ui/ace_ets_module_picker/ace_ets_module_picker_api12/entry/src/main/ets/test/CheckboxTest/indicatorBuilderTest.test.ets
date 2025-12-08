@@ -46,12 +46,12 @@ export default function indicatorBuilderTest() {
     });
 
     /**
-     * @tc.number    indicatorBuilderTest_001
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   indicatorBuilderTest_001
+     * @tc.number indicatorBuilderTest_001
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('indicatorBuilderTest_001', Level.LEVEL1, async (done: Function) => {
       console.info('[indicatorBuilderTest_001] START');

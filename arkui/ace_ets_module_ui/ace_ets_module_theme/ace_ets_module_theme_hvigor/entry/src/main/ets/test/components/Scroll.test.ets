@@ -95,13 +95,13 @@ export default function scrollThemeTest() {
       }
     })
     /**
-      * @tc.number    : ActsScrollThemeColors_0100
-      * @tc.name      : ActsScrollThemeColors_0100
-      * @tc.desc      : Сheck system colors values of the Scroll
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsScrollThemeColors_0100
+     * @tc.number ActsScrollThemeColors_0100
+     * @tc.desc   Сheck system colors values of the Scroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsScrollThemeColors_0100`, Level.LEVEL2, () => {
       const CASE: string = `ActsScrollThemeColors_0100`
       console.info(`${SUITE} ${CASE} START`)
@@ -116,13 +116,13 @@ export default function scrollThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     })
     /**
-      * @tc.number    : ActsScrollThemeColors_0200
-      * @tc.name      : ActsScrollThemeColors_0200
-      * @tc.desc      : Сheck custom colors values of the Scroll
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsScrollThemeColors_0200
+     * @tc.number ActsScrollThemeColors_0200
+     * @tc.desc   Сheck custom colors values of the Scroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsScrollThemeColors_0200`, Level.LEVEL2, () => {
       const CASE: string = `ActsScrollThemeColors_0200`
       console.info(`${SUITE} ${CASE} START`)
@@ -138,14 +138,13 @@ export default function scrollThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     })
     /**
-      * @tc.number    : ActsScrollThemeColors_0300
-      * @tc.name      : ActsScrollThemeColors_0300
-      * @tc.desc      : Сheck custom colors values of the Scroll
-                        after change theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsScrollThemeColors_0300
+     * @tc.number ActsScrollThemeColors_0300
+     * @tc.desc   Сheck custom colors values of the Scroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsScrollThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsScrollThemeColors_0300`
       console.info(`${SUITE} ${CASE} START`)
@@ -162,14 +161,13 @@ export default function scrollThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     })
     /**
-      * @tc.number    : ActsScrollThemeColors_0400
-      * @tc.name      : ActsScrollThemeColors_0400
-      * @tc.desc      : Сheck system colors values of the Scroll
-                        after reset theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsScrollThemeColors_0400
+     * @tc.number ActsScrollThemeColors_0400
+     * @tc.desc   Сheck system colors values of the Scroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsScrollThemeColors_0400`, Level.LEVEL0, async () => {
       const CASE: string = `ActsScrollThemeColors_0400`
       console.info(`${SUITE} ${CASE} START`)

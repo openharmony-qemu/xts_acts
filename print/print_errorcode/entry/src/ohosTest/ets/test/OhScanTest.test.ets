@@ -20,12 +20,12 @@ const ERR_OK = 0;
 export default function ActsScanErrorTest() {
   describe('ActsScanErrorTest', () => {
     /**
-     * @tc.number  : SUB_Oh_Scan_NoError_0100
-     * @tc.name    : SUB_Oh_Scan_NoError_0100
-     * @tc.desc    : Test OHScanNoError
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Scan_NoError_0100
+     * @tc.number SUB_Oh_Scan_NoError_0100
+     * @tc.desc   Test OHScanNoError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Scan_NoError_0100', Level.LEVEL1, async (done: Function) => {
       try {
@@ -41,12 +41,12 @@ export default function ActsScanErrorTest() {
     });
 
     /**
-     * @tc.number  : SUB_Oh_Scan_InvalidParameter_0200
-     * @tc.name    : SUB_Oh_Scan_InvalidParameter_0200
-     * @tc.desc    : Test OHScanInvalidParameter
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Scan_InvalidParameter_0200
+     * @tc.number SUB_Oh_Scan_InvalidParameter_0200
+     * @tc.desc   Test OHScanInvalidParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Scan_InvalidParameter_0200', Level.LEVEL1, async (done: Function) => {
       try {
@@ -62,12 +62,12 @@ export default function ActsScanErrorTest() {
     });
 
     /**
-     * @tc.number  : SUB_Oh_Scan_UnSupported_0300
-     * @tc.name    : SUB_Oh_Scan_UnSupported_0300
-     * @tc.desc    : Test OHScanUnSupported
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Scan_UnSupported_0300
+     * @tc.number SUB_Oh_Scan_UnSupported_0300
+     * @tc.desc   Test OHScanUnSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Scan_UnSupported_0300', Level.LEVEL1, async (done: Function) => {
       try {
@@ -83,12 +83,12 @@ export default function ActsScanErrorTest() {
     });
 
     /**
-     * @tc.number  : SUB_Oh_Scan_OHScanInit1_0500
-     * @tc.name    : SUB_Oh_Scan_OHScanInit1_0500
-     * @tc.desc    : Test OHScanInit1
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Scan_OHScanInit1_0500
+     * @tc.number SUB_Oh_Scan_OHScanInit1_0500
+     * @tc.desc   Test OHScanInit1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Scan_OHScanInit1_0500', Level.LEVEL1, async (done: Function) => {
       try {
@@ -104,12 +104,12 @@ export default function ActsScanErrorTest() {
     });
 
     /**
-     * @tc.number  : SUB_Oh_Scan_StartScannerDiscovery1_0600
-     * @tc.name    : SUB_Oh_Scan_StartScannerDiscovery1_0600
-     * @tc.desc    : Test OH_Scan_StartScannerDiscovery1
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Scan_StartScannerDiscovery1_0600
+     * @tc.number SUB_Oh_Scan_StartScannerDiscovery1_0600
+     * @tc.desc   Test OH_Scan_StartScannerDiscovery1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Scan_StartScannerDiscovery1_0600', Level.LEVEL1, async (done: Function) => {
       try {
@@ -125,12 +125,12 @@ export default function ActsScanErrorTest() {
     });
 
     /**
-     * @tc.number  : SUB_Oh_Scan_OpenScanner1_0700
-     * @tc.name    : SUB_Oh_Scan_OpenScanner1_0700
-     * @tc.desc    : Test OH_Scan_OpenScanner1
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Scan_OpenScanner1_0700
+     * @tc.number SUB_Oh_Scan_OpenScanner1_0700
+     * @tc.desc   Test OH_Scan_OpenScanner1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Scan_OpenScanner1_0700', Level.LEVEL1, async (done: Function) => {
       try {
@@ -146,12 +146,12 @@ export default function ActsScanErrorTest() {
     });
 
     /**
-     * @tc.number  : SUB_Oh_Scan_CloseScanner1_0800
-     * @tc.name    : SUB_Oh_Scan_CloseScanner1_0800
-     * @tc.desc    : Test OH_Scan_CloseScanner1
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Scan_CloseScanner1_0800
+     * @tc.number SUB_Oh_Scan_CloseScanner1_0800
+     * @tc.desc   Test OH_Scan_CloseScanner1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Scan_CloseScanner1_0800', Level.LEVEL1, async (done: Function) => {
       try {
@@ -167,12 +167,12 @@ export default function ActsScanErrorTest() {
     });
 
     /**
-     * @tc.number  : SUB_Oh_Scan_SetScannerParameter1_0900
-     * @tc.name    : SUB_Oh_Scan_SetScannerParameter1_0900
-     * @tc.desc    : Test OH_Scan_SetScannerParameter1
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Scan_SetScannerParameter1_0900
+     * @tc.number SUB_Oh_Scan_SetScannerParameter1_0900
+     * @tc.desc   Test OH_Scan_SetScannerParameter1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Scan_SetScannerParameter1_0900', Level.LEVEL1, async (done: Function) => {
       try {
@@ -188,12 +188,12 @@ export default function ActsScanErrorTest() {
     });
 
     /**
-     * @tc.number  : SUB_Oh_Scan_StartScan1_1000
-     * @tc.name    : SUB_Oh_Scan_StartScan1_1000
-     * @tc.desc    : Test OH_Scan_StartScan1
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Scan_StartScan1_1000
+     * @tc.number SUB_Oh_Scan_StartScan1_1000
+     * @tc.desc   Test OH_Scan_StartScan1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Scan_StartScan1_1000', Level.LEVEL1, async (done: Function) => {
       try {
@@ -209,12 +209,12 @@ export default function ActsScanErrorTest() {
     });
 
     /**
-     * @tc.number  : SUB_Oh_Scan_CancelScan1_1100
-     * @tc.name    : SUB_Oh_Scan_CancelScan1_1100
-     * @tc.desc    : Test OH_Scan_CancelScan1
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Scan_CancelScan1_1100
+     * @tc.number SUB_Oh_Scan_CancelScan1_1100
+     * @tc.desc   Test OH_Scan_CancelScan1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Scan_CancelScan1_1100', Level.LEVEL1, async (done: Function) => {
       try {
@@ -230,12 +230,12 @@ export default function ActsScanErrorTest() {
     });
 
     /**
-     * @tc.number  : SUB_Oh_Scan_GetPictureScanProgress1_1200
-     * @tc.name    : SUB_Oh_Scan_GetPictureScanProgress1_1200
-     * @tc.desc    : Test OH_Scan_GetPictureScanProgress1
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Oh_Scan_GetPictureScanProgress1_1200
+     * @tc.number SUB_Oh_Scan_GetPictureScanProgress1_1200
+     * @tc.desc   Test OH_Scan_GetPictureScanProgress1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Oh_Scan_GetPictureScanProgress1_1200', Level.LEVEL1, async (done: Function) => {
       try {

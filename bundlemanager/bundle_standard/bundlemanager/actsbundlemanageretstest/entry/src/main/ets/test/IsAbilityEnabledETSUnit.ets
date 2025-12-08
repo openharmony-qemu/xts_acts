@@ -56,10 +56,13 @@ export default function isAbilityEnabledETSUnit() {
 
     describe('isAbilityEnabled_test', function () {
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Status_AbilityEnable_5400
-         * @tc.name: isAbilityEnabled : Get whether to enable a specified ability
-         * @tc.desc: Check the return value of the interface
+        /**
+         * @tc.name   Sub_Bms_Framework_Status_AbilityEnable_5400
+         * @tc.number Sub_Bms_Framework_Status_AbilityEnable_5400
+         * @tc.desc   Check the return value of the interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Sub_Bms_Framework_Status_AbilityEnable_5400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             let timeOldStamp = await Utils.getNowTime();
@@ -83,10 +86,13 @@ export default function isAbilityEnabledETSUnit() {
             });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Status_AbilityEnable_5300
-         * @tc.name: isAbilityEnabled : Get whether to enable a specified ability
-         * @tc.desc: Check the return value of the interface when bundleName and ability error
+        /**
+         * @tc.name   Sub_Bms_Framework_Status_AbilityEnable_5300
+         * @tc.number Sub_Bms_Framework_Status_AbilityEnable_5300
+         * @tc.desc   Check the return value of the interface when bundleName and ability error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('Sub_Bms_Framework_Status_AbilityEnable_5300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
             let abilityInfo1 = generateAbilityInfoForTest(ABILITY_ERROR1.bundleName,ABILITY_ERROR1.name);
@@ -132,10 +138,13 @@ export default function isAbilityEnabledETSUnit() {
             });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Status_AbilityEnable_5200
-         * @tc.name: isAbilityEnabled : Get whether to enable a specified ability
-         * @tc.desc: Check the return value of the interface when bundleName and ability error
+        /**
+         * @tc.name   Sub_Bms_Framework_Status_AbilityEnable_5200
+         * @tc.number Sub_Bms_Framework_Status_AbilityEnable_5200
+         * @tc.desc   Check the return value of the interface when bundleName and ability error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Sub_Bms_Framework_Status_AbilityEnable_5200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             let abilityInfo4 = generateAbilityInfoForTest(ABILITY_ERROR4.bundleName,ABILITY_ERROR4.name);
@@ -171,10 +180,13 @@ export default function isAbilityEnabledETSUnit() {
             });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Status_AbilityEnable_5500
-         * @tc.name: isAbilityEnabled : Get whether to enable a specified ability
-         * @tc.desc: Check the return value of the interface
+        /**
+         * @tc.name   Sub_Bms_Framework_Status_AbilityEnable_5500
+         * @tc.number Sub_Bms_Framework_Status_AbilityEnable_5500
+         * @tc.desc   Check the return value of the interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('Sub_Bms_Framework_Status_AbilityEnable_5500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             let abilityInfo = generateAbilityInfoForTest(BUNDLE_NAME_OTHER,ABILITY_NAME_OTHER);

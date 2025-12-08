@@ -59,12 +59,12 @@ export default function looper5Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_0100
-     * @tc.name: testLoop5_001
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_001
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_0100
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list = new Array<number | string>();
@@ -77,12 +77,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_0200
-     * @tc.name: testLoop5_002
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_002
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_0200
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list: Array<string> = getLooper5Fn1();
@@ -90,12 +90,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_0300
-     * @tc.name: testLoop5_003
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_003
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_0300
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list: Array<string> = getLooper5Fn2();
@@ -103,12 +103,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_0500
-     * @tc.name: testLoop5_005
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_005
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_0500
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [10, 20, 30, 40];
@@ -121,12 +121,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_0600
-     * @tc.name: testLoop5_006
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_006
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_0600
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list: Array<string> = getLooper5Fn3();
@@ -134,12 +134,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_0700
-     * @tc.name: testLoop5_007
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_007
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_0700
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list = new Array<number | string>();
@@ -158,12 +158,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_0800
-     * @tc.name: testLoop5_008
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_008
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_0800
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list: Array<string> = getLooper5Fn4();
@@ -171,12 +171,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_0900
-     * @tc.name: testLoop5_009
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_009
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_0900
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list: Array<string> = getLooper5Fn4();
@@ -184,12 +184,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_1000
-     * @tc.name: testLoop5_010
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_010
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_1000
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list = new Array<number | string>();
@@ -202,12 +202,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_1100
-     * @tc.name: testLoop5_011
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_011
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_1100
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list: Array<string> = getLooper5Fn5();
@@ -215,12 +215,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_1200
-     * @tc.name: testLoop5_012
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_012
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_1200
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list: Array<string> = getLooper5Fn6();
@@ -228,12 +228,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_1300
-     * @tc.name: testLoop5_013
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_013
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_1300
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list = new Array<number | string[]>();
@@ -250,12 +250,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_1400
-     * @tc.name: testLoop5_014
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_014
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_1400
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list: Array<string> = getLooper5Fn7();
@@ -263,12 +263,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_1500
-     * @tc.name: testLoop5_015
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_015
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_1500
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list = new Array<number>();
@@ -281,12 +281,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_1800
-     * @tc.name: testLoop5_018
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_018
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_1800
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list: Array<string> = getLooper5Fn8();
@@ -294,12 +294,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_1900
-     * @tc.name: testLoop5_019
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_019
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_1900
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list: Array<string> = getLooper5Fn8_1();
@@ -307,12 +307,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_2000
-     * @tc.name: testLoop5_020
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_020
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_2000
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list: Array<string> = getLooper5Fn9();
@@ -320,12 +320,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_2100
-     * @tc.name: testLoop5_021
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_021
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_2100
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list: Array<string> = getLooper5Fn10();
@@ -333,12 +333,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_2200
-     * @tc.name: testLoop5_022
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_022
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_2200
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list: Array<number> = getLooper5Fn11();
@@ -346,12 +346,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_2400
-     * @tc.name: testLoop5_024
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_024
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_2400
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list: Array<number> = getLooper5Fn12();
@@ -359,12 +359,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_2600
-     * @tc.name: testLoop5_026
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_026
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_2600
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let sum = 0;
@@ -380,12 +380,12 @@ export default function looper5Test() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_LOOPER5_2700
-     * @tc.name: testLoop5_027
-     * @tc.desc: Test looper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLoop5_027
+     * @tc.number SUB_COMMONLIBRARY_LOOPER5_2700
+     * @tc.desc   Test looper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoop5_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list: Array<string> = getLooper5Fn13();

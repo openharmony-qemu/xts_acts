@@ -42,12 +42,12 @@ export default function penPart2Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1400
-     * @tc.name      : testPenSetImageFilterNormal
-     * @tc.desc      : Test for testPenSetImageFilterNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPenSetImageFilterNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1400
+     * @tc.desc   Test for testPenSetImageFilterNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPenSetImageFilterNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPenSetImageFilterNormal';
@@ -72,12 +72,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1401
-     * @tc.name      : testPenSetImageFilterNull
-     * @tc.desc      : Test for testPenSetImageFilterNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPenSetImageFilterNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1401
+     * @tc.desc   Test for testPenSetImageFilterNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPenSetImageFilterNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPenSetImageFilterNull';
@@ -93,12 +93,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1403
-     * @tc.name      : testPenSetImageFilterMultipleCalls
-     * @tc.desc      : Test for testPenSetImageFilterMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testPenSetImageFilterMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1403
+     * @tc.desc   Test for testPenSetImageFilterMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPenSetImageFilterMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPenSetImageFilterMultipleCalls';
@@ -117,12 +117,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1500
-     * @tc.name      : testPenGetColorFilterNormal
-     * @tc.desc      : Test for testPenGetColorFilterNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPenGetColorFilterNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1500
+     * @tc.desc   Test for testPenGetColorFilterNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPenGetColorFilterNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPenGetColorFilterNormal';
@@ -138,12 +138,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1502
-     * @tc.name      : testPenGetColorFilterMultipleCalls
-     * @tc.desc      : Test for testPenGetColorFilterMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testPenGetColorFilterMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1502
+     * @tc.desc   Test for testPenGetColorFilterMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPenGetColorFilterMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPenGetColorFilterMultipleCalls';
@@ -161,12 +161,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1600
-     * @tc.name      : testPenGetFillPathNormal
-     * @tc.desc      : Test for testPenGetFillPathNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPenGetFillPathNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1600
+     * @tc.desc   Test for testPenGetFillPathNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPenGetFillPathNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPenGetFillPathNormal';
@@ -205,12 +205,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1601
-     * @tc.name      : testPenGetFillPathNull
-     * @tc.desc      : Test for testPenGetFillPathNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPenGetFillPathNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1601
+     * @tc.desc   Test for testPenGetFillPathNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPenGetFillPathNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPenGetFillPathNull';
@@ -252,12 +252,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1603
-     * @tc.name      : testPenGetFillPathMultipleCalls
-     * @tc.desc      : Test for testPenGetFillPathMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testPenGetFillPathMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1603
+     * @tc.desc   Test for testPenGetFillPathMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPenGetFillPathMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPenGetFillPathMultipleCalls';
@@ -278,12 +278,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1700
-     * @tc.name      : testPenConstructorNormal
-     * @tc.desc      : Test for testPenConstructorNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPenConstructorNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1700
+     * @tc.desc   Test for testPenConstructorNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPenConstructorNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPenConstructorNormal';
@@ -319,12 +319,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1703
-     * @tc.name      : testPenConstructorMultipleCalls
-     * @tc.desc      : Test for testPenConstructorMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testPenConstructorMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1703
+     * @tc.desc   Test for testPenConstructorMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPenConstructorMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPenConstructorMultipleCalls';
@@ -342,12 +342,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1800
-     * @tc.name      : testPenGetAlphaNormal
-     * @tc.desc      : Test for testPenGetAlphaNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPenGetAlphaNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1800
+     * @tc.desc   Test for testPenGetAlphaNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPenGetAlphaNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPenGetAlphaNormal';
@@ -383,12 +383,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1802
-     * @tc.name      : testPenGetAlphaMultipleCalls
-     * @tc.desc      : Test for testPenGetAlphaMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testPenGetAlphaMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1802
+     * @tc.desc   Test for testPenGetAlphaMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPenGetAlphaMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPenGetAlphaMultipleCalls';
@@ -406,12 +406,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1900
-     * @tc.name      : testPenIsAntiAliasNormal
-     * @tc.desc      : Test for testPenIsAntiAliasNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPenIsAntiAliasNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1900
+     * @tc.desc   Test for testPenIsAntiAliasNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPenIsAntiAliasNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPenIsAntiAliasNormal';
@@ -448,12 +448,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1902
-     * @tc.name      : testPenIsAntiAliasMultipleCalls
-     * @tc.desc      : Test for testPenIsAntiAliasMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testPenIsAntiAliasMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_1902
+     * @tc.desc   Test for testPenIsAntiAliasMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPenIsAntiAliasMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPenIsAntiAliasMultipleCalls';
@@ -472,12 +472,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2000
-     * @tc.name      : testPenGetColorNormal
-     * @tc.desc      : Test for testPenGetColorNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPenGetColorNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2000
+     * @tc.desc   Test for testPenGetColorNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPenGetColorNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPenGetColorNormal';
@@ -519,12 +519,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2002
-     * @tc.name      : testPenGetColorMultipleCalls
-     * @tc.desc      : Test for testPenGetColorMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testPenGetColorMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2002
+     * @tc.desc   Test for testPenGetColorMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPenGetColorMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPenGetColorMultipleCalls';
@@ -542,12 +542,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2100
-     * @tc.name      : testPenGetWidthNormal
-     * @tc.desc      : Test for testPenGetWidthNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPenGetWidthNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2100
+     * @tc.desc   Test for testPenGetWidthNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPenGetWidthNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPenGetWidthNormal';
@@ -584,12 +584,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2102
-     * @tc.name      : testPenGetWidthMultipleCalls
-     * @tc.desc      : Test for testPenGetWidthMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testPenGetWidthMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2102
+     * @tc.desc   Test for testPenGetWidthMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPenGetWidthMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPenGetWidthMultipleCalls';
@@ -608,12 +608,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2200
-     * @tc.name      : testPenSetGetMiterLimitNormal
-     * @tc.desc      : Test for testPenSetGetMiterLimitNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPenSetGetMiterLimitNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2200
+     * @tc.desc   Test for testPenSetGetMiterLimitNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPenSetGetMiterLimitNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPenSetGetMiterLimitNormal';
@@ -670,12 +670,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2201
-     * @tc.name      : testPenSetGetMiterLimitNull
-     * @tc.desc      : Test for testPenSetGetMiterLimitNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPenSetGetMiterLimitNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2201
+     * @tc.desc   Test for testPenSetGetMiterLimitNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPenSetGetMiterLimitNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPenSetGetMiterLimitNull';
@@ -699,12 +699,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2203
-     * @tc.name      : testPenSetGetMiterLimitMultipleCalls
-     * @tc.desc      : Test for testPenSetGetMiterLimitMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testPenSetGetMiterLimitMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2203
+     * @tc.desc   Test for testPenSetGetMiterLimitMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPenSetGetMiterLimitMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPenSetGetMiterLimitMultipleCalls';
@@ -745,12 +745,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2300
-     * @tc.name      : testPenSetShaderEffectNormal
-     * @tc.desc      : Test for testPenSetShaderEffectNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPenSetShaderEffectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2300
+     * @tc.desc   Test for testPenSetShaderEffectNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPenSetShaderEffectNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPenSetShaderEffectNormal';
@@ -775,12 +775,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2301
-     * @tc.name      : testPenSetShaderEffectNull
-     * @tc.desc      : Test for testPenSetShaderEffectNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPenSetShaderEffectNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2301
+     * @tc.desc   Test for testPenSetShaderEffectNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPenSetShaderEffectNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPenSetShaderEffectNull';
@@ -796,12 +796,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2303
-     * @tc.name      : testPenSetShaderEffectMultipleCalls
-     * @tc.desc      : Test for testPenSetShaderEffectMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testPenSetShaderEffectMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2303
+     * @tc.desc   Test for testPenSetShaderEffectMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPenSetShaderEffectMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPenSetShaderEffectMultipleCalls';
@@ -820,12 +820,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2400
-     * @tc.name      : testPenResetNormal
-     * @tc.desc      : Test for testPenResetNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPenResetNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2400
+     * @tc.desc   Test for testPenResetNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPenResetNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPenResetNormal';
@@ -856,12 +856,12 @@ export default function penPart2Test() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2402
-     * @tc.name      : testPenResetMultipleCalls
-     * @tc.desc      : Test for testPenResetMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testPenResetMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2402
+     * @tc.desc   Test for testPenResetMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPenResetMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPenResetMultipleCalls';
@@ -877,12 +877,12 @@ export default function penPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2500
-     * @tc.name      : testPenSetAndGetColor4fNormal
-     * @tc.desc      : Test for testPenSetAndGetColor4fNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPenSetAndGetColor4fNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2500
+     * @tc.desc   Test for testPenSetAndGetColor4fNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPenSetAndGetColor4fNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPenSetAndGetColor4fNormal';
@@ -963,12 +963,12 @@ export default function penPart2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2501
-     * @tc.name      : testPenSetAndGetColor4fNull
-     * @tc.desc      : testPenSetAndGetColor4fNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPenSetAndGetColor4fNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2501
+     * @tc.desc   testPenSetAndGetColor4fNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPenSetAndGetColor4fNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPenSetAndGetColor4fNull';
@@ -1000,12 +1000,12 @@ export default function penPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2502
-     * @tc.name      : testPenSetAndGetColor4fMultipleCalls
-     * @tc.desc      : testPenSetAndGetColor4fMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPenSetAndGetColor4fMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2502
+     * @tc.desc   testPenSetAndGetColor4fMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPenSetAndGetColor4fMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPenSetAndGetColor4fMultipleCalls';
@@ -1034,12 +1034,12 @@ export default function penPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2503
-     * @tc.name      : testPenSetAndGetColor4fBoundaryValue
-     * @tc.desc      : testPenSetAndGetColor4fBoundaryValue
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPenSetAndGetColor4fBoundaryValue
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_2503
+     * @tc.desc   testPenSetAndGetColor4fBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPenSetAndGetColor4fBoundaryValue', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPenSetAndGetColor4fBoundaryValue';

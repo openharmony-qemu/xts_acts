@@ -18,6 +18,14 @@ import {Sleep} from './Util'
 
 export default function workerImport() {
   describe("WorkerImportTest", () => {
+    /**
+     * @tc.name   importRelative
+     * @tc.number importRelative
+     * @tc.desc   importRelative
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('importRelative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let workerImportRelative = 'failed'
       let threadWorker = new worker.ThreadWorker('entry/ets/workers/workerImportRelative')
@@ -28,6 +36,14 @@ export default function workerImport() {
       await Sleep(2000)
       expect(workerImportRelative).assertEqual('success')
     })
+    /**
+     * @tc.name   importSystemNapi
+     * @tc.number importSystemNapi
+     * @tc.desc   importSystemNapi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('importSystemNapi', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let workerImportSystem = 'failed'
       let threadWorker = new worker.ThreadWorker('entry/ets/workers/workerImportSystem')
@@ -38,6 +54,14 @@ export default function workerImport() {
       await Sleep(2000)
       expect(workerImportSystem).assertEqual('success')
     })
+    /**
+     * @tc.name   importAppNapi
+     * @tc.number importAppNapi
+     * @tc.desc   importAppNapi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('importAppNapi', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let workerImportNapi = 'failed'
       let threadWorker = new worker.ThreadWorker('entry/ets/workers/workerImportNapi')

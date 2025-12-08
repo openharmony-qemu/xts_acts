@@ -52,13 +52,13 @@ let serverConfig: webSocket.WebSocketServerConfig ={
 
 export default function WebsocketServerTest() {
   describe('WebsocketServerTest', ()=> {
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_CreateWebSocketServer_0100
-     * @tc.name  : testNetworkMgrWebSocketCreateWebSocketServer0100
-     * @tc.desc  : Create a WebSocketServer
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketCreateWebSocketServer0100
+     * @tc.number SUB_NetworkMgr_WebSocket_CreateWebSocketServer_0100
+     * @tc.desc   Create a WebSocketServer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketCreateWebSocketServer0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketCreateWebSocketServer0100';
@@ -84,13 +84,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_CreateWebSocketServerCallback_0200
-     * @tc.name  : testNetworkMgrWebSocketCreateWebSocketServer0200
-     * @tc.desc  : Create two WebSocketServers
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketCreateWebSocketServer0200
+     * @tc.number SUB_NetworkMgr_WebSocket_CreateWebSocketServerCallback_0200
+     * @tc.desc   Create two WebSocketServers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketCreateWebSocketServer0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketCreateWebSocketServer0200';
@@ -118,13 +118,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerStart_0100
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerStart0100
-     * @tc.desc  : Start a WebSocketServer (serverConfig without cert and protocol)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerStart0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerStart_0100
+     * @tc.desc   Start a WebSocketServer (serverConfig without cert and protocol)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerStart0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerStart0100';
@@ -171,13 +171,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerStart_0200
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerStart0200
-     * @tc.desc  : Start a WebSocketServer (serverConfig contain protocol)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerStart0200
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerStart_0200
+     * @tc.desc   Start a WebSocketServer (serverConfig contain protocol)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerStart0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerStart0200';
@@ -225,13 +225,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerStart_0300
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerStart0300
-     * @tc.desc  : Start a WebSocketServer (serverConfig contain protocol and cert)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerStart0300
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerStart_0300
+     * @tc.desc   Start a WebSocketServer (serverConfig contain protocol and cert)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerStart0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerStart0300';
@@ -284,13 +284,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerStart_0400
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerStart0400
-     * @tc.desc  : Start a WebSocketServer
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerStart0400
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerStart_0400
+     * @tc.desc   Start a WebSocketServer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerStart0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerStart0400';
@@ -343,13 +343,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerStart_0500
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerStart0500
-     * @tc.desc  : Start a WebSocketServer(errorCode:2302002)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerStart0500
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerStart_0500
+     * @tc.desc   Start a WebSocketServer(errorCode:2302002)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerStart0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerStart0500';
@@ -403,13 +403,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerStart_0600
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerStart0600
-     * @tc.desc  : Start a WebSocketServer(errorCode:2302005)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerStart0600
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerStart_0600
+     * @tc.desc   Start a WebSocketServer(errorCode:2302005)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerStart0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerStart0600';
@@ -457,13 +457,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerStart_0700
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerStart0700
-     * @tc.desc  : Start a WebSocketServer (errorCode:2302004)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerStart0700
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerStart_0700
+     * @tc.desc   Start a WebSocketServer (errorCode:2302004)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerStart0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerStart0700';
@@ -510,13 +510,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerStart_0800
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerStart0800
-     * @tc.desc  : Start a WebSocketServer (errorCode:2302999)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerStart0800
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerStart_0800
+     * @tc.desc   Start a WebSocketServer (errorCode:2302999)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerStart0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerStart0800';
@@ -564,13 +564,13 @@ export default function WebsocketServerTest() {
     });
 
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerListAllConnections_0100
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerListAllConnections0100
-     * @tc.desc  : WebSocketServer list all connections
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerListAllConnections0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerListAllConnections_0100
+     * @tc.desc   WebSocketServer list all connections
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerListAllConnections0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerListAllConnections0100';
@@ -646,13 +646,13 @@ export default function WebsocketServerTest() {
       }
     })
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerListAllConnections_0200
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerListAllConnections0200
-     * @tc.desc  : WebSocketServer list all connections(null array)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerListAllConnections0200
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerListAllConnections_0200
+     * @tc.desc   WebSocketServer list all connections(null array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerListAllConnections0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerListAllConnections0200';
@@ -745,13 +745,13 @@ export default function WebsocketServerTest() {
       }
     })
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerSend_0100
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerSend0100
-     * @tc.desc  : WebSocketServer send a massage
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerSend0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerSend_0100
+     * @tc.desc   WebSocketServer send a massage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerSend0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerSend0100';
@@ -837,13 +837,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerSend_0200
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerSend0200
-     * @tc.desc  : WebSocketServer send a massage(errorCode:2302006)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerSend0200
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerSend_0200
+     * @tc.desc   WebSocketServer send a massage(errorCode:2302006)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerSend0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerSend0200';
@@ -925,13 +925,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerClose_0100
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerClose0100
-     * @tc.desc  : WebSocketServer close a connection
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerClose0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerClose_0100
+     * @tc.desc   WebSocketServer close a connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerClose0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerClose0100';
@@ -1002,13 +1002,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerClose_0200
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerClose0200
-     * @tc.desc  : WebSocketServer close a connection(errorCode:2302006)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerClose0200
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerClose_0200
+     * @tc.desc   WebSocketServer close a connection(errorCode:2302006)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerClose0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerClose0200';
@@ -1079,13 +1079,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerStop_0100
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerStop0100
-     * @tc.desc  : Stop WebSocketServer
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerStop0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerStop_0100
+     * @tc.desc   Stop WebSocketServer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerStop0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerStop0100';
@@ -1140,13 +1140,13 @@ export default function WebsocketServerTest() {
     });
 
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerOnConnect_0100
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerOnConnect0100
-     * @tc.desc  : Subscript to websocket server connect event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerOnConnect0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerOnConnect_0100
+     * @tc.desc   Subscript to websocket server connect event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerOnConnect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerOnConnect0100';
@@ -1212,14 +1212,14 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-      * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerOffConnect_0100
-      * @tc.name  : testNetworkMgrWebSocketWebSocketServerOffConnect0100
-      * @tc.desc  : Unsubscript to websocket server connect event
-      * @tc.size  : MediumTest
-      * @tc.type  : Function
-      * @tc.level : level 3
-      */
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerOffConnect0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerOffConnect_0100
+     * @tc.desc   Unsubscript to websocket server connect event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrWebSocketWebSocketServerOffConnect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerOffConnect0100';
       console.info(`${caseName} test start`);
@@ -1285,14 +1285,14 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-      * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerOffConnect_0200
-      * @tc.name  : testNetworkMgrWebSocketWebSocketServerOffConnect0200
-      * @tc.desc  : UnSubscript to websocket server connect event
-      * @tc.size  : MediumTest
-      * @tc.type  : Function
-      * @tc.level : level 3
-      */
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerOffConnect0200
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerOffConnect_0200
+     * @tc.desc   UnSubscript to websocket server connect event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrWebSocketWebSocketServerOffConnect0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerOffConnect0200';
       console.info(`${caseName} test start`);
@@ -1359,13 +1359,13 @@ export default function WebsocketServerTest() {
     });
 
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerOnMsg_0100
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerOnMsg0100
-     * @tc.desc  : Subscript to websocket server message received event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerOnMsg0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerOnMsg_0100
+     * @tc.desc   Subscript to websocket server message received event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerOnMsg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerOnMsg0100';
@@ -1460,14 +1460,14 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerOffMsg_0100
-    * @tc.name  : testNetworkMgrWebSocketWebSocketServerOffMsg0100
-    * @tc.desc  : UnSubscript to websocket server message received event
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerOffMsg0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerOffMsg_0100
+     * @tc.desc   UnSubscript to websocket server message received event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrWebSocketWebSocketServerOffMsg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerOffMsg0100';
       console.info(`${caseName} test start`);
@@ -1560,14 +1560,14 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerOffMsg_0200
-    * @tc.name  : testNetworkMgrWebSocketWebSocketServerOffMsg0200
-    * @tc.desc  : UnSubscript to websocket server message received event
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerOffMsg0200
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerOffMsg_0200
+     * @tc.desc   UnSubscript to websocket server message received event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrWebSocketWebSocketServerOffMsg0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerOffMsg0200';
       console.info(`${caseName} test start`);
@@ -1661,13 +1661,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerOnErr_0100
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerOnErr0100
-     * @tc.desc  : Subscript to websocket server error event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerOnErr0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerOnErr_0100
+     * @tc.desc   Subscript to websocket server error event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerOnErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerOnErr0100';
@@ -1729,13 +1729,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerOffErr_0100
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerOffErr0100
-     * @tc.desc  : UnSubscript to websocket server error event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerOffErr0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerOffErr_0100
+     * @tc.desc   UnSubscript to websocket server error event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerOffErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerOffErr0100';
@@ -1798,13 +1798,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerOffErr_0200
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerOffErr0200
-     * @tc.desc  : UnSubscript to websocket server error event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerOffErr0200
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerOffErr_0200
+     * @tc.desc   UnSubscript to websocket server error event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerOffErr0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerOffErr0200';
@@ -1867,13 +1867,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerOnClose_0100
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerOnClose0100
-     * @tc.desc  : Subscript to websocket server close event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerOnClose0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerOnClose_0100
+     * @tc.desc   Subscript to websocket server close event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerOnClose0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerOnClose0100';
@@ -1951,13 +1951,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerOffClose_0100
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerOffClose0100
-     * @tc.desc  : UnSubscript to websocket server close event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerOffClose0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerOffClose_0100
+     * @tc.desc   UnSubscript to websocket server close event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerOffClose0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerOffClose0100';
@@ -2036,13 +2036,13 @@ export default function WebsocketServerTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerOffClose_0200
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerOffClose0200
-     * @tc.desc  : UnSubscript to websocket server close event
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerOffClose0200
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerOffClose_0200
+     * @tc.desc   UnSubscript to websocket server close event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerOffClose0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerOffClose0200';

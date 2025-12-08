@@ -58,15 +58,15 @@ export default function relationalStoreBatchInsertErrcodeTest() {
     })
 
 
-    /**
-     * @tc.name rdbstore.batchInsertWithConflictResolution errcode is 14800014
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_5600
-     * @tc.desc rdbstore.batchInsertWithConflictResolution errcode is 14800014
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode0100
+     * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode0100
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStoreBatchInsertWithConflictResolutionErrcode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0100 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -94,15 +94,15 @@ export default function relationalStoreBatchInsertErrcodeTest() {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0100 end *************");
     })
 
-    /**
-     * @tc.name rdbstore.batchInsertWithConflictResolution errcode is 14800021
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_5700
-     * @tc.desc rdbstore.batchInsertWithConflictResolution errcode is 14800021
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode0200
+     * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode0200
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStoreBatchInsertWithConflictResolutionErrcode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0200 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -130,15 +130,15 @@ export default function relationalStoreBatchInsertErrcodeTest() {
     })
 
 
-    /**
-     * @tc.name rdbstore.batchInsertWithConflictResolution errcode is 14800030
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_5800
-     * @tc.desc rdbstore.batchInsertWithConflictResolution errcode is 14800030
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode0300
+     * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode0300
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStoreBatchInsertWithConflictResolutionErrcode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0300 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -170,15 +170,15 @@ export default function relationalStoreBatchInsertErrcodeTest() {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0300 end *************");
     })
 
-    /**
-     * @tc.name rdbstore.batchInsertWithConflictResolution errcode is 14800027
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_5900
-     * @tc.desc rdbstore.batchInsertWithConflictResolution errcode is 14800027
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode0400
+     * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode0400
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStoreBatchInsertWithConflictResolutionErrcode0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0400 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -210,15 +210,15 @@ export default function relationalStoreBatchInsertErrcodeTest() {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0400 end *************");
     })
 
-    /**
-     * @tc.name rdbstore.batchInsertWithConflictResolution errcode is 14800032
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_6000
-     * @tc.desc rdbstore.batchInsertWithConflictResolution errcode is 14800032
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode0500
+     * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode0500
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStoreBatchInsertWithConflictResolutionErrcode0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0500 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -243,15 +243,15 @@ export default function relationalStoreBatchInsertErrcodeTest() {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0500 end *************");
     })
 
-    /**
-     * @tc.name rdbstore.batchInsertWithConflictResolution errcode is 14800033
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_6100
-     * @tc.desc rdbstore.batchInsertWithConflictResolution errcode is 14800033
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode0600
+     * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode0600
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStoreBatchInsertWithConflictResolutionErrcode0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0600 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -279,15 +279,15 @@ export default function relationalStoreBatchInsertErrcodeTest() {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0600 end *************");
     })
 
-    /**
-     * @tc.name rdbstore.batchInsertWithConflictResolution errcode is 14800047
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_6200
-     * @tc.desc rdbstore.batchInsertWithConflictResolution errcode is 14800047
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode0700
+     * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode0700
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStoreBatchInsertWithConflictResolutionErrcode0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0700 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -319,15 +319,15 @@ export default function relationalStoreBatchInsertErrcodeTest() {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0700 end *************");
     })
 
-    /**
-     * @tc.name rdbstore.batchInsertWithConflictResolutionSync errcode is 14800014
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_6300
-     * @tc.desc rdbstore.batchInsertWithConflictResolutionSync errcode is 14800014
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0100
+     * @tc.number testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0100
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0100 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -355,15 +355,15 @@ export default function relationalStoreBatchInsertErrcodeTest() {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0100 end *************");
     })
 
-    /**
-     * @tc.name rdbstore.batchInsertWithConflictResolutionSync errcode is 14800021
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_6400
-     * @tc.desc rdbstore.batchInsertWithConflictResolutionSync errcode is 14800021
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0200
+     * @tc.number testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0200
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0200 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -391,15 +391,15 @@ export default function relationalStoreBatchInsertErrcodeTest() {
     })
 
 
-    /**
-     * @tc.name rdbstore.batchInsertWithConflictResolutionSync errcode is 14800030
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_6500
-     * @tc.desc rdbstore.batchInsertWithConflictResolutionSync errcode is 14800030
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0300
+     * @tc.number testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0300
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0300 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -431,15 +431,15 @@ export default function relationalStoreBatchInsertErrcodeTest() {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0300 end *************");
     })
 
-    /**
-     * @tc.name rdbstore.batchInsertWithConflictResolutionSync errcode is 14800030
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_6600
-     * @tc.desc rdbstore.batchInsertWithConflictResolutionSync errcode is 14800030
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0400
+     * @tc.number testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0400
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0400 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -471,15 +471,15 @@ export default function relationalStoreBatchInsertErrcodeTest() {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0400 end *************");
     })
 
-    /**
-     * @tc.name rdbstore.batchInsertWithConflictResolutionSync errcode is 14800032
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_6700
-     * @tc.desc rdbstore.batchInsertWithConflictResolutionSync errcode is 14800032
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testRdbStorebatchInsertWithConflictResolutionSyncErrcode0500
+     * @tc.number testRdbStorebatchInsertWithConflictResolutionSyncErrcode0500
+     * @tc.desc   testRdbStorebatchInsertWithConflictResolutionSyncErrcode0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStorebatchInsertWithConflictResolutionSyncErrcode0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testRdbStorebatchInsertWithConflictResolutionSyncErrcode0500 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -504,15 +504,15 @@ export default function relationalStoreBatchInsertErrcodeTest() {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0500 end *************");
     })
 
-    /**
-     * @tc.name rdbstore.batchInsertWithConflictResolutionSync errcode is 14800033
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_6800
-     * @tc.desc rdbstore.batchInsertWithConflictResolutionSync errcode is 14800033
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testRdbStorebatchInsertWithConflictResolutionSyncErrcode0600
+     * @tc.number testRdbStorebatchInsertWithConflictResolutionSyncErrcode0600
+     * @tc.desc   testRdbStorebatchInsertWithConflictResolutionSyncErrcode0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStorebatchInsertWithConflictResolutionSyncErrcode0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testRdbStorebatchInsertWithConflictResolutionSyncErrcode0600 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -540,15 +540,15 @@ export default function relationalStoreBatchInsertErrcodeTest() {
       console.log(TAG + "************* testRdbStorebatchInsertWithConflictResolutionSyncErrcode0600 end *************");
     })
 
-    /**
-     * @tc.name rdbstore.batchInsertWithConflictResolutionSync errcode is 14800047
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_6900
-     * @tc.desc rdbstore.batchInsertWithConflictResolutionSync errcode is 14800047
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   testRdbStorebatchInsertWithConflictResolutionSyncErrcode0700
+     * @tc.number testRdbStorebatchInsertWithConflictResolutionSyncErrcode0700
+     * @tc.desc   testRdbStorebatchInsertWithConflictResolutionSyncErrcode0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStorebatchInsertWithConflictResolutionSyncErrcode0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* testRdbStorebatchInsertWithConflictResolutionSyncErrcode0700 start *************");
       let u8 = new Uint8Array([1, 2, 3])

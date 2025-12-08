@@ -26,78 +26,78 @@ export default function checkboxMarkTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_MARK_0100
-     * @tc.name       : testCheckboxMark001
-     * @tc.desc       : testing mark for checkbox with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCheckboxMark001
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_MARK_0100
+     * @tc.desc   testing mark for checkbox with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckboxMark001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxMark001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_MARK_0200
-     * @tc.name       : testCheckboxMark002
-     * @tc.desc       : testing mark for checkbox with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCheckboxMark002
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_MARK_0200
+     * @tc.desc   testing mark for checkbox with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckboxMark002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxMark002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_MARK_0300
-     * @tc.name       : testCheckboxMark003
-     * @tc.desc       : testing mark for checkbox with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCheckboxMark003
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_MARK_0300
+     * @tc.desc   testing mark for checkbox with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckboxMark003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxMark003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_MARK_0400
-     * @tc.name       : testCheckboxMark004
-     * @tc.desc       : testing mark for checkbox with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCheckboxMark004
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_MARK_0400
+     * @tc.desc   testing mark for checkbox with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckboxMark004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxMark004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_MARK_0500
-     * @tc.name       : testCheckboxMark005
-     * @tc.desc       : testing mark for checkbox with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCheckboxMark005
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_MARK_0500
+     * @tc.desc   testing mark for checkbox with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckboxMark005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxMark005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_MARK_0600
-     * @tc.name       : testCheckboxMark006
-     * @tc.desc       : testing mark for checkbox with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCheckboxMark006
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_MARK_0600
+     * @tc.desc   testing mark for checkbox with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckboxMark006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxMark006()).assertEqual(0)

@@ -155,12 +155,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0400
-     * @tc.desc        getVolumeSync - audio.AudioVolumeType.RINGTONE_Parameter - success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0400
+     * @tc.desc   getVolumeSync - audio.AudioVolumeType.RINGTONE_Parameter - success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -176,12 +176,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0100
-     * @tc.desc        getMinVolumeSync - Media - Sync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0100
+     * @tc.desc   getMinVolumeSync - Media - Sync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -204,12 +204,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0500
-     * @tc.desc        getMinVolumeSync - Media - audio.AudioVolumeType.RINGTONE_Parameter - success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0500
+     * @tc.desc   getMinVolumeSync - Media - audio.AudioVolumeType.RINGTONE_Parameter - success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -226,12 +226,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0100
-     * @tc.desc        getMaxVolumeSync - Media - Sync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0100
+     * @tc.desc   getMaxVolumeSync - Media - Sync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -256,12 +256,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0400
-     * @tc.desc        getMaxVolumeSync - Media - audio.AudioVolumeType.ALARM_Parameter - success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0400
+     * @tc.desc   getMaxVolumeSync - Media - audio.AudioVolumeType.ALARM_Parameter - success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -278,12 +278,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0400
-     * @tc.desc        isMuteSync - Media - audio.AudioVolumeType.ACCESSIBILITY_Parameter - success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0400
+     * @tc.desc   isMuteSync - Media - audio.AudioVolumeType.ACCESSIBILITY_Parameter - success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -299,12 +299,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_STATIC_0500
-     * @tc.desc        isMuteSync - Media - Sync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_STATIC_0500
+     * @tc.desc   isMuteSync - Media - Sync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -326,12 +326,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIOCAPTURER_STATECHANGE_PERIODREACH_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIOCAPTURER_STATECHANGE_PERIODREACH_STATIC_0100
-     * @tc.desc        on_off_statechange_periodreach
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIOCAPTURER_STATECHANGE_PERIODREACH_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIOCAPTURER_STATECHANGE_PERIODREACH_STATIC_0100
+     * @tc.desc   on_off_statechange_periodreach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIOCAPTURER_STATECHANGE_PERIODREACH_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -357,7 +357,7 @@ export default function audioFramework() {
       audio.createAudioCapturer(audioCapturerOptions).then((data) => {
         audioCapturer = data;
         console.info('AudioCapturer Created : SUCCESS');
-        data.getCapturerInfo().then((audioParamsGet: audio.AudioCapturerInfo) => {
+        data!.getCapturerInfo().then((audioParamsGet: audio.AudioCapturerInfo) => {
           if (audioParamsGet != undefined) {
             console.info('AudioFrameworkRecLog: Capturer CapturerInfo:');
             if (audioParamsGet.source == audio.SourceType.SOURCE_TYPE_CAMCORDER) {
@@ -377,8 +377,8 @@ export default function audioFramework() {
             console.info('ON Triggered successfully');
           }
         };
-        data.onPeriodReach(1000, periodReachCallback);
-        data.offPeriodReach(periodReachCallback);
+        data!.onPeriodReach(1000, periodReachCallback);
+        data!.offPeriodReach(periodReachCallback);
         let stateChangeCallback = (state: audio.AudioState) => {
           if (state == 1) {
             console.info('audio renderer state is: STATE_PREPARED');
@@ -387,16 +387,16 @@ export default function audioFramework() {
             console.info('audio renderer state is: STATE_RUNNING');
           }
         };
-        data.onStateChange(stateChangeCallback);
-        data.offStateChange(stateChangeCallback);
+        data!.onStateChange(stateChangeCallback);
+        data!.offStateChange(stateChangeCallback);
         let readDataCallback = (value: ArrayBuffer) => {
           console.info(`read valus: ${value}`);
         };
-        data.onReadData(readDataCallback);
+        data!.onReadData(readDataCallback);
         console.info('Capturer readData on success.');
-        data.offReadData(readDataCallback);
+        data!.offReadData(readDataCallback);
         console.info('Capturer readData of success.');
-        data.release().then(() => {
+        data!.release().then(() => {
           console.info('AudioFrameworkRecLog: ---------RELEASE RECORD---------');
           console.info('AudioFrameworkRecLog: Capturer release : SUCCESS');
           console.info(`AudioFrameworkRecLog: AudioCapturer : STATE : ${audioCapturer.state}`);
@@ -412,12 +412,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0100
-     * @tc.desc        InterruptType - INTERRUPT_TYPE_BEGIN
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0100
+     * @tc.desc   InterruptType - INTERRUPT_TYPE_BEGIN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.InterruptType.INTERRUPT_TYPE_BEGIN == 1).assertTrue();
@@ -426,12 +426,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0200
-     * @tc.desc        InterruptType - INTERRUPT_TYPE_END
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0200
+     * @tc.desc   InterruptType - INTERRUPT_TYPE_END
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.InterruptType.INTERRUPT_TYPE_END == 2).assertTrue();
@@ -440,12 +440,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0300
-     * @tc.desc        InterruptHint - INTERRUPT_HINT_NONE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0300
+     * @tc.desc   InterruptHint - INTERRUPT_HINT_NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.InterruptHint.INTERRUPT_HINT_NONE == 0).assertTrue();
@@ -454,12 +454,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0400
-     * @tc.desc        InterruptHint - INTERRUPT_HINT_RESUME
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0400
+     * @tc.desc   InterruptHint - INTERRUPT_HINT_RESUME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.InterruptHint.INTERRUPT_HINT_RESUME == 1).assertTrue();
@@ -468,12 +468,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0500
-     * @tc.desc        InterruptHint - INTERRUPT_HINT_PAUSE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0500
+     * @tc.desc   InterruptHint - INTERRUPT_HINT_PAUSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.InterruptHint.INTERRUPT_HINT_PAUSE == 2).assertTrue();
@@ -482,12 +482,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0600
-     * @tc.desc        InterruptHint - INTERRUPT_HINT_STOP
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0600
+     * @tc.desc   InterruptHint - INTERRUPT_HINT_STOP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.InterruptHint.INTERRUPT_HINT_STOP == 3).assertTrue();
@@ -496,12 +496,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0700
-     * @tc.desc        InterruptHint - INTERRUPT_HINT_DUCK
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0700
+     * @tc.desc   InterruptHint - INTERRUPT_HINT_DUCK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.InterruptHint.INTERRUPT_HINT_DUCK == 4).assertTrue();
@@ -510,12 +510,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0800
-     * @tc.desc        InterruptHint - INTERRUPT_HINT_UNDUCK
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0800
+     * @tc.desc   InterruptHint - INTERRUPT_HINT_UNDUCK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.InterruptHint.INTERRUPT_HINT_UNDUCK == 5).assertTrue();
@@ -524,12 +524,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0900
-     * @tc.desc        InterruptForceType - INTERRUPT_FORCE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0900
+     * @tc.desc   InterruptForceType - INTERRUPT_FORCE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.InterruptForceType.INTERRUPT_FORCE == 0).assertTrue();
@@ -538,12 +538,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_1000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_1000
-     * @tc.desc        InterruptForceType - INTERRUPT_SHARE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_1000
+     * @tc.desc   InterruptForceType - INTERRUPT_SHARE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.InterruptForceType.INTERRUPT_SHARE == 1).assertTrue();
@@ -552,12 +552,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_1300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_1300
-     * @tc.desc        InterruptHint - INTERRUPT_HINT_UNDUCK
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_1300
+     * @tc.desc   InterruptHint - INTERRUPT_HINT_UNDUCK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect(audio.InterruptHint.INTERRUPT_HINT_MUTE).assertEqual(6);
@@ -565,12 +565,12 @@ export default function audioFramework() {
       done();
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_1400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_1400
-     * @tc.desc        InterruptHint - INTERRUPT_HINT_UNDUCK
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_1400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_1400
+     * @tc.desc   InterruptHint - INTERRUPT_HINT_UNDUCK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect(audio.InterruptHint.INTERRUPT_HINT_UNMUTE).assertEqual(7);
@@ -579,12 +579,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0013
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0013
-     * @tc.desc        InterruptHint - INTERRUPT_HINT_MUTE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0013
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0013
+     * @tc.desc   InterruptHint - INTERRUPT_HINT_MUTE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.InterruptHint.INTERRUPT_HINT_MUTE).assertEqual(6);
@@ -593,12 +593,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0014
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0014
-     * @tc.desc        InterruptHint - INTERRUPT_HINT_UNMUTE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0014
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0014
+     * @tc.desc   InterruptHint - INTERRUPT_HINT_UNMUTE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.InterruptHint.INTERRUPT_HINT_UNMUTE).assertEqual(7);
@@ -607,12 +607,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICETYPE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICETYPE_STATIC_0100
-     * @tc.desc        DeviceType - ALL Device Type
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICETYPE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICETYPE_STATIC_0100
+     * @tc.desc   DeviceType - ALL Device Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICETYPE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.DeviceType.INVALID == 0).assertTrue();
@@ -648,12 +648,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SESSION_SCENE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SESSION_SCENE_STATIC_0100
-     * @tc.desc        DeviceRole - ALL Device Role
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSION_SCENE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_SCENE_STATIC_0100
+     * @tc.desc   DeviceRole - ALL Device Role
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SESSION_SCENE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.AudioSessionScene.AUDIO_SESSION_SCENE_MEDIA).assertEqual(0);
@@ -667,12 +667,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_STATIC_0100
-     * @tc.desc        DeviceRole - ALL Device Role
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_STATIC_0100
+     * @tc.desc   DeviceRole - ALL Device Role
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_RESUME).assertEqual(0);
@@ -692,12 +692,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_DEVICE_RECOMMENDEDACTION_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_DEVICE_RECOMMENDEDACTION_STATIC_0100
-     * @tc.desc        DeviceRole - ALL Device Role
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_DEVICE_RECOMMENDEDACTION_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_RECOMMENDEDACTION_STATIC_0100
+     * @tc.desc   DeviceRole - ALL Device Role
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_DEVICE_RECOMMENDEDACTION_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.OutputDeviceChangeRecommendedAction.DEVICE_CHANGE_RECOMMEND_TO_CONTINUE).assertEqual(0);
@@ -709,12 +709,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICEROLE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICEROLE_STATIC_0100
-     * @tc.desc        DeviceRole - ALL Device Role
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICEROLE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICEROLE_STATIC_0100
+     * @tc.desc   DeviceRole - ALL Device Role
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICEROLE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.DeviceRole.INPUT_DEVICE == 1).assertTrue();
@@ -726,12 +726,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0100
-     * @tc.desc        getDevices - Output device
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0100
+     * @tc.desc   getDevices - Output device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioRoutingManager = audioManager.getRoutingManager();
@@ -762,12 +762,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0200
-     * @tc.desc        getDevices - Input device
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0200
+     * @tc.desc   getDevices - Input device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioRoutingManager = audioManager.getRoutingManager();
@@ -797,12 +797,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0300
-     * @tc.desc        getDevices - ALL device
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0300
+     * @tc.desc   getDevices - ALL device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioRoutingManager = audioManager.getRoutingManager();
@@ -832,12 +832,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0400
-     * @tc.desc        getDevices - Output device
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0400
+     * @tc.desc   getDevices - Output device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioRoutingManager = audioManager.getRoutingManager();
@@ -866,12 +866,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0500
-     * @tc.desc        getDevices - Input device
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0500
+     * @tc.desc   getDevices - Input device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioRoutingManager = audioManager.getRoutingManager();
@@ -900,12 +900,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0600
-     * @tc.desc        getDevices - ALL device
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0600
+     * @tc.desc   getDevices - ALL device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioRoutingManager = audioManager.getRoutingManager();
@@ -934,12 +934,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0700
-     * @tc.desc        getDevices - OUTPUT device
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0700
+     * @tc.desc   getDevices - OUTPUT device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioRoutingManager = audioManager.getRoutingManager();
@@ -958,12 +958,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0800
-     * @tc.desc        getDevices - INPUT device
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0800
+     * @tc.desc   getDevices - INPUT device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioRoutingManager = audioManager.getRoutingManager();
@@ -981,12 +981,12 @@ export default function audioFramework() {
       done();
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0900
-     * @tc.desc        getDevices - ALL device
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0900
+     * @tc.desc   getDevices - ALL device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioRoutingManager = audioManager.getRoutingManager();
@@ -1004,12 +1004,12 @@ export default function audioFramework() {
       done();
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_DEVICEFALG_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_DEVICEFALG_STATIC_0100
-     * @tc.desc        NONE_DEVICES_FLAG
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_DEVICEFALG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICEFALG_STATIC_0100
+     * @tc.desc   NONE_DEVICES_FLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_DEVICEFALG_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.DeviceFlag.OUTPUT_DEVICES_FLAG == 1).assertTrue();
@@ -1020,12 +1020,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SAMPLE_FORMAT_F32LE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SAMPLE_FORMAT_F32LE_STATIC_0100
-     * @tc.desc        SAMPLE_FORMAT_F32LE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SAMPLE_FORMAT_F32LE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SAMPLE_FORMAT_F32LE_STATIC_0100
+     * @tc.desc   SAMPLE_FORMAT_F32LE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_SAMPLE_FORMAT_F32LE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE == 4).assertTrue();
@@ -1034,12 +1034,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0100
-     * @tc.desc        getDevices - OUTPUT device - getDevicesSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0100
+     * @tc.desc   getDevices - OUTPUT device - getDevicesSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioRoutingManager = audioManager.getRoutingManager();
@@ -1058,12 +1058,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0400
-     * @tc.desc        getDevicesSync - ErrorCode - audio.DeviceFlag.INPUT_DEVICES_FLAG-Parameters - Success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0400
+     * @tc.desc   getDevicesSync - ErrorCode - audio.DeviceFlag.INPUT_DEVICES_FLAG-Parameters - Success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioRoutingManager = audioManager.getRoutingManager();
@@ -1079,12 +1079,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GETSPATIALIZATIONMANAGER_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GETSPATIALIZATIONMANAGER_STATIC_0100
-     * @tc.desc        OFF_VOLUMECHANGE 6800101
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GETSPATIALIZATIONMANAGER_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GETSPATIALIZATIONMANAGER_STATIC_0100
+     * @tc.desc   OFF_VOLUMECHANGE 6800101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GETSPATIALIZATIONMANAGER_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -1100,12 +1100,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0100
-     * @tc.desc        isAcousticEchoCancelerSupported -
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0100
+     * @tc.desc   isAcousticEchoCancelerSupported -
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
@@ -1123,12 +1123,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0100
-     * @tc.desc        enable
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0100
+     * @tc.desc   enable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -1141,12 +1141,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_STATIC_0100
-     * @tc.desc        enable
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_STATIC_0100
+     * @tc.desc   enable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       try {
@@ -1158,12 +1158,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0100
-     * @tc.desc        enable
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0100
+     * @tc.desc   enable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       try {
@@ -1175,12 +1175,12 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0100
-     * @tc.desc        enable
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0100
+     * @tc.desc   enable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       try {

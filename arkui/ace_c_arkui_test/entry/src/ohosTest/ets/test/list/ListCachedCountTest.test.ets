@@ -26,26 +26,26 @@ export default function listCachedCountTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_CACHEDCOUNT_0100
-     * @tc.name       : testListCachedCount001
-     * @tc.desc       : testing cachedCount for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListCachedCount001
+     * @tc.number SUB_ARKUI_CAPI_LIST_CACHEDCOUNT_0100
+     * @tc.desc   testing cachedCount for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListCachedCount001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListCachedCount001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_CACHEDCOUNT_0200
-     * @tc.name       : testListCachedCount002
-     * @tc.desc       : testing cachedCount for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListCachedCount002
+     * @tc.number SUB_ARKUI_CAPI_LIST_CACHEDCOUNT_0200
+     * @tc.desc   testing cachedCount for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListCachedCount002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListCachedCount002()).assertEqual(0)

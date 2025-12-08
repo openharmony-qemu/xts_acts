@@ -56,10 +56,13 @@ export default function webDefaultFontSizeWithMinLogical() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBPATR6_API_0100
-     *tc.name testDefaultFontSizeHalfAndMinFontSizeHalfWebC
-     *tc.desc test with defaultfontsize 0.5 , minfontsize 0.5 and minLogicalFontSize 0.5
+    /**
+     * @tc.name   testDefaultFontSizeHalfAndMinFontSizeHalfWebC
+     * @tc.number SUB_ACE_BASIC_ETS_WEBPATR6_API_0100
+     * @tc.desc   test with defaultfontsize 0.5 , minfontsize 0.5 and minLogicalFontSize 0.5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDefaultFontSizeHalfAndMinFontSizeHalfWebC', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitdefaultFontSizeHalfAndminFontSizeHalfWebC";

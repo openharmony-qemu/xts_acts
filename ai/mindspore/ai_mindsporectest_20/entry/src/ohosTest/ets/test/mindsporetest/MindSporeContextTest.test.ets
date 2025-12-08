@@ -85,14 +85,14 @@ export default function MindSporeContextTest() {
       });
     })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_CallBackParam_0100
-       * @tc.name       : testOH_AI_CallBackParam0100
-       * @tc.desc       : testing OH_AI_CallBackParam interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_CallBackParam0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_CallBackParam_0100
+     * @tc.desc   testing OH_AI_CallBackParam interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_CallBackParam0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -108,14 +108,14 @@ export default function MindSporeContextTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_CallBackParam_0200
-       * @tc.name       : testOH_AI_CallBackParam0200
-       * @tc.desc       : testing OH_AI_CallBackParam interface node_name
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_CallBackParam0200
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_CallBackParam_0200
+     * @tc.desc   testing OH_AI_CallBackParam interface node_name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_CallBackParam0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -131,14 +131,14 @@ export default function MindSporeContextTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_CallBackParam_0300
-       * @tc.name       : testOH_AI_CallBackParam0300
-       * @tc.desc       : testing OH_AI_CallBackParam interface node_type
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_CallBackParam0300
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_CallBackParam_0300
+     * @tc.desc   testing OH_AI_CallBackParam interface node_type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_CallBackParam0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -154,14 +154,14 @@ export default function MindSporeContextTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_TensorSetAllocator_0100
-       * @tc.name       : testOH_AI_TensorSetAllocator0100
-       * @tc.desc       : testing OH_AI_TensorSetAllocator interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_TensorSetAllocator0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_TensorSetAllocator_0100
+     * @tc.desc   testing OH_AI_TensorSetAllocator interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_TensorSetAllocator0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -177,14 +177,14 @@ export default function MindSporeContextTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_TensorGetAllocator_0100
-       * @tc.name       : testOH_AI_TensorGetAllocator0100
-       * @tc.desc       : testing OH_AI_TensorGetAllocator interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_TensorGetAllocator0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_TensorGetAllocator_0100
+     * @tc.desc   testing OH_AI_TensorGetAllocator interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_TensorGetAllocator0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

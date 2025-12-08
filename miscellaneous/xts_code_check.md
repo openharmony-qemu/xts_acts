@@ -2,15 +2,17 @@
 
 ## XTS CodeCheck在门禁中的位置
 
-图片占位
+![xts_code_check_entrance](./xts_code_check.assets/images/xts_code_check_entrance.png)
+
+![xts_code_check_dashboard](./xts_code_check.assets/images/xts_code_check_dashboard.png)
 
 **并非所有CodeCheck问题都由XTS管控，XTS CodeCheck只关注“规则”列表下`xtscheck`一项**
 
-图片占位
+![xts_code_check_results](./xts_code_check.assets/images/xts_code_check_results.png)
 
-**先查看规则详情里的修改建议，有疑问再咨询XTS团队**
+**请先查看规则详情（入口见上图），有疑问再咨询XTS团队**
 
-图片占位
+![xts_code_check_rule_detail](./xts_code_check.assets/images/xts_code_check_rule_detail.png)
 
 ## 文档注释书写规范
 
@@ -34,7 +36,7 @@
 文档注释书写注意点：
 
 - @tc.name与测试用例名称一致，JavaScript/ArkTs用例名称为第一个参数值，C/CPP为第二个参数值；
-- @tc.number为用例编号，命名规则`SUB_<子系统>_<部件>[_额外描述]_<4位阿拉伯数字编号>`；
+- @tc.number为用例编号，命名规则`SUB_<子系统>_<部件>[_额外_描述]_<4位阿拉伯数字编号>`；
 - @tc.desc为用例描述信息，用于简略描述用例测试内容、预期结果等；
 - @tc.type、@tc.size、@tc.level的值在文档注释中请保持全大写；
 - 文档注释变量值单行最佳。
@@ -86,6 +88,83 @@ CPP
  * @tc.level  LEVEL1
  */
 HWTEST_F(ActsPMSSaveTestSuite, testSecPMPMS0100, Function | MediumTest | Level1) {
+    // test code.
+}
+```
+
+### 错误示例
+
+在文档注释参数名和参数值之间插入任意分隔符（典型分隔符为`:`），将导致参数值解析错误，如：
+
+> @tc.name: testName
+
+将解析为（第一行为参数名称，下一行为参数值）：
+
+- @tc.name:
+- testName
+
+显然，`tc.name:` != `tc.name`，XTS CodeCheck会因找不到文档注释`@tc.name`而失败
+
+> @tc.name : testName
+
+将解析为（第一行为参数名称，下一行为参数值）：
+
+- @tc.name
+- : testName
+
+此时`: `将作为参数值的一部分，XTS CodeCheck会因文档注释`@tc.name`的值和测试用例名称不一致而失败
+
+以下是错误示例，请**避免**这样的写法：
+
+JavaScript/ArkTs
+
+```JavaScript
+/**
+ * @tc.name:   testAsyKeyGeneratorRSAFunc
+ * @tc.number: SUB_Security_CryptoFramework_AsyKeyGenerator_Func_0100
+ * @tc.desc:   Test Generator Asymmetric Key algName with RSA. Sync style.
+ * @tc.type:   FUNCTION
+ * @tc.size:   MEDIUMTEST
+ * @tc.level:  LEVEL3
+ */
+it("testAsyKeyGeneratorRSAFunc", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    // 使用了分隔符':'
+    // test code.
+});
+```
+
+C
+
+```C
+/**
+ * @tc.name   testKvStoreSetValue
+ * @tc.number SUB_UTILS_KV_STORE_0100
+ * @tc.desc   UtilsSetValue parameter legal test.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+
+LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreSetValue, Function | MediumTest | Level1)
+{
+    // 文档注释下一行应紧接要修饰的测试用例，不允许存在空行。
+    // test code.
+};
+```
+
+CPP
+
+```CPP
+/*
+ * @tc.name   testSecPMPMS0100
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0100
+ * @tc.desc   Calling PMS interface to install and save unauthorized application for the first time.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(ActsPMSSaveTestSuite, testSecPMPMS0100, Function | MediumTest | Level1) {
+    // 文档注释以/**开头，/*开头的多行注释不是文档注释。
     // test code.
 }
 ```
@@ -325,6 +404,24 @@ XTS工程`Test.json`配置文件必须符合json规范
 
 JavaScript/ArkTs测试用例在第二个参数处填入测试级别，C/CPP测试用例在第三个参数处填入测试级别
 
+#### 错误示例
+
+JavaScript/ArkTs
+
+```JavaScript
+it("testAsyKeyGeneratorRSAFunc", 0, async (done: Function) => {
+```
+
+C
+```C
+LITE_TEST_CASE(KvStoreFuncTestSuite, testKvStoreSetValue, 0)
+```
+
+CPP
+```CPP
+HWTEST_F(ActsPMSSaveTestSuite, testSecPMPMS0100, 0)
+```
+
 #### 正确示例
 
 JavaScript/ArkTs
@@ -361,7 +458,7 @@ XTS工程`Test.json`配置文件中不允许引入屏蔽包名命令
 
 在`Test.json`配置文件中移除如下屏蔽包名命令：
 
-```json
+```
 param set hiviewdfx.appfreeze.filter_bundle_name <some.pkg.name>
 ```
 
@@ -381,25 +478,25 @@ param set hiviewdfx.appfreeze.filter_bundle_name <some.pkg.name>
 
 #### 修改建议
 
-CPP：[被测对象英文描述]Test.cpp，大驼峰（UpperCamelCase）命名风格
+CPP：<被测对象英文描述>Test.cpp，大驼峰（UpperCamelCase）命名风格
 
 ```
 IntentFilterTest.cpp
 ```
 
-C：[被测_对象_英文_描述]_test.c，蛇形（snake_case）命名风格
+C：<被测_对象_英文_描述>_test.c，蛇形（snake_case）命名风格
 
 ```
 intent_filter_test.c
 ```
 
-JavaScript: [被测对象英文描述].test.js，大驼峰（UpperCamelCase）命名风格
+JavaScript: <被测对象英文描述>.test.js，大驼峰（UpperCamelCase）命名风格
 
 ```
 IntentFilter.test.js
 ```
 
-ArkTs: [被测对象英文描述].test.ets，大驼峰（UpperCamelCase）命名风格
+ArkTs: <被测对象英文描述>.test.ets，大驼峰（UpperCamelCase）命名风格
 
 ```
 IntentFilter.test.ets
@@ -497,7 +594,7 @@ JavaScript、ArkTs测试用例需要调用测试框架提供的断言API，[参�
 
 #### 正确示例
 
-```gn
+```
 subsystem_name = "xts"
 part_name = "device_attest"
 ```
@@ -573,6 +670,6 @@ XTS工程`Test.json`中不允许引入屏蔽弹窗命令
 
 在`Test.json`配置文件中移除如下屏蔽弹窗命令：
 
-```json
+```
 param set persist.sys.abilityms.support.ecologicalrulemgrservice false
 ```

@@ -51,12 +51,15 @@ export default function Row_Padding() {
       console.info("Row_Padding after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_ROW_PARENTCOMPONENTCHANGED_0400
-     * @tc.name testRowPaddingSatisfy
-     * @tc.desc Set padding for the row component. The width of the row component meets the requirements
-     */
 
+    /**
+     * @tc.name   testRowPaddingSatisfy
+     * @tc.number testRowPaddingSatisfy
+     * @tc.desc   testRowPaddingSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRowPaddingSatisfy',  Level.LEVEL0, async (done: Function) => {
       console.info('testRowPaddingSatisfy START');
       globalThis.value.message.notify({
@@ -97,13 +100,15 @@ export default function Row_Padding() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_ROW_PARENTCOMPONENTCHANGED_0500
-     * @tc.name testRowPaddingNOSatisfy
-     * @tc.desc Padding is configured for the row component. The width of the row component does not meet the
-     *               requirements
-     */
 
+    /**
+     * @tc.name   testRowPaddingNOSatisfy
+     * @tc.number testRowPaddingNOSatisfy
+     * @tc.desc   testRowPaddingNOSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRowPaddingNOSatisfy',  Level.LEVEL0, async (done: Function) => {
       console.info('testRowPaddingNOSatisfy START');
       globalThis.value.message.notify({

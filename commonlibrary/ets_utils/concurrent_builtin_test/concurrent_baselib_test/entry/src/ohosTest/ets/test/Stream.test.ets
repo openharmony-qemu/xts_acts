@@ -67,12 +67,12 @@ export default function Stream() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0100
-     * @tc.name      : testStreamWritable0001
-     * @tc.desc      : Test the function of the interface In the Stream_Writable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStreamWritable0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0100
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -101,12 +101,12 @@ export default function Stream() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0200
-     * @tc.name      : testStreamWritableEnd0002
-     * @tc.desc      : Test the function of the interface In the Stream_Writable_End
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStreamWritableEnd0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0200
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableEnd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -135,12 +135,12 @@ export default function Stream() {
       })
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0300
-     * @tc.name      : testSetDefaultEncoding0003
-     * @tc.desc      : Test the function of the interface testSetDefaultEncoding.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetDefaultEncoding0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0300
+     * @tc.desc   Test the function of the interface testSetDefaultEncoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetDefaultEncoding0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -169,12 +169,12 @@ export default function Stream() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0400
-     * @tc.name      : testResume0004
-     * @tc.desc      : Switch the read mode of the stream from pause to flow mode.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testResume0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0400
+     * @tc.desc   Switch the read mode of the stream from pause to flow mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testResume0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -203,12 +203,12 @@ export default function Stream() {
       })
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0500
-     * @tc.name      :  testRead0005
-     * @tc.desc      : Test the function of the interface Read.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRead0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0500
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRead0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -238,12 +238,12 @@ export default function Stream() {
 
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0600
-     * @tc.name      :  testPause0006
-     * @tc.desc      : Switch the read mode of the stream from flow to pause mode.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testPause0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0600
+     * @tc.desc   Switch the read mode of the stream from flow to pause mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPause0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -273,12 +273,12 @@ export default function Stream() {
 
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0700
-     * @tc.name      : testIsPaused0007
-     * @tc.desc      : Check if the stream is in pause mode, true when calling pause () and false when calling resume ().
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testIsPaused0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0700
+     * @tc.desc   Check if the stream is in pause mode, true when calling pause () and false when calling resume ().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsPaused0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -307,12 +307,12 @@ export default function Stream() {
       })
 
     /**
-     * @tc.number    :   SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0800
-     * @tc.name      : testOn0008
-     * @tc.desc      : Test the function of the interface testOn.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testOn0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0800
+     * @tc.desc   Test the function of the interface testOn.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOn0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -341,12 +341,12 @@ export default function Stream() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0900
-     * @tc.name      : testUnpipe0009
-     * @tc.desc      : Connect a readable stream with a writable stream to achieve automatic data transmission.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testUnpipe0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0900
+     * @tc.desc   Connect a readable stream with a writable stream to achieve automatic data transmission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUnpipe0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -375,12 +375,12 @@ export default function Stream() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1000
-     * @tc.name      : testUnpipe0010
-     * @tc.desc      : Removes all or specified connected readable streams from the writable stream.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testUnpipe0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1000
+     * @tc.desc   Removes all or specified connected readable streams from the writable stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUnpipe0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -410,12 +410,12 @@ export default function Stream() {
 
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1100
-     * @tc.name      : testOffClose0011
-     * @tc.desc      :Register event handling functions to listen for different events on readable streams.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testOffClose0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1100
+     * @tc.desc   Register event handling functions to listen for different events on readable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOffClose0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -444,12 +444,12 @@ export default function Stream() {
       })
 
     /**
-     * @tc.number    :  SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1200
-     * @tc.name      : testDuplexConstructor0012
-     * @tc.desc      :The constructor of Duplex.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDuplexConstructor0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1200
+     * @tc.desc   The constructor of Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDuplexConstructor0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

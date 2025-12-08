@@ -125,12 +125,12 @@ export default function SingleKvStoreDataChange(){
 
 
     /**
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvDataChangeEtsApiTest_0100
-     * @tc.name SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0100
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc 对象1订阅5个不同回调, 对象2订阅3个不同回调, 对象1触发数据变更
+     * @tc.desc   对象1订阅5个不同回调, 对象2订阅3个不同回调, 对象1触发数据变更
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if ((kvStore!=null ) && (kvStore2!=null )) {
@@ -232,12 +232,12 @@ export default function SingleKvStoreDataChange(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvDataChangeEtsApiTest_0200
-     * @tc.name SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0200
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  对象1订阅5个不同回调, 对象2订阅3个不同回调, 对象1取消订阅5个回调
+     * @tc.desc   对象1订阅5个不同回调, 对象2订阅3个不同回调, 对象1取消订阅5个回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if ((kvStore!=null ) && (kvStore2!=null )) {
@@ -342,12 +342,12 @@ export default function SingleKvStoreDataChange(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvDataChangeEtsApiTest_0300
-     * @tc.name SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0300
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  对象1订阅5个不同回调, 对象2订阅3个不同回调, closeKVStore 1次
+     * @tc.desc   对象1订阅5个不同回调, 对象2订阅3个不同回调, closeKVStore 1次
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if ((kvStore!=null) && (kvStore2!=null) && (kvManager!=null )) {
@@ -452,12 +452,12 @@ export default function SingleKvStoreDataChange(){
     })
 
     /**
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvDataChangeEtsApiTest_0400
-     * @tc.name SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0400
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc  对象1订阅5个不同回调, 对象2订阅3个不同回调, closeKVStore 2次
+     * @tc.desc   对象1订阅5个不同回调, 对象2订阅3个不同回调, closeKVStore 2次
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if ((kvStore!=null ) && (kvStore2!=null ) && (kvManager!=null ) ) {

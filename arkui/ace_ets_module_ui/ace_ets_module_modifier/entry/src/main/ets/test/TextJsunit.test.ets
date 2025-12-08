@@ -40,12 +40,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0001
      * @tc.number textTest_0001
-     * @tc.name Test the properties of components
-     * @tc.desc set textAlign values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set textAlign values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0001', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0001 START');
@@ -58,12 +58,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0002
      * @tc.number textTest_0002
-     * @tc.name Test the properties of components
-     * @tc.desc set font values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set font values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0002', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0002 START');
@@ -77,12 +77,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0003
      * @tc.number textTest_0003
-     * @tc.name Test the properties of components
-     * @tc.desc set lineHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set lineHeight values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0003', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0003 START');
@@ -95,12 +95,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0004
      * @tc.number textTest_0004
-     * @tc.name Test the properties of components
-     * @tc.desc set fontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set fontColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0004', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0004 START');
@@ -113,12 +113,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0005
      * @tc.number textTest_0005
-     * @tc.name Test the properties of components
-     * @tc.desc set textOverflow values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set textOverflow values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0005', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0005 START');
@@ -131,12 +131,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0006
      * @tc.number textTest_0006
-     * @tc.name Test the properties of components
-     * @tc.desc set fontSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set fontSize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0006', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0006 START');
@@ -149,12 +149,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0007
      * @tc.number textTest_0007
-     * @tc.name Test the properties of components
-     * @tc.desc set maxLines values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set maxLines values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0007', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0007 START');
@@ -167,12 +167,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0008
      * @tc.number textTest_0008
-     * @tc.name Test the properties of components
-     * @tc.desc set textShadow values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set textShadow values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0008', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0008 START');
@@ -189,12 +189,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0009
      * @tc.number textTest_0009
-     * @tc.name Test the properties of components
-     * @tc.desc set heightAdaptivePolicy values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set heightAdaptivePolicy values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0009', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0009 START');
@@ -207,12 +207,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0010
      * @tc.number textTest_0010
-     * @tc.name Test the properties of components
-     * @tc.desc set wordBreak values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set wordBreak values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0010 START');
@@ -225,12 +225,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0011
      * @tc.number textTest_0011
-     * @tc.name Test the properties of components
-     * @tc.desc Set textCase values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set textCase values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0011', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0011 START');
@@ -243,12 +243,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0012
      * @tc.number textTest_0012
-     * @tc.name Test the properties of components
-     * @tc.desc set draggable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set draggable values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0012', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0012 START');
@@ -261,12 +261,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0013
      * @tc.number textTest_0013
-     * @tc.name Test the properties of components
-     * @tc.desc set textIndent values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set textIndent values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0013', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0013 START');
@@ -279,12 +279,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0014
      * @tc.number textTest_0014
-     * @tc.name Test the properties of components
-     * @tc.desc Set baselineOffset values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set baselineOffset values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0014', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0014 START');
@@ -297,12 +297,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0015
      * @tc.number textTest_0015
-     * @tc.name Test the properties of components
-     * @tc.desc set copyOption values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set copyOption values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0015', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0015 START');
@@ -315,12 +315,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0016
      * @tc.number textTest_0016
-     * @tc.name Test the properties of components
-     * @tc.desc set fontWeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set fontWeight values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0016', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0016 START');
@@ -333,12 +333,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0017
      * @tc.number textTest_0017
-     * @tc.name Test the properties of components
-     * @tc.desc set fontFamily values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set fontFamily values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0017', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0017 START');
@@ -351,12 +351,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0018
      * @tc.number textTest_0018
-     * @tc.name Test the properties of components
-     * @tc.desc set minFontSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set minFontSize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0018', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0018 START');
@@ -369,12 +369,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0019
      * @tc.number textTest_0019
-     * @tc.name Test the properties of components
-     * @tc.desc set decoration values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set decoration values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0019', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0019 START');
@@ -388,12 +388,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0020
      * @tc.number textTest_0020
-     * @tc.name Test the properties of components
-     * @tc.desc set maxFontSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set maxFontSize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0020 START');
@@ -406,12 +406,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0021
      * @tc.number textTest_0021
-     * @tc.name Test the properties of components
-     * @tc.desc set letterSpacing values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set letterSpacing values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0021', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_00061 START');
@@ -424,12 +424,12 @@ export default function textJsunit() {
     });
 
     /**
+     * @tc.name   textTest_0022
      * @tc.number textTest_0022
-     * @tc.name Test the properties of components
-     * @tc.desc Set baselineOffset values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set baselineOffset values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0022', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0022 START');
@@ -443,12 +443,12 @@ export default function textJsunit() {
 
 
     /**
+     * @tc.name   textTest_0023
      * @tc.number textTest_0023
-     * @tc.name Test the properties of components
-     * @tc.desc Change wordBreak values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change wordBreak values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTest_0023', Level.LEVEL0, async (done: Function) => {
       console.info('textTest_0023 START');

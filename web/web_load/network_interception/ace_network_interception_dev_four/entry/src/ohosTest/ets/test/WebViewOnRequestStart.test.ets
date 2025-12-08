@@ -58,14 +58,14 @@ export default function webViewOnRequestStart() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBDEAULTONREQUESTSTART_0100
-    * @tc.name       : defaultOnRequestStart0100
-    * @tc.desc       : test WebdefaultOnRequestStart
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   defaultOnRequestStart0100
+     * @tc.number SUB_WEB_WEBDEAULTONREQUESTSTART_0100
+     * @tc.desc   test WebdefaultOnRequestStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('defaultOnRequestStart0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("defaultOnRequestStart0100", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -78,14 +78,14 @@ export default function webViewOnRequestStart() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBDEAULTONREQUESTSTART_0200
-    * @tc.name       : defaultOnRequestStart0200
-    * @tc.desc       : test WebdefaultOnRequestStart
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   defaultOnRequestStart0200
+     * @tc.number SUB_WEB_WEBDEAULTONREQUESTSTART_0200
+     * @tc.desc   test WebdefaultOnRequestStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('defaultOnRequestStart0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("defaultOnRequestStart0200", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;

@@ -47,9 +47,12 @@ export default function Row_layoutWeight_Part() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Row_layoutWeight_Part_TEST_0100
      * @tc.number SUB_ACE_Row_layoutWeight_Part_TEST_0100
-     * @tc.name testLayoutWeight
-     * @tc.desc row1 and row2 set layoutWeight('2'),the row3 placeholder remains unchanged
+     * @tc.desc   row1 and row2 set layoutWeight('2'),the row3 placeholder remains unchanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_layoutWeight_Part_TEST_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_layoutWeight_Part_TEST_0100] START');
@@ -102,9 +105,12 @@ export default function Row_layoutWeight_Part() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Row_layoutWeight_Part_TEST_0200
      * @tc.number SUB_ACE_Row_layoutWeight_Part_TEST_0200
-     * @tc.name testLayoutWeight
-     * @tc.desc row1 and row2 set layoutWeight('3'),the row3 placeholder remains unchanged
+     * @tc.desc   row1 and row2 set layoutWeight('3'),the row3 placeholder remains unchanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_layoutWeight_Part_TEST_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_layoutWeight_Part_TEST_0200] START');
@@ -157,9 +163,12 @@ export default function Row_layoutWeight_Part() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Row_layoutWeight_Part_TEST_0300
      * @tc.number SUB_ACE_Row_layoutWeight_Part_TEST_0300
-     * @tc.name testLayoutWeight
-     * @tc.desc row1 set layoutWeight('3') and row2 set layoutWeight('3')
+     * @tc.desc   row1 set layoutWeight('3') and row2 set layoutWeight('3')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_layoutWeight_Part_TEST_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_layoutWeight_Part_TEST_0300] START');

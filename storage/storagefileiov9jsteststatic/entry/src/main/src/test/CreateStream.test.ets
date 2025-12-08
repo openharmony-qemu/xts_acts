@@ -29,14 +29,12 @@ export default function fileIOCreateStream() {
   describe('fileIO_fs_createStream', (): void => {
 
     /**
+     * @tc.name   fileIO_test_create_stream_sync_static_001
      * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_0100
-     * @tc.name fileIO_test_create_stream_sync_static_001
-     * @tc.desc Test createStreamSync() interface.
-     * File does not exist.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStreamSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_sync_static_001');
@@ -51,14 +49,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_sync_static_002
      * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_0200
-     * @tc.name fileIO_test_create_stream_sync_static_002
-     * @tc.desc Test createStreamSync() interface.
-     * Create stream in 'r+' mode, reading and writing data from this stream.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test createStreamSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_sync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_sync_static_002');
@@ -78,14 +74,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_sync_static_003
      * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_0300
-     * @tc.name fileIO_test_create_stream_sync_static_003
-     * @tc.desc Test createStreamSync() interface.
-     * Create stream in 'r+' mode, file does not exist.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStreamSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_sync_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_sync_static_003');
@@ -100,14 +94,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_sync_static_004
      * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_0400
-     * @tc.name fileIO_test_create_stream_sync_static_004
-     * @tc.desc Test createStreamSync() interface.
-     * Invalid mode.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStreamSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_sync_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_sync_static_004');
@@ -124,14 +116,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_sync_static_006
      * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_0600
-     * @tc.name fileIO_test_create_stream_sync_static_006
-     * @tc.desc Test createStreamSync() interface.
-     * Create stream in 'w' mode, writing data to file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStreamSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_sync_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_sync_static_006');
@@ -152,14 +142,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_sync_static_007
      * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_0700
-     * @tc.name fileIO_test_create_stream_sync_static_007
-     * @tc.desc Test createStreamSync() interface.
-     * Create stream in 'w' mode and empty contents.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStreamSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_sync_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_sync_static_007');
@@ -182,14 +170,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_sync_static_008
      * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_0800
-     * @tc.name fileIO_test_create_stream_sync_static_008
-     * @tc.desc Test createStreamSync() interface.
-     * Create stream in 'w' mode, creat a file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStreamSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_sync_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_sync_static_008');
@@ -207,14 +193,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_sync_static_009
      * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_0900
-     * @tc.name fileIO_test_create_stream_sync_static_009
-     * @tc.desc Test createStreamSync() interface.
-     * Create stream in 'w+' mode and empty contents.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStreamSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_sync_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_sync_static_009');
@@ -234,14 +218,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_sync_static_010
      * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_1000
-     * @tc.name fileIO_test_create_stream_sync_static_010
-     * @tc.desc Test createStreamSync() interface.
-     * Create stream in 'w+' mode and creat a file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStreamSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_sync_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_sync_static_010');
@@ -260,14 +242,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_sync_static_011
      * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_1100
-     * @tc.name fileIO_test_create_stream_sync_static_011
-     * @tc.desc Test createStreamSync() interface.
-     * Create stream in 'a' mode and append contents.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStreamSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_sync_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_sync_static_011');
@@ -290,14 +270,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_sync_static_012
      * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_1200
-     * @tc.name fileIO_test_create_stream_sync_static_012
-     * @tc.desc Test createStreamSync() interface.
-     * Create stream in 'a' mode and creat a file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStreamSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_sync_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_sync_static_012');
@@ -315,14 +293,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_sync_static_013
      * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_1300
-     * @tc.name fileIO_test_create_stream_sync_static_013
-     * @tc.desc Test createStreamSync() interface.
-     * Create stream in 'a' mode and write data to file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStreamSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_sync_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_sync_static_013');
@@ -343,14 +319,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_sync_static_014
      * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_1400
-     * @tc.name fileIO_test_create_stream_sync_static_014
-     * @tc.desc Test createStreamSync() interface.
-     * Create stream in 'a+' mode and append contents.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStreamSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_sync_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_sync_static_014');
@@ -370,14 +344,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_sync_static_015
      * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_1500
-     * @tc.name fileIO_test_create_stream_sync_static_015
-     * @tc.desc Test createStreamSync() interface.
-     * Create stream in 'a+' mode and creat a file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStreamSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_sync_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_sync_static_015');
@@ -396,14 +368,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_async_static_002
      * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_0200
-     * @tc.name fileIO_test_create_stream_async_static_002
-     * @tc.desc Test createStream() interfaces. Promise.
-     * Create stream in 'r' mode, file does not exist.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStream() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_002');
@@ -419,14 +389,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_async_static_003
      * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_0300
-     * @tc.name fileIO_test_create_stream_async_static_003
-     * @tc.desc Test createStream() interfaces. Callback.
-     * Create stream in 'r' mode, file does not exist.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStream() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_003');
@@ -447,14 +415,12 @@ export default function fileIOCreateStream() {
 
 
     /**
+     * @tc.name   fileIO_test_create_stream_async_static_004
      * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_0400
-     * @tc.name fileIO_test_create_stream_async_static_004
-     * @tc.desc Test createStream() interfaces. Promise.
-     * Create stream in 'r+' mode, reading and writing data from this stream.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   Test createStream() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_004');
@@ -475,14 +441,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_async_static_005
      * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_0500
-     * @tc.name fileIO_test_create_stream_async_static_005
-     * @tc.desc Test createStream() interfaces. Callback.
-     * Create stream in 'r+' mode, reading and writing data from this stream.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   Test createStream() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_async_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_005');
@@ -504,14 +468,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_async_static_006
      * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_0600
-     * @tc.name fileIO_test_create_stream_async_static_006
-     * @tc.desc Test createStream() interfaces. Promise.
-     * Create stream in 'r+' mode, File does not exist.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStream() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_async_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_006');
@@ -527,14 +489,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_async_static_007
      * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_0700
-     * @tc.name fileIO_test_create_stream_async_static_007
-     * @tc.desc Test createStream() interfaces. Callback.
-     * Create stream in 'r+' mode, file does not exist.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStream() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_async_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_007');
@@ -554,14 +514,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_async_static_010
      * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_1000
-     * @tc.name fileIO_test_create_stream_async_static_010
-     * @tc.desc Test createStream() interfaces. Promise.
-     * Create stream in 'w' mode and write data to file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStream() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_async_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_010');
@@ -585,14 +543,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_async_static_011
      * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_1100
-     * @tc.name fileIO_test_create_stream_async_static_011
-     * @tc.desc Test createStream() interfaces. Promise.
-     * Create stream in 'w' mode, can't to read data from this stream.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStream() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_async_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_011');
@@ -613,14 +569,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_async_static_012
      * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_1200
-     * @tc.name fileIO_test_create_stream_async_static_012
-     * @tc.desc Test createStream() interfaces. Callback.
-     * Create stream in 'w' mode, can't to read data from this stream.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStream() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_async_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_012');
@@ -652,14 +606,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_async_static_013
      * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_1300
-     * @tc.name fileIO_test_create_stream_async_static_013
-     * @tc.desc Test createStream() interfaces. Promise.
-     * Create stream in 'w+' mode and write/read data from this stream.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStream() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_async_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_013');
@@ -680,14 +632,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_async_static_014
      * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_1400
-     * @tc.name fileIO_test_create_stream_async_static_014
-     * @tc.desc Test createStream() interfaces. Promise.
-     * Create stream in 'w+' mode and creat a file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStream() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_async_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_014');
@@ -707,14 +657,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_async_static_015
      * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_1500
-     * @tc.name fileIO_test_create_stream_async_static_015
-     * @tc.desc Test createStream() interfaces. Callback.
-     * Create stream in 'w+' mode and creat a file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStream() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_async_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_015');
@@ -736,14 +684,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_async_static_016
      * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_1600
-     * @tc.name fileIO_test_create_stream_async_static_016
-     * @tc.desc Test createStream() interfaces. Promise.
-     * Create stream in 'a' mode and append content to file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStream() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_async_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_016');
@@ -767,14 +713,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_async_static_017
      * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_1700
-     * @tc.name fileIO_test_create_stream_async_static_017
-     * @tc.desc Test createStream() interfaces. Promise.
-     * Create stream in 'a' mode and can't to read data from stream.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStream() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_async_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_017');
@@ -795,14 +739,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_async_static_018
      * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_1800
-     * @tc.name fileIO_test_create_stream_async_static_018
-     * @tc.desc Test createStream() interfaces. Callback.
-     * Create stream in 'a' mode and can't to read data from stream.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStream() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_async_static_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_018');
@@ -834,14 +776,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_async_static_019
      * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_1900
-     * @tc.name fileIO_test_create_stream_async_static_019
-     * @tc.desc Test createStream() interfaces. Promise.
-     * Create stream in 'a+' mode and append content to file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStream() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_async_static_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_019');
@@ -862,14 +802,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_async_static_020
      * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_2000
-     * @tc.name fileIO_test_create_stream_async_static_020
-     * @tc.desc Test createStream() interfaces. Promise.
-     * Create stream in 'a+' mode and creat a file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStream() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_async_static_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_020');
@@ -889,14 +827,12 @@ export default function fileIOCreateStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_stream_async_static_021
      * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_2100
-     * @tc.name fileIO_test_create_stream_async_static_021
-     * @tc.desc Test createStream() interfaces. Callback.
-     * Create stream in 'a+' mode and append content to file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createStream() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_stream_async_static_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_021');

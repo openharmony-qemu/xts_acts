@@ -21,6 +21,7 @@ import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
 import { Component, Driver, On, ON } from '@ohos.UiTest';
 import { deviceInfo } from '@kit.BasicServicesKit';
+import { SavePhoto, GetUri } from './ContactTestUtil.test';
 
 const ExpectTrue = (n: boolean) => {
   try {
@@ -76,6 +77,10 @@ async function getComponent(driver: Driver, onType: On) {
 export default function SaveToExistingContactViaUITest() {
   describe('SaveToExistingContactViaUITest', () => {
 
+    let fileName = 'SaveToExistingContactViaUITest.jpg';
+    SavePhoto(fileName);
+    let uri = GetUri(fileName);
+
     let contactDataNull: contact.Contact = {
     };
     let contactData: contact.Contact = {
@@ -106,7 +111,7 @@ export default function SaveToExistingContactViaUITest() {
         phoneNumber: "13800000000", labelName: "自定义phoneNumbers", labelId: 4
       }],
       portrait: {
-        uri: "content://head/0"
+        uri: uri
       },
       postalAddresses: [{
         city: "南京",
@@ -132,7 +137,7 @@ export default function SaveToExistingContactViaUITest() {
       name: {
         familyName: "familyName",
         familyNamePhonetic: "familyNamePhonetic",
-        fullName: "小李",
+        fullName: "奥迪",
         givenName: "givenName",
         givenNamePhonetic: "givenNamePhonetic",
         middleName: "middleName",
@@ -189,12 +194,12 @@ export default function SaveToExistingContactViaUITest() {
 
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_SaveToExistingContactViaUI_0100
-     * @tc.name       : testTelephonyContactSaveToExistingContactViaUI0100
-     * @tc.desc       : Call the contact SaveToExistingContactViaUI interface, and use the Promise method as an asynchronous method for the SaveToExistingContactViaUI contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactSaveToExistingContactViaUI0100
+     * @tc.number SUB_Telephony_Contact_SaveToExistingContactViaUI_0100
+     * @tc.desc   Call the contact SaveToExistingContactViaUI interface, and use the Promise method as an asynchronous method for the SaveToExistingContactViaUI contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactSaveToExistingContactViaUI0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -218,7 +223,7 @@ export default function SaveToExistingContactViaUITest() {
                 try {
                     if (deviceInfo.deviceType !== 'wearable') {
                       let driver: Driver = Driver.create();
-                      let onType2: On = ON.text('小李');
+                      let onType2: On = ON.text('奥迪');
                       await getComponent(driver, onType2);
                       await delay(500);
                       let onType: On = ON.id('save_click_btn');
@@ -256,12 +261,12 @@ export default function SaveToExistingContactViaUITest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_SaveToExistingContactViaUI_0200
-     * @tc.name       : testTelephonyContactSaveToExistingContactViaUI0200
-     * @tc.desc       : Call the contact SaveToExistingContactViaUI interface, and use the Promise method as an asynchronous method for the SaveToExistingContactViaUI contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactSaveToExistingContactViaUI0200
+     * @tc.number SUB_Telephony_Contact_SaveToExistingContactViaUI_0200
+     * @tc.desc   Call the contact SaveToExistingContactViaUI interface, and use the Promise method as an asynchronous method for the SaveToExistingContactViaUI contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactSaveToExistingContactViaUI0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -285,7 +290,7 @@ export default function SaveToExistingContactViaUITest() {
                 try {
                     if (deviceInfo.deviceType !== 'wearable') {
                       let driver: Driver = Driver.create();
-                      let onType2: On = ON.text('小李');
+                      let onType2: On = ON.text('奥迪');
                       await getComponent(driver, onType2);
                       await delay(500);
                       let onType: On = ON.id('cancel_btn');
@@ -327,12 +332,12 @@ export default function SaveToExistingContactViaUITest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_SaveToExistingContactViaUI_0300
-     * @tc.name       : testTelephonyContactSaveToExistingContactViaUI0300
-     * @tc.desc       : Call the contact SaveToExistingContactViaUI interface, and use the Promise method as an asynchronous method for the SaveToExistingContactViaUI contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactSaveToExistingContactViaUI0300
+     * @tc.number SUB_Telephony_Contact_SaveToExistingContactViaUI_0300
+     * @tc.desc   Call the contact SaveToExistingContactViaUI interface, and use the Promise method as an asynchronous method for the SaveToExistingContactViaUI contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactSaveToExistingContactViaUI0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);

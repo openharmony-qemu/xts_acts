@@ -26,12 +26,12 @@ export default function GraphicTextATest() {
     })
 
     /**
-     * @tc.number    : testLoadFontSyncStatic
-     * @tc.name      : testLoadFontSyncStatic
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadFontSyncStatic
+     * @tc.number testLoadFontSyncStatic
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLoadFontSyncStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -51,12 +51,12 @@ export default function GraphicTextATest() {
     })
 
     /**
-     * @tc.number    : testTextStyleStatic_2
-     * @tc.name      : testTextStyleStatic_2
-     * @tc.desc      : To test interface TextStyle, add new property: fontStyle .
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextStyleStatic_2
+     * @tc.number testTextStyleStatic_2
+     * @tc.desc   To test interface TextStyle, add new property: fontStyle .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextStyleStatic_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -119,12 +119,12 @@ export default function GraphicTextATest() {
     })
 
     /**
-     * @tc.number    : testGetGlobalInstanceStatic
-     * @tc.name      : testGetGlobalInstanceStatic
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetGlobalInstanceStatic
+     * @tc.number testGetGlobalInstanceStatic
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetGlobalInstanceStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -147,12 +147,12 @@ export default function GraphicTextATest() {
     })
 
     /**
-     * @tc.number    : testGetActualTextRangeStatic
-     * @tc.name      : testGetActualTextRangeStatic
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetActualTextRangeStatic
+     * @tc.number testGetActualTextRangeStatic
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetActualTextRangeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -182,12 +182,12 @@ export default function GraphicTextATest() {
     })
 
     /**
-     * @tc.number    : testGetLineMetricsStatic_1
-     * @tc.name      : testGetLineMetricsStatic_1
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetLineMetricsStatic_1
+     * @tc.number testGetLineMetricsStatic_1
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetLineMetricsStatic_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -218,12 +218,12 @@ export default function GraphicTextATest() {
     })
 
     /**
-     * @tc.number    : testGetLineMetricsStatic_2
-     * @tc.name      : testGetLineMetricsStatic_2
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetLineMetricsStatic_2
+     * @tc.number testGetLineMetricsStatic_2
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetLineMetricsStatic_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -254,12 +254,12 @@ export default function GraphicTextATest() {
     })
 
     /**
-     * @tc.number    : testAddSymbolStatic
-     * @tc.name      : testAddSymbolStatic
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testAddSymbolStatic
+     * @tc.number testAddSymbolStatic
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAddSymbolStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

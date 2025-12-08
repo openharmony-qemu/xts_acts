@@ -92,6 +92,7 @@ struct WebOnFirstContentfulPaint1 {
 
 
         Web({ src: $rawfile("WebEnableDataDetector.html"), controller: this.webController })
+          .enableSelectedDataDetector(true)
           .enableDataDetector(true)
           .dataDetectorConfig({
             types: [0, 1, 2, 3, 4],

@@ -21,6 +21,7 @@ import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
 import { Component, Driver, On, ON } from '@ohos.UiTest';
 import { deviceInfo } from '@kit.BasicServicesKit';
+import { SavePhoto, GetUri } from './ContactTestUtil.test';
 
 const ExpectTrue = (n: boolean) => {
   try {
@@ -78,6 +79,9 @@ export default function AddContactViaUITest() {
 
     let contactDataNull: contact.Contact = {
     };
+    let fileName = 'AddContactViaUITest.jpg';
+    SavePhoto(fileName);
+    let uri = GetUri(fileName);
     let contactData: contact.Contact = {
       id: 0,
       key: "0",
@@ -106,7 +110,7 @@ export default function AddContactViaUITest() {
         phoneNumber: "13800000000", labelName: "自定义phoneNumbers", labelId: 4
       }],
       portrait: {
-        uri: "content://head/0"
+        uri: uri
       },
       postalAddresses: [{
         city: "南京",
@@ -189,12 +193,12 @@ export default function AddContactViaUITest() {
 
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_AddContactViaUI_0100
-     * @tc.name       : testTelephonyContactAddContactViaUI0100
-     * @tc.desc       : Call the contact AddContactViaUI interface, and use the Promise method as an asynchronous method for the AddContactViaUI contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactAddContactViaUI0100
+     * @tc.number SUB_Telephony_Contact_AddContactViaUI_0100
+     * @tc.desc   Call the contact AddContactViaUI interface, and use the Promise method as an asynchronous method for the AddContactViaUI contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactAddContactViaUI0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -234,12 +238,12 @@ export default function AddContactViaUITest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_AddContactViaUI_0200
-     * @tc.name       : testTelephonyContactAddContactViaUI0200
-     * @tc.desc       : Call the contact AddContactViaUI interface, and use the Promise method as an asynchronous method for the AddContactViaUI contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactAddContactViaUI0200
+     * @tc.number SUB_Telephony_Contact_AddContactViaUI_0200
+     * @tc.desc   Call the contact AddContactViaUI interface, and use the Promise method as an asynchronous method for the AddContactViaUI contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactAddContactViaUI0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -281,12 +285,12 @@ export default function AddContactViaUITest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_AddContactViaUI_0300
-     * @tc.name       : testTelephonyContactAddContactViaUI0300
-     * @tc.desc       : Call the contact AddContactViaUI interface, and use the Promise method as an asynchronous method for the AddContactViaUI contact 15
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactAddContactViaUI0300
+     * @tc.number SUB_Telephony_Contact_AddContactViaUI_0300
+     * @tc.desc   Call the contact AddContactViaUI interface, and use the Promise method as an asynchronous method for the AddContactViaUI contact 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactAddContactViaUI0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);

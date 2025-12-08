@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,10 @@
  * limitations under the License.
  */
 
-import ActsOsAccountStaticTest from './ActsOsAccountTestStatic.test'
+import ActsOsAccountErrCodeCheckStatic from './ActsOsAccountErrCodeCheckStatic.test'
+import ActsOsAccountTestStatic from './ActsOsAccountTestStatic.test'
+
 export default function testsuite() {
-  ActsOsAccountStaticTest();
+  ActsOsAccountErrCodeCheckStatic()
+  ActsOsAccountTestStatic()
 }

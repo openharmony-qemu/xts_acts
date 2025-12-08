@@ -41,12 +41,12 @@ export default function observerScrollTest() {
       done();
     });
     /**
-     * @tc.number    ListScroll
-     * @tc.name      observerScrollTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   observerScrollTest_0100
+     * @tc.number ListScroll
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('observerScrollTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('observerScrollTest_0100 START');

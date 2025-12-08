@@ -230,12 +230,12 @@ export default function Object5Test() {
 
 
     /**
+     * @tc.name   Object5Test002
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_0200
-     * @tc.name Object5Test002
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn02_testEnumerable();
@@ -243,12 +243,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test004
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_0400
-     * @tc.name Object5Test004
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn04_testAccessorDescriptor();
@@ -256,12 +256,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test005
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_0500
-     * @tc.name Object5Test005
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn05_testDescriptorConflict();
@@ -269,12 +269,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test006
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_0600
-     * @tc.name Object5Test006
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn06_testWritableTrueOnNonConfigurable();
@@ -282,12 +282,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test007
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_0700
-     * @tc.name Object5Test007
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn07_testEnumerableFalseGetNames();
@@ -295,12 +295,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test008
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_0800
-     * @tc.name Object5Test008
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn08_testConfigurableTrueDelete();
@@ -308,12 +308,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test009
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_0900
-     * @tc.name Object5Test009
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn09_testAccessorSetInvalidFilter();
@@ -321,12 +321,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test010
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_1000
-     * @tc.name Object5Test010
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn10_testDescriptorConflictWritableSet();
@@ -334,12 +334,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test012
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_1200
-     * @tc.name Object5Test012
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn12_testEnumerableDefaultFalse();
@@ -347,12 +347,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test013
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_1300
-     * @tc.name Object5Test013
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn13_testConfigurableDefaultFalse();
@@ -360,12 +360,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test014
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_1400
-     * @tc.name Object5Test014
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn14_testAccessorGetExternalVar();
@@ -373,12 +373,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test015
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_1500
-     * @tc.name Object5Test015
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn15_testValueReferenceModifyInner();
@@ -386,12 +386,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test016
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_1600
-     * @tc.name Object5Test016
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn16_testConfigurableFalseWritableTrueToFalse();
@@ -399,12 +399,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test017
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_1700
-     * @tc.name Object5Test017
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn17_testAccessorGetSetShareState();
@@ -413,12 +413,12 @@ export default function Object5Test() {
 
 
     /**
+     * @tc.name   Object5Test019
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_1900
-     * @tc.name Object5Test019
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn19_testAccessorOnlySet();
@@ -426,12 +426,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test020
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_2000
-     * @tc.name Object5Test020
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn20_testConfigurableTrueModifyValue();
@@ -439,12 +439,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test021
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_2100
-     * @tc.name Object5Test021
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn21_testConfigurableTrueSwitchToAccessor();
@@ -452,12 +452,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test022
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_2200
-     * @tc.name Object5Test022
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn22_testConfigurableFalseSwitchToData();
@@ -465,12 +465,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test023
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_2300
-     * @tc.name Object5Test023
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn23_testDefineOnInstanceNotPrototype();
@@ -478,12 +478,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test024
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_2400
-     * @tc.name Object5Test024
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn24_testDefineOnFrozenObject();
@@ -491,12 +491,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test026
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_2600
-     * @tc.name Object5Test026
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn26_testAccessorSetUndefinedParam();
@@ -504,12 +504,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test027
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_2700
-     * @tc.name Object5Test027
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn27_testValueNullPreserve();
@@ -517,12 +517,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test028
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_2800
-     * @tc.name Object5Test028
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn28_testEnumerableTrueObjectValues();
@@ -530,12 +530,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test029
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_2900
-     * @tc.name Object5Test029
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn29_testConfigurableFalseModifyGetter();
@@ -543,12 +543,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test030
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_3000
-     * @tc.name Object5Test030
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn30_testAccessorGetThisOtherProp();
@@ -556,12 +556,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test031
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_3100
-     * @tc.name Object5Test031
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn31_testWritableTrueMultiAssign();
@@ -569,12 +569,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test032
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_3200
-     * @tc.name Object5Test032
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn32_testEnumerableFalseObjectEntries();
@@ -582,12 +582,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test033
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_3300
-     * @tc.name Object5Test033
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn33_testConfigurableTrueModifyEnumerable();
@@ -595,12 +595,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test034
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_3400
-     * @tc.name Object5Test034
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn34_testAccessorSetModifyOtherProp();
@@ -608,12 +608,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test035
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_3500
-     * @tc.name Object5Test035
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn35_testDescriptorConflictGetValWritable();
@@ -621,12 +621,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test036
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_3600
-     * @tc.name Object5Test036
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn36_testValueSymbolStorage();
@@ -634,12 +634,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test037
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_3700
-     * @tc.name Object5Test037
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn37_testAccessorGetSetDefaultUndefined();
@@ -647,12 +647,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test039
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_3900
-     * @tc.name Object5Test039
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn39_testAccessorGetThrowError();
@@ -660,12 +660,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test040
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_4000
-     * @tc.name Object5Test040
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn40_testWritableFalseStrictErrorMsg();
@@ -673,12 +673,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test041
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_4100
-     * @tc.name Object5Test041
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn41_testEnumerableTrueDestructure();
@@ -686,12 +686,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test042
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_4200
-     * @tc.name Object5Test042
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn42_testConfigurableTrueSwitchToData();
@@ -699,12 +699,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test043
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_4300
-     * @tc.name Object5Test043
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn43_testAccessorSetFilterNaN();
@@ -712,12 +712,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test044
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_4400
-     * @tc.name Object5Test044
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn44_testValueFunctionCall();
@@ -725,12 +725,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test045
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_4500
-     * @tc.name Object5Test045
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn45_testEnumerableFalseJsonStringify();
@@ -738,12 +738,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test046
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_4600
-     * @tc.name Object5Test046
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn46_testConfigurableFalseModifySetter();
@@ -751,12 +751,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test047
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_4700
-     * @tc.name Object5Test047
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn47_testAccessorClosureState();
@@ -764,12 +764,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test048
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_4800
-     * @tc.name Object5Test048
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn48_testWritableTrueAssignUndefined();
@@ -777,12 +777,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test049
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_4900
-     * @tc.name Object5Test049
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn49_testEnumerableTrueGetDescriptors();
@@ -790,24 +790,24 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test050
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_5000
-     * @tc.name Object5Test050
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn50_testConfigurableTrueDeleteRedefine();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object5Test051
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_5100
-     * @tc.name Object5Test051
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn51_testAccessorSetInfinityParam();
@@ -815,12 +815,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test052
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_5200
-     * @tc.name Object5Test052
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn52_testValueBigIntStorage();
@@ -828,12 +828,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test053
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_5300
-     * @tc.name Object5Test053
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn53_testEnumerableFalseHasOwn();
@@ -841,12 +841,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test054
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_5400
-     * @tc.name Object5Test054
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn54_testConfigurableFalseModifyEnumerable();
@@ -854,12 +854,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test055
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_5500
-     * @tc.name Object5Test055
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn55_testAccessorGetReturnFunction();
@@ -867,12 +867,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test056
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_5600
-     * @tc.name Object5Test056
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn56_testWritableFalseAssignSameValue();
@@ -880,12 +880,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test057
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_5700
-     * @tc.name Object5Test057
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn57_testEnumerableTrueSpreadCopy();
@@ -893,12 +893,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test058
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_5800
-     * @tc.name Object5Test058
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn58_testConfigurableTrueModifyWritableFalseToTrue();
@@ -906,12 +906,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test059
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_5900
-     * @tc.name Object5Test059
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn59_testAccessorSetUpdateMultiProps();
@@ -919,12 +919,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test061
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_6100
-     * @tc.name Object5Test061
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn61_testValueArrayModifyElements();
@@ -932,12 +932,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test062
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_6200
-     * @tc.name Object5Test062
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn62_testEnumerableFalseForOf();
@@ -945,12 +945,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test063
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_6300
-     * @tc.name Object5Test063
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn63_testConfigurableFalseRedefineToAccessor();
@@ -958,12 +958,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test064
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_6400
-     * @tc.name Object5Test064
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn64_testAccessorGetDependInstanceMethod();
@@ -971,12 +971,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test065
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_6500
-     * @tc.name Object5Test065
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn65_testWritableTrueAssignDifferentType();
@@ -984,12 +984,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test066
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_6600
-     * @tc.name Object5Test066
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn66_testEnumerableTrueKeysOrder();
@@ -997,12 +997,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test067
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_6700
-     * @tc.name Object5Test067
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn67_testConfigurableTrueDeleteLiteralRedefine();
@@ -1010,12 +1010,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test068
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_6800
-     * @tc.name Object5Test068
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn68_testAccessorSetValidateType();
@@ -1023,12 +1023,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test069
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_6900
-     * @tc.name Object5Test069
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn69_testValueRegExpMatch();
@@ -1036,12 +1036,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test070
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_7000
-     * @tc.name Object5Test070
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn70_testEnumerableFalseGetSymbols();
@@ -1049,12 +1049,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test071
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_7100
-     * @tc.name Object5Test071
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn71_testConfigurableFalseModifyValueWritableFalse();
@@ -1062,12 +1062,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test072
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_7200
-     * @tc.name Object5Test072
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn72_testAccessorTwoWayBinding();
@@ -1075,12 +1075,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test073
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_7300
-     * @tc.name Object5Test073
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn73_testWritableTrueAssignObjectLiteral();
@@ -1088,12 +1088,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test074
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_7400
-     * @tc.name Object5Test074
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn74_testEnumerableTrueJsonParse();
@@ -1101,12 +1101,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test075
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_7500
-     * @tc.name Object5Test075
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn75_testConfigurableTrueModifyGetter();
@@ -1114,12 +1114,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test076
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_7600
-     * @tc.name Object5Test076
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn76_testAccessorSetLimitRange();
@@ -1127,12 +1127,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test077
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_7700
-     * @tc.name Object5Test077
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn77_testValueDateGetTime();
@@ -1140,12 +1140,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test078
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_7800
-     * @tc.name Object5Test078
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn78_testEnumerableFalseObjectAssign();
@@ -1153,12 +1153,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test079
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_7900
-     * @tc.name Object5Test079
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn79_testConfigurableTrueModifySetter();
@@ -1166,24 +1166,24 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test080
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_8000
-     * @tc.name Object5Test080
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn80_testAccessorGetCacheResult();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object5Test081
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_8100
-     * @tc.name Object5Test081
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn81_testAccessorSetEmptyObjectParam();
@@ -1191,12 +1191,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test082
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_8200
-     * @tc.name Object5Test082
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn82_testValueMapOperation();
@@ -1204,12 +1204,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test083
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_8300
-     * @tc.name Object5Test083
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn83_testEnumerableKeysVsNames();
@@ -1217,12 +1217,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test085
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_8500
-     * @tc.name Object5Test085
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn85_testAccessorGetReturnPromise();
@@ -1230,12 +1230,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test086
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_8600
-     * @tc.name Object5Test086
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn86_testWritableFalseStrictDifferentType();
@@ -1243,12 +1243,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test087
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_8700
-     * @tc.name Object5Test087
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn87_testEnumerableValuesVsEntries();
@@ -1256,12 +1256,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test088
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_8800
-     * @tc.name Object5Test088
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn88_testConfigurableTrueModifyMixedDesc();
@@ -1269,12 +1269,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test089
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_8900
-     * @tc.name Object5Test089
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn89_testAccessorSetFilterEmptyString();
@@ -1282,12 +1282,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test090
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_9000
-     * @tc.name Object5Test090
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn90_testValueSetOperation();
@@ -1295,12 +1295,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test091
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_9100
-     * @tc.name Object5Test091
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn91_testEnumerableFalseCustomToJSON();
@@ -1308,12 +1308,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test092
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_9200
-     * @tc.name Object5Test092
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn92_testConfigurableFalseModifyWritableFalseToTrue();
@@ -1321,12 +1321,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test094
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_9400
-     * @tc.name Object5Test094
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn94_testWritableTrueAssignFunction();
@@ -1334,12 +1334,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test095
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_9500
-     * @tc.name Object5Test095
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn95_testEnumerableTrueDestructureDefault();
@@ -1347,12 +1347,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test096
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_9600
-     * @tc.name Object5Test096
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn96_testConfigurableTrueDeleteRedefineDesc();
@@ -1360,12 +1360,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test097
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_9700
-     * @tc.name Object5Test097
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn97_testAccessorSetLogOperation();
@@ -1373,12 +1373,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test098
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_9800
-     * @tc.name Object5Test098
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn98_testValueWeakMapOperation();
@@ -1386,12 +1386,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test099
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_9900
-     * @tc.name Object5Test099
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn99_testEnumerableFalseGetDescriptor();
@@ -1399,12 +1399,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test100
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_10000
-     * @tc.name Object5Test100
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn100_testConfigurableTrueModifyMultiFields();
@@ -1412,12 +1412,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test101
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_10100
-     * @tc.name Object5Test101
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn101_testAccessorSetArrayParam();
@@ -1425,12 +1425,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test102
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_10200
-     * @tc.name Object5Test102
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn102_testValueWeakSetOperation();
@@ -1438,12 +1438,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test103
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_10300
-     * @tc.name Object5Test103
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn103_testEnumerableFalseClassInstance();
@@ -1451,12 +1451,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test104
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_10400
-     * @tc.name Object5Test104
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn104_testConfigurableFalseFrozenObj();
@@ -1464,12 +1464,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test105
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_10500
-     * @tc.name Object5Test105
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn105_testAccessorGetExternalModule();
@@ -1477,12 +1477,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test107
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_10700
-     * @tc.name Object5Test107
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn107_testEnumerableTrueProxyCapture();
@@ -1490,12 +1490,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test108
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_10800
-     * @tc.name Object5Test108
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn108_testConfigurableTrueModifyAccessorEnumerable();
@@ -1503,12 +1503,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test109
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_10900
-     * @tc.name Object5Test109
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn109_testAccessorSetLimitStringLength();
@@ -1516,24 +1516,24 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test110
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_11000
-     * @tc.name Object5Test110
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn110_testValueErrorObject();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object5Test111
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_11100
-     * @tc.name Object5Test111
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn111_testEnumerableFalseGetAllDescriptors();
@@ -1541,12 +1541,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test112
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_11200
-     * @tc.name Object5Test112
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn112_testConfigurableFalseSwitchToDataStrict();
@@ -1554,12 +1554,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test113
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_11300
-     * @tc.name Object5Test113
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn113_testAccessorValueFormatConvert();
@@ -1567,12 +1567,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test114
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_11400
-     * @tc.name Object5Test114
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn114_testWritableTrueAssignSymbol();
@@ -1580,12 +1580,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test115
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_11500
-     * @tc.name Object5Test115
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn115_testEnumerableTrueForInInherit();
@@ -1593,12 +1593,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test116
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_11600
-     * @tc.name Object5Test116
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn116_testConfigurableTrueDeleteRedefineNonConfig();
@@ -1606,12 +1606,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test117
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_11700
-     * @tc.name Object5Test117
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn117_testAccessorSetObserverMode();
@@ -1619,12 +1619,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test118
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_11800
-     * @tc.name Object5Test118
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn118_testValueBlobObject();
@@ -1632,12 +1632,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test119
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_11900
-     * @tc.name Object5Test119
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn119_testEnumerableFalseObjectValuesExclude();
@@ -1645,12 +1645,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test120
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_12000
-     * @tc.name Object5Test120
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn120_testConfigurableFalseModifyWritableSameValue();
@@ -1658,12 +1658,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test121
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_12100
-     * @tc.name Object5Test121
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn121_testAccessorGetLazyLoad();
@@ -1671,12 +1671,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test122
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_12200
-     * @tc.name Object5Test122
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn122_testWritableTrueAssignBigInt();
@@ -1684,12 +1684,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test123
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_12300
-     * @tc.name Object5Test123
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn123_testEnumerableTrueJsonNested();
@@ -1697,12 +1697,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test124
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_12400
-     * @tc.name Object5Test124
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn124_testConfigurableTrueModifyAccessorGetAndEnumerable();
@@ -1710,12 +1710,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test125
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_12500
-     * @tc.name Object5Test125
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn125_testAccessorSetFilterNonInteger();
@@ -1723,12 +1723,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test126
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_12600
-     * @tc.name Object5Test126
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn126_testAccessorSetNestedObjectMerge();
@@ -1736,12 +1736,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test127
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_12700
-     * @tc.name Object5Test127
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn127_testValueNestedMapOperation();
@@ -1749,12 +1749,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test128
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_12800
-     * @tc.name Object5Test128
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn128_testEnumerableFalseClassStatic();
@@ -1762,12 +1762,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test129
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_12900
-     * @tc.name Object5Test129
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn129_testConfigurableFalseSealedObj();
@@ -1775,12 +1775,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test130
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_13000
-     * @tc.name Object5Test130
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn130_testAccessorGetRegExpMatch();
@@ -1788,12 +1788,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test132
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_13200
-     * @tc.name Object5Test132
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn132_testEnumerableTrueProxyHasTrap();
@@ -1801,12 +1801,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test133
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_13300
-     * @tc.name Object5Test133
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn133_testConfigurableTrueModifyToNonConfig();
@@ -1814,12 +1814,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test134
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_13400
-     * @tc.name Object5Test134
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn134_testAccessorSetValidateDateFormat();
@@ -1827,12 +1827,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test135
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_13500
-     * @tc.name Object5Test135
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn135_testValueNestedSetOperation();
@@ -1840,12 +1840,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test136
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_13600
-     * @tc.name Object5Test136
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn136_testEnumerableFalseGetSymbolsExcludeString();
@@ -1853,12 +1853,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test137
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_13700
-     * @tc.name Object5Test137
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn137_testConfigurableFalseModifySetterStrict();
@@ -1866,12 +1866,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test138
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_13800
-     * @tc.name Object5Test138
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn138_testAccessorTwoWayFormat();
@@ -1879,12 +1879,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test139
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_13900
-     * @tc.name Object5Test139
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn139_testWritableTrueAssignWeakMap();
@@ -1892,12 +1892,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test140
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_14000
-     * @tc.name Object5Test140
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn140_testEnumerableTrueForInExcludeInheritNonEnum();
@@ -1905,12 +1905,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test141
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_14100
-     * @tc.name Object5Test141
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn141_testConfigurableTrueDeleteRedefineAccessorNonEnum();
@@ -1918,12 +1918,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test142
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_14200
-     * @tc.name Object5Test142
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn142_testAccessorSetValidateObjectProps();
@@ -1931,12 +1931,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test143
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_14300
-     * @tc.name Object5Test143
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn143_testValueCustomError();
@@ -1944,12 +1944,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test144
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_14400
-     * @tc.name Object5Test144
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn144_testEnumerableFalseAssignNestedNonEnum();
@@ -1957,12 +1957,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test145
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_14500
-     * @tc.name Object5Test145
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn145_testConfigurableFalseModifyValueAfterWritable();
@@ -1970,12 +1970,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test146
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_14600
-     * @tc.name Object5Test146
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn146_testAccessorGetParamCache();
@@ -1983,12 +1983,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test147
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_14700
-     * @tc.name Object5Test147
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn147_testWritableTrueAssignBigIntCompare();
@@ -1996,12 +1996,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test148
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_14800
-     * @tc.name Object5Test148
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn148_testEnumerableTrueJsonNestedArray();
@@ -2009,12 +2009,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test149
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_14900
-     * @tc.name Object5Test149
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn149_testConfigurableTrueModifyValueAndWritable();
@@ -2022,24 +2022,24 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object5Test150
      * @tc.number SUB_BUILTINS_OBJECT5_TEST_15000
-     * @tc.name Object5Test150
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object5Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn150_testAccessorSetFilterFutureDate();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object31Test151
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_15100
-     * @tc.name Object31Test151
-     * @tc.desc test object entries with FileList value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with FileList value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn151_testFileListValueEntries();
@@ -2047,12 +2047,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test152
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_15200
-     * @tc.name Object31Test152
-     * @tc.desc test object entries with brackets in key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with brackets in key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn152_testBracketsInKeyEntries();
@@ -2060,12 +2060,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test154
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_15400
-     * @tc.name Object31Test154
-     * @tc.desc test object entries with array reduce
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with array reduce
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn154_testArrayReduceEntries();
@@ -2073,12 +2073,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test156
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_15600
-     * @tc.name Object31Test156
-     * @tc.desc test object entries with braces in key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with braces in key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn156_testBracesInKeyEntries();
@@ -2086,12 +2086,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test158
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_15800
-     * @tc.name Object31Test158
-     * @tc.desc test object entries with array every
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with array every
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn158_testArrayEveryEntries();
@@ -2099,12 +2099,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test160
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_16000
-     * @tc.name Object31Test160
-     * @tc.desc test object entries with pipe in key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with pipe in key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn160_testPipeInKeyEntries();
@@ -2112,12 +2112,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test162
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_16200
-     * @tc.name Object31Test162
-     * @tc.desc test object entries with hyphen number key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with hyphen number key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn162_testHyphenNumberKeyEntries();
@@ -2125,12 +2125,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test164
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_16400
-     * @tc.name Object31Test164
-     * @tc.desc test object entries with array some
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with array some
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn164_testArraySomeEntries();
@@ -2138,12 +2138,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test166
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_16600
-     * @tc.name Object31Test166
-     * @tc.desc test object entries with underscore number key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with underscore number key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn166_testUnderscoreNumberKeyEntries();
@@ -2151,12 +2151,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test167
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_16700
-     * @tc.name Object31Test167
-     * @tc.desc test object entries with WebSocket value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with WebSocket value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn167_testWebSocketValueEntries();
@@ -2164,12 +2164,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test168
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_16800
-     * @tc.name Object31Test168
-     * @tc.desc test object entries with array find
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with array find
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn168_testArrayFindEntries();
@@ -2177,12 +2177,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test169
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_16900
-     * @tc.name Object31Test169
-     * @tc.desc test object entries with Worker value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with Worker value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn169_testWorkerValueEntries();
@@ -2190,12 +2190,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test170
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_17000
-     * @tc.name Object31Test170
-     * @tc.desc test object entries with letter symbol mix key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with letter symbol mix key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn170_testLetterSymbolMixKeyEntries();
@@ -2203,12 +2203,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test171
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_17100
-     * @tc.name Object31Test171
-     * @tc.desc test object entries with SharedWorker value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with SharedWorker value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn171_testSharedWorkerValueEntries();
@@ -2216,12 +2216,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test172
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_17200
-     * @tc.name Object31Test172
-     * @tc.desc test object entries with array find index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with array find index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn172_testArrayFindIndexEntries();
@@ -2229,12 +2229,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test173
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_17300
-     * @tc.name Object31Test173
-     * @tc.desc test object entries with BroadcastChannel value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with BroadcastChannel value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn173_testBroadcastChannelValueEntries();
@@ -2242,12 +2242,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test174
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_17400
-     * @tc.name Object31Test174
-     * @tc.desc test object entries with multi language char key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with multi language char key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn174_testMultiLangCharKeyEntries();
@@ -2255,12 +2255,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test175
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_17500
-     * @tc.name Object31Test175
-     * @tc.desc test object entries with CacheStorage value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with CacheStorage value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn175_testCacheStorageValueEntries();
@@ -2268,12 +2268,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test176
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_17600
-     * @tc.name Object31Test176
-     * @tc.desc test object entries with array includes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with array includes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn176_testArrayIncludesEntries();
@@ -2281,12 +2281,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test178
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_17800
-     * @tc.name Object31Test178
-     * @tc.desc test object entries with emoji letter mix key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with emoji letter mix key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn178_testEmojiLetterMixKeyEntries();
@@ -2294,12 +2294,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test179
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_17900
-     * @tc.name Object31Test179
-     * @tc.desc test object entries with IDBDatabase value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with IDBDatabase value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let result: boolean = await Fn179_testIDBDatabaseValueEntries();
@@ -2307,12 +2307,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test180
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_18000
-     * @tc.name Object31Test180
-     * @tc.desc test object entries with array join
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with array join
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn180_testArrayJoinEntries();
@@ -2320,12 +2320,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test181
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_18100
-     * @tc.name Object31Test181
-     * @tc.desc test object entries with Wasm instance value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with Wasm instance value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn181_testWasmInstanceValueEntries();
@@ -2333,12 +2333,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test182
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_18200
-     * @tc.name Object31Test182
-     * @tc.desc test object entries with slash number key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with slash number key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn182_testSlashNumberKeyEntries();
@@ -2346,12 +2346,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test183
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_18300
-     * @tc.name Object31Test183
-     * @tc.desc test object entries with PointerLockControls value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with PointerLockControls value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn183_testPointerLockControlsValueEntries();
@@ -2359,24 +2359,24 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test184
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_18400
-     * @tc.name Object31Test184
-     * @tc.desc test object entries with array reverse consistency
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with array reverse consistency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn184_testArrayReverseConsistencyEntries();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object31Test185
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_18500
-     * @tc.name Object31Test185
-     * @tc.desc test object entries with DeviceOrientationEvent value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with DeviceOrientationEvent value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn185_testDeviceOrientationEventValueEntries();
@@ -2384,12 +2384,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test186
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_18600
-     * @tc.name Object31Test186
-     * @tc.desc test object entries with colon number key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with colon number key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn186_testColonNumberKeyEntries();
@@ -2397,12 +2397,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test187
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_18700
-     * @tc.name Object31Test187
-     * @tc.desc test object entries with Gyroscope value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with Gyroscope value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn187_testGyroscopeValueEntries();
@@ -2410,12 +2410,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test188
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_18800
-     * @tc.name Object31Test188
-     * @tc.desc test object entries with array sort stability
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with array sort stability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn188_testArraySortStabilityEntries();
@@ -2423,12 +2423,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test189
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_18900
-     * @tc.name Object31Test189
-     * @tc.desc test object entries with Magnetometer value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with Magnetometer value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn189_testMagnetometerValueEntries();
@@ -2436,12 +2436,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test190
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_19000
-     * @tc.name Object31Test190
-     * @tc.desc test object entries with semicolon letter key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with semicolon letter key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn190_testSemicolonLetterKeyEntries();
@@ -2449,12 +2449,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test191
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_19100
-     * @tc.name Object31Test191
-     * @tc.desc test object entries with Barometer value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with Barometer value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn191_testBarometerValueEntries();
@@ -2462,12 +2462,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test192
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_19200
-     * @tc.name Object31Test192
-     * @tc.desc test object entries with array fill full
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with array fill full
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn192_testArrayFillFullEntries();
@@ -2475,12 +2475,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test193
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_19300
-     * @tc.name Object31Test193
-     * @tc.desc test object entries with LightSensor value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with LightSensor value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn193_testLightSensorValueEntries();
@@ -2488,12 +2488,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test194
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_19400
-     * @tc.name Object31Test194
-     * @tc.desc test object entries with equals letter key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with equals letter key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn194_testEqualsLetterKeyEntries();
@@ -2501,12 +2501,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test195
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_19500
-     * @tc.name Object31Test195
-     * @tc.desc test object entries with ProximitySensor value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with ProximitySensor value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn195_testProximitySensorValueEntries();
@@ -2514,12 +2514,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test196
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_19600
-     * @tc.name Object31Test196
-     * @tc.desc test object entries with array splice multi
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with array splice multi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn196_testArraySpliceMultiEntries();
@@ -2527,12 +2527,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test197
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_19700
-     * @tc.name Object31Test197
-     * @tc.desc test object entries with AmbientLightSensor value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with AmbientLightSensor value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn197_testAmbientLightSensorValueEntries();
@@ -2540,12 +2540,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test198
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_19800
-     * @tc.name Object31Test198
-     * @tc.desc test object entries with ampersand letter key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with ampersand letter key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn198_testAmpersandLetterKeyEntries();
@@ -2553,12 +2553,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test199
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_19900
-     * @tc.name Object31Test199
-     * @tc.desc test object entries with GeolocationCoordinates value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with GeolocationCoordinates value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn199_testGeolocationCoordinatesValueEntries();
@@ -2566,12 +2566,12 @@ export default function Object5Test() {
     });
 
     /**
+     * @tc.name   Object31Test200
      * @tc.number SUB_BUILTINS_OBJECT31_TEST_20000
-     * @tc.name Object31Test200
-     * @tc.desc test object entries with array flatMap nested
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object entries with array flatMap nested
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object31Test200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn200_testArrayFlatMapNestedEntries();

@@ -26,91 +26,91 @@ export default function columnJustifyContentTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COLUMN_JUSTIFYCONTENT_0100
-     * @tc.name: testColumnJustifyContent001
-     * @tc.desc: testing justifyContent for column with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testColumnJustifyContent001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_JUSTIFYCONTENT_0100
+     * @tc.desc   testing justifyContent for column with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testColumnJustifyContent001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testColumnJustifyContent001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COLUMN_JUSTIFYCONTENT_0200
-     * @tc.name: testColumnJustifyContent002
-     * @tc.desc: testing justifyContent for column with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testColumnJustifyContent002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_JUSTIFYCONTENT_0200
+     * @tc.desc   testing justifyContent for column with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testColumnJustifyContent002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testColumnJustifyContent002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COLUMN_JUSTIFYCONTENT_0300
-     * @tc.name: testColumnJustifyContent003
-     * @tc.desc: testing justifyContent for column with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testColumnJustifyContent003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_JUSTIFYCONTENT_0300
+     * @tc.desc   testing justifyContent for column with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testColumnJustifyContent003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testColumnJustifyContent003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COLUMN_JUSTIFYCONTENT_0400
-     * @tc.name: testColumnJustifyContent004
-     * @tc.desc: testing justifyContent for column with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testColumnJustifyContent004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_JUSTIFYCONTENT_0400
+     * @tc.desc   testing justifyContent for column with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testColumnJustifyContent004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testColumnJustifyContent004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COLUMN_JUSTIFYCONTENT_0500
-     * @tc.name: testColumnJustifyContent005
-     * @tc.desc: testing justifyContent for column with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testColumnJustifyContent005
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_JUSTIFYCONTENT_0500
+     * @tc.desc   testing justifyContent for column with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testColumnJustifyContent005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testColumnJustifyContent005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COLUMN_JUSTIFYCONTENT_0600
-     * @tc.name: testColumnJustifyContent006
-     * @tc.desc: testing justifyContent for column with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testColumnJustifyContent006
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_JUSTIFYCONTENT_0600
+     * @tc.desc   testing justifyContent for column with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testColumnJustifyContent006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testColumnJustifyContent006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COLUMN_JUSTIFYCONTENT_0700
-     * @tc.name: testColumnJustifyContent007
-     * @tc.desc: testing justifyContent for column with unnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testColumnJustifyContent007
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_JUSTIFYCONTENT_0700
+     * @tc.desc   testing justifyContent for column with unnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testColumnJustifyContent007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testColumnJustifyContent007()).assertEqual(0)

@@ -76,9 +76,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_NewWant_Test_0100
-     * @tc.name: Starting standard Ability for the first time does not trigger onNewWant.
-     * @tc.desc: Starting standard Ability for the first time does not trigger onNewWant.
+     * @tc.name   ACTS_NewWant_Test_0100
+     * @tc.number ACTS_NewWant_Test_0100
+     * @tc.desc   Starting standard Ability for the first time does not trigger onNewWant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_NewWant_Test_0100', Level.LEVEL0, async (done:Function) => {
       console.log("ACTS_NewWant_Test_0100 --- start")
@@ -144,9 +147,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_NewWant_Test_0200
-     * @tc.name: Starting singleton Ability for the first time does not trigger onNewWant.
-     * @tc.desc: Starting singleton Ability for the first time does not trigger onNewWant.
+     * @tc.name   ACTS_NewWant_Test_0200
+     * @tc.number ACTS_NewWant_Test_0200
+     * @tc.desc   Starting singleton Ability for the first time does not trigger onNewWant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_NewWant_Test_0200', Level.LEVEL0, async (done:Function) => {
       console.log("ACTS_NewWant_Test_0200 --- start")
@@ -213,9 +219,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_NewWant_Test_0300
-     * @tc.name: Starting standard ability the second time does not trigger onNewWant.
-     * @tc.desc: Starting standard ability the second time does not trigger onNewWant.
+     * @tc.name   ACTS_NewWant_Test_0300
+     * @tc.number ACTS_NewWant_Test_0300
+     * @tc.desc   Starting standard ability the second time does not trigger onNewWant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_NewWant_Test_0300', Level.LEVEL0, async (done:Function) => {
       console.log("ACTS_NewWant_Test_0300 --- start")
@@ -288,9 +297,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_NewWant_Test_0400
-     * @tc.name: Two abilities of the same hap
-     * @tc.desc: Starting singleton ability the second time does triggers onNewWant.
+     * @tc.name   ACTS_NewWant_Test_0400
+     * @tc.number ACTS_NewWant_Test_0400
+     * @tc.desc   Starting singleton ability the second time does triggers onNewWant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_NewWant_Test_0400', Level.LEVEL0, async (done:Function) => {
       console.log("ACTS_NewWant_Test_0400 --- start")
@@ -364,9 +376,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_NewWant_Test_0500
-     * @tc.name: Two haps of the same app
-     * @tc.desc: Starting singleton ability the second time does triggers onNewWant.
+     * @tc.name   ACTS_NewWant_Test_0500
+     * @tc.number ACTS_NewWant_Test_0500
+     * @tc.desc   Starting singleton ability the second time does triggers onNewWant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_NewWant_Test_0500', Level.LEVEL0, async (done:Function) => {
       console.log("ACTS_NewWant_Test_0500 --- start")
@@ -440,9 +455,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_NewWant_Test_0600
-     * @tc.name: Cross-application
-     * @tc.desc: Starting singleton ability the second time does triggers onNewWant.
+     * @tc.name   ACTS_NewWant_Test_0600
+     * @tc.number ACTS_NewWant_Test_0600
+     * @tc.desc   Starting singleton ability the second time does triggers onNewWant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_NewWant_Test_0600', Level.LEVEL0, async (done:Function) => {
       console.log("ACTS_NewWant_Test_0600 --- start")
@@ -516,9 +534,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_NewWant_Test_0700
-     * @tc.name: Service ability
-     * @tc.desc: Starting singleton ability the second time does triggers onNewWant.
+     * @tc.name   ACTS_NewWant_Test_0700
+     * @tc.number ACTS_NewWant_Test_0700
+     * @tc.desc   Starting singleton ability the second time does triggers onNewWant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_NewWant_Test_0700', Level.LEVEL0, async (done:Function) => {
       console.log("ACTS_NewWant_Test_0700 --- start")
@@ -592,9 +613,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_NewWant_Test_0800
-     * @tc.name: API8 startup API7
-     * @tc.desc: Starting singleton ability the second time does triggers onNewWant.
+     * @tc.name   ACTS_NewWant_Test_0800
+     * @tc.number ACTS_NewWant_Test_0800
+     * @tc.desc   Starting singleton ability the second time does triggers onNewWant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_NewWant_Test_0800', Level.LEVEL0, async (done:Function) => {
       console.log("ACTS_NewWant_Test_0800 --- start")

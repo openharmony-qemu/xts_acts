@@ -25,12 +25,12 @@ export default function initNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_INIT_INIT_MODULE_0100
-     * @tc.name       : testMuslInitInitmodule001
-     * @tc.desc       : test init_module
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslInitInitmodule001
+     * @tc.number SUB_THIRDPARTY_MUSL_INIT_INIT_MODULE_0100
+     * @tc.desc   test init_module
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslInitInitmodule001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = init.initModule();

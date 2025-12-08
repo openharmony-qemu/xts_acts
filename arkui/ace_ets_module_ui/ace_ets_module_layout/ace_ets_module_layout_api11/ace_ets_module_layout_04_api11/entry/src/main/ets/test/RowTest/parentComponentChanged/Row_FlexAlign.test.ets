@@ -51,12 +51,15 @@ export default function Row_FlexAlign() {
       console.info("Row_FlexAlign after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_ROW_PARENTCOMPONENTCHANGED_1100
-     * @tc.name testRowJustifyContentFlexAlignStart
-     * @tc.desc The JustifyContent property of the ROW component is set to FlexAlign.Start
-     */
 
+    /**
+     * @tc.name   testRowJustifyContentFlexAlignStart
+     * @tc.number testRowJustifyContentFlexAlignStart
+     * @tc.desc   testRowJustifyContentFlexAlignStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRowJustifyContentFlexAlignStart',  Level.LEVEL0, async (done: Function) => {
       console.info('testRowJustifyContentFlexAlignStart START');
       globalThis.value.message.notify({
@@ -99,12 +102,15 @@ export default function Row_FlexAlign() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_ROW_PARENTCOMPONENTCHANGED_1200
-     * @tc.name testRowJustifyContentFlexAlignCenter
-     * @tc.desc The JustifyContent property of the ROW component is set to FlexAlign.Center
-     */
 
+    /**
+     * @tc.name   testRowJustifyContentFlexAlignCenter
+     * @tc.number testRowJustifyContentFlexAlignCenter
+     * @tc.desc   testRowJustifyContentFlexAlignCenter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRowJustifyContentFlexAlignCenter',  Level.LEVEL0, async (done: Function) => {
       console.info('testRowJustifyContentFlexAlignCenter START');
       globalThis.value.message.notify({
@@ -144,12 +150,15 @@ export default function Row_FlexAlign() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_ROW_PARENTCOMPONENTCHANGED_1300
-     * @tc.name testRowJustifyContentFlexAlignEnd
-     * @tc.desc The JustifyContent property of the ROW component is set to FlexAlign.End
-     */
 
+    /**
+     * @tc.name   testRowJustifyContentFlexAlignEnd
+     * @tc.number testRowJustifyContentFlexAlignEnd
+     * @tc.desc   testRowJustifyContentFlexAlignEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRowJustifyContentFlexAlignEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('testRowJustifyContentFlexAlignEnd START');
       globalThis.value.message.notify({
@@ -190,12 +199,15 @@ export default function Row_FlexAlign() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_ROW_PARENTCOMPONENTCHANGED_1400
-     * @tc.name testRowJustifyContentFlexAlignSpaceBetween
-     * @tc.desc The JustifyContent property of the ROW component is set to FlexAlign.SpaceBetween
-     */
 
+    /**
+     * @tc.name   testRowJustifyContentFlexAlignSpaceBetween
+     * @tc.number testRowJustifyContentFlexAlignSpaceBetween
+     * @tc.desc   testRowJustifyContentFlexAlignSpaceBetween
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRowJustifyContentFlexAlignSpaceBetween',  Level.LEVEL0, async (done: Function) => {
       console.info('testRowJustifyContentFlexAlignSpaceBetween START');
       globalThis.value.message.notify({
@@ -238,12 +250,15 @@ export default function Row_FlexAlign() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_ROW_PARENTCOMPONENTCHANGED_1500
-     * @tc.name testRowJustifyContentFlexAlignSpaceAround
-     * @tc.desc The JustifyContent property of the ROW component is set to FlexAlign.SpaceAround
-     */
 
+    /**
+     * @tc.name   testRowJustifyContentFlexAlignSpaceAround
+     * @tc.number testRowJustifyContentFlexAlignSpaceAround
+     * @tc.desc   testRowJustifyContentFlexAlignSpaceAround
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRowJustifyContentFlexAlignSpaceAround',  Level.LEVEL0, async (done: Function) => {
       console.info('testRowJustifyContentFlexAlignSpaceAround START');
       globalThis.value.message.notify({
@@ -287,12 +302,15 @@ export default function Row_FlexAlign() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_ROW_PARENTCOMPONENTCHANGED_1600
-     * @tc.name testRowJustifyContentFlexAlignSpaceEvenly
-     * @tc.desc The JustifyContent property of the ROW component is set to FlexAlign.SpaceEvenly
-     */
 
+    /**
+     * @tc.name   testRowJustifyContentFlexAlignSpaceEvenly
+     * @tc.number testRowJustifyContentFlexAlignSpaceEvenly
+     * @tc.desc   testRowJustifyContentFlexAlignSpaceEvenly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRowJustifyContentFlexAlignSpaceEvenly',  Level.LEVEL0, async (done: Function) => {
       console.info('testRowJustifyContentFlexAlignSpaceEvenly START');
       globalThis.value.message.notify({

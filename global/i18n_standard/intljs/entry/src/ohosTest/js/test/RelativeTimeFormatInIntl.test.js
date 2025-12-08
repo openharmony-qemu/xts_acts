@@ -58,11 +58,14 @@ describe('RelativeTimeFormatInIntlTest', function () {
         + ' syslocale: ' + I18n.System.getSystemLocale());
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0100
-    * @tc.name    format the relativetime with 100 second
-    * @tc.desc    check the relativetime
-    */
+    /**
+     * @tc.name   i18n_test_relativetimeformat_0100
+     * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0100
+     * @tc.desc   check the relativetime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_test_relativetimeformat_0100', Level.LEVEL0, function () {
         console.log('i18n_test_relativetimeformat_0100 ' + 'start');
         let relativetimefmt = new Intl.RelativeTimeFormat();
@@ -71,11 +74,14 @@ describe('RelativeTimeFormatInIntlTest', function () {
         expect(value).assertContain('100');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0200
-    * @tc.name    format the relativetime with 100 second in en
-    * @tc.desc    check the relativetime
-    */
+    /**
+     * @tc.name   i18n_test_relativetimeformat_0200
+     * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0200
+     * @tc.desc   check the relativetime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_relativetimeformat_0200', Level.LEVEL2, function () {
         console.log('i18n_test_relativetimeformat_0200 ' + 'start');
         let relativetimefmt = new Intl.RelativeTimeFormat('en');
@@ -84,11 +90,14 @@ describe('RelativeTimeFormatInIntlTest', function () {
         expect(value !== null).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0220
-    * @tc.name    format the relativetime with 100 second in en and undefined options
-    * @tc.desc    check the relativetime
-    */
+    /**
+     * @tc.name   i18n_test_relativetimeformat_0220
+     * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0220
+     * @tc.desc   check the relativetime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_relativetimeformat_0220', Level.LEVEL2, function () {
         console.log('i18n_test_relativetimeformat_0220 ' + 'start');
         let relativetimefmt = new Intl.RelativeTimeFormat('en', undefined);
@@ -97,11 +106,14 @@ describe('RelativeTimeFormatInIntlTest', function () {
         expect(value !== null).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0240
-    * @tc.name    format the relativetime with 100 second in en and null options
-    * @tc.desc    check the relativetime
-    */
+    /**
+     * @tc.name   i18n_test_relativetimeformat_0240
+     * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0240
+     * @tc.desc   check the relativetime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_relativetimeformat_0240', Level.LEVEL2, function () {
         console.log('i18n_test_relativetimeformat_0240 ' + 'start');
         let relativetimefmt = new Intl.RelativeTimeFormat('en', null);
@@ -110,24 +122,30 @@ describe('RelativeTimeFormatInIntlTest', function () {
         expect(value !== null).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0300
-    * @tc.name    format the relativetime with 100 second in narrow style
-    * @tc.desc    check the relativetime
-    */
+    /**
+     * @tc.name   i18n_test_relativetimeformat_0300
+     * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0300
+     * @tc.desc   check the relativetime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_relativetimeformat_0300', Level.LEVEL2, function () {
         console.log('i18n_test_relativetimeformat_0300 ' + 'start');
         let relativetimefmt = new Intl.RelativeTimeFormat('en', { style: 'narrow' });
         let value = relativetimefmt.format(100,'second');
         console.log('i18n_test_relativetimeformat_0300 ' + value);
-        expect(value).assertEqual('in 100 sec.');
+        expect(value).assertEqual('in 100s');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0400
-    * @tc.name    format the relativetime with 100 second, get the formatToParts value
-    * @tc.desc    check the formatToParts value
-    */
+    /**
+     * @tc.name   i18n_test_relativetimeformat_0400
+     * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0400
+     * @tc.desc   check the formatToParts value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_relativetimeformat_0400', Level.LEVEL2, function () {
         console.log('i18n_test_relativetimeformat_0400 ' + 'start');
         let relativetimefmt = new Intl.RelativeTimeFormat('en');
@@ -136,11 +154,14 @@ describe('RelativeTimeFormatInIntlTest', function () {
         expect(value[0].value).assertEqual('in ');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0500
-    * @tc.name    format the relativetime, get the locale options
-    * @tc.desc    check the relativetime
-    */
+    /**
+     * @tc.name   i18n_test_relativetimeformat_0500
+     * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0500
+     * @tc.desc   check the relativetime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_relativetimeformat_0500', Level.LEVEL2, function () {
         console.log('i18n_test_relativetimeformat_0500 ' + 'start');
         let relativetimefmt = new Intl.RelativeTimeFormat('en');
@@ -149,11 +170,14 @@ describe('RelativeTimeFormatInIntlTest', function () {
         expect(value.locale).assertEqual('en');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0600
-    * @tc.name    format the relativetime, get the style options
-    * @tc.desc    check the relativetime
-    */
+    /**
+     * @tc.name   i18n_test_relativetimeformat_0600
+     * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0600
+     * @tc.desc   check the relativetime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_relativetimeformat_0600', Level.LEVEL2, function () {
         console.log('i18n_test_relativetimeformat_0600 ' + 'start');
         let relativetimefmt = new Intl.RelativeTimeFormat('en');
@@ -162,11 +186,14 @@ describe('RelativeTimeFormatInIntlTest', function () {
         expect(value !== null).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0700
-    * @tc.name    format the relativetime, get the numeric options
-    * @tc.desc    check the relativetime
-    */
+    /**
+     * @tc.name   i18n_test_relativetimeformat_0700
+     * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0700
+     * @tc.desc   check the relativetime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_relativetimeformat_0700', Level.LEVEL2, function () {
         console.log('i18n_test_relativetimeformat_0700 ' + 'start');
         let relativetimefmt = new Intl.RelativeTimeFormat('en');
@@ -175,11 +202,14 @@ describe('RelativeTimeFormatInIntlTest', function () {
         expect(value.numeric).assertEqual('always');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0800
-    * @tc.name    format the relativetime, get the numberingSystem options
-    * @tc.desc    check the relativetime
-    */
+    /**
+     * @tc.name   i18n_test_relativetimeformat_0800
+     * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0800
+     * @tc.desc   check the relativetime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_relativetimeformat_0800', Level.LEVEL2, function () {
         console.log('i18n_test_relativetimeformat_0800 ' + 'start');
         let relativetimefmt = new Intl.RelativeTimeFormat('en');
@@ -188,11 +218,14 @@ describe('RelativeTimeFormatInIntlTest', function () {
         expect(value.numberingSystem).assertEqual('latn');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0900
-    * @tc.name    format the relativetime with localeMatcher options
-    * @tc.desc    check the relativetime
-    */
+    /**
+     * @tc.name   i18n_test_relativetimeformat_0900
+     * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0900
+     * @tc.desc   check the relativetime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_relativetimeformat_0900', Level.LEVEL2, function () {
         console.log('i18n_test_relativetimeformat_0900 ' + 'start');
         let relativetimefmt = new Intl.RelativeTimeFormat('en', { localeMatcher: 'best fit', numeric: 'auto', style: 'narrow' });

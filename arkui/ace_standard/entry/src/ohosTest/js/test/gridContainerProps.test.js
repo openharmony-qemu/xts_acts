@@ -80,9 +80,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerIdProp
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerIdProp', Level.LEVEL0, async function(done) {
             console.info('testgridContainerIdProp START');
@@ -98,9 +101,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerClassProp
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerClassProp', Level.LEVEL0, async function(done) {
             console.info('testgridContainerClassProp START');
@@ -116,9 +122,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testgridContainerClassPropNone START');
@@ -136,9 +145,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerRefProp
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerRefProp', Level.LEVEL0, async function(done) {
             console.info('testgridContainerRefProp START');
@@ -155,9 +167,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testgridContainerRefPropNone START');
@@ -175,9 +190,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testgridContainerDisabledPropTrue START');
@@ -194,9 +212,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testgridContainerDisabledPropFalse START');
@@ -213,9 +234,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testgridContainerDisabledPropNone START');
@@ -232,9 +256,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testgridContainerFocusablePropTrue START');
@@ -251,9 +278,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testgridContainerFocusablePropFalse START');
@@ -270,9 +300,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testgridContainerFocusablePropNone START');
@@ -289,9 +322,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerDataProp
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerDataProp', Level.LEVEL0, async function(done) {
             console.info('testgridContainerDataProp START');
@@ -309,9 +345,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testgridContainerDataPropNone START');
@@ -329,9 +368,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testgridContainerClickEffectPropSmall START');
@@ -348,9 +390,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testgridContainerClickEffectPropMedium START');
@@ -367,9 +412,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testgridContainerClickEffectPropLarge START');
@@ -386,9 +434,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testgridContainerClickEffectPropNone START');
@@ -406,9 +457,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testgridContainerDirPropRtl START');
@@ -425,9 +479,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testgridContainerDirPropLtr START');
@@ -444,9 +501,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testgridContainerDirPropAuto START');
@@ -463,9 +523,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testgridContainerDirPropNone START');
@@ -482,9 +545,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerForPropNull', Level.LEVEL0, async function(done) {
             console.info('testgridContainerForPropNull START');
@@ -502,9 +568,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerForPropOne', Level.LEVEL0, async function(done) {
             console.info('testgridContainerForPropOne START');
@@ -522,9 +591,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerForPropThree', Level.LEVEL0, async function(done) {
             console.info('testgridContainerForPropThree START');
@@ -542,9 +614,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testgridContainerIfPropTrue START');
@@ -562,9 +637,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testgridContainerShowPropTrue START');
@@ -582,9 +660,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testgridContainerShowPropFalse START');
@@ -602,9 +683,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testgridContainerShowPropNone START');
@@ -622,9 +706,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerColumnsPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerColumnsPropNone', Level.LEVEL0, async function(done) {
             console.info('testgridContainerXsPropNone START');
@@ -642,9 +729,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerColumnsPropXs
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerColumnsPropXs', Level.LEVEL0, async function(done) {
             console.info('testgridContainerXsProp1 START');
@@ -662,9 +752,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerColumnsPropSm
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerColumnsPropSm', Level.LEVEL0, async function(done) {
             console.info('testgridContainerXsProp1 START');
@@ -682,9 +775,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerColumnsPropMd
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerColumnsPropMd', Level.LEVEL0, async function(done) {
             console.info('testgridContainerXsPropObject START');
@@ -702,9 +798,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerColumnsPropLg
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerColumnsPropLg', Level.LEVEL0, async function(done) {
             console.info('testgridContainerXsPropObject START');
@@ -722,9 +821,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerSizePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerSizePropNone', Level.LEVEL0, async function(done) {
             console.info('testgridContainerXsPropNone START');
@@ -742,9 +844,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerSizePropXs
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerSizePropXs', Level.LEVEL0, async function(done) {
             console.info('testgridContainerXsProp1 START');
@@ -762,9 +867,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerSizePropSm
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerSizePropSm', Level.LEVEL0, async function(done) {
             console.info('testgridContainerXsProp1 START');
@@ -782,9 +890,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerSizePropMd
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerSizePropMd', Level.LEVEL0, async function(done) {
             console.info('testgridContainerXsPropObject START');
@@ -802,9 +913,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerSizePropLg
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerSizePropLg', Level.LEVEL0, async function(done) {
             console.info('testgridContainerXsPropObject START');
@@ -822,9 +936,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerGutterProp16
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerGutterProp16', Level.LEVEL0, async function(done) {
             console.info('testgridContainerSmPropNone START');
@@ -842,9 +959,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerGutterProp30
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerGutterProp30', Level.LEVEL0, async function(done) {
             console.info('testgridContainerSmPropNone START');
@@ -862,9 +982,12 @@ export default function gridContainerPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testgridContainerShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testgridContainerGridtemplatePropDefault
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testgridContainerGridtemplatePropDefault', Level.LEVEL0, async function(done) {
             console.info('testgridContainerSmProp1 START');

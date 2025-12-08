@@ -45,9 +45,12 @@ export default function replaceString() {
     });
 
     /**
+     * @tc.name   replaceString_0100
      * @tc.number replaceString_0100
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   replaceString_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('replaceString_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('replaceString_0100 START');
@@ -75,9 +78,12 @@ export default function replaceString() {
 
 
     /**
+     * @tc.name   replaceString_0200
      * @tc.number replaceString_0200
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   replaceString_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('replaceString_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('replaceString_0200 START');
@@ -104,9 +110,12 @@ export default function replaceString() {
     });
 
     /**
+     * @tc.name   replaceString_0300
      * @tc.number replaceString_0300
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   replaceString_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('replaceString_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('replaceString_0300 START');
@@ -133,9 +142,12 @@ export default function replaceString() {
     });
 
     /**
+     * @tc.name   replaceString_0400
      * @tc.number replaceString_0400
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   replaceString_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('replaceString_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('replaceString_0400 START');
@@ -162,9 +174,12 @@ export default function replaceString() {
     });
 
     /**
+     * @tc.name   replaceString_0500
      * @tc.number replaceString_0500
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   replaceString_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('replaceString_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('replaceString_0500 START');
@@ -191,9 +206,12 @@ export default function replaceString() {
     });
 
     /**
+     * @tc.name   replaceString_0600
      * @tc.number replaceString_0600
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   replaceString_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('replaceString_0600',  Level.LEVEL0, async (done: Function) => {
       console.info('replaceString_0600 START');
@@ -220,9 +238,12 @@ export default function replaceString() {
     });
 
     /**
+     * @tc.name   replaceString_0700
      * @tc.number replaceString_0700
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   replaceString_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('replaceString_0700',  Level.LEVEL0, async (done: Function) => {
       console.info('replaceString_0700 START');
@@ -249,9 +270,12 @@ export default function replaceString() {
     });
 
     /**
+     * @tc.name   replaceString_0800
      * @tc.number replaceString_0800
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   replaceString_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('replaceString_0800',  Level.LEVEL0, async (done: Function) => {
       console.info('replaceString_0800 START');
@@ -278,9 +302,12 @@ export default function replaceString() {
     });
 
     /**
+     * @tc.name   replaceString_0900
      * @tc.number replaceString_0900
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   replaceString_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('replaceString_0900',  Level.LEVEL0, async (done: Function) => {
       console.info('replaceString_0900 START');

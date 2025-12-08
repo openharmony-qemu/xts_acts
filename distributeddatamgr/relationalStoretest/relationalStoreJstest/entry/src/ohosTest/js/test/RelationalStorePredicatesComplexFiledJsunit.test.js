@@ -63,12 +63,12 @@ describe('relationalStorePredicatesComplexFiledTest', function () {
     }
 
     /**
-     * @tc.name SUB_DDM_AppDataFWK_JSRelationalStore_Predicates_ComplexFiled_0001
+     * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Predicates_ComplexFiled_0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesJsAPITest_1250
-     * @tc.desc resultSet Update test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   resultSet Update test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_JSRelationalStore_Predicates_ComplexFiled_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.log(TAG + "************* SUB_DDM_AppDataFWK_JSRelationalStore_Predicates_ComplexFiled_0001 start *************");
@@ -92,12 +92,12 @@ describe('relationalStorePredicatesComplexFiledTest', function () {
     })
 
     /**
-     * @tc.name SUB_DDM_AppDataFWK_JSRelationalStore_Predicates_ComplexFiled_0002
+     * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Predicates_ComplexFiled_0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesJsAPITest_1260
-     * @tc.desc resultSet Update test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   resultSet Update test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_JSRelationalStore_Predicates_ComplexFiled_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.log(TAG + "************* SUB_DDM_AppDataFWK_JSRelationalStore_Predicates_ComplexFiled_0002 start *************");

@@ -20,13 +20,13 @@ export default function userauthTest_Nopermission_API12() {
     describe('userauthTest_Nopermission_API12', function () {
 
         /**
-        * @tc.number    : SUB_Security_IAM_Func_API12_0110
-        * @tc.name      : unapplied permission call GetEnrolledState
-        * @tc.desc      : Unapplied permission call GetEnrolledState
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 1
-        */
+         * @tc.name   SUB_Security_IAM_Func_API12_0110
+         * @tc.number SUB_Security_IAM_Func_API12_0110
+         * @tc.desc   Unapplied permission call GetEnrolledState
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_Security_IAM_Func_API12_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             console.info('testFace SUB_Security_IAM_Func_API12_0110 start');
             let authType = 1
@@ -40,12 +40,12 @@ export default function userauthTest_Nopermission_API12() {
         })
 
         /**
-         * @tc.number SUB_Security_IAM_UserAuth_FUNC_0140
          * @tc.name   SUB_Security_IAM_UserAuth_FUNC_0140
-         * @tc.desc  getAuthLockState Nopermission
-         * @tc.size LargeTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.number SUB_Security_IAM_UserAuth_FUNC_0140
+         * @tc.desc   getAuthLockState Nopermission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Security_IAM_UserAuth_FUNC_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('testFace SUB_Security_IAM_UserAuth_FUNC_0140 start');

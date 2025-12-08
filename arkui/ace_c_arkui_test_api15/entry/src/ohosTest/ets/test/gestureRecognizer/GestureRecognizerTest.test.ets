@@ -35,13 +35,13 @@ export default function GestureCaseTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_GESTURE_CASE_001
-     * @tc.name       : GestureCaseTest001
-     * @tc.desc       : testing List lanes
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   GestureCaseTest001
+     * @tc.number SUB_ARKUI_GESTURE_CASE_001
+     * @tc.desc   testing List lanes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GestureCaseTest001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'GestureRecognizerTest'
@@ -54,13 +54,13 @@ export default function GestureCaseTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_GESTURE_CASE_002
-     * @tc.name       : GestureCaseTest002
-     * @tc.desc       : testing List lanes
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   GestureCaseTest002
+     * @tc.number SUB_ARKUI_GESTURE_CASE_002
+     * @tc.desc   testing List lanes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GestureCaseTest002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'GestureRecognizerTest'

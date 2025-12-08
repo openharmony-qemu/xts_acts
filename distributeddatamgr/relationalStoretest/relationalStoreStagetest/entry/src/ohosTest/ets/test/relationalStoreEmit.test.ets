@@ -70,12 +70,12 @@ export default function relationalStoreEmitTest() {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
+     * @tc.name   testRdbStoreDistributed0012
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_0400
-     * @tc.name relationalStore emit test
-     * @tc.desc relationalStore emit test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   relationalStore emit test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDistributed0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) =>{
 

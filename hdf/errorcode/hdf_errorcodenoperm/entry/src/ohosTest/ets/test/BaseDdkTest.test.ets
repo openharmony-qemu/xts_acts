@@ -51,12 +51,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_CreateTestDeviceDdkNOPERM_0100
-     * @tc.name     SUB_Driver_Ext_CreateTestDeviceDdkNOPERM_0100
-     * @tc.desc     Test CreateTestDeviceDdkNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_CreateTestDeviceDdkNOPERM_0100
+     * @tc.number SUB_Driver_Ext_CreateTestDeviceDdkNOPERM_0100
+     * @tc.desc   Test CreateTestDeviceDdkNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_CreateTestDeviceDdkNOPERM_0100', Level.LEVEL1, async (done: Function) => {
       try {
@@ -73,12 +73,12 @@ export default function ActsBaseDDkNoPermTest() {
 
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidEmitEventNOPERM_0200
-     * @tc.name     SUB_Driver_Ext_HidEmitEventNOPERM_0200
-     * @tc.desc     Test HidEmitEventNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_HidEmitEventNOPERM_0200
+     * @tc.number SUB_Driver_Ext_HidEmitEventNOPERM_0200
+     * @tc.desc   Test HidEmitEventNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_HidEmitEventNOPERM_0200', Level.LEVEL1, async (done: Function) => {
       try {
@@ -94,12 +94,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidDestroyDeviceNOPERM_0300
-     * @tc.name     SUB_Driver_Ext_HidDestroyDeviceNOPERM_0300
-     * @tc.desc     Test HidDestroyDeviceNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_HidDestroyDeviceNOPERM_0300
+     * @tc.number SUB_Driver_Ext_HidDestroyDeviceNOPERM_0300
+     * @tc.desc   Test HidDestroyDeviceNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_HidDestroyDeviceNOPERM_0300', Level.LEVEL1, async (done: Function) => {
       try {
@@ -115,12 +115,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidInitNOPERM_0400
-     * @tc.name     SUB_Driver_Ext_HidInitNOPERM_0400
-     * @tc.desc     Test HidInitNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_HidInitNOPERM_0400
+     * @tc.number SUB_Driver_Ext_HidInitNOPERM_0400
+     * @tc.desc   Test HidInitNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_HidInitNOPERM_0400', Level.LEVEL1, async (done: Function) => {
       try {
@@ -136,12 +136,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidReleaseNOPERM_0500
-     * @tc.name     SUB_Driver_Ext_HidReleaseNOPERM_0500
-     * @tc.desc     Test HidReleaseNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_HidReleaseNOPERM_0500
+     * @tc.number SUB_Driver_Ext_HidReleaseNOPERM_0500
+     * @tc.desc   Test HidReleaseNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_HidReleaseNOPERM_0500', Level.LEVEL1, async (done: Function) => {
       try {
@@ -157,12 +157,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidOpenNOPERM_0600
-     * @tc.name     SUB_Driver_Ext_HidOpenNOPERM_0600
-     * @tc.desc     Test HidOpenNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_HidOpenNOPERM_0600
+     * @tc.number SUB_Driver_Ext_HidOpenNOPERM_0600
+     * @tc.desc   Test HidOpenNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_HidOpenNOPERM_0600', Level.LEVEL1, async (done: Function) => {
       try {
@@ -178,12 +178,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidCloseNOPERM_0700
-     * @tc.name     SUB_Driver_Ext_HidCloseNOPERM_0700
-     * @tc.desc     Test HidCloseNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_HidCloseNOPERM_0700
+     * @tc.number SUB_Driver_Ext_HidCloseNOPERM_0700
+     * @tc.desc   Test HidCloseNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_HidCloseNOPERM_0700', Level.LEVEL1, async (done: Function) => {
       try {
@@ -199,12 +199,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidWriteNOPERM_0800
-     * @tc.name     SUB_Driver_Ext_HidWriteNOPERM_0800
-     * @tc.desc     Test HidWriteNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_HidWriteNOPERM_0800
+     * @tc.number SUB_Driver_Ext_HidWriteNOPERM_0800
+     * @tc.desc   Test HidWriteNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_HidWriteNOPERM_0800', Level.LEVEL1, async (done: Function) => {
       try {
@@ -220,12 +220,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidReadTimeoutNOPERM_0900
-     * @tc.name     SUB_Driver_Ext_HidReadTimeoutNOPERM_0900
-     * @tc.desc     Test HidReadTimeoutNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_HidReadTimeoutNOPERM_0900
+     * @tc.number SUB_Driver_Ext_HidReadTimeoutNOPERM_0900
+     * @tc.desc   Test HidReadTimeoutNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_HidReadTimeoutNOPERM_0900', Level.LEVEL1, async (done: Function) => {
       try {
@@ -241,12 +241,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidReadNOPERM_1000
-     * @tc.name     SUB_Driver_Ext_HidReadNOPERM_1000
-     * @tc.desc     Test HidReadNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_HidReadNOPERM_1000
+     * @tc.number SUB_Driver_Ext_HidReadNOPERM_1000
+     * @tc.desc   Test HidReadNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_HidReadNOPERM_1000', Level.LEVEL1, async (done: Function) => {
       try {
@@ -262,12 +262,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidDdkErrCodeNOPERM_1100
-     * @tc.name     SUB_Driver_Ext_HidDdkErrCodeNOPERM_1100
-     * @tc.desc     Test HidDdkErrCodeNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeNOPERM_1100
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeNOPERM_1100
+     * @tc.desc   Test HidDdkErrCodeNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_HidDdkErrCodeNOPERM_1100', Level.LEVEL1, async (done: Function) => {
       try {
@@ -283,12 +283,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidSetNonBlockingNOPERM_1200
-     * @tc.name     SUB_Driver_Ext_HidSetNonBlockingNOPERM_1200
-     * @tc.desc     Test HidSetNonBlockingNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_HidSetNonBlockingNOPERM_1200
+     * @tc.number SUB_Driver_Ext_HidSetNonBlockingNOPERM_1200
+     * @tc.desc   Test HidSetNonBlockingNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_HidSetNonBlockingNOPERM_1200', Level.LEVEL1, async (done: Function) => {
       try {
@@ -304,12 +304,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidGetRawInfoNOPERM_1300
-     * @tc.name     SUB_Driver_Ext_HidGetRawInfoNOPERM_1300
-     * @tc.desc     Test HidGetRawInfoNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_HidGetRawInfoNOPERM_1300
+     * @tc.number SUB_Driver_Ext_HidGetRawInfoNOPERM_1300
+     * @tc.desc   Test HidGetRawInfoNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_HidGetRawInfoNOPERM_1300', Level.LEVEL1, async (done: Function) => {
       try {
@@ -325,12 +325,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidGetRawNameNOPERM_1400
-     * @tc.name     SUB_Driver_Ext_HidGetRawNameNOPERM_1400
-     * @tc.desc     Test HidGetRawNameNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_HidGetRawNameNOPERM_1400
+     * @tc.number SUB_Driver_Ext_HidGetRawNameNOPERM_1400
+     * @tc.desc   Test HidGetRawNameNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_HidGetRawNameNOPERM_1400', Level.LEVEL1, async (done: Function) => {
       try {
@@ -346,12 +346,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidGetPhysicalAddressNOPERM_1500
-     * @tc.name     SUB_Driver_Ext_HidGetPhysicalAddressNOPERM_1500
-     * @tc.desc     Test HidGetPhysicalAddressNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_HidGetPhysicalAddressNOPERM_1500
+     * @tc.number SUB_Driver_Ext_HidGetPhysicalAddressNOPERM_1500
+     * @tc.desc   Test HidGetPhysicalAddressNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_HidGetPhysicalAddressNOPERM_1500', Level.LEVEL1, async (done: Function) => {
       try {
@@ -367,12 +367,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidGetRawUniqueIdNOPERM_1600
-     * @tc.name     SUB_Driver_Ext_HidGetRawUniqueIdNOPERM_1600
-     * @tc.desc     Test HidGetRawUniqueIdNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_HidGetRawUniqueIdNOPERM_1600
+     * @tc.number SUB_Driver_Ext_HidGetRawUniqueIdNOPERM_1600
+     * @tc.desc   Test HidGetRawUniqueIdNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_HidGetRawUniqueIdNOPERM_1600', Level.LEVEL1, async (done: Function) => {
       try {
@@ -388,12 +388,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidSendReportNOPERM_1700
-     * @tc.name     SUB_Driver_Ext_HidSendReportNOPERM_1700
-     * @tc.desc     Test HidSendReportNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_HidSendReportNOPERM_1700
+     * @tc.number SUB_Driver_Ext_HidSendReportNOPERM_1700
+     * @tc.desc   Test HidSendReportNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_HidSendReportNOPERM_1700', Level.LEVEL1, async (done: Function) => {
       try {
@@ -409,12 +409,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidGetReportNOPERM_1800
-     * @tc.name     SUB_Driver_Ext_HidGetReportNOPERM_1800
-     * @tc.desc     Test HidGetReportNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_HidGetReportNOPERM_1800
+     * @tc.number SUB_Driver_Ext_HidGetReportNOPERM_1800
+     * @tc.desc   Test HidGetReportNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_HidGetReportNOPERM_1800', Level.LEVEL1, async (done: Function) => {
       try {
@@ -430,12 +430,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_HidGetReportDescriptorNOPERM_1900
-     * @tc.name     SUB_Driver_Ext_HidGetReportDescriptorNOPERM_1900
-     * @tc.desc     Test HidGetReportDescriptorNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_HidGetReportDescriptorNOPERM_1900
+     * @tc.number SUB_Driver_Ext_HidGetReportDescriptorNOPERM_1900
+     * @tc.desc   Test HidGetReportDescriptorNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_HidGetReportDescriptorNOPERM_1900', Level.LEVEL1, async (done: Function) => {
       try {
@@ -451,12 +451,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbSerialReleaseNOPERM_2000
-     * @tc.name     SUB_Driver_Ext_UsbSerialReleaseNOPERM_2000
-     * @tc.desc     Test UsbSerialReleaseNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialReleaseNOPERM_2000
+     * @tc.number SUB_Driver_Ext_UsbSerialReleaseNOPERM_2000
+     * @tc.desc   Test UsbSerialReleaseNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_UsbSerialReleaseNOPERM_2000', Level.LEVEL1, async (done: Function) => {
       try {
@@ -472,12 +472,12 @@ export default function ActsBaseDDkNoPermTest() {
     })
 
     /**
-     * @tc.number   SUB_Driver_Ext_UsbSerialCloseNOPERM_2100
-     * @tc.name     SUB_Driver_Ext_UsbSerialCloseNOPERM_2100
-     * @tc.desc     Test UsbSerialCloseNOPERM.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Driver_Ext_UsbSerialCloseNOPERM_2100
+     * @tc.number SUB_Driver_Ext_UsbSerialCloseNOPERM_2100
+     * @tc.desc   Test UsbSerialCloseNOPERM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_UsbSerialCloseNOPERM_2100', Level.LEVEL1, async (done: Function) => {
       try {

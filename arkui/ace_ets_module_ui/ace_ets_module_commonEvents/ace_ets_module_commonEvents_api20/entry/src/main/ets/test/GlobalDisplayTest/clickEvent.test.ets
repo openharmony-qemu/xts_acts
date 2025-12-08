@@ -47,12 +47,12 @@ export default function clickEventTest() {
     });
 
     /**
-     * @tc.number    clickEventTest_0010
-     * @tc.name      clickEventTest_0010
-     * @tc.desc      clickEvent get globalDisplay coordinates
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   clickEventTest_0010
+     * @tc.number clickEventTest_0010
+     * @tc.desc   clickEvent get globalDisplay coordinates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('clickEventTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('[clickEventTest_0010] START');

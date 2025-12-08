@@ -43,6 +43,14 @@ export default function List07Test() {
       // This API supports only one parameter: preset action function.
     })
 
+    /**
+     * @tc.name   ArkUX_Grid_List_Swiper_0250
+     * @tc.number ArkUX_Grid_List_Swiper_0250
+     * @tc.desc   ArkUX_Grid_List_Swiper_0250
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Grid_List_Swiper_0250', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Grid_List_Swiper_0250 START');
       setTimeout(() => {
@@ -62,6 +70,14 @@ export default function List07Test() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Grid_List_Swiper_0260
+     * @tc.number ArkUX_Grid_List_Swiper_0260
+     * @tc.desc   ArkUX_Grid_List_Swiper_0260
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Grid_List_Swiper_0260', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Grid_List_Swiper_0260 START');
       setTimeout(() => {
@@ -79,6 +95,14 @@ export default function List07Test() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Grid_List_Swiper_0270
+     * @tc.number ArkUX_Grid_List_Swiper_0270
+     * @tc.desc   ArkUX_Grid_List_Swiper_0270
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Grid_List_Swiper_0270', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Grid_List_Swiper_0270 START');
       setTimeout(() => {
@@ -96,6 +120,14 @@ export default function List07Test() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Grid_List_Swiper_0280
+     * @tc.number ArkUX_Grid_List_Swiper_0280
+     * @tc.desc   ArkUX_Grid_List_Swiper_0280
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Grid_List_Swiper_0280', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Grid_List_Swiper_0280 START');
       setTimeout(() => {
@@ -113,6 +145,14 @@ export default function List07Test() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Grid_List_Swiper_0290
+     * @tc.number ArkUX_Grid_List_Swiper_0290
+     * @tc.desc   ArkUX_Grid_List_Swiper_0290
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Grid_List_Swiper_0290', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Grid_List_Swiper_0290 START');
       setTimeout(() => {

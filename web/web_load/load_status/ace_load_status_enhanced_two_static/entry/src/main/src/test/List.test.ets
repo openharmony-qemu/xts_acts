@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 
+import webOnHttpErrorReceiveTest from './WebOnHttpErrorReceive.test'
 import WebViewJavaScriptProxyAndOnPageVisible from "./WebViewJavaScriptProxyAndOnPageVisible.test";
 export default function testsuite() {
+    webOnHttpErrorReceiveTest();
     WebViewJavaScriptProxyAndOnPageVisible();
 }

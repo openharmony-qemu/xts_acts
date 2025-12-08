@@ -42,14 +42,15 @@ export default function swiperDelAddTest() {
       console.info("swiperDelAddTest after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0070
-     * @tc.desc      test the swipe delete data
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0070
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0070
+     * @tc.desc   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0070
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0070', Level.LEVEL1, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0070] START');
       await CommonFunc.sleep(2000);
@@ -89,11 +90,12 @@ export default function swiperDelAddTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0080
-     * @tc.desc      test the swipe add data
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0080
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0080
+     * @tc.desc   test the swipe add data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0080', Level.LEVEL1, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0080] START');

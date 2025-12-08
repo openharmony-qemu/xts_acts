@@ -18,12 +18,12 @@ import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry
 export default function GetAppContextTest() {
   describe("GetAppContextTest", () => {
     /**
-     * @tc.number: ACTS_GET_APP_CONTENT_0001
-     * @tc.name  : actsGetAppContextCallback0001
-     * @tc.desc  : Test the api "abilityDelegator.startAbility", return the result with callback function.
-     * @tc.size  : MediumTest
-     * @tc.type  : Method
-     * @tc.level : Level 2
+     * @tc.name   ACTS_GET_APP_CONTENT_0001
+     * @tc.number ACTS_GET_APP_CONTENT_0001
+     * @tc.desc   Test the api "abilityDelegator.startAbility", return the result with callback function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_GET_APP_CONTENT_0001", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_GET_APP_CONTENT_0001 :start");

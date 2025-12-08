@@ -23,13 +23,12 @@ export default function permissionNdkTest(){
   describe('permissionNdktest',async () => {
 
     /**
+     * @tc.name   FileShare_PersistPermission_001
      * @tc.number SUB_BASIC_FM_FileAPI_Fileshare_0100
-     * @tc.name FileShare_PersistPermission_001
-     * @tc.desc Test persistPermission() interfaces
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test persistPermission() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FileShare_PersistPermission_001', Level.LEVEL0, async (done: Function) => {
       let filepath = "/data/storage/el2/base/files/test1.txt";
@@ -49,13 +48,12 @@ export default function permissionNdkTest(){
     });
 
     /**
+     * @tc.name   FileShare_PersistPermission_002
      * @tc.number SUB_BASIC_FM_FileAPI_Fileshare_0200
-     * @tc.name FileShare_PersistPermission_002
-     * @tc.desc Test persistPermission() interfaces
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test persistPermission() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FileShare_PersistPermission_002', Level.LEVEL0, async (done: Function) => {
       let filepath = "/data/storage/el2/base/files/test2.txt";
@@ -77,13 +75,12 @@ export default function permissionNdkTest(){
     });
 
     /**
+     * @tc.name   FileShare_ActivatePermission_001
      * @tc.number SUB_BASIC_FM_FileAPI_Fileshare_0300
-     * @tc.name FileShare_ActivatePermission_001
-     * @tc.desc Test activatePermission() interfaces
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test activatePermission() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FileShare_ActivatePermission_001', Level.LEVEL0, async (done: Function) => {
       let filepath = "/data/storage/el2/base/files/test3.txt";
@@ -102,13 +99,12 @@ export default function permissionNdkTest(){
     });
 
     /**
+     * @tc.name   FileShare_DeactivatePermission_001
      * @tc.number SUB_BASIC_FM_FileAPI_Fileshare_0400
-     * @tc.name FileShare_DeactivatePermission_001
-     * @tc.desc Test deactivatePermission() interfaces
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test deactivatePermission() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FileShare_DeactivatePermission_001', Level.LEVEL0, async (done: Function) => {
       let filepath = "/data/storage/el2/base/files/test4.txt";
@@ -127,13 +123,12 @@ export default function permissionNdkTest(){
     });
 
     /**
+     * @tc.name   FileShare_RevokePermission_001
      * @tc.number SUB_BASIC_FM_FileAPI_Fileshare_0500
-     * @tc.name FileShare_RevokePermission_001
-     * @tc.desc Test revokePermission() interfaces
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test revokePermission() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FileShare_RevokePermission_001', Level.LEVEL0, async (done: Function) => {
       let filepath = "/data/storage/el2/base/files/test5.txt";
@@ -152,13 +147,12 @@ export default function permissionNdkTest(){
     });
 
     /**
+     * @tc.name   FileShare_CheckPersistentPermission_001
      * @tc.number SUB_BASIC_FM_FileAPI_Fileshare_0600
-     * @tc.name FileShare_CheckPersistentPermission_001
-     * @tc.desc Test checkPersistentPermission() interfaces
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test checkPersistentPermission() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FileShare_CheckPersistentPermission_001', Level.LEVEL0, async (done: Function) => {
       let filepath = "/data/storage/el2/base/files/test6.txt";

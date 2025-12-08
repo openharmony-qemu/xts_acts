@@ -13,18 +13,18 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach } from "../../../hypium/index";
 import zlib from '@ohos.zlib'
 import hilog from '@ohos.hilog';
-import {BusinessError} from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 
 const TAG: string = 'BmsZlibChecksumTestTag';
 const Domain: Int = 0x0000;
 
 export default function bmsZlibChecksumAdler32CombineTest() {
   let checksum: zlib.Checksum = zlib.createChecksumSync();
-  let adler1: Double = 0;
-  let adler2: Double = 0;
+  let adler1: long = 0;
+  let adler2: long = 0;
   let buf1: ArrayBuffer = new ArrayBuffer(21);
   let buf2: ArrayBuffer = new ArrayBuffer(19);
   let str1: string = 'hello Adler32Combine1';
@@ -48,19 +48,19 @@ export default function bmsZlibChecksumAdler32CombineTest() {
     })
 
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_static_1200
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_static_1200
-     * @tc.desc: test adler32Combine(adler1,adler2,123)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_static_1200
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_static_1200
+     * @tc.desc   test adler32Combine(adler1,adler2,123)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         try {
           let len2: long = 123;
           hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_1200 start`);
-          let num: number = await checksum.adler32Combine(adler1, adler2, len2);
+          let num: long = await checksum.adler32Combine(adler1, adler2, len2);
           hilog.info(Domain, TAG,
             `Sub_Bms_Zlib_Checksum_Check_static_1200 adler32Combine:(${adler1},${adler2},${len2})=>${num}`);
           expect(num).assertEqual(648678913);

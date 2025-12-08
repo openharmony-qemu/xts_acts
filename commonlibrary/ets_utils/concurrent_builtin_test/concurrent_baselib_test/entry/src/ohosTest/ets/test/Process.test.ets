@@ -70,12 +70,12 @@ export default function processTest() {
     })
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0100
-     * @tc.name      : testProcessUid001
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testProcessUid001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testProcessUid001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -104,12 +104,12 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0200
-     * @tc.name      : testProcessPid002
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testProcessPid002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testProcessPid002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -138,12 +138,12 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0300
-     * @tc.name      : testProcessTid003
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testProcessTid003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testProcessTid003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -172,12 +172,12 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0400
-     * @tc.name      : testProcessIsIsolated004
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testProcessIsIsolated004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testProcessIsIsolated004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -207,12 +207,12 @@ export default function processTest() {
 
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0600
-     * @tc.name      : testProcessIs64Bit005
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testProcessIs64Bit005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testProcessIs64Bit005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -241,12 +241,12 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0700
-     * @tc.name      : testProcessGetStartRealtime006
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testProcessGetStartRealtime006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testProcessGetStartRealtime006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -275,12 +275,12 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0900
-     * @tc.name      : testProcessGetPastCpuTime007
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testProcessGetPastCpuTime007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_0900
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testProcessGetPastCpuTime007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -309,12 +309,12 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1000
-     * @tc.name      : testProcessUptime008
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testProcessUptime008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testProcessUptime008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -343,12 +343,12 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1100
-     * @tc.name      : testProcessGetUidForName009
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testProcessGetUidForName009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testProcessGetUidForName009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -377,12 +377,12 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1200
-     * @tc.name      : testProcessManagerKill010
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testProcessManagerKill010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testProcessManagerKill010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -411,12 +411,12 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1400
-     * @tc.name      : testProcessManagerGetThreadPriority011
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testProcessManagerGetThreadPriority011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testProcessManagerGetThreadPriority011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -445,12 +445,12 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1500
-     * @tc.name      : testProcessIsAppUid012
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testProcessIsAppUid012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testProcessIsAppUid012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -480,12 +480,12 @@ export default function processTest() {
 
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1600
-     * @tc.name      : testProcessGetSystemConfig013
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testProcessGetSystemConfig013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testProcessGetSystemConfig013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -514,12 +514,12 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1700
-     * @tc.name      : testProcessGetEnvironmentVar014
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testProcessGetEnvironmentVar014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testProcessGetEnvironmentVar014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -548,12 +548,12 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1800
-     * @tc.name      : testProcessExit015
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testProcessExit015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1800
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testProcessExit015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -582,12 +582,12 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1900
-     * @tc.name      : testProcessManagerGetUidForName016
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testProcessManagerGetUidForName016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_1900
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testProcessManagerGetUidForName016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -616,12 +616,12 @@ export default function processTest() {
       });
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_2000
-     * @tc.name      : testProcessManagerGetSystemConfig018
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testProcessManagerGetSystemConfig018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_2000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testProcessManagerGetSystemConfig018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -651,12 +651,12 @@ export default function processTest() {
 
 
     /**
-     * @tc.number    :SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_2100
-     * @tc.name      : testProcessManagerGetEnvironmentVar019
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testProcessManagerGetEnvironmentVar019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESS_2100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testProcessManagerGetEnvironmentVar019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

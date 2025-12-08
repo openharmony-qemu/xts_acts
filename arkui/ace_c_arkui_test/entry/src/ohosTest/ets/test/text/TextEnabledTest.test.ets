@@ -26,14 +26,14 @@ export default function textEnabledTest() {
       await Utils.pushPage(`text/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXT_ENABLED_0100
-    * @tc.name       : testTextEnabled001
-    * @tc.desc       : testing enabled event callback for text with normal value (1)
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextEnabled001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ENABLED_0100
+     * @tc.desc   testing enabled event callback for text with normal value (1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextEnabled001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickEnabledText')
       await Utils.sleep(1000)
@@ -51,14 +51,14 @@ export default function textEnabledTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXT_ENABLED_0200
-    * @tc.name       : testTextEnabled002
-    * @tc.desc       : testing enabled event callback for text with normal value (0)
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextEnabled002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ENABLED_0200
+     * @tc.desc   testing enabled event callback for text with normal value (0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextEnabled002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickDisabledText')
       await Utils.sleep(1000)
@@ -76,14 +76,14 @@ export default function textEnabledTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXT_ENABLED_0300
-    * @tc.name       : testTextEnabled003
-    * @tc.desc       : testing enabled event callback for text with abnormal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testTextEnabled003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ENABLED_0300
+     * @tc.desc   testing enabled event callback for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextEnabled003', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickAbnormalText')
       await Utils.sleep(1000)

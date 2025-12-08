@@ -47,9 +47,12 @@ export default function AlignSpaceEvenly_AddVisibility() {
     });
 
     /**
+     * @tc.name   textFlexAlignSpaceEvenlyTextVisibilityNone
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEEVENLY_TEST_1000
-     * @tc.name textFlexAlignSpaceEvenlyTextVisibilityNone
-     * @tc.desc The subcomponent sets the visibility. None, the child components are hidden in the interface display
+     * @tc.desc   The subcomponent sets the visibility. None, the child components are hidden in the interface display
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textFlexAlignSpaceEvenlyTextVisibilityNone',  Level.LEVEL0, async () => {
       console.info('[textFlexAlignSpaceEvenlyTextVisibilityNone] START');
@@ -103,10 +106,12 @@ export default function AlignSpaceEvenly_AddVisibility() {
 
     });
     /**
+     * @tc.name   textFlexAlignSpaceEvenlyTextVisibilityHidden
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEEVENLY_TEST_1100
-     * @tc.name textFlexAlignSpaceEvenlyTextVisibilityHidden
-     * @tc.desc When the subcomponent sets visibility.hidden, the interface of the subcomponent does not occupy the
-     * position
+     * @tc.desc   When the subcomponent sets visibility.hidden, the interface of the subcomponent does not occupy the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textFlexAlignSpaceEvenlyTextVisibilityHidden',  Level.LEVEL0, async () => {
       console.info('[textFlexAlignSpaceEvenlyTextVisibilityHidden] START');
@@ -167,10 +172,12 @@ export default function AlignSpaceEvenly_AddVisibility() {
 
     });
     /**
+     * @tc.name   textFlexAlignSpaceEvenlyTextVisibilityVisible
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEEVENLY_TEST_1700
-     * @tc.name textFlexAlignSpaceEvenlyTextVisibilityVisible
-     * @tc.desc The subcomponent sets the visibility. Visible, the subcomponent does not occupy a position in the
-     * interface display
+     * @tc.desc   The subcomponent sets the visibility. Visible, the subcomponent does not occupy a position in the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textFlexAlignSpaceEvenlyTextVisibilityVisible',  Level.LEVEL0, async () => {
       console.info('[textFlexAlignSpaceEvenlyTextVisibilityVisible] START');

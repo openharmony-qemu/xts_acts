@@ -100,12 +100,12 @@ export default function ImageCreatorQueueImageTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_CREATOR_QUEUE_IMAGE_001
-     * @tc.name      : ImageCreator_queueImage_promise_001
-     * @tc.desc      : ImageCreator_queueImage
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   ImageCreator_queueImage_promise_001
+     * @tc.number IMAGE_CREATOR_QUEUE_IMAGE_001
+     * @tc.desc   ImageCreator_queueImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageCreator_queueImage_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'ImageCreator_queueImage_promise_001';
@@ -117,12 +117,12 @@ export default function ImageCreatorQueueImageTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATOR_QUEUE_IMAGE_002
-     * @tc.name      : ImageCreator_queueImage_promise_002
-     * @tc.desc      : ImageCreator_queueImage
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   ImageCreator_queueImage_promise_002
+     * @tc.number IMAGE_CREATOR_QUEUE_IMAGE_002
+     * @tc.desc   ImageCreator_queueImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageCreator_queueImage_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'ImageCreator_queueImage_promise_002';
@@ -134,12 +134,12 @@ export default function ImageCreatorQueueImageTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATOR_QUEUE_IMAGE_003
-     * @tc.name      : ImageCreator_queueImage_callback_001
-     * @tc.desc      : ImageCreator_queueImage
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   ImageCreator_queueImage_callback_001
+     * @tc.number IMAGE_CREATOR_QUEUE_IMAGE_003
+     * @tc.desc   ImageCreator_queueImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageCreator_queueImage_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'ImageCreator_queueImage_callback_001';
@@ -151,12 +151,12 @@ export default function ImageCreatorQueueImageTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATOR_QUEUE_IMAGE_004
-     * @tc.name      : ImageCreator_queueImage_callback_002
-     * @tc.desc      : ImageCreator_queueImage
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   ImageCreator_queueImage_callback_002
+     * @tc.number IMAGE_CREATOR_QUEUE_IMAGE_004
+     * @tc.desc   ImageCreator_queueImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageCreator_queueImage_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'ImageCreator_queueImage_callback_002';

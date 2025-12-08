@@ -98,10 +98,13 @@ describe("DeviceManagerCanIUseTest", function () {
     const SERVICE_EXCEPTION_CODE_NEW = 26300001
     const SERVICE_NOT_BOUND = 26300003
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerCanIUse_0100
-     * @tc.name       : testDeviceManagerCanIUsek001
-     * @tc.desc       : verify DeviceManagerCanIUse any device
+    /**
+     * @tc.name   testDeviceManagerCanIUsek001
+     * @tc.number SUB_Driver_Ext_DeviceManagerCanIUse_0100
+     * @tc.desc   verify DeviceManagerCanIUse any device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDeviceManagerCanIUsek001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
         console.info(TAG, '----------------------testDeviceManagerCanIUsek001---------------------------');

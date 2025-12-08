@@ -46,14 +46,14 @@ export default function AVPlayerMediaSource() {
     afterAll(async () => {
       console.info('afterAll case');
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0101
-      * @tc.name      : 001.testMediaSource
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0101
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0101
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0101', Level.LEVEL0, async (done: Function) => {
       console.info('AVPlayerMediaSource success');
       player.on('error', (error: BusinessError) => {
@@ -71,14 +71,14 @@ export default function AVPlayerMediaSource() {
       await sleep(1000);
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0102
-      * @tc.name      : 001.testMediaSource
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0102
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0102
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0102', Level.LEVEL0, async (done: Function) => {
       console.info('AVPlayerMediaSource success');
       player.on('error', (error: BusinessError) => {
@@ -91,14 +91,14 @@ export default function AVPlayerMediaSource() {
       await sleep(1000);
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0100
-      * @tc.name      : 001.testMediaSource
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0100', Level.LEVEL0, async (done: Function) => {
       player.on('error', (error: BusinessError) => {
         console.info('error happened,and error message is :' + error.message);
@@ -118,14 +118,14 @@ export default function AVPlayerMediaSource() {
       player.setMediaSource(mediaSource, playStrategy);
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0200
-      * @tc.name      : 002.testMediaSource
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0200
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0200', Level.LEVEL0, async (done: Function) => {
       player.on('error', (error: BusinessError) => {
         console.info('error happened,and error message is :' + error.message);
@@ -140,14 +140,14 @@ export default function AVPlayerMediaSource() {
       mediaSource.setMimeType(mimeType);
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0300
-      * @tc.name      : 003.testMediaSource
-      * @tc.desc      : flv live stream with createMediaSourceWithStreamData success
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0300
+     * @tc.desc   flv live stream with createMediaSourceWithStreamData success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0300', Level.LEVEL0, async (done: Function) => {
       let streams : Array<media.MediaStream> = [];
       for (let i = 0; i < 5; i++) {
@@ -161,14 +161,14 @@ export default function AVPlayerMediaSource() {
       expect(mediaSource != undefined).assertTrue();
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0400
-      * @tc.name      : 004.testMediaSource
-      * @tc.desc      : flv live stream with createMediaSourceWithStreamData return empty for exceed maxStreamNum
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0400
+     * @tc.desc   flv live stream with createMediaSourceWithStreamData return empty for exceed maxStreamNum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0400', Level.LEVEL0, async (done: Function) => {
       let streams : Array<media.MediaStream> = [];
       const maxStreamNum = 10;
@@ -183,14 +183,14 @@ export default function AVPlayerMediaSource() {
       expect(mediaSource != undefined).assertFalse();
       done();
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0500
-    * @tc.name      : 005.testMediaSource
-    * @tc.desc      : flv live stream with createMediaSourceWithStreamData return empty for empty MediaStream
-    * @tc.size      : MediumTest
-    * @tc.type      : Function Test
-    * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0500
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0500
+     * @tc.desc   flv live stream with createMediaSourceWithStreamData return empty for empty MediaStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0500', Level.LEVEL0, async (done: Function) => {
       let streams : Array<media.MediaStream> = [];
       let mediaSource = media.createMediaSourceWithStreamData(streams);
@@ -198,14 +198,14 @@ export default function AVPlayerMediaSource() {
       done();
     });
 
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0600
-      * @tc.name      : 006.testMediaSource
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0600
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0600', Level.LEVEL0, async (done: Function) => {
       console.info('AVPlayerMediaSource success');
       let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
@@ -230,14 +230,14 @@ export default function AVPlayerMediaSource() {
       }
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0700
-      * @tc.name      : 007.testMediaSource
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0700
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0700
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0700', Level.LEVEL0, async (done: Function) => {
       console.info('AVPlayerMediaSource success');
       let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
@@ -255,14 +255,14 @@ export default function AVPlayerMediaSource() {
       done();
     });
 
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0800
-      * @tc.name      : 008.testMediaSource
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0800
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0800
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0800', Level.LEVEL0, async (done: Function) => {
       let header: Record<string, string> = {
         "User-Agent": "User-Agent-Value"
@@ -280,14 +280,14 @@ export default function AVPlayerMediaSource() {
       done();
     });
 
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0900
-      * @tc.name      : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0900
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0900
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0900
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0900', Level.LEVEL0, async (done: Function) => {
       let avPlayer = await media.createAVPlayer()
       console.info(`createAVPlayer success`)
@@ -331,14 +331,14 @@ export default function AVPlayerMediaSource() {
       } catch (error) {}
     });
 
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_1000
-      * @tc.name      : SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_1000
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_1000
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_1000
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_1000', Level.LEVEL0, async (done: Function) => {
       let avPlayer = await media.createAVPlayer()
       let headers: Record<string, string> = {"User-Agent" : "User-Agent-Value"};

@@ -59,9 +59,12 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   SUB_Misc_inputMethod_attach_Async_0100
      * @tc.number SUB_Misc_inputMethod_attach_Async_0100
-     * @tc.name Call the attach interface in Async mode. Optional input parameter showkeyboard=true
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Async_0100', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Async_0100';
@@ -93,9 +96,12 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   SUB_Misc_inputMethod_attach_Async_0200
      * @tc.number SUB_Misc_inputMethod_attach_Async_0200
-     * @tc.name Call the attach interface in Async mode. Optional input parameter showkeyboard=false
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Async_0200', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Async_0200';
@@ -127,9 +133,12 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   SUB_Misc_inputMethod_attach_Async_0300
      * @tc.number SUB_Misc_inputMethod_attach_Async_0300
-     * @tc.name Call the attach interface in Async mode. Optional input parameter showkeyboard=0
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Async_0300', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Async_0300';
@@ -163,9 +172,12 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   SUB_Misc_inputMethod_attach_Async_0400
      * @tc.number SUB_Misc_inputMethod_attach_Async_0400
-     * @tc.name Call the attach interface in Async mode. Optional input parameter showkeyboard=1
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Async_0400', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Async_0400';
@@ -199,9 +211,12 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   SUB_Misc_inputMethod_attach_Promise_0100
      * @tc.number SUB_Misc_inputMethod_attach_Promise_0100
-     * @tc.name Call the attach interface in Promise mode. Optional input parameter showkeyboard=true
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Promise_0100', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Promise_0100';
@@ -224,9 +239,12 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   SUB_Misc_inputMethod_attach_Promise_0200
      * @tc.number SUB_Misc_inputMethod_attach_Promise_0200
-     * @tc.name Call the attach interface in Promise mode. Optional input parameter showkeyboard=false
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Promise_0200', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Promise_0200';
@@ -250,9 +268,12 @@ export default function inputMethodTest() {
 
 
     /**
+     * @tc.name   SUB_Misc_inputMethod_attach_Promise_0300
      * @tc.number SUB_Misc_inputMethod_attach_Promise_0300
-     * @tc.name Call the attach interface in Promise mode. Optional input parameter showkeyboard=0
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Promise_0300', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Promise_0300';
@@ -277,9 +298,12 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   SUB_Misc_inputMethod_attach_Promise_0400
      * @tc.number SUB_Misc_inputMethod_attach_Promise_0400
-     * @tc.name Call the attach interface in Promise mode. Optional input parameter showkeyboard=1
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Promise_0400', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Promise_0400';
@@ -304,9 +328,12 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   SUB_Misc_inputMethod_attach_Promise_0500
      * @tc.number SUB_Misc_inputMethod_attach_Promise_0500
-     * @tc.name Call the attach interface in Promise mode. Optional input parameter showkeyboard='aa'
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Promise_0500', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Promise_0500';
@@ -331,9 +358,12 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   SUB_Misc_inputMethod_attach_Promise_0700
      * @tc.number SUB_Misc_inputMethod_attach_Promise_0700
-     * @tc.name Call the attach interface in Promise mode. Optional input parameters showkeyboard=true, attribute='aa'
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Promise_0700', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Promise_0700';
@@ -353,9 +383,12 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   SUB_Misc_inputMethod_attach_Promise_1000
      * @tc.number SUB_Misc_inputMethod_attach_Promise_1000
-     * @tc.name Call the attach interface in Promise mode and pass in an invalid input parameter
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Misc_inputMethod_attach_Promise_1000', Level.LEVEL0, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Promise_1000';
@@ -378,12 +411,12 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   inputMethod_test_stopInputSession_0011
      * @tc.number inputMethod_test_stopInputSession_0011
-     * @tc.name inputMethod_test_stopInputSession_0011
-     * @tc.desc Stop input().interfaces.Callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   Stop input().interfaces.Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('inputMethod_test_stopInputSession_0011', Level.LEVEL3, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -415,12 +448,12 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   inputMethod_test_stopInputSession_0021
      * @tc.number inputMethod_test_stopInputSession_0021
-     * @tc.name inputMethod_test_stopInputSession_0021
-     * @tc.desc Stop input().interfaces.Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   Stop input().interfaces.Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('inputMethod_test_stopInputSession_0021', Level.LEVEL3, async (done: Function) => {
       let inputMethodCtrl = inputMethod.getInputMethodController();
@@ -445,12 +478,12 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   inputmethoh_test_0051
      * @tc.number inputmethoh_test_0051
-     * @tc.name inputmethoh_test_0051
-     * @tc.desc Stop input().interfaces.Callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   Stop input().interfaces.Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('inputmethoh_test_0051', Level.LEVEL3, async (done: Function) => {
       let inputMethodCtrl = inputMethod.getInputMethodController();
@@ -482,12 +515,12 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   inputmethoh_test_0061
      * @tc.number inputmethoh_test_0061
-     * @tc.name inputmethoh_test_0061
-     * @tc.desc Stop input().interfaces.Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   Stop input().interfaces.Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('inputmethoh_test_0061', Level.LEVEL3, async (done: Function) => {
       let inputMethodCtrl = inputMethod.getInputMethodController();

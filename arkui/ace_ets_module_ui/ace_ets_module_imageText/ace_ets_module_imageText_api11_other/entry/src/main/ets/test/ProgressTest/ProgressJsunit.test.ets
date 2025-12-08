@@ -43,6 +43,14 @@ export default function ProgressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ProgressJsunit_0100
+     * @tc.number ProgressJsunit_0100
+     * @tc.desc   ProgressJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ProgressJsunit_0100', Level.LEVEL1, async (done: Function) => {
       // Get the information of the Progress component
       console.info('[ProgressJsunit_0100] START');
@@ -67,6 +75,14 @@ export default function ProgressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ProgressJsunit_0200
+     * @tc.number ProgressJsunit_0200
+     * @tc.desc   ProgressJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ProgressJsunit_0200', Level.LEVEL1, async (done: Function) => {
       // Modify the total value of the Progress component
       console.info('[ProgressJsunit_0200] START');
@@ -82,6 +98,14 @@ export default function ProgressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ProgressJsunit_0300
+     * @tc.number ProgressJsunit_0300
+     * @tc.desc   ProgressJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ProgressJsunit_0300', Level.LEVEL1, async (done: Function) => {
       // Modify the type of the Progress component
       console.info('[ProgressJsunit_0300] START');
@@ -96,6 +120,14 @@ export default function ProgressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ProgressJsunit_0400
+     * @tc.number ProgressJsunit_0400
+     * @tc.desc   ProgressJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ProgressJsunit_0400', Level.LEVEL1, async (done: Function) => {
       // Modify the color of the Progress component
       console.info('[ProgressJsunit_0400] START');
@@ -111,6 +143,14 @@ export default function ProgressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ProgressJsunit_0500
+     * @tc.number ProgressJsunit_0500
+     * @tc.desc   ProgressJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ProgressJsunit_0500', Level.LEVEL1, async (done: Function) => {
       // Modify the backgroundColor of the Progress component
       console.info('[ProgressJsunit_0500] START');
@@ -125,6 +165,14 @@ export default function ProgressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ProgressJsunit_0600
+     * @tc.number ProgressJsunit_0600
+     * @tc.desc   ProgressJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ProgressJsunit_0600', Level.LEVEL1, async (done: Function) => {
       // Modify the style of the Progress component
       console.info('[ProgressJsunit_0600] START');
@@ -140,6 +188,14 @@ export default function ProgressJsunit() {
       done();
     });
     
+    /**
+     * @tc.name   ProgressJsunit_0700
+     * @tc.number ProgressJsunit_0700
+     * @tc.desc   ProgressJsunit_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ProgressJsunit_0700', Level.LEVEL1, async (done: Function) => {
       // Modify the value of the Progress component
       console.info('[ProgressJsunit_0700] START');
@@ -154,6 +210,14 @@ export default function ProgressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ProgressJsunit_0800
+     * @tc.number ProgressJsunit_0800
+     * @tc.desc   ProgressJsunit_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ProgressJsunit_0800', Level.LEVEL1, async (done: Function) => {
       // Illegal modification of the value of the Progress component
       console.info('[ProgressJsunit_0800] START');
@@ -176,6 +240,14 @@ export default function ProgressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ProgressJsunit_0900
+     * @tc.number ProgressJsunit_0900
+     * @tc.desc   ProgressJsunit_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ProgressJsunit_0900', Level.LEVEL1, async (done: Function) => {
       // Get the default value of the Progress component
       console.info('[ProgressJsunit_0900] START');

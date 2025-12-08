@@ -40,12 +40,12 @@ export default function expectedUpdateInterval() {
       done();
     });
     /**
-     * @tc.number    expectedUpdateInterval_0100
-     * @tc.name      expectedUpdateInterval_0100
-     * @tc.desc      frameNode: dispose
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   expectedUpdateInterval_0100
+     * @tc.number expectedUpdateInterval_0100
+     * @tc.desc   frameNode: dispose
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('expectedUpdateInterval_0100', Level.LEVEL0, async (done: Function) => {
       console.info('expectedUpdateInterval_0100 START');

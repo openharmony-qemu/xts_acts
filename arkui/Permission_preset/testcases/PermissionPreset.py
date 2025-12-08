@@ -71,6 +71,12 @@ class PermissionPreset(TestCase):
             driver.touch(next_button)
             driver.wait(1)
 
+        # 完成
+        completed_button = driver.wait_for_component(BY.text("完成"))
+        if completed_button is not None:
+            driver.touch(completed_button)
+            driver.wait(1)
+
         # 点击搜索框
         search_field = driver.wait_for_component(BY.type("SearchField"))
         if search_field is not None:

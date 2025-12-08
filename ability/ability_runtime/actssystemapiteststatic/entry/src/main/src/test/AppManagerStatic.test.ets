@@ -62,11 +62,13 @@ export default function appManagerStaticTest() {
   describe('appManagerStaticTest', () => {
 
     /**
-      * @tc.number System_API_Test_App_Manager_Static_1700
-      * @tc.name System_API_Test_App_Manager_Static_1700
-      * @tc.desc Test the third-party application without permission call killProcessesByBundleName will be blocked
-      * @tc.level 3
-      */
+     * @tc.name   System_API_Test_App_Manager_Static_1700
+     * @tc.number System_API_Test_App_Manager_Static_1700
+     * @tc.desc   Test the third-party application without permission call killProcessesByBundleName will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('System_API_Test_App_Manager_Static_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let bundleName = "com.ohos.application";
       try {
@@ -88,11 +90,13 @@ export default function appManagerStaticTest() {
       }
     });
 
-   /**
+    /**
+     * @tc.name   System_API_Test_App_Manager_Static_1800
      * @tc.number System_API_Test_App_Manager_Static_1800
-     * @tc.name System_API_Test_App_Manager_Static_1800
-     * @tc.desc Test the third-party application without permission call killProcessesByBundleName will be blocked
-     * @tc.level 3
+     * @tc.desc   Test the third-party application without permission call killProcessesByBundleName will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_App_Manager_Static_1800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let bundleName = "com.ohos.application";
@@ -115,11 +119,13 @@ export default function appManagerStaticTest() {
       }
     });
 
-   /**
+    /**
+     * @tc.name   Public_API_Test_App_Manager_Static_0100
      * @tc.number Public_API_Test_App_Manager_Static_0100
-     * @tc.name Public_API_Test_App_Manager_Static_0100
-     * @tc.desc Test the third-party application get ProcessState enum will be right
-     * @tc.level 3
+     * @tc.desc   Test the third-party application get ProcessState enum will be right
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Public_API_Test_App_Manager_Static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect(appManager.ProcessState.STATE_CREATE + '').assertEqual('0');
@@ -131,12 +137,12 @@ export default function appManagerStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_AppManager_Static_0100
-     * @tc.name    SUB_Ability_AbilityBase_AppManager_Static_0100
-     * @tc.desc    Test the return value of the isRunningInStabilityTest interface(Promise).
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   3
+     * @tc.name   SUB_Ability_AbilityBase_AppManager_Static_0100
+     * @tc.number SUB_Ability_AbilityBase_AppManager_Static_0100
+     * @tc.desc   Test the return value of the isRunningInStabilityTest interface(Promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityBase_AppManager_Static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityBase_AppManager_Static_0100`;
@@ -159,12 +165,12 @@ export default function appManagerStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_AppManager_Static_0200
-     * @tc.name    SUB_Ability_AbilityBase_AppManager_Static_0200
-     * @tc.desc    Test the return value of the isRunningInStabilityTest interface(CallBack).
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   3
+     * @tc.name   SUB_Ability_AbilityBase_AppManager_Static_0200
+     * @tc.number SUB_Ability_AbilityBase_AppManager_Static_0200
+     * @tc.desc   Test the return value of the isRunningInStabilityTest interface(CallBack).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityBase_AppManager_Static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityBase_AppManager_Static_0200`;
@@ -183,12 +189,12 @@ export default function appManagerStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_AppManager_Static_0400
-     * @tc.name    SUB_Ability_AbilityBase_AppManager_Static_0400
-     * @tc.desc    Verify that isAppRunning is called when no permission is available(appCloneIndex).
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   3
+     * @tc.name   SUB_Ability_AbilityBase_AppManager_Static_0400
+     * @tc.number SUB_Ability_AbilityBase_AppManager_Static_0400
+     * @tc.desc   Verify that isAppRunning is called when no permission is available(appCloneIndex).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityBase_AppManager_Static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3,  async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityBase_AppManager_Static_0400`;
@@ -211,12 +217,12 @@ export default function appManagerStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_AppManager_Static_0500
-     * @tc.name    SUB_Ability_AbilityBase_AppManager_Static_0500
-     * @tc.desc    Verify that isAppRunning is called when no permission is available(no appCloneIndex)).
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   3
+     * @tc.name   SUB_Ability_AbilityBase_AppManager_Static_0500
+     * @tc.number SUB_Ability_AbilityBase_AppManager_Static_0500
+     * @tc.desc   Verify that isAppRunning is called when no permission is available(no appCloneIndex)).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityBase_AppManager_Static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3,  async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityBase_AppManager_Static_0500`;
@@ -239,12 +245,12 @@ export default function appManagerStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_AppManager_Static_0900
-     * @tc.name    SUB_Ability_AbilityBase_AppManager_Static_0900
-     * @tc.desc    Verify isRamConstrainedDevice(callback).
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   3
+     * @tc.name   SUB_Ability_AbilityBase_AppManager_Static_0900
+     * @tc.number SUB_Ability_AbilityBase_AppManager_Static_0900
+     * @tc.desc   Verify isRamConstrainedDevice(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityBase_AppManager_Static_0900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityBase_AppManager_Static_0900`;
@@ -262,12 +268,12 @@ export default function appManagerStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_AppManager_Static_1000
-     * @tc.name    SUB_Ability_AbilityBase_AppManager_Static_1000
-     * @tc.desc    Verify isRamConstrainedDevice(promise).
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   3
+     * @tc.name   SUB_Ability_AbilityBase_AppManager_Static_1000
+     * @tc.number SUB_Ability_AbilityBase_AppManager_Static_1000
+     * @tc.desc   Verify isRamConstrainedDevice(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityBase_AppManager_Static_1000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityBase_AppManager_Static_1000`;
@@ -288,12 +294,12 @@ export default function appManagerStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_AppManager_Static_1100
-     * @tc.name    SUB_Ability_AbilityBase_AppManager_Static_1100
-     * @tc.desc    Verify getAppMemorySize(promise).
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   3
+     * @tc.name   SUB_Ability_AbilityBase_AppManager_Static_1100
+     * @tc.number SUB_Ability_AbilityBase_AppManager_Static_1100
+     * @tc.desc   Verify getAppMemorySize(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityBase_AppManager_Static_1100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityBase_AppManager_Static_1100`;
@@ -316,12 +322,12 @@ export default function appManagerStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_AppManager_Static_1200
-     * @tc.name    SUB_Ability_AbilityBase_AppManager_Static_1200
-     * @tc.desc    Verify getAppMemorySize(callback).
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   3
+     * @tc.name   SUB_Ability_AbilityBase_AppManager_Static_1200
+     * @tc.number SUB_Ability_AbilityBase_AppManager_Static_1200
+     * @tc.desc   Verify getAppMemorySize(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityBase_AppManager_Static_1200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityBase_AppManager_Static_1200`;
@@ -340,10 +346,12 @@ export default function appManagerStaticTest() {
     });
 
     /**
+     * @tc.name   System_API_Test_App_Manager_Static_0100
      * @tc.number System_API_Test_App_Manager_Static_0100
-     * @tc.name System_API_Test_App_Manager_Static_0100
-     * @tc.desc Test the third-party application without permission call appManager.on will be blocked
-     * @tc.level 3
+     * @tc.desc   Test the third-party application without permission call appManager.on will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_App_Manager_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -351,7 +359,7 @@ export default function appManagerStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           const observer = new CustomApplicationStateObserver();
-          const observerId = appManager.on("applicationState", observer);
+          const observerId = appManager.onApplicationStateChange(observer);
           hilog.info(domain, tag, `${itName} observerId: ${observerId}`);
           expect().assertFail();
         } catch (err: BusinessError) {
@@ -363,10 +371,12 @@ export default function appManagerStaticTest() {
       })
 
     /**
+     * @tc.name   System_API_Test_App_Manager_Static_0200
      * @tc.number System_API_Test_App_Manager_Static_0200
-     * @tc.name System_API_Test_App_Manager_Static_0200
-     * @tc.desc Test the third-party application without permission call appManager.on will be blocked
-     * @tc.level 3
+     * @tc.desc   Test the third-party application without permission call appManager.on will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_App_Manager_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -375,7 +385,7 @@ export default function appManagerStaticTest() {
         let bundleNameList = ['bundleName1', 'bundleName2'];
         try {
           const observer = new CustomApplicationStateObserver();
-          const observerId = appManager.on("applicationState", observer, bundleNameList);
+          const observerId = appManager.onApplicationStateChange(observer, bundleNameList);
           hilog.info(domain, tag, `${itName} observerId: ${observerId}`);
           expect().assertFail();
         } catch (err: BusinessError) {
@@ -387,20 +397,20 @@ export default function appManagerStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_AppManager_Static_0600
-     * @tc.name    SUB_Ability_AbilityBase_AppManager_Static_0600
-     * @tc.desc    Verify that off is called when no permission is available(promise).
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   3
-    */
+     * @tc.name   SUB_Ability_AbilityBase_AppManager_Static_0600
+     * @tc.number SUB_Ability_AbilityBase_AppManager_Static_0600
+     * @tc.desc   Verify that off is called when no permission is available(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Ability_AbilityBase_AppManager_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityBase_AppManager_Static_0600';
         hilog.info(domain, tag, `${itName} start`);
         try {
           hilog.info(domain, tag, `${itName} off applicationState`);
-          appManager.off('applicationState', 1).then(() => {
+          appManager.offApplicationStateChange(1).then(() => {
             hilog.info(domain, tag, `${itName} off success`);
             expect().assertFail();
             done();
@@ -421,12 +431,12 @@ export default function appManagerStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_AppManager_Static_0700
-     * @tc.name    SUB_Ability_AbilityBase_AppManager_Static_0700
-     * @tc.desc    Verify that off is called when no permission is available(callback).
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   3
+     * @tc.name   SUB_Ability_AbilityBase_AppManager_Static_0700
+     * @tc.number SUB_Ability_AbilityBase_AppManager_Static_0700
+     * @tc.desc   Verify that off is called when no permission is available(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityBase_AppManager_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -434,7 +444,7 @@ export default function appManagerStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           hilog.info(domain, tag, `${itName} off applicationState`);
-          appManager.off('applicationState', 1, (err: BusinessError<void> | null): void => {
+          appManager.offApplicationStateChange(1, (err: BusinessError<void> | null): void => {
             hilog.info(domain, tag, `${itName} off err: code ${err?.code}, message ${err?.message}`);
             expect(`${err?.code}`).assertEqual('401');
             done();

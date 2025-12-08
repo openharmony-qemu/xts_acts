@@ -51,6 +51,11 @@
 
 static napi_value OH_LowPowerAudioSink_Start0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     int32_t sampleRate = 44100;
     int32_t channelCount = 2;
     const char *mime = OH_AVCODEC_MIMETYPE_AUDIO_AAC;
@@ -70,6 +75,11 @@ static napi_value OH_LowPowerAudioSink_Start0101(napi_env env, napi_callback_inf
 
 static napi_value OH_LowPowerAudioSink_Resume0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     int32_t sampleRate = 44100;
     int32_t channelCount = 2;
     const char *mime = OH_AVCODEC_MIMETYPE_AUDIO_AAC;
@@ -89,6 +99,11 @@ static napi_value OH_LowPowerAudioSink_Resume0101(napi_env env, napi_callback_in
 
 static napi_value OH_LowPowerAudioSink_Flush0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     int32_t sampleRate = 44100;
     int32_t channelCount = 2;
     const char *mime = OH_AVCODEC_MIMETYPE_AUDIO_AAC;
@@ -108,6 +123,11 @@ static napi_value OH_LowPowerAudioSink_Flush0101(napi_env env, napi_callback_inf
 
 static napi_value OH_LowPowerAudioSink_Stop0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     int32_t sampleRate = 44100;
     int32_t channelCount = 2;
     const char *mime = OH_AVCODEC_MIMETYPE_AUDIO_AAC;
@@ -127,6 +147,11 @@ static napi_value OH_LowPowerAudioSink_Stop0101(napi_env env, napi_callback_info
 
 static napi_value OH_LowPowerAudioSink_Destroy0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     int32_t sampleRate = 44100;
     int32_t channelCount = 2;
     const char *mime = OH_AVCODEC_MIMETYPE_AUDIO_AAC;
@@ -145,6 +170,11 @@ static napi_value OH_LowPowerAudioSink_Destroy0101(napi_env env, napi_callback_i
 
 static napi_value OH_LowPowerVideoSink_SetParameter0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_LowPowerVideoSink *VideoSink = OH_LowPowerVideoSink_CreateByMime(mime);
     OH_AVFormat *Format = OH_AVFormat_Create();
@@ -162,6 +192,11 @@ static napi_value OH_LowPowerVideoSink_SetParameter0101(napi_env env, napi_callb
 void OnNeedInputParameter(OH_AVCodec *codec, uint32_t index, OH_AVFormat *parameter, void *userData){};
 static napi_value OH_LowPowerVideoSink_SetVideoSurface0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -192,6 +227,11 @@ static napi_value OH_LowPowerVideoSink_SetVideoSurface0101(napi_env env, napi_ca
 
 static napi_value OH_LowPowerVideoSink_SetVideoSurface0102(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -221,6 +261,11 @@ static napi_value OH_LowPowerVideoSink_SetVideoSurface0102(napi_env env, napi_ca
 
 static napi_value OH_LowPowerVideoSink_Prepare0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -255,6 +300,11 @@ static napi_value OH_LowPowerVideoSink_Prepare0101(napi_env env, napi_callback_i
 
 static napi_value OH_LowPowerVideoSink_Prepare0102(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -288,6 +338,11 @@ static napi_value OH_LowPowerVideoSink_Prepare0102(napi_env env, napi_callback_i
 
 static napi_value OH_LowPowerVideoSink_StartDecoder0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -323,6 +378,11 @@ static napi_value OH_LowPowerVideoSink_StartDecoder0101(napi_env env, napi_callb
 
 static napi_value OH_LowPowerVideoSink_StartDecoder0102(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -357,6 +417,11 @@ static napi_value OH_LowPowerVideoSink_StartDecoder0102(napi_env env, napi_callb
 
 static napi_value OH_LowPowerVideoSink_RenderFirstFrame0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -394,6 +459,11 @@ static napi_value OH_LowPowerVideoSink_RenderFirstFrame0101(napi_env env, napi_c
 
 static napi_value OH_LowPowerVideoSink_RenderFirstFrame0102(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -430,6 +500,11 @@ static napi_value OH_LowPowerVideoSink_RenderFirstFrame0102(napi_env env, napi_c
 
 static napi_value OH_LowPowerVideoSink_StartRenderer0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -466,6 +541,11 @@ static napi_value OH_LowPowerVideoSink_StartRenderer0101(napi_env env, napi_call
 
 static napi_value OH_LowPowerVideoSink_StartRenderer0102(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -501,6 +581,11 @@ static napi_value OH_LowPowerVideoSink_StartRenderer0102(napi_env env, napi_call
 
 static napi_value OH_LowPowerVideoSink_Pause0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -538,6 +623,11 @@ static napi_value OH_LowPowerVideoSink_Pause0101(napi_env env, napi_callback_inf
 
 static napi_value OH_LowPowerVideoSink_Pause0102(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -574,6 +664,11 @@ static napi_value OH_LowPowerVideoSink_Pause0102(napi_env env, napi_callback_inf
 
 static napi_value OH_LowPowerVideoSink_Resume0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -612,6 +707,11 @@ static napi_value OH_LowPowerVideoSink_Resume0101(napi_env env, napi_callback_in
 
 static napi_value OH_LowPowerVideoSink_Resume0102(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -649,6 +749,11 @@ static napi_value OH_LowPowerVideoSink_Resume0102(napi_env env, napi_callback_in
 
 static napi_value OH_LowPowerVideoSink_Flush0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -687,6 +792,11 @@ static napi_value OH_LowPowerVideoSink_Flush0101(napi_env env, napi_callback_inf
 
 static napi_value OH_LowPowerVideoSink_Flush0102(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -725,6 +835,11 @@ static napi_value OH_LowPowerVideoSink_Flush0102(napi_env env, napi_callback_inf
 
 static napi_value OH_LowPowerVideoSink_Stop0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -762,6 +877,11 @@ static napi_value OH_LowPowerVideoSink_Stop0101(napi_env env, napi_callback_info
 
 static napi_value OH_LowPowerVideoSink_Stop0102(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -798,6 +918,11 @@ static napi_value OH_LowPowerVideoSink_Stop0102(napi_env env, napi_callback_info
 
 static napi_value OH_LowPowerVideoSink_Reset0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -836,6 +961,11 @@ static napi_value OH_LowPowerVideoSink_Reset0101(napi_env env, napi_callback_inf
 
 static napi_value OH_LowPowerVideoSink_Destroy0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -873,6 +1003,11 @@ static napi_value OH_LowPowerVideoSink_Destroy0101(napi_env env, napi_callback_i
 
 static napi_value OH_LowPowerVideoSink_SetSyncAudioSink0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
@@ -893,6 +1028,11 @@ static napi_value OH_LowPowerVideoSink_SetSyncAudioSink0101(napi_env env, napi_c
 
 static napi_value OH_LowPowerVideoSink_SetPlaybackSpeed0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     void *userData;
     const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
     OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);

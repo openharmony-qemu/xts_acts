@@ -42,12 +42,12 @@ export default function builtinsStringPrototypeTest() {
     })
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0101
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0101
-     * @tc.name builtinsStringPrototypeTest0101
-     * @tc.desc execute sendable function
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   execute sendable function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -65,12 +65,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0102
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0102
-     * @tc.name builtinsStringPrototypeTest0102
-     * @tc.desc execute sendable function
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   execute sendable function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0102', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -88,12 +88,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0103
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0103
-     * @tc.name builtinsStringPrototypeTest0103
-     * @tc.desc Test string iteration using for...of loop with surrogate pairs
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test string iteration using for...of loop with surrogate pairs
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0103', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -117,12 +117,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0104
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0104
-     * @tc.name builtinsStringPrototypeTest0104
-     * @tc.desc Test manual string iteration using Symbol.iterator
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test manual string iteration using Symbol.iterator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0104', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -143,12 +143,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0105
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0105
-     * @tc.name builtinsStringPrototypeTest0105
-     * @tc.desc Test String.prototype.trim()
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.trim()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0105', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -166,12 +166,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0106
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0106
-     * @tc.name builtinsStringPrototypeTest0106
-     * @tc.desc Test String.prototype.trimEnd()
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.trimEnd()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -189,12 +189,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0107
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0107
-     * @tc.name builtinsStringPrototypeTest0107
-     * @tc.desc Test String.prototype.trimStart()
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.trimStart()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0107', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -212,12 +212,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0108
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0108
-     * @tc.name builtinsStringPrototypeTest0108
-     * @tc.desc Test String.prototype.valueOf()
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.valueOf()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0108', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -236,12 +236,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0109
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0109
-     * @tc.name builtinsStringPrototypeTest0109
-     * @tc.desc Test String.prototype.toLocaleLowerCase()
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.toLocaleLowerCase()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0109', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -263,12 +263,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0110
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0110
-     * @tc.name builtinsStringPrototypeTest0110
-     * @tc.desc Test String.prototype.toLocaleUpperCase()
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.toLocaleUpperCase()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -290,12 +290,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0111
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0111
-     * @tc.name builtinsStringPrototypeTest0111
-     * @tc.desc Test String.prototype.toLowerCase()
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.toLowerCase()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -317,12 +317,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0112
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0112
-     * @tc.name builtinsStringPrototypeTest0112
-     * @tc.desc Test String.prototype.toString()
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.toString()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -345,12 +345,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0113
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0113
-     * @tc.name builtinsStringPrototypeTest0113
-     * @tc.desc Test String.prototype.toUpperCase()
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.toUpperCase()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -372,12 +372,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0114
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0114
-     * @tc.name builtinsStringPrototypeTest0114
-     * @tc.desc Test String.prototype.startsWith() with empty string
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.startsWith() with empty string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -399,12 +399,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0115
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0115
-     * @tc.name builtinsStringPrototypeTest0115
-     * @tc.desc Test String.prototype.startsWith() with empty string and position 24
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.startsWith() with empty string and position 24
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -428,12 +428,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0116
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0116
-     * @tc.name builtinsStringPrototypeTest0116
-     * @tc.desc Test String.prototype.startsWith() with empty string and position 15
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.startsWith() with empty string and position 15
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0116', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -457,12 +457,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0117
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0117
-     * @tc.name builtinsStringPrototypeTest0117
-     * @tc.desc Test String.prototype.startsWith() with "one"
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.startsWith() with "one"
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -484,12 +484,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0118
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0118
-     * @tc.name builtinsStringPrototypeTest0118
-     * @tc.desc Test String.prototype.startsWith() with "one" and position 24
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.startsWith() with "one" and position 24
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -513,12 +513,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0119
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0119
-     * @tc.name builtinsStringPrototypeTest0119
-     * @tc.desc Test String.prototype.startsWith() with "one" and position 15
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.startsWith() with "one" and position 15
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -542,12 +542,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0120
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0120
-     * @tc.name builtinsStringPrototypeTest0120
-     * @tc.desc Test String.prototype.startsWith() with "one" and position 15
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.startsWith() with "one" and position 15
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0120', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -571,12 +571,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0121
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0121
-     * @tc.name builtinsStringPrototypeTest0121
-     * @tc.desc Test String.prototype.startsWith() with "one" and position 15
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.startsWith() with "one" and position 15
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0121', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -600,12 +600,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0122
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0122
-     * @tc.name builtinsStringPrototypeTest0122
-     * @tc.desc Test String.prototype.startsWith() with "one" and position 15
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.startsWith() with "one" and position 15
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -629,12 +629,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0123
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0123
-     * @tc.name builtinsStringPrototypeTest0123
-     * @tc.desc Test String.prototype.startsWith() with "one" and position 15
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.startsWith() with "one" and position 15
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -658,12 +658,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0124
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0124
-     * @tc.name builtinsStringPrototypeTest0124
-     * @tc.desc Test String.prototype.startsWith() with "one" and position 15
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.startsWith() with "one" and position 15
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -688,12 +688,12 @@ export default function builtinsStringPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0126
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0126
-     * @tc.name builtinsStringPrototypeTest0126
-     * @tc.desc Test String.prototype.startsWith() with "one" and position 15
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.startsWith() with "one" and position 15
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -717,12 +717,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0127
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0127
-     * @tc.name builtinsStringPrototypeTest0127
-     * @tc.desc Test String.prototype.startsWith() with "one" and position 15
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.startsWith() with "one" and position 15
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0127', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -745,12 +745,12 @@ export default function builtinsStringPrototypeTest() {
     // substring
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0128
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0128
-     * @tc.name builtinsStringPrototypeTest0128
-     * @tc.desc Test String.prototype.substring() with (0, 1)
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.substring() with (0, 1)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0128', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -775,12 +775,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0129
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0129
-     * @tc.name builtinsStringPrototypeTest0129
-     * @tc.desc Test String.prototype.substring() with (1, 0)
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.substring() with (1, 0)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0129', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -805,12 +805,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0130
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0130
-     * @tc.name builtinsStringPrototypeTest0130
-     * @tc.desc Test String.prototype.substring() with (1, 0)
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.substring() with (1, 0)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0130', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -836,12 +836,12 @@ export default function builtinsStringPrototypeTest() {
 
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0131
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0131
-     * @tc.name builtinsStringPrototypeTest0131
-     * @tc.desc Test String.prototype.substring() with (1, 0)
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.substring() with (1, 0)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0131', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -865,12 +865,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0132
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0132
-     * @tc.name builtinsStringPrototypeTest0132
-     * @tc.desc Test String.prototype.substring() with (1, 0)
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.substring() with (1, 0)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0132', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -895,12 +895,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0133
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0133
-     * @tc.name builtinsStringPrototypeTest0133
-     * @tc.desc Test String.prototype.substring() with (1, 0)
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.substring() with (1, 0)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0133', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -925,12 +925,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0134
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0134
-     * @tc.name builtinsStringPrototypeTest0134
-     * @tc.desc Test String.prototype.substring() with (1, 0)
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.substring() with (1, 0)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0134', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -955,12 +955,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0135
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0135
-     * @tc.name builtinsStringPrototypeTest0135
-     * @tc.desc Test String.prototype.substring() with (1, 0)
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.substring() with (1, 0)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0135', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -986,12 +986,12 @@ export default function builtinsStringPrototypeTest() {
     // 21个 613行
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0136
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0136
-     * @tc.name builtinsStringPrototypeTest0136
-     * @tc.desc Test String.prototype.split() with empty string and empty separator
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.split() with empty string and empty separator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0136', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1016,12 +1016,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0137
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0137
-     * @tc.name builtinsStringPrototypeTest0137
-     * @tc.desc Test String.prototype.split() with empty string and non-empty separator
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.split() with empty string and non-empty separator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0137', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1046,12 +1046,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0138
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0138
-     * @tc.name builtinsStringPrototypeTest0138
-     * @tc.desc Test String.prototype.split() with space separator
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.split() with space separator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0138', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1078,12 +1078,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0139
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0139
-     * @tc.name builtinsStringPrototypeTest0139
-     * @tc.desc Test String.prototype.split() with no separator
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.split() with no separator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0139', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1101,12 +1101,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0140
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0140
-     * @tc.name builtinsStringPrototypeTest0140
-     * @tc.desc Test String.prototype.split() with comma separator
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.split() with comma separator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0140', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1134,12 +1134,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0141
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0141
-     * @tc.name builtinsStringPrototypeTest0141
-     * @tc.desc Test String.prototype.split() with regex separator
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.split() with regex separator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0141', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1166,12 +1166,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0142
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0142
-     * @tc.name builtinsStringPrototypeTest0142
-     * @tc.desc Test String.prototype.split() with limit parameter
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.split() with limit parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0142', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1199,12 +1199,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0143
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0143
-     * @tc.name builtinsStringPrototypeTest0143
-     * @tc.desc Test String.prototype.split() with capturing group regex
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.split() with capturing group regex
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0143', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1228,12 +1228,12 @@ export default function builtinsStringPrototypeTest() {
     // 8 250
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0144
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0144
-     * @tc.name builtinsStringPrototypeTest0144
-     * @tc.desc Test String.prototype.slice(1, 8)
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.slice(1, 8)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0144', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1259,12 +1259,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0145
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0145
-     * @tc.name builtinsStringPrototypeTest0145
-     * @tc.desc Test String.prototype.slice(4, -2)
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.slice(4, -2)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0145', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1290,12 +1290,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0146
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0146
-     * @tc.name builtinsStringPrototypeTest0146
-     * @tc.desc Test String.prototype.slice(12)
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.slice(12)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0146', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1316,12 +1316,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0147
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0147
-     * @tc.name builtinsStringPrototypeTest0147
-     * @tc.desc Test String.prototype.slice(30) with out-of-range index
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.slice(30) with out-of-range index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0147', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1342,12 +1342,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0148
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0148
-     * @tc.name builtinsStringPrototypeTest0148
-     * @tc.desc Test String.prototype.slice(-3)
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.slice(-3)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0148', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1368,12 +1368,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0149
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0149
-     * @tc.name builtinsStringPrototypeTest0149
-     * @tc.desc Test String.prototype.slice(-3, -1)
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.slice(-3, -1)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0149', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1395,12 +1395,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0150
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0150
-     * @tc.name builtinsStringPrototypeTest0150
-     * @tc.desc Test String.prototype.slice(0, -1)
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.slice(0, -1)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0150', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1422,12 +1422,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0151
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0151
-     * @tc.name builtinsStringPrototypeTest0151
-     * @tc.desc Test String.prototype.slice(-11, 16)
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.slice(-11, 16)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0151', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1449,12 +1449,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0152
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0152
-     * @tc.name builtinsStringPrototypeTest0152
-     * @tc.desc Test String.prototype.slice(11, -7)
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.slice(11, -7)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0152', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1476,12 +1476,12 @@ export default function builtinsStringPrototypeTest() {
       });
 
     /**
+     * @tc.name   builtinsStringPrototypeTest0153
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPE_TEST_0153
-     * @tc.name builtinsStringPrototypeTest0153
-     * @tc.desc Test String.prototype.slice(-5, -1)
-     * @tc.size SMALLTEST
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test String.prototype.slice(-5, -1)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypeTest0153', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1511,6 +1511,14 @@ export default function builtinsStringPrototypeTest() {
     //  * @tc.type Function
     //  * @tc.level Level 1
     //  */
+    /**
+     * @tc.name   builtinsStringPrototypeTest0154
+     * @tc.number builtinsStringPrototypeTest0154
+     * @tc.desc   builtinsStringPrototypeTest0154
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     // it('builtinsStringPrototypeTest0154', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
     //   async (Done: Function) => {
     //     const caseName = "builtinsStringPrototypeTest0154";
@@ -1542,6 +1550,14 @@ export default function builtinsStringPrototypeTest() {
     //  * @tc.type Function
     //  * @tc.level Level 1
     //  */
+    /**
+     * @tc.name   builtinsStringPrototypeTest0155
+     * @tc.number builtinsStringPrototypeTest0155
+     * @tc.desc   builtinsStringPrototypeTest0155
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     // it('builtinsStringPrototypeTest0155', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
     //   async (Done: Function) => {
     //     const caseName = "builtinsStringPrototypeTest0155";
@@ -1578,6 +1594,14 @@ export default function builtinsStringPrototypeTest() {
     //  * @tc.type Function
     //  * @tc.level Level 1
     //  */
+    /**
+     * @tc.name   builtinsStringPrototypeTest0156
+     * @tc.number builtinsStringPrototypeTest0156
+     * @tc.desc   builtinsStringPrototypeTest0156
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     // it('builtinsStringPrototypeTest0156', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
     //   async (Done: Function) => {
     //     const caseName = "builtinsStringPrototypeTest0156";
@@ -1609,6 +1633,14 @@ export default function builtinsStringPrototypeTest() {
     //  * @tc.type Function
     //  * @tc.level Level 1
     //  */
+    /**
+     * @tc.name   builtinsStringPrototypeTest0157
+     * @tc.number builtinsStringPrototypeTest0157
+     * @tc.desc   builtinsStringPrototypeTest0157
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     // it('builtinsStringPrototypeTest0157', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
     //   async (Done: Function) => {
     //     const caseName = "builtinsStringPrototypeTest0157";
@@ -1638,6 +1670,14 @@ export default function builtinsStringPrototypeTest() {
     //  * @tc.type Function
     //  * @tc.level Level 1
     //  */
+    /**
+     * @tc.name   builtinsStringPrototypeTest0158
+     * @tc.number builtinsStringPrototypeTest0158
+     * @tc.desc   builtinsStringPrototypeTest0158
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     // it('builtinsStringPrototypeTest0158', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
     //   async (Done: Function) => {
     //     const caseName = "builtinsStringPrototypeTest0158";

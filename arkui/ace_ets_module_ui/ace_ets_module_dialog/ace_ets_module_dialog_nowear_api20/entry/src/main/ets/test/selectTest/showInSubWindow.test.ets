@@ -37,12 +37,12 @@ export default function showInSubWindowValueTest() {
     });
 
     /**
-     * @tc.number: showInSubWindow_value_0001
-     * @tc.name  : showInSubWindow_value_0001
-     * @tc.desc  : set showInSubWindow:true,levelUniqueId: Normal value
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   showInSubWindow_value_0001
+     * @tc.number showInSubWindow_value_0001
+     * @tc.desc   set showInSubWindow:true,levelUniqueId: Normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('showInSubWindow_value_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showInSubWindow_value_0001 START');
@@ -54,12 +54,12 @@ export default function showInSubWindowValueTest() {
     });
 
     /**
-     * @tc.number: showInSubWindow_value_0002
-     * @tc.name  : showInSubWindow_value_0002
-     * @tc.desc  : set showInSubWindow:true,levelUniqueId: Normal value
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   showInSubWindow_value_0002
+     * @tc.number showInSubWindow_value_0002
+     * @tc.desc   set showInSubWindow:true,levelUniqueId: Normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('showInSubWindow_value_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showInSubWindow_value_0002 START');
@@ -75,12 +75,12 @@ export default function showInSubWindowValueTest() {
     });
 
     /**
-     * @tc.number: showInSubWindow_value_0003
-     * @tc.name  : showInSubWindow_value_0003
-     * @tc.desc  : set showInSubWindow:undefined,levelUniqueId: Abnormal value
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   showInSubWindow_value_0003
+     * @tc.number showInSubWindow_value_0003
+     * @tc.desc   set showInSubWindow:undefined,levelUniqueId: Abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('showInSubWindow_value_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showInSubWindow_value_0003 START');
@@ -103,12 +103,12 @@ export default function showInSubWindowValueTest() {
     });
 
     /**
-     * @tc.number: showInSubWindow_value_0004
-     * @tc.name  : showInSubWindow_value_0004
-     * @tc.desc  : set showInSubWindow:null,levelUniqueId: Abnormal value
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   showInSubWindow_value_0004
+     * @tc.number showInSubWindow_value_0004
+     * @tc.desc   set showInSubWindow:null,levelUniqueId: Abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('showInSubWindow_value_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showInSubWindow_value_0004 START');

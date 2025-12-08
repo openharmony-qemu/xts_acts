@@ -196,12 +196,12 @@ export default function cameraJSUnitOutput() {
       console.info(TAG + 'afterAll case');
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_GET_CAMERA_MANAGER_CALLBACK_0100
-     * @tc.name      : Create CameraManager instance async api
-     * @tc.desc      : Create CameraManager instance async api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_GET_CAMERA_MANAGER_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_GET_CAMERA_MANAGER_CALLBACK_0100
+     * @tc.desc   Create CameraManager instance async api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_GET_CAMERA_MANAGER_CALLBACK_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_GET_CAMERA_MANAGER_CALLBACK_0100--------------");
@@ -211,12 +211,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_GET_CAMERAS_CALLBACK_0100
-     * @tc.name      : Get camera from cameramanager to get array of camera async api
-     * @tc.desc      : Get camera from cameramanager to get array of camera async api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_GET_CAMERAS_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_GET_CAMERAS_CALLBACK_0100
+     * @tc.desc   Get camera from cameramanager to get array of camera async api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_GET_CAMERAS_CALLBACK_0100', Level.LEVEL1, async () => {
       console.info(TAG + "--------------GET_CAMERAS--------------");
@@ -244,12 +244,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CREATE_CAMERA_OUTPUT_PROMISE_0100
-     * @tc.name      : Create previewOutput instance async api
-     * @tc.desc      : Create previewOutput instance async api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CREATE_CAMERA_INPUT_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CREATE_CAMERA_OUTPUT_PROMISE_0100
+     * @tc.desc   Create previewOutput instance async api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CREATE_CAMERA_INPUT_PROMISE_0100', Level.LEVEL2, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_CREATE_CAMERA_INPUT_PROMISE_0100--------------");
@@ -265,12 +265,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CREATE_PREVIEW_OUTPUT_CALLBACK_0100
-     * @tc.name      : Create previewOutput instance async api
-     * @tc.desc      : Create previewOutput instance async api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CREATE_PREVIEW_OUTPUT_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CREATE_PREVIEW_OUTPUT_CALLBACK_0100
+     * @tc.desc   Create previewOutput instance async api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CREATE_PREVIEW_OUTPUT_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_CREATE_PREVIEW_OUTPUT_CALLBACK_0100--------------");
@@ -293,12 +293,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CREATE_PHOTO_OUTPUT_PROMISE_0100
-     * @tc.name      : Create photoOutput instance async api
-     * @tc.desc      : Create photoOutput instance async api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CREATE_PHOTO_OUTPUT_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CREATE_PHOTO_OUTPUT_PROMISE_0100
+     * @tc.desc   Create photoOutput instance async api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CREATE_PHOTO_OUTPUT_PROMISE_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_CREATE_PHOTO_OUTPUT_PROMISE_0100--------------");
@@ -320,12 +320,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CREATE_VIDEO_OUTPUT_CALLBACK_0100
-     * @tc.name      : Create videoOutput instance api
-     * @tc.desc      : Create videoOutput instance api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CREATE_VIDEO_OUTPUT_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CREATE_VIDEO_OUTPUT_CALLBACK_0100
+     * @tc.desc   Create videoOutput instance api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CREATE_VIDEO_OUTPUT_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_CREATE_VIDEO_OUTPUT_CALLBACK_0100--------------");
@@ -345,12 +345,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CREATE_METADATA_OUTPUT_CALLBACK_0100
-     * @tc.name      : Create metadataOutput instance api
-     * @tc.desc      : Create metadataOutput instance api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CREATE_METADATA_OUTPUT_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CREATE_METADATA_OUTPUT_CALLBACK_0100
+     * @tc.desc   Create metadataOutput instance api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CREATE_METADATA_OUTPUT_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_CREATE_METADATA_OUTPUT_CALLBACK_0100--------------");
@@ -372,12 +372,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CREATE_CAPTURE_SESSION_CALLBACK_0100
-     * @tc.name      : Create CaptureSession instance api
-     * @tc.desc      : Create CaptureSession instance api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CREATE_CAPTURE_SESSION_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CREATE_CAPTURE_SESSION_CALLBACK_0100
+     * @tc.desc   Create CaptureSession instance api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CREATE_CAPTURE_SESSION_0100', Level.LEVEL1, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CREATE_CAPTURE_SESSION_CALLBACK_0100--------------");
@@ -395,12 +395,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_BEGIN_CONFIG_CALLBACK_0100
-     * @tc.name      : captureSession beginConfig
-     * @tc.desc      : captureSession beginConfig
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_BEGIN_CONFIG_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_BEGIN_CONFIG_CALLBACK_0100
+     * @tc.desc   captureSession beginConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_BEGIN_CONFIG_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_BEGIN_CONFIG_CALLBACK_0100--------------");
@@ -411,12 +411,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_INPUT_CALLBACK_0100
-     * @tc.name      : captureSession addInput
-     * @tc.desc      : captureSession addInput
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_INPUT_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_INPUT_CALLBACK_0100
+     * @tc.desc   captureSession addInput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_INPUT_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_INPUT_CALLBACK_0100--------------");
@@ -427,12 +427,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_PREVIEW_OUTPUT_CALLBACK_0100
-     * @tc.name      : captureSession add previewOutput
-     * @tc.desc      : captureSession add previewOutput
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_PREVIEW_OUTPUT_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_PREVIEW_OUTPUT_CALLBACK_0100
+     * @tc.desc   captureSession add previewOutput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_PREVIEW_OUTPUT_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_PREVIEW_OUTPUT_0100--------------");
@@ -444,12 +444,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_PHOTO_OUTPUT_CALLBACK_0100
-     * @tc.name      : captureSession add photoOutput
-     * @tc.desc      : captureSession add photoOutput
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_PHOTO_OUTPUT_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_PHOTO_OUTPUT_CALLBACK_0100
+     * @tc.desc   captureSession add photoOutput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_PHOTO_OUTPUT_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_PHOTO_OUTPUT_CALLBACK_0100--------------");
@@ -461,12 +461,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_VIDEO_OUTPUT_CALLBACK_0100
-     * @tc.name      : captureSession remove photoOutput
-     * @tc.desc      : captureSession remove photoOutput
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_VIDEO_OUTPUT_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_VIDEO_OUTPUT_CALLBACK_0100
+     * @tc.desc   captureSession remove photoOutput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_VIDEO_OUTPUT_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_VIDEO_OUTPUT_CALLBACK_0100--------------");
@@ -478,12 +478,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_COMMIT_CONFIG_CALLBACK_0100
-     * @tc.name      : captureSession commitConfig
-     * @tc.desc      : captureSession commitConfig
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_COMMIT_CONFIG_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_COMMIT_CONFIG_CALLBACK_0100
+     * @tc.desc   captureSession commitConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_COMMIT_CONFIG_CALLBACK_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_COMMIT_CONFIG_CALLBACK_0100--------------");
@@ -494,12 +494,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_START_PREVIEW_OUTPUT_PROMISE_0100
-     * @tc.name      : Create previewOutput instance promise api
-     * @tc.desc      : Create previewOutput instance promise api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_START_PREVIEW_OUTPUT_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_START_PREVIEW_OUTPUT_PROMISE_0100
+     * @tc.desc   Create previewOutput instance promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_START_PREVIEW_OUTPUT_PROMISE_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_START_PREVIEW_OUTPUT_PROMISE_0100--------------");
@@ -510,12 +510,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_STOP_PREVIEW_OUTPUT_PROMISE_0100
-     * @tc.name      : Create previewOutput instance promise api
-     * @tc.desc      : Create previewOutput instance promise api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_STOP_PREVIEW_OUTPUT_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_STOP_PREVIEW_OUTPUT_PROMISE_0100
+     * @tc.desc   Create previewOutput instance promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_STOP_PREVIEW_OUTPUT_PROMISE_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_STOP_PREVIEW_OUTPUT_PROMISE_0100--------------");
@@ -526,12 +526,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_VIDEO_OUTPUT_START_PROMISE_0100
-     * @tc.name      : videoOutput start promise api
-     * @tc.desc      : videoOutput start promise api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_VIDEO_OUTPUT_START_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_VIDEO_OUTPUT_START_PROMISE_0100
+     * @tc.desc   videoOutput start promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_VIDEO_OUTPUT_START_PROMISE_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_VIDEO_OUTPUT_START_PROMISE_0100--------------");
@@ -542,12 +542,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_VIDEO_OUTPUT_STOP_PROMISE_0100
-     * @tc.name      : videoOutput stop promise api
-     * @tc.desc      : videoOutput stop promise api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_VIDEO_OUTPUT_STOP_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_VIDEO_OUTPUT_STOP_PROMISE_0100
+     * @tc.desc   videoOutput stop promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_VIDEO_OUTPUT_STOP_PROMISE_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_VIDEO_OUTPUT_STOP_PROMISE_0100--------------");
@@ -558,12 +558,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_VIDEO_OUTPUT_UNREGISTER_CALLBACK_PROMISE_0100
-     * @tc.name      : unregister callback stop promise api
-     * @tc.desc      : unregister callback promise api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_VIDEO_OUTPUT_UNREGISTER_CALLBACK_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_VIDEO_OUTPUT_UNREGISTER_CALLBACK_PROMISE_0100
+     * @tc.desc   unregister callback promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_VIDEO_OUTPUT_UNREGISTER_CALLBACK_PROMISE_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_VIDEO_OUTPUT_UNREGISTER_CALLBACK_PROMISE_0100--------------");
@@ -574,12 +574,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_START_0100
-     * @tc.name      : preview output callback on frameStart api
-     * @tc.desc      : preview output callback on frameStart api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_START_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_START_0100
+     * @tc.desc   preview output callback on frameStart api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_START_0100', Level.LEVEL1, async () => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_START_0100--------------");
@@ -592,12 +592,12 @@ export default function cameraJSUnitOutput() {
       cameraObj.previewOutputStop();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_END_0100
-     * @tc.name      : preview output callback on frameEnd api
-     * @tc.desc      : preview output callback on frameEnd api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_END_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_END_0100
+     * @tc.desc   preview output callback on frameEnd api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_END_0100', Level.LEVEL1, async () => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_END_0100--------------");
@@ -610,12 +610,12 @@ export default function cameraJSUnitOutput() {
       cameraObj.previewOutputStop();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_CALLBACK_ON_ERROR_0100
-     * @tc.name      : preview output callback on frameEnd api
-     * @tc.desc      : preview output callback on frameEnd api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_CALLBACK_ON_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_CALLBACK_ON_ERROR_0100
+     * @tc.desc   preview output callback on frameEnd api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_CALLBACK_ON_ERROR_0100', Level.LEVEL1, async () => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_CALLBACK_ON_ERROR_0100--------------");
@@ -628,12 +628,12 @@ export default function cameraJSUnitOutput() {
       cameraObj.previewOutputStop();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_UNREGISTER_CALLBACK_0100
-     * @tc.name      : preview output callback api
-     * @tc.desc      : preview output callback api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_UNREGISTER_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_UNREGISTER_CALLBACK_0100
+     * @tc.desc   preview output callback api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_UNREGISTER_CALLBACK_0100', Level.LEVEL1, async () => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_NDK_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_START_0100--------------");
@@ -647,12 +647,12 @@ export default function cameraJSUnitOutput() {
       cameraObj.previewOutputRelease();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CAPTURE_DEFAULT_PROMISE_0100
-     * @tc.name      : photoOutput capture with promise mode
-     * @tc.desc      : photoOutput capture with promise mode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CAPTURE_DEFAULT_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CAPTURE_DEFAULT_PROMISE_0100
+     * @tc.desc   photoOutput capture with promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CAPTURE_DEFAULT_PROMISE_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CAPTURE_DEFAULT_PROMISE_0100--------------");
@@ -666,12 +666,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_START_0100
-     * @tc.name      : photo output callback on captureStart
-     * @tc.desc      : photo output callback on captureStart
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_START_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_START_0100
+     * @tc.desc   photo output callback on captureStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_START_0100', Level.LEVEL1, async () => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_START_0100--------------");
@@ -692,12 +692,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_FRAME_SHUTTER_0100
-     * @tc.name      : photo output callback on frameShutter
-     * @tc.desc      : photo output callback on frameShutter
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_FRAME_SHUTTER_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_FRAME_SHUTTER_0100
+     * @tc.desc   photo output callback on frameShutter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_FRAME_SHUTTER_0100', Level.LEVEL1, async () => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_FRAME_SHUTTER_0100--------------");
@@ -718,12 +718,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_END_0100
-     * @tc.name      : photo output callback on captureEnd
-     * @tc.desc      : photo output callback on captureEnd
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_END_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_END_0100
+     * @tc.desc   photo output callback on captureEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_END_0100', Level.LEVEL1, async () => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_END_0100--------------");
@@ -744,12 +744,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_ERROR_0100
-     * @tc.name      : photo output callback on error
-     * @tc.desc      : photo output callback on error
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_ERROR_0100
+     * @tc.desc   photo output callback on error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_ERROR_0100', Level.LEVEL1, async () => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_CALLBACK_ON_ERROR_0100--------------");
@@ -770,12 +770,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_RELEASE_CALLBACK_0100
-     * @tc.name      : PhotoOutputRelease instance async api
-     * @tc.desc      : PhotoOutputRelease instance async api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_RELEASE_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_RELEASE_CALLBACK_0100
+     * @tc.desc   PhotoOutputRelease instance async api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_RELEASE_CALLBACK_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_OUTPUT_RELEASE_CALLBACK_0100--------------");
@@ -786,12 +786,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_START_METADATA_OUTPUT_PROMISE_0100
-     * @tc.name      : Start metadataOutput sync api
-     * @tc.desc      : Start metadataOutput sync api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_START_METADATA_OUTPUT_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_START_METADATA_OUTPUT_PROMISE_0100
+     * @tc.desc   Start metadataOutput sync api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_START_METADATA_OUTPUT_PROMISE_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_START_METADATA_OUTPUT_PROMISE_0100--------------");
@@ -805,12 +805,12 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_STOP_METADATA_OUTPUT_PROMISE_0100
-     * @tc.name      : Stop metadataOutput sync api
-     * @tc.desc      : Stop metadataOutput aync api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_STOP_METADATA_OUTPUT_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_STOP_METADATA_OUTPUT_PROMISE_0100
+     * @tc.desc   Stop metadataOutput aync api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_STOP_METADATA_OUTPUT_PROMISE_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_STOP_METADATA_OUTPUT_PROMISE_0100--------------");

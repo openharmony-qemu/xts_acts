@@ -58,42 +58,42 @@ export default function WebViewEnumAndFontLibraryTwo() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_PROTECTEDRESOURCETYPE_0100
-    * @tc.name       : testProtectedResourceType001
-    * @tc.desc       : test ProtectedResourceType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testProtectedResourceType001
+     * @tc.number SUB_WEB_PROTECTEDRESOURCETYPE_0100
+     * @tc.desc   test ProtectedResourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testProtectedResourceType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitProtectedResourceType", 160890)
       Utils.registerEvent("testProtectedResourceType001", 'TYPE_VIDEO_CAPTURE,TYPE_AUDIO_CAPTURE', 160900, done);
       await Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_PERMISSIONREQUESTGETORIGIN_0100
-    * @tc.name       : testPermissionRequestGetOrigin001
-    * @tc.desc       : test PermissionRequestGetOrigin
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testPermissionRequestGetOrigin001
+     * @tc.number SUB_WEB_PERMISSIONREQUESTGETORIGIN_0100
+     * @tc.desc   test PermissionRequestGetOrigin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testPermissionRequestGetOrigin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnPermissionRequestGetOrigin", 160890)
       Utils.registerEvent("PermissionRequestGetOrigin", 'resource://rawfile/', 160910, done);
       await Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_PERMISSIONREQUEST_0100
-    * @tc.name       : testPermissionRequest001
-    * @tc.desc       : test PermissionRequest
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testPermissionRequest001
+     * @tc.number SUB_WEB_PERMISSIONREQUEST_0100
+     * @tc.desc   test PermissionRequest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testPermissionRequest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnPermissionRequest", 160890)
       Utils.registerEvent("testPermissionRequest001", true, 160920, done);

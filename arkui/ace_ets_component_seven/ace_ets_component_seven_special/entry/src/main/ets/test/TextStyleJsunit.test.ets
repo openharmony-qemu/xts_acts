@@ -39,12 +39,12 @@ export default function textStyleJsunit() {
     });
 
     /**
+     * @tc.name   testTextStyle001
      * @tc.number testTextStyle001
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextStyle001', Level.LEVEL0, async (done: Function) => {
       console.info('[testTextStyle001] START');
@@ -58,12 +58,12 @@ export default function textStyleJsunit() {
     });
 
     /**
+     * @tc.name   testTextStyle002
      * @tc.number testTextStyle002
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextStyle002', Level.LEVEL0, async (done: Function) => {
       console.info('[testTextStyle002] START');
@@ -77,12 +77,12 @@ export default function textStyleJsunit() {
     });
 
     /**
+     * @tc.name   testTextStyle003
      * @tc.number testTextStyle003
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextStyle003', Level.LEVEL0, async (done: Function) => {
       console.info('[testTextStyle003] START');
@@ -96,12 +96,12 @@ export default function textStyleJsunit() {
     });
 
     /**
+     * @tc.name   testTextStyle004
      * @tc.number testTextStyle004
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextStyle004', Level.LEVEL0, async (done: Function) => {
       console.info('[testTextStyle001] START');
@@ -115,13 +115,13 @@ export default function textStyleJsunit() {
     });
 
      /**
-     * @tc.number testTextStyle005
-     * @tc.name   Test the properties of components
-     * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
-     */
+      * @tc.name   testTextStyle005
+      * @tc.number testTextStyle005
+      * @tc.desc   Set attribute values
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('testTextStyle005', Level.LEVEL0, async (done: Function) => {
       console.info('[testTextStyle005] START');
       await Utils.sleep(1000);

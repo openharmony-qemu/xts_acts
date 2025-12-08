@@ -53,13 +53,15 @@ export default function AlignContent_Center_FlexP_Fixed_Margin() {
       console.info("AlignContent_Center_FlexP_Fixed_Margin after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_CENTER_1100
-     * @tc.name testAlignContentCenterFlexfixedMarginSatisfy
-     * @tc.desc Set the AlignContent property of the Flex component to FlexAlign.Center, and set the margin for
-     *               the subcomponents to meet the height requirements of the flex container
-     */
 
+    /**
+     * @tc.name   testAlignContentCenterFlexfixedMarginSatisfy
+     * @tc.number testAlignContentCenterFlexfixedMarginSatisfy
+     * @tc.desc   testAlignContentCenterFlexfixedMarginSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentCenterFlexfixedMarginSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexfixedMarginSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -114,13 +116,15 @@ export default function AlignContent_Center_FlexP_Fixed_Margin() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_CENTER_1200
-     * @tc.name testAlignContentCenterFlexfixedMarginNoSatisfy
-     * @tc.desc Set the AlignContent property of the Flex component to FlexAlign.Center, and set the margin for
-     *               the subcomponents to prevent the flex container from meeting the height requirements.
-     */
 
+    /**
+     * @tc.name   testAlignContentCenterFlexfixedMarginNoSatisfy
+     * @tc.number testAlignContentCenterFlexfixedMarginNoSatisfy
+     * @tc.desc   testAlignContentCenterFlexfixedMarginNoSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentCenterFlexfixedMarginNoSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexfixedMarginNoSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

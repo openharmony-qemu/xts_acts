@@ -68,12 +68,12 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
+         * @tc.name   createA2dpSrcProfileTest
          * @tc.number createA2dpSrcProfileTest
-         * @tc.name createA2dpSrcProfileTest
-         * @tc.desc Test createA2dpSrcProfileTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test createA2dpSrcProfileTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("createA2dpSrcProfileTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -93,12 +93,12 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
+         * @tc.name   createHfpAgProfileTest
          * @tc.number createHfpAgProfileTest
-         * @tc.name createHfpAgProfileTest
-         * @tc.desc Test createHfpAgProfileTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test createHfpAgProfileTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("createHfpAgProfileTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -118,12 +118,12 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
+         * @tc.name   createHidHostProfileTest
          * @tc.number createHidHostProfileTest
-         * @tc.name createHidHostProfileTest
-         * @tc.desc Test createHidHostProfileTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test createHidHostProfileTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("createHidHostProfileTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -143,12 +143,12 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
+         * @tc.name   connectionStateChangeTest
          * @tc.number connectionStateChangeTest
-         * @tc.name connectionStateChangeTest
-         * @tc.desc Test connectionStateChangeTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test connectionStateChangeTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("connectionStateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: baseProfile.StateChangeParam) => void = (changeInfo: baseProfile.StateChangeParam) => {
@@ -158,9 +158,9 @@ export default function bluetoothProfilesTest() {
             }
 
             try{
-                a2dp.createA2dpSrcProfile().on('connectionStateChange', onReceiveEvent);
-                hfp.createHfpAgProfile().on('connectionStateChange', onReceiveEvent);
-                hid.createHidHostProfile().on('connectionStateChange', onReceiveEvent);
+                a2dp.createA2dpSrcProfile().onConnectionStateChange(onReceiveEvent);
+                hfp.createHfpAgProfile().onConnectionStateChange(onReceiveEvent);
+                hid.createHidHostProfile().onConnectionStateChange(onReceiveEvent);
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "connectionStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -172,9 +172,9 @@ export default function bluetoothProfilesTest() {
             }
             await Utils.msSleep(1000);
             try{
-                a2dp.createA2dpSrcProfile().off('connectionStateChange', onReceiveEvent);
-                hfp.createHfpAgProfile().off('connectionStateChange', onReceiveEvent);
-                hid.createHidHostProfile().off('connectionStateChange', onReceiveEvent);
+                a2dp.createA2dpSrcProfile().offConnectionStateChange(onReceiveEvent);
+                hfp.createHfpAgProfile().offConnectionStateChange(onReceiveEvent);
+                hid.createHidHostProfile().offConnectionStateChange(onReceiveEvent);
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "connectionStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -188,12 +188,12 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
+         * @tc.name   connectionStateChangeTest2
          * @tc.number connectionStateChangeTest2
-         * @tc.name connectionStateChangeTest2
-         * @tc.desc Test connectionStateChangeTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test connectionStateChangeTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("connectionStateChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let onReceiveEvent:(changeInfo: baseProfile.StateChangeParam) => void = (changeInfo: baseProfile.StateChangeParam) => {
@@ -201,9 +201,9 @@ export default function bluetoothProfilesTest() {
             }
 
             try{
-                a2dp.createA2dpSrcProfile().on('connectionStateChange', onReceiveEvent);
-                hfp.createHfpAgProfile().on('connectionStateChange', onReceiveEvent);
-                hid.createHidHostProfile().on('connectionStateChange', onReceiveEvent);
+                a2dp.createA2dpSrcProfile().onConnectionStateChange(onReceiveEvent);
+                hfp.createHfpAgProfile().onConnectionStateChange(onReceiveEvent);
+                hid.createHidHostProfile().onConnectionStateChange(onReceiveEvent);
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "connectionStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -215,9 +215,9 @@ export default function bluetoothProfilesTest() {
             }
             await Utils.msSleep(1000);
             try{
-                a2dp.createA2dpSrcProfile().off('connectionStateChange');
-                hfp.createHfpAgProfile().off('connectionStateChange');
-                hid.createHidHostProfile().off('connectionStateChange');
+                a2dp.createA2dpSrcProfile().offConnectionStateChange();
+                hfp.createHfpAgProfile().offConnectionStateChange();
+                hid.createHidHostProfile().offConnectionStateChange();
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "connectionStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -229,5 +229,6 @@ export default function bluetoothProfilesTest() {
             }
             done();
         })
+
     })
 }

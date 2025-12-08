@@ -43,12 +43,12 @@ export default function TextMaxLines() {
     });
 
     /**
-     * @tc.number: TextMaxLines_0010
-     * @tc.name  : TextMaxLines_0010
-     * @tc.desc  : set Text: TextMaxLines
-     * @tc.level : Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextMaxLines_0010
+     * @tc.number TextMaxLines_0010
+     * @tc.desc   set Text: TextMaxLines
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextMaxLines_0010',  Level.LEVEL0, async (done: Function) => {
       console.info('TextMaxLines_0010 START');
@@ -58,13 +58,13 @@ export default function TextMaxLines() {
       done();
     });
 	
-	/**
-     * @tc.number: TextLineHeight_0020
-     * @tc.name  : TextLineHeight_0020
-     * @tc.desc  : set Text: TextLineHeight
-     * @tc.level : Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   TextLineHeight_0020
+     * @tc.number TextLineHeight_0020
+     * @tc.desc   set Text: TextLineHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextLineHeight_0020',  Level.LEVEL0, async (done: Function) => {
       console.info('TextLineHeight_0020 START');
@@ -74,13 +74,13 @@ export default function TextMaxLines() {
       done();
     });
 	
-	/**
-     * @tc.number: TextBaselineOffset_0030
-     * @tc.name  : TextBaselineOffset_0030
-     * @tc.desc  : set Text: TextBaselineOffset
-     * @tc.level : Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   TextBaselineOffset_0030
+     * @tc.number TextBaselineOffset_0030
+     * @tc.desc   set Text: TextBaselineOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextBaselineOffset_0030',  Level.LEVEL0, async (done: Function) => {
       console.info('TextBaselineOffset_0030 START');
@@ -90,13 +90,13 @@ export default function TextMaxLines() {
       done();
     });
 	
-	/**
-     * @tc.number: TextFontStyle_0040
-     * @tc.name  : TextFontStyle_0040
-     * @tc.desc  : set Text: TextFontStyle
-     * @tc.level : Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   TextFontStyle_0040
+     * @tc.number TextFontStyle_0040
+     * @tc.desc   set Text: TextFontStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextFontStyle_0040',  Level.LEVEL0, async (done: Function) => {
       console.info('TextFontStyle_0040 START');
@@ -107,12 +107,12 @@ export default function TextMaxLines() {
     });
 
     /**
-     * @tc.number: TextLetterSpacing_0050
-     * @tc.name  : TextLetterSpacing_0050
-     * @tc.desc  : set Text: TextLetterSpacing
-     * @tc.level : Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextLetterSpacing_0050
+     * @tc.number TextLetterSpacing_0050
+     * @tc.desc   set Text: TextLetterSpacing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextLetterSpacing_0050',  Level.LEVEL0, async (done: Function) => {
       console.info('TextLetterSpacing_0050 START');
@@ -123,12 +123,12 @@ export default function TextMaxLines() {
     });
 
     /**
-     * @tc.number: TextTextAlign_0060
-     * @tc.name  : TextTextAlign_0060
-     * @tc.desc  : set Text: TextTextAlign
-     * @tc.level : Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextTextAlign_0060
+     * @tc.number TextTextAlign_0060
+     * @tc.desc   set Text: TextTextAlign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextTextAlign_0060',  Level.LEVEL0, async (done: Function) => {
       console.info('TextTextAlign_0060 START');
@@ -139,12 +139,12 @@ export default function TextMaxLines() {
     });
 
     /**
-     * @tc.number: TextConstraintSize_0070
-     * @tc.name  : TextConstraintSize_0070
-     * @tc.desc  : set Text: TextConstraintSize
-     * @tc.level : Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextConstraintSize_0070
+     * @tc.number TextConstraintSize_0070
+     * @tc.desc   set Text: TextConstraintSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextConstraintSize_0070',  Level.LEVEL0, async (done: Function) => {
       console.info('TextConstraintSize_0070 START');
@@ -155,12 +155,12 @@ export default function TextMaxLines() {
     });
 
     /**
-     * @tc.number: TextConstraintSize_0080
-     * @tc.name  : TextConstraintSize_0080
-     * @tc.desc  : set Text: TextConstraintSize
-     * @tc.level : Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextConstraintSize_0080
+     * @tc.number TextConstraintSize_0080
+     * @tc.desc   set Text: TextConstraintSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextConstraintSize_0080',  Level.LEVEL0, async (done: Function) => {
       console.info('TextConstraintSize_0080 START');
@@ -171,12 +171,12 @@ export default function TextMaxLines() {
     });
 
     /**
-     * @tc.number: TextConstraintSize_0090
-     * @tc.name  : TextConstraintSize_0090
-     * @tc.desc  : set Text: TextConstraintSize
-     * @tc.level : Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextConstraintSize_0090
+     * @tc.number TextConstraintSize_0090
+     * @tc.desc   set Text: TextConstraintSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextConstraintSize_0090',  Level.LEVEL0, async (done: Function) => {
       console.info('TextConstraintSize_0090 START');

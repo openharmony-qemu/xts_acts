@@ -37,3 +37,5 @@ export const SUB_IMF_NDK_InputMethodProxy_ShowTextInput_NONE: () => string;
 export const SUB_IMF_NDK_InputMethodProxy_ShowTextInput_MOUSE: () => string;
 export const SUB_IMF_NDK_InputMethodProxy_ShowTextInput_TOUCH: () => string;
 export const SUB_IMF_NDK_InputMethodProxy_ShowTextInput_OTHER: () => string;
+export const SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100: () => string;
+export const SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200: () => string;

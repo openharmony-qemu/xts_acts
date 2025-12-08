@@ -57,14 +57,14 @@ export default function webOptions() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBOPTIONS_SRC_0100
-    * @tc.name        : testWebOptionsSrc001
-    * @tc.desc        : test WebOptions.src with rawfile
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testWebOptionsSrc001
+     * @tc.number SUB_WEB_WEBOPTIONS_SRC_0100
+     * @tc.desc   test WebOptions.src with rawfile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebOptionsSrc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitWebOptions001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -75,14 +75,14 @@ export default function webOptions() {
       }
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBOPTIONS_SRC_0200
-    * @tc.name        : testWebOptionsSrc002
-    * @tc.desc        : test WebOptions.src with resource
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testWebOptionsSrc002
+     * @tc.number SUB_WEB_WEBOPTIONS_SRC_0200
+     * @tc.desc   test WebOptions.src with resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebOptionsSrc002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitWebOptions002", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -93,14 +93,14 @@ export default function webOptions() {
       }
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBOPTIONS_SRC_0300
-    * @tc.name        : testWebOptionsSrc003
-    * @tc.desc        : test WebOptions.src with url
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testWebOptionsSrc003
+     * @tc.number SUB_WEB_WEBOPTIONS_SRC_0300
+     * @tc.desc   test WebOptions.src with url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebOptionsSrc003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitWebOptions003", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;

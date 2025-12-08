@@ -57,9 +57,12 @@ export default function columnJsunit() {
     });
 
     /**
+     * @tc.name   testColumn010
      * @tc.number SUB_ACE_BASIC_ETS_API_0670
-     * @tc.name testColumn010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumn010',  Level.LEVEL0, async (done: Function) => {
       console.info('new Column0 START');
@@ -75,9 +78,12 @@ export default function columnJsunit() {
     });
 
     /**
+     * @tc.name   testColumn020
      * @tc.number SUB_ACE_BASIC_ETS_API_0680
-     * @tc.name testColumn020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumn020',  Level.LEVEL0, async (done: Function) => {
       console.info('new Column1 START');
@@ -91,9 +97,12 @@ export default function columnJsunit() {
     });
 
     /**
+     * @tc.name   testColumn030
      * @tc.number SUB_ACE_BASIC_ETS_API_0690
-     * @tc.name testColumn030
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumn030',  Level.LEVEL0, async (done: Function) => {
       console.info('new Column2 START');

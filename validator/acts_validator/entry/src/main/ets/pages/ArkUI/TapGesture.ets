@@ -42,9 +42,9 @@ struct TapGestureExample {
               .height('60%')
               .width('60%')
           }
-          .height('350vp')
-          .width('350vp')
-          .padding(20)
+          .height('35%')
+          .width('90%')
+          .padding('5%')
           .gesture(
             TapGesture({ count: 2 })
               .onAction(() => {
@@ -54,13 +54,14 @@ struct TapGestureExample {
           )
 
           Text(this.value)
+            .fontColor(Color.Black)
         }
       }
-      .scrollBarWidth('6vp')
+      .scrollBarWidth('3%')
       .scrollBarColor('#cccccc')
     }
-    .width('100%')
     .height('80%')
+    .width('100%')
     .backgroundColor(Color.White)
     .justifyContent(FlexAlign.SpaceEvenly)
   }
@@ -72,10 +73,10 @@ struct TapGestureExample {
         StepTips: this.StepTips,
         Url: 'pages/ArkUI/ArkUI_index',
         content: this.specificNoParam,
-        value: $value,
+        value:$value,
         name: $name,
-        Vue: $Vue,
-      }).margin({ bottom: '20vp' })
+        Vue:$Vue,
+      })
     }
     .width('100%')
     .height('100%')

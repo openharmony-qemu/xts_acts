@@ -31,14 +31,12 @@ export default function fscreateReadStream() {
     hilog.info(domain, tag, '%{public}s', 'fileIO_fs_create_stream start');
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_static_007
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_0700
-     * @tc.name fileIO_test_create_ReadStream_static_007
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * Invalid argument.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_create_ReadStream_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       try {
@@ -51,14 +49,12 @@ export default function fscreateReadStream() {
     })
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_static_008
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_0800
-     * @tc.name fileIO_test_create_ReadStream_static_008
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * No such file or directory.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_create_ReadStream_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_ReadStream_static_008');
@@ -74,14 +70,12 @@ export default function fscreateReadStream() {
     })
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_static_009
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_0900
-     * @tc.name fileIO_test_create_ReadStream_static_009
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * Invalid argument,createWriteStream
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_create_ReadStream_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       try {
@@ -94,14 +88,12 @@ export default function fscreateReadStream() {
     })
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_static_010
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1000
-     * @tc.name fileIO_test_create_ReadStream_static_010
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * ReadStream reads files.bytesRead
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_create_ReadStream_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_ReadStream_static_010');
@@ -120,14 +112,12 @@ export default function fscreateReadStream() {
     })
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_static_011
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1100
-     * @tc.name fileIO_test_create_ReadStream_static_011
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * ReadStream reads files.Seek
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_create_ReadStream_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_ReadStream_static_011');
@@ -145,14 +135,12 @@ export default function fscreateReadStream() {
     })
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_static_012
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1200
-     * @tc.name fileIO_test_create_ReadStream_static_012
-     * @tc.desc Test the createWriteStream() interface of class Stream.
-     * ReadStream reads files.bytesWritten, path
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createWriteStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_create_ReadStream_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_ReadStream_static_012');
@@ -171,14 +159,12 @@ export default function fscreateReadStream() {
     })
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_static_013
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1300
-     * @tc.name fileIO_test_create_ReadStream_static_013
-     * @tc.desc Test the createWriteStream() interface of class Stream.
-     * ReadStream reads files.Seek
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createWriteStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
         let fpath = await Utils.nextFileName('fileIO_test_create_ReadStream_static_013');
@@ -197,14 +183,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_static_014
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1400
-     * @tc.name fileIO_test_create_ReadStream_static_014
-     * @tc.desc Test the createWriteStream() interface of class Stream.
-     * ReadStream reads files.Seek
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createWriteStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_ReadStream_static_014');
@@ -223,14 +207,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_static_015
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1500
-     * @tc.name fileIO_test_create_ReadStream_static_015
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * Copy files on Stream and use close to release resources at the end, start=0.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_ReadStream_static_015');
@@ -272,14 +254,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_static_016
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1600
-     * @tc.name fileIO_test_create_ReadStream_static_016
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * Copy files on Stream and use close to release resources at the end, mode=0.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_ReadStream_static_016');
@@ -319,14 +299,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_static_017
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1700
-     * @tc.name fileIO_test_create_ReadStream_static_017
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * ReadStream reads files.Seek
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_create_ReadStream_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_create_ReadStream_static_017');

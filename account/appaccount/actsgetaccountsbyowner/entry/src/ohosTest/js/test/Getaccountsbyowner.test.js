@@ -43,11 +43,14 @@ export default function GetAccountsByOwner() {
             );
         });
 
-        /*
-        * @tc.number    : GetAccountsByOwner_0100
-        * @tc.name      : getAccountsByOwner callback
-        * @tc.desc      : This application gets its own application information after adding an account
-        */
+        /**
+         * @tc.name   GetAccountsByOwner_0100
+         * @tc.number GetAccountsByOwner_0100
+         * @tc.desc   This application gets its own application information after adding an account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('GetAccountsByOwner_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>GetAccountsByOwner_0100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -78,11 +81,14 @@ export default function GetAccountsByOwner() {
             });
         });
 
-        /*
-        * @tc.number    : GetAccountsByOwner_0200
-        * @tc.name      : getAccountsByOwner promise
-        * @tc.desc      : This application gets its own application information after adding an account
-        */
+        /**
+         * @tc.name   GetAccountsByOwner_0200
+         * @tc.number GetAccountsByOwner_0200
+         * @tc.desc   This application gets its own application information after adding an account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('GetAccountsByOwner_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>GetAccountsByOwner_0200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -128,12 +134,14 @@ export default function GetAccountsByOwner() {
             done();
         });
 
-        /*
-        * @tc.number    : GetAccountsByOwner_0300
-        * @tc.name      : getAccountsByOwner callback
-        * @tc.desc      : No account has been added to this application and it is not authorized by other applications to
-        *                 obtain account information for this application
-        */
+        /**
+         * @tc.name   GetAccountsByOwner_0300
+         * @tc.number GetAccountsByOwner_0300
+         * @tc.desc   No account has been added to this application and it is not authorized by other applications to
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('GetAccountsByOwner_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>GetAccountsByOwner_0300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -148,12 +156,14 @@ export default function GetAccountsByOwner() {
             })
         });
 
-        /*
-        * @tc.number    : GetAccountsByOwner_0400
-        * @tc.name      : getAccountsByOwner promise
-        * @tc.desc      : No account has been added to this application and it is not authorized by other applications to
-        *                 obtain account information for this application
-        */
+        /**
+         * @tc.name   GetAccountsByOwner_0400
+         * @tc.number GetAccountsByOwner_0400
+         * @tc.desc   No account has been added to this application and it is not authorized by other applications to
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('GetAccountsByOwner_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>GetAccountsByOwner_0400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -180,11 +190,14 @@ export default function GetAccountsByOwner() {
             done();
         });
 
-        /*
-        * @tc.number    : GetAccountsByOwner_0500
-        * @tc.name      : getAccountsByOwner callback
-        * @tc.desc      : The parameter owner is an empty string
-        */
+        /**
+         * @tc.name   GetAccountsByOwner_0500
+         * @tc.number GetAccountsByOwner_0500
+         * @tc.desc   The parameter owner is an empty string
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('GetAccountsByOwner_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>GetAccountsByOwner_0500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -198,11 +211,14 @@ export default function GetAccountsByOwner() {
             })
         });
 
-        /*
-        * @tc.number    : GetAccountsByOwner_0600
-        * @tc.name      : getAccountsByOwner promise
-        * @tc.desc      : The parameter owner is an empty string
-        */
+        /**
+         * @tc.name   GetAccountsByOwner_0600
+         * @tc.number GetAccountsByOwner_0600
+         * @tc.desc   The parameter owner is an empty string
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('GetAccountsByOwner_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>GetAccountsByOwner_0600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -219,11 +235,14 @@ export default function GetAccountsByOwner() {
             }
         });
 
-        /*
-        * @tc.number    : GetAccountsByOwner_0700
-        * @tc.name      : getAccountsByOwner callback
-        * @tc.desc      : The parameter owner is a string that exceeds the length limit
-        */
+        /**
+         * @tc.name   GetAccountsByOwner_0700
+         * @tc.number GetAccountsByOwner_0700
+         * @tc.desc   The parameter owner is a string that exceeds the length limit
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('GetAccountsByOwner_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>GetAccountsByOwner_0700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -240,11 +259,14 @@ export default function GetAccountsByOwner() {
             })
         });
 
-        /*
-        * @tc.number    : GetAccountsByOwner_0800
-        * @tc.name      : getAccountsByOwner promise
-        * @tc.desc      : The parameter owner is a string that exceeds the length limit
-        */
+        /**
+         * @tc.name   GetAccountsByOwner_0800
+         * @tc.number GetAccountsByOwner_0800
+         * @tc.desc   The parameter owner is a string that exceeds the length limit
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('GetAccountsByOwner_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>GetAccountsByOwner_0800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -264,12 +286,14 @@ export default function GetAccountsByOwner() {
             }
         });
 
-        /*
-        * @tc.number    : GetAccountsByOwner_0900
-        * @tc.name      : getAccountsByOwner callback
-        * @tc.desc      : This application adds an account, and after other applications authorize an account to this
-        *                 application, this application obtains the information of its own application
-        */
+        /**
+         * @tc.name   GetAccountsByOwner_0900
+         * @tc.number GetAccountsByOwner_0900
+         * @tc.desc   This application adds an account, and after other applications authorize an account to this
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('GetAccountsByOwner_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>GetAccountsByOwner_0900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -293,12 +317,14 @@ export default function GetAccountsByOwner() {
             appAccountManager.getAccountsByOwner(SELFBUNDLE, getAllCallback);
         });
 
-        /*
-        * @tc.number    : GetAccountsByOwner_1000
-        * @tc.name      : getAccountsByOwner promise
-        * @tc.desc      : This application adds an account, and after other applications authorize an account to this
-        *                 application, this application obtains the information of its own application
-        */
+        /**
+         * @tc.name   GetAccountsByOwner_1000
+         * @tc.number GetAccountsByOwner_1000
+         * @tc.desc   This application adds an account, and after other applications authorize an account to this
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('GetAccountsByOwner_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>GetAccountsByOwner_1000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -323,12 +349,14 @@ export default function GetAccountsByOwner() {
             }
         });
 
-        /*
-        * @tc.number    : GetAccountsByOwner_1100
-        * @tc.name      : getAccountsByOwner callback
-        * @tc.desc      : This application adds an account, and after other applications authorize an account to this
-        *                 application, this application obtains the information of its own application
-        */
+        /**
+         * @tc.name   GetAccountsByOwner_1100
+         * @tc.number GetAccountsByOwner_1100
+         * @tc.desc   This application adds an account, and after other applications authorize an account to this
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('GetAccountsByOwner_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>GetAccountsByOwner_1100 start====");
             let appAccountManager = account.createAppAccountManager();
@@ -347,12 +375,14 @@ export default function GetAccountsByOwner() {
             appAccountManager.getAccountsByOwner(specifiedBundle, getAllCallback);
         });
 
-        /*
-        * @tc.number    : GetAccountsByOwner_1200
-        * @tc.name      : getAccountsByOwner promise
-        * @tc.desc      : This application adds an account, and after other applications authorize an account to this
-        *                 application, this application obtains the information of its own application
-        */
+        /**
+         * @tc.name   GetAccountsByOwner_1200
+         * @tc.number GetAccountsByOwner_1200
+         * @tc.desc   This application adds an account, and after other applications authorize an account to this
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('GetAccountsByOwner_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>GetAccountsByOwner_1200 start====");
             let appAccountManager = account.createAppAccountManager();
@@ -373,11 +403,14 @@ export default function GetAccountsByOwner() {
             }
         });
 
-        /*
-        * @tc.number    : GetAccountsByOwner_1300
-        * @tc.name      : getAccountsByOwner callback
-        * @tc.desc      : The parameter owner is a bundlename that does not exist
-        */
+        /**
+         * @tc.name   GetAccountsByOwner_1300
+         * @tc.number GetAccountsByOwner_1300
+         * @tc.desc   The parameter owner is a bundlename that does not exist
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('GetAccountsByOwner_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>GetAccountsByOwner_1300 start====");
             let appAccountManager = account.createAppAccountManager();
@@ -393,11 +426,14 @@ export default function GetAccountsByOwner() {
             })
         });
 
-        /*
-        * @tc.number    : GetAccountsByOwner_1400
-        * @tc.name      : getAccountsByOwner promise
-        * @tc.desc      : The parameter owner is a bundlename that does not exist
-        */
+        /**
+         * @tc.name   GetAccountsByOwner_1400
+         * @tc.number GetAccountsByOwner_1400
+         * @tc.desc   The parameter owner is a bundlename that does not exist
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('GetAccountsByOwner_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>GetAccountsByOwner_1400 start====");
             let appAccountManager = account.createAppAccountManager();
@@ -416,11 +452,14 @@ export default function GetAccountsByOwner() {
             }
         });
 
-        /*
-        * @tc.number    : GetAccountsByOwner_1500
-        * @tc.name      : getAccountsByOwner callback
-        * @tc.desc      : Get account information after adding and deleting account
-        */
+        /**
+         * @tc.name   GetAccountsByOwner_1500
+         * @tc.number GetAccountsByOwner_1500
+         * @tc.desc   Get account information after adding and deleting account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('GetAccountsByOwner_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>GetAccountsByOwner_1500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -450,11 +489,14 @@ export default function GetAccountsByOwner() {
             });
         });
 
-        /*
-        * @tc.number    : GetAccountsByOwner_1600
-        * @tc.name      : getAccountsByOwner promise
-        * @tc.desc      : Get account information after adding and deleting account
-        */
+        /**
+         * @tc.name   GetAccountsByOwner_1600
+         * @tc.number GetAccountsByOwner_1600
+         * @tc.desc   Get account information after adding and deleting account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('GetAccountsByOwner_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>GetAccountsByOwner_1600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -503,12 +545,14 @@ export default function GetAccountsByOwner() {
             done();
         });
 
-        /*
-        * @tc.number    : GetAccountsByOwner_1700
-        * @tc.name      : getAccountsByOwner callback
-        * @tc.desc      : Get account information after adding an account with additional information and deleting an
-        *                 account
-        */
+        /**
+         * @tc.name   GetAccountsByOwner_1700
+         * @tc.number GetAccountsByOwner_1700
+         * @tc.desc   Get account information after adding an account with additional information and deleting an
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('GetAccountsByOwner_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>GetAccountsByOwner_1700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -538,12 +582,14 @@ export default function GetAccountsByOwner() {
             });
         });
 
-        /*
-        * @tc.number    : GetAccountsByOwner_1800
-        * @tc.name      : getAccountsByOwner promise
-        * @tc.desc      : Get account information after adding an account with additional information and deleting an
-        *                 account
-        */
+        /**
+         * @tc.name   GetAccountsByOwner_1800
+         * @tc.number GetAccountsByOwner_1800
+         * @tc.desc   Get account information after adding an account with additional information and deleting an
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('GetAccountsByOwner_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>GetAccountsByOwner_1800 start====");
             var appAccountManager = account.createAppAccountManager();

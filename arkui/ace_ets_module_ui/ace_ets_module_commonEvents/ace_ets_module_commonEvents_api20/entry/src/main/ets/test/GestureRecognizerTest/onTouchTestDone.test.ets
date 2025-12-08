@@ -64,10 +64,12 @@ export default function onTouchTestDoneTest() {
     });
 
     /**
-     * @tc.number    onTouchTestDoneTest_0010
-     * @tc.name      onTouchTestDoneTest_0010
-     * @tc.desc      onTouchTestDone prevent gesture tag: Null test
-     * @tc.level:    Level 0
+     * @tc.name   onTouchTestDoneTest_0010
+     * @tc.number onTouchTestDoneTest_0010
+     * @tc.desc   onTouchTestDone prevent gesture tag: Null test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onTouchTestDoneTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('onTouchTestDoneTest_0010 START');
@@ -110,10 +112,12 @@ export default function onTouchTestDoneTest() {
     });
 
     /**
-     * @tc.number    onTouchTestDoneTest_0020
-     * @tc.name      onTouchTestDoneTest_0020
-     * @tc.desc      onTouchTestDone prevent gesture tag: Tap2 test
-     * @tc.level:    Level 0
+     * @tc.name   onTouchTestDoneTest_0020
+     * @tc.number onTouchTestDoneTest_0020
+     * @tc.desc   onTouchTestDone prevent gesture tag: Tap2 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onTouchTestDoneTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('onTouchTestDoneTest_0020 START');

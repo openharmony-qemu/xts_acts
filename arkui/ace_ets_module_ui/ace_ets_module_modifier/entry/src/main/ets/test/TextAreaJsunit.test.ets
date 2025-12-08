@@ -41,12 +41,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   textAreaTest_002
      * @tc.number textAreaTest_002
-     * @tc.name Test the properties of components
-     * @tc.desc Set copyOption values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set copyOption values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaTest_002 START');
@@ -59,12 +59,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   textAreaTest_003
      * @tc.number textAreaTest_003
-     * @tc.name Test the properties of components
-     * @tc.desc Set fontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fontColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaTest_003', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaTest_003 START');
@@ -78,12 +78,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   textAreaTest_004
      * @tc.number textAreaTest_004
-     * @tc.name Test the properties of components
-     * @tc.desc Set placeholderColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set placeholderColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaTest_004', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaTest_004 START');
@@ -96,12 +96,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   textAreaTest_005
      * @tc.number textAreaTest_005
-     * @tc.name Test the properties of components
-     * @tc.desc Set placeholderFont values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set placeholderFont values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaTest_005', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaTest_005 START');
@@ -115,12 +115,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   textAreaTest_006
      * @tc.number textAreaTest_006
-     * @tc.name Test the properties of components
-     * @tc.desc Set fontWeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fontWeight values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaTest_006', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaTest_006 START');
@@ -133,12 +133,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   textAreaTest_007
      * @tc.number textAreaTest_007
-     * @tc.name Test the properties of components
-     * @tc.desc Set textAlign values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set textAlign values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaTest_007', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaTest_007 START');
@@ -151,12 +151,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   textAreaTest_008
      * @tc.number textAreaTest_008
-     * @tc.name Test the properties of components
-     * @tc.desc Set selectionMenuHidden values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selectionMenuHidden values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaTest_008', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaTest_008 START');
@@ -169,12 +169,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   textAreaTest_009
      * @tc.number textAreaTest_009
-     * @tc.name Test the properties of components
-     * @tc.desc Set enableKeyboardOnFocus values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set enableKeyboardOnFocus values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaTest_009', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaTest_009 START');
@@ -187,12 +187,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   textAreaTest_010
      * @tc.number textAreaTest_010
-     * @tc.name Test the properties of components
-     * @tc.desc Set caretColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set caretColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaTest_010', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaTest_010 START');
@@ -205,12 +205,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   textAreaTest_011
      * @tc.number textAreaTest_011
-     * @tc.name Test the properties of components
-     * @tc.desc Set maxLength values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set maxLength values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaTest_011', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaTest_011 START');
@@ -223,12 +223,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   textAreaTest_012
      * @tc.number textAreaTest_012
-     * @tc.name Test the properties of components
-     * @tc.desc Set maxLines values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set maxLines values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaTest_012', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaTest_012 START');
@@ -241,12 +241,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   textAreaTest_013
      * @tc.number textAreaTest_013
-     * @tc.name Test the properties of components
-     * @tc.desc Set style values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set style values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaTest_013', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaTest_013 START');
@@ -259,12 +259,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   textAreaTest_014
      * @tc.number textAreaTest_014
-     * @tc.name Test the properties of components
-     * @tc.desc Set fontStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fontStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaTest_014', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaTest_014 START');
@@ -277,12 +277,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   textAreaTest_018
      * @tc.number textAreaTest_018
-     * @tc.name Test the properties of components
-     * @tc.desc Set fontSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fontSize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaTest_018', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaTest_018 START');
@@ -295,12 +295,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   textAreaTest_015
      * @tc.number textAreaTest_015
-     * @tc.name Test the properties of components
-     * @tc.desc Set fontFamily values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fontFamily values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaTest_015', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaTest_015 START');
@@ -313,12 +313,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   textAreaTest_016
      * @tc.number textAreaTest_016
-     * @tc.name Test the properties of components
-     * @tc.desc Set barState values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set barState values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaTest_016', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaTest_016 START');
@@ -331,12 +331,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   textAreaTest_017
      * @tc.number textAreaTest_017
-     * @tc.name Test the properties of components
-     * @tc.desc Set showCounter values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set showCounter values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaTest_017', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaTest_017 START');
@@ -349,12 +349,12 @@ export default function textAreaJsunit() {
     });
 
     /**
+     * @tc.name   textAreaTest_001
      * @tc.number textAreaTest_001
-     * @tc.name Test the properties of components
-     * @tc.desc Change fontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change fontColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaTest_001 START');

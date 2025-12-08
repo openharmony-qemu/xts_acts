@@ -26,13 +26,13 @@ export default function toolsLayoutRectTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TOOLS_LAYOUT_RECT_0001
-     * @tc.name: testToolsLayoutRect001
-     * @tc.desc: testing text for unitWidthPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testToolsLayoutRect001
+     * @tc.number SUB_ARKUI_CAPI_TOOLS_LAYOUT_RECT_0001
+     * @tc.desc   testing text for unitWidthPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToolsLayoutRect001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToolsLayoutRect001()).assertEqual(0)

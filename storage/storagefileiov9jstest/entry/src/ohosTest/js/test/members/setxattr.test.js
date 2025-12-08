@@ -23,15 +23,13 @@ export default function fileIOSetxattr() {
 describe('fileIO_test_setxattr', function () {
 
   /**
+   * @tc.name   test_FileIO_Setxattr_Async_001
    * @tc.number SUB_BASIC_FM_FileAPI_FileIo_SETXATTR_Async_0100
-   * @tc.name test_FileIO_Setxattr_Async_001
-   * @tc.desc Test setxattr() interface.
-   * Set file extension properties.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */  
+   * @tc.desc   Test setxattr() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('test_FileIO_Setxattr_Async_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('test_FileIO_Setxattr_Async_001');
     let attrKey = 'user.comment';
@@ -53,15 +51,13 @@ describe('fileIO_test_setxattr', function () {
    });
 
   /**
+   * @tc.name   test_FileIO_Setxattr_Sync_002
    * @tc.number SUB_BASIC_FM_FileAPI_FileIo_SETXATTR_Sync_0200
-   * @tc.name test_FileIO_Setxattr_Sync_002
-   * @tc.desc Test setxattr() interface.
-   * The test file is not exist.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */  
+   * @tc.desc   Test setxattr() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('test_FileIO_Setxattr_Sync_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('test_FileIO_Setxattr_Sync_002');
     let attrKey = 'user.comment';
@@ -81,16 +77,14 @@ describe('fileIO_test_setxattr', function () {
     }
    });
 
-   /**
+  /**
+   * @tc.name   test_FileIO_Setxattr_Async_003
    * @tc.number SUB_BASIC_FM_FileAPI_FileIo_SETXATTR_Async_0300
-   * @tc.name test_FileIO_Setxattr_Async_003
-   * @tc.desc Test setxattr() interface.
-   * Set file extension properties.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */  
+   * @tc.desc   Test setxattr() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('test_FileIO_Setxattr_Async_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
     let fpath = await nextFileName('test_FileIO_Setxattr_Async_003');
     let attrKey = 'user.comment';
@@ -107,15 +101,13 @@ describe('fileIO_test_setxattr', function () {
    });
 
   /**
+   * @tc.name   test_FileIO_Setxattr_Async_004
    * @tc.number SUB_BASIC_FM_FileAPI_FileIo_SETXATTR_Async_0400
-   * @tc.name test_FileIO_Setxattr_Async_004
-   * @tc.desc Test setxattr() interface.
-   * No such file or directory.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */  
+   * @tc.desc   Test setxattr() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('test_FileIO_Setxattr_Async_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
     let fpath = await nextFileName('test_FileIO_Setxattr_Async_004');
     let attrKey = 'user.comment';
@@ -130,16 +122,14 @@ describe('fileIO_test_setxattr', function () {
     }
    });
 
-   /**
+  /**
+   * @tc.name   test_FileIO_Setxattr_Async_005
    * @tc.number SUB_BASIC_FM_FileAPI_FileIo_SETXATTR_Async_0500
-   * @tc.name test_FileIO_Setxattr_Async_005
-   * @tc.desc Test setxattr() interface.
-   * Invalid argument.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */  
+   * @tc.desc   Test setxattr() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('test_FileIO_Setxattr_Async_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
     let fpath = await nextFileName('test_FileIO_Setxattr_Async_005');
     let attrKey = 'user.comment';
@@ -156,15 +146,13 @@ describe('fileIO_test_setxattr', function () {
   });
 
   /**
+   * @tc.name   test_FileIO_Setxattr_Sync_006
    * @tc.number SUB_BASIC_FM_FileAPI_FileIo_SETXATTR_Sync_0600
-   * @tc.name test_FileIO_Setxattr_Sync_006
-   * @tc.desc Test setxattr() interface.
-   * Invalid argument.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */  
+   * @tc.desc   Test setxattr() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
   it('test_FileIO_Setxattr_Sync_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('test_FileIO_Setxattr_Sync_006');
     let attrKey = 'user.comment';

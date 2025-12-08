@@ -24,13 +24,13 @@ export default function RunTaskInScopeTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RUNTASK_IN_SCOPE_0100
-     * @tc.name       : testRunTaskInScope001
-     * @tc.desc       : test RunTaskInScope
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRunTaskInScope001
+     * @tc.number SUB_ARKUI_CAPI_RUNTASK_IN_SCOPE_0100
+     * @tc.desc   test RunTaskInScope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRunTaskInScope001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestRunTaskInScope';

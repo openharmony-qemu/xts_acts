@@ -52,9 +52,12 @@ export default function SideBarContainer_AttributeTest() {
       console.info("SideBarContainer_AttributeTest after each called");
     });
     /**
+     * @tc.name   SUB_ACE_SideBarContainer_Attribute_0100
      * @tc.number SUB_ACE_SideBarContainer_Attribute_0100
-     * @tc.name testSideBarContainerAttribute
-     * @tc.desc sideBarWidth < minSideBarWidth
+     * @tc.desc   sideBarWidth < minSideBarWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SideBarContainer_Attribute_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_SideBarContainer_Attribute_0100] START');
@@ -77,9 +80,12 @@ export default function SideBarContainer_AttributeTest() {
     });
 
     /**
+     * @tc.name   SUB_ACE_SideBarContainer_Attribute_0200
      * @tc.number SUB_ACE_SideBarContainer_Attribute_0200
-     * @tc.name testSideBarContainerAttribute
-     * @tc.desc sideBarWidth > maxSideBarWidth
+     * @tc.desc   sideBarWidth > maxSideBarWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SideBarContainer_Attribute_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_SideBarContainer_Attribute_0200] START');
@@ -105,9 +111,12 @@ export default function SideBarContainer_AttributeTest() {
     });
 
     /**
+     * @tc.name   SUB_ACE_SideBarContainer_Attribute_0300
      * @tc.number SUB_ACE_SideBarContainer_Attribute_0300
-     * @tc.name testSideBarContainerAttribute
-     * @tc.desc minSideBarWidth < sideBarWidth < maxSideBarWidth
+     * @tc.desc   minSideBarWidth < sideBarWidth < maxSideBarWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SideBarContainer_Attribute_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_SideBarContainer_Attribute_0300] START');
@@ -132,9 +141,12 @@ export default function SideBarContainer_AttributeTest() {
       done();
     });
     /**
+     * @tc.name   SUB_ACE_SideBarContainer_Attribute_0400
      * @tc.number SUB_ACE_SideBarContainer_Attribute_0400
-     * @tc.name testSideBarContainerAttribute
-     * @tc.desc maxSideBarWidth < minSideBarWidth
+     * @tc.desc   maxSideBarWidth < minSideBarWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SideBarContainer_Attribute_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_SideBarContainer_Attribute_0400] START');

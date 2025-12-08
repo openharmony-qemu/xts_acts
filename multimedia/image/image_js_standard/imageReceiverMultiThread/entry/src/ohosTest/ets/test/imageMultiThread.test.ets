@@ -372,25 +372,23 @@ export default function multiThreadTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_MULTI_THREAD_0100
-     * @tc.name      : multiple thread
-     * @tc.desc      : 1.create receiver.ets
-     *                 2.invoked simultaneously by multiple thread
-     * @tc.size      : MEDIUM+
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_MULTI_THREAD_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_MULTI_THREAD_0100
+     * @tc.desc   1.create receiver.ets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_RECEIVER_MULTI_THREAD_0100', Level.LEVEL0, async (done: Function) => {
       await doTestForCreator(done, "SUB_MULTIMEDIA_IMAGE_RECEIVER_MULTI_THREAD_0100", "entry_test/ets/workers/creator.ets");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_MULTI_THREAD_0200
-     * @tc.name      : multiple thread
-     * @tc.desc      : 1.create creator.ets
-     *                 2.invoked simultaneously by multiple thread
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_MULTI_THREAD_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_MULTI_THREAD_0200
+     * @tc.desc   1.create creator.ets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_RECEIVER_MULTI_THREAD_0200', Level.LEVEL0, async (done: Function) => {
       if(getCameraSupportDevicesCount() < 3){

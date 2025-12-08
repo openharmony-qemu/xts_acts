@@ -47,12 +47,14 @@ export default function ToggleSwitchStyle() {
     });
 
 
-    /*
-    * @tc.number      ToggleSwitchStyle_001
-    * @tc.name        ToggleSwitchStyle_001
-    * @tc.desc        Test the switchStyle of the toggle component
-    * @tc.level       Level 2
-    */
+    /**
+     * @tc.name   ToggleSwitchStyle_001
+     * @tc.number ToggleSwitchStyle_001
+     * @tc.desc   Test the switchStyle of the toggle component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ToggleSwitchStyle_001', Level.LEVEL2, async (done: Function) => {
       console.info('[ToggleSwitchStyle_001] START');
       await Utils.sleep(1000);

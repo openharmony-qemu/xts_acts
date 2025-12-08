@@ -83,12 +83,12 @@ export default function provisionResourcesTest() {
         }        
 
         /**
-         * @tc.number    : SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0100
-         * @tc.name      : sub_media_photoAccess_provision_check_assets_001
-         * @tc.desc      : Provision mediaAssets and check mediaAssets
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   sub_media_photoAccess_provision_check_assets_001
+         * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0100
+         * @tc.desc   Provision mediaAssets and check mediaAssets
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('sub_media_photoAccess_provision_check_assets_001', Level.LEVEL0, async (done:Function)=> {
             const testNum = 'SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0100';
@@ -101,12 +101,12 @@ export default function provisionResourcesTest() {
         });
 
         /**
-         * @tc.number    : SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0200
-         * @tc.name      : sub_media_photoAccess_provision_check_assets_002
-         * @tc.desc      : Provision mediaAssets and check mediaAssets
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   sub_media_photoAccess_provision_check_assets_002
+         * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0200
+         * @tc.desc   Provision mediaAssets and check mediaAssets
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('sub_media_photoAccess_provision_check_assets_002', Level.LEVEL0, async (done:Function)=> {
             const testNum = 'SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0200';
@@ -119,12 +119,12 @@ export default function provisionResourcesTest() {
         });
 
         /**
-         * @tc.number    : SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0300
-         * @tc.name      : sub_media_photoAccess_provision_check_assets_003
-         * @tc.desc      : Provision mediaAssets and check mediaAssets
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   sub_media_photoAccess_provision_check_assets_003
+         * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0300
+         * @tc.desc   Provision mediaAssets and check mediaAssets
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('sub_media_photoAccess_provision_check_assets_003', Level.LEVEL0, async (done:Function)=> {
             const testNum = 'SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0300';
@@ -137,12 +137,12 @@ export default function provisionResourcesTest() {
         });
 
         /**
-         * @tc.number    : SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0400
-         * @tc.name      : sub_media_photoAccess_provision_check_assets_004
-         * @tc.desc      : Provision mediaAssets and check mediaAssets
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   sub_media_photoAccess_provision_check_assets_004
+         * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0400
+         * @tc.desc   Provision mediaAssets and check mediaAssets
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('sub_media_photoAccess_provision_check_assets_004', Level.LEVEL0, async (done:Function)=> {
             const testNum = 'SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0400';
@@ -155,12 +155,12 @@ export default function provisionResourcesTest() {
         });
 
         /**
-         * @tc.number    : SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0500
-         * @tc.name      : sub_media_photoAccess_provision_check_assets_005
-         * @tc.desc      : Provision mediaAssets and check mediaAssets
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   sub_media_photoAccess_provision_check_assets_005
+         * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0500
+         * @tc.desc   Provision mediaAssets and check mediaAssets
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('sub_media_photoAccess_provision_check_assets_005', Level.LEVEL0, async (done:Function)=> {
             const testNum = 'SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0500';
@@ -173,12 +173,12 @@ export default function provisionResourcesTest() {
         });
 
         /**
-         * @tc.number    : SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0600
-         * @tc.name      : sub_media_photoAccess_provision_check_assets_006
-         * @tc.desc      : Provision mediaAssets and check mediaAssets
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   sub_media_photoAccess_provision_check_assets_006
+         * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0600
+         * @tc.desc   Provision mediaAssets and check mediaAssets
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('sub_media_photoAccess_provision_check_assets_006', Level.LEVEL0, async (done:Function)=> {
             const testNum = 'SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0600';
@@ -191,12 +191,12 @@ export default function provisionResourcesTest() {
         });
 
         /**
-         * @tc.number    : SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0700
-         * @tc.name      : sub_media_photoAccess_provision_check_assets_007
-         * @tc.desc      : Provision mediaAssets and check mediaAssets
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   sub_media_photoAccess_provision_check_assets_007
+         * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0700
+         * @tc.desc   Provision mediaAssets and check mediaAssets
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('sub_media_photoAccess_provision_check_assets_007', Level.LEVEL0, async (done:Function)=> {
             const testNum = 'SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0700';
@@ -209,12 +209,12 @@ export default function provisionResourcesTest() {
         });
 
         /**
-         * @tc.number    : SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0800
-         * @tc.name      : sub_media_photoAccess_provision_check_assets_008
-         * @tc.desc      : Provision mediaAssets and check mediaAssets
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   sub_media_photoAccess_provision_check_assets_008
+         * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0800
+         * @tc.desc   Provision mediaAssets and check mediaAssets
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('sub_media_photoAccess_provision_check_assets_008', Level.LEVEL0, async (done:Function)=> {
             const testNum = 'SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0800';
@@ -227,12 +227,12 @@ export default function provisionResourcesTest() {
         });
 
         /**
-         * @tc.number    : SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0900
-         * @tc.name      : sub_media_photoAccess_provision_check_assets_009
-         * @tc.desc      : Provision mediaAssets and check mediaAssets
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   sub_media_photoAccess_provision_check_assets_009
+         * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0900
+         * @tc.desc   Provision mediaAssets and check mediaAssets
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('sub_media_photoAccess_provision_check_assets_009', Level.LEVEL0, async (done:Function)=> {
             const testNum = 'SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0900';
@@ -244,12 +244,12 @@ export default function provisionResourcesTest() {
         });
         
         /**
-         * @tc.number    : SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_1000
-         * @tc.name      : sub_media_photoAccess_provision_check_assets_010
-         * @tc.desc      : Provision mediaAssets and check mediaAssets
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   sub_media_photoAccess_provision_check_assets_010
+         * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_1000
+         * @tc.desc   Provision mediaAssets and check mediaAssets
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('sub_media_photoAccess_provision_check_assets_010', Level.LEVEL0, async (done:Function)=> {
             const testNum = 'SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_1000';
@@ -261,12 +261,12 @@ export default function provisionResourcesTest() {
         });
         
         /**
-         * @tc.number    : SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_1100
-         * @tc.name      : sub_media_photoAccess_provision_check_assets_011
-         * @tc.desc      : Provision mediaAssets and check mediaAssets
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   sub_media_photoAccess_provision_check_assets_011
+         * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_1100
+         * @tc.desc   Provision mediaAssets and check mediaAssets
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('sub_media_photoAccess_provision_check_assets_011', Level.LEVEL0, async (done:Function)=> {
             const testNum = 'SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_1100';
@@ -278,12 +278,12 @@ export default function provisionResourcesTest() {
         });
 
         /**
-         * @tc.number    : SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_1200
-         * @tc.name      : sub_media_photoAccess_provision_check_assets_012
-         * @tc.desc      : Provision mediaAssets and check mediaAssets
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   sub_media_photoAccess_provision_check_assets_012
+         * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_1200
+         * @tc.desc   Provision mediaAssets and check mediaAssets
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('sub_media_photoAccess_provision_check_assets_012', Level.LEVEL0, async (done:Function)=> {
             const testNum = 'SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_1200';
@@ -295,12 +295,12 @@ export default function provisionResourcesTest() {
         });
 
         /**
-         * @tc.number    : SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_1300
-         * @tc.name      : sub_media_photoAccess_provision_check_assets_013
-         * @tc.desc      : Provision mediaAssets and check mediaAssets
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   sub_media_photoAccess_provision_check_assets_013
+         * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_1300
+         * @tc.desc   Provision mediaAssets and check mediaAssets
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('sub_media_photoAccess_provision_check_assets_013', Level.LEVEL0, async (done:Function)=> {
             const testNum = 'sub_media_photoAccess_provision_check_assets_013';
@@ -312,12 +312,12 @@ export default function provisionResourcesTest() {
         });
 
         /**
-         * @tc.number    : SUB_MEDIA_PHOTOACCESS_CHECK_ASSETS_COUNT_001
-         * @tc.name      : check_provision_resource_count_001
-         * @tc.desc      : check provisionResources count
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @tc.name   check_provision_resource_count_001
+         * @tc.number SUB_MEDIA_PHOTOACCESS_CHECK_ASSETS_COUNT_001
+         * @tc.desc   check provisionResources count
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('check_provision_resource_count_001', Level.LEVEL0, async (done:Function)=> {
             const testNum = 'check_provision_resource_count_001';

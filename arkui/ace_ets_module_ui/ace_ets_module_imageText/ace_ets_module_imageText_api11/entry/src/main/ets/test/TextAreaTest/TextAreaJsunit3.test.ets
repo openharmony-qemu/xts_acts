@@ -46,6 +46,14 @@ export default function textAreaJsunit3() {
       console.info("textArea after each called");
     });
 
+    /**
+     * @tc.name   textAreaTest01
+     * @tc.number textAreaTest01
+     * @tc.desc   textAreaTest01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAreaTest01', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest01] START');
       await CommonFunc.sleep(1000);
@@ -57,6 +65,14 @@ export default function textAreaJsunit3() {
       done();
     });
 
+    /**
+     * @tc.name   textAreaTest02
+     * @tc.number textAreaTest02
+     * @tc.desc   textAreaTest02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAreaTest02', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest02] START');
       try {
@@ -83,6 +99,14 @@ export default function textAreaJsunit3() {
       done();
     });
 
+    /**
+     * @tc.name   textAreaTest03
+     * @tc.number textAreaTest03
+     * @tc.desc   textAreaTest03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAreaTest03', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest03] START');
       await CommonFunc.sleep(1000);
@@ -95,6 +119,14 @@ export default function textAreaJsunit3() {
       done();
     });
 
+    /**
+     * @tc.name   textAreaTest04
+     * @tc.number textAreaTest04
+     * @tc.desc   textAreaTest04
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAreaTest04', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest04] START');
       try {
@@ -121,6 +153,14 @@ export default function textAreaJsunit3() {
       done();
     });
 
+    /**
+     * @tc.name   textAreaTest05
+     * @tc.number textAreaTest05
+     * @tc.desc   textAreaTest05
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAreaTest05', Level.LEVEL1, async (done: Function) => {
       console.info('[testArea05] START');
       await CommonFunc.sleep(1000);
@@ -132,6 +172,14 @@ export default function textAreaJsunit3() {
       done();
     });
 
+    /**
+     * @tc.name   textAreaTest06
+     * @tc.number textAreaTest06
+     * @tc.desc   textAreaTest06
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAreaTest06', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest06] START');
       try {
@@ -158,6 +206,14 @@ export default function textAreaJsunit3() {
       done();
     });
 
+    /**
+     * @tc.name   textAreaTest07
+     * @tc.number textAreaTest07
+     * @tc.desc   textAreaTest07
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAreaTest07', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest07] START');
       await CommonFunc.sleep(1000);
@@ -171,6 +227,14 @@ export default function textAreaJsunit3() {
       done();
     });
 
+    /**
+     * @tc.name   textAreaTest08
+     * @tc.number textAreaTest08
+     * @tc.desc   textAreaTest08
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAreaTest08', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest08] START');
       try {
@@ -199,6 +263,14 @@ export default function textAreaJsunit3() {
       done();
     });
 
+    /**
+     * @tc.name   textAreaTest09
+     * @tc.number textAreaTest09
+     * @tc.desc   textAreaTest09
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAreaTest09', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest09] START');
       await CommonFunc.sleep(1000);
@@ -210,6 +282,14 @@ export default function textAreaJsunit3() {
       done();
     });
 
+    /**
+     * @tc.name   textAreaTest10
+     * @tc.number textAreaTest10
+     * @tc.desc   textAreaTest10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAreaTest10', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest10] START');
       try {
@@ -236,10 +316,13 @@ export default function textAreaJsunit3() {
       done();
     });
 
-    /*
-     * @tc.number :textAreaTest11
-     * @tc.name   :test getCaretOffset when iput text is null
-     * @tc.desc   :expect caretOffset index 0 when text is null
+    /**
+     * @tc.name   textAreaTest11
+     * @tc.number textAreaTest11
+     * @tc.desc   expect caretOffset index 0 when text is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaTest11', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest11] START');
@@ -255,10 +338,13 @@ export default function textAreaJsunit3() {
       done();
     });
 
-    /*
-     * @tc.number :textAreaTest12
-     * @tc.name   :test getCaretOffset when iput text length not exceed maxLength.
-     * @tc.desc   :expect caretOffset index equal text length
+    /**
+     * @tc.name   textAreaTest12
+     * @tc.number textAreaTest12
+     * @tc.desc   expect caretOffset index equal text length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaTest12', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest12] START');
@@ -290,10 +376,13 @@ export default function textAreaJsunit3() {
       done();
     });
 
-    /*
-     * @tc.number :textAreaTest13
-     * @tc.name   :test getCaretOffset when iput text length exceed maxLength.
-     * @tc.desc   :expect caretOffset index equal maxLength
+    /**
+     * @tc.name   textAreaTest13
+     * @tc.number textAreaTest13
+     * @tc.desc   expect caretOffset index equal maxLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaTest13', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest13] START');

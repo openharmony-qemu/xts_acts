@@ -60,15 +60,15 @@ export default function RouterPushUrlJsunit() {
       router.clear()
     });
 
-    /**
-     * @tc.number RouterPushUrlJsunit_0001
-     * @tc.name RouterPushUrlJsunit_0001
-     * @tc.desc api
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   RouterPushUrlJsunit_0001
+     * @tc.number RouterPushUrlJsunit_0001
+     * @tc.desc   RouterPushUrlJsunit_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RouterPushUrlJsunit_0001', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0001] START');
       let driver = Driver.create();
@@ -84,15 +84,15 @@ export default function RouterPushUrlJsunit() {
       done();
     });
 
-    /**
-     * @tc.number RouterPushUrlJsunit_0002
-     * @tc.name RouterPushUrlJsunit_0002
-     * @tc.desc api
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   RouterPushUrlJsunit_0002
+     * @tc.number RouterPushUrlJsunit_0002
+     * @tc.desc   RouterPushUrlJsunit_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RouterPushUrlJsunit_0002', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0002] START');
       let driver = Driver.create();
@@ -108,15 +108,15 @@ export default function RouterPushUrlJsunit() {
       done();
     });
 
-    /**
-     * @tc.number RouterPushUrlJsunit_0003
-     * @tc.name RouterPushUrlJsunit_0003
-     * @tc.desc api
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   RouterPushUrlJsunit_0003
+     * @tc.number RouterPushUrlJsunit_0003
+     * @tc.desc   RouterPushUrlJsunit_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RouterPushUrlJsunit_0003', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0003] START');
       let driver = Driver.create();
@@ -142,15 +142,15 @@ export default function RouterPushUrlJsunit() {
       done()
     });
 
-    /**
-     * @tc.number RouterPushUrlJsunit_0004
-     * @tc.name RouterPushUrlJsunit_0004
-     * @tc.desc api
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   RouterPushUrlJsunit_0004
+     * @tc.number RouterPushUrlJsunit_0004
+     * @tc.desc   RouterPushUrlJsunit_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RouterPushUrlJsunit_0004', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0004] START');
       let driver = Driver.create();
@@ -176,15 +176,15 @@ export default function RouterPushUrlJsunit() {
       done()
     });
 
-    /**
-     * @tc.number RouterPushUrlJsunit_0005
-     * @tc.name RouterPushUrlJsunit_0005
-     * @tc.desc api
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   RouterPushUrlJsunit_0005
+     * @tc.number RouterPushUrlJsunit_0005
+     * @tc.desc   RouterPushUrlJsunit_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RouterPushUrlJsunit_0005', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0005] START');
       let driver = Driver.create();
@@ -203,15 +203,15 @@ export default function RouterPushUrlJsunit() {
       done();
     });
 
-    /**
-     * @tc.number RouterPushUrlJsunit_0006
-     * @tc.name RouterPushUrlJsunit_0006
-     * @tc.desc api
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   RouterPushUrlJsunit_0006
+     * @tc.number RouterPushUrlJsunit_0006
+     * @tc.desc   RouterPushUrlJsunit_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RouterPushUrlJsunit_0006', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0006] START');
       let driver = Driver.create();
@@ -231,15 +231,15 @@ export default function RouterPushUrlJsunit() {
       done();
     });
 
-    /**
-     * @tc.number RouterPushUrlJsunit_0007
-     * @tc.name RouterPushUrlJsunit_0007
-     * @tc.desc api
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   RouterPushUrlJsunit_0007
+     * @tc.number RouterPushUrlJsunit_0007
+     * @tc.desc   RouterPushUrlJsunit_0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RouterPushUrlJsunit_0007', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0007] START');
       let driver = Driver.create();
@@ -257,15 +257,15 @@ export default function RouterPushUrlJsunit() {
       done();
     });
 
-    /**
-     * @tc.number RouterPushUrlJsunit_0008
-     * @tc.name RouterPushUrlJsunit_0008
-     * @tc.desc api
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   RouterPushUrlJsunit_0008
+     * @tc.number RouterPushUrlJsunit_0008
+     * @tc.desc   RouterPushUrlJsunit_0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RouterPushUrlJsunit_0008', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0008] START');
       let driver = Driver.create();
@@ -283,15 +283,15 @@ export default function RouterPushUrlJsunit() {
       done();
     });
 
-    /**
-     * @tc.number RouterPushUrlJsunit_0009
-     * @tc.name RouterPushUrlJsunit_0009
-     * @tc.desc api
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   RouterPushUrlJsunit_0009
+     * @tc.number RouterPushUrlJsunit_0009
+     * @tc.desc   RouterPushUrlJsunit_0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RouterPushUrlJsunit_0009', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0009] START');
       let driver = Driver.create();
@@ -319,15 +319,15 @@ export default function RouterPushUrlJsunit() {
       done()
     });
 
-    /**
-     * @tc.number RouterPushUrlJsunit_0010
-     * @tc.name RouterPushUrlJsunit_0010
-     * @tc.desc api
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   RouterPushUrlJsunit_0010
+     * @tc.number RouterPushUrlJsunit_0010
+     * @tc.desc   RouterPushUrlJsunit_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RouterPushUrlJsunit_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0010] START');
       let driver = Driver.create();
@@ -355,15 +355,15 @@ export default function RouterPushUrlJsunit() {
       done()
     });
 
-    /**
-     * @tc.number RouterPushUrlJsunit_0011
-     * @tc.name RouterPushUrlJsunit_0011
-     * @tc.desc api
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   RouterPushUrlJsunit_0011
+     * @tc.number RouterPushUrlJsunit_0011
+     * @tc.desc   RouterPushUrlJsunit_0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RouterPushUrlJsunit_0011', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0011] START');
       let driver = Driver.create();
@@ -382,15 +382,15 @@ export default function RouterPushUrlJsunit() {
       done();
     });
 
-    /**
-     * @tc.number RouterPushUrlJsunit_0012
-     * @tc.name RouterPushUrlJsunit_0012
-     * @tc.desc api
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   RouterPushUrlJsunit_0012
+     * @tc.number RouterPushUrlJsunit_0012
+     * @tc.desc   RouterPushUrlJsunit_0012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RouterPushUrlJsunit_0012', Level.LEVEL2, async (done: Function) => {
       console.info('[RouterPushUrlJsunit_0012] START');
       let driver = Driver.create();

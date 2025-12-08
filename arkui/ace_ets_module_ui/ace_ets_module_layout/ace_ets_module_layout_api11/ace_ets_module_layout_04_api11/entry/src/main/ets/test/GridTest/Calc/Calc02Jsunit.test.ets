@@ -47,22 +47,12 @@ export default function CalcJsunit02() {
       console.info("CalcJsunit02 after each called");
     });
     /**
+     * @tc.name   CalcJsunit02_0100
      * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HTP26_017;SUB_ACE_FUNCTION_JICHU_SR000HTP26_004;SUB_ACE_FUNCTION_JICHU_SR000HTP26_003;
-     * SUB_ACE_FUNCTION_JICHU_SR000HTP26_002;SUB_ACE_FUNCTION_JICHU_SR000HTP26_001;SUB_ACE_FUNCTION_JICHU_SR000HTP26_009;
-     * SUB_ACE_FUNCTION_JICHU_SR000HTP26_007;SUB_ACE_FUNCTION_JICHU_SR000HTP26_006;SUB_ACE_FUNCTION_JICHU_SR000HTP26_005;
-     * @tc.name CalcJsunit02
-     * @tc.desc
-     *
-     * 11-19
-     Row set height calc(45% + 45%)
-     multiplication
-     subtraction
-     addition
-     Single-valued operations
-     Anomalies
-     Hybrid operations
-     Scientific notation
-     division
+     * @tc.desc   CalcJsunit02_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CalcJsunit02_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[CalcJsunit02_0100] START');

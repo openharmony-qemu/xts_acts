@@ -41,10 +41,12 @@ export default function getProfileByAbility() {
   describe('getProfileByAbility', () => {
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_Profile__static_0900
-     * @tc.name    getProfileByAbilityInvalidModulePro_static
-     * @tc.desc    Check the invalid moduleName (by promise)
-     * @tc.level   0
+     * @tc.name   getProfileByAbilityInvalidModulePro_static
+     * @tc.number Sub_Bms_Framework_Query_Profile__static_0900
+     * @tc.desc   Check the invalid moduleName (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityInvalidModulePro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       await manager.getProfileByAbility(MODULE_NAME_TEST, ABILITY_NAME, METADATA_NAME).then((data: Array<string>): void => {
@@ -59,10 +61,12 @@ export default function getProfileByAbility() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_Profile_static_1300
-     * @tc.name    getProfileByAbilityEmptyModulePro_static
-     * @tc.desc    Check the empty moduleName (by promise)
-     * @tc.level   0
+     * @tc.name   getProfileByAbilityEmptyModulePro_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_1300
+     * @tc.desc   Check the empty moduleName (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityEmptyModulePro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       await manager.getProfileByAbility('', ABILITY_NAME, METADATA_NAME).then((data: Array<string>): void => {
@@ -77,10 +81,12 @@ export default function getProfileByAbility() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_Profile_static_1500
-     * @tc.name    getProfileByAbilityInvalidModuleCall_static
-     * @tc.desc    Check the invalid moduleName (by callback)
-     * @tc.level   0
+     * @tc.name   getProfileByAbilityInvalidModuleCall_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_1500
+     * @tc.desc   Check the invalid moduleName (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityInvalidModuleCall_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       manager.getProfileByAbility(MODULE_NAME_TEST, ABILITY_NAME, METADATA_NAME, (err: BusinessError<void> | null, data) => {
@@ -91,10 +97,12 @@ export default function getProfileByAbility() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_Profile_static_3200
-     * @tc.name    getProfileByAbilityEmptyModuleCall_static
-     * @tc.desc    Check the empty moduleName (by callback)
-     * @tc.level   0
+     * @tc.name   getProfileByAbilityEmptyModuleCall_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_3200
+     * @tc.desc   Check the empty moduleName (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityEmptyModuleCall_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       manager.getProfileByAbility('', ABILITY_NAME, METADATA_NAME, (err: BusinessError<void> | null, data) => {
@@ -105,10 +113,12 @@ export default function getProfileByAbility() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_Profile_static_1000
-     * @tc.name    getProfileByAbilityInvalidAbilityPro_static
-     * @tc.desc    Check the invalid abilityName (by promise)
-     * @tc.level   0
+     * @tc.name   getProfileByAbilityInvalidAbilityPro_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_1000
+     * @tc.desc   Check the invalid abilityName (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityInvalidAbilityPro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       await manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME_TEST, METADATA_NAME).then((data: Array<string>): void => {
@@ -123,10 +133,12 @@ export default function getProfileByAbility() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_Profile_static_2700
-     * @tc.name    getProfileByAbilityEmptyAbilityPro_static
-     * @tc.desc    Check the empty abilityName (by promise)
-     * @tc.level   0
+     * @tc.name   getProfileByAbilityEmptyAbilityPro_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_2700
+     * @tc.desc   Check the empty abilityName (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityEmptyAbilityPro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       await manager.getProfileByAbility(MODULE_NAME, '', METADATA_NAME).then((data: Array<string>): void => {
@@ -141,10 +153,12 @@ export default function getProfileByAbility() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_Profile_static_2000
-     * @tc.name    getProfileByAbilityInvalidAbilityCall_static
-     * @tc.desc    Check the invalid abilityName (by callback)
-     * @tc.level   0
+     * @tc.name   getProfileByAbilityInvalidAbilityCall_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_2000
+     * @tc.desc   Check the invalid abilityName (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityInvalidAbilityCall_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME_TEST, METADATA_NAME, (err: BusinessError<void> | null, data) => {
@@ -155,10 +169,12 @@ export default function getProfileByAbility() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_Profile_static_02700
-     * @tc.name    getProfileByAbilityEmptyAbilityCall_static
-     * @tc.desc    Check the empty abilityName (by callback)
-     * @tc.level   0
+     * @tc.name   getProfileByAbilityEmptyAbilityCall_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_02700
+     * @tc.desc   Check the empty abilityName (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityEmptyAbilityCall_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       manager.getProfileByAbility(MODULE_NAME, '', METADATA_NAME, (err: BusinessError<void> | null, data) => {
@@ -169,10 +185,12 @@ export default function getProfileByAbility() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_Profile_static_2400
-     * @tc.name    getProfileByAbilityInvalidMetaDataCall_static
-     * @tc.desc    Check the invalid metadataName (by callback)
-     * @tc.level   0
+     * @tc.name   getProfileByAbilityInvalidMetaDataCall_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_2400
+     * @tc.desc   Check the invalid metadataName (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityInvalidMetaDataCall_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME, METADATA_NAME_TEST, (err: BusinessError<void> | null, data) => {
@@ -183,10 +201,12 @@ export default function getProfileByAbility() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_Profile_static_0300
-     * @tc.name    getProfileByAbilityInvalidMetaDataPro_static
-     * @tc.desc    Check the invalid metadataName (by promise)
-     * @tc.level   0
+     * @tc.name   getProfileByAbilityInvalidMetaDataPro_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_0300
+     * @tc.desc   Check the invalid metadataName (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityInvalidMetaDataPro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       await manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME, METADATA_NAME_TEST).then((data: Array<string>): void => {
@@ -200,10 +220,12 @@ export default function getProfileByAbility() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_Profile_static_4600
-     * @tc.name    getProfileByAbilityNoProfilePro_static
-     * @tc.desc    no profile configured under the ability (by promise)
-     * @tc.level   0
+     * @tc.name   getProfileByAbilityNoProfilePro_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_4600
+     * @tc.desc   no profile configured under the ability (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityNoProfilePro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       await manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME, METADATA_NAME3).then((data: Array<string>): void => {
@@ -218,10 +240,12 @@ export default function getProfileByAbility() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_Profile_static_0600
-     * @tc.name    getProfileByAbilityNoJsonPro_static
-     * @tc.desc    profile is invalid json format (by promise)
-     * @tc.level   0
+     * @tc.name   getProfileByAbilityNoJsonPro_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_0600
+     * @tc.desc   profile is invalid json format (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityNoJsonPro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       await manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME, METADATA_NAME4).then((data: Array<string>): void => {
@@ -236,10 +260,12 @@ export default function getProfileByAbility() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_Profile_static_4400
-     * @tc.name    getProfileByAbilityNoJsonCall_static
-     * @tc.desc    profile is invalid json format (by callback)
-     * @tc.level   0
+     * @tc.name   getProfileByAbilityNoJsonCall_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_4400
+     * @tc.desc   profile is invalid json format (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityNoJsonCall_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME, METADATA_NAME4, (err: BusinessError<void> | null, data) => {
@@ -250,10 +276,12 @@ export default function getProfileByAbility() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_Profile_static_6400
-     * @tc.name  testGetProfileByAbilitySyncByInvalidModuleName_static
-     * @tc.desc  Check the invalid moduleName (by sync)
-     * @tc.level   0
+     * @tc.name   testGetProfileByAbilitySyncByInvalidModuleName_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_6400
+     * @tc.desc   Check the invalid moduleName (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetProfileByAbilitySyncByInvalidModuleName_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -268,10 +296,12 @@ export default function getProfileByAbility() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_Profile_static_6500
-     * @tc.name    testGetProfileByAbilitySyncByInvalidAbilityName_static
-     * @tc.desc    Check the invalid abilityName (by sync)
-     * @tc.level   0
+     * @tc.name   testGetProfileByAbilitySyncByInvalidAbilityName_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_6500
+     * @tc.desc   Check the invalid abilityName (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetProfileByAbilitySyncByInvalidAbilityName_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -286,10 +316,12 @@ export default function getProfileByAbility() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_Profile_static_6600
-     * @tc.name    testGetProfileByAbilitySyncInvalidMetaData_static
-     * @tc.desc    Check resource has no prefix (by sync)
-     * @tc.level   0
+     * @tc.name   testGetProfileByAbilitySyncInvalidMetaData_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_6600
+     * @tc.desc   Check resource has no prefix (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetProfileByAbilitySyncInvalidMetaData_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -304,10 +336,12 @@ export default function getProfileByAbility() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_Profile_static_6800
-     * @tc.name    testGetProfileByAbilitySyncByEmptyModuleName_static
-     * @tc.desc    Check the empty moduleName (by sync)
-     * @tc.level   0
+     * @tc.name   testGetProfileByAbilitySyncByEmptyModuleName_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_6800
+     * @tc.desc   Check the empty moduleName (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetProfileByAbilitySyncByEmptyModuleName_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -322,10 +356,12 @@ export default function getProfileByAbility() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_Profile_static_6900
-     * @tc.name    testGetProfileByAbilitySyncByEmptyAbilityName_static
-     * @tc.desc    Check the empty abilityName (by sync)
-     * @tc.level   0
+     * @tc.name   testGetProfileByAbilitySyncByEmptyAbilityName_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_6900
+     * @tc.desc   Check the empty abilityName (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetProfileByAbilitySyncByEmptyAbilityName_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {

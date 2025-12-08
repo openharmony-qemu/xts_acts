@@ -63,12 +63,12 @@ export default function localTrackTest() {
       await CommonFunc.sleep(2000);
     });
     /**
+     * @tc.name   localTrackTest_0100
      * @tc.number SUB_ACE_localTrackTest_0100
-     * @tc.name localTrackTest_0100
-     * @tc.desc localTrack
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   localTrack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('localTrackTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('localTrackTest_0100 START');
@@ -89,12 +89,12 @@ export default function localTrackTest() {
       done();
     });
     /**
+     * @tc.name   localTrackTest_0200
      * @tc.number SUB_ACE_localTrackTest_0200
-     * @tc.name localTrackTest_0200
-     * @tc.desc localTrack
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   localTrack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('localTrackTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('localTrackTest_0200 START');

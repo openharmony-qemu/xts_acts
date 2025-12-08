@@ -87,12 +87,12 @@ export default function systemTimeCommonEventTest() {
     console.info('====>---------------systemTimeCommonEventTest start-----------------------');
 
     /**
-     * @tc.number    SUB_systemTime_commonEvent_timeChanged_0010
-     * @tc.name      SUB_systemTime_commonEvent_timeChanged_0010
-     * @tc.desc      SUB_systemTime_commonEvent_timeChanged_0010
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_systemTime_commonEvent_timeChanged_0010
+     * @tc.number SUB_systemTime_commonEvent_timeChanged_0010
+     * @tc.desc   SUB_systemTime_commonEvent_timeChanged_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_systemTime_commonEvent_timeChanged_0010', Level.LEVEL2, async (done: Function) => {
       let commonEventSubscribeInfo:CommonEventManager.CommonEventSubscribeInfo = {
@@ -113,12 +113,12 @@ export default function systemTimeCommonEventTest() {
     });
 
     /**
-     * @tc.number    SUB_systemTime_commonEvent_timeTick_0010
-     * @tc.name      SUB_systemTime_commonEvent_timeTick_0010
-     * @tc.desc      SUB_systemTime_commonEvent_timeTick_0010
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_systemTime_commonEvent_timeTick_0010
+     * @tc.number SUB_systemTime_commonEvent_timeTick_0010
+     * @tc.desc   SUB_systemTime_commonEvent_timeTick_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_systemTime_commonEvent_timeTick_0010', Level.LEVEL2, async (done: Function) => {
       let commonEventSubscribeInfo:CommonEventManager.CommonEventSubscribeInfo = {
@@ -141,12 +141,12 @@ export default function systemTimeCommonEventTest() {
 
 
     /**
-     * @tc.number    SUB_systemTime_commonEvent_timezoneChanged_0010
-     * @tc.name      SUB_systemTime_commonEvent_timezoneChanged_0010
-     * @tc.desc      SUB_systemTime_commonEvent_timezoneChanged_0010
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_systemTime_commonEvent_timezoneChanged_0010
+     * @tc.number SUB_systemTime_commonEvent_timezoneChanged_0010
+     * @tc.desc   SUB_systemTime_commonEvent_timezoneChanged_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_systemTime_commonEvent_timezoneChanged_0010', Level.LEVEL2, async (done: Function) => {
       let commonEventSubscribeInfo:CommonEventManager.CommonEventSubscribeInfo = {

@@ -26,37 +26,37 @@ export default function customComponentGetFirstChildTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_FIRST_CHILD_0001
-     * @tc.name       : testCustomComponentGetFirstChild001
-     * @tc.desc       : testing height for firstchild with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentGetFirstChild001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_FIRST_CHILD_0001
+     * @tc.desc   testing height for firstchild with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGetFirstChild001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGetFirstChild001()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_FIRST_CHILD_0002
-     * @tc.name       : testCustomComponentGetFirstChild002
-     * @tc.desc       : testing height for firstchild with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentGetFirstChild002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_FIRST_CHILD_0002
+     * @tc.desc   testing height for firstchild with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGetFirstChild002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGetFirstChild002()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_FIRST_CHILD_0003
-     * @tc.name       : testCustomComponentGetFirstChild003
-     * @tc.desc       : testing height for firstchild with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentGetFirstChild003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_FIRST_CHILD_0003
+     * @tc.desc   testing height for firstchild with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGetFirstChild003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGetFirstChild003()).assertEqual(0)

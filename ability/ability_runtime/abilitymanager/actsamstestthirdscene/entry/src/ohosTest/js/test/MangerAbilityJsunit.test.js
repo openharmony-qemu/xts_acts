@@ -18,11 +18,14 @@ export default function ActsAmsTestThirdScene() {
     describe('ActsAmsTestThirdScene', function () {
         console.info('----ActsAmsTestThirdScene----');
 
-        /*
-        * @tc.number    : Acts_Ams_test_3300
-        * @tc.name      : getProcessRunningInfos : Get All Running Processes Info
-        * @tc.desc      : Get All Running Processes Info(by Promise)
-        */
+        /**
+         * @tc.name   Acts_Ams_test_3300
+         * @tc.number Acts_Ams_test_3300
+         * @tc.desc   Get All Running Processes Info(by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('Acts_Ams_test_3300', Level.LEVEL0, async function (done) {
             var info = await appManager.getProcessRunningInfos();
             console.info('Acts_Ams_test_3300 getProcessRunningInfos JSON String: ' + JSON.stringify(info));

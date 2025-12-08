@@ -45,6 +45,14 @@ export default function backgroundJsunit() {
       console.info("background after each called");
     });
 
+    /**
+     * @tc.name   testBackground_0100
+     * @tc.number testBackground_0100
+     * @tc.desc   testBackground_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBackground_0100', Level.LEVEL0, async (done: Function) => {
       console.info('testBackground_0100 START');
       await Utils.sleep(4000);
@@ -57,6 +65,14 @@ export default function backgroundJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testBackground_0200
+     * @tc.number testBackground_0200
+     * @tc.desc   testBackground_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBackground_0200', Level.LEVEL0, async (done: Function) => {
       console.info('testBackground_0200 START');
       await Utils.sleep(1000);
@@ -83,6 +99,14 @@ export default function backgroundJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testBackground_0300
+     * @tc.number testBackground_0300
+     * @tc.desc   testBackground_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBackground_0300', Level.LEVEL0, async (done: Function) => {
       console.info('testBackground_0300 START');
       await Utils.sleep(4000);

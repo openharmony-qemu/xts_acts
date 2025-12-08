@@ -44,10 +44,13 @@ export default function RectCommonShapeMethodTest() {
       console.info("RectCommonShapeMethodTest after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         RectCommonShapeMethodTest_0010
-     * @tc.desic        test Rect radius
+    /**
+     * @tc.name   RectCommonShapeMethodTest_0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   RectCommonShapeMethodTest_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RectCommonShapeMethodTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[RectCommonShapeMethodTest_0010] START');

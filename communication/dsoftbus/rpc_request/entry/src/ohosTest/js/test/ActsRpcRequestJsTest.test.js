@@ -165,14 +165,14 @@ export default function ActsRpcRequestJsTest() {
             }
         }        
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_OnRemoteRequest_0100
-        * @tc.name   : Verifying the processing of the MessageSequence synchronous callback information of the async_onRemoteMessageRequest interface
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level3
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */       
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_0100
+         * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_0100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_OnRemoteRequest_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done){
             console.info("--------------------start SUB_DSoftbus_IPC_API_OnRemoteRequest_0100--------------------");
             try{
@@ -197,14 +197,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("--------------------end SUB_DSoftbus_IPC_API_OnRemoteRequest_0100--------------------");
         });       
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_OnRemoteRequest_0200
-        * @tc.name   : Verifying the processing of the MessageSequence Asynchronous callback information of the async_onRemoteMessageRequest interface
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level3
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */   
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_0200
+         * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_0200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_OnRemoteRequest_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done){
             console.info("--------------------start SUB_DSoftbus_IPC_API_OnRemoteRequest_0200--------------------");
             try{
@@ -229,15 +229,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("--------------------end SUB_DSoftbus_IPC_API_OnRemoteRequest_0200--------------------");
         });      
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_OnRemoteRequest_0300
-        * @tc.name   : To test the processing priority of the MessageSequence interface for synchronously invoking 
-        *               onRemoteRequest and async_onRemoteMessageRequest callback information
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level3
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */   
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_0300
+         * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_0300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_OnRemoteRequest_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done){
             console.info("--------------------start SUB_DSoftbus_IPC_API_OnRemoteRequest_0300--------------------");
             try{
@@ -262,15 +261,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("--------------------end SUB_DSoftbus_IPC_API_OnRemoteRequest_0300--------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_OnRemoteRequest_0400
-        * @tc.name   : To test the processing priority of the MessageSequence interface for Asynchronously invoking 
-        *               onRemoteRequest and async_onRemoteMessageRequest callback information
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level3
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */   
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_0400
+         * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_0400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_OnRemoteRequest_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done){
             console.info("--------------------start SUB_DSoftbus_IPC_API_OnRemoteRequest_0400--------------------");
             try{
@@ -296,14 +294,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("--------------------end SUB_DSoftbus_IPC_API_OnRemoteRequest_0400--------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_OnRemoteRequest_0500
-        * @tc.name   : Verifying the processing of the MessageParcel synchronous callback information of the async_onRemoteMessageRequest interface
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level3
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */   
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_0500
+         * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_0500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_OnRemoteRequest_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done){
             console.info("--------------------start SUB_DSoftbus_IPC_API_OnRemoteRequest_0500--------------------");
             try{
@@ -330,14 +328,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("--------------------end SUB_DSoftbus_IPC_API_OnRemoteRequest_0500--------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_OnRemoteRequest_0600
-        * @tc.name   : Verifying the processing of the MessageParcel Asynchronous callback information of the async_onRemoteMessageRequest interface
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level3
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */   
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_0600
+         * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_0600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_OnRemoteRequest_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done){
             console.info("--------------------start SUB_DSoftbus_IPC_API_OnRemoteRequest_0600--------------------");
             try{
@@ -363,15 +361,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("--------------------end SUB_DSoftbus_IPC_API_OnRemoteRequest_0600--------------------");
         });  
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_OnRemoteRequest_0700
-        * @tc.name   : To test the processing priority of the MessageParcel interface for synchronously invoking 
-        *               onRemoteRequest and async_onRemoteMessageRequest callback information
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level3
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */   
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_0700
+         * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_0700
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_OnRemoteRequest_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done){
             console.info("--------------------start SUB_DSoftbus_IPC_API_OnRemoteRequest_0700--------------------");
             try{
@@ -398,15 +395,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("--------------------end SUB_DSoftbus_IPC_API_OnRemoteRequest_0700--------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_OnRemoteRequest_0800
-        * @tc.name   : To test the processing priority of the MessageParcel interface for Asynchronously invoking 
-        *               onRemoteRequest and async_onRemoteMessageRequest callback information
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level3
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */   
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_0800
+         * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_0800
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_OnRemoteRequest_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done){
             console.info("--------------------start SUB_DSoftbus_IPC_API_OnRemoteRequest_0800--------------------");
             try{
@@ -432,14 +428,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("--------------------end SUB_DSoftbus_IPC_API_OnRemoteRequest_0800--------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_OnRemoteRequest_0900
-        * @tc.name   : Invoke async_onRemoteMessageRequest to process information in synchronization mode and call back in AsyncCallback mode
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level3
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */   
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_0900
+         * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_0900
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_OnRemoteRequest_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function(done){
             console.info("--------------------start SUB_DSoftbus_IPC_API_OnRemoteRequest_0900--------------------");
             try{
@@ -469,14 +465,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("--------------------end SUB_DSoftbus_IPC_API_OnRemoteRequest_0900--------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_OnRemoteRequest_1000
-        * @tc.name   : Invoke async_onRemoteMessageRequest to process information in asynchronous mode and call back in AsyncCallback mode
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level3
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */   
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_1000
+         * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_1000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_OnRemoteRequest_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function(done){
             console.info("--------------------start SUB_DSoftbus_IPC_API_OnRemoteRequest_1000--------------------");
             try{
@@ -506,14 +502,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("--------------------end SUB_DSoftbus_IPC_API_OnRemoteRequest_1000--------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_OnRemoteRequest_1100
-        * @tc.name   : Test the function of serializing the writeAshmem interface in MessageSequence mode
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level3
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */   
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_1100
+         * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_1100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_OnRemoteRequest_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function(){
             console.info("--------------------start SUB_DSoftbus_IPC_API_OnRemoteRequest_1100--------------------");
             try{
@@ -533,14 +529,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("--------------------end SUB_DSoftbus_IPC_API_OnRemoteRequest_1100--------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_OnRemoteRequest_1200
-        * @tc.name   : Test the function of serializing the readAshmem interface in MessageSequence mode
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level3
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */   
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_1200
+         * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_1200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_OnRemoteRequest_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done){
             console.info("--------------------start SUB_DSoftbus_IPC_API_OnRemoteRequest_1200--------------------");
             try{
@@ -568,14 +564,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("--------------------end SUB_DSoftbus_IPC_API_OnRemoteRequest_1200--------------------");
         });  
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_OnRemoteRequest_1300
-        * @tc.name   : Test the function of serializing the writeAshmem interface in MessageParcel mode
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level3
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */   
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_1300
+         * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_1300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_OnRemoteRequest_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function(){
             console.info("--------------------start SUB_DSoftbus_IPC_API_OnRemoteRequest_1300--------------------");
             try{
@@ -596,14 +592,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("--------------------end SUB_DSoftbus_IPC_API_OnRemoteRequest_1300--------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_OnRemoteRequest_1400
-        * @tc.name   : Test the function of serializing the readAshmem interface in MessageParcel mode
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level3
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */   
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_1400
+         * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_1400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_OnRemoteRequest_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done){
             console.info("--------------------start SUB_DSoftbus_IPC_API_OnRemoteRequest_1400--------------------");
             try{
@@ -632,14 +628,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("--------------------end SUB_DSoftbus_IPC_API_OnRemoteRequest_1400--------------------");
         });  
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_OnRemoteRequest_1500
-        * @tc.name   : To test the function of handling the exception of the writeAshmem interface in MessageSequence mode
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level3
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */   
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_1500
+         * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_1500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_OnRemoteRequest_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function(){
             console.info("--------------------start SUB_DSoftbus_IPC_API_OnRemoteRequest_1500--------------------");
             try{
@@ -658,14 +654,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("--------------------end SUB_DSoftbus_IPC_API_OnRemoteRequest_1500--------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_OnRemoteRequest_1600
-        * @tc.name   : To test the function of handling the exception of the writeAshmem interface in MessageParcel mode
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level3
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */   
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_1600
+         * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_1600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_OnRemoteRequest_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function(){
             console.info("--------------------start SUB_DSoftbus_IPC_API_OnRemoteRequest_1600--------------------");
             try{
@@ -682,14 +678,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("--------------------end SUB_DSoftbus_IPC_API_OnRemoteRequest_1600--------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_0000
-        * @tc.name   : test errorcode data verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0000
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_0000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_0000---------------------------");
             try{
@@ -728,14 +724,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_0000---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_0100
-        * @tc.name   : writeRemoteObject is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0100
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_0100---------------------------");
             try{
@@ -751,14 +747,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_0100---------------------------");
         });        
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_0200
-        * @tc.name   : readRemoteObject is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0200
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_0200---------------------------");
             try{
@@ -775,14 +771,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_0200---------------------------");
         });         
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_0300
-        * @tc.name   : readRemoteObject is proxy or remote object is invalid Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0300
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_0300---------------------------");
             try{
@@ -798,14 +794,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_0300---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_0400
-        * @tc.name   : writeInterfaceToken is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0400
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_0400---------------------------");
             try{
@@ -820,14 +816,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_0400---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_0500
-        * @tc.name   : readInterfaceToken is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0500
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_0500---------------------------");
             try{
@@ -843,14 +839,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_0500---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_0600
-        * @tc.name   : setSize is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0600
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_0600---------------------------");
             try{
@@ -865,14 +861,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_0600---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_0700
-        * @tc.name   : setCapacity is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0700
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0700
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_0700---------------------------");
             try{
@@ -887,14 +883,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_0700---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_0800
-        * @tc.name   : rewindRead is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0800
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0800
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_0800---------------------------");
             try{
@@ -909,14 +905,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_0800---------------------------");
         });  
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_0900
-        * @tc.name   : rewindWrite is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0900
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0900
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_0900---------------------------");
             try{
@@ -931,14 +927,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_0900---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_1000
-        * @tc.name   : writeByte is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1000
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_1000---------------------------");
             try{
@@ -953,14 +949,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_1000---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_1100
-        * @tc.name   : readByte is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1100
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_1100---------------------------");
             try{
@@ -975,14 +971,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_1100---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_1200
-        * @tc.name   : writeShort is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1200
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_1200---------------------------");
             try{
@@ -997,14 +993,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_1200---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_1300
-        * @tc.name   : readShort is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1300
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_1300---------------------------");
             try{
@@ -1020,14 +1016,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_1300---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_1400
-        * @tc.name   : writeInt is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1400
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_1400---------------------------");
             try{
@@ -1042,14 +1038,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_1400---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_1500
-        * @tc.name   : readInt is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1500
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_1500---------------------------");
             try{
@@ -1065,14 +1061,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_1500---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_1600
-        * @tc.name   : writeLong is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1600
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_1600---------------------------");
             try{
@@ -1087,14 +1083,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_1600---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_1700
-        * @tc.name   : readLong is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1700
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1700
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_1700---------------------------");
             try{
@@ -1110,14 +1106,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_1700---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_1800
-        * @tc.name   : writeFloat is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1800
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1800
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_1800---------------------------");
             try{
@@ -1132,14 +1128,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_1800---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_1900
-        * @tc.name   : readFloat is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1900
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1900
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_1900---------------------------");
             try{
@@ -1155,14 +1151,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_1900---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_2000
-        * @tc.name   : writeDouble is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2000
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_2000---------------------------");
             try{
@@ -1177,14 +1173,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_2000---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_2100
-        * @tc.name   : readDouble is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2100
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_2100---------------------------");
             try{
@@ -1200,14 +1196,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_2100---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_2200
-        * @tc.name   : writeBoolean is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2200
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_2200---------------------------");
             try{
@@ -1222,14 +1218,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_2200---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_2300
-        * @tc.name   : readBoolean is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2300
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_2300---------------------------");
             try{
@@ -1245,14 +1241,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_2300---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_2400
-        * @tc.name   : writeChar is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2400
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_2400---------------------------");
             try{
@@ -1267,14 +1263,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_2400---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_2500
-        * @tc.name   : readChar is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2500
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_2500---------------------------");
             try{
@@ -1290,14 +1286,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_2500---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_2600
-        * @tc.name   : writeString is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2600
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_2600---------------------------");
             try{
@@ -1312,14 +1308,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_2600---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_2700
-        * @tc.name   : readString is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2700
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2700
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_2700---------------------------");
             try{
@@ -1335,14 +1331,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_2700---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_2800
-        * @tc.name   : writeParcelable is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2800
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2800
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_2800---------------------------");
             try{
@@ -1358,14 +1354,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_2800---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_2900
-        * @tc.name   : writeParcelable is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2900
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2900
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_2900---------------------------");
             try{
@@ -1383,14 +1379,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_2900---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_3000
-        * @tc.name   : writeByteArray is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3000
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_3000---------------------------");
             try{
@@ -1406,14 +1402,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_3000---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_3100
-        * @tc.name   : readByteArray is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3100
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_3100---------------------------");
             try{
@@ -1430,14 +1426,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_3100---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_3200
-        * @tc.name   : writeShortArray is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3200
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_3200---------------------------");
             try{
@@ -1453,14 +1449,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_3200---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_3300
-        * @tc.name   : readShortArray is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3300
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_3300---------------------------");
             try{
@@ -1477,14 +1473,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_3300---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_3400
-        * @tc.name   : writeIntArray is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3400
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_3400---------------------------");
             try{
@@ -1500,14 +1496,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_3400---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_3500
-        * @tc.name   : readIntArray is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3500
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_3500---------------------------");
             try{
@@ -1524,14 +1520,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_3500---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_3600
-        * @tc.name   : writeLongArray is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3600
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_3600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_3600---------------------------");
             try{
@@ -1547,14 +1543,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_3600---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_3700
-        * @tc.name   : readLongArray is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3700
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3700
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_3700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_3700---------------------------");
             try{
@@ -1571,14 +1567,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_3700---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_3800
-        * @tc.name   : writeFloatArray is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3800
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3800
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_3800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_3800---------------------------");
             try{
@@ -1594,14 +1590,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_3800---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_3900
-        * @tc.name   : readFloatArray is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3900
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3900
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_3900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_3900---------------------------");
             try{
@@ -1618,14 +1614,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_3900---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_4000
-        * @tc.name   : writeDoubleArray is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4000
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_4000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_4000---------------------------");
             try{
@@ -1641,14 +1637,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_4000---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_4100
-        * @tc.name   : readDoubleArray is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4100
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_4100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_4100---------------------------");
             try{
@@ -1665,14 +1661,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_4100---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_4200
-        * @tc.name   : writeBooleanArray is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4200
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_4200---------------------------");
             try{
@@ -1688,14 +1684,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_4200---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_4300
-        * @tc.name   : readBooleanArray is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4300
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_4300---------------------------");
             try{
@@ -1712,14 +1708,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_4300---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_4400
-        * @tc.name   : writeCharArray is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4400
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_4400---------------------------");
             try{
@@ -1735,14 +1731,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_4400---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_4500
-        * @tc.name   : readCharArray is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4500
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_4500---------------------------");
             try{
@@ -1759,14 +1755,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_4500---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_4600
-        * @tc.name   : writeStringArray is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4600
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_4600---------------------------");
             try{
@@ -1782,14 +1778,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_4600---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_4700
-        * @tc.name   : readStringArray is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4700
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4700
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_4700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_4700---------------------------");
             try{
@@ -1806,14 +1802,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_4700---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_4800
-        * @tc.name   : writeNoException is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4800
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4800
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_4800---------------------------");
             try{
@@ -1828,14 +1824,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_4800---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_4900
-        * @tc.name   : readException is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4900
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4900
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_4900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_4900---------------------------");
             try{
@@ -1850,14 +1846,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_4900 ---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_5000
-        * @tc.name   : writeParcelableArray is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5000
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_5000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_5000---------------------------");
             try{
@@ -1874,14 +1870,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_5000---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_5100
-        * @tc.name   : readParcelableArray is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5100
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_5100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_5100---------------------------");
             try{
@@ -1900,14 +1896,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_5100 ---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_5200
-        * @tc.name   : writeRemoteObjectArray is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5200
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_5200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_5200---------------------------");
             try{
@@ -1935,14 +1931,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_5200---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_5300
-        * @tc.name   : readRemoteObjectArray is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5300
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_5300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_5300---------------------------");
             try{
@@ -1971,14 +1967,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_5300 ---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_5400
-        * @tc.name   : dupFileDescriptor is call os dup function failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5400
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_5400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_5400---------------------------");
             try{
@@ -1991,14 +1987,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_5400 ---------------------------");
         });         
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_5500
-        * @tc.name   : writeFileDescriptor is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5500
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_5500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_5500---------------------------");
             try{
@@ -2020,14 +2016,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_5500 ---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_5600
-        * @tc.name   : readFileDescriptor is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5600
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_5600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_5600---------------------------");
             try{
@@ -2050,14 +2046,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_5600 ---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_5700
-        * @tc.name   : writeAshmem is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5700
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5700
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_5700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_5700---------------------------");
             try{
@@ -2075,14 +2071,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_5700 ---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_5800
-        * @tc.name   :  readAshmem is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5800
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5800
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_5800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_5800---------------------------");
             try{
@@ -2101,14 +2097,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_5800 ---------------------------");
         }); 
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_5900
-        * @tc.name   : writeRawData is write data to message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5900
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5900
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_5900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_5900---------------------------");
             try{
@@ -2124,14 +2120,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_5900 ---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_6000
-        * @tc.name   : readRawData is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6000
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_6000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_6000---------------------------");
             try{
@@ -2148,14 +2144,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_6000 ---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_6100
-        * @tc.name   : registerDeathRecipient is only proxy object permitted Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6100
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_6100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_6100---------------------------");
             try{
@@ -2169,14 +2165,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_6100 ---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_6200
-        * @tc.name   : unregisterDeathRecipient is only proxy object permitted Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6200
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_6200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_6200---------------------------");
             try{
@@ -2190,14 +2186,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_6200 ---------------------------");
         });      
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_6300
-        * @tc.name   : writeAshmem is write to ashmem failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6300
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_6300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_6300---------------------------");
             try{
@@ -2215,14 +2211,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_6300 ---------------------------");
         });
         
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_6400
-        * @tc.name   : test The input parameter type of the writeRemoteObject interface is incorrect
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6400
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_6400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_6400---------------------------");
             try{
@@ -2238,14 +2234,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_6400 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_6500
-        * @tc.name   : test writeRemoteObject interface, null value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6500
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_6500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_6500---------------------------");
             try{
@@ -2261,14 +2257,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_6500 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_6600
-        * @tc.name   : test writeInterfaceToken interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6600
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_6600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_6600---------------------------");
             try{
@@ -2285,14 +2281,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_6600 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_6700
-        * @tc.name   : test writeInterfaceToken interface, null value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6700
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6700
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_6700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_6700---------------------------");
             try{
@@ -2308,13 +2304,13 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_6700 ---------------------------");
         });
 
-        /*
-         * @tc.number  : SUB_DSoftbus_IPC_API_Errorcode_6800
-         * @tc.name    : test writeInterfaceToken interface, string length too large
-         * @tc.desc    : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-         * @tc.level   : 3
-         * @tc.type    : Compatibility
-         * @tc.size    : MediumTest
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6800
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6800
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("SUB_DSoftbus_IPC_API_Errorcode_6800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_6800---------------------------");
@@ -2335,14 +2331,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_6800---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_6900
-        * @tc.name   : test setSize interface, type mismatch for parameter value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6900
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6900
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_6900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_6900---------------------------");
             try{
@@ -2359,14 +2355,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_6900 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_7000
-        * @tc.name   : test setSize interface, null value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7000
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_7000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_7000---------------------------");
             try{
@@ -2382,14 +2378,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_7000 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_7100
-        * @tc.name   : test setCapacity interface, type mismatch for parameter value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7100
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_7100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_7100---------------------------");
             try{
@@ -2406,14 +2402,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_7100 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_7200
-        * @tc.name   : test setCapacity interface, null value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7200
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_7200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_7200---------------------------");
             try{
@@ -2429,14 +2425,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_7200 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_7300
-        * @tc.name   : test rewindRead interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7300
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_7300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_7300---------------------------");
             try{
@@ -2453,14 +2449,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_7300 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_7400
-        * @tc.name   : test rewindRead interface, null value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7400
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_7400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_7400---------------------------");
             try{
@@ -2476,14 +2472,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_7400 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_7500
-        * @tc.name   : test rewindWrite interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7500
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_7500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_7500---------------------------");
             try{
@@ -2500,14 +2496,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_7500 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_7600
-        * @tc.name   : test rewindWrite interface, null value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7600
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_7600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_7600---------------------------");
             try{
@@ -2523,14 +2519,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_7600 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_7700
-        * @tc.name   : test writeByte interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7700
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7700
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_7700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_7700---------------------------");
             try{
@@ -2546,14 +2542,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_7700 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_7800
-        * @tc.name   : test writeByte interface, null value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7800
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7800
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_7800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_7800---------------------------");
             try{
@@ -2569,14 +2565,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_7800 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_7900
-        * @tc.name   : test writeShort interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7900
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7900
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_7900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_7900---------------------------");
             try{
@@ -2593,14 +2589,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_7900 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_8000
-        * @tc.name   : test writeShort interface, null value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8000
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_8000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_8000---------------------------");
             try{
@@ -2616,14 +2612,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_8000 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_8100
-        * @tc.name   : test writeInt interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8100
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_8100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_8100---------------------------");
             try{
@@ -2640,14 +2636,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_8100 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_8200
-        * @tc.name   : test writeInt interface, null value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8200
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_8200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_8200---------------------------");
             try{
@@ -2663,14 +2659,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_8200 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_8300
-        * @tc.name   : test writeLong interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8300
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_8300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_8300---------------------------");
             try{
@@ -2687,14 +2683,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_8300 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_8400
-        * @tc.name   : test writeLong interface, null value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8400
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_8400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_8400---------------------------");
             try{
@@ -2710,14 +2706,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_8400 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_8500
-        * @tc.name   : test writeFloat interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8500
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_8500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_8500---------------------------");
             try{
@@ -2732,14 +2728,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_8500 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_8600
-        * @tc.name   : test writeFloat interface, null value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8600
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_8600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_8600---------------------------");
             try{
@@ -2753,14 +2749,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_8600 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_8700
-        * @tc.name   : test writeDouble interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8700
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8700
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_8700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_8700---------------------------");
             try{
@@ -2777,14 +2773,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_8700 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_8800
-        * @tc.name   : test writeDouble interface, null value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8800
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8800
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_8800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_8800---------------------------");
             try{
@@ -2800,14 +2796,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_8800 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_8900
-        * @tc.name   : test writeBoolean interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8900
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8900
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_8900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_8900---------------------------");
             try{
@@ -2824,14 +2820,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_8900 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_9000
-        * @tc.name   : test writeBoolean interface, null value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9000
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_9000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_9000---------------------------");
             try{
@@ -2847,14 +2843,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_9000 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_9100
-        * @tc.name   : test writeChar interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9100
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_9100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_9100---------------------------");
             try{
@@ -2871,14 +2867,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_9100 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_9200
-        * @tc.name   : test writeChar interface, null value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9200
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_9200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_9200---------------------------");
             try{
@@ -2894,14 +2890,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_9200 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_9300
-        * @tc.name   : test writeString interface, type mismatch for parameter value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9300
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_9300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_9300---------------------------");
             try{
@@ -2918,14 +2914,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_9300 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_9400
-        * @tc.name   : test writeString interface, null value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9400
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_9400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_9400---------------------------");
             try{
@@ -2941,14 +2937,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_9400 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_9500
-        * @tc.name   : test writeString interface, string length too large value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9500
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_9500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_9500---------------------------");
             try{
@@ -2968,14 +2964,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_9500 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_9600
-        * @tc.name   : test writeParcelable interface, null value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9600
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_9600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_9600---------------------------");
             try{
@@ -2991,14 +2987,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_9600 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_9700
-        * @tc.name   : test writeParcelable interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9700
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9700
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_9700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_9700---------------------------");
             try{
@@ -3015,14 +3011,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_9700 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_9800
-        * @tc.name   : test readParcelable interface, null value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9800
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9800
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_9800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_9800---------------------------");
             try{
@@ -3038,14 +3034,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_9800 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_9900
-        * @tc.name   : test readParcelable is Call JS callback function failedv Error message verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9900
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9900
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_9900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_9900---------------------------");
             try{
@@ -3062,14 +3058,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_9900 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_10000
-        * @tc.name   : test writeByteArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10000
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_10000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_10000---------------------------");
             try{
@@ -3085,14 +3081,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_10000 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_10100
-        * @tc.name   : test readByteArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10100
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_10100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_10100---------------------------");
             try{
@@ -3108,14 +3104,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_10100 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_10200
-        * @tc.name   : test readByteArray interface, requires 1 parameters value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10200
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_10200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_10200---------------------------");
             try{
@@ -3132,14 +3128,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_10200 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_10300
-        * @tc.name   : readByteArray newArr is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10300
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_10300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_10300---------------------------");
             try{
@@ -3155,14 +3151,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_10300---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_10400
-        * @tc.name   : test writeShortArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10400
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_10400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_10400---------------------------");
             try{
@@ -3178,14 +3174,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_10400 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_10500
-        * @tc.name   : test readShortArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10500
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_10500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_10500---------------------------");
             try{
@@ -3201,14 +3197,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_10500 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_10600
-        * @tc.name   : test readShortArray interface, requires 1 parameters value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10600
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_10600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_10600---------------------------");
             try{
@@ -3225,14 +3221,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_10600 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_10700
-        * @tc.name   : readShortArray newArr is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10700
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10700
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_10700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_10700---------------------------");
             try{
@@ -3248,14 +3244,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_10700---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_10800
-        * @tc.name   : test writeIntArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10800
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10800
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_10800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_10800---------------------------");
             try{
@@ -3271,14 +3267,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_10800 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_10900
-        * @tc.name   : test readIntArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10900
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10900
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_10900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_10900---------------------------");
             try{
@@ -3294,14 +3290,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_10900 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_11000
-        * @tc.name   : test readIntArray interface, requires 1 parameters value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11000
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_11000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_11000---------------------------");
             try{
@@ -3318,14 +3314,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_11000 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_11100
-        * @tc.name   : readIntArray newArr is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11100
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_11100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_11100---------------------------");
             try{
@@ -3341,14 +3337,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_11100---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_11200
-        * @tc.name   : test writeLongArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11200
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_11200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_12000---------------------------");
             try{
@@ -3364,14 +3360,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_11200 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_11300
-        * @tc.name   : test readLongArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11300
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_11300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_11300---------------------------");
             try{
@@ -3387,14 +3383,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_11300 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_11400
-        * @tc.name   : test readLongArray interface, requires 1 parameters value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11400
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_11400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_11400---------------------------");
             try{
@@ -3411,14 +3407,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_11400 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_11500
-        * @tc.name   : readLongArray newArr is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11500
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_11500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_11500---------------------------");
             try{
@@ -3434,14 +3430,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_11500---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_11600
-        * @tc.name   : test writeFloatArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11600
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_11600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_11600---------------------------");
             try{
@@ -3457,14 +3453,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_11600 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_11700
-        * @tc.name   : test readFloatArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11700
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11700
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_11700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_11700---------------------------");
             try{
@@ -3480,14 +3476,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_11700 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_11800
-        * @tc.name   : readFloatArray newArr is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11800
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11800
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_11800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_10300---------------------------");
             try{
@@ -3503,14 +3499,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_11800---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_11900
-        * @tc.name   : test writeDoubleArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11900
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11900
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_11900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_11900---------------------------");
             try{
@@ -3526,14 +3522,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_11900 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_12000
-        * @tc.name   : test readDoubleArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12000
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_12000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_12000---------------------------");
             try{
@@ -3549,14 +3545,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_12000 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_12000
-        * @tc.name   : readDoubleArray newArr is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12000
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_12000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_12000---------------------------");
             try{
@@ -3572,14 +3568,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_12000---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_12100
-        * @tc.name   : test writeBooleanArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12100
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_12100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_12100---------------------------");
             try{
@@ -3595,14 +3591,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_12100 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_12200
-        * @tc.name   : test readBooleanArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12200
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_12200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_12200---------------------------");
             try{
@@ -3618,14 +3614,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_12200 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_12300
-        * @tc.name   : readBooleanArray newArr is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12300
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_12300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_12300---------------------------");
             try{
@@ -3641,14 +3637,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_12300---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_12400
-        * @tc.name   : test writeCharArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12400
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_12400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_12400---------------------------");
             try{
@@ -3664,14 +3660,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_12400 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_12500
-        * @tc.name   : test readCharArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12500
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_12500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_12500---------------------------");
             try{
@@ -3687,14 +3683,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_12500 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_12600
-        * @tc.name   : readCharArray newArr is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12600
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_12600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_12600---------------------------");
             try{
@@ -3710,14 +3706,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_12600---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_12700
-        * @tc.name   : test writeStringArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12700
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12700
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_12700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_12700---------------------------");
             try{
@@ -3733,14 +3729,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_12700 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_12800
-        * @tc.name   : test readStringArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12800
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12800
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_12800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_12800---------------------------");
             try{
@@ -3756,14 +3752,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_12800 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_12900
-        * @tc.name   : readStringArray newArr is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12900
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12900
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_12900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_12900---------------------------");
             try{
@@ -3779,14 +3775,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_12900---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_13000
-        * @tc.name   : test writeParcelableArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13000
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_13000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_13000---------------------------");
             try{
@@ -3802,14 +3798,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_13000 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_13100
-        * @tc.name   : test readParcelableArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13100
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_13100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_13100---------------------------");
             try{
@@ -3825,14 +3821,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_13100 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_13200
-        * @tc.name   : test writeRemoteObjectArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13200
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_13200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_13200---------------------------");
             try{
@@ -3848,14 +3844,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_13200 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_13300
-        * @tc.name   : test readRemoteObjectArray interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13300
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_13300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_13300---------------------------");
             try{
@@ -3871,14 +3867,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_13300 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_13300
-        * @tc.name   : readRemoteObjectArray newArr is read data from message sequence failed Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13300
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_13300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_13300---------------------------");
             try{
@@ -3894,14 +3890,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_13300---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_13400
-        * @tc.name   : test closeFileDescriptor interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13400
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_13400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_13400---------------------------");
             try{
@@ -3914,14 +3910,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_13400 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_13500
-        * @tc.name   : test dupFileDescriptor interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13500
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_13500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_13500---------------------------");
             try{
@@ -3934,14 +3930,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_13500 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_13600
-        * @tc.name   : test writeFileDescriptor interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13600
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_13600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_13600---------------------------");
             try{
@@ -3957,14 +3953,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_13600 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_13700
-        * @tc.name   : test writeAshmem interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13700
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13700
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_13700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_13700---------------------------");
             try{
@@ -3980,14 +3976,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_13700 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_13800
-        * @tc.name   : test writeRawData interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13800
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13800
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_13800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_13800---------------------------");
             try{
@@ -4004,14 +4000,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_13800 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_13900
-        * @tc.name   : test readRawData interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13900
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13900
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_13900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_13900---------------------------");
             try{
@@ -4027,14 +4023,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_13900 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_14000
-        * @tc.name   : test readRawDataBuffer interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14000
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_14000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_14000---------------------------");
             try{
@@ -4050,14 +4046,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_14000 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_14100
-        * @tc.name   : test sendMessageRequest interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14100
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_14100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_14100---------------------------");
             try{
@@ -4070,14 +4066,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_14100 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_14200
-        * @tc.name   : test sendMessageRequestCallback interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14200
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_14200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_14200---------------------------");
             try{
@@ -4107,14 +4103,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_14200 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_14300
-        * @tc.name   : test getLocalInterface interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14300
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_14300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_14300---------------------------");
             try{
@@ -4132,14 +4128,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_14300 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_14400
-        * @tc.name   : getLocalInterface is only proxy object permitted Error verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14400
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_14400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_14400---------------------------");
             try{
@@ -4153,14 +4149,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_14400 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_14500
-        * @tc.name   : test registerDeathRecipient interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14500
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_14500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_14500---------------------------");
             try{
@@ -4174,14 +4170,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_14500 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_14600
-        * @tc.name   : test unregisterDeathRecipient interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14600
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_14600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_14600---------------------------");
             try{
@@ -4195,14 +4191,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_14600 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_14700
-        * @tc.name   : test getDescriptor interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14700
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14700
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_14700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_14700---------------------------");
             try{
@@ -4216,14 +4212,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_14700 ---------------------------");
         });
 
-        /*
-        * @tc.number  : SUB_DSoftbus_IPC_API_Errorcode_14800
-        * @tc.name    : test flushCmdBuffer interface, illegal value verification
-        * @tc.desc    : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level   : 3
-        * @tc.type    : Compatibility
-        * @tc.size    : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14800
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14800
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_14800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_14800---------------------------");
             try {
@@ -4237,14 +4233,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_14800---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_14900
-        * @tc.name   : test sendMessageRequest interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14900
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14900
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_14900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_14900---------------------------");
             try{
@@ -4258,14 +4254,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_14900 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_15000
-        * @tc.name   : test sendMessageRequestCallback interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_15000
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_15000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_15000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_15000---------------------------");
             try{
@@ -4296,14 +4292,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_15000 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_15100
-        * @tc.name   : test modifyLocalInterface interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_15100
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_15100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_15100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_15100---------------------------");
             try{
@@ -4317,14 +4313,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_15100 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_15200
-        * @tc.name   : Test the function of serializing the writeAshmem interface in MessageSequence mode
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level3
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */   
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_15200
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_15200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_15200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function(){
             console.info("--------------------start SUB_DSoftbus_IPC_API_Errorcode_15200--------------------");
             try{
@@ -4340,14 +4336,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("--------------------end SUB_DSoftbus_IPC_API_Errorcode_15200--------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_15300
-        * @tc.name   : Test the function of serializing the writeAshmem interface in MessageSequence mode
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level3
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */   
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_15300
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_15300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_15300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function(){
             console.info("--------------------start SUB_DSoftbus_IPC_API_Errorcode_15300--------------------");
             try{
@@ -4364,14 +4360,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("--------------------end SUB_DSoftbus_IPC_API_Errorcode_15300--------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_15400
-        * @tc.name   : test writeDataToAshmem interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_15400
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_15400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_15400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_15400---------------------------");
             try{
@@ -4388,14 +4384,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_15400 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_15500
-        * @tc.name   : test readDataFromAshmem interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_15500
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_15500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_15500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_15500---------------------------");
             try{
@@ -4413,14 +4409,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_15500 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_15600
-        * @tc.name   : test readAshmem interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3  
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_15600
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_15600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_15600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_15600---------------------------");
             try{
@@ -4437,14 +4433,14 @@ export default function ActsRpcRequestJsTest() {
             console.info("---------------------end SUB_DSoftbus_IPC_API_Errorcode_15600 ---------------------------");
         });
 
-        /*
-        * @tc.number : SUB_DSoftbus_IPC_API_Errorcode_15700
-        * @tc.name   : test readAshmem interface, illegal value verification
-        * @tc.desc   : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
-        * @tc.level  : Level 3 
-        * @tc.type   : Compatibility
-        * @tc.size   : MediumTest
-        */
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_15700
+         * @tc.number SUB_DSoftbus_IPC_API_Errorcode_15700
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_DSoftbus_IPC_API_Errorcode_15700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(){
             console.info("---------------------start SUB_DSoftbus_IPC_API_Errorcode_15700---------------------------");
             try{

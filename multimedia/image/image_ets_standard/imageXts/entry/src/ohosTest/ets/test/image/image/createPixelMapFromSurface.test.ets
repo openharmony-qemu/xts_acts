@@ -104,12 +104,12 @@ export default function createPixelMapFromSurfaceTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_001  //TODO 返回错误结果格式不对 error为错误码62980178 code为undefined
-     * @tc.name      : createPixelMapFromSurface_abnormal_promise_001
-     * @tc.desc      : createPixelMapFromSurface
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPixelMapFromSurface_abnormal_promise_001
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_001  //TODO 返回错误结果格式不对 error为错误码62980178 code为undefined
+     * @tc.desc   createPixelMapFromSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapFromSurface_abnormal_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapFromSurface_abnormal_promise_001';
@@ -118,12 +118,12 @@ export default function createPixelMapFromSurfaceTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_002
-     * @tc.name      : createPixelMapFromSurfaceSync_abnormal_promise_001
-     * @tc.desc      : createPixelMapFromSurfaceSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPixelMapFromSurfaceSync_abnormal_promise_001
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_002
+     * @tc.desc   createPixelMapFromSurfaceSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapFromSurfaceSync_abnormal_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapFromSurfaceSync_abnormal_promise_001';
@@ -132,12 +132,12 @@ export default function createPixelMapFromSurfaceTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_003  //TODO 返回错误结果格式不对 error为错误码62980178 code为undefined
-     * @tc.name      : createPixelMapFromSurface_abnormal_promise_002
-     * @tc.desc      : createPixelMapFromSurface
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPixelMapFromSurface_abnormal_promise_002
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_003  //TODO 返回错误结果格式不对 error为错误码62980178 code为undefined
+     * @tc.desc   createPixelMapFromSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapFromSurface_abnormal_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapFromSurface_abnormal_promise_002';
@@ -146,12 +146,12 @@ export default function createPixelMapFromSurfaceTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_004 //TODO 返回错误结果格式不对 error为错误码62980178 code为undefined
-     * @tc.name      : createPixelMapFromSurfaceSync_abnormal_promise_002
-     * @tc.desc      : createPixelMapFromSurfaceSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPixelMapFromSurfaceSync_abnormal_promise_002
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_004 //TODO 返回错误结果格式不对 error为错误码62980178 code为undefined
+     * @tc.desc   createPixelMapFromSurfaceSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapFromSurfaceSync_abnormal_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapFromSurfaceSync_abnormal_promise_002';

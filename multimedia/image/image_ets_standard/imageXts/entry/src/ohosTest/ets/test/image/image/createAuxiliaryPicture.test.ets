@@ -91,12 +91,12 @@ export default function createAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_CREATE_AUXILIARY_PICTURE_001
-     * @tc.name      : createAuxiliaryPicture_promise_001
-     * @tc.desc      : createAuxiliaryPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createAuxiliaryPicture_promise_001
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_001
+     * @tc.desc   createAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAuxiliaryPicture_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAuxiliaryPicture_promise_001';
@@ -110,12 +110,12 @@ export default function createAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_AUXILIARY_PICTURE_002
-     * @tc.name      : createAuxiliaryPicture_promise_002
-     * @tc.desc      : createAuxiliaryPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createAuxiliaryPicture_promise_002
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_002
+     * @tc.desc   createAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAuxiliaryPicture_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAuxiliaryPicture_promise_002';
@@ -129,12 +129,12 @@ export default function createAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_AUXILIARY_PICTURE_003
-     * @tc.name      : createAuxiliaryPicture_promise_003
-     * @tc.desc      : createAuxiliaryPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createAuxiliaryPicture_promise_003
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_003
+     * @tc.desc   createAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAuxiliaryPicture_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAuxiliaryPicture_promise_003';
@@ -148,12 +148,12 @@ export default function createAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_AUXILIARY_PICTURE_004
-     * @tc.name      : createAuxiliaryPicture_promise_004
-     * @tc.desc      : createAuxiliaryPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createAuxiliaryPicture_promise_004
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_004
+     * @tc.desc   createAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAuxiliaryPicture_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAuxiliaryPicture_promise_004';
@@ -167,12 +167,12 @@ export default function createAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_AUXILIARY_PICTURE_005
-     * @tc.name      : createAuxiliaryPicture_promise_005
-     * @tc.desc      : createAuxiliaryPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createAuxiliaryPicture_promise_005
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_005
+     * @tc.desc   createAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAuxiliaryPicture_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAuxiliaryPicture_promise_005';
@@ -186,12 +186,12 @@ export default function createAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_AUXILIARY_PICTURE_006
-     * @tc.name      : createAuxiliaryPicture_abnormal_promise_001
-     * @tc.desc      : createAuxiliaryPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createAuxiliaryPicture_abnormal_promise_001
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_006
+     * @tc.desc   createAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAuxiliaryPicture_abnormal_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAuxiliaryPicture_abnormal_promise_001';
@@ -201,12 +201,12 @@ export default function createAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_AUXILIARY_PICTURE_007 //TODO auxType传undefined会报错误undefined 而不是错误码401
-     * @tc.name      : createAuxiliaryPicture_abnormal_promise_002
-     * @tc.desc      : createAuxiliaryPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createAuxiliaryPicture_abnormal_promise_002
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_007 //TODO auxType传undefined会报错误undefined 而不是错误码401
+     * @tc.desc   createAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createAuxiliaryPicture_abnormal_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAuxiliaryPicture_abnormal_promise_002';
@@ -220,12 +220,12 @@ export default function createAuxiliaryPictureTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_CREATE_AUXILIARY_PICTURE_008
-     * @tc.name      : createAuxiliaryPicture_abnormal_promise_003
-     * @tc.desc      : createAuxiliaryPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createAuxiliaryPicture_abnormal_promise_003
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_008
+     * @tc.desc   createAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAuxiliaryPicture_abnormal_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAuxiliaryPicture_abnormal_promise_003';

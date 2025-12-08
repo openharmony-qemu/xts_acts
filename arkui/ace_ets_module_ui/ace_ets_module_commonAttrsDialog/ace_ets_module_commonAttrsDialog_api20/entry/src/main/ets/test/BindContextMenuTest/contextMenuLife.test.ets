@@ -50,14 +50,13 @@ export default function ContextMenuLife() {
             console.info('BindMenu after each called');
         })
 
-        /* 
-         * @tc.number: contextMenu_0010
-         * @tc.name  : contextMenu_0010
-         * @tc.desc  : open contextMenu,call onWillAppear and onDidAppear;close contextMenu,call onWillDisappear and
-         *             onDidDisappear
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : Level 0
+        /**
+         * @tc.name   contextMenu_0010
+         * @tc.number contextMenu_0010
+         * @tc.desc   open contextMenu,call onWillAppear and onDidAppear;close contextMenu,call onWillDisappear and
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('contextMenu_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             console.info('[contextMenu_0010] START');

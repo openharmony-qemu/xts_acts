@@ -23,14 +23,12 @@ export default function fileIOLseek() {
 describe('fileIO_fs_lseek', function () {
 
   /**
+   * @tc.name   fileIO_test_lseek_001
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_0100
-   * @tc.name fileIO_test_lseek_001
-   * @tc.desc Test lseek() interface.
-   * Get the file offset pointer position by fd and offset = 5 parameter, verify the normal function.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test lseek() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_lseek_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_lseek_001');
@@ -49,14 +47,12 @@ describe('fileIO_fs_lseek', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_lseek_002
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_0200
-   * @tc.name fileIO_test_lseek_002
-   * @tc.desc Test lseek() interface.
-   * Get the file offset pointer position by fd,offset = 3 and whence = 0(SEEK_SET) parameter, verify the normal function.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test lseek() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_lseek_002', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_lseek_002');
@@ -77,14 +73,12 @@ describe('fileIO_fs_lseek', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_lseek_003
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_0300
-   * @tc.name fileIO_test_lseek_003
-   * @tc.desc Test lseek() interface.
-   * Get the file offset pointer position by fd,offset = 3 and whence = 1(SEEK_CUR) parameter, verify the normal function.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test lseek() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_lseek_003', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_lseek_003');
@@ -105,14 +99,12 @@ describe('fileIO_fs_lseek', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_lseek_004
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_0400
-   * @tc.name fileIO_test_lseek_004
-   * @tc.desc Test lseek() interface.
-   * Get the file offset pointer position by fd,offset = 3 and whence = 2(SEEK_END) parameter, verify the normal function.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test lseek() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_lseek_004', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_lseek_004');
@@ -133,14 +125,12 @@ describe('fileIO_fs_lseek', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_lseek_005
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_0500
-   * @tc.name fileIO_test_lseek_005
-   * @tc.desc Test lseek() interface.
-   * No parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test lseek() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_lseek_005', Level.LEVEL3, async function () {
     try {
@@ -153,14 +143,12 @@ describe('fileIO_fs_lseek', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_lseek_006
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_0600
-   * @tc.name fileIO_test_lseek_006
-   * @tc.desc Test lseek() interface.
-   * Illegal type of parameter.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test lseek() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_lseek_006', Level.LEVEL3, async function () {
     try {
@@ -173,14 +161,12 @@ describe('fileIO_fs_lseek', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_lseek_007
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_0700
-   * @tc.name fileIO_test_lseek_007
-   * @tc.desc Test lseek() interface.
-   * The file content is empty
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test lseek() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_lseek_007', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_lseek_007');
@@ -200,14 +186,12 @@ describe('fileIO_fs_lseek', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_lseek_008
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_0800
-   * @tc.name fileIO_test_lseek_008
-   * @tc.desc Test lseek() interface.
-   * Get the file offset pointer position repeatedly
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test lseek() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_lseek_008', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_lseek_008');
@@ -230,14 +214,12 @@ describe('fileIO_fs_lseek', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_lseek_009
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_0900
-   * @tc.name fileIO_test_lseek_009
-   * @tc.desc Test lseek() interface.
-   * Undefined whence arguments,use default whence = SEEK_SET.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test lseek() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_lseek_009', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_lseek_009');
@@ -256,14 +238,12 @@ describe('fileIO_fs_lseek', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_lseek_010
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_1000
-   * @tc.name fileIO_test_lseek_010
-   * @tc.desc Test lseek() interface.
-   * Get the file offset pointer position by fd, offset = -1 and whence = 1(SEEK_SET) parameter
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test lseek() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_lseek_010', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_lseek_010');
@@ -282,14 +262,12 @@ describe('fileIO_fs_lseek', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_lseek_011
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_1100
-   * @tc.name fileIO_test_lseek_011
-   * @tc.desc Test lseek() interface.
-   * Get the file offset pointer position by fd, offset = -1 and whence = 1(SEEK_CUR) parameter
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test lseek() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_lseek_011', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_lseek_011');
@@ -312,14 +290,12 @@ describe('fileIO_fs_lseek', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_lseek_012
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_1200
-   * @tc.name fileIO_test_lseek_012
-   * @tc.desc Test lseek() interface.
-   * Get the file offset pointer position by fd, offset = -2 and whence = 2(SEEK_END) parameter
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test lseek() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_lseek_012', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_lseek_012');
@@ -340,14 +316,12 @@ describe('fileIO_fs_lseek', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_lseek_013
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_1300
-   * @tc.name fileIO_test_lseek_013
-   * @tc.desc Test lseek() interface.
-   * Get the file offset pointer position by bad fd, offset = 5 and whence = 1(SEEK_CUR) parameter
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test lseek() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_lseek_013', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_lseek_013');
@@ -367,14 +341,12 @@ describe('fileIO_fs_lseek', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_lseek_014
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_1400
-   * @tc.name fileIO_test_lseek_014
-   * @tc.desc Test lseek() interface.
-   * Get the file offset pointer position by fd, offset = -100 and whence = 1(SEEK_CUR) parameter
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test lseek() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_lseek_014', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_lseek_014');
@@ -393,14 +365,12 @@ describe('fileIO_fs_lseek', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_lseek_015
    * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_LSEEK_1500
-   * @tc.name fileIO_test_lseek_015
-   * @tc.desc Test lseek() interface.
-   * Get the file offset pointer position by fd, offset = 5 and whence = 3 parameter
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test lseek() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_lseek_015', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_lseek_015');

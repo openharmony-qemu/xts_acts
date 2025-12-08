@@ -54,12 +54,12 @@ export default function showActionMenuMode() {
     });
 
     /**
+     * @tc.name   showActionMenuMode_0100
      * @tc.number showActionMenuMode_0100
-     * @tc.name showActionMenuMode_0100
-     * @tc.desc set levelMode: 0(LevelMode.OVERLAY),levelUniqueId: Normal value
-     * @tc.level: Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set levelMode: 0(LevelMode.OVERLAY),levelUniqueId: Normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('showActionMenuMode_0100', Level.LEVEL1, async (done: Function) => {
       console.info('showActionMenuMode_0100 START');
@@ -96,12 +96,12 @@ export default function showActionMenuMode() {
     });
 
     /**
+     * @tc.name   showActionMenuMode_0200
      * @tc.number showActionMenuMode_0200
-     * @tc.name showActionMenuMode_0200
-     * @tc.desc set levelMode: 1(LevelMode.EMBEDDED),levelUniqueId: Normal value
-     * @tc.level: Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set levelMode: 1(LevelMode.EMBEDDED),levelUniqueId: Normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('showActionMenuMode_0200', Level.LEVEL1, async (done: Function) => {
       console.info('showActionMenuMode_0200 START');
@@ -139,12 +139,12 @@ export default function showActionMenuMode() {
     });
 
     /**
+     * @tc.name   showActionMenuMode_0300
      * @tc.number showActionMenuMode_0300
-     * @tc.name showActionMenuMode_0300
-     * @tc.desc set levelMode: 0(LevelMode.OVERLAY),levelUniqueId: Abnormal value,
-     * @tc.level: Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set levelMode: 0(LevelMode.OVERLAY),levelUniqueId: Abnormal value,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('showActionMenuMode_0300', Level.LEVEL1, async (done: Function) => {
       console.info('showActionMenuMode_0300 START');
@@ -182,12 +182,12 @@ export default function showActionMenuMode() {
     });
 
     /**
+     * @tc.name   showActionMenuMode_0400
      * @tc.number showActionMenuMode_0400
-     * @tc.name showActionMenuMode_0400
-     * @tc.desc set  set levelMode: 1(LevelMode.EMBEDDED),levelUniqueId: Abnormal value
-     * @tc.level: Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set  set levelMode: 1(LevelMode.EMBEDDED),levelUniqueId: Abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('showActionMenuMode_0400', Level.LEVEL1, async (done: Function) => {
       console.info('showActionMenuMode_0400 START');
@@ -225,12 +225,12 @@ export default function showActionMenuMode() {
     });
 
     /**
+     * @tc.name   showActionMenuMode_0500
      * @tc.number showActionMenuMode_0500
-     * @tc.name showActionMenuMode_0500
-     * @tc.desc set levelMode: undefined,levelUniqueId: Normal value
-     * @tc.level: Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set levelMode: undefined,levelUniqueId: Normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('showActionMenuMode_0500', Level.LEVEL1, async (done: Function) => {
       console.info('showActionMenuMode_0500 START');
@@ -266,12 +266,12 @@ export default function showActionMenuMode() {
       done();
     });
     /**
+     * @tc.name   showActionMenuMode_0600
      * @tc.number showActionMenuMode_0600
-     * @tc.name showActionMenuMode_0600
-     * @tc.desc set levelMode: null,levelUniqueId: Normal value
-     * @tc.level: Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set levelMode: null,levelUniqueId: Normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('showActionMenuMode_0600', Level.LEVEL1, async (done: Function) => {
       console.info('showActionMenuMode_0600 START');

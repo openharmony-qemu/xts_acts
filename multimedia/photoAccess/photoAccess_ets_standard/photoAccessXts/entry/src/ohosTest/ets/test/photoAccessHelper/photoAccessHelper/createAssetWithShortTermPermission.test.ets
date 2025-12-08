@@ -74,12 +74,12 @@ export default function createAssetWithShortTermPermissionTest() {
     });
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_CREATE_ASSET_WITH_SHORT_TERM_PERMISSION_001
-     * @tc.name      : createAssetWithShortTermPermission_promise_001
-     * @tc.desc      : createAssetWithShortTermPermission
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createAssetWithShortTermPermission_promise_001
+     * @tc.number PHOTO_ACCESS_HELPER_CREATE_ASSET_WITH_SHORT_TERM_PERMISSION_001
+     * @tc.desc   createAssetWithShortTermPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createAssetWithShortTermPermission_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAssetWithShortTermPermission_promise_001';

@@ -79,9 +79,12 @@ export default function undo() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraIdProp
-         * @tc.desc      ACE
+         * @tc.name   testCameraIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraIdProp', Level.LEVEL0, async function(done) {
             console.info('testCameraIdProp START');
@@ -96,6 +99,14 @@ export default function undo() {
             done();
         });
 
+        /**
+         * @tc.name   testCameraClassProp
+         * @tc.number testCameraClassProp
+         * @tc.desc   testCameraClassProp
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testCameraClassProp', Level.LEVEL0, async function(done) {
             console.info('testCameraClassProp START');
             console.info("[cameraProps] get globalThis.value is: " + JSON.stringify(globalThis.value));
@@ -111,9 +122,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testCameraClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testCameraClassPropNone START');
@@ -131,9 +145,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraStyleProp
-         * @tc.desc      ACEs
+         * @tc.name   testCameraStyleProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACEs
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraStyleProp', Level.LEVEL0, async function(done) {
             console.info('testCameraStyleProp START');
@@ -154,9 +171,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraRefProp
-         * @tc.desc      ACE
+         * @tc.name   testCameraRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraRefProp', Level.LEVEL0, async function(done) {
             console.info('testCameraRefProp START');
@@ -173,9 +193,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testCameraRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testCameraRefPropNone START');
@@ -193,9 +216,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testCameraDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testCameraDisabledPropTrue START');
@@ -212,9 +238,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testCameraDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testCameraDisabledPropFalse START');
@@ -231,9 +260,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testCameraDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testCameraDisabledPropNone START');
@@ -250,9 +282,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testCameraFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testCameraFocusablePropTrue START');
@@ -269,9 +304,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testCameraFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testCameraFocusablePropFalse START');
@@ -288,9 +326,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testCameraFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testCameraFocusablePropNone START');
@@ -307,9 +348,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraDataProp
-         * @tc.desc      ACE
+         * @tc.name   testCameraDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraDataProp', Level.LEVEL0, async function(done) {
             console.info('testCameraDataProp START');
@@ -327,9 +371,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testCameraDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testCameraDataPropNone START');
@@ -347,9 +394,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testCameraClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testCameraClickEffectPropSmall START');
@@ -366,9 +416,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testCameraClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testCameraClickEffectPropMedium START');
@@ -385,9 +438,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testCameraClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testCameraClickEffectPropLarge START');
@@ -404,9 +460,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testCameraClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testCameraClickEffectPropNone START');
@@ -424,9 +483,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testCameraDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testCameraDirPropRtl START');
@@ -443,9 +505,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testCameraDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testCameraDirPropLtr START');
@@ -462,9 +527,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testCameraDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testCameraDirPropAuto START');
@@ -481,9 +549,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testCameraDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testCameraDirPropNone START');
@@ -501,9 +572,12 @@ export default function undo() {
 
         // 特有属性
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraFlashOn
-         * @tc.desc      ACE
+         * @tc.name   testCameraFlashOn
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraFlashOn', Level.LEVEL0, async function(done) {
             console.info('testCameraFlashOn START');
@@ -521,9 +595,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraFlashOff
-         * @tc.desc      ACE
+         * @tc.name   testCameraFlashOff
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraFlashOff', Level.LEVEL0, async function(done) {
             console.info('testCameraFlashOff START');
@@ -541,9 +618,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraFlashTorch
-         * @tc.desc      ACE
+         * @tc.name   testCameraFlashTorch
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraFlashTorch', Level.LEVEL0, async function(done) {
             console.info('testCameraFlashTorch START');
@@ -561,9 +641,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraFlashNone
-         * @tc.desc      ACE
+         * @tc.name   testCameraFlashNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraFlashNone', Level.LEVEL0, async function(done) {
             console.info('testCameraFlashOn START');
@@ -581,9 +664,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraFlashOn
-         * @tc.desc      ACE
+         * @tc.name   testCameraDevicePositionFront
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraDevicePositionFront', Level.LEVEL0, async function(done) {
             console.info('testCameraDevicePositionFront START');
@@ -601,9 +687,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraDevicePositionBack
-         * @tc.desc      ACE
+         * @tc.name   testCameraDevicePositionBack
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraDevicePositionBack', Level.LEVEL0, async function(done) {
             console.info('testCameraDevicePositionFront START');
@@ -621,9 +710,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraDevicePositionNone
-         * @tc.desc      ACE
+         * @tc.name   testCameraDevicePositionNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraDevicePositionNone', Level.LEVEL0, async function(done) {
             console.info('testCameraDevicePositionNone START');

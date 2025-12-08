@@ -45,9 +45,12 @@ export default function Navigation_SingleInstanceJump28() {
     });
 
     /**
+     * @tc.name   Navigation_SingleInstanceJump28_0100
      * @tc.number Navigation_SingleInstanceJump28_0100
-     * @tc.name testNavigation
-     * @tc.desc
+     * @tc.desc   Navigation_SingleInstanceJump28_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Navigation_SingleInstanceJump28_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('Navigation_SingleInstanceJump28_0100 START');

@@ -69,12 +69,14 @@ export default class AbilityTest01 extends UIAbility {
           bundleName: 'com.test.actsstartandterminatetest',
           abilityName: 'UiAbility08'
         }).then(() => {
-        hilog.info(0x0000, 'testTag', '%{public}s', 'start test hap UiAbility08');
-        setTimeout(() => {
-          // destroy assistHap
-          globalThis.abilityAssist01.terminateSelf();
-        }, 400);
-      });
+          hilog.info(0x0000, 'testTag', '%{public}s', 'start test hap UiAbility08');
+        }).catch(() => {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'fail test hap UiAbility08');
+        });
+      setTimeout(() => {
+        hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility01 setTimeout inner');
+        globalThis.abilityAssist01.terminateSelf();
+      }, 1000);
     } catch (err) {
       hilog.info(0x0000, 'testTag', '%{public}s', `startAbility fail ${err}`);
     }

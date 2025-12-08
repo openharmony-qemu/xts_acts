@@ -57,12 +57,14 @@ export default function webViewHasImageJsunit() {
       console.info("web beforeEach start");
       done();
     })
-    /*
-      * tc.number SUB_ACE_BASIC_ETS_API_TESTHASIMAGE_0100
-      * tc.name testHasImagePm
-      * tc.desc There are offline images in the H5 page that are loaded using the img tag, and the interface
-      * hasImage:Promise results in true
-    */
+    /**
+     * @tc.name   testHasImagePm
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTHASIMAGE_0100
+     * @tc.desc   There are offline images in the H5 page that are loaded using the img tag, and the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHasImagePm',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitHasImagePm", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -72,12 +74,14 @@ export default function webViewHasImageJsunit() {
       done();
 
     })
-    /*
-      * tc.number SUB_ACE_BASIC_ETS_API_TESTHASIMAGE_0200
-      * tc.name testHasImagePmSvg
-      * tc.desc There is no image loaded using the img tag in the H5 page, only svg, and the interface
-      * hasImage:Promise result is false
-    */
+    /**
+     * @tc.name   testHasImagePmSvg
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTHASIMAGE_0200
+     * @tc.desc   There is no image loaded using the img tag in the H5 page, only svg, and the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHasImagePmSvg',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitHasImagePmSvg", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -87,12 +91,14 @@ export default function webViewHasImageJsunit() {
       done();
 
     })
-    /*
-      * tc.number SUB_ACE_BASIC_ETS_API_TESTHASIMAGE_0300
-      * tc.name testHasImagePmOnline
-      * tc.desc The H5 page has an online web page loaded using the img tag, and the interface
-      * hasImage:Promise result is false
-    */
+    /**
+     * @tc.name   testHasImagePmOnline
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTHASIMAGE_0300
+     * @tc.desc   The H5 page has an online web page loaded using the img tag, and the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHasImagePmOnline',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitHasImagePmOnline", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -101,12 +107,14 @@ export default function webViewHasImageJsunit() {
       await Utils.waitForExist(() => isReturn, "emitHasImagePmOnline" + '_returnCheck', true, 500);
       done();
     })
-    /*
-      * tc.number SUB_ACE_BASIC_ETS_API_TESTHASIMAGE_0400
-      * tc.name testHasImageCb
-      * tc.desc There are offline images in the H5 page that are loaded using the img tag, and the interface
-      * hasImage:Callback results in true
-    */
+    /**
+     * @tc.name   testHasImageCb
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTHASIMAGE_0400
+     * @tc.desc   There are offline images in the H5 page that are loaded using the img tag, and the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHasImageCb',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitHasImageCb", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -115,12 +123,14 @@ export default function webViewHasImageJsunit() {
       await Utils.waitForExist(() => isReturn, "emitHasImageCb" + '_returnCheck', true, 500);
       done();
     })
-    /*
-     * tc.number SUB_ACE_BASIC_ETS_API_TESTHASIMAGE_0500
-     * tc.name testHasImageCbSvg
-     * tc.desc There is no image loaded using the img tag in the H5 page, only svg, and the interface
-     * hasImage:Callback result is false
-   */
+    /**
+     * @tc.name   testHasImageCbSvg
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTHASIMAGE_0500
+     * @tc.desc   There is no image loaded using the img tag in the H5 page, only svg, and the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHasImageCbSvg',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitHasImageCbSvg", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -129,12 +139,14 @@ export default function webViewHasImageJsunit() {
       await Utils.waitForExist(() => isReturn, "emitHasImageCbSvg" + '_returnCheck', true, 500);
       done();
     })
-    /*
-     * tc.number SUB_ACE_BASIC_ETS_API_TESTHASIMAGE_0600
-     * tc.name testHasImageCbOnline
-     * tc.desc The H5 page has an online web page loaded using the img tag, and the interface
-     * hasImage:Callback result is false
-   */
+    /**
+     * @tc.name   testHasImageCbOnline
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTHASIMAGE_0600
+     * @tc.desc   The H5 page has an online web page loaded using the img tag, and the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHasImageCbOnline',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitHasImageCbOnline", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;

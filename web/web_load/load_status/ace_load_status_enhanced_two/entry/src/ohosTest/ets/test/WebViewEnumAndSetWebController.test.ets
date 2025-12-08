@@ -55,14 +55,14 @@ export default function WebViewEnumAndSetWebController() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_CACHEMODE_0200
-    * @tc.name       : testCacheMode002
-    * @tc.desc       : test cacheMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testCacheMode002
+     * @tc.number SUB_WEB_CACHEMODE_0200
+     * @tc.desc   test cacheMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testCacheMode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCacheModeOnly", 141711)
       let isReturn = false;
@@ -72,14 +72,14 @@ export default function WebViewEnumAndSetWebController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_CACHEMODE_0100
-    * @tc.name       : testCacheMode001
-    * @tc.desc       : test CacheMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCacheMode001
+     * @tc.number SUB_WEB_CACHEMODE_0100
+     * @tc.desc   test CacheMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCacheMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitCacheModeDefault", 141711)
       let isReturn = false;
@@ -89,14 +89,14 @@ export default function WebViewEnumAndSetWebController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_CACHEMODE_0300
-    * @tc.name       : testCacheMode003
-    * @tc.desc       : test CacheMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCacheMode003
+     * @tc.number SUB_WEB_CACHEMODE_0300
+     * @tc.desc   test CacheMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCacheMode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitCacheModeOnline", 141711)
       let isReturn = false;
@@ -106,14 +106,14 @@ export default function WebViewEnumAndSetWebController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_CACHEMODE_0400
-    * @tc.name       : testCacheMode004
-    * @tc.desc       : test CacheMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCacheMode004
+     * @tc.number SUB_WEB_CACHEMODE_0400
+     * @tc.desc   test CacheMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCacheMode004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitCacheModeNone", 141711)
       let isReturn = false;

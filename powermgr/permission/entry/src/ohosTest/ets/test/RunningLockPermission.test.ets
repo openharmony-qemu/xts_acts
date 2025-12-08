@@ -40,13 +40,13 @@ export default function RunningLockPermissionTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number  RunningLockPermissionTest_0100
-     * @tc.name   testRunningLockPermissionTest_0100
-     * @tc.desc    Function test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+    /**
+     * @tc.name   RunningLockPermissionTest_0100
+     * @tc.number RunningLockPermissionTest_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockPermissionTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let TAG = 'RunningLockPermissionTest_0100';
@@ -63,13 +63,13 @@ export default function RunningLockPermissionTest() {
       });
     });
 
-    /*
-     * @tc.number  RunningLockPermissionTest_0200
-     * @tc.name   testRunningLockPermissionTest_0200
-     * @tc.desc    Function test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+    /**
+     * @tc.name   RunningLockPermissionTest_0200
+     * @tc.number RunningLockPermissionTest_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockPermissionTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let TAG = 'RunningLockPermissionTest_0200';
@@ -95,13 +95,13 @@ export default function RunningLockPermissionTest() {
       }
     });
 
-    /*
-     * @tc.number  RunningLockPermissionTest_0300
-     * @tc.name   testRunningLockPermissionTest_0300
-     * @tc.desc    Function test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+    /**
+     * @tc.name   RunningLockPermissionTest_0300
+     * @tc.number RunningLockPermissionTest_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockPermissionTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let TAG = 'RunningLockPermissionTest_0300';
@@ -126,13 +126,13 @@ export default function RunningLockPermissionTest() {
       }
     });
 
-    /*
-     * @tc.number  RunningLockPermissionTest_0400
-     * @tc.name   testRunningLockPermissionTest_0400
-     * @tc.desc    Function test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+    /**
+     * @tc.name   RunningLockPermissionTest_0400
+     * @tc.number RunningLockPermissionTest_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockPermissionTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let TAG = 'RunningLockPermissionTest_0400';
@@ -156,13 +156,13 @@ export default function RunningLockPermissionTest() {
       }
     });
 
-    /*
-     * @tc.number  RunningLockPermissionTest_0500
-     * @tc.name   testRunningLockPermissionTest_0500
-     * @tc.desc    Function test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+    /**
+     * @tc.name   RunningLockPermissionTest_0500
+     * @tc.number RunningLockPermissionTest_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockPermissionTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let TAG = 'RunningLockPermissionTest_0500';
@@ -180,13 +180,13 @@ export default function RunningLockPermissionTest() {
       });
     });
 
-    /*
-     * @tc.number  RunningLockPermissionTest_0600
-     * @tc.name   testRunningLockPermissionTest_0600
-     * @tc.desc    Function test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+    /**
+     * @tc.name   RunningLockPermissionTest_0600
+     * @tc.number RunningLockPermissionTest_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockPermissionTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let TAG = 'RunningLockPermissionTest_0600';
@@ -213,13 +213,13 @@ export default function RunningLockPermissionTest() {
       }
     });
 
-    /*
-     * @tc.number  RunningLockPermissionTest_0700
-     * @tc.name   testRunningLockPermissionTest_0700
-     * @tc.desc    Function test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+    /**
+     * @tc.name   RunningLockPermissionTest_0700
+     * @tc.number RunningLockPermissionTest_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockPermissionTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: Function) => {
       let TAG = 'RunningLockPermissionTest_0700';
@@ -244,13 +244,13 @@ export default function RunningLockPermissionTest() {
       }
     });
 
-    /*
-     * @tc.number  RunningLockPermissionTest_0800
-     * @tc.name   testRunningLockPermissionTest_0800
-     * @tc.desc    Function test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+    /**
+     * @tc.name   RunningLockPermissionTest_0800
+     * @tc.number RunningLockPermissionTest_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RunningLockPermissionTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let TAG = 'RunningLockPermissionTest_0800';

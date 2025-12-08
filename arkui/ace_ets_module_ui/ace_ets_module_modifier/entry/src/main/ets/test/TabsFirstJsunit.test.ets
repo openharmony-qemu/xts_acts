@@ -42,12 +42,12 @@ export default function tabsFirstJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Tabs_Divider_0300
      * @tc.number ArkUI_Tabs_Divider_0300
-     * @tc.name Test the properties of components
-     * @tc.desc Set divider values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set divider values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Tabs_Divider_0300', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Tabs_Divider_0300 start");
@@ -60,12 +60,12 @@ export default function tabsFirstJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Tabs_FadingEdge_0100
      * @tc.number ArkUI_Tabs_FadingEdge_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set fadingEdge values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fadingEdge values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Tabs_FadingEdge_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Tabs_FadingEdge_0100 start");
@@ -77,12 +77,12 @@ export default function tabsFirstJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Tabs_BarOverlap_0200
      * @tc.number ArkUI_Tabs_BarOverlap_0200
-     * @tc.name Test the properties of components
-     * @tc.desc Set barOverlap values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set barOverlap values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Tabs_BarOverlap_0200', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Tabs_BarOverlap_0200 start");
@@ -94,12 +94,12 @@ export default function tabsFirstJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Tabs_BarBackgroundColor_0100
      * @tc.number ArkUI_Tabs_BarBackgroundColor_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set barBackgroundColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set barBackgroundColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Tabs_BarBackgroundColor_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Tabs_BarBackgroundColor start");
@@ -112,12 +112,12 @@ export default function tabsFirstJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Tabs_Attrs_0100
      * @tc.number ArkUI_Tabs_Attrs_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set barPosition values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set barPosition values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Tabs_Attrs_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Tabs_Attrs_0100 start");
@@ -129,12 +129,12 @@ export default function tabsFirstJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Tabs_Attrs_0200
      * @tc.number ArkUI_Tabs_Attrs_0200
-     * @tc.name Test the properties of components
-     * @tc.desc Set vertical values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set vertical values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Tabs_Attrs_0200', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Tabs_Attrs_0200 start");
@@ -146,12 +146,12 @@ export default function tabsFirstJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Tabs_Attrs_0300
      * @tc.number ArkUI_Tabs_Attrs_0300
-     * @tc.name Test the properties of components
-     * @tc.desc Set scrollable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set scrollable values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Tabs_Attrs_0300', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Tabs_Attrs_0300 start");
@@ -163,12 +163,12 @@ export default function tabsFirstJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Tabs_Attrs_0400
      * @tc.number ArkUI_Tabs_Attrs_0400
-     * @tc.name Test the properties of components
-     * @tc.desc Set barWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set barWidth values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Tabs_Attrs_0400', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Tabs_Attrs_0400 start");
@@ -184,12 +184,12 @@ export default function tabsFirstJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Tabs_Attrs_0500
      * @tc.number ArkUI_Tabs_Attrs_0500
-     * @tc.name Test the properties of components
-     * @tc.desc Set barHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set barHeight values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Tabs_Attrs_0500', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Tabs_Attrs_0500 start");
@@ -203,12 +203,12 @@ export default function tabsFirstJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Tabs_Attrs_0600
      * @tc.number ArkUI_Tabs_Attrs_0600
-     * @tc.name Test the properties of components
-     * @tc.desc Set animationDuration values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set animationDuration values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Tabs_Attrs_0600', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Tabs_Attrs_0600 start");
@@ -220,12 +220,12 @@ export default function tabsFirstJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Tabs_BarGridAlign_0200
      * @tc.number ArkUI_Tabs_BarGridAlign_0200
-     * @tc.name Test the properties of components
-     * @tc.desc Set barGridAlign values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set barGridAlign values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Tabs_BarGridAlign_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_0200] start");
@@ -243,12 +243,12 @@ export default function tabsFirstJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Tabs_BarMode_0200
      * @tc.number ArkUI_Tabs_BarMode_0200
-     * @tc.name Test the properties of components
-     * @tc.desc Set barMode values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set barMode values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Tabs_BarMode_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_0200] start");
@@ -262,12 +262,12 @@ export default function tabsFirstJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Tabs_0011
      * @tc.number ArkUI_Tabs_0011
-     * @tc.name Test the properties of components
-     * @tc.desc Change barBackgroundColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change barBackgroundColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Tabs_0011', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUI_Tabs_0011 START');

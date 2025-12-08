@@ -57,10 +57,13 @@ export default function webViewContPageOperationsError() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_1600
-     *tc.name testAccessForwardInitErr
-     *tc.desc test interface of accessForward with not been associated with specific Web Components
+    /**
+     * @tc.name   testAccessForwardInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_1600
+     * @tc.desc   test interface of accessForward with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAccessForwardInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitAccessForwardInitErr";
@@ -69,10 +72,13 @@ export default function webViewContPageOperationsError() {
       Utils.registerEvent("testAccessForwardInitErr", "Init error. The WebviewController must be associated with a Web component", 111910, done);
       await Utils.waitAndClickComponent(driver, "webViewContPageOperationsError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_1700
-     *tc.name testForwardInitErr
-     *tc.desc test interface of forward with not been associated with specific Web Components
+    /**
+     * @tc.name   testForwardInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_1700
+     * @tc.desc   test interface of forward with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testForwardInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitForwardInitErr";
@@ -81,10 +87,13 @@ export default function webViewContPageOperationsError() {
       Utils.registerEvent("testForwardInitErr", "Init error. The WebviewController must be associated with a Web component", 111930, done);
       await Utils.waitAndClickComponent(driver, "webViewContPageOperationsError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_1800
-     *tc.name testAccessBackwardInitErr
-     *tc.desc test interface of accessBackward with not been associated with specific Web Components
+    /**
+     * @tc.name   testAccessBackwardInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_1800
+     * @tc.desc   test interface of accessBackward with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAccessBackwardInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitAccessBackwardInitErr";
@@ -93,10 +102,13 @@ export default function webViewContPageOperationsError() {
       Utils.registerEvent("testAccessBackwardInitErr", "Init error. The WebviewController must be associated with a Web component", 111950, done);
       await Utils.waitAndClickComponent(driver, "webViewContPageOperationsError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_1900
-     *tc.name testBackwardInitErr
-     *tc.desc test interface of backward with not been associated with specific Web Components
+    /**
+     * @tc.name   testBackwardInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_1900
+     * @tc.desc   test interface of backward with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBackwardInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitBackwardInitErr";
@@ -105,10 +117,13 @@ export default function webViewContPageOperationsError() {
       Utils.registerEvent("testBackwardInitErr", "Init error. The WebviewController must be associated with a Web component", 111970, done);
       await Utils.waitAndClickComponent(driver, "webViewContPageOperationsError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2000
-     *tc.name testOnActiveInitErr
-     *tc.desc test interface of onActive with not been associated with specific Web Components
+    /**
+     * @tc.name   testOnActiveInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2000
+     * @tc.desc   test interface of onActive with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnActiveInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitOnActiveInitErr";
@@ -117,10 +132,13 @@ export default function webViewContPageOperationsError() {
       Utils.registerEvent("testOnActiveInitErr", "Init error. The WebviewController must be associated with a Web component", 111990, done);
       await Utils.waitAndClickComponent(driver, "webViewContPageOperationsError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2100
-     *tc.name testOnInactiveInitErr
-     *tc.desc test interface of onInactive with not been associated with specific Web Components
+    /**
+     * @tc.name   testOnInactiveInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2100
+     * @tc.desc   test interface of onInactive with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnInactiveInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitOnInactiveInitErr";
@@ -129,10 +147,13 @@ export default function webViewContPageOperationsError() {
       Utils.registerEvent("testOnInactiveInitErr", "Init error. The WebviewController must be associated with a Web component", 112010, done);
       await Utils.waitAndClickComponent(driver, "webViewContPageOperationsError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2200
-     *tc.name testRefreshInitErr
-     *tc.desc test interface of refresh with not been associated with specific Web Components
+    /**
+     * @tc.name   testRefreshInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2200
+     * @tc.desc   test interface of refresh with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRefreshInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitRefreshInitErr";
@@ -141,10 +162,13 @@ export default function webViewContPageOperationsError() {
       Utils.registerEvent("testRefreshInitErr", "Init error. The WebviewController must be associated with a Web component", 112030, done);
       await Utils.waitAndClickComponent(driver, "webViewContPageOperationsError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2300
-     *tc.name testAccessStepInitErr
-     *tc.desc test interface of accessStep with not been associated with specific Web Components
+    /**
+     * @tc.name   testAccessStepInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2300
+     * @tc.desc   test interface of accessStep with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAccessStepInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitAccessStepInitErr";
@@ -153,10 +177,13 @@ export default function webViewContPageOperationsError() {
       Utils.registerEvent("testAccessStepInitErr", "Init error. The WebviewController must be associated with a Web component", 112050, done);
       await Utils.waitAndClickComponent(driver, "webViewContPageOperationsError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2400
-     *tc.name testClearHistoryInitErr
-     *tc.desc test interface of clearHistory with not been associated with specific Web Components
+    /**
+     * @tc.name   testClearHistoryInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2400
+     * @tc.desc   test interface of clearHistory with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testClearHistoryInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitClearHistoryInitErr";
@@ -165,10 +192,13 @@ export default function webViewContPageOperationsError() {
       Utils.registerEvent("testClearHistoryInitErr", "Init error. The WebviewController must be associated with a Web component", 112070, done);
       await Utils.waitAndClickComponent(driver, "webViewContPageOperationsError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2500
-     *tc.name testGetHitTestInitErr
-     *tc.desc test interface of getHitTest with not been associated with specific Web Components
+    /**
+     * @tc.name   testGetHitTestInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_2500
+     * @tc.desc   test interface of getHitTest with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetHitTestInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetHitTestInitErr";

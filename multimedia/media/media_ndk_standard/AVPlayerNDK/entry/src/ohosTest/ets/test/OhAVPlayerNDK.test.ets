@@ -122,12 +122,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERPREPARE_0100
-     * @tc.name       : testOhAvPlayerPrepare001
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerPrepare001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERPREPARE_0100
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerPrepare001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerPrepare001 test start `);
@@ -143,12 +143,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETDURATION_0100
-     * @tc.name       : testOhAvPlayerGetDuration001
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerGetDuration001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETDURATION_0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerGetDuration001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerGetDuration001 test start `);
@@ -168,12 +168,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERPLAY_0100
-     * @tc.name       : testOhAvPlayerPlay001
-     * @tc.desc       : Start playing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerPlay001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERPLAY_0100
+     * @tc.desc   Start playing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerPlay001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerGetDuration001 test start `);
@@ -196,12 +196,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERISPLAYING_0100
-     * @tc.name       : testOhAvPlayerIsPlaying001
-     * @tc.desc       : Check if the player is playing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerIsPlaying001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERISPLAYING_0100
+     * @tc.desc   Check if the player is playing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerIsPlaying001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerGetDuration001 test start `);
@@ -227,12 +227,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERPAUSE_0100
-     * @tc.name       : testOhAvPlayerPause001
-     * @tc.desc       : Pause playback.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerPause001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERPAUSE_0100
+     * @tc.desc   Pause playback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerPause001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerPause001 test start `);
@@ -256,12 +256,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETSTATE_0100
-     * @tc.name       : testOhAvPlayerGetState001
-     * @tc.desc       : Get the current playback status.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerGetState001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETSTATE_0100
+     * @tc.desc   Get the current playback status.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerGetState001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerGetState001 test start `);
@@ -277,12 +277,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETPLAYBACKSPEED_0100
-     * @tc.name       : testOhAvPlayerGetPlaybackSpeed001
-     * @tc.desc       : Get the current player playback rate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerGetPlaybackSpeed001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETPLAYBACKSPEED_0100
+     * @tc.desc   Get the current player playback rate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerGetPlaybackSpeed001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerGetPlaybackSpeed001 test start `);
@@ -298,12 +298,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERISLOOPING_0100
-     * @tc.name       : testOhAvPlayerIsLooping001
-     * @tc.desc       : Determine whether to play in a loop.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerIsLooping001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERISLOOPING_0100
+     * @tc.desc   Determine whether to play in a loop.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerIsLooping001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerIsLooping001 test start `);
@@ -319,12 +319,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETCURRENTTRACK_0100
-     * @tc.name       : testOhAvPlayerGetCurrentTrack001
-     * @tc.desc       : Get the currently valid track index.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerGetCurrentTrack001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETCURRENTTRACK_0100
+     * @tc.desc   Get the currently valid track index.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerGetCurrentTrack001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerGetCurrentTrack001 test start `);
@@ -340,12 +340,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETVIDEOHEIGHT_0100
-     * @tc.name       : testOhAvPlayerGetVideoHeight001
-     * @tc.desc       : Obtain video height.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerGetVideoHeight001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETVIDEOHEIGHT_0100
+     * @tc.desc   Obtain video height.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerGetVideoHeight001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerGetVideoHeight001 test start `);
@@ -361,12 +361,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETVIDEOWIDTH_0100
-     * @tc.name       : testOhAvPlayerGetVideoWidth001
-     * @tc.desc       : Get video width.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerGetVideoWidth001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETVIDEOWIDTH_0100
+     * @tc.desc   Get video width.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerGetVideoWidth001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerGetVideoWidth001 test start `);
@@ -382,12 +382,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERDESELECTTRACK_0100
-     * @tc.name       : testOhAvPlayerDeselectTrack001
-     * @tc.desc       : Deselect the current audio or subtitle track.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerDeselectTrack001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERDESELECTTRACK_0100
+     * @tc.desc   Deselect the current audio or subtitle track.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerDeselectTrack001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerDeselectTrack001 test start `);
@@ -407,12 +407,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERDESELECTTRACK_0200
-     * @tc.name       : testOhAvPlayerDeselectTrack001
-     * @tc.desc       : Deselect the current audio or subtitle track.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerDeselectTrack002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERDESELECTTRACK_0200
+     * @tc.desc   Deselect the current audio or subtitle track.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerDeselectTrack002', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerDeselectTrack002 test start `);
@@ -428,12 +428,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERRESET_0100
-     * @tc.name       : testOHAVPlayerReset001
-     * @tc.desc       : Restore the player to its initial state.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerReset001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERRESET_0100
+     * @tc.desc   Restore the player to its initial state.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerReset001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerReset001 test start `);
@@ -452,12 +452,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSEEK_0100
-     * @tc.name       : testOHAVPlayerSeek001
-     * @tc.desc       : SChange playback position.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSeek001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSEEK_0100
+     * @tc.desc   SChange playback position.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSeek001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerSeek001 test start `);
@@ -477,12 +477,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSEEK_0200
-     * @tc.name       : testOHAVPlayerSeek002
-     * @tc.desc       : Change playback position.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSeek002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSEEK_0200
+     * @tc.desc   Change playback position.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSeek002', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerSeek002 test start `);
@@ -502,12 +502,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETCURRENTTIME_0100
-     * @tc.name       : testOHAVPlayerSelectBitRate001
-     * @tc.desc       : Set the bitrate used by the HLS player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerGetCurrentTime001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERGETCURRENTTIME_0100
+     * @tc.desc   Set the bitrate used by the HLS player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerGetCurrentTime001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerGetCurrentTime001 test start `);
@@ -530,12 +530,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTBITRATE_0100
-     * @tc.name       : testOHAVPlayerSelectBitRate001
-     * @tc.desc       : Set the bitrate used by the HLS player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSelectBitRate001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTBITRATE_0100
+     * @tc.desc   Set the bitrate used by the HLS player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSelectBitRate001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerSelectBitRate001 test start `);
@@ -551,12 +551,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTBITRATE_0200
-     * @tc.name       : testOHAVPlayerSelectBitRate002
-     * @tc.desc       : Set the bitrate used by the HLS player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSelectBitRate002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTBITRATE_0200
+     * @tc.desc   Set the bitrate used by the HLS player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSelectBitRate002', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerSelectBitRate002 test start `);
@@ -576,12 +576,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTBITRATE_0300
-     * @tc.name       : testOHAVPlayerSelectBitRate003
-     * @tc.desc       : Set the bitrate used by the HLS player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSelectBitRate003
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTBITRATE_0300
+     * @tc.desc   Set the bitrate used by the HLS player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSelectBitRate003', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerSelectBitRate003 test start `);
@@ -597,12 +597,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTBITRATE_0400
-     * @tc.name       : testOHAVPlayerSelectBitRate004
-     * @tc.desc       : Set the bitrate used by the HLS player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSelectBitRate004
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTBITRATE_0400
+     * @tc.desc   Set the bitrate used by the HLS player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSelectBitRate004', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerSelectBitRate004 test start `);
@@ -623,12 +623,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTBITRATE_0500
-     * @tc.name       : testOHAVPlayerSelectBitRate005
-     * @tc.desc       : Set the bitrate used by the HLS player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSelectBitRate005
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTBITRATE_0500
+     * @tc.desc   Set the bitrate used by the HLS player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSelectBitRate005', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerSelectBitRate005 test start `);
@@ -649,12 +649,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTTRACK_0100
-     * @tc.name       : testOHAVPlayerSelectTrack001
-     * @tc.desc       : Select audio or subtitle tracks.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSelectTrack001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTTRACK_0100
+     * @tc.desc   Select audio or subtitle tracks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSelectTrack001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerSelectTrack001 test start `);
@@ -670,12 +670,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTTRACK_0200
-     * @tc.name       : testOHAVPlayerSelectTrack002
-     * @tc.desc       : Select audio or subtitle tracks.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSelectTrack002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTTRACK_0200
+     * @tc.desc   Select audio or subtitle tracks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSelectTrack002', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerSelectTrack002 test start `);
@@ -695,12 +695,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTTRACK_0300
-     * @tc.name       : testOHAVPlayerSelectTrack003
-     * @tc.desc       : Select audio or subtitle tracks.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSelectTrack003
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTTRACK_0300
+     * @tc.desc   Select audio or subtitle tracks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSelectTrack003', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerSelectTrack003 test start `);
@@ -720,12 +720,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTTRACK_0400
-     * @tc.name       : testOHAVPlayerSelectTrack004
-     * @tc.desc       : Select audio or subtitle tracks.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSelectTrack004
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTTRACK_0400
+     * @tc.desc   Select audio or subtitle tracks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSelectTrack004', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerSelectTrack004 test start `);
@@ -745,12 +745,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTTRACK_0500
-     * @tc.name       : testOHAVPlayerSelectTrack005
-     * @tc.desc       : Select audio or subtitle tracks.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSelectTrack005
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSELECTTRACK_0500
+     * @tc.desc   Select audio or subtitle tracks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSelectTrack005', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerSelectTrack005 test start `);
@@ -770,12 +770,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETLOOPING_0100
-     * @tc.name       : testOHAVPlayerSetLooping001
-     * @tc.desc       : Set loop playback.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSetLooping001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETLOOPING_0100
+     * @tc.desc   Set loop playback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSetLooping001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerSetLooping001 test start `);
@@ -791,12 +791,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETLOOPING_0200
-     * @tc.name       : testOHAVPlayerSetLooping002
-     * @tc.desc       : Set loop playback.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSetLooping002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETLOOPING_0200
+     * @tc.desc   Set loop playback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSetLooping002', Level.LEVEL0,async (done: Function) => {
        console.info(`testOHAVPlayerSetLooping002 test start `);
@@ -812,12 +812,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYERCALLBACK_0100
-     * @tc.name       : testOhAvPlayerSetPlayerCallback001
-     * @tc.desc       : Set the player callback method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetPlayerCallback001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYERCALLBACK_0100
+     * @tc.desc   Set the player callback method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetPlayerCallback001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetPlayerCallback001 test start `);
@@ -833,12 +833,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0100
-     * @tc.name       : testOHAVPlayerSetPlaybackSpeed001
-     * @tc.desc       : Set the player playback rate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSetPlaybackSpeed001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0100
+     * @tc.desc   Set the player playback rate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSetPlaybackSpeed001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerSetPlaybackSpeed001 test start `);
@@ -858,12 +858,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0200
-     * @tc.name       : testOHAVPlayerSetPlaybackSpeed002
-     * @tc.desc       : Set the player playback rate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSetPlaybackSpeed002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0200
+     * @tc.desc   Set the player playback rate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSetPlaybackSpeed002', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerSetPlaybackSpeed002 test start `);
@@ -883,12 +883,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0300
-     * @tc.name       : testOHAVPlayerSetPlaybackSpeed003
-     * @tc.desc       : Set the player playback rate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSetPlaybackSpeed003
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0300
+     * @tc.desc   Set the player playback rate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSetPlaybackSpeed003', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerSetPlaybackSpeed003 test start `);
@@ -908,12 +908,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0400
-     * @tc.name       : testOHAVPlayerSetPlaybackSpeed004
-     * @tc.desc       : Set the player playback rate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSetPlaybackSpeed004
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0400
+     * @tc.desc   Set the player playback rate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSetPlaybackSpeed004', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerSetPlaybackSpeed004 test start `);
@@ -933,12 +933,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0500
-     * @tc.name       : testOHAVPlayerSetPlaybackSpeed005
-     * @tc.desc       : Set the player playback rate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHAVPlayerSetPlaybackSpeed005
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETPLAYBACKSPEED_0500
+     * @tc.desc   Set the player playback rate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHAVPlayerSetPlaybackSpeed005', Level.LEVEL0,async (done: Function) => {
       console.info(`testOHAVPlayerSetPlaybackSpeed005 test start `);
@@ -958,12 +958,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVIDEOSURFACE_0100
-     * @tc.name       : testOhAvPlayerSetVideoSurface001
-     * @tc.desc       : Set the playback screen window.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetVideoSurface001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVIDEOSURFACE_0100
+     * @tc.desc   Set the playback screen window.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetVideoSurface001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetVideoSurface001 test start `);
@@ -979,12 +979,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0100
-     * @tc.name       : testOhAvPlayerSetVolume001
-     * @tc.desc       : Set the volume of the player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetVolume001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0100
+     * @tc.desc   Set the volume of the player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetVolume001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetVolume001 test start `);
@@ -1000,12 +1000,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0200
-     * @tc.name       : testOhAvPlayerSetVolume002
-     * @tc.desc       : Set the volume of the player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetVolume002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0200
+     * @tc.desc   Set the volume of the player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetVolume002', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetVolume002 test start `);
@@ -1021,12 +1021,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0300
-     * @tc.name       : testOhAvPlayerSetVolume003
-     * @tc.desc       : Set the volume of the player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetVolume003
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0300
+     * @tc.desc   Set the volume of the player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetVolume003', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetVolume003 test start `);
@@ -1042,12 +1042,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0400
-     * @tc.name       : testOhAvPlayerSetVolume004
-     * @tc.desc       : Set the volume of the player.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerSetVolume004
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSETVOLUME_0400
+     * @tc.desc   Set the volume of the player.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerSetVolume004', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerSetVolume004 test start `);
@@ -1063,12 +1063,12 @@ export default function OhAVPlayerNDKTest() { // L2
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSTOP_0100
-     * @tc.name       : testOhAvPlayerStop001
-     * @tc.desc       : Stop playing.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvPlayerStop001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVPLAYERSTOP_0100
+     * @tc.desc   Stop playing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvPlayerStop001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvPlayerStop001 test start `);

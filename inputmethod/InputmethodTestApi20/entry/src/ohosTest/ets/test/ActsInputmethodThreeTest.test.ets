@@ -32,12 +32,12 @@ export default function ActsInputmethodThreeTest() {
       await sleep1(1000);
     })
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_KeyBoard_Status_None_14700
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_KeyBoard_Status_None_14700
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_KeyBoard_Status_None_14700
-     * @tc.desc test IME_KEYBOARD_STATUS_NONE
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_KEYBOARD_STATUS_NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_KeyBoard_Status_None_14700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -58,12 +58,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_KeyBoard_Status_Hide_14800
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_KeyBoard_Status_Hide_14800
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_KeyBoard_Status_Hide_14800
-     * @tc.desc test IME_KEYBOARD_STATUS_HIDE
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_KEYBOARD_STATUS_HIDE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_KeyBoard_Status_Hide_14800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -84,12 +84,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_KeyBoard_Status_Show_14900
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_KeyBoard_Status_Show_14900
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_KeyBoard_Status_Show_14900
-     * @tc.desc test IME_KEYBOARD_STATUS_SHOW
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_KEYBOARD_STATUS_SHOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_KeyBoard_Status_Show_14900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -110,12 +110,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Go_15000
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Go_15000
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Go_15000
-     * @tc.desc test IME_ENTER_KEY_GO
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_ENTER_KEY_GO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Go_15000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -136,12 +136,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Search_15100
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Search_15100
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Search_15100
-     * @tc.desc test IME_ENTER_KEY_SEARCH
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_ENTER_KEY_SEARCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Search_15100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -162,12 +162,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Next_15200
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Next_15200
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Next_15200
-     * @tc.desc test IME_ENTER_KEY_NEXT
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_ENTER_KEY_NEXT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Next_15200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -188,12 +188,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Done_15300
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Done_15300
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Done_15300
-     * @tc.desc test IME_ENTER_KEY_DONE
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_ENTER_KEY_DONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Done_15300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -214,12 +214,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Previous_15400
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Previous_15400
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Previous_15400
-     * @tc.desc test IME_ENTER_KEY_PREVIOUS
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_ENTER_KEY_PREVIOUS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Previous_15400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -240,12 +240,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Newline_15500
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Newline_15500
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Newline_15500
-     * @tc.desc test IME_ENTER_KEY_NEWLINE
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_ENTER_KEY_NEWLINE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Newline_15500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -266,12 +266,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Err_Detached_15600
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Err_Detached_15600
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Err_Detached_15600
-     * @tc.desc test IME_ERR_DETACHED
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_ERR_DETACHED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Err_Detached_15600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -292,12 +292,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Err_Null_Pointer_15700
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Err_Null_Pointer_15700
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Err_Null_Pointer_15700
-     * @tc.desc test IME_ERR_NULL_POINTER
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_ERR_NULL_POINTER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Err_Null_Pointer_15700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -318,12 +318,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Err_Query_Failed_15800
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Err_Query_Failed_15800
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Err_Query_Failed_15800
-     * @tc.desc test IME_ERR_QUERY_FAILED
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_ERR_QUERY_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Err_Query_Failed_15800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -344,12 +344,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Err_Paramcheck_15900
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Err_Paramcheck_15900
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Err_Paramcheck_15900
-     * @tc.desc test IME_ERR_PARAMCHECK
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_ERR_PARAMCHECK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Err_Paramcheck_15900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -370,12 +370,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Multiline_16000
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Multiline_16000
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Multiline_16000
-     * @tc.desc test IME_TEXT_INPUT_TYPE_MULTILINE
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_TEXT_INPUT_TYPE_MULTILINE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Multiline_16000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -396,12 +396,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Number_16100
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Number_16100
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Number_16100
-     * @tc.desc test IME_TEXT_INPUT_TYPE_NUMBER
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_TEXT_INPUT_TYPE_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Number_16100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -422,12 +422,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Phone_16200
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Phone_16200
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Phone_16200
-     * @tc.desc test IME_TEXT_INPUT_TYPE_PHONE
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_TEXT_INPUT_TYPE_PHONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Phone_16200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -448,12 +448,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Datetime_16300
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Datetime_16300
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Datetime_16300
-     * @tc.desc test IME_TEXT_INPUT_TYPE_DATETIME
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_TEXT_INPUT_TYPE_DATETIME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Datetime_16300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -474,12 +474,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Address_16400
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Address_16400
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Address_16400
-     * @tc.desc test IME_TEXT_INPUT_TYPE_EMAIL_ADDRESS
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_TEXT_INPUT_TYPE_EMAIL_ADDRESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Address_16400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -500,12 +500,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Url_16500
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Url_16500
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Url_16500
-     * @tc.desc test IME_TEXT_INPUT_TYPE_URL
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_TEXT_INPUT_TYPE_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Url_16500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -526,12 +526,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Visible_Password_16600
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Visible_Password_16600
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Visible_Password_16600
-     * @tc.desc test IME_TEXT_INPUT_TYPE_VISIBLE_PASSWORD
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_TEXT_INPUT_TYPE_VISIBLE_PASSWORD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Visible_Password_16600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -552,12 +552,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Number_Password_16700
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Number_Password_16700
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Number_Password_16700
-     * @tc.desc test IME_TEXT_INPUT_TYPE_NUMBER_PASSWORD
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_TEXT_INPUT_TYPE_NUMBER_PASSWORD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Number_Password_16700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -578,12 +578,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Screen_Lock_Password_16800
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Screen_Lock_Password_16800
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Screen_Lock_Password_16800
-     * @tc.desc test IME_TEXT_INPUT_TYPE_SCREEN_LOCK_PASSWORD
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_TEXT_INPUT_TYPE_SCREEN_LOCK_PASSWORD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Screen_Lock_Password_16800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -604,12 +604,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_User_Name_16900
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_User_Name_16900
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_User_Name_16900
-     * @tc.desc test IME_TEXT_INPUT_TYPE_USER_NAME
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_TEXT_INPUT_TYPE_USER_NAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_User_Name_16900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -630,12 +630,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_New_Password_17000
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_New_Password_17000
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_New_Password_17000
-     * @tc.desc test IME_TEXT_INPUT_TYPE_NEW_PASSWORD
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_TEXT_INPUT_TYPE_NEW_PASSWORD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_New_Password_17000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -656,12 +656,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_One_Time_Code_17100
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_One_Time_Code_17100
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_One_Time_Code_17100
-     * @tc.desc test IME_TEXT_INPUT_TYPE_ONE_TIME_CODE
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_TEXT_INPUT_TYPE_ONE_TIME_CODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_One_Time_Code_17100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -682,12 +682,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Command_Value_Type_None_17200
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Command_Value_Type_None_17200
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Command_Value_Type_None_17200
-     * @tc.desc test IME_COMMAND_VALUE_TYPE_NONE
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_COMMAND_VALUE_TYPE_NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Command_Value_Type_None_17200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -708,12 +708,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Command_Value_Type_Bool_17300
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Command_Value_Type_Bool_17300
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Command_Value_Type_Bool_17300
-     * @tc.desc test IME_COMMAND_VALUE_TYPE_BOOL
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_COMMAND_VALUE_TYPE_BOOL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Command_Value_Type_Bool_17300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -734,12 +734,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Direction_Up_17400
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Direction_Up_17400
-     * @tc.name SUB_InputMethod_Imf_SDK_Ime_Direction_Up_17400
-     * @tc.desc test IME_DIRECTION_UP
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_DIRECTION_UP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_Ime_Direction_Up_17400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -762,12 +762,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_IME_DIRECTION_DOWN_17500
      * @tc.number SUB_InputMethod_Imf_SDK_IME_DIRECTION_DOWN_17500
-     * @tc.name SUB_InputMethod_Imf_SDK_IME_DIRECTION_DOWN_17500
-     * @tc.desc test IME_DIRECTION_DOWN
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_DIRECTION_DOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_IME_DIRECTION_DOWN_17500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -790,12 +790,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_IME_DIRECTION_LEFT_17600
      * @tc.number SUB_InputMethod_Imf_SDK_IME_DIRECTION_LEFT_17600
-     * @tc.name SUB_InputMethod_Imf_SDK_IME_DIRECTION_LEFT_17600
-     * @tc.desc test IME_DIRECTION_LEFT
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_DIRECTION_LEFT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_IME_DIRECTION_LEFT_17600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -818,12 +818,12 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
+     * @tc.name   SUB_InputMethod_Imf_SDK_IME_DIRECTION_RIGHT_17700
      * @tc.number SUB_InputMethod_Imf_SDK_IME_DIRECTION_RIGHT_17700
-     * @tc.name SUB_InputMethod_Imf_SDK_IME_DIRECTION_RIGHT_17700
-     * @tc.desc test IME_DIRECTION_RIGHT
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   test IME_DIRECTION_RIGHT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_InputMethod_Imf_SDK_IME_DIRECTION_RIGHT_17700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,

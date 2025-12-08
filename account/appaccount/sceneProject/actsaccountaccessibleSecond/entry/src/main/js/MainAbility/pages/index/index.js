@@ -28,29 +28,24 @@ export default {
         console.info('====>creat second scene manager finish====');
         let enableBundle = 'com.example.actsgetallaccessiblemultiple';
         let enableBundle2 = 'com.example.getmultipleaccountstest';
+        let enableBundle3 = 'com.example.getmultipleaccountstest.static';
         console.info('====>add second account start====');
         appAccountManager.createAccount('account_name_scene_second_first', async (err)=>{
             console.info('====>add second account err:' + JSON.stringify(err));
             try {
                 await appAccountManager.setAppAccess('account_name_scene_second_first', enableBundle, true);
-            } catch (err) {
-                console.info('====>enableAppAccess second account err:' + JSON.stringify(err));
-            }
-            try {
                 await appAccountManager.setAppAccess('account_name_scene_second_first', enableBundle2, true);
+                await appAccountManager.setAppAccess('account_name_scene_second_first', enableBundle3, true);
             } catch (err) {
                 console.info('====>enableAppAccess second account err:' + JSON.stringify(err));
             }
             await appAccountManager.createAccount('account_name_scene_second_second');
             try {
                 await appAccountManager.setAppAccess('account_name_scene_second_second', enableBundle, true);
+                await appAccountManager.setAppAccess('account_name_scene_second_second', enableBundle2, true);
+                await appAccountManager.setAppAccess('account_name_scene_second_second', enableBundle3, true);
             } catch (err) {
                 console.info('====>enableAppAccess second enableBundle err:' + JSON.stringify(err));
-            }
-            try {
-                await appAccountManager.setAppAccess('account_name_scene_second_second', enableBundle2, true);
-            } catch (err) {
-                console.info('====>enableAppAccess second enableBundle2 err:' + JSON.stringify(err));
             }
             console.info('====>terminateSelfWithResult second');
             featureAbility.terminateSelfWithResult({

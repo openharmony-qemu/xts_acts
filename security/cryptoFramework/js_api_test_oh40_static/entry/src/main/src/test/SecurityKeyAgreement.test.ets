@@ -26,9 +26,12 @@ export default function SecurityKeyAgreementJsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_KeyAgreement_Func_0100
      * @tc.number Security_CryptoFramework_KeyAgreement_Func_0100
-     * @tc.name Security_CryptoFramework_KeyAgreement_Func_0100
-     * @tc.desc the type of secret key is "ECC"(No length), use promise style of interface
+     * @tc.desc   the type of secret key is "ECC"(No length), use promise style of interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_KeyAgreement_Func_0100",
@@ -48,9 +51,12 @@ export default function SecurityKeyAgreementJsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_KeyAgreement_Func_0200
      * @tc.number Security_CryptoFramework_KeyAgreement_Func_0200
-     * @tc.name Security_CryptoFramework_KeyAgreement_Func_0200
-     * @tc.desc the type of secret key is "ECC1024"(illegal algorithm), use promise style of interface
+     * @tc.desc   the type of secret key is "ECC1024"(illegal algorithm), use promise style of interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_KeyAgreement_Func_0200",
@@ -70,9 +76,12 @@ export default function SecurityKeyAgreementJsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_KeyAgreement_Func_0300
      * @tc.number Security_CryptoFramework_KeyAgreement_Func_0300
-     * @tc.name Security_CryptoFramework_KeyAgreement_Func_0300
-     * @tc.desc the type of secret key is "ECC521", use promise style of interface
+     * @tc.desc   the type of secret key is "ECC521", use promise style of interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_KeyAgreement_Func_0300",
@@ -88,11 +97,12 @@ export default function SecurityKeyAgreementJsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_KeyAgreement_Func_0400
      * @tc.number Security_CryptoFramework_KeyAgreement_Func_0400
-     * @tc.name Security_CryptoFramework_KeyAgreement_Func_0400
-     * @tc.desc use the ECCCommon structure to create AsyKeyGenerator object
-     * a key type of "ECC521" to create KeyAgreement object
-     * use a promise style interface
+     * @tc.desc   use the ECCCommon structure to create AsyKeyGenerator object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_KeyAgreement_Func_0400",
@@ -114,10 +124,12 @@ export default function SecurityKeyAgreementJsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_KeyAgreement_Func_0500
      * @tc.number Security_CryptoFramework_KeyAgreement_Func_0500
-     * @tc.name Security_CryptoFramework_KeyAgreement_Func_0500
-     * @tc.desc use the RsaKeyPair structure to create AsyKeyGenerator object
-     * a key type of "ECC521" to create KeyAgreement object
+     * @tc.desc   use the RsaKeyPair structure to create AsyKeyGenerator object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_KeyAgreement_Func_0500",

@@ -69,12 +69,12 @@ const adResponse =
 export default function adsTestPart2() {
   describe('ActsAdsTest1', () => {
     /**
-     * @tc.number: SUB_CLOUD_ADS_INTERACTION_LISTENER_0500
-     * @tc.name: testGetAdRequestBody
-     * @tc.desc: callback data is not null.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGetAdRequestBody
+     * @tc.number SUB_CLOUD_ADS_INTERACTION_LISTENER_0500
+     * @tc.desc   callback data is not null.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetAdRequestBody", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -94,12 +94,12 @@ export default function adsTestPart2() {
     })
 
     /**
-     * @tc.number: SUB_CLOUD_ADS_INTERACTION_LISTENER_0600
-     * @tc.name: testParseAdResponse
-     * @tc.desc: callback data is not null.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testParseAdResponse
+     * @tc.number SUB_CLOUD_ADS_INTERACTION_LISTENER_0600
+     * @tc.desc   callback data is not null.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testParseAdResponse", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       let adLoaderListener: advertising.MultiSlotsAdLoadListener = {

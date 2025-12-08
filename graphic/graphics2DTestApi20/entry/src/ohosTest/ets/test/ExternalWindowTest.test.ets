@@ -20,12 +20,12 @@ const InvalidArguments = 40001000;
 export default function ExternalWindowTest() {
   describe('ExternalWindowTest', () => {
     /**
-     * @tc.number  : SUB_OH_ScalingModeToWindow_0100
-     * @tc.name    : SUB_OH_ScalingModeToWindow_0100
-     * @tc.desc    : Test testOHScalingModeToWindow
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_ScalingModeToWindow_0100
+     * @tc.number SUB_OH_ScalingModeToWindow_0100
+     * @tc.desc   Test testOHScalingModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_ScalingModeToWindow_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -42,12 +42,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_ScalingModeCrop_0200
-     * @tc.name    : SUB_OH_ScalingModeCrop_0200
-     * @tc.desc    : Test testOHScalingModeCrop
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_ScalingModeCrop_0200
+     * @tc.number SUB_OH_ScalingModeCrop_0200
+     * @tc.desc   Test testOHScalingModeCrop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_ScalingModeCrop_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -64,12 +64,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_ScalingModeNoCrop_0300
-     * @tc.name    : SUB_OH_ScalingModeNoCrop_0300
-     * @tc.desc    : Test testOHScalingModeNoCrop
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_ScalingModeNoCrop_0300
+     * @tc.number SUB_OH_ScalingModeNoCrop_0300
+     * @tc.desc   Test testOHScalingModeNoCrop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_ScalingModeNoCrop_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -86,12 +86,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_MetakeyRedPrimaryY_0400
-     * @tc.name    : SUB_OH_MetakeyRedPrimaryY_0400
-     * @tc.desc    : Test testOhMetakeyRedPrimaryY
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_MetakeyRedPrimaryY_0400
+     * @tc.number SUB_OH_MetakeyRedPrimaryY_0400
+     * @tc.desc   Test testOhMetakeyRedPrimaryY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_MetakeyRedPrimaryY_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -108,12 +108,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_MetakeyGreenPrimaryX_0500
-     * @tc.name    : SUB_OH_MetakeyGreenPrimaryX_0500
-     * @tc.desc    : Test testOhMetakeyGreenPrimaryX
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_MetakeyGreenPrimaryX_0500
+     * @tc.number SUB_OH_MetakeyGreenPrimaryX_0500
+     * @tc.desc   Test testOhMetakeyGreenPrimaryX
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_MetakeyGreenPrimaryX_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -130,12 +130,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_MetakeyGreenPrimary_0600
-     * @tc.name    : SUB_OH_MetakeyGreenPrimary_0600
-     * @tc.desc    : Test testOhMetakeyGreenPrimaryY
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_MetakeyGreenPrimary_0600
+     * @tc.number SUB_OH_MetakeyGreenPrimary_0600
+     * @tc.desc   Test testOhMetakeyGreenPrimaryY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_MetakeyGreenPrimary_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -152,12 +152,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_MetakeyBluePrimaryX_0700
-     * @tc.name    : SUB_OH_MetakeyBluePrimaryX_0700
-     * @tc.desc    : Test testOhMetakeyBluePrimaryX
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_MetakeyBluePrimaryX_0700
+     * @tc.number SUB_OH_MetakeyBluePrimaryX_0700
+     * @tc.desc   Test testOhMetakeyBluePrimaryX
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_MetakeyBluePrimaryX_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -174,12 +174,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_MetakeyBluePrimaryY_0800
-     * @tc.name    : SUB_OH_MetakeyBluePrimaryY_0800
-     * @tc.desc    : Test testOhMetakeyBluePrimaryY
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_MetakeyBluePrimaryY_0800
+     * @tc.number SUB_OH_MetakeyBluePrimaryY_0800
+     * @tc.desc   Test testOhMetakeyBluePrimaryY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_MetakeyBluePrimaryY_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -196,12 +196,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_MetakeyWhitePrimaryX_0900
-     * @tc.name    : SUB_OH_MetakeyWhitePrimaryX_0900
-     * @tc.desc    : Test testOhMetakeyWhitePrimaryX
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_MetakeyWhitePrimaryX_0900
+     * @tc.number SUB_OH_MetakeyWhitePrimaryX_0900
+     * @tc.desc   Test testOhMetakeyWhitePrimaryX
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_MetakeyWhitePrimaryX_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -218,12 +218,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_MetakeyWhitePrimaryY_1000
-     * @tc.name    : SUB_OH_MetakeyWhitePrimaryY_1000
-     * @tc.desc    : Test testOhMetakeyWhitePrimaryY
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_MetakeyWhitePrimaryY_1000
+     * @tc.number SUB_OH_MetakeyWhitePrimaryY_1000
+     * @tc.desc   Test testOhMetakeyWhitePrimaryY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_MetakeyWhitePrimaryY_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -240,12 +240,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_MetakeyMaxLuminance_1100
-     * @tc.name    : SUB_OH_MetakeyMaxLuminance_1100
-     * @tc.desc    : Test testOhMetakeyMaxLuminance
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_MetakeyMaxLuminance_1100
+     * @tc.number SUB_OH_MetakeyMaxLuminance_1100
+     * @tc.desc   Test testOhMetakeyMaxLuminance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_MetakeyMaxLuminance_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -262,12 +262,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_MetakeyMinLuminance_1200
-     * @tc.name    : SUB_OH_MetakeyMinLuminance_1200
-     * @tc.desc    : Test testOhMetakeyMinLuminance
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_MetakeyMinLuminance_1200
+     * @tc.number SUB_OH_MetakeyMinLuminance_1200
+     * @tc.desc   Test testOhMetakeyMinLuminance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_MetakeyMinLuminance_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -284,12 +284,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_MetakeyMaxContentLightLevel_1300
-     * @tc.name    : SUB_OH_MetakeyMaxContentLightLevel_1300
-     * @tc.desc    : Test testOhMetakeyMaxContentLightLevel
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_MetakeyMaxContentLightLevel_1300
+     * @tc.number SUB_OH_MetakeyMaxContentLightLevel_1300
+     * @tc.desc   Test testOhMetakeyMaxContentLightLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_MetakeyMaxContentLightLevel_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -306,12 +306,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_MetakeyMaxFrameAverageLightLevel_1400
-     * @tc.name    : SUB_OH_MetakeyMaxFrameAverageLightLevel_1400
-     * @tc.desc    : Test testOhMetakeyMaxFrameAverageLightLevel
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_MetakeyMaxFrameAverageLightLevel_1400
+     * @tc.number SUB_OH_MetakeyMaxFrameAverageLightLevel_1400
+     * @tc.desc   Test testOhMetakeyMaxFrameAverageLightLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_MetakeyMaxFrameAverageLightLevel_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -328,12 +328,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_MetakeyHdrVivid_1500
-     * @tc.name    : SUB_OH_MetakeyHdrVivid_1500
-     * @tc.desc    : Test testOhMetakeyHdrVivid
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_MetakeyHdrVivid_1500
+     * @tc.number SUB_OH_MetakeyHdrVivid_1500
+     * @tc.desc   Test testOhMetakeyHdrVivid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_MetakeyHdrVivid_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -350,12 +350,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeWindowWTParcelSuccess_1600
-     * @tc.name    : SUB_OH_NativeWindowWTParcelSuccess_1600
-     * @tc.desc    : Test testNativeWindowWTParcelSuccess
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeWindowWTParcelSuccess_1600
+     * @tc.number SUB_OH_NativeWindowWTParcelSuccess_1600
+     * @tc.desc   Test testNativeWindowWTParcelSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_NativeWindowWTParcelSuccess_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -372,12 +372,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeWindowWTParcelInvalidArguments_1700
-     * @tc.name    : SUB_OH_NativeWindowWTParcelInvalidArguments_1700
-     * @tc.desc    : Test testNativeWindowWTParcelInvalidArguments
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeWindowWTParcelInvalidArguments_1700
+     * @tc.number SUB_OH_NativeWindowWTParcelInvalidArguments_1700
+     * @tc.desc   Test testNativeWindowWTParcelInvalidArguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_NativeWindowWTParcelInvalidArguments_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -394,12 +394,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeWindowRFParcelSuccess_1800
-     * @tc.name    : SUB_OH_NativeWindowRFParcelSuccess_1800
-     * @tc.desc    : Test testNativeWindowRFParcelSuccess
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeWindowRFParcelSuccess_1800
+     * @tc.number SUB_OH_NativeWindowRFParcelSuccess_1800
+     * @tc.desc   Test testNativeWindowRFParcelSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_NativeWindowRFParcelSuccess_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -416,12 +416,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeWindowRFParcelInvalidArguments_1900
-     * @tc.name    : SUB_OH_NativeWindowRFParcelInvalidArguments_1900
-     * @tc.desc    : Test testNativeWindowRFParcelInvalidArguments
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeWindowRFParcelInvalidArguments_1900
+     * @tc.number SUB_OH_NativeWindowRFParcelInvalidArguments_1900
+     * @tc.desc   Test testNativeWindowRFParcelInvalidArguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_NativeWindowRFParcelInvalidArguments_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -438,12 +438,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeWindowWindowHandleOptSetTimeOut_2000
-     * @tc.name    : SUB_OH_NativeWindowWindowHandleOptSetTimeOut_2000
-     * @tc.desc    : Test testNativeWindowWindowHandleOptSetTimeOut
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeWindowWindowHandleOptSetTimeOut_2000
+     * @tc.number SUB_OH_NativeWindowWindowHandleOptSetTimeOut_2000
+     * @tc.desc   Test testNativeWindowWindowHandleOptSetTimeOut
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_NativeWindowWindowHandleOptSetTimeOut_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -460,12 +460,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeWindowWindowHandleOptGetTimeOut_2100
-     * @tc.name    : SUB_OH_NativeWindowWindowHandleOptGetTimeOut_2100
-     * @tc.desc    : Test testNativeWindowWindowHandleOptGetTimeOut
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeWindowWindowHandleOptGetTimeOut_2100
+     * @tc.number SUB_OH_NativeWindowWindowHandleOptGetTimeOut_2100
+     * @tc.desc   Test testNativeWindowWindowHandleOptGetTimeOut
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_NativeWindowWindowHandleOptGetTimeOut_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -482,12 +482,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeWindowGLFlushedBufferV2Success_2200
-     * @tc.name    : SUB_OH_NativeWindowGLFlushedBufferV2Success_2200
-     * @tc.desc    : Test testNativeWindowGLFlushedBufferV2Success
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeWindowGLFlushedBufferV2Success_2200
+     * @tc.number SUB_OH_NativeWindowGLFlushedBufferV2Success_2200
+     * @tc.desc   Test testNativeWindowGLFlushedBufferV2Success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_NativeWindowGLFlushedBufferV2Success_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -504,12 +504,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeWindowGLFBufferV2InvalidArguments_2300
-     * @tc.name    : SUB_OH_NativeWindowGLFBufferV2InvalidArguments_2300
-     * @tc.desc    : Test testNativeWindowGLFBufferV2InvalidArguments
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeWindowGLFBufferV2InvalidArguments_2300
+     * @tc.number SUB_OH_NativeWindowGLFBufferV2InvalidArguments_2300
+     * @tc.desc   Test testNativeWindowGLFBufferV2InvalidArguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_NativeWindowGLFBufferV2InvalidArguments_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -526,12 +526,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_testNativeWindowSetColorSpaceSuccess_2400
-     * @tc.name    : SUB_OH_testNativeWindowSetColorSpaceSuccess_2400
-     * @tc.desc    : Test testNativeWindowSetColorSpaceSuccess
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_testNativeWindowSetColorSpaceSuccess_2400
+     * @tc.number SUB_OH_testNativeWindowSetColorSpaceSuccess_2400
+     * @tc.desc   Test testNativeWindowSetColorSpaceSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_testNativeWindowSetColorSpaceSuccess_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -548,12 +548,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_testNativeWindowSetColorSpaceInvalidArguments_2500
-     * @tc.name    : SUB_OH_testNativeWindowSetColorSpaceInvalidArguments_2500
-     * @tc.desc    : Test testNativeWindowSetColorSpaceInvalidArguments
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_testNativeWindowSetColorSpaceInvalidArguments_2500
+     * @tc.number SUB_OH_testNativeWindowSetColorSpaceInvalidArguments_2500
+     * @tc.desc   Test testNativeWindowSetColorSpaceInvalidArguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_testNativeWindowSetColorSpaceInvalidArguments_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -570,12 +570,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_testNativeWindowGetColorSpaceInvalidArguments_2600
-     * @tc.name    : SUB_OH_testNativeWindowGetColorSpaceInvalidArguments_2600
-     * @tc.desc    : Test testNativeWindowGetColorSpaceInvalidArguments
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_testNativeWindowGetColorSpaceInvalidArguments_2600
+     * @tc.number SUB_OH_testNativeWindowGetColorSpaceInvalidArguments_2600
+     * @tc.desc   Test testNativeWindowGetColorSpaceInvalidArguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_testNativeWindowGetColorSpaceInvalidArguments_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -592,12 +592,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_testNativeWindowSetMVSuccess_2700
-     * @tc.name    : SUB_OH_testNativeWindowSetMVSuccess_2700
-     * @tc.desc    : Test testNativeWindowSetMVSuccess
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_testNativeWindowSetMVSuccess_2700
+     * @tc.number SUB_OH_testNativeWindowSetMVSuccess_2700
+     * @tc.desc   Test testNativeWindowSetMVSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_testNativeWindowSetMVSuccess_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -614,12 +614,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_testNativeWindowSetMVInvalidArguments_2800
-     * @tc.name    : SUB_OH_testNativeWindowSetMVInvalidArguments_2800
-     * @tc.desc    : Test testNativeWindowSetMVInvalidArguments
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_testNativeWindowSetMVInvalidArguments_2800
+     * @tc.number SUB_OH_testNativeWindowSetMVInvalidArguments_2800
+     * @tc.desc   Test testNativeWindowSetMVInvalidArguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_testNativeWindowSetMVInvalidArguments_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -636,12 +636,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_testNativeWindowGetMVSuccess_3000
-     * @tc.name    : SUB_OH_testNativeWindowGetMVSuccess_3000
-     * @tc.desc    : Test testNativeWindowGetMVSuccess
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_testNativeWindowGetMVSuccess_3000
+     * @tc.number SUB_OH_testNativeWindowGetMVSuccess_3000
+     * @tc.desc   Test testNativeWindowGetMVSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_testNativeWindowGetMVSuccess_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -658,12 +658,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_testNativeWindowGetMVInvalidArguments_3100
-     * @tc.name    : SUB_OH_testNativeWindowGetMVInvalidArguments_3100
-     * @tc.desc    : Test testNativeWindowGetMVInvalidArguments
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_testNativeWindowGetMVInvalidArguments_3100
+     * @tc.number SUB_OH_testNativeWindowGetMVInvalidArguments_3100
+     * @tc.desc   Test testNativeWindowGetMVInvalidArguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_testNativeWindowGetMVInvalidArguments_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -680,12 +680,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_testNativeWindowGetMVUnsupported_3200
-     * @tc.name    : SUB_OH_testNativeWindowGetMVUnsupported_3200
-     * @tc.desc    : Test testNativeWindowGetMVUnsupported
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_testNativeWindowGetMVUnsupported_3200
+     * @tc.number SUB_OH_testNativeWindowGetMVUnsupported_3200
+     * @tc.desc   Test testNativeWindowGetMVUnsupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_testNativeWindowGetMVUnsupported_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -702,12 +702,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_testNativeWindowCleanCacheInvalidArguments_3300
-     * @tc.name    : SUB_OH_testNativeWindowCleanCacheInvalidArguments_3300
-     * @tc.desc    : Test testNativeWindowCleanCacheInvalidArguments
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_testNativeWindowCleanCacheInvalidArguments_3300
+     * @tc.number SUB_OH_testNativeWindowCleanCacheInvalidArguments_3300
+     * @tc.desc   Test testNativeWindowCleanCacheInvalidArguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_testNativeWindowCleanCacheInvalidArguments_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -724,12 +724,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_testNativeWindowCleanCacheConsumerDisconnected_3400
-     * @tc.name    : SUB_OH_testNativeWindowCleanCacheConsumerDisconnected_3400
-     * @tc.desc    : Test testNativeWindowCleanCacheConsumerDisconnected
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_testNativeWindowCleanCacheConsumerDisconnected_3400
+     * @tc.number SUB_OH_testNativeWindowCleanCacheConsumerDisconnected_3400
+     * @tc.desc   Test testNativeWindowCleanCacheConsumerDisconnected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_testNativeWindowCleanCacheConsumerDisconnected_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -746,12 +746,12 @@ export default function ExternalWindowTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_GLFlushedBufferV2BUFFERSTATEINVALID_3500
-     * @tc.name    : SUB_OH_GLFlushedBufferV2BUFFERSTATEINVALID_3500
-     * @tc.desc    : Test testNativeWindowGLFlushedBufferV2BUFFERSTATEINVALID
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_GLFlushedBufferV2BUFFERSTATEINVALID_3500
+     * @tc.number SUB_OH_GLFlushedBufferV2BUFFERSTATEINVALID_3500
+     * @tc.desc   Test testNativeWindowGLFlushedBufferV2BUFFERSTATEINVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_GLFlushedBufferV2BUFFERSTATEINVALID_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

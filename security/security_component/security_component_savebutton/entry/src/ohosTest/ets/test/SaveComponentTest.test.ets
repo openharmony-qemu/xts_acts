@@ -49,13 +49,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_0100
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_0100
-     * @tc.name Test_Security_Button_Save_0100
-     * @tc.desc Test SecurityComponent Default parameters and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test SecurityComponent Default parameters and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Test_Security_Button_Save_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_0100] START====');
@@ -136,19 +135,19 @@ export default function saveComponentTest() {
         }
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_0100] clickSecComponent err : " + JSON.stringify(err));
+        expect(false).assertTrue();
       }
       await Utils.sleep(500);
       done();
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_0200
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_0200
-     * @tc.name Test_Security_Button_Save_0200
-     * @tc.desc Test SecurityComponent layoutDirection attribute is VERTICAL and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent layoutDirection attribute is VERTICAL and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_0200] START====');
@@ -243,14 +242,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_0300
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_0300
-     * @tc.name Test_Security_Button_Save_0300
-     * @tc.desc Test SecurityComponent position.x is 150.00vp and position.y is 20.00vp
-     * markAnchor.x is 20.00vp and markAnchor.y is 20.00vp and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent position.x is 150.00vp and position.y is 20.00vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_0300] START====');
@@ -348,13 +345,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_0400
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_0400
-     * @tc.name Test_Security_Button_Save_0400
-     * @tc.desc Test SecurityComponent offset and markAnchor attribute is normal and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent offset and markAnchor attribute is normal and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_0400] START====');
@@ -452,13 +448,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_0500
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_0500
-     * @tc.name Test_Security_Button_Save_0500
-     * @tc.desc Test SecurityComponent FontStyle attribute is Italic and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent FontStyle attribute is Italic and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_0500] START====');
@@ -553,13 +548,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_0600
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_0600
-     * @tc.name Test_Security_Button_Save_0600
-     * @tc.desc Test SecurityComponent FontWeight attribute is Lighter and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent FontWeight attribute is Lighter and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_0600] START====');
@@ -654,13 +648,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_0700
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_0700
-     * @tc.name Test_Security_Button_Save_0700
-     * @tc.desc Test SecurityComponent FontWeight attribute is Normal and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent FontWeight attribute is Normal and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_0700] START====');
@@ -755,13 +748,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_0800
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_0800
-     * @tc.name Test_Security_Button_Save_0800
-     * @tc.desc Test SecurityComponent FontWeight attribute is Regular and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent FontWeight attribute is Regular and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_0800] START====');
@@ -856,13 +848,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_0900
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_0900
-     * @tc.name Test_Security_Button_Save_0900
-     * @tc.desc Test SecurityComponent FontWeight attribute is Bold and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent FontWeight attribute is Bold and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_0900] START====');
@@ -957,13 +948,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_1000
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_1000
-     * @tc.name Test_Security_Button_Save_1000
-     * @tc.desc Test SecurityComponent FontWeight attribute is Bolder and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent FontWeight attribute is Bolder and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_1000] START====');
@@ -1058,13 +1048,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_1100
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_1100
-     * @tc.name Test_Security_Button_Save_1100
-     * @tc.desc Test SecurityComponent BorderStyle is Dotted , borderWidth , borderColor , borderRadius attribute is normal and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent BorderStyle is Dotted , borderWidth , borderColor , borderRadius attribute is normal and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_1100] START====');
@@ -1162,13 +1151,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_1200
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_1200
-     * @tc.name Test_Security_Button_Save_1200
-     * @tc.desc Test SecurityComponent BorderStyle attribute is Dashed and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent BorderStyle attribute is Dashed and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_1200] START====');
@@ -1266,13 +1254,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_1300
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_1300
-     * @tc.name Test_Security_Button_Save_1300
-     * @tc.desc Test SecurityComponent BorderStyle attribute is Solid and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent BorderStyle attribute is Solid and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_1300] START====');
@@ -1370,13 +1357,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_1400
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_1400
-     * @tc.name Test_Security_Button_Save_1400
-     * @tc.desc Test SecurityComponent offset.x attribute is 200.00vp result in Authorization is failed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent offset.x attribute is 200.00vp result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_1400] START====');
@@ -1485,13 +1471,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_1500
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_1500
-     * @tc.name Test_Security_Button_Save_1500
-     * @tc.desc Test SecurityComponent offset.x attribute is -200.00vp result in Authorization is failed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent offset.x attribute is -200.00vp result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_1500] START====');
@@ -1600,13 +1585,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_1600
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_1600
-     * @tc.name Test_Security_Button_Save_1600
-     * @tc.desc Test SecurityComponent Size excood displaysSize 10% result in Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent Size excood displaysSize 10% result in Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_1600] START====');
@@ -1719,13 +1703,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_1700
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_1700
-     * @tc.name Test_Security_Button_Save_1700
-     * @tc.desc Test SecurityComponent iconColor attribute is too light result in Authorization is failed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent iconColor attribute is too light result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_1700] START====');
@@ -1820,15 +1803,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_1800
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_1800
-     * @tc.name Test_Security_Button_Save_1800
-     * @tc.desc Test SecurityComponent buttonType is 0 , iconSize is 20.00vp
-     * , iconColor is #FFFA0050  and backgroundColor is #FFFF0000,
-     * Due to the similarity of the icon and background color result in Authorization is failed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent buttonType is 0 , iconSize is 20.00vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_1800] START====');
@@ -1925,13 +1905,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_1900
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_1900
-     * @tc.name Test_Security_Button_Save_1900
-     * @tc.desc Test SecurityComponent iconSize attribute is too small result in Authorization is failed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent iconSize attribute is too small result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_1900] START====');
@@ -2027,13 +2006,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_2000
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_2000
-     * @tc.name Test_Security_Button_Save_2000
-     * @tc.desc Test SecurityComponent iconColor attribute is transparent result in Authorization is failed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent iconColor attribute is transparent result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_2000] START====');
@@ -2128,13 +2106,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_2100
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_2100
-     * @tc.name Test_Security_Button_Save_2100
-     * @tc.desc Test SecurityComponent fontColor attribute is transparent result in Authorization is failed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent fontColor attribute is transparent result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_2100] START====');
@@ -2229,13 +2206,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_2200
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_2200
-     * @tc.name Test_Security_Button_Save_2200
-     * @tc.desc Test SecurityComponent backgroundColor attribute is transparent result in Authorization is failed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent backgroundColor attribute is transparent result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_2200] START====');
@@ -2330,14 +2306,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_2300
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_2300
-     * @tc.name Test_Security_Button_Save_2300
-     * @tc.desc Test SecurityComponent attr "enbale, max/minFontsize, max/minFontScale, heightAdaptivePolicy, maxLines,
-     * alignRules(AlignRuleOption), chainMode" and result in Authorization is passed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent attr "enbale, max/minFontsize, max/minFontScale, heightAdaptivePolicy, maxLines,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_2300] START====');
@@ -2444,13 +2418,12 @@ export default function saveComponentTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_Save_2400
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_2400
-     * @tc.name Test_Security_Button_Save_2400
-     * @tc.desc Test SecurityComponent attr "alignRules(LocalizedAlignRuleOptions)" and result in Authorization is passed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SecurityComponent attr "alignRules(LocalizedAlignRuleOptions)" and result in Authorization is passed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_Security_Button_Save_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_Save_2400] START====');
@@ -2553,6 +2526,115 @@ export default function saveComponentTest() {
         await Utils.sleep(1000);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_2400] clickSecComponent err : " + JSON.stringify(err));
+      }
+    });
+
+    /**
+     * @tc.name   Test_Security_Button_Save_3500
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_3500
+     * @tc.desc   Test SecurityComponent attr focusBox and result in SaveButton Authorization is passed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_Button_Save_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      console.info('====>[Test_Security_Button_Save_3500] START====');
+      await Utils.sleep(1000);
+      try {
+        let eventData:events_emitter.EventData = {
+          data: {
+            "icon": 0,
+            "textType": 0,
+            "bgType": ButtonType.Normal,
+            "iconSize": 16,
+            "direct": SecurityComponentLayoutDirection.VERTICAL,
+            "positionX": 0,
+            "positionY": 0,
+            "anchorX": 0,
+            "anchorY": 0,
+            "offsetX": 0,
+            "offsetY": 0,
+            "fontSize": 16,
+            "fontStyle": FontStyle.Normal,
+            "fontWeight": FontWeight.Medium,
+            "fontFamily": 'HarmonyOS Sans',
+            "fontColor": 0xffffffff,
+            "iconColor": 0xffffffff,
+            "bgColor": 0xff007dff,
+            "borderSty": BorderStyle.Dashed,
+            "borderWid": 0,
+            "borderCol": 0xffffffff,
+            "borderRad": 0,
+            "left": 12,
+            "right": 12,
+            "top": 4,
+            "bottom": 4,
+            "middle": 4,
+            "strokeMag": 10,
+            "strokeColR": 255,
+            "strokeColG": 0,
+            "strokeColB": 0,
+            "strokeWth": 10
+          }
+        }
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info("====>[Test_Security_Button_Save_3500] start to publish emit");
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        console.info("====>[Test_Security_Button_Save_3500] change component data error: " + err.message);
+      }
+      await Utils.sleep(1000);
+      let strJsonNew = getInspectorByKey('keySave');
+      let obj : ESObject = JSON.parse(strJsonNew);
+      expect(obj.$attrs.focusBox.margin).assertEqual("10.00vp");
+      expect(obj.$attrs.focusBox.strokeColor).assertEqual("#FFFF0000");
+      expect(obj.$attrs.focusBox.strokeWidth).assertEqual("10.00px");
+      await Utils.sleep(1000);
+      try {
+        let clickCallback = (clickData:events_emitter.EventData) => {
+          if(clickData.data !=undefined){
+            console.info("====>[Test_Security_Button_Save_3500] get clickEvent result is: " + JSON.stringify(clickEvent));
+            console.info("====>[Test_Security_Button_Save_3500] get clickData.data.clickResult is: " + JSON.stringify(clickData.data.clickResult));
+            if (clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS) {
+              console.info("====>[Test_Security_Button_Save_3500] 设置权限成功");
+              expect(clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS).assertTrue();
+              console.info("====>[Test_Security_Button_Save_3500] END====");
+              done();
+            } else {
+              console.info("====>[Test_Security_Button_Save_3500] 设置权限失败");
+              expect(false).assertTrue();
+              console.info("====>[Test_Security_Button_Save_3500] END====");
+              done();
+            }
+          } else {
+            console.info("====>[Test_Security_Button_Save_3500] ERR CASE 失败");
+            expect(false).assertTrue();
+            console.info("====>[Test_Security_Button_Save_3500] END====");
+            done();
+          }
+        }
+        let clickEvent:events_emitter.InnerEvent = {
+          eventId: 2,
+          priority: events_emitter.EventPriority.LOW
+        }
+        events_emitter.once(clickEvent, clickCallback);
+      } catch (err) {
+        console.info("====>[Test_Security_Button_Save_3500] once clickEvent err : " + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+      try {
+        let driver = Driver.create();
+        let button = await driver.findComponent(ON.type('SaveButton'));
+        await Utils.sleep(500);
+        console.info("====>[Test_Security_Button_Save_3500] button is:" + JSON.stringify(button));
+        await button.click();
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info("====>[Test_Security_Button_Save_3500] clickSecComponent err : " + JSON.stringify(err));
+        expect(false).assertTrue();
       }
     });
   })

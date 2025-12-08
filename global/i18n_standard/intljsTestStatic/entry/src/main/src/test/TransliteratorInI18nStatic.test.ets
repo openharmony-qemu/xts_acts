@@ -55,9 +55,12 @@ export default function TransliteratorIni18nTest() {
       console.info("afterAll case");
     });
     /**
-     * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0100
-     * @tc.name    transliterator_test_static_0100
-     * @tc.desc    test getAvailableIDs,get the ID value
+     * @tc.name   transliterator_test_static_0100
+     * @tc.number SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0100
+     * @tc.desc   test getAvailableIDs,get the ID value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('transliterator_test_static_0100', Level.LEVEL0, async (): Promise<void> => {
       console.log('transliterator_test_static_0100 ' + 'start');
@@ -74,9 +77,12 @@ export default function TransliteratorIni18nTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0200
-     * @tc.name    transliterator_test_static_0200
-     * @tc.desc    test getInstance with a param,get the instance value
+     * @tc.name   transliterator_test_static_0200
+     * @tc.number SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0200
+     * @tc.desc   test getInstance with a param,get the instance value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('transliterator_test_static_0200', Level.LEVEL2, async (): Promise<void> => {
       console.log('transliterator_test_static_0200 ' + 'start');
@@ -85,9 +91,12 @@ export default function TransliteratorIni18nTest() {
     })
 
     /**
-     * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0300
-     * @tc.name    transliterator_test_static_0300
-     * @tc.desc    test transform with 中国 param get the transform value
+     * @tc.name   transliterator_test_static_0300
+     * @tc.number SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0300
+     * @tc.desc   test transform with 中国 param get the transform value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('transliterator_test_static_0300', Level.LEVEL2, async (): Promise<void> => {
       console.log('transliterator_test_static_0300 ' + 'start');
@@ -98,10 +107,13 @@ export default function TransliteratorIni18nTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0400
-    * @tc.name    transliterator_test_static_0400
-    * @tc.desc    test transform with Any-Latn param,get the transform value
-    */
+     * @tc.name   transliterator_test_static_0400
+     * @tc.number SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0400
+     * @tc.desc   test transform with Any-Latn param,get the transform value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('transliterator_test_static_0400', Level.LEVEL2, async (): Promise<void> => {
       console.log('transliterator_test_static_0400 ' + 'start');
       let trans = i18n.Transliterator.getInstance('Any-Latn');
@@ -111,10 +123,13 @@ export default function TransliteratorIni18nTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0500
-    * @tc.name    transliterator_test_static_0500
-    * @tc.desc    get the transform value,test transform with Any-Thai param
-    */
+     * @tc.name   transliterator_test_static_0500
+     * @tc.number SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0500
+     * @tc.desc   get the transform value,test transform with Any-Thai param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('transliterator_test_static_0500', Level.LEVEL2, async (): Promise<void> => {
       console.log('transliterator_test_static_0500 ' + 'start');
       let trans = i18n.Transliterator.getInstance('Any-Thai');
@@ -124,10 +139,13 @@ export default function TransliteratorIni18nTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0600
-    * @tc.name    transliterator_test_static_0600
-    * @tc.desc    test transform with Any-zh param,get the transform value
-    */
+     * @tc.name   transliterator_test_static_0600
+     * @tc.number SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0600
+     * @tc.desc   test transform with Any-zh param,get the transform value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('transliterator_test_static_0600', Level.LEVEL2, async (): Promise<void> => {
       console.log('transliterator_test_static_0600 ' + 'start');
       let trans = i18n.Transliterator.getInstance('Any-zh');
@@ -137,10 +155,13 @@ export default function TransliteratorIni18nTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0700
-    * @tc.name    transliterator_test_static_0700
-    * @tc.desc    test transform with Any-Hant param,get the transform value
-    */
+     * @tc.name   transliterator_test_static_0700
+     * @tc.number SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0700
+     * @tc.desc   test transform with Any-Hant param,get the transform value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('transliterator_test_static_0700', Level.LEVEL2, async (): Promise<void> => {
       console.log('transliterator_test_static_0700 ' + 'start');
       let trans = i18n.Transliterator.getInstance('Any-Hant');
@@ -150,10 +171,13 @@ export default function TransliteratorIni18nTest() {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0800
-    * @tc.name    transliterator_test_static_0800
-    * @tc.desc    test transform with Any-Kannada param,get the transform value
-    */
+     * @tc.name   transliterator_test_static_0800
+     * @tc.number SUB_GLOBAL_i18n_JS_TRANSLITERATOR_static_0800
+     * @tc.desc   test transform with Any-Kannada param,get the transform value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('transliterator_test_static_0800', Level.LEVEL2, async (): Promise<void> => {
       console.log('transliterator_test_static_0800 ' + 'start');
       let trans = i18n.Transliterator.getInstance('Any-Kannada');

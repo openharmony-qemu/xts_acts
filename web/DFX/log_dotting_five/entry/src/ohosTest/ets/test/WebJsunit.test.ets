@@ -40,130 +40,169 @@ export default function webJsunit() {
       done();
     })
 
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_017                                                                                                                                                          
-     *tc.name ClearMatches                                                                                                                                                                                                               
-     *tc.desic zoom the current page
+    /**
+     * @tc.name   ClearMatches
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_017
+     * @tc.desc   ClearMatches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ClearMatches', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitClearMatches", 119790)
       Utils.registerEvent("ClearMatches", "17100001", 119800, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_018                                                                                                                                                         
-     *tc.name SearchNext                                                                                                                                                                                                               
-     *tc.desic zoom the current page
+    /**
+     * @tc.name   SearchNext
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_018
+     * @tc.desc   SearchNext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SearchNext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSearchNext", 119790)
       Utils.registerEvent("SearchNext", "17100001", 119810, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_019                                                                                                                                                         
-     *tc.name ClearSslCache                                                                                                                                                                                                               
-     *tc.desic zoom the current page
+    /**
+     * @tc.name   ClearSslCache
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_019
+     * @tc.desc   ClearSslCache
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ClearSslCache', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitClearSslCache", 119790)
       Utils.registerEvent("ClearSslCache", "17100001", 119820, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /*
-    *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_020
-    *tc.name ClearClientAuthenticationCache
-    *tc.desic zoom the current page
-    */
+    /**
+     * @tc.name   ClearClientAuthenticationCache
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_020
+     * @tc.desc   ClearClientAuthenticationCache
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ClearClientAuthenticationCache', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitClearClientAuthenticationCache", 119790)
       Utils.registerEvent("ClearClientAuthenticationCache", "17100001", 119830, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_021                                                                                                                                                      
-     *tc.name Stop                                                                                                                                                                                                               
-     *tc.desic zoom the current page
+    /**
+     * @tc.name   Stop
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_021
+     * @tc.desc   Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Stop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitStop", 119790)
       Utils.registerEvent("Stop", "17100001", 119840, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_022                                                                                                                                                      
-     *tc.name RequestFocus                                                                                                                                                                                                               
-     *tc.desic zoom the current page
+    /**
+     * @tc.name   RequestFocus
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_022
+     * @tc.desc   RequestFocus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RequestFocus', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitRequestFocus", 119790)
       Utils.registerEvent("RequestFocus", "17100001",119850, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_023                                                                                                                                                      
-     *tc.name ZoomIn                                                                                                                                                                                                               
-     *tc.desic zoom the current page
+    /**
+     * @tc.name   ZoomIn
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_023
+     * @tc.desc   ZoomIn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ZoomIn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitZoomIn", 119790)
       Utils.registerEvent("ZoomIn", "17100001", 119860, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_024                                                                                                                                                      
-     *tc.name ZoomOut                                                                                                                                                                                                               
-     *tc.desic zoom the current page
+    /**
+     * @tc.name   ZoomOut
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_024
+     * @tc.desc   ZoomOut
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ZoomOut', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitZoomOut", 119790)
       Utils.registerEvent("ZoomOut", "17100001", 119870, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_025                                                                                                                                                    
-     *tc.name GetWebId                                                                                                                                                                                                               
-     *tc.desic zoom the current page
+    /**
+     * @tc.name   GetWebId
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_025
+     * @tc.desc   GetWebId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetWebId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetWebId", 119790)
       Utils.registerEvent("GetWebId", "17100001", 119880, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_026                                                                                                                                                      
-     *tc.name GetUserAgent                                                                                                                                                                                                               
-     *tc.desic zoom the current page
+    /**
+     * @tc.name   GetUserAgent
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_026
+     * @tc.desc   GetUserAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetUserAgent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetUserAgent", 119790)
       Utils.registerEvent("GetUserAgent", "17100001", 119890, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_027                                                                                                                                                      
-     *tc.name GetPageHeigth                                                                                                                                                                                                               
-     *tc.desic zoom the current page
+    /**
+     * @tc.name   GetPageHeigth
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_027
+     * @tc.desc   GetPageHeigth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetPageHeigth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetPageHeigth", 119790)
       Utils.registerEvent("GetPageHeigth", "17100001", 119900, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_028                                                                                                                                                      
-     *tc.name BackOrForward                                                                                                                                                                                                               
-     *tc.desic zoom the current page
+    /**
+     * @tc.name   BackOrForward
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_028
+     * @tc.desc   BackOrForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BackOrForward', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitBackOrForward", 119790)
       Utils.registerEvent("BackOrForward", "17100001", 119910, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_030                                                                                                                                                                     
-     *tc.name GetUrl                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   GetUrl
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_030
+     * @tc.desc   GetUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetUrl", 119790)

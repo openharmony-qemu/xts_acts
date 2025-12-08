@@ -60,12 +60,14 @@ export default function getWaterFlowItemRect5() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getWaterFlowItemRect5_0100
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set padding of waterFlow to 20
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getWaterFlowItemRect5_0100
+     * @tc.number SUB_ACE_TS_COMPONENT_getWaterFlowItemRect5_0100
+     * @tc.desc   set index to 0,set padding of waterFlow to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getWaterFlowItemRect5_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getWaterFlowItemRect5_0100] START');
@@ -119,12 +121,14 @@ export default function getWaterFlowItemRect5() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getWaterFlowItemRect5_0200
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set margin of FlowItem0 to 20
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getWaterFlowItemRect5_0200
+     * @tc.number SUB_ACE_TS_COMPONENT_getWaterFlowItemRect5_0200
+     * @tc.desc   set index to 0,set margin of FlowItem0 to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getWaterFlowItemRect5_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getWaterFlowItemRect5_0200] START');

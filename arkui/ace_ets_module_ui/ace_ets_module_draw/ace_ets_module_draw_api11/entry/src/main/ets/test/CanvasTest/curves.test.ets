@@ -48,10 +48,13 @@ export default function curvesStepsJsunit() {
       await Utils.sleep(1000)
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testcurvesSteps0001
-     * @tc.desic         acecurvesStepsEtsTest0001
+    /**
+     * @tc.name   testcurvesSteps0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testcurvesSteps0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcurvesSteps0001', Level.LEVEL0, async () => {
       console.info('curvesSteps testcurvesSteps0001 START');

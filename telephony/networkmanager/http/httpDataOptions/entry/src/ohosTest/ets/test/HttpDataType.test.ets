@@ -37,15 +37,15 @@ const ExpectTrue = (n: boolean) => {
 export default function HttpHttpDataTypeTest() {
   describe("HttpHttpDataTypeTest", () => {
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpDataType_0100
-     * @tc.name  :  testHttpDataTypeSTRING0100
-     * @tc.desc  :  test httpDataType.STRING
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 1
-     */
 
+    /**
+     * @tc.name   testHttpDataTypeSTRING0100
+     * @tc.number testHttpDataTypeSTRING0100
+     * @tc.desc   testHttpDataTypeSTRING0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testHttpDataTypeSTRING0100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = "testHttpDataTypeSTRING0100";
       console.info(`${caseName} test Start`);
@@ -83,15 +83,15 @@ export default function HttpHttpDataTypeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpDataType_0200
-     * @tc.name  :  testHttpDataTypeSTRING0200
-     * @tc.desc  :  test httpDataType.STRING
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 1
-     */
 
+    /**
+     * @tc.name   testHttpDataTypeSTRING0200
+     * @tc.number testHttpDataTypeSTRING0200
+     * @tc.desc   testHttpDataTypeSTRING0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testHttpDataTypeSTRING0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = "testHttpDataTypeSTRING0200";
       console.info(`${caseName} test Start`);
@@ -128,15 +128,15 @@ export default function HttpHttpDataTypeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpDataType_0300
-     * @tc.name  :  testHttpDataTypeARRAY_BUFFER0300
-     * @tc.desc  :  test httpDataType.ARRAY_BUFFER
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
-     */
 
+    /**
+     * @tc.name   testHttpDataTypeARRAY_BUFFER0300
+     * @tc.number testHttpDataTypeARRAY_BUFFER0300
+     * @tc.desc   testHttpDataTypeARRAY_BUFFER0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testHttpDataTypeARRAY_BUFFER0300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpDataTypeARRAY_BUFFER0300";
       console.info(`${caseName} test Start`);
@@ -174,15 +174,15 @@ export default function HttpHttpDataTypeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpDataType_0400
-     * @tc.name  :  testHttpDataTypeARRAY_BUFFER0400
-     * @tc.desc  :  test httpDataType.ARRAY_BUFFER
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
-     */
 
+    /**
+     * @tc.name   testHttpDataTypeARRAY_BUFFER0400
+     * @tc.number testHttpDataTypeARRAY_BUFFER0400
+     * @tc.desc   testHttpDataTypeARRAY_BUFFER0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testHttpDataTypeARRAY_BUFFER0400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpDataTypeARRAY_BUFFER0400";
       console.info(`${caseName} test Start`);
@@ -219,15 +219,15 @@ export default function HttpHttpDataTypeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpDataType_0500
-     * @tc.name  :  testHttpDataTypeOBJECT0500
-     * @tc.desc  :  test httpDataType.OBJECT
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
-     */
 
+    /**
+     * @tc.name   testHttpDataTypeOBJECT0500
+     * @tc.number testHttpDataTypeOBJECT0500
+     * @tc.desc   testHttpDataTypeOBJECT0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testHttpDataTypeOBJECT0500',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpDataTypeOBJECT0500";
       console.info(`${caseName} test Start`);
@@ -264,15 +264,15 @@ export default function HttpHttpDataTypeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpDataType_0600
-     * @tc.name  :  testHttpDataTypeOBJECT0600
-     * @tc.desc  :  test httpDataType.OBJECT
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
-     */
 
+    /**
+     * @tc.name   testHttpDataTypeOBJECT0600
+     * @tc.number testHttpDataTypeOBJECT0600
+     * @tc.desc   testHttpDataTypeOBJECT0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testHttpDataTypeOBJECT0600',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpDataTypeOBJECT0600";
       console.info(`${caseName} test Start`);
@@ -309,13 +309,13 @@ export default function HttpHttpDataTypeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpDataType_0700
-     * @tc.name  :  testHttpDataTypeDefault0700
-     * @tc.desc  :  test httpDataType default
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpDataTypeDefault0700
+     * @tc.number SUB_NetworkMgr_Http_HttpDataType_0700
+     * @tc.desc   test httpDataType default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpDataTypeDefault0700',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpDataTypeDefault0700";
@@ -351,13 +351,13 @@ export default function HttpHttpDataTypeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpDataType_0800
-     * @tc.name  :  testHttpDataTypeDefault0800
-     * @tc.desc  :  test httpDataType default
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpDataTypeDefault0800
+     * @tc.number SUB_NetworkMgr_Http_HttpDataType_0800
+     * @tc.desc   test httpDataType default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpDataTypeDefault0800',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpDataTypeDefault0800";
@@ -393,13 +393,13 @@ export default function HttpHttpDataTypeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpDataType_0900
-     * @tc.name  :  testHttpDataTypeIllegal0900
-     * @tc.desc  :  test httpDataType illegal value
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpDataTypeIllegal0900
+     * @tc.number SUB_NetworkMgr_Http_HttpDataType_0900
+     * @tc.desc   test httpDataType illegal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpDataTypeIllegal0900',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpDataTypeIllegal0900";
@@ -437,13 +437,13 @@ export default function HttpHttpDataTypeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpDataType_1000
-     * @tc.name  :  testHttpDataTypeIllegal1000
-     * @tc.desc  :  test httpDataType illegal value
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpDataTypeIllegal1000
+     * @tc.number SUB_NetworkMgr_Http_HttpDataType_1000
+     * @tc.desc   test httpDataType illegal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpDataTypeIllegal1000',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpDataTypeIllegal1000";

@@ -58,14 +58,14 @@ export default function webViewMenuInputFieldType() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_INPUTFIELDTYPENUMBER_0100
-    * @tc.name       : testInputFieldTypeNumber001
-    * @tc.desc       : test InputFieldType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testInputFieldTypeNumber001
+     * @tc.number SUB_WEB_INPUTFIELDTYPENUMBER_0100
+     * @tc.desc   test InputFieldType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testInputFieldTypeNumber001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitInputFieldTypeNumber001';
       tcName = 'testInputFieldTypeNumber001'
@@ -77,14 +77,14 @@ export default function webViewMenuInputFieldType() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_INPUTFIELDTYPETEXT_0100
-    * @tc.name       : testInputFieldTypeText001
-    * @tc.desc       : test InputFieldTypeText
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testInputFieldTypeText001
+     * @tc.number SUB_WEB_INPUTFIELDTYPETEXT_0100
+     * @tc.desc   test InputFieldTypeText
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testInputFieldTypeText001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitInputFieldTypeText001';
       tcName = 'testInputFieldTypeText001'
@@ -96,14 +96,14 @@ export default function webViewMenuInputFieldType() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_INPUTFIELDTYPEPASSWORD_0100
-    * @tc.name       : testInputFieldTypePassword001
-    * @tc.desc       : test InputFieldTypePassWord
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testInputFieldTypePassword001
+     * @tc.number SUB_WEB_INPUTFIELDTYPEPASSWORD_0100
+     * @tc.desc   test InputFieldTypePassWord
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testInputFieldTypePassword001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitInputFieldTypePassWord001';
       tcName = 'testInputFieldTypePassword001'
@@ -115,14 +115,14 @@ export default function webViewMenuInputFieldType() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_INPUTFIELDTYPETELEPHONE_0100
-    * @tc.name       : testInputFieldTypeTelephone001
-    * @tc.desc       : test InputFieldTypePassTelephone
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testInputFieldTypeTelephone001
+     * @tc.number SUB_WEB_INPUTFIELDTYPETELEPHONE_0100
+     * @tc.desc   test InputFieldTypePassTelephone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testInputFieldTypeTelephone001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitInputFieldTypeTelephone001';
       tcName = 'testInputFieldTypeTelephone001'
@@ -134,14 +134,14 @@ export default function webViewMenuInputFieldType() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_INPUTFIELDTYPEOTHER_0100
-    * @tc.name       : testInputFieldTypeOther001
-    * @tc.desc       : test InputFieldTypeOther
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testInputFieldTypeOther001
+     * @tc.number SUB_WEB_INPUTFIELDTYPEOTHER_0100
+     * @tc.desc   test InputFieldTypeOther
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testInputFieldTypeOther001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitInputFieldTypeOther001';
       tcName = 'testInputFieldTypeOther001'

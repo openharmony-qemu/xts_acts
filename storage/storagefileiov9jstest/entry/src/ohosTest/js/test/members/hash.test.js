@@ -25,14 +25,12 @@ export default function fileIOHash() {
 describe('fileIO_fs_hash', function () {
 
   /**
+   * @tc.name   fileIO_test_hash_async_000
    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0000
-   * @tc.name fileIO_test_hash_async_000
-   * @tc.desc Test hash() interface. Promise.
-   * Encrypt files using the MD5 hashing algorithm
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test hash() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_hash_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_hash_async_000');
@@ -51,14 +49,12 @@ describe('fileIO_fs_hash', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_hash_async_001
    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0100
-   * @tc.name fileIO_test_hash_async_001
-   * @tc.desc Test hash() interface. Callback.
-   * Encrypt files using the MD5 hashing algorithm.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test hash() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_hash_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_hash_async_001');
@@ -82,14 +78,12 @@ describe('fileIO_fs_hash', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_hash_async_002
    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0200
-   * @tc.name fileIO_test_hash_async_002
-   * @tc.desc Test hash() interface. Promise.
-   * Encrypt files using the sha1 hashing algorithm.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test hash() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_hash_async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_hash_async_002');
@@ -108,14 +102,12 @@ describe('fileIO_fs_hash', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_hash_async_003
    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0300
-   * @tc.name fileIO_test_hash_async_003
-   * @tc.desc Test hash() interface. Callback.
-   * Encrypt files using the sha1 hashing algorithm.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test hash() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_hash_async_003', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_hash_async_003');
@@ -139,14 +131,12 @@ describe('fileIO_fs_hash', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_hash_async_004
    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0400
-   * @tc.name fileIO_test_hash_async_004
-   * @tc.desc Test hash() interface. Promise.
-   * Encrypt files using the sha256 hashing algorithm.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test hash() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_hash_async_004', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_hash_async_004');
@@ -165,14 +155,12 @@ describe('fileIO_fs_hash', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_hash_async_005
    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0500
-   * @tc.name fileIO_test_hash_async_005
-   * @tc.desc Test hash() interface. Callback.
-   * Encrypt files using the sha256 hashing algorithm.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test hash() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_hash_async_005', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_hash_async_005');
@@ -196,14 +184,12 @@ describe('fileIO_fs_hash', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_hash_async_006
    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0600
-   * @tc.name fileIO_test_hash_async_006
-   * @tc.desc Test hash() interface. Promise.
-   * Invalid mode.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test hash() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_hash_async_006', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_hash_async_006');
@@ -221,14 +207,12 @@ describe('fileIO_fs_hash', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_hash_async_007
    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0700
-   * @tc.name fileIO_test_hash_async_007
-   * @tc.desc Test hash() interface. Promise.
-   * Missing parameter.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test hash() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_hash_async_007', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_hash_async_007');
@@ -247,14 +231,12 @@ describe('fileIO_fs_hash', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_hash_createHash_008
    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0800
-   * @tc.name fileIO_test_hash_createHash_008
-   * @tc.desc Test createHash() interface.
-   * Calculate file summary using HashStream (MD5)
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test createHash() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_hash_createHash_008', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_hash_createHash_008');
@@ -281,14 +263,12 @@ describe('fileIO_fs_hash', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_hash_createHash_009
    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0900
-   * @tc.name fileIO_test_hash_createHash_009
-   * @tc.desc Test createHash() interface.
-   * Calculate file summary using HashStream (SHA1)
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test createHash() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_hash_createHash_009', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_hash_createHash_009');
@@ -315,14 +295,12 @@ describe('fileIO_fs_hash', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_hash_createHash_010
    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_1000
-   * @tc.name fileIO_test_hash_createHash_010
-   * @tc.desc Test createHash() interface.
-   * Calculate file summary using HashStream (SHA256)
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test createHash() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_hash_createHash_010', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_hash_createHash_010');
@@ -349,14 +327,12 @@ describe('fileIO_fs_hash', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_hash_createHash_011
    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_1100
-   * @tc.name fileIO_test_hash_createHash_011
-   * @tc.desc Test createHash() interface.
-   * Invalid mode.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test createHash() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_hash_createHash_011', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_hash_createHash_011');

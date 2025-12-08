@@ -26,13 +26,13 @@ export default function customDialogSetAutoCancelTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETAUTOCANCEL_0100
-     * @tc.name       : testCustomDialogSetAutoCancel001
-     * @tc.desc       : testing setAutoCancel for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetAutoCancel001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETAUTOCANCEL_0100
+     * @tc.desc   testing setAutoCancel for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetAutoCancel001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`customdialog/CustomDialogSetAutoCancelTest`)
@@ -44,39 +44,39 @@ export default function customDialogSetAutoCancelTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETAUTOCANCEL_0200
-     * @tc.name       : testCustomDialogSetAutoCancel002
-     * @tc.desc       : testing setAutoCancel for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetAutoCancel002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETAUTOCANCEL_0200
+     * @tc.desc   testing setAutoCancel for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetAutoCancel002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetAutoCancel002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETAUTOCANCEL_0300
-     * @tc.name       : testCustomDialogSetAutoCancel003
-     * @tc.desc       : testing setAutoCancel for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetAutoCancel003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETAUTOCANCEL_0300
+     * @tc.desc   testing setAutoCancel for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetAutoCancel003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetAutoCancel003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETAUTOCANCEL_0400
-     * @tc.name       : testCustomDialogSetAutoCancel004
-     * @tc.desc       : testing setAutoCancel for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetAutoCancel004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETAUTOCANCEL_0400
+     * @tc.desc   testing setAutoCancel for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetAutoCancel004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetAutoCancel004()).assertEqual(0)

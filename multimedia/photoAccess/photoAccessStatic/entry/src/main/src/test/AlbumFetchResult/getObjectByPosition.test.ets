@@ -31,12 +31,12 @@ export default function albumGetPositionObjectTest() {
     const helper = photoAccessHelper.getPhotoAccessHelper(appContext);
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_OBJECT_BY_POSITION_STATIC_0000
-      * @tc.name    album_getObjectByPosition_callback_static_000
-      * @tc.desc    getObjectByPosition
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   album_getObjectByPosition_callback_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_OBJECT_BY_POSITION_STATIC_0000
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("album_getObjectByPosition_callback_static_000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -78,12 +78,12 @@ export default function albumGetPositionObjectTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_ALBUM_GET_OBJECT_BY_POSITION_STATIC_0000
-      * @tc.name    album_getObjectByPosition_promise_static_000
-      * @tc.desc    getObjectByPosition
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   album_getObjectByPosition_promise_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_ALBUM_GET_OBJECT_BY_POSITION_STATIC_0000
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("album_getObjectByPosition_promise_static_000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

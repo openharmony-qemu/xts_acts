@@ -89,13 +89,13 @@ async function runFetchTestCase(caseName: string, options: FetchOptions, done: F
 export default function httpFetchTest() {
   describe('HttpFetchTest', () => {
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Http_FetchRequestURL_0100
-     * @tc.name  : testNetworkMgrHttpFetchRequestURL0100
-     * @tc.desc  : Test fetch api with useful url.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testNetworkMgrHttpFetchRequestURL0100
+     * @tc.number SUB_NetworkMgr_Http_FetchRequestURL_0100
+     * @tc.desc   Test fetch api with useful url.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrHttpFetchRequestURL0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
       let caseName: string = 'testNetworkMgrHttpFetchRequestURL0100';
@@ -108,13 +108,13 @@ export default function httpFetchTest() {
       });
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Http_FetchRequestURLIsNull_0200
-     * @tc.name  : testHttpFetchRequestURLIsNull0200
-     * @tc.desc  : Test fetch api with empty url.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+    /**
+     * @tc.name   testHttpFetchRequestURLIsNull0200
+     * @tc.number SUB_NetworkMgr_Http_FetchRequestURLIsNull_0200
+     * @tc.desc   Test fetch api with empty url.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpFetchRequestURLIsNull0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       let caseName: string = 'testHttpFetchRequestURLIsNull0200';
@@ -127,13 +127,13 @@ export default function httpFetchTest() {
       });
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Http_FetchRequestURLIsInvalid_0300
-     * @tc.name  : testHttpFetchRequestURLIsInvalid0300
-     * @tc.desc  : Test fetch api with url is invalid.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testHttpFetchRequestURLIsInvalid0300
+     * @tc.number SUB_NetworkMgr_Http_FetchRequestURLIsInvalid_0300
+     * @tc.desc   Test fetch api with url is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpFetchRequestURLIsInvalid0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , (done: Function) => {
       let caseName: string = 'testHttpFetchRequestURLIsInvalid0300';
@@ -146,13 +146,13 @@ export default function httpFetchTest() {
       });
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Http_FetchRequestParamsIsInvalid_0400
-     * @tc.name  : testHttpFetchRequestParamsIsInvalid0400
-     * @tc.desc  : Test fetch api with param that method is invalid.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testHttpFetchRequestParamsIsInvalid0400
+     * @tc.number SUB_NetworkMgr_Http_FetchRequestParamsIsInvalid_0400
+     * @tc.desc   Test fetch api with param that method is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpFetchRequestParamsIsInvalid0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , (done: Function) => {
       let caseName: string = 'testHttpFetchRequestParamsIsInvalid0400';
@@ -165,13 +165,13 @@ export default function httpFetchTest() {
       });
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Http_FetchCode200_0500
-     * @tc.name  : testHttpFetchCode2000500
-     * @tc.desc  : Test fetch api with verify code 200.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+    /**
+     * @tc.name   testHttpFetchCode2000500
+     * @tc.number SUB_NetworkMgr_Http_FetchCode200_0500
+     * @tc.desc   Test fetch api with verify code 200.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpFetchCode2000500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       let caseName: string = 'testHttpFetchCode2000500';
@@ -184,13 +184,13 @@ export default function httpFetchTest() {
       });
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Http_FetchCode404_0600
-     * @tc.name  : testHttpFetchCode4040600
-     * @tc.desc  : Test fetch api with verify code 404.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testHttpFetchCode4040600
+     * @tc.number SUB_NetworkMgr_Http_FetchCode404_0600
+     * @tc.desc   Test fetch api with verify code 404.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpFetchCode4040600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       let caseName: string = 'testHttpFetchCode4040600';
@@ -203,13 +203,13 @@ export default function httpFetchTest() {
       });
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Http_FetchCode400_0700
-     * @tc.name  : testHttpFetchCode4000700
-     * @tc.desc  : Test fetch api with verify code 400.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testHttpFetchCode4000700
+     * @tc.number SUB_NetworkMgr_Http_FetchCode400_0700
+     * @tc.desc   Test fetch api with verify code 400.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpFetchCode4000700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testHttpFetchCode4000700';
@@ -223,13 +223,13 @@ export default function httpFetchTest() {
       });
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Http_FetchResponseDataType_0800
-     * @tc.name  : testHttpFetchResponseDataType0800
-     * @tc.desc  : Test fetch api with param that responseType is text.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testHttpFetchResponseDataType0800
+     * @tc.number SUB_NetworkMgr_Http_FetchResponseDataType_0800
+     * @tc.desc   Test fetch api with param that responseType is text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpFetchResponseDataType0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testHttpFetchResponseDataType0800';
@@ -242,13 +242,13 @@ export default function httpFetchTest() {
       });
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Http_FetchResponseDataType_0900
-     * @tc.name  : testHttpFetchResponseDataType0900
-     * @tc.desc  : Test fetch api with param that responseType is json.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testHttpFetchResponseDataType0900
+     * @tc.number SUB_NetworkMgr_Http_FetchResponseDataType_0900
+     * @tc.desc   Test fetch api with param that responseType is json.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpFetchResponseDataType0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testHttpFetchResponseDataType0900';
@@ -261,13 +261,13 @@ export default function httpFetchTest() {
       });
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Http_FetchResponseDataType_01000
-     * @tc.name  : testHttpFetchResponseDataType01000
-     * @tc.desc  : Test fetch api with param that responseType default.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testHttpFetchResponseDataType01000
+     * @tc.number SUB_NetworkMgr_Http_FetchResponseDataType_01000
+     * @tc.desc   Test fetch api with param that responseType default.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpFetchResponseDataType01000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testHttpFetchResponseDataType01000';
@@ -280,13 +280,13 @@ export default function httpFetchTest() {
       });
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Http_FetchResponseDataType_01100
-     * @tc.name  : testHttpFetchResponseDataType01100
-     * @tc.desc  : Test fetch api with param that responseType is random text.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testHttpFetchResponseDataType01100
+     * @tc.number SUB_NetworkMgr_Http_FetchResponseDataType_01100
+     * @tc.desc   Test fetch api with param that responseType is random text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpFetchResponseDataType01100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testHttpFetchResponseDataType01100';
@@ -299,13 +299,13 @@ export default function httpFetchTest() {
       });
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Http_FetchRequestMethod_01200
-     * @tc.name  : testNetworkMgrHttpFetchRequestMethod01200
-     * @tc.desc  : Test fetch api with param that method is POST.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testNetworkMgrHttpFetchRequestMethod01200
+     * @tc.number SUB_NetworkMgr_Http_FetchRequestMethod_01200
+     * @tc.desc   Test fetch api with param that method is POST.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrHttpFetchRequestMethod01200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testNetworkMgrHttpFetchRequestMethod01200';
@@ -318,13 +318,13 @@ export default function httpFetchTest() {
       });
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Http_FetchRequestMethod_01300
-     * @tc.name  : testHttpFetchRequestMethod01300
-     * @tc.desc  : Test fetch api with param that method is DELETE.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testHttpFetchRequestMethod01300
+     * @tc.number SUB_NetworkMgr_Http_FetchRequestMethod_01300
+     * @tc.desc   Test fetch api with param that method is DELETE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpFetchRequestMethod01300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testHttpFetchRequestMethod01300';
@@ -338,13 +338,13 @@ export default function httpFetchTest() {
       });
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Http_FetchRequestData_01400
-     * @tc.name  : testHttpFetchRequestData01400
-     * @tc.desc  : Test fetch api with param that data is not valid type.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testHttpFetchRequestData01400
+     * @tc.number SUB_NetworkMgr_Http_FetchRequestData_01400
+     * @tc.desc   Test fetch api with param that data is not valid type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpFetchRequestData01400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testHttpFetchRequestData01400';
@@ -357,13 +357,13 @@ export default function httpFetchTest() {
       });
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Http_FetchRequestData_01500
-     * @tc.name  : testHttpFetchRequestData01500
-     * @tc.desc  : Test fetch api with param that data empty text.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testHttpFetchRequestData01500
+     * @tc.number SUB_NetworkMgr_Http_FetchRequestData_01500
+     * @tc.desc   Test fetch api with param that data empty text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpFetchRequestData01500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testHttpFetchRequestData01500';
@@ -376,13 +376,13 @@ export default function httpFetchTest() {
       });
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Http_FetchRequestComplete_01600
-     * @tc.name  : testHttpFetchRequestComplete01600
-     * @tc.desc  : Test fetch api with verify complete callback
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 2
+    /**
+     * @tc.name   testHttpFetchRequestComplete01600
+     * @tc.number SUB_NetworkMgr_Http_FetchRequestComplete_01600
+     * @tc.desc   Test fetch api with verify complete callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpFetchRequestComplete01600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testHttpFetchRequestComplete01600';
@@ -405,14 +405,14 @@ export default function httpFetchTest() {
       }
     });
 
-    /* *
-      * @tc.number: SUB_NetworkMgr_Http_FetchRequestMethod_01700
-      * @tc.name  : testHttpFetchRequestMethod01700
-      * @tc.desc  : Test fetch api with param that method is DELETE.
-      * @tc.size  : MediumTest
-      * @tc.type  : Function
-      * @tc.level : level 3
-      */
+    /**
+     * @tc.name   testHttpFetchRequestMethod01700
+     * @tc.number SUB_NetworkMgr_Http_FetchRequestMethod_01700
+     * @tc.desc   Test fetch api with param that method is DELETE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testHttpFetchRequestMethod01700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       let caseName: string = 'testHttpFetchRequestMethod01700';
       runFetchTestCase(caseName, {

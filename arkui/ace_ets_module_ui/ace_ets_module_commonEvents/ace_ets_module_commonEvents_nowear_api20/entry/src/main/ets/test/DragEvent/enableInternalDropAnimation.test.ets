@@ -47,10 +47,12 @@ export default function enableInternalDropAnimationTest() {
     });
 
     /**
-     * @tc.number    enableInternalDropAnimationTest_0010
-     * @tc.name      enableInternalDropAnimationTest_0010
-     * @tc.desc      enableInternalDropAnimation interface, set useCustomDropAnimation = 0 Input parameter validation failed error code 401
-     * @tc.level:    Level 0
+     * @tc.name   enableInternalDropAnimationTest_0010
+     * @tc.number enableInternalDropAnimationTest_0010
+     * @tc.desc   enableInternalDropAnimation interface, set useCustomDropAnimation = 0 Input parameter validation failed error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('enableInternalDropAnimationTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('enableInternalDropAnimationTest_0010 START');
@@ -70,10 +72,12 @@ export default function enableInternalDropAnimationTest() {
     });
 
     /**
-     * @tc.number    enableInternalDropAnimationTest_0020
-     * @tc.name      enableInternalDropAnimationTest_0020
-     * @tc.desc      enableInternalDropAnimation interface, set useCustomDropAnimation = 0 system application or device type validation failed error code test
-     * @tc.level:    Level 0
+     * @tc.name   enableInternalDropAnimationTest_0020
+     * @tc.number enableInternalDropAnimationTest_0020
+     * @tc.desc   enableInternalDropAnimation interface, set useCustomDropAnimation = 0 system application or device type validation failed error code test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('enableInternalDropAnimationTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('enableInternalDropAnimationTest_0020 START');
@@ -99,10 +103,12 @@ export default function enableInternalDropAnimationTest() {
     });
 
     /**
-     * @tc.number    enableInternalDropAnimationTest_0030
-     * @tc.name      enableInternalDropAnimationTest_0030
-     * @tc.desc      enableInternalDropAnimation interface, set useCustomDropAnimation = 1 Input parameter validation failed error code 401
-     * @tc.level:    Level 1
+     * @tc.name   enableInternalDropAnimationTest_0030
+     * @tc.number enableInternalDropAnimationTest_0030
+     * @tc.desc   enableInternalDropAnimation interface, set useCustomDropAnimation = 1 Input parameter validation failed error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('enableInternalDropAnimationTest_0030', Level.LEVEL1, async (done: Function) => {
       console.info('enableInternalDropAnimationTest_0030 START');
@@ -122,10 +128,12 @@ export default function enableInternalDropAnimationTest() {
     });
 
     /**
-     * @tc.number    enableInternalDropAnimationTest_0040
-     * @tc.name      enableInternalDropAnimationTest_0040
-     * @tc.desc      enableInternalDropAnimation interface, set useCustomDropAnimation = 0 system application or device type validation failed error code test
-     * @tc.level:    Level 1
+     * @tc.name   enableInternalDropAnimationTest_0040
+     * @tc.number enableInternalDropAnimationTest_0040
+     * @tc.desc   enableInternalDropAnimation interface, set useCustomDropAnimation = 0 system application or device type validation failed error code test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('enableInternalDropAnimationTest_0040', Level.LEVEL1, async (done: Function) => {
       console.info('enableInternalDropAnimationTest_0040 START');
@@ -151,10 +159,12 @@ export default function enableInternalDropAnimationTest() {
     });
 
     /**
-     * @tc.number    enableInternalDropAnimationTest_0050
-     * @tc.name      enableInternalDropAnimationTest_0050
-     * @tc.desc      enableInternalDropAnimation Operation not allowed for current pharse test
-     * @tc.level:    Level 0
+     * @tc.name   enableInternalDropAnimationTest_0050
+     * @tc.number enableInternalDropAnimationTest_0050
+     * @tc.desc   enableInternalDropAnimation Operation not allowed for current pharse test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('enableInternalDropAnimationTest_0050', Level.LEVEL0, async (done: Function) => {
       console.info('enableInternalDropAnimationTest_0050 START');

@@ -77,12 +77,12 @@ export default function RelationalStoreCustom() {
         });
         console.info(TAG + "*************Unit Test Begin*************");
         /**
-         * @tc.name testRdbStoreCustomInsert0100
+         * @tc.name   testRdbStoreCustomInsert0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Insert_0100
-         * @tc.desc RelationalStore Custom insert test, query 1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom insert test, query 1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomInsert0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomInsert0100 ";
@@ -133,12 +133,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomInsert0200
+         * @tc.name   testRdbStoreCustomInsert0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Insert_0200
-         * @tc.desc RelationalStore Custom insert test, query 2
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom insert test, query 2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomInsert0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomInsert0200 ";
@@ -204,12 +204,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomInsert0300
+         * @tc.name   testRdbStoreCustomInsert0300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Insert_0300
-         * @tc.desc RelationalStore Custom insert test, query 0
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom insert test, query 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomInsert0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomInsert0300 ";
@@ -253,12 +253,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomUpdate0100
+         * @tc.name   testRdbStoreCustomUpdate0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Update_0100
-         * @tc.desc RelationalStore Custom update data exist, query 2
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom update data exist, query 2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomUpdate0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomUpdate0100 ";
@@ -352,12 +352,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomUpdate0200
+         * @tc.name   testRdbStoreCustomUpdate0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Update_0200
-         * @tc.desc RelationalStore Custom update not exist, query 0
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom update not exist, query 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomUpdate0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomUpdate0200 ";
@@ -427,12 +427,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomDelete0100
+         * @tc.name   testRdbStoreCustomDelete0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Delete_0100
-         * @tc.desc RelationalStore Custom Delete not exist, query 1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom Delete not exist, query 1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomDelete0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomDelete0100 ";
@@ -518,12 +518,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomDelete0200
+         * @tc.name   testRdbStoreCustomDelete0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Delete_0200
-         * @tc.desc RelationalStore Custom Delete  exist, query 0
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom Delete  exist, query 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomDelete0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomDelete0200 ";
@@ -592,12 +592,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery0100
+         * @tc.name   testRdbStoreCustomQuery0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_0100
-         * @tc.desc RelationalStore Custom  1字， query 1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom  1字， query 1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery0100 ";
@@ -667,12 +667,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery0200
+         * @tc.name   testRdbStoreCustomQuery0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_0200
-         * @tc.desc RelationalStore Custom  1字， query 1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom  1字， query 1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery0200 ";
@@ -743,12 +743,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery0300
+         * @tc.name   testRdbStoreCustomQuery0300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_0300
-         * @tc.desc RelationalStore Custom  1字 不存在， query 0
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom  1字 不存在， query 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery0300 ";
@@ -812,12 +812,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery0400
+         * @tc.name   testRdbStoreCustomQuery0400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_0400
-         * @tc.desc RelationalStore Custom  1字 存在， query 0
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom  1字 存在， query 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery0400 ";
@@ -880,12 +880,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery0500
+         * @tc.name   testRdbStoreCustomQuery0500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_0500
-         * @tc.desc RelationalStore Custom 2字， query 1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom 2字， query 1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery0500 ";
@@ -955,12 +955,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery0600
+         * @tc.name   testRdbStoreCustomQuery0600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_0600
-         * @tc.desc RelationalStore Custom 2字， query 1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom 2字， query 1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery0600 ";
@@ -1023,12 +1023,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery0700
+         * @tc.name   testRdbStoreCustomQuery0700
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_0700
-         * @tc.desc RelationalStore Custom 2字 不存在， query 0
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom 2字 不存在， query 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery0700 ";
@@ -1091,12 +1091,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery0800
+         * @tc.name   testRdbStoreCustomQuery0800
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_0800
-         * @tc.desc RelationalStore Custom 2字 存在， query 0
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom 2字 存在， query 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery0800 ";
@@ -1159,12 +1159,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery0900
+         * @tc.name   testRdbStoreCustomQuery0900
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_0900
-         * @tc.desc RelationalStore Custom 3字， query 1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom 3字， query 1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery0900 ";
@@ -1234,12 +1234,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery1000
+         * @tc.name   testRdbStoreCustomQuery1000
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1000
-         * @tc.desc RelationalStore Custom 3字， query 0
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom 3字， query 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery1000 ";
@@ -1283,12 +1283,12 @@ export default function RelationalStoreCustom() {
 
 
         /**
-         * @tc.name testRdbStoreCustomQuery1100
+         * @tc.name   testRdbStoreCustomQuery1100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1100
-         * @tc.desc RelationalStore Custom query 4字
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom query 4字
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery1100 ";
@@ -1351,12 +1351,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery1200
+         * @tc.name   testRdbStoreCustomQuery1200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1200
-         * @tc.desc RelationalStore Custom query n字俗语
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom query n字俗语
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery1200 ";
@@ -1419,12 +1419,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery1300
+         * @tc.name   testRdbStoreCustomQuery1300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1300
-         * @tc.desc RelationalStore Custom query 完整文本
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom query 完整文本
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery1300 ";
@@ -1487,12 +1487,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery1400
+         * @tc.name   testRdbStoreCustomQuery1400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1400
-         * @tc.desc RelationalStore Custom query 位置1
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom query 位置1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery1400 ";
@@ -1555,12 +1555,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery1500
+         * @tc.name   testRdbStoreCustomQuery1500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1500
-         * @tc.desc RelationalStore Custom query 位置1 空格
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom query 位置1 空格
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery1500 ";
@@ -1623,12 +1623,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery1600
+         * @tc.name   testRdbStoreCustomQuery1600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1600
-         * @tc.desc RelationalStore Custom query 位置1 标点
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom query 位置1 标点
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery1600 ";
@@ -1692,12 +1692,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery1700
+         * @tc.name   testRdbStoreCustomQuery1700
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1700
-         * @tc.desc RelationalStore Custom query 位置1 标点
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom query 位置1 标点
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery1700 ";
@@ -1760,12 +1760,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery1800
+         * @tc.name   testRdbStoreCustomQuery1800
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1800
-         * @tc.desc RelationalStore Custom  create table same name  testCustom, fail
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom  create table same name  testCustom, fail
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery1800 ";
@@ -1816,12 +1816,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery1900
+         * @tc.name   testRdbStoreCustomQuery1900
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_1900
-         * @tc.desc RelationalStore Custom  create table dif name  testCustom
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom  create table dif name  testCustom
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery1900 ";
@@ -1937,12 +1937,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery2000
+         * @tc.name   testRdbStoreCustomQuery2000
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_2000
-         * @tc.desc RelationalStore Custom query 日文
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom query 日文
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery2000 ";
@@ -1995,12 +1995,12 @@ export default function RelationalStoreCustom() {
         });
 
         /**
-         * @tc.name testRdbStoreCustomQuery2100
+         * @tc.name   testRdbStoreCustomQuery2100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CustomEtsAPITest_Query_2100
-         * @tc.desc RelationalStore Custom insert not String
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   RelationalStore Custom insert not String
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testRdbStoreCustomQuery2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             let TAGTEST = TAG + " testRdbStoreCustomQuery2100 ";

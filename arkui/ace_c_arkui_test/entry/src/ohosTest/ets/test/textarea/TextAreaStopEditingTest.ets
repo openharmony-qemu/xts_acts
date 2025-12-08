@@ -26,26 +26,26 @@ export default function textAreaStopEditingTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_STOPEDITING_0100
-     * @tc.name: testTextAreaStopEditing001
-     * @tc.desc: testing stopEditing for textArea with false value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaStopEditing001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_STOPEDITING_0100
+     * @tc.desc   testing stopEditing for textArea with false value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaStopEditing001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaStopEditing001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_STOPEDITING_0200
-     * @tc.name: testTextAreaStopEditing002
-     * @tc.desc: testing stopEditing for textArea with true value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaStopEditing002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_STOPEDITING_0200
+     * @tc.desc   testing stopEditing for textArea with true value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaStopEditing002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaStopEditing002()).assertEqual(0)

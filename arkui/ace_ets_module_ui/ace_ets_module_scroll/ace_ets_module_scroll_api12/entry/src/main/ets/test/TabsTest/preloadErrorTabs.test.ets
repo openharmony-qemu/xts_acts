@@ -43,12 +43,12 @@ export default function preloadErrorTabs() {
     });
 
     /**
-     * @tc.number    preloadErrorTabs_001
-     * @tc.name      preloadErrorTabs_0100
-     * @tc.desc      Controls the error code of the specified child node preloaded by tabs.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   preloadErrorTabs_0100
+     * @tc.number preloadErrorTabs_001
+     * @tc.desc   Controls the error code of the specified child node preloaded by tabs.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('preloadErrorTabs_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[preloadErrorTabs_0100] START');

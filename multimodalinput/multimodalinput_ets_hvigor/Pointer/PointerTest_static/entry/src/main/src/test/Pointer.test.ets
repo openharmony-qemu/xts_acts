@@ -47,12 +47,12 @@ export default function MultimodalInputPointerTest() {
     }
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyle_0100
      * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyle_0100
-     * @tc.name SUB_MMI_Input_Api_Pointer_setPointerStyle_0100
-     * @tc.desc Test callback setPointerStyle interface to set the mouse style type.
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test callback setPointerStyle interface to set the mouse style type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_Pointer_setPointerStyle_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -76,12 +76,12 @@ export default function MultimodalInputPointerTest() {
       });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyle_0200
      * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyle_0200
-     * @tc.name SUB_MMI_Input_Api_Pointer_setPointerStyle_0200
-     * @tc.desc Test promise setPointerStyle interface to set the mouse style type.
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test promise setPointerStyle interface to set the mouse style type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_Pointer_setPointerStyle_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -105,12 +105,12 @@ export default function MultimodalInputPointerTest() {
       });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyle_0300
      * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyle_0300
-     * @tc.name SUB_MMI_Input_Api_Pointer_setPointerStyle_0300
-     * @tc.desc Test setPointerStyleSync interface to set the mouse style type.
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test setPointerStyleSync interface to set the mouse style type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_Pointer_setPointerStyle_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -132,12 +132,12 @@ export default function MultimodalInputPointerTest() {
       });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_PointerStyle_0100
      * @tc.number SUB_MMI_Input_Api_Pointer_PointerStyle_0100
-     * @tc.name SUB_MMI_Input_Api_Pointer_PointerStyle_0100
-     * @tc.desc Test PointerStyle
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test PointerStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_Pointer_PointerStyle_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -199,12 +199,12 @@ export default function MultimodalInputPointerTest() {
       });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_PrimaryButton_0100
      * @tc.number SUB_MMI_Input_Api_Pointer_PrimaryButton_0100
-     * @tc.name SUB_MMI_Input_Api_Pointer_PrimaryButton_0100
-     * @tc.desc Test PrimaryButton
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test PrimaryButton
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_Pointer_PrimaryButton_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -223,12 +223,12 @@ export default function MultimodalInputPointerTest() {
       });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_RightClickType_0100
      * @tc.number SUB_MMI_Input_Api_Pointer_RightClickType_0100
-     * @tc.name SUB_MMI_Input_Api_Pointer_RightClickType_0100
-     * @tc.desc Test RightClickType
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test RightClickType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_Pointer_RightClickType_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -248,12 +248,12 @@ export default function MultimodalInputPointerTest() {
       });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_CursorConfig_0100
      * @tc.number SUB_MMI_Input_Api_Pointer_CursorConfig_0100
-     * @tc.name SUB_MMI_Input_Api_Pointer_CursorConfig_0100
-     * @tc.desc Test CursorConfig
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test CursorConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_Pointer_CursorConfig_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

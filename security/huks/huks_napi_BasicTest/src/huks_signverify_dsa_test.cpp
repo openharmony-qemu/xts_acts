@@ -125,9 +125,12 @@ OH_Huks_Result HksDsaSignVerifyTestNormalCase(struct OH_Huks_Blob keyAlias, stru
 }
 
 /**
- * @tc.name: HuksSignVerifyDSATest.Security_HUKS_NAPI_SignVerify_DSA_0100
- * @tc.desc: alg-DSA pur-Sign-verify dig-SHA1
- * @tc.type: FUNC
+ * @tc.name   Security_HUKS_NAPI_SignVerify_DSA_0100
+ * @tc.number Security_HUKS_NAPI_SignVerify_DSA_0100
+ * @tc.desc   alg-DSA pur-Sign-verify dig-SHA1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HuksSignVerifyDSATest, Security_HUKS_NAPI_SignVerify_DSA_0100, TestSize.Level0)
 {

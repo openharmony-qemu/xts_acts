@@ -60,13 +60,13 @@ export default function arrowOffset() {
     });
 
     /**
+     * @tc.name   arrowOffset_0100
      * @tc.number SUB_ACE_arrowOffset_0100
-     * @tc.name arrowOffset_0100
-     * @tc.desc To test the arrowOffset: 10
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test the arrowOffset: 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('arrowOffset_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('arrowOffset_0100 START');
       let driver = await Driver.create()
@@ -83,13 +83,13 @@ export default function arrowOffset() {
     });
 
     /**
+     * @tc.name   arrowOffset_0200
      * @tc.number SUB_ACE_arrowOffset_0200
-     * @tc.name arrowOffset_0200
-     * @tc.desc To test the arrowOffset: undefined
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test the arrowOffset: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('arrowOffset_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('arrowOffset_0200 START');
       let driver = await Driver.create()

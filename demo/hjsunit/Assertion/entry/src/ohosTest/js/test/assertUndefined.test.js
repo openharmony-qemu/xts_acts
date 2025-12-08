@@ -15,10 +15,26 @@
 import {describe, it, expect, Level, Size, TestType } from 'deccjsunit/index'
 
 describe('assertUndefined', function () {
+    /**
+     * @tc.name   assertUndefinedSuccess
+     * @tc.number assertUndefinedSuccess
+     * @tc.desc   assertUndefinedSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('assertUndefinedSuccess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let a = undefined
         expect(a).assertUndefined()
     })
+    /**
+     * @tc.name   assertUndefinedFail
+     * @tc.number assertUndefinedFail
+     * @tc.desc   assertUndefinedFail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('assertUndefinedFail', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let a = 100
         expect(a).assertUndefined()

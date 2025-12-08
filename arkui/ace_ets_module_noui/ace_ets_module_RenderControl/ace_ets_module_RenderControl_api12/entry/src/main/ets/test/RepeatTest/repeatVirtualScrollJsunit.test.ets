@@ -47,13 +47,13 @@ export default function repeatVirtualScrollJsunit() {
     });
 
     /**
-    * @tc.number repeatVirtualScrollJsunit_0100
-    * @tc.name repeatVirtualScrollJsunit_0100
-    * @tc.desc The Repeat component template test.
-    * @tc.level Level 2
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   repeatVirtualScrollJsunit_0100
+     * @tc.number repeatVirtualScrollJsunit_0100
+     * @tc.desc   The Repeat component template test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('repeatVirtualScrollJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('RepeatEachJsunit_0100 START');
       await CommonFunc.sleep(1000);
@@ -79,13 +79,13 @@ export default function repeatVirtualScrollJsunit() {
     });
 
     /**
-    * @tc.number repeatVirtualScrollJsunit_0200
-    * @tc.name repeatVirtualScrollJsunit_0200
-    * @tc.desc Repeat Scroll to index 5.
-    * @tc.level Level 2
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   repeatVirtualScrollJsunit_0200
+     * @tc.number repeatVirtualScrollJsunit_0200
+     * @tc.desc   Repeat Scroll to index 5.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('repeatVirtualScrollJsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('repeatVirtualScrollJsunit_0200 START');
       let driver = await Driver.create()
@@ -109,13 +109,13 @@ export default function repeatVirtualScrollJsunit() {
 
 
     /**
-    * @tc.number repeatVirtualScrollJsunit_0300
-    * @tc.name repeatVirtualScrollJsunit_0300
-    * @tc.desc Click to Modify the data of index 7.
-    * @tc.level Level 2
-    * @tc.type 
-    * @tc.size 
-    */
+     * @tc.name   repeatVirtualScrollJsunit_0300
+     * @tc.number repeatVirtualScrollJsunit_0300
+     * @tc.desc   Click to Modify the data of index 7.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('repeatVirtualScrollJsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('repeatVirtualScrollJsunit_0300 START');
       let driver = await Driver.create()
@@ -140,13 +140,13 @@ export default function repeatVirtualScrollJsunit() {
 
 
     /**
-    * @tc.number repeatVirtualScrollJsunit_0400
-    * @tc.name repeatVirtualScrollJsunit_0400
-    * @tc.desc Click to delete value.
-    * @tc.level Level 2
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   repeatVirtualScrollJsunit_0400
+     * @tc.number repeatVirtualScrollJsunit_0400
+     * @tc.desc   Click to delete value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('repeatVirtualScrollJsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('repeatVirtualScrollJsunit_0400 START');
       let driver = await Driver.create()
@@ -170,13 +170,13 @@ export default function repeatVirtualScrollJsunit() {
 
 
     /**
-    * @tc.number repeatVirtualScrollJsunit_0500
-    * @tc.name repeatVirtualScrollJsunit_0500
-    * @tc.desc Click to exchange value.
-    * @tc.level Level 2
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   repeatVirtualScrollJsunit_0500
+     * @tc.number repeatVirtualScrollJsunit_0500
+     * @tc.desc   Click to exchange value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('repeatVirtualScrollJsunit_0500', Level.LEVEL0, async (done: Function) => {
       console.info('repeatVirtualScrollJsunit_0500 START');
       let driver = await Driver.create()

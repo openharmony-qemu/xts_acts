@@ -82,11 +82,12 @@ export default function geolocationTest_6(){
         })
     
         /**
+         * @tc.name   SUB_HSS_LocationSystem_CountryCodeErr_0200
          * @tc.number SUB_HSS_LocationSystem_CountryCodeErr_0200
-         * @tc.name getCountryCode_on_off
-         * @tc.desc The interception country code is changed.
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   The interception country code is changed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_CountryCodeErr_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -99,11 +100,12 @@ export default function geolocationTest_6(){
         })
     
         /**
+         * @tc.name   SUB_HSS_LocationSystem_CountryCodeErr_0300
          * @tc.number SUB_HSS_LocationSystem_CountryCodeErr_0300
-         * @tc.name getCountryCode_on_off
-         * @tc.desc The interception country code is changed.
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   The interception country code is changed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_CountryCodeErr_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -116,6 +118,14 @@ export default function geolocationTest_6(){
         })
     
     
+        /**
+         * @tc.name   SUB_HSS_LocationSystem_CountryCodeErr_0201
+         * @tc.number SUB_HSS_LocationSystem_CountryCodeErr_0201
+         * @tc.desc   SUB_HSS_LocationSystem_CountryCodeErr_0201
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_HSS_LocationSystem_CountryCodeErr_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var callback = (code) => {
                 console.log('countryCodeChange: ' + JSON.stringify(code));
@@ -132,6 +142,14 @@ export default function geolocationTest_6(){
             done();
         })
         
+        /**
+         * @tc.name   SUB_HSS_LocationSystem_CountryCodeErr_0301
+         * @tc.number SUB_HSS_LocationSystem_CountryCodeErr_0301
+         * @tc.desc   SUB_HSS_LocationSystem_CountryCodeErr_0301
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_HSS_LocationSystem_CountryCodeErr_0301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var callback = (code) => {
                 console.log('countryCodeChange: ' + JSON.stringify(code));
@@ -149,6 +167,14 @@ export default function geolocationTest_6(){
         })
     
     
+        /**
+         * @tc.name   SUB_HSS_LocationSystem_BatchingErr_0801
+         * @tc.number SUB_HSS_LocationSystem_BatchingErr_0801
+         * @tc.desc   SUB_HSS_LocationSystem_BatchingErr_0801
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_HSS_LocationSystem_BatchingErr_0801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
             console.info("SUB_HSS_LocationSystem_BatchingErr_0801 : " + isAcessToken);
@@ -167,6 +193,14 @@ export default function geolocationTest_6(){
             }
         })
         
+        /**
+         * @tc.name   SUB_HSS_LocationSystem_BatchingErr_0901
+         * @tc.number SUB_HSS_LocationSystem_BatchingErr_0901
+         * @tc.desc   SUB_HSS_LocationSystem_BatchingErr_0901
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_HSS_LocationSystem_BatchingErr_0901', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
             console.info("SUB_HSS_LocationSystem_BatchingErr_0901 : " + isAcessToken);
@@ -187,11 +221,12 @@ export default function geolocationTest_6(){
     
     
         /**
+         * @tc.name   SUB_HSS_LocationSystem_BatchingErr_0800
          * @tc.number SUB_HSS_LocationSystem_BatchingErr_0800
-         * @tc.name cachedGnssLocationsChange_on_off
-         * @tc.desc Subscribe to cache GNSS locations update messages.
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Subscribe to cache GNSS locations update messages.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_BatchingErr_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -219,11 +254,12 @@ export default function geolocationTest_6(){
         })
     
         /**
+         * @tc.name   SUB_HSS_LocationSystem_BatchingErr_0900
          * @tc.number SUB_HSS_LocationSystem_BatchingErr_0900
-         * @tc.name cachedGnssLocationsChange_on_off
-         * @tc.desc Unsubscribe to cache GNSS locations update messages.
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Unsubscribe to cache GNSS locations update messages.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_BatchingErr_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -250,11 +286,12 @@ export default function geolocationTest_6(){
         })
     
         /**
+         * @tc.name   SUB_HSS_LocationSystem_GnssErr_0100
          * @tc.number SUB_HSS_LocationSystem_GnssErr_0100
-         * @tc.name satelliteStatusChange_on_off
-         * @tc.desc Subscribe satellite status changed.
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Subscribe satellite status changed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_GnssErr_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -281,11 +318,12 @@ export default function geolocationTest_6(){
         })
     
         /**
+         * @tc.name   SUB_HSS_LocationSystem_GnssErr_0400
          * @tc.number SUB_HSS_LocationSystem_GnssErr_0400
-         * @tc.name satelliteStatusChange_on_off
-         * @tc.desc Unsubscribe satellite status changed.
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Unsubscribe satellite status changed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_GnssErr_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -312,11 +350,12 @@ export default function geolocationTest_6(){
         })
     
         /**
+         * @tc.name   SUB_HSS_LocationSystem_GnssErr_0200
          * @tc.number SUB_HSS_LocationSystem_GnssErr_0200
-         * @tc.name locationChange_on_off
-         * @tc.desc Subscribe location changed.
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Subscribe location changed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_GnssErr_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let requestInfo = {"priority":0x200, "scenario":0x301, "timeInterval":0,
@@ -337,11 +376,12 @@ export default function geolocationTest_6(){
         })
     
         /**
+         * @tc.name   SUB_HSS_LocationSystem_GnssErr_0500
          * @tc.number SUB_HSS_LocationSystem_GnssErr_0500
-         * @tc.name locationChange_on_off
-         * @tc.desc Unsubscribe location changed.
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Unsubscribe location changed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_GnssErr_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var locationChange = (location) => {
@@ -360,11 +400,12 @@ export default function geolocationTest_6(){
         })
     
         /**
+         * @tc.name   SUB_HSS_LocationSystem_GnssErr_0300
          * @tc.number SUB_HSS_LocationSystem_GnssErr_0300
-         * @tc.name nmeaMessage_on_off
-         * @tc.desc Subscribe nmea message changed.
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Subscribe nmea message changed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_GnssErr_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -390,11 +431,12 @@ export default function geolocationTest_6(){
         })
     
         /**
+         * @tc.name   SUB_HSS_LocationSystem_GnssErr_0600
          * @tc.number SUB_HSS_LocationSystem_GnssErr_0600
-         * @tc.name nmeaMessage_on_off
-         * @tc.desc Unsubscribe nmea message changed.
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Unsubscribe nmea message changed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_GnssErr_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -420,11 +462,12 @@ export default function geolocationTest_6(){
         })
     
         /**
+         * @tc.name   SUB_HSS_LocationSystem_GeoFenceErr_0100
          * @tc.number SUB_HSS_LocationSystem_GeoFenceErr_0100
-         * @tc.name gnssFenceStatusChange_on_off
-         * @tc.desc Add a geofence and subscribe geo fence status changed.
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Add a geofence and subscribe geo fence status changed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_GeoFenceErr_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Geofence");
@@ -461,11 +504,12 @@ export default function geolocationTest_6(){
         })
     
         /**
+         * @tc.name   SUB_HSS_LocationSystem_GeoFenceErr_0200
          * @tc.number SUB_HSS_LocationSystem_GeoFenceErr_0200
-         * @tc.name gnssFenceStatusChange_on_off
-         * @tc.desc Remove a geofence and unsubscribe geo fence status changed.
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Remove a geofence and unsubscribe geo fence status changed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_GeoFenceErr_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Geofence");
@@ -501,11 +545,12 @@ export default function geolocationTest_6(){
         })
     
         /**
+         * @tc.name   SUB_HSS_LocationSystem_LocSwitchErr_0100
          * @tc.number SUB_HSS_LocationSystem_LocSwitchErr_0100
-         * @tc.name locationEnabledChange_on_off
-         * @tc.desc Subscribe location switch changed.
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Subscribe location switch changed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_LocSwitchErr_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var locationServiceState = (state) => {
@@ -523,11 +568,12 @@ export default function geolocationTest_6(){
         })
     
         /**
+         * @tc.name   SUB_HSS_LocationSystem_LocSwitchErr_0200
          * @tc.number SUB_HSS_LocationSystem_LocSwitchErr_0100
-         * @tc.name locationEnabledChange_on_off
-         * @tc.desc Unsubscribe location switch changed.
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Unsubscribe location switch changed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_LocSwitchErr_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var locationServiceState = (state) => {

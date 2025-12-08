@@ -26,13 +26,13 @@ export default function checkboxOnChangeTest() {
       await Utils.pushPage(`checkbox/${PAGE_TAG}`, done);
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_ONCHANGE_0100
-     * @tc.name       : testCheckboxOnChange001
-     * @tc.desc       : testing onChange for checkbox
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCheckboxOnChange001
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_ONCHANGE_0100
+     * @tc.desc   testing onChange for checkbox
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckboxOnChange001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnChangeTestCheckBox')

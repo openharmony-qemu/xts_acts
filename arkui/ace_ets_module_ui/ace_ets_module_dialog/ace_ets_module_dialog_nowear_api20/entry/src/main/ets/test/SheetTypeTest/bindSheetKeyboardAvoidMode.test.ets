@@ -40,12 +40,14 @@ export default function bindSheetKeyboardAvoidMode(){
       }
       done();
     });
-    /* *
-    * @tc.number: bindSheetKeyboardAvoidMode_0100
-    * @tc.name  : bindSheetKeyboardAvoidMode_0100
-    * @tc.desc  : To test the mode of sheet how to avoid keyboard
-    * @tc.level : Level 1
-    */
+    /**
+     * @tc.name   bindSheetKeyboardAvoidMode_0100
+     * @tc.number bindSheetKeyboardAvoidMode_0100
+     * @tc.desc   To test the mode of sheet how to avoid keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('bindSheetKeyboardAvoidMode_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) =>{
       console.info('bindSheetKeyboardAvoidMode_0100 START');
       let driver = await Driver.create()

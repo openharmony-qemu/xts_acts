@@ -44,10 +44,13 @@ export default function sideBarShowSideBarJsunit() {
       console.info("sideBarShowSideBar after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testsideBarShowSideBar0001
-     * @tc.desic        acesideBarShowSideBarEtsTest0001
+    /**
+     * @tc.name   testsideBarShowSideBar0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testsideBarShowSideBar0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testsideBarShowSideBar0001', Level.LEVEL1, async () => {
       console.info('sideBarShowSideBar testsideBarShowSideBar0001 START');
@@ -61,10 +64,13 @@ export default function sideBarShowSideBarJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testsideBarShowSideBar0002
-     * @tc.desic        acesideBarShowSideBarEtsTest0002
+    /**
+     * @tc.name   testsideBarShowSideBar0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testsideBarShowSideBar0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testsideBarShowSideBar0002', Level.LEVEL1, async () => {
       console.info('sideBarShowSideBar testsideBarShowSideBar0002 START');
@@ -78,10 +84,13 @@ export default function sideBarShowSideBarJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         testsideBarShowSideBar0003
-     * @tc.desic        acesideBarShowSideBarEtsTest0003
+    /**
+     * @tc.name   testsideBarShowSideBar0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   testsideBarShowSideBar0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testsideBarShowSideBar0003', Level.LEVEL1, async () => {
       console.info('sideBarShowSideBar testsideBarShowSideBar0003 START');

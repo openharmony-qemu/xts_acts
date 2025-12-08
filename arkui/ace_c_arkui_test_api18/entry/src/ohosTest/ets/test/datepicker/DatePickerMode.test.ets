@@ -25,15 +25,15 @@ export default function datePickerTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_POST_FRAME_0100
-     * @tc.name       : testDatePickerMode001
-     * @tc.desc       : testing DatePicker
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   testDatePickerMode001
+     * @tc.number testDatePickerMode001
+     * @tc.desc   testDatePickerMode001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDatePickerMode001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestDatePickerMode';
       await Utils.pushPage(`datePicker/${PAGE_TAG}`);
@@ -44,13 +44,13 @@ export default function datePickerTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_POST_FRAME_0200
-     * @tc.name       : testDatePickerMode002
-     * @tc.desc       : testing DatePicker
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerMode002
+     * @tc.number SUB_ARKUI_CAPI_POST_FRAME_0200
+     * @tc.desc   testing DatePicker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerMode002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestDatePickerMode';
@@ -62,13 +62,13 @@ export default function datePickerTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_POST_FRAME_0300
-     * @tc.name       : testDatePickerMode003
-     * @tc.desc       : testing DatePicker
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerMode003
+     * @tc.number SUB_ARKUI_CAPI_POST_FRAME_0300
+     * @tc.desc   testing DatePicker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerMode003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestDatePickerMode';

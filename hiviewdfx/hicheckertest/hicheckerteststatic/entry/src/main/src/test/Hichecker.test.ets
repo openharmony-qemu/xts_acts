@@ -47,9 +47,12 @@ export default function hicheckerTest() {
 
   describe("HiCheckerTest", (): void => {
     /**
-     * @tc.number DFX_DFR_Hichecker_Interface_Static_0100
      * @tc.name   DFX_DFR_Hichecker_Interface_Static_0100
+     * @tc.number DFX_DFR_Hichecker_Interface_Static_0100
      * @tc.desc   test hichecker interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DFX_DFR_Hichecker_Interface_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       hilog.info(domain, tag, 'DFX_DFR_Hichecker_Interface_Static_0100 start');
@@ -60,9 +63,12 @@ export default function hicheckerTest() {
     })
 
     /**
-     * @tc.number DFX_DFR_Hichecker_Interface_Static_0500
      * @tc.name   DFX_DFR_Hichecker_Interface_Static_0500
+     * @tc.number DFX_DFR_Hichecker_Interface_Static_0500
      * @tc.desc   test hichecker interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DFX_DFR_Hichecker_Interface_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       hilog.info(domain, tag, 'DFX_DFR_Hichecker_Interface_Static_0500 start');
@@ -80,9 +86,12 @@ export default function hicheckerTest() {
 
 
     /**
-     * @tc.number DFX_DFR_Hichecker_Interface_Static_0200
      * @tc.name   DFX_DFR_Hichecker_Interface_Static_0200
+     * @tc.number DFX_DFR_Hichecker_Interface_Static_0200
      * @tc.desc   test hichecker interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DFX_DFR_Hichecker_Interface_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       hilog.info(domain, tag, 'DFX_DFR_Hichecker_Interface_Static_0200 start');
@@ -98,9 +107,12 @@ export default function hicheckerTest() {
     })
 
     /**
-     * @tc.number DFX_DFR_Hichecker_Interface_Static_1200
      * @tc.name   DFX_DFR_Hichecker_Interface_Static_1200
+     * @tc.number DFX_DFR_Hichecker_Interface_Static_1200
      * @tc.desc   test hichecker interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DFX_DFR_Hichecker_Interface_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       hilog.info(domain, tag, 'DFX_DFR_Hichecker_Interface_Static_1200 start');
@@ -112,9 +124,12 @@ export default function hicheckerTest() {
     })
 
     /**
-     * @tc.number DFX_DFR_Hichecker_Interface_Static_0800
      * @tc.name   DFX_DFR_Hichecker_Interface_Static_0800
+     * @tc.number DFX_DFR_Hichecker_Interface_Static_0800
      * @tc.desc   test hichecker interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DFX_DFR_Hichecker_Interface_Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       hilog.info(domain, tag, 'DFX_DFR_Hichecker_Interface_Static_0800 start');
@@ -129,9 +144,12 @@ export default function hicheckerTest() {
     })
 
     /**
-     * @tc.number DFX_DFR_Hichecker_Interface_Static_1300
      * @tc.name   DFX_DFR_Hichecker_Interface_Static_1300
+     * @tc.number DFX_DFR_Hichecker_Interface_Static_1300
      * @tc.desc   test hichecker interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DFX_DFR_Hichecker_Interface_Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       hilog.info(domain, tag, 'DFX_DFR_Hichecker_Interface_Static_1300 start');
@@ -149,9 +167,12 @@ export default function hicheckerTest() {
     })
 
     /**
-     * @tc.number DFX_DFR_Hichecker_Interface_Static_2200
      * @tc.name   DFX_DFR_Hichecker_Interface_Static_2200
+     * @tc.number DFX_DFR_Hichecker_Interface_Static_2200
      * @tc.desc   addCheckRule with normal parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DFX_DFR_Hichecker_Interface_Static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       hilog.info(domain, tag, 'DFX_DFR_Hichecker_Interface_Static_2200 start');
@@ -170,9 +191,12 @@ export default function hicheckerTest() {
     })
 
     /**
-     * @tc.number DFX_DFR_Hichecker_Interface_Static_2300
      * @tc.name   DFX_DFR_Hichecker_Interface_Static_2300
+     * @tc.number DFX_DFR_Hichecker_Interface_Static_2300
      * @tc.desc   removeCheckRule with normal parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DFX_DFR_Hichecker_Interface_Static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       hilog.info(domain, tag, 'DFX_DFR_Hichecker_Interface_Static_2300 start');
@@ -193,9 +217,12 @@ export default function hicheckerTest() {
     })
 
     /**
-     * @tc.number DFX_DFR_Hichecker_Interface_Static_2400
      * @tc.name   DFX_DFR_Hichecker_Interface_Static_2400
+     * @tc.number DFX_DFR_Hichecker_Interface_Static_2400
      * @tc.desc   containsCheckRule with normal parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DFX_DFR_Hichecker_Interface_Static_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       hilog.info(domain, tag, 'DFX_DFR_Hichecker_Interface_Static_2400 start');
@@ -214,9 +241,12 @@ export default function hicheckerTest() {
     })
 
     /**
-     * @tc.number DFX_DFR_Hichecker_Interface_Static_2800
      * @tc.name   DFX_DFR_Hichecker_Interface_Static_2800
+     * @tc.number DFX_DFR_Hichecker_Interface_Static_2800
      * @tc.desc   containsCheckRule with normal parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DFX_DFR_Hichecker_Interface_Static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       hilog.info(domain, tag, 'DFX_DFR_Hichecker_Interface_Static_2800 start');

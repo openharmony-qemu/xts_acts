@@ -15,8 +15,9 @@
 import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';
 import emitter from '@ohos.events.emitter';
+import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import {
   OnRenderExitedEvent,
   OnPageBeginEvent,
@@ -56,8 +57,6 @@ class StringFields {
 @Component
 struct WebViewEnumAndFontLibrary {
   stringObj: StringFields  = new StringFields ();
-
-
   controller: webView.WebviewController = new webView.WebviewController(undefined);
   @State Permission: Boolean = false
   @State str: string = ''
@@ -94,26 +93,20 @@ struct WebViewEnumAndFontLibrary {
   @State userAgentPC:string = '';
 
   aboutToAppear() {
-    console.info('Entry aboutToAppear');
-    let valueChangeEvent: emitter.InnerEvent = {
+    let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
-      priority: emitter.EventPriority.LOW
+      priority: events_emitter.EventPriority.LOW
     }
-    emitter.on(valueChangeEvent, this.valueChangeCallBack)
-    console.info('Finish aboutToAppear ' + this.valueChangeCallBack);
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
-    console.info('web page valueChangeCallBack');
+  private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
-      if (data && data['ACTION'] != null) {
-        console.info('Received ACTION vaclue: ' + data['ACTION']);
+      const data = eventData.data as Record<string, RecordData>;
+      if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
-        console.info('strValue has been updated to: ' + strValue);
         this.stringObj.str = strValue;
-        console.info('this.str has been updated to: ' + this.stringObj.str);
       }
     }
   }
@@ -124,11 +117,14 @@ struct WebViewEnumAndFontLibrary {
         Button('web click')
           .key('buttonEnumAndFontLibrary')
           .onClick((e: ClickEvent) => {
-          console.info('key==>' + this.stringObj.str )
-          switch (this.stringObj.str ) {
+            console.info("key==>" +this.stringObj.str)
+            switch (this.stringObj.str) {
+
             case 'emitFileSelectorModeFileOpenMode': {
                 Utils.emitEvent(0, 861)
+              break;
             }
+
           }
         })
       }

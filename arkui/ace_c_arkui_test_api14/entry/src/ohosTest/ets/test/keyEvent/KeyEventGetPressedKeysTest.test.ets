@@ -29,13 +29,13 @@ export default function KeyEventGetPressedKeysTest() {
     });
 
    
-       /*
-      * @tc.number     : SUB_ARKUI_CAPI_UIInputEvent_GetPressedKeys_0100
-      * @tc.name       : KeyEventGetPressedKeysTest_001
-      * @tc.desc       : testing KeyEvent GetType
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
+     /**
+      * @tc.name   KeyEventGetPressedKeysTest_001
+      * @tc.number SUB_ARKUI_CAPI_UIInputEvent_GetPressedKeys_0100
+      * @tc.desc   testing KeyEvent GetType
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
       */
      it('KeyEventGetPressedKeysTest_001', Level.LEVEL1, async (done: Function) => {
         console.info('KeyEventGetPressedKeysTest_001 START');

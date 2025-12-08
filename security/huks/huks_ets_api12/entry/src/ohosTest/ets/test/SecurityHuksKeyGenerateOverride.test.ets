@@ -14,23 +14,23 @@
  */
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import { MergeOptions, SetInData, SetParam } from './utils/huks/HuksOptionsUtils';
-import { GetAesGenerateOptions, GetEccGenerateOptions } from './utils/huks/GenerateKeyUtils';
-import { GetAesImportData } from './utils/huks/ImportKeyUtils';
-import { BuildWrappedKeyData } from './utils/huks/ImportWrappedKeyUtils';
-import { Agree, Derive, GetDeriveAgreeFinishOptions, GetEcdhAgreeOptions, GetHkdfDeriveOptions, GetSha256Options } from './utils/huks/DeriveAgreeUtils';
-import { Logger } from './utils/common/Logger';
+import { MergeOptions, SetInData, SetParam } from './utils/huks/HuksOptionsUtils.ets';
+import { GetAesGenerateOptions, GetEccGenerateOptions } from './utils/huks/GenerateKeyUtils.ets';
+import { GetAesImportData } from './utils/huks/ImportKeyUtils.ets';
+import { BuildWrappedKeyData } from './utils/huks/ImportWrappedKeyUtils.ets';
+import { Agree, Derive, GetDeriveAgreeFinishOptions, GetEcdhAgreeOptions, GetHkdfDeriveOptions, GetSha256Options } from './utils/huks/DeriveAgreeUtils.ets';
+import { Logger } from './utils/common/Logger.ets';
 
 export default function SecurityHuksKeyGenerateOverrideTest() {
   describe('SecurityHuksKeyGenerateOverrideTest', () => {
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0100
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0100
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0100
-     * @tc.desc test generateKeyItem, override default
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test generateKeyItem, override default
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0100";
@@ -44,12 +44,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0200
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0200
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0200
-     * @tc.desc test generateKeyItem, override true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test generateKeyItem, override true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0200";
@@ -63,12 +63,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0300
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0300
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0300
-     * @tc.desc test generateKeyItem, override false, error code 12000017
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.desc   test generateKeyItem, override false, error code 12000017
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0300";
@@ -83,12 +83,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0400
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0400
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0400
-     * @tc.desc test generateKeyItem, override false
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test generateKeyItem, override false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0400";
@@ -101,12 +101,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0500
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0500
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0500
-     * @tc.desc test importKeyItem, override default
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test importKeyItem, override default
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0500";
@@ -120,12 +120,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0600
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0600
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0600
-     * @tc.desc test importKeyItem, override true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test importKeyItem, override true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0600";
@@ -139,12 +139,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0700
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0700
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0700
-     * @tc.desc test importKeyItem, override false, error code 12000017
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test importKeyItem, override false, error code 12000017
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0700";
@@ -159,12 +159,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0800
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0800
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0800
-     * @tc.desc test importKeyItem, override false, error code 12000017
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test importKeyItem, override false, error code 12000017
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0800";
@@ -177,12 +177,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0900
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0900
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0900
-     * @tc.desc test importWrappedKeyItem, override default
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test importWrappedKeyItem, override default
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_0900";
@@ -206,12 +206,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1000
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1000
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1000
-     * @tc.desc test importWrappedKeyItem, override true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test importWrappedKeyItem, override true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1000";
@@ -235,12 +235,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1100
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1100
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1100
-     * @tc.desc test importWrappedKeyItem, override false, error code 12000017
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test importWrappedKeyItem, override false, error code 12000017
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1100";
@@ -264,12 +264,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1200
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1200
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1200
-     * @tc.desc test importWrappedKeyItem, override false
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test importWrappedKeyItem, override false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1200";
@@ -292,12 +292,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1300
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1300
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1300
-     * @tc.desc test agree, override default
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test agree, override default
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1300";
@@ -317,12 +317,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1400
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1400
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1400
-     * @tc.desc test agree, override true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test agree, override true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1400";
@@ -343,12 +343,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1500
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1500
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1500
-     * @tc.desc test agree, override false, error code 12000017
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test agree, override false, error code 12000017
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1500";
@@ -370,12 +370,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1600
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1600
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1600
-     * @tc.desc test agree, override false
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test agree, override false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1600";
@@ -395,12 +395,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1700
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1700
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1700
-     * @tc.desc test derive, override default
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test derive, override default
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1700";
@@ -418,12 +418,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1800
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1800
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1800
-     * @tc.desc test derive, override true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test derive, override true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1800";
@@ -442,12 +442,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1900
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1900
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1900
-     * @tc.desc test derive, override false, error code 12000017
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test derive, override false, error code 12000017
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_1900";
@@ -467,12 +467,12 @@ export default function SecurityHuksKeyGenerateOverrideTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_Override_API20_Func_2000
      * @tc.number SUB_Security_HUKS_KeyGenerate_Override_API20_Func_2000
-     * @tc.name SUB_Security_HUKS_KeyGenerate_Override_API20_Func_2000
-     * @tc.desc test derive, override false
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   test derive, override false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_KeyGenerate_Override_API20_Func_2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_Override_API20_Func_2000";

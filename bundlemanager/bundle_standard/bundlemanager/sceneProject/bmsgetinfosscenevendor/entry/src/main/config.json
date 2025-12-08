@@ -24,7 +24,7 @@
           }
         ],
         "icon": "$media:icon",
-        "name": "com.example.vendor1.MainAbility",
+        "name": ".MainAbility",
         "description": "$string:mainability_description",
         "label": "$string:app_name",
         "type": "page",
@@ -110,7 +110,7 @@
             }
           ]
         },
-        "srcPath": "default",
+        "srcPath": "MainAbility",
         "srcLanguage": "js"
       }
     ],
@@ -142,7 +142,7 @@
         "pages": [
           "pages/index/index"
         ],
-        "name": "com.example.vendor1.MainAbility",
+        "name": ".MainAbility",
         "window": {
           "designWidth": 720,
           "autoDesignWidth": true

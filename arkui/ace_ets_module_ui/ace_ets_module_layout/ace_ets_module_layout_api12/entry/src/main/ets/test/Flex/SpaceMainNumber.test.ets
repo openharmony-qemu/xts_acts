@@ -43,12 +43,12 @@ export default function SpaceMainNumberJsunit() {
     });
 
     /**
-     * @tc.number    space1Test_0010
-     * @tc.name      space1Test_0010
-     * @tc.desc      Space: get the api of space1
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   space1Test_0010
+     * @tc.number space1Test_0010
+     * @tc.desc   Space: get the api of space1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('space1Test_0010',  Level.LEVEL0, async (done: Function) => {
       console.info('space1Test_0010 START');
@@ -61,12 +61,12 @@ export default function SpaceMainNumberJsunit() {
     });
 
     /**
-     * @tc.number    space1Test_0020
-     * @tc.name      space1Test_0020
-     * @tc.desc      Space: get the api of space1
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   space1Test_0020
+     * @tc.number space1Test_0020
+     * @tc.desc   Space: get the api of space1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('space1Test_0020',  Level.LEVEL0, async (done: Function) => {
       console.info('space1Test_0020 START');
@@ -79,12 +79,12 @@ export default function SpaceMainNumberJsunit() {
     }); 
 
     /**
-     * @tc.number    space1Test_0030
-     * @tc.name      space1Test_0030
-     * @tc.desc      Space: get the api of space1
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   space1Test_0030
+     * @tc.number space1Test_0030
+     * @tc.desc   Space: get the api of space1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('space1Test_0030',  Level.LEVEL0, async (done: Function) => {
       console.info('space1Test_0030 START');
@@ -97,12 +97,12 @@ export default function SpaceMainNumberJsunit() {
     }); 
 
     /**
-     * @tc.number    space1Test_0040
-     * @tc.name      space1Test_0040
-     * @tc.desc      Space: get the api of space1
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   space1Test_0040
+     * @tc.number space1Test_0040
+     * @tc.desc   Space: get the api of space1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('space1Test_0040',  Level.LEVEL0, async (done: Function) => {
       console.info('space1Test_0040 START');
@@ -114,13 +114,13 @@ export default function SpaceMainNumberJsunit() {
       done();
     });
 
-/**
-     * @tc.number    space1Test_0050
-     * @tc.name      space1Test_0050
-     * @tc.desc      Space: get the api of space1
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   space1Test_0050
+     * @tc.number space1Test_0050
+     * @tc.desc   Space: get the api of space1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('space1Test_0050',  Level.LEVEL0, async (done: Function) => {
       console.info('space1Test_0050 START');

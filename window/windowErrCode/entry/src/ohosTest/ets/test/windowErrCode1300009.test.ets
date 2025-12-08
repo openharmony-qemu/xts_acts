@@ -28,12 +28,12 @@ export default function windowErrCode1300009() {
       windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
     })
     /**
-     * @tc.number     : testSetRaiseByClickEnabledPromiseErrCode1300009_0100
-     * @tc.name       : testSetRaiseByClickEnabledPromiseErrCode1300009_0100
-     * @tc.desc       : testSetRaiseByClickEnabledPromiseErrCode1300009_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetRaiseByClickEnabledPromiseErrCode1300009_0100
+     * @tc.number testSetRaiseByClickEnabledPromiseErrCode1300009_0100
+     * @tc.desc   testSetRaiseByClickEnabledPromiseErrCode1300009_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetRaiseByClickEnabledPromiseErrCode1300009_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetRaiseByClickEnabledPromiseErrCode1300009_0100";
@@ -76,12 +76,12 @@ export default function windowErrCode1300009() {
       }
     })
     /**
-     * @tc.number     : testRaiseToAppTopPromiseErrCode1300009_0100
-     * @tc.name       : testRaiseToAppTopPromiseErrCode1300009_0100
-     * @tc.desc       : testRaiseToAppTopPromiseErrCode1300009_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testRaiseToAppTopPromiseErrCode1300009_0100
+     * @tc.number testRaiseToAppTopPromiseErrCode1300009_0100
+     * @tc.desc   testRaiseToAppTopPromiseErrCode1300009_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRaiseToAppTopPromiseErrCode1300009_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testRaiseToAppTopPromiseErrCode1300009_0100";

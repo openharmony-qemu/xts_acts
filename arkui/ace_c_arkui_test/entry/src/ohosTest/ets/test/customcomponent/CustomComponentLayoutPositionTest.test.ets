@@ -26,25 +26,25 @@ export default function customComponentLayoutPositionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_LAYOUT_POSITON_0001
-     * @tc.name       : testCustomComponentLayoutPosition001
-     * @tc.desc       : testing height for layoutposition with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentLayoutPosition001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_LAYOUT_POSITON_0001
+     * @tc.desc   testing height for layoutposition with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentLayoutPosition001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentLayoutPosition001()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_LAYOUT_POSITON_0002
-     * @tc.name       : testCustomComponentLayoutPosition002
-     * @tc.desc       : testing height for layoutposition with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentLayoutPosition002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_LAYOUT_POSITON_0002
+     * @tc.desc   testing height for layoutposition with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentLayoutPosition002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentLayoutPosition002()).assertEqual(0)

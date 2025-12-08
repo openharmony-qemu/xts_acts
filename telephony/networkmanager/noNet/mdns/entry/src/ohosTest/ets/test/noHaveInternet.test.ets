@@ -33,13 +33,13 @@ export default function NoHaveInternetTest() {
     beforeAll(() => {
       context = AppStorage.get('context') as Context;
     });
-    /* *
-     * @tc.number:SUB_NetworkMgr_Mdns_AddLocalService_2900
-     * @tc.name  : testNetworkMgrAddLocalService2900
-     * @tc.desc  : Add an mDNS service callback
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testNetworkMgrAddLocalService2900
+     * @tc.number SUB_NetworkMgr_Mdns_AddLocalService_2900
+     * @tc.desc   Add an mDNS service callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrAddLocalService2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrAddLocalService2900";
@@ -73,13 +73,13 @@ export default function NoHaveInternetTest() {
       }
       console.info(`${caseName} test end `);
     });
-    /* *
-     * @tc.number:SUB_NetworkMgr_Mdns_AddLocalService_3000
-     * @tc.name  : testNetworkMgrAddLocalService3000
-     * @tc.desc  : Add an mDNS service Promise
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrAddLocalService3000
+     * @tc.number SUB_NetworkMgr_Mdns_AddLocalService_3000
+     * @tc.desc   Add an mDNS service Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testNetworkMgrAddLocalService3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testNetworkMgrAddLocalService3000";
@@ -114,13 +114,13 @@ export default function NoHaveInternetTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number:SUB_NetworkMgr_Mdns_CreateDiscoveryService_0500
-     * @tc.name  : testNetworkMgrCreateDiscoveryService0500
-     * @tc.desc  : Return a DiscoveryService object callBack
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testNetworkMgrCreateDiscoveryService0500
+     * @tc.number SUB_NetworkMgr_Mdns_CreateDiscoveryService_0500
+     * @tc.desc   Return a DiscoveryService object callBack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrCreateDiscoveryService0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrCreateDiscoveryService0500";
@@ -138,13 +138,13 @@ export default function NoHaveInternetTest() {
       }
       console.info(`${caseName} test end `);
     });
-    /* *
-     * @tc.number:SUB_NetworkMgr_Mdns_ResolveLocalService_1700
-     * @tc.name  : testNetworkMgrResolveLocalService1700
-     * @tc.desc  : Parsing an mDNS service callBack
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testNetworkMgrResolveLocalService1700
+     * @tc.number SUB_NetworkMgr_Mdns_ResolveLocalService_1700
+     * @tc.desc   Parsing an mDNS service callBack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrResolveLocalService1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrResolveLocalService1700";
@@ -180,13 +180,13 @@ export default function NoHaveInternetTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number:SUB_NetworkMgr_Mdns_ResolveLocalService_1800
-     * @tc.name  : testNetworkMgrResolveLocalService1800
-     * @tc.desc  : Parsing an mDNS service Promise
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testNetworkMgrResolveLocalService1800
+     * @tc.number SUB_NetworkMgr_Mdns_ResolveLocalService_1800
+     * @tc.desc   Parsing an mDNS service Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testNetworkMgrResolveLocalService1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrResolveLocalService1800";

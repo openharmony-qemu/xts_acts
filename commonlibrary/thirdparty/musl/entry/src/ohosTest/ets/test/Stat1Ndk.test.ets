@@ -27,12 +27,12 @@ export default function stat1NdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STAT_CHMOD_0200
-     * @tc.name       : testMuslStatChmod002
-     * @tc.desc       : test chmod
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatChmod002
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_CHMOD_0200
+     * @tc.desc   test chmod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatChmod002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = stat.chmod();
@@ -41,12 +41,12 @@ export default function stat1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STAT_FSTATAT_0200
-     * @tc.name       : testMuslStatFstatat002
-     * @tc.desc       : test fstatat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatFstatat002
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_FSTATAT_0200
+     * @tc.desc   test fstatat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatFstatat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = stat.fstatat();
@@ -55,12 +55,12 @@ export default function stat1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STAT_FSTATAT64_0200
-     * @tc.name       : testMuslStatFstatat64002
-     * @tc.desc       : test fstatat64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatFstatat64002
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_FSTATAT64_0200
+     * @tc.desc   test fstatat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatFstatat64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = stat.fstatat64();
@@ -69,12 +69,12 @@ export default function stat1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STAT_LSTAT_0200
-     * @tc.name       : testMuslStatLstat002
-     * @tc.desc       : test lstat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatLstat002
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_LSTAT_0200
+     * @tc.desc   test lstat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatLstat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = stat.lstat();
@@ -83,12 +83,12 @@ export default function stat1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STAT_LSTAT64_0200
-     * @tc.name       : testMuslStatLstat64002
-     * @tc.desc       : test lstat64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatLstat64002
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_LSTAT64_0200
+     * @tc.desc   test lstat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatLstat64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = stat.lstat64();
@@ -97,12 +97,12 @@ export default function stat1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STAT_FUTIMENS_0200
-     * @tc.name       : testMuslStatFutimens002
-     * @tc.desc       : test futimens
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslStatFutimens002
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_FUTIMENS_0200
+     * @tc.desc   test futimens
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatFutimens002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = stat.futimens();
@@ -111,12 +111,12 @@ export default function stat1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STAT_UMASK_0200
-     * @tc.name       : testMuslStatUmask002
-     * @tc.desc       : test umask
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStatUmask002
+     * @tc.number SUB_THIRDPARTY_MUSL_STAT_UMASK_0200
+     * @tc.desc   test umask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStatUmask002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = stat.umask();

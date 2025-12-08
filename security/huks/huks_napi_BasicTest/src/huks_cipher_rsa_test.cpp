@@ -68,9 +68,12 @@ static struct OH_Huks_Param g_decryptParams041[] = {
     {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
 
 /**
- * @tc.name: HuksCipherRSATest.Security_HUKS_NAPI_Cipher_RSA_0100
- * @tc.desc: alg-RSA pur-ENCRYPT-DECRYPT size-4096 pad-OAEP dig-SHA384 mode-ECB.
- * @tc.type: FUNC
+ * @tc.name   Security_HUKS_NAPI_Cipher_RSA_0100
+ * @tc.number Security_HUKS_NAPI_Cipher_RSA_0100
+ * @tc.desc   alg-RSA pur-ENCRYPT-DECRYPT size-4096 pad-OAEP dig-SHA384 mode-ECB.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HuksCipherRSATest, Security_HUKS_NAPI_Cipher_RSA_0100, TestSize.Level1)
 {

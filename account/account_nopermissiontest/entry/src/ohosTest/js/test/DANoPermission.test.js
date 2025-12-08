@@ -21,12 +21,12 @@ export default function ActsDANoPermissionTest() {
     describe('ActsDANoPermissionTest', function () {
 
         /**
-         * @tc.number  : SUB_Account_DistributedAccount_NoPermission_0100
-         * @tc.name    : test getOsAccountDistributedInfo errcode 201 callback
-         * @tc.desc    : no ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_DistributedAccount_NoPermission_0100
+         * @tc.number SUB_Account_DistributedAccount_NoPermission_0100
+         * @tc.desc   no ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_DistributedAccount_NoPermission_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
             console.info("====>SUB_Account_DistributedAccount_NoPermission_0100 start====");
@@ -49,12 +49,12 @@ export default function ActsDANoPermissionTest() {
         });
 
         /**
-         * @tc.number  : SUB_Account_DistributedAccount_NoPermission_0200
-         * @tc.name    : test getOsAccountDistributedInfo errcode 201 promise
-         * @tc.desc    : no ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_DistributedAccount_NoPermission_0200
+         * @tc.number SUB_Account_DistributedAccount_NoPermission_0200
+         * @tc.desc   no ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_DistributedAccount_NoPermission_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
             console.info("====>SUB_Account_DistributedAccount_NoPermission_0200 start====");
@@ -71,12 +71,12 @@ export default function ActsDANoPermissionTest() {
         });
 
         /**
-         * @tc.number  : SUB_Account_DistributedAccount_NoPermission_0300
-         * @tc.name    : test setOsAccountDistributedInfo errcode 201 callback
-         * @tc.desc    : no ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_DistributedAccount_NoPermission_0300
+         * @tc.number SUB_Account_DistributedAccount_NoPermission_0300
+         * @tc.desc   no ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_DistributedAccount_NoPermission_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
             console.info("====>SUB_Account_DistributedAccount_NoPermission_0300 start====");
@@ -100,12 +100,12 @@ export default function ActsDANoPermissionTest() {
         });
 
         /**
-         * @tc.number  : SUB_Account_DistributedAccount_NoPermission_0400
-         * @tc.name    : test setOsAccountDistributedInfo errcode 201 promise
-         * @tc.desc    : no ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_DistributedAccount_NoPermission_0400
+         * @tc.number SUB_Account_DistributedAccount_NoPermission_0400
+         * @tc.desc   no ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_DistributedAccount_NoPermission_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
             console.info("====>SUB_Account_DistributedAccount_NoPermission_0400 start====");

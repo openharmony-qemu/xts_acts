@@ -63,12 +63,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_WEB_cancel_0100
      * @tc.number testWebView_cancel0100
-     * @tc.name SUB_ACE_WEB_cancel_0100
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_WEB_cancel_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_WEB_cancel_0100', 131100)
@@ -80,12 +80,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_WEB_cancel_0200
      * @tc.number testWebView_cancel0200
-     * @tc.name SUB_ACE_WEB_cancel_0200
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_WEB_cancel_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_WEB_cancel_0200', 131100)
@@ -97,12 +97,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_WEB_cancel_0300
      * @tc.number testWebView_cancel0300
-     * @tc.name SUB_ACE_WEB_cancel_0300
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_WEB_cancel_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_WEB_cancel_0300', 131100)
@@ -114,12 +114,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_WEB_cancel_0400
      * @tc.number testWebView_cancel0400
-     * @tc.name SUB_ACE_WEB_cancel_0400
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_WEB_cancel_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_WEB_cancel_0400', 131100)
@@ -131,12 +131,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_WEB_pause_0100
      * @tc.number testWebView_pause0100
-     * @tc.name SUB_ACE_WEB_pause_0100
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_WEB_pause_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_WEB_pause_0100', 131100)
@@ -148,12 +148,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_WEB_pause_0200
      * @tc.number testWebView_pause0200
-     * @tc.name SUB_ACE_WEB_pause_0200
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_WEB_pause_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_WEB_pause_0200', 131100)
@@ -166,12 +166,12 @@ export default function webDownloadOperation() {
 
 
     /**
+     * @tc.name   SUB_ACE_WEB_pause_0300
      * @tc.number testWebView_pause0300
-     * @tc.name SUB_ACE_WEB_pause_0300
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_WEB_pause_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_WEB_pause_0300', 131100)
@@ -183,12 +183,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_WEB_pause_0400
      * @tc.number testWebView_pause0400
-     * @tc.name SUB_ACE_WEB_pause_0400
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_WEB_pause_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_WEB_pause_0400', 131100)
@@ -200,12 +200,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_WEB_pause_0500
      * @tc.number testWebView_pause0500
-     * @tc.name SUB_ACE_WEB_pause_0500
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_WEB_pause_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_WEB_pause_0500', 131100)
@@ -217,12 +217,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_WEB_pause_0600
      * @tc.number testWebView_pause0600
-     * @tc.name SUB_ACE_WEB_pause_0600
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_WEB_pause_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_WEB_pause_0600', 131100)
@@ -234,12 +234,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_WEB_resume_0100
      * @tc.number testWebView_resume0100
-     * @tc.name SUB_ACE_WEB_resume_0100
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_WEB_resume_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_WEB_resume_0100', 131100)
@@ -251,12 +251,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_WEB_resume_0200
      * @tc.number testWebView_resume0200
-     * @tc.name SUB_ACE_WEB_resume_0200
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_WEB_resume_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_WEB_resume_0200', 131100)
@@ -268,12 +268,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_WEB_resume_0300
      * @tc.number testWebView_resume0300
-     * @tc.name SUB_ACE_WEB_resume_0300
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_WEB_resume_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_WEB_resume_0300', 131100)
@@ -285,12 +285,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_WEB_resume_0400
      * @tc.number testWebView_resume0400
-     * @tc.name SUB_ACE_WEB_resume_0400
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_WEB_resume_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_WEB_resume_0400', 131100)
@@ -302,12 +302,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_WEB_resume_0500
      * @tc.number testWebView_resume0500
-     * @tc.name SUB_ACE_WEB_resume_0500
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_WEB_resume_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_WEB_resume_0500', 131100)
@@ -320,12 +320,12 @@ export default function webDownloadOperation() {
 
 
     /**
+     * @tc.name   SUB_ACE_onDownloadUpdated_1000
      * @tc.number testWebView_onDownloadUpdated1000
-     * @tc.name SUB_ACE_onDownloadUpdated_1000
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_onDownloadUpdated_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_onDownloadUpdated_1000', 131100)
@@ -337,12 +337,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_onDownloadUpdated_1001
      * @tc.number testWebView_onDownloadUpdated1001
-     * @tc.name SUB_ACE_onDownloadUpdated_1001
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_onDownloadUpdated_1001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_onDownloadUpdated_1001', 131100)
@@ -354,12 +354,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_onDownloadUpdated_1002
      * @tc.number testWebView_onDownloadUpdated1002
-     * @tc.name SUB_ACE_onDownloadUpdated_1002
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_onDownloadUpdated_1002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_onDownloadUpdated_1002', 131100)
@@ -371,12 +371,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_onDownloadUpdated_1003
      * @tc.number testWebView_onDownloadUpdated1003
-     * @tc.name SUB_ACE_onDownloadUpdated_1003
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_onDownloadUpdated_1003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_onDownloadUpdated_1003', 131100)
@@ -388,12 +388,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_onDownloadUpdated_1004
      * @tc.number testWebView_onDownloadUpdated1004
-     * @tc.name SUB_ACE_onDownloadUpdated_1004
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_onDownloadUpdated_1004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_onDownloadUpdated_1004', 131100)
@@ -406,12 +406,12 @@ export default function webDownloadOperation() {
 
 
     /**
+     * @tc.name   SUB_ACE_WEB_onDownloadFinish_1000
      * @tc.number testWebView_onDownloadFinish1000
-     * @tc.name SUB_ACE_WEB_onDownloadFinish_1000
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_WEB_onDownloadFinish_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_WEB_onDownloadFinish_1000', 131100)
@@ -423,12 +423,12 @@ export default function webDownloadOperation() {
     })
 
     /**
+     * @tc.name   SUB_ACE_WEB_onDownloadFinish_1002
      * @tc.number testWebView_onDownloadFinish1002
-     * @tc.name SUB_ACE_WEB_onDownloadFinish_1002
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_ACE_WEB_onDownloadFinish_1002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('SUB_ACE_WEB_onDownloadFinish_1002', 131100)

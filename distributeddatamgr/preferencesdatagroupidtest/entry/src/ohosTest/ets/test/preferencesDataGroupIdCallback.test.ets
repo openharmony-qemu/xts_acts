@@ -29,18 +29,18 @@ export default function preferencesDataGroupIdCallback() {
     })
     console.log(TAG + "*************Unit Test Begin*************");
 
-    /**
-     * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_0100
-     * @tc.name preferencesgetPreferences dataGroupId null callback test
-     * @tc.desc preferences getPreferences dataGroupId null callback test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
      class Option{
       name : string = '';
       dataGroupId: null | undefined
      }
+    /**
+     * @tc.name   SUB_DDM_Preferences_DataGroupId_Callback_0100
+     * @tc.number SUB_DDM_Preferences_DataGroupId_Callback_0100
+     * @tc.desc   SUB_DDM_Preferences_DataGroupId_Callback_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DDM_Preferences_DataGroupId_Callback_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const Options : Option= {
         name: "test_preferences_callback",
@@ -64,12 +64,12 @@ export default function preferencesDataGroupIdCallback() {
     })
 
     /**
+     * @tc.name   SUB_DDM_Preferences_DataGroupId_Callback_0200
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_0400
-     * @tc.name preferences dataGroupId undefined callback test
-     * @tc.desc preferences getPreferences dataGroupId undefined callback test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   preferences getPreferences dataGroupId undefined callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_DataGroupId_Callback_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const Options: dataPreferences.Options = {
@@ -93,12 +93,12 @@ export default function preferencesDataGroupIdCallback() {
       }
     })
     /**
+     * @tc.name   SUB_DDM_Preferences_DataGroupId_Callback_0300
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_0800
-     * @tc.name preferences dataGroupId callback test
-     * @tc.desc preferences getPreferences dataGroupId callback test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   preferences getPreferences dataGroupId callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_DataGroupId_Callback_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const Options: dataPreferences.Options = {
@@ -124,12 +124,12 @@ export default function preferencesDataGroupIdCallback() {
     })
 
     /**
+     * @tc.name   SUB_DDM_Preferences_DataGroupId_Callback_0400
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_1200
-     * @tc.name preferences dataGroupId callback test
-     * @tc.desc preferences deletePreferences dataGroupId callback test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   preferences deletePreferences dataGroupId callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_DataGroupId_Callback_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done: Function) => {
       const Options: dataPreferences.Options = {
@@ -159,12 +159,12 @@ export default function preferencesDataGroupIdCallback() {
     })
 
     /**
+     * @tc.name   SUB_DDM_Preferences_DataGroupId_Callback_0500
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_0200
-     * @tc.name preferences dataGroupId null callback test
-     * @tc.desc preferences getPreferences dataGroupId null callback test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   preferences getPreferences dataGroupId null callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_DataGroupId_Callback_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const Options : Option= {
@@ -189,12 +189,12 @@ export default function preferencesDataGroupIdCallback() {
     })
 
     /**
+     * @tc.name   SUB_DDM_Preferences_DataGroupId_Callback_0600
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_0500
-     * @tc.name preferences dataGroupId undefined callback test
-     * @tc.desc preferences removePreferencesFromCache dataGroupId undefined callback test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   preferences removePreferencesFromCache dataGroupId undefined callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_DataGroupId_Callback_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const Options: dataPreferences.Options = {
@@ -218,12 +218,12 @@ export default function preferencesDataGroupIdCallback() {
       }
     })
     /**
+     * @tc.name   SUB_DDM_Preferences_DataGroupId_Callback_0700
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_0900
-     * @tc.name preferences dataGroupId callback test
-     * @tc.desc preferences removePreferencesFromCache dataGroupId callback test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   preferences removePreferencesFromCache dataGroupId callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_DataGroupId_Callback_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const Options: dataPreferences.Options = {
@@ -249,12 +249,12 @@ export default function preferencesDataGroupIdCallback() {
     })
 
     /**
+     * @tc.name   SUB_DDM_Preferences_DataGroupId_Callback_0800
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_1300
-     * @tc.name preferences dataGroupId callback test
-     * @tc.desc preferences removePreferencesFromCache dataGroupId callback test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   preferences removePreferencesFromCache dataGroupId callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_DataGroupId_Callback_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const Options: dataPreferences.Options = {

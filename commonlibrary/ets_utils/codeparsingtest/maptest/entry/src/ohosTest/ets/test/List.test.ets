@@ -8,6 +8,8 @@ import MapHasTest from './map/MapHas.test';
 import MapKeyTest from './map/MapKey.test';
 import MapSymbolSpeciesTest from './map/MapSymbolSpecies.test';
 import MapValueTest from './map/MapValue.test';
+import MapComboTest from './map1/map_combo.test';
+import MapUnionTest from './map1/map_union.test';
 
 export default function testsuite() {
   MapClearTest();
@@ -20,4 +22,6 @@ export default function testsuite() {
   MapKeyTest();
   MapSymbolSpeciesTest();
   MapValueTest();
+  MapComboTest();
+  MapUnionTest();
 }

@@ -47,9 +47,12 @@ export default function RelativeContainer_AnchorPoint_Padding() {
     });
 
     /**
+     * @tc.name   SUB_ACE_RelativeContainer_AnchorPoint_Padding_TEST_0100
      * @tc.number SUB_ACE_RelativeContainer_AnchorPoint_Padding_TEST_0100
-     * @tc.name testRelativeContainer
-     * @tc.desc Parent component setting padding property
+     * @tc.desc   Parent component setting padding property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_RelativeContainer_AnchorPoint_Padding_TEST_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_RelativeContainer_AnchorPoint_Padding_TEST_0100] START');

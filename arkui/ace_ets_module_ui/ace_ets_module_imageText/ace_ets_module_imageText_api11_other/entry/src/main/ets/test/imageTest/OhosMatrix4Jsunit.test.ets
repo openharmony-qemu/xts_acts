@@ -54,6 +54,14 @@ export default function ohosMatrix4Jsunit() {
       console.info("OhosMatrix4 each called");
     });
 
+    /**
+     * @tc.name   test_OhosMatrix4_001
+     * @tc.number test_OhosMatrix4_001
+     * @tc.desc   test_OhosMatrix4_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('test_OhosMatrix4_001', Level.LEVEL1, async (done: Function) => {
       console.info('[test_OhosMatrix4_001] START');
       await CommonFunc.sleep(1000);
@@ -67,6 +75,14 @@ export default function ohosMatrix4Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   test_OhosMatrix4_002
+     * @tc.number test_OhosMatrix4_002
+     * @tc.desc   test_OhosMatrix4_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('test_OhosMatrix4_002', Level.LEVEL1, async (done: Function) => {
       console.info('[test_OhosMatrix4_002] START');
       await CommonFunc.sleep(1000);
@@ -80,6 +96,14 @@ export default function ohosMatrix4Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   test_OhosMatrix4_003
+     * @tc.number test_OhosMatrix4_003
+     * @tc.desc   test_OhosMatrix4_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('test_OhosMatrix4_003', Level.LEVEL1, async (done: Function) => {
       console.info('[test_OhosMatrix4_003] START');
       await CommonFunc.sleep(1000);
@@ -93,6 +117,14 @@ export default function ohosMatrix4Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   test_OhosMatrix4_004
+     * @tc.number test_OhosMatrix4_004
+     * @tc.desc   test_OhosMatrix4_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('test_OhosMatrix4_004', Level.LEVEL1, async (done: Function) => {
       console.info('[test_OhosMatrix4_004] START');
       await CommonFunc.sleep(1000);
@@ -122,6 +154,14 @@ export default function ohosMatrix4Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   test_OhosMatrix4_005
+     * @tc.number test_OhosMatrix4_005
+     * @tc.desc   test_OhosMatrix4_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('test_OhosMatrix4_005', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000)
       let callback = (eventData: events_emitter.EventData) => {
@@ -143,6 +183,14 @@ export default function ohosMatrix4Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   test_OhosMatrix4_006
+     * @tc.number test_OhosMatrix4_006
+     * @tc.desc   test_OhosMatrix4_006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('test_OhosMatrix4_006', Level.LEVEL1, async (done: Function) => {
       console.info('[test_OhosMatrix4_006] START');
       await CommonFunc.sleep(1000);

@@ -47,10 +47,13 @@ export default function circleNewJsunit() {
       console.info("circleNew after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_001
-     * @tc.name         testcircleNew001
-     * @tc.desic         acecircleNewEtsTest001
+    /**
+     * @tc.name   testcircleNew001
+     * @tc.number SUB_ACE_BASIC_ETS_API_001
+     * @tc.desc   testcircleNew001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcircleNew001', Level.LEVEL0, async () => {
       console.info('circleNew testcircleNew0011 START');
@@ -64,10 +67,13 @@ export default function circleNewJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_002
-     * @tc.name         testcircleNew002
-     * @tc.desic         acecircleNewEtsTest002
+    /**
+     * @tc.name   testcircleNew002
+     * @tc.number SUB_ACE_BASIC_ETS_API_002
+     * @tc.desc   testcircleNew002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcircleNew002', Level.LEVEL0, async () => {
       console.info('circleNew testcircleNew002 START');
@@ -82,9 +88,12 @@ export default function circleNewJsunit() {
     });
 
     /**
+     * @tc.name   ACE_global_console_debug_0100
      * @tc.number ACE_global_console_debug_0100
-     * @tc.name console::debug
-     * @tc.desc Test console debug printing
+     * @tc.desc   Test console debug printing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACE_global_console_debug_0100", Level.LEVEL0, async () => {
       let casename = "ACE_global_003";
@@ -102,9 +111,12 @@ export default function circleNewJsunit() {
     });
 
     /**
+     * @tc.name   ACE_global_console_error_0200
      * @tc.number ACE_global_console_error_0100
-     * @tc.name console::error
-     * @tc.desc Test console error printing
+     * @tc.desc   Test console error printing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACE_global_console_error_0200", Level.LEVEL0, async () => {
       let casename = "ACE_global_004";
@@ -122,9 +134,12 @@ export default function circleNewJsunit() {
     });
 
     /**
+     * @tc.name   ACE_pushUrl_callback_0100
      * @tc.number pushUrl_callback_0100
-     * @tc.name ACE_pushUrl_callback_0100
-     * @tc.desc Test pushUrl
+     * @tc.desc   Test pushUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACE_pushUrl_callback_0100", Level.LEVEL0, async () => {
       console.info("-----------------------ACE_pushUrl_callback_0100 start-----------------------");
@@ -150,9 +165,12 @@ export default function circleNewJsunit() {
     });
 
     /**
+     * @tc.name   ACE_pushUrl_callback_0200
      * @tc.number pushUrl_promise_0200
-     * @tc.name ACE_pushUrl_promise_0200
-     * @tc.desc Test pushUrl
+     * @tc.desc   Test pushUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACE_pushUrl_callback_0200", Level.LEVEL0, async () => {
       console.info("-----------------------ACE_pushUrl_promise_0200 start-----------------------");
@@ -176,9 +194,12 @@ export default function circleNewJsunit() {
     });
 
     /**
+     * @tc.name   ACE_showAlertBeforeBackPage_0100
      * @tc.number showAlertBeforeBackPage_0100
-     * @tc.name ACE_showAlertBeforeBackPage_0100
-     * @tc.desc Test showAlertBeforeBackPage
+     * @tc.desc   Test showAlertBeforeBackPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACE_showAlertBeforeBackPage_0100", Level.LEVEL0, async () => {
       console.info("-----------------------ACE_showAlertBeforeBackPage_0100-----------------------");
@@ -195,9 +216,12 @@ export default function circleNewJsunit() {
     });
 
     /**
+     * @tc.name   ACE_showAlertBeforeBackPage_0200
      * @tc.number showAlertBeforeBackPage_0200
-     * @tc.name ACE_showAlertBeforeBackPage_0200
-     * @tc.desc Test showAlertBeforeBackPage
+     * @tc.desc   Test showAlertBeforeBackPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACE_showAlertBeforeBackPage_0200", Level.LEVEL0, async () => {
       console.info("-----------------------ACE_showAlertBeforeBackPage_0200-----------------------");
@@ -214,9 +238,12 @@ export default function circleNewJsunit() {
     });
 
     /**
+     * @tc.name   ACE_hideAlertBeforeBackPage_0100
      * @tc.number hideAlertBeforeBackPage_0100
-     * @tc.name ACE_hideAlertBeforeBackPage_0100
-     * @tc.desc Test hideAlertBeforeBackPage
+     * @tc.desc   Test hideAlertBeforeBackPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACE_hideAlertBeforeBackPage_0100", Level.LEVEL0, async () => {
       console.info("-----------------------ACE_showAlertBeforeBackPage_0200-----------------------");
@@ -230,11 +257,14 @@ export default function circleNewJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0010
-     * @tc.name         testGlobal_attribute_0100
-    * @tc.desc          test global attribute
-   */
+    /**
+     * @tc.name   testGlobal_attribute_0100
+     * @tc.number SUB_ACE_BASIC_ETS_API_0010
+     * @tc.desc   test global attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGlobal_attribute_0100', Level.LEVEL0, async () => {
       console.info('testGlobal_attribute_0100 START');
       await Utils.sleep(1000);

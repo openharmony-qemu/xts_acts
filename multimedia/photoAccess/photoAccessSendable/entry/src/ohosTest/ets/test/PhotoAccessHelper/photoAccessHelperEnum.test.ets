@@ -33,12 +33,12 @@ export default function photoAccessHelperEnumTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Enum_0100
-     * @tc.name      : album_Type_enum_001
-     * @tc.desc      : AlbumType Enum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_Type_enum_001
+     * @tc.number Sub_Photo_Access_Sendable_Enum_0100
+     * @tc.desc   AlbumType Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_Type_enum_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_Type_enum_001';
@@ -52,12 +52,12 @@ export default function photoAccessHelperEnumTest () {
       }
     });
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Enum_0200
-     * @tc.name      : album_sub_Type_enum_002
-     * @tc.desc      : AlbumSubType Enum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_sub_Type_enum_002
+     * @tc.number Sub_Photo_Access_Sendable_Enum_0200
+     * @tc.desc   AlbumSubType Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_sub_Type_enum_002', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_sub_Type_enum_002';

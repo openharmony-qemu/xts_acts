@@ -24,12 +24,12 @@ export default function AVScreenCaptureNdkTest() {
   describe('AVScreenCaptureNdkTest', () => {
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_Init0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_Init0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_Init0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_Init0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_Init0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -46,12 +46,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCapture0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCapture0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCapture0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCapture0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCapture0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -68,12 +68,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCapture0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCapture0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCapture0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCapture0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCapture0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -90,12 +90,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenCapture0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenCapture0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenCapture0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenCapture0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenCapture0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -112,12 +112,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenCapture0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenCapture0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenCapture0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenCapture0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenCapture0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -134,12 +134,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenRecording0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenRecording0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenRecording0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenRecording0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenRecording0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -156,12 +156,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenRecording0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenRecording0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenRecording0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenRecording0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenRecording0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -178,12 +178,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenRecording0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenRecording0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenRecording0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenRecording0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenRecording0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -200,12 +200,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenRecording0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenRecording0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenRecording0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenRecording0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_StopScreenRecording0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -222,12 +222,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_AcquireAudioBuffer0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_AcquireAudioBuffer0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_AcquireAudioBuffer0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_AcquireAudioBuffer0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_AcquireAudioBuffer0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -244,12 +244,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_AcquireAudioBuffer0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_AcquireAudioBuffer0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_AcquireAudioBuffer0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_AcquireAudioBuffer0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_AcquireAudioBuffer0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -266,12 +266,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseAudioBuffer0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseAudioBuffer0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseAudioBuffer0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseAudioBuffer0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseAudioBuffer0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -288,12 +288,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseAudioBuffer0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseAudioBuffer0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseAudioBuffer0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseAudioBuffer0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseAudioBuffer0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -310,12 +310,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseVideoBuffer0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseVideoBuffer0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseVideoBuffer0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseVideoBuffer0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseVideoBuffer0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -332,12 +332,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseVideoBuffer0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseVideoBuffer0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseVideoBuffer0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseVideoBuffer0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseVideoBuffer0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -354,12 +354,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SetCallback0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SetCallback0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SetCallback0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SetCallback0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SetCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -376,12 +376,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SetCallback0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SetCallback0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SetCallback0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SetCallback0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SetCallback0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -398,12 +398,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SetMicrophoneEnabled0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SetMicrophoneEnabled0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SetMicrophoneEnabled0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SetMicrophoneEnabled0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SetMicrophoneEnabled0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -420,12 +420,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SetStateCallback0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SetStateCallback0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SetStateCallback0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SetStateCallback0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SetStateCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -442,12 +442,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SetStateCallback0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SetStateCallback0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SetStateCallback0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SetStateCallback0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SetStateCallback0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -464,12 +464,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SetDataCallback0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SetDataCallback0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SetDataCallback0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SetDataCallback0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SetDataCallback0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -486,12 +486,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SetErrorCallback0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SetErrorCallback0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SetErrorCallback0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SetErrorCallback0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SetErrorCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -508,12 +508,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SetErrorCallback0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SetErrorCallback0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SetErrorCallback0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SetErrorCallback0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SetErrorCallback0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -530,12 +530,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCaptureWithSurface0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCaptureWithSurface0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCaptureWithSurface0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCaptureWithSurface0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCaptureWithSurface0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -553,12 +553,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCaptureWithSurface0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCaptureWithSurface0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCaptureWithSurface0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCaptureWithSurface0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_StartScreenCaptureWithSurface0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -576,12 +576,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SetCanvasRotation0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SetCanvasRotation0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SetCanvasRotation0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SetCanvasRotation0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SetCanvasRotation0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -599,12 +599,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SetCanvasRotation0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SetCanvasRotation0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SetCanvasRotation0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SetCanvasRotation0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SetCanvasRotation0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -622,12 +622,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseContentFilter0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseContentFilter0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseContentFilter0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseContentFilter0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseContentFilter0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -645,12 +645,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseContentFilter0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseContentFilter0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseContentFilter0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseContentFilter0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseContentFilter0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -668,12 +668,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_AddAudioContent0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_AddAudioContent0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_AddAudioContent0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_AddAudioContent0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_AddAudioContent0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -691,12 +691,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_AddAudioContent0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_AddAudioContent0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_AddAudioContent0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_AddAudioContent0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_AddAudioContent0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -714,12 +714,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_ExcludeContent0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_ExcludeContent0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_ExcludeContent0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_ExcludeContent0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_ExcludeContent0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -737,12 +737,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_ExcludeContent0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_ExcludeContent0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_ExcludeContent0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_ExcludeContent0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_ExcludeContent0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -760,12 +760,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_ContentFilter_AddWindowContent0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_ContentFilter_AddWindowContent0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_ContentFilter_AddWindowContent0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_ContentFilter_AddWindowContent0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_ContentFilter_AddWindowContent0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -783,12 +783,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_ContentFilter_AddWindowContent0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_ContentFilter_AddWindowContent0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_ContentFilter_AddWindowContent0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_ContentFilter_AddWindowContent0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_ContentFilter_AddWindowContent0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -806,12 +806,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_ResizeCanvas0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_ResizeCanvas0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_ResizeCanvas0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_ResizeCanvas0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_ResizeCanvas0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -829,12 +829,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_ResizeCanvas0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_ResizeCanvas0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_ResizeCanvas0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_ResizeCanvas0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_ResizeCanvas0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -852,12 +852,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SkipPrivacyMode0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SkipPrivacyMode0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SkipPrivacyMode0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SkipPrivacyMode0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SkipPrivacyMode0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -875,12 +875,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SetMaxVideoFrameRate0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SetMaxVideoFrameRate0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SetMaxVideoFrameRate0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SetMaxVideoFrameRate0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SetMaxVideoFrameRate0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -898,12 +898,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_ShowCursor0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_ShowCursor0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_ShowCursor0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_ShowCursor0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_ShowCursor0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -921,12 +921,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SetDisplayCallback0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SetDisplayCallback0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SetDisplayCallback0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SetDisplayCallback0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SetDisplayCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -944,12 +944,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SetDisplayCallback0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SetDisplayCallback0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SetDisplayCallback0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SetDisplayCallback0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SetDisplayCallback0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -967,12 +967,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseCaptureStrategy0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseCaptureStrategy0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseCaptureStrategy0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseCaptureStrategy0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_ReleaseCaptureStrategy0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -990,12 +990,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureStrategy0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureStrategy0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureStrategy0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureStrategy0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureStrategy0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1013,12 +1013,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureStrategy0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureStrategy0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureStrategy0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureStrategy0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureStrategy0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1036,12 +1036,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForKeepCaptureDuringCall0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForKeepCaptureDuringCall0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForKeepCaptureDuringCall0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForKeepCaptureDuringCall0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForKeepCaptureDuringCall0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1060,12 +1060,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureContentChangedCallback0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureContentChangedCallback0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureContentChangedCallback0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureContentChangedCallback0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureContentChangedCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1084,12 +1084,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureContentChangedCallback0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureContentChangedCallback0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureContentChangedCallback0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureContentChangedCallback0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureContentChangedCallback0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1108,12 +1108,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureArea0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureArea0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureArea0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureArea0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_SetCaptureArea0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1131,12 +1131,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1154,12 +1154,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1177,12 +1177,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForCanvasFollowRotation0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForCanvasFollowRotation0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForCanvasFollowRotation0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForCanvasFollowRotation0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForCanvasFollowRotation0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1200,12 +1200,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForCanvasFollowRotation0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForCanvasFollowRotation0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForCanvasFollowRotation0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForCanvasFollowRotation0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForCanvasFollowRotation0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1223,12 +1223,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_GetCaptureTypeSelected0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_GetCaptureTypeSelected0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_GetCaptureTypeSelected0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_GetCaptureTypeSelected0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_GetCaptureTypeSelected0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1246,12 +1246,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_GetCaptureTypeSelected0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_GetCaptureTypeSelected0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_GetCaptureTypeSelected0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_GetCaptureTypeSelected0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_GetCaptureTypeSelected0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1269,12 +1269,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_GetDisplayIdSelected0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_GetDisplayIdSelected0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_GetDisplayIdSelected0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_GetDisplayIdSelected0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_GetDisplayIdSelected0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1292,12 +1292,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_GetDisplayIdSelected0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_GetDisplayIdSelected0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_GetDisplayIdSelected0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_GetDisplayIdSelected0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_GetDisplayIdSelected0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1315,12 +1315,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForBFramesEncoding0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForBFramesEncoding0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForBFramesEncoding0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForBFramesEncoding0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForBFramesEncoding0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1338,12 +1338,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPickerPopUp0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPickerPopUp0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPickerPopUp0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPickerPopUp0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPickerPopUp0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1361,12 +1361,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForFillMode0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForFillMode0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForFillMode0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForFillMode0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForFillMode0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1384,12 +1384,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_CaptureMode0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_CaptureMode0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_CaptureMode0100
+     * @tc.number SUB_MULTIMEIDA_OH_CaptureMode0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_CaptureMode0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1407,12 +1407,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_CaptureMode0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_CaptureMode0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_CaptureMode0101
+     * @tc.number SUB_MULTIMEIDA_OH_CaptureMode0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_CaptureMode0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1430,12 +1430,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_CaptureMode0102
-     * @tc.name       : SUB_MULTIMEIDA_OH_CaptureMode0102
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_CaptureMode0102
+     * @tc.number SUB_MULTIMEIDA_OH_CaptureMode0102
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_CaptureMode0102',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1453,12 +1453,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AudioCodecFormat0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AudioCodecFormat0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AudioCodecFormat0100
+     * @tc.number SUB_MULTIMEIDA_OH_AudioCodecFormat0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AudioCodecFormat0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1476,12 +1476,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AudioCodecFormat0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AudioCodecFormat0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AudioCodecFormat0101
+     * @tc.number SUB_MULTIMEIDA_OH_AudioCodecFormat0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AudioCodecFormat0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1499,12 +1499,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_VideoCodecFormat0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_VideoCodecFormat0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_VideoCodecFormat0100
+     * @tc.number SUB_MULTIMEIDA_OH_VideoCodecFormat0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_VideoCodecFormat0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1522,12 +1522,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_VideoCodecFormat0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_VideoCodecFormat0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_VideoCodecFormat0101
+     * @tc.number SUB_MULTIMEIDA_OH_VideoCodecFormat0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_VideoCodecFormat0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1545,12 +1545,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_VideoCodecFormat0102
-     * @tc.name       : SUB_MULTIMEIDA_OH_VideoCodecFormat0102
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_VideoCodecFormat0102
+     * @tc.number SUB_MULTIMEIDA_OH_VideoCodecFormat0102
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_VideoCodecFormat0102',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1568,12 +1568,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_VideoCodecFormat0103
-     * @tc.name       : SUB_MULTIMEIDA_OH_VideoCodecFormat0103
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_VideoCodecFormat0103
+     * @tc.number SUB_MULTIMEIDA_OH_VideoCodecFormat0103
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_VideoCodecFormat0103',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1591,12 +1591,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_VideoCodecFormat0104
-     * @tc.name       : SUB_MULTIMEIDA_OH_VideoCodecFormat0104
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_VideoCodecFormat0104
+     * @tc.number SUB_MULTIMEIDA_OH_VideoCodecFormat0104
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_VideoCodecFormat0104',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1614,12 +1614,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_VideoCodecFormat0105
-     * @tc.name       : SUB_MULTIMEIDA_OH_VideoCodecFormat0105
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_VideoCodecFormat0105
+     * @tc.number SUB_MULTIMEIDA_OH_VideoCodecFormat0105
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_VideoCodecFormat0105',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1637,12 +1637,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_DataType0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_DataType0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_DataType0100
+     * @tc.number SUB_MULTIMEIDA_OH_DataType0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_DataType0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1660,12 +1660,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_DataType0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_DataType0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_DataType0101
+     * @tc.number SUB_MULTIMEIDA_OH_DataType0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_DataType0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1683,12 +1683,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_ContainerFormatType0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_ContainerFormatType0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_ContainerFormatType0100
+     * @tc.number SUB_MULTIMEIDA_OH_ContainerFormatType0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_ContainerFormatType0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1706,12 +1706,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_RecorderInfo0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_RecorderInfo0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_RecorderInfo0100
+     * @tc.number SUB_MULTIMEIDA_OH_RecorderInfo0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_RecorderInfo0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1729,12 +1729,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AudioCaptureSourceType0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AudioCaptureSourceType0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   OH_AudioCaptureSourceType0100
+     * @tc.number SUB_MULTIMEIDA_OH_AudioCaptureSourceType0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('OH_AudioCaptureSourceType0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1752,12 +1752,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AudioCaptureSourceType0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AudioCaptureSourceType0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AudioCaptureSourceType0101
+     * @tc.number SUB_MULTIMEIDA_OH_AudioCaptureSourceType0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AudioCaptureSourceType0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1775,12 +1775,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1798,12 +1798,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1821,12 +1821,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0102
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0102
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0102
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0102
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0102',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1844,12 +1844,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0103
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0103
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0103
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0103
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0103',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1867,12 +1867,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0104
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0104
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0104
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0104
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0104',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1890,12 +1890,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0105
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0105
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0105
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0105
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0105',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1913,12 +1913,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0106
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0106
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0106
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0106
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0106',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1936,12 +1936,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0107
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0107
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0107
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0107
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0107',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1959,12 +1959,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0108
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0108
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0108
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0108
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0108',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1982,12 +1982,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0109
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0109
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0109
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0109
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0109',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -2005,12 +2005,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0110
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0110
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0110
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0110
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCaptureStateCode0110',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -2028,12 +2028,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCaptureBufferType0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCaptureBufferType0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCaptureBufferType0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCaptureBufferType0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCaptureBufferType0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -2051,12 +2051,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCaptureBufferType0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCaptureBufferType0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCaptureBufferType0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCaptureBufferType0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCaptureBufferType0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -2074,12 +2074,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCaptureFilterableAudioContent0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCaptureFilterableAudioContent0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCaptureFilterableAudioContent0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCaptureFilterableAudioContent0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCaptureFilterableAudioContent0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -2097,12 +2097,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCaptureContentChangedEvent0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCaptureContentChangedEvent0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCaptureContentChangedEvent0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCaptureContentChangedEvent0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCaptureContentChangedEvent0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -2120,12 +2120,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCaptureContentChangedEvent0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCaptureContentChangedEvent0101
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCaptureContentChangedEvent0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCaptureContentChangedEvent0101
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCaptureContentChangedEvent0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -2143,12 +2143,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVScreenCaptureContentChangedEvent0102
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVScreenCaptureContentChangedEvent0102
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCaptureContentChangedEvent0102
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCaptureContentChangedEvent0102
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVScreenCaptureContentChangedEvent0102',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -2166,12 +2166,12 @@ export default function AVScreenCaptureNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVSCREEN_CAPTURE_ErrCode0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVSCREEN_CAPTURE_ErrCode0100
-     * @tc.desc       : test OH_AVScreenCapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVSCREEN_CAPTURE_ErrCode0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVSCREEN_CAPTURE_ErrCode0100
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVSCREEN_CAPTURE_ErrCode0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,

@@ -293,12 +293,12 @@ export default function AVTranscoderTest() {
     });
 
     /**
-     * @tc.number    : AV_TRANSCODER_TEST_001
-     * @tc.name      : createAVTranscoder_001
-     * @tc.desc      : Test normal scene of create AVTranscoder.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createAVTranscoder_001
+     * @tc.number AV_TRANSCODER_TEST_001
+     * @tc.desc   Test normal scene of create AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAVTranscoder_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAVTranscoder_001';
@@ -307,12 +307,12 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.number    : AV_TRANSCODER_TEST_002
-     * @tc.name      : prepare_001
-     * @tc.desc      : Test normal scene of prepare AVTranscoder.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   prepare_001
+     * @tc.number AV_TRANSCODER_TEST_002
+     * @tc.desc   Test normal scene of prepare AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('prepare_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'prepare_001';
@@ -322,12 +322,12 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.number    : AV_TRANSCODER_TEST_003
-     * @tc.name      : start_001
-     * @tc.desc      : Test normal scene of start AVTranscoder.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   start_001
+     * @tc.number AV_TRANSCODER_TEST_003
+     * @tc.desc   Test normal scene of start AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('start_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'start_001';
@@ -338,12 +338,12 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.number    : AV_TRANSCODER_TEST_004
-     * @tc.name      : start_abnormal_001
-     * @tc.desc      : Test normal scene of video transcoding.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   start_abnormal_001
+     * @tc.number AV_TRANSCODER_TEST_004
+     * @tc.desc   Test normal scene of video transcoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('start_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'start_abnormal_001';
@@ -353,12 +353,12 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.number    : AV_TRANSCODER_TEST_005
-     * @tc.name      : pause_001
-     * @tc.desc      : Test normal scene of pause AVTranscoder.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   pause_001
+     * @tc.number AV_TRANSCODER_TEST_005
+     * @tc.desc   Test normal scene of pause AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pause_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'pause_001';
@@ -370,12 +370,12 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.number    : AV_TRANSCODER_TEST_006
-     * @tc.name      : pause_abnormal_001
-     * @tc.desc      : Test normal scene of video transcoding.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   pause_abnormal_001
+     * @tc.number AV_TRANSCODER_TEST_006
+     * @tc.desc   Test normal scene of video transcoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pause_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'pause_abnormal_001';
@@ -385,12 +385,12 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.number    : AV_TRANSCODER_TEST_007
-     * @tc.name      : resume_001
-     * @tc.desc      : Test normal scene of resume AVTranscoder.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   resume_001
+     * @tc.number AV_TRANSCODER_TEST_007
+     * @tc.desc   Test normal scene of resume AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('resume_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'resume_001';
@@ -403,12 +403,12 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.number    : AV_TRANSCODER_TEST_008
-     * @tc.name      : resume_abnormal_001
-     * @tc.desc      : Test normal scene of video transcoding.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   resume_abnormal_001
+     * @tc.number AV_TRANSCODER_TEST_008
+     * @tc.desc   Test normal scene of video transcoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('resume_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'resume_abnormal_001';
@@ -418,12 +418,12 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.number    : AV_TRANSCODER_TEST_009  //TODO 报错5400102
-     * @tc.name      : cancel_001
-     * @tc.desc      : cancel after prepare
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   cancel_001
+     * @tc.number AV_TRANSCODER_TEST_009  //TODO 报错5400102
+     * @tc.desc   cancel after prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('cancel_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'cancel_001';
@@ -435,12 +435,12 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.number    : AV_TRANSCODER_TEST_010
-     * @tc.name      : cancel_002
-     * @tc.desc      : cancel after start
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   cancel_002
+     * @tc.number AV_TRANSCODER_TEST_010
+     * @tc.desc   cancel after start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('cancel_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'cancel_002';
@@ -452,12 +452,12 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.number    : AV_TRANSCODER_TEST_011
-     * @tc.name      : cancel_003
-     * @tc.desc      : cancel after pause
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   cancel_003
+     * @tc.number AV_TRANSCODER_TEST_011
+     * @tc.desc   cancel after pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('cancel_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'cancel_003';
@@ -470,12 +470,12 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.number    : AV_TRANSCODER_TEST_012
-     * @tc.name      : cancel_004
-     * @tc.desc      : cancel after resume
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   cancel_004
+     * @tc.number AV_TRANSCODER_TEST_012
+     * @tc.desc   cancel after resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('cancel_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'cancel_004';
@@ -489,12 +489,12 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.number    : AV_TRANSCODER_TEST_013
-     * @tc.name      : release_001
-     * @tc.desc      : Test normal scene of release AVTranscoder.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   release_001
+     * @tc.number AV_TRANSCODER_TEST_013
+     * @tc.desc   Test normal scene of release AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_001';
@@ -505,12 +505,12 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.number    : AV_TRANSCODER_TEST_014
-     * @tc.name      : progressUpdate_listen_001
-     * @tc.desc      : Test normal scene of listen progressUpdate.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   progressUpdate_listen_001
+     * @tc.number AV_TRANSCODER_TEST_014
+     * @tc.desc   Test normal scene of listen progressUpdate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('progressUpdate_listen_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'progressUpdate_listen_001';
@@ -520,12 +520,12 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.number    : AV_TRANSCODER_TEST_015
-     * @tc.name      : complete_listen_001
-     * @tc.desc      : Test normal scene of listen complete.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   complete_listen_001
+     * @tc.number AV_TRANSCODER_TEST_015
+     * @tc.desc   Test normal scene of listen complete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('complete_listen_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'complete_listen_001';

@@ -54,12 +54,12 @@ export default function collectionsFifthtest() {
     })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_1400
-     * @tc.name      : collectionsFifthtest1400
-     * @tc.desc      : Int16Array toString 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest1400
+     * @tc.number SUB_COOLLECTIONFIFTH_1400
+     * @tc.desc   Int16Array toString 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -83,12 +83,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_1500
-     * @tc.name      : collectionsFifthtest1500
-     * @tc.desc      : Int16Array.toString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest1500
+     * @tc.number SUB_COOLLECTIONFIFTH_1500
+     * @tc.desc   Int16Array.toString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -112,12 +112,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_1600
-     * @tc.name      : collectionsFifthtest1600
-     * @tc.desc      : Int16Array toLocaleString 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest1600
+     * @tc.number SUB_COOLLECTIONFIFTH_1600
+     * @tc.desc   Int16Array toLocaleString 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -141,12 +141,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_1700
-     * @tc.name      : collectionsFifthtest1700
-     * @tc.desc      : Int16Array.toLocaleString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest1700
+     * @tc.number SUB_COOLLECTIONFIFTH_1700
+     * @tc.desc   Int16Array.toLocaleString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -170,12 +170,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_1800
-     * @tc.name      : collectionsFifthtest1800
-     * @tc.desc      : Int16Array copyWithin 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest1800
+     * @tc.number SUB_COOLLECTIONFIFTH_1800
+     * @tc.desc   Int16Array copyWithin 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -199,12 +199,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_1900
-     * @tc.name      : collectionsFifthtest1900
-     * @tc.desc      : Int16Array.copyWithin 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest1900
+     * @tc.number SUB_COOLLECTIONFIFTH_1900
+     * @tc.desc   Int16Array.copyWithin 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -228,12 +228,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_2000
-     * @tc.name      : collectionsFifthtest2000
-     * @tc.desc      : Int16Array some 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest2000
+     * @tc.number SUB_COOLLECTIONFIFTH_2000
+     * @tc.desc   Int16Array some 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -257,12 +257,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_2100
-     * @tc.name      : collectionsFifthtest2100
-     * @tc.desc      : Int16Array.some 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest2100
+     * @tc.number SUB_COOLLECTIONFIFTH_2100
+     * @tc.desc   Int16Array.some 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -286,12 +286,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_2200
-     * @tc.name      : collectionsFifthtest2200
-     * @tc.desc      : Int16Array.every 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest2200
+     * @tc.number SUB_COOLLECTIONFIFTH_2200
+     * @tc.desc   Int16Array.every 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -315,12 +315,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_2300
-     * @tc.name      : collectionsFifthtest2300
-     * @tc.desc      : Int16Array every 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest2300
+     * @tc.number SUB_COOLLECTIONFIFTH_2300
+     * @tc.desc   Int16Array every 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -344,12 +344,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_2500
-     * @tc.name      : collectionsFifthtest2500
-     * @tc.desc      : Int16Array fill 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest2500
+     * @tc.number SUB_COOLLECTIONFIFTH_2500
+     * @tc.desc   Int16Array fill 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -373,12 +373,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_2600
-     * @tc.name      : collectionsFifthtest2600
-     * @tc.desc      : Int16Array.filter 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest2600
+     * @tc.number SUB_COOLLECTIONFIFTH_2600
+     * @tc.desc   Int16Array.filter 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -402,12 +402,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_3200
-     * @tc.name      : collectionsFifthtest3200
-     * @tc.desc      : Int16Array filter 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest3200
+     * @tc.number SUB_COOLLECTIONFIFTH_3200
+     * @tc.desc   Int16Array filter 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -431,12 +431,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_2700
-     * @tc.name      : collectionsFifthtest2700
-     * @tc.desc      : Int16Array.find 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest2700
+     * @tc.number SUB_COOLLECTIONFIFTH_2700
+     * @tc.desc   Int16Array.find 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -460,12 +460,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_2800
-     * @tc.name      : collectionsFifthtest2800
-     * @tc.desc      : Int16Array find 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest2800
+     * @tc.number SUB_COOLLECTIONFIFTH_2800
+     * @tc.desc   Int16Array find 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -489,12 +489,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_2900
-     * @tc.name      : collectionsFifthtest2900
-     * @tc.desc      : Int16Array.findIndex 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest2900
+     * @tc.number SUB_COOLLECTIONFIFTH_2900
+     * @tc.desc   Int16Array.findIndex 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -518,12 +518,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_3300
-     * @tc.name      : collectionsFifthtest3300
-     * @tc.desc      : Int16Array findIndex 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest3300
+     * @tc.number SUB_COOLLECTIONFIFTH_3300
+     * @tc.desc   Int16Array findIndex 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -547,12 +547,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_3000
-     * @tc.name      : collectionsFifthtest3000
-     * @tc.desc      : Int16Array.forEach 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest3000
+     * @tc.number SUB_COOLLECTIONFIFTH_3000
+     * @tc.desc   Int16Array.forEach 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -578,12 +578,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_3100
-     * @tc.name      : collectionsFifthtest3100
-     * @tc.desc      : Int16Array forEach 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest3100
+     * @tc.number SUB_COOLLECTIONFIFTH_3100
+     * @tc.desc   Int16Array forEach 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -607,12 +607,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_3400
-     * @tc.name      : collectionsFifthtest3400
-     * @tc.desc      : Int16Array.indexOf 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest3400
+     * @tc.number SUB_COOLLECTIONFIFTH_3400
+     * @tc.desc   Int16Array.indexOf 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -638,12 +638,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_3500
-     * @tc.name      : collectionsFifthtest3500
-     * @tc.desc      : Int16Array indexOf 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest3500
+     * @tc.number SUB_COOLLECTIONFIFTH_3500
+     * @tc.desc   Int16Array indexOf 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -667,12 +667,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_3600
-     * @tc.name      : collectionsFifthtest3600
-     * @tc.desc      : Int16Array.lastIndexOf 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest3600
+     * @tc.number SUB_COOLLECTIONFIFTH_3600
+     * @tc.desc   Int16Array.lastIndexOf 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -698,12 +698,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_3700
-     * @tc.name      : collectionsFifthtest3700
-     * @tc.desc      : Int16Array lastIndexOf 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest3700
+     * @tc.number SUB_COOLLECTIONFIFTH_3700
+     * @tc.desc   Int16Array lastIndexOf 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -727,12 +727,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_3800
-     * @tc.name      : collectionsFifthtest3800
-     * @tc.desc      : Int16Array.join 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest3800
+     * @tc.number SUB_COOLLECTIONFIFTH_3800
+     * @tc.desc   Int16Array.join 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -758,12 +758,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_3900
-     * @tc.name      : collectionsFifthtest3900
-     * @tc.desc      : Int16Array join 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest3900
+     * @tc.number SUB_COOLLECTIONFIFTH_3900
+     * @tc.desc   Int16Array join 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -787,12 +787,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_4000
-     * @tc.name      : collectionsFifthtest4000
-     * @tc.desc      : Int16Array.map 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest4000
+     * @tc.number SUB_COOLLECTIONFIFTH_4000
+     * @tc.desc   Int16Array.map 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -818,12 +818,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_4100
-     * @tc.name      : collectionsFifthtest4100
-     * @tc.desc      : Int16Array map 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest4100
+     * @tc.number SUB_COOLLECTIONFIFTH_4100
+     * @tc.desc   Int16Array map 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -847,12 +847,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_4200
-     * @tc.name      : collectionsFifthtest4200
-     * @tc.desc      : Int16Array.reduce 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest4200
+     * @tc.number SUB_COOLLECTIONFIFTH_4200
+     * @tc.desc   Int16Array.reduce 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -878,12 +878,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_4300
-     * @tc.name      : collectionsFifthtest4300
-     * @tc.desc      : Int16Array reduce 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest4300
+     * @tc.number SUB_COOLLECTIONFIFTH_4300
+     * @tc.desc   Int16Array reduce 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -907,12 +907,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_4400
-     * @tc.name      : collectionsFifthtest4400
-     * @tc.desc      : Int16Array.reduceRight 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest4400
+     * @tc.number SUB_COOLLECTIONFIFTH_4400
+     * @tc.desc   Int16Array.reduceRight 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -938,12 +938,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_4500
-     * @tc.name      : collectionsFifthtest4500
-     * @tc.desc      : Int16Array reduceRight 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest4500
+     * @tc.number SUB_COOLLECTIONFIFTH_4500
+     * @tc.desc   Int16Array reduceRight 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -967,12 +967,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_4600
-     * @tc.name      : collectionsFifthtest4600
-     * @tc.desc      : Int16Array.reverse 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest4600
+     * @tc.number SUB_COOLLECTIONFIFTH_4600
+     * @tc.desc   Int16Array.reverse 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -998,12 +998,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_4501
-     * @tc.name      : collectionsFifthtest4501
-     * @tc.desc      : Int16Array reverse 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest4501
+     * @tc.number SUB_COOLLECTIONFIFTH_4501
+     * @tc.desc   Int16Array reverse 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest4501', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1027,12 +1027,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_4601
-     * @tc.name      : collectionsFifthtest4601
-     * @tc.desc      : Int16Array.set 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest4601
+     * @tc.number SUB_COOLLECTIONFIFTH_4601
+     * @tc.desc   Int16Array.set 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest4601', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1058,12 +1058,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_4700
-     * @tc.name      : collectionsFifthtest4700
-     * @tc.desc      : Int16Array set 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest4700
+     * @tc.number SUB_COOLLECTIONFIFTH_4700
+     * @tc.desc   Int16Array set 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1087,12 +1087,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_4800
-     * @tc.name      : collectionsFifthtest4800
-     * @tc.desc      : Int16Array.slice 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest4800
+     * @tc.number SUB_COOLLECTIONFIFTH_4800
+     * @tc.desc   Int16Array.slice 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1118,12 +1118,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_4900
-     * @tc.name      : collectionsFifthtest4900
-     * @tc.desc      : Int16Array slice 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest4900
+     * @tc.number SUB_COOLLECTIONFIFTH_4900
+     * @tc.desc   Int16Array slice 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1147,12 +1147,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_5000
-     * @tc.name      : collectionsFifthtest5000
-     * @tc.desc      : Int16Array.sort 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest5000
+     * @tc.number SUB_COOLLECTIONFIFTH_5000
+     * @tc.desc   Int16Array.sort 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1178,12 +1178,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_5100
-     * @tc.name      : collectionsFifthtest5100
-     * @tc.desc      : Int16Array sort 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest5100
+     * @tc.number SUB_COOLLECTIONFIFTH_5100
+     * @tc.desc   Int16Array sort 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1207,12 +1207,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_5200
-     * @tc.name      : collectionsFifthtest5200
-     * @tc.desc      : Int16Array.subarray 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest5200
+     * @tc.number SUB_COOLLECTIONFIFTH_5200
+     * @tc.desc   Int16Array.subarray 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1238,12 +1238,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_5300
-     * @tc.name      : collectionsFifthtest5300
-     * @tc.desc      : Int16Array subarray 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest5300
+     * @tc.number SUB_COOLLECTIONFIFTH_5300
+     * @tc.desc   Int16Array subarray 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1267,12 +1267,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_5400
-     * @tc.name      : collectionsFifthtest5400
-     * @tc.desc      : Int16Array.at 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest5400
+     * @tc.number SUB_COOLLECTIONFIFTH_5400
+     * @tc.desc   Int16Array.at 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1298,12 +1298,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_5500
-     * @tc.name      : collectionsFifthtest5500
-     * @tc.desc      : Int16Array at 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest5500
+     * @tc.number SUB_COOLLECTIONFIFTH_5500
+     * @tc.desc   Int16Array at 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1327,12 +1327,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_5600
-     * @tc.name      : collectionsFifthtest5600
-     * @tc.desc      : Int16Array.includes 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest5600
+     * @tc.number SUB_COOLLECTIONFIFTH_5600
+     * @tc.desc   Int16Array.includes 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1358,12 +1358,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_5700
-     * @tc.name      : collectionsFifthtest5700
-     * @tc.desc      : Int16Array includes 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest5700
+     * @tc.number SUB_COOLLECTIONFIFTH_5700
+     * @tc.desc   Int16Array includes 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1387,12 +1387,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_5800
-     * @tc.name      : collectionsFifthtest5800
-     * @tc.desc      : Int16Array.entries 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest5800
+     * @tc.number SUB_COOLLECTIONFIFTH_5800
+     * @tc.desc   Int16Array.entries 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1418,12 +1418,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_5900
-     * @tc.name      : collectionsFifthtest5900
-     * @tc.desc      : Int16Array entries 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest5900
+     * @tc.number SUB_COOLLECTIONFIFTH_5900
+     * @tc.desc   Int16Array entries 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1447,12 +1447,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_6000
-     * @tc.name      : collectionsFifthtest6000
-     * @tc.desc      : Int16Array.keys 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest6000
+     * @tc.number SUB_COOLLECTIONFIFTH_6000
+     * @tc.desc   Int16Array.keys 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1478,12 +1478,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_6100
-     * @tc.name      : collectionsFifthtest6100
-     * @tc.desc      : Int16Array keys 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest6100
+     * @tc.number SUB_COOLLECTIONFIFTH_6100
+     * @tc.desc   Int16Array keys 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1507,12 +1507,12 @@ export default function collectionsFifthtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONFIFTH_6200
-     * @tc.name      : collectionsFifthtest6200
-     * @tc.desc      : Int16Array.values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsFifthtest6200
+     * @tc.number SUB_COOLLECTIONFIFTH_6200
+     * @tc.desc   Int16Array.values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsFifthtest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

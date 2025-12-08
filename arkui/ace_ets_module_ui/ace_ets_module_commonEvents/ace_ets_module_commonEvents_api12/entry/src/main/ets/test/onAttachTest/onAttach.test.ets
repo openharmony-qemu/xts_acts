@@ -47,12 +47,12 @@ export default function onAttachTest() {
     });
 
     /**
-     * @tc.number    onAttachTest_0010
-     * @tc.name      onAttachTest_0010
-     * @tc.desc      api: onAttach
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   onAttachTest_0010
+     * @tc.number onAttachTest_0010
+     * @tc.desc   api: onAttach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onAttachTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('onAttachTest_0010 START');
@@ -69,12 +69,12 @@ export default function onAttachTest() {
     });
 
     /**
-     * @tc.number    onDetachTest_0020
-     * @tc.name      onDetachTest_0020
-     * @tc.desc      api: onDetach
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   onDetachTest_0020
+     * @tc.number onDetachTest_0020
+     * @tc.desc   api: onDetach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onDetachTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('onDetachTest_0020 START');

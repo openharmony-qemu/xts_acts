@@ -41,12 +41,12 @@ export default function localizedTextPadding() {
     });
 
     /**
-     * @tc.number    localizedTextPadding_0100
-     * @tc.name      localizedTextPadding_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   localizedTextPadding_0100
+     * @tc.number localizedTextPadding_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('localizedTextPadding_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('localizedTextPadding_0100 START');
@@ -62,12 +62,12 @@ export default function localizedTextPadding() {
       done();
     });
     /**
-     * @tc.number    localizedTextPadding_0200
-     * @tc.name      localizedTextPadding_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   localizedTextPadding_0200
+     * @tc.number localizedTextPadding_0200
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('localizedTextPadding_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('localizedTextPadding_0200 START');

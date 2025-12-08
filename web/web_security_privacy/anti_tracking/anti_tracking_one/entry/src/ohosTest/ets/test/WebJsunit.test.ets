@@ -39,10 +39,13 @@ export default function webJsunit() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_001
-     *tc.name userAgent
-     *tc.desic Sets the Web's user agent
+    /**
+     * @tc.name   userAgent
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_001
+     * @tc.desc   userAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('userAgent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitUserAgent";

@@ -61,12 +61,12 @@ export default function TransitionEdgeTest() {
     });
 
     /**
+     * @tc.name   TransitionEdgeTest_001
      * @tc.number TransitionEdgeTest_001
-     * @tc.name TransitionEdgeTest_001
-     * @tc.desc test TransitionEdge
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test TransitionEdge
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TransitionEdgeTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[TransitionEdgeTest_001] START');

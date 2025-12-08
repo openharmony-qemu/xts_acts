@@ -49,10 +49,12 @@ export default function addParallelGestureTest1() {
 
 
     /**
-     * @tc.number    addParallelGestureTest1_0100
-     * @tc.name      addParallelGestureTest1_0100
-     * @tc.desc      Test addParallelGesture
-     * @tc.level     Level 2
+     * @tc.name   addParallelGestureTest1_0100
+     * @tc.number addParallelGestureTest1_0100
+     * @tc.desc   Test addParallelGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addParallelGestureTest1_0100', Level.LEVEL0, async (done: Function) => {
       console.info('addParallelGestureTest1_0100 START');

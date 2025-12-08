@@ -24,14 +24,14 @@ const ARKUI_ERROR_CODE_CAPI_INIT_ERROR = 500;
 
 export default function NodeUtilsTest() {
   describe('NodeUtilsTest', () => {
-    /*
-      * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutSize_0100
-      * @tc.name       : testOHArkUINodeUtilsGetLayoutSize0100
-      * @tc.desc       : testing OH_ArkUI_NodeUtils_GetLayoutSize interface
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
-      */
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetLayoutSize0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutSize_0100
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetLayoutSize interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsGetLayoutSize0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -46,14 +46,14 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutSize_0200
-       * @tc.name       : testOHArkUINodeUtilsGetLayoutSize0200
-       * @tc.desc       : testing OH_ArkUI_NodeUtils_GetLayoutSize interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetLayoutSize0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutSize_0200
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetLayoutSize interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsGetLayoutSize0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -68,14 +68,14 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
-      * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPosition_0100
-      * @tc.name       : testOHArkUINodeUtilsGetLayoutPosition0100
-      * @tc.desc       : testing OH_ArkUI_NodeUtils_GetLayoutPosition interface
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
-      */
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetLayoutPosition0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPosition_0100
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetLayoutPosition interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsGetLayoutPosition0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -90,14 +90,14 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPosition_0200
-       * @tc.name       : testOHArkUINodeUtilsGetLayoutPosition0200
-       * @tc.desc       : testing OH_ArkUI_NodeUtils_GetLayoutPosition interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetLayoutPosition0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPosition_0200
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetLayoutPosition interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsGetLayoutPosition0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -112,14 +112,14 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
-      * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInWindow_0100
-      * @tc.name       : testOHArkUINodeUtilsGetLayoutPositionInWindow0100
-      * @tc.desc       : testing OH_ArkUI_NodeUtils_GetLayoutPositionInWindow interface
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
-      */
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetLayoutPositionInWindow0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInWindow_0100
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetLayoutPositionInWindow interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsGetLayoutPositionInWindow0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -134,14 +134,14 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInWindow_0200
-       * @tc.name       : testOHArkUINodeUtilsGetLayoutPositionInWindow0200
-       * @tc.desc       : testing OH_ArkUI_NodeUtils_GetLayoutPositionInWindow interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetLayoutPositionInWindow0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInWindow_0200
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetLayoutPositionInWindow interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsGetLayoutPositionInWindow0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -156,14 +156,14 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
-      * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInScreen_0100
-      * @tc.name       : testOHArkUINodeUtilsGetLayoutPositionInScreen0100
-      * @tc.desc       : testing OH_ArkUI_NodeUtils_GetLayoutPositionInScreen interface
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
-      */
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetLayoutPositionInScreen0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInScreen_0100
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetLayoutPositionInScreen interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsGetLayoutPositionInScreen0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -178,14 +178,14 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInScreen_0200
-       * @tc.name       : testOHArkUINodeUtilsGetLayoutPositionInScreen0200
-       * @tc.desc       : testing OH_ArkUI_NodeUtils_GetLayoutPositionInScreen interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetLayoutPositionInScreen0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInScreen_0200
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetLayoutPositionInScreen interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsGetLayoutPositionInScreen0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -199,13 +199,13 @@ export default function NodeUtilsTest() {
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
         }
       })
-    /*
-      * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInGlobalDisplay_0100
-      * @tc.name       : testOHArkUINodeUtilsGetLayoutPositionInGlobalDisplay0100
-      * @tc.desc       : testing OH_ArkUI_NodeUtils_GetLayoutPositionInGlobalDisplay interface
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetLayoutPositionInGlobalDisplay0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInGlobalDisplay_0100
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetLayoutPositionInGlobalDisplay interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetLayoutPositionInGlobalDisplay0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -221,14 +221,14 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInGlobalDisplay_0200
-       * @tc.name       : testOHArkUINodeUtilsGetLayoutPositionInGlobalDisplay0200
-       * @tc.desc       : testing OH_ArkUI_NodeUtils_GetLayoutPositionInGlobalDisplay interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetLayoutPositionInGlobalDisplay0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetLayoutPositionInGlobalDisplay_0200
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetLayoutPositionInGlobalDisplay interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsGetLayoutPositionInGlobalDisplay0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -243,14 +243,14 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
-      * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetPositionWithTranslateInWindow_0100
-      * @tc.name       : testOHArkUINodeUtilsGetPositionWithTranslateInWindow0100
-      * @tc.desc       : testing OH_ArkUI_NodeUtils_GetPositionWithTranslateInWindow interface
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
-      */
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetPositionWithTranslateInWindow0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetPositionWithTranslateInWindow_0100
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetPositionWithTranslateInWindow interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsGetPositionWithTranslateInWindow0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -265,14 +265,14 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetPositionWithTranslateInWindow_0200
-       * @tc.name       : testOHArkUINodeUtilsGetPositionWithTranslateInWindow0200
-       * @tc.desc       : testing OH_ArkUI_NodeUtils_GetPositionWithTranslateInWindow interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetPositionWithTranslateInWindow0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetPositionWithTranslateInWindow_0200
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetPositionWithTranslateInWindow interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsGetPositionWithTranslateInWindow0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -287,14 +287,14 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
-      * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetPositionWithTranslateInScreen_0100
-      * @tc.name       : testOHArkUINodeUtilsGetPositionWithTranslateInScreen0100
-      * @tc.desc       : testing OH_ArkUI_NodeUtils_GetPositionWithTranslateInScreen interface
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
-      */
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetPositionWithTranslateInScreen0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetPositionWithTranslateInScreen_0100
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetPositionWithTranslateInScreen interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsGetPositionWithTranslateInScreen0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -309,14 +309,14 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetPositionWithTranslateInScreen_0200
-       * @tc.name       : testOHArkUINodeUtilsGetPositionWithTranslateInScreen0200
-       * @tc.desc       : testing OH_ArkUI_NodeUtils_GetPositionWithTranslateInScreen interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetPositionWithTranslateInScreen0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetPositionWithTranslateInScreen_0200
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetPositionWithTranslateInScreen interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsGetPositionWithTranslateInScreen0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -331,14 +331,14 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetCustomProperty_0100
-       * @tc.name       : testOHArkUINodeUtilsGetCustomProperty0100
-       * @tc.desc       : testing OH_ArkUI_NodeUtils_GetCustomProperty interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetCustomProperty0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetCustomProperty_0100
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetCustomProperty interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsGetCustomProperty0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -353,13 +353,13 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
-     * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetActiveChildrenInfo_0100
-     * @tc.name       : testOHArkUINodeUtilsGetActiveChildrenInfo0100
-     * @tc.desc       : testing OH_ArkUI_NodeUtils_GetActiveChildrenInfo interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetActiveChildrenInfo0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetActiveChildrenInfo_0100
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetActiveChildrenInfo interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetActiveChildrenInfo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -375,14 +375,14 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetActiveChildrenInfo_0200
-       * @tc.name       : testOHArkUINodeUtilsGetActiveChildrenInfo0200
-       * @tc.desc       : testing OH_ArkUI_NodeUtils_GetActiveChildrenInfo interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetActiveChildrenInfo0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetActiveChildrenInfo_0200
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetActiveChildrenInfo interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsGetActiveChildrenInfo0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -396,14 +396,14 @@ export default function NodeUtilsTest() {
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
         }
       })
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_SetCrossLanguageOption_0100
-       * @tc.name       : testOHArkUINodeUtilsSetCrossLanguageOption0100
-       * @tc.desc       : testing OH_ArkUI_NodeUtils_SetCrossLanguageOption interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUINodeUtilsSetCrossLanguageOption0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_SetCrossLanguageOption_0100
+     * @tc.desc   testing OH_ArkUI_NodeUtils_SetCrossLanguageOption interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsSetCrossLanguageOption0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -417,14 +417,14 @@ export default function NodeUtilsTest() {
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
         }
       })
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_SetCrossLanguageOption_0200
-       * @tc.name       : testOHArkUINodeUtilsSetCrossLanguageOption0200
-       * @tc.desc       : testing OH_ArkUI_NodeUtils_SetCrossLanguageOption interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUINodeUtilsSetCrossLanguageOption0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_SetCrossLanguageOption_0200
+     * @tc.desc   testing OH_ArkUI_NodeUtils_SetCrossLanguageOption interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsSetCrossLanguageOption0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -439,14 +439,14 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_GetCrossLanguageOption_0100
-       * @tc.name       : testOHArkUINodeUtilsGetCrossLanguageOption0100
-       * @tc.desc       : testing OH_ArkUI_NodeUtils_GetCrossLanguageOption interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetCrossLanguageOption0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_GetCrossLanguageOption_0100
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetCrossLanguageOption interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsGetCrossLanguageOption0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -461,14 +461,14 @@ export default function NodeUtilsTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_GetCrossLanguageOption_0200
-       * @tc.name       : testOHArkUINodeUtilsGetCrossLanguageOption0200
-       * @tc.desc       : testing OH_ArkUI_NodeUtils_GetCrossLanguageOption interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUINodeUtilsGetCrossLanguageOption0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NodeUtils_GetCrossLanguageOption_0200
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetCrossLanguageOption interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeUtilsGetCrossLanguageOption0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

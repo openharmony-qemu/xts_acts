@@ -34,12 +34,12 @@ export default function ActsLocationSwitchTest() {
     )
 
     /**
-     * @tc.number  : SUB_LocationKit_OH_Location_StartLocating_Test_0103
-     * @tc.name    : testLocationKitOH_Location_StartLocatingTest0103
-     * @tc.desc    : test OH_Location_StartLocating1.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testLocationKitOH_Location_StartLocatingTest0103
+     * @tc.number SUB_LocationKit_OH_Location_StartLocating_Test_0103
+     * @tc.desc   test OH_Location_StartLocating1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLocationKitOH_Location_StartLocatingTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -58,12 +58,12 @@ export default function ActsLocationSwitchTest() {
     )
 
     /**
-     * @tc.number  : SUB_LocationKit_OH_Location_StartLocating_Test_0104
-     * @tc.name    : testLocationKitOH_Location_StartLocatingTest0104
-     * @tc.desc    : test OH_Location_StartLocating1.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testLocationKitOH_Location_StartLocatingTest0104
+     * @tc.number SUB_LocationKit_OH_Location_StartLocating_Test_0104
+     * @tc.desc   test OH_Location_StartLocating1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLocationKitOH_Location_StartLocatingTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

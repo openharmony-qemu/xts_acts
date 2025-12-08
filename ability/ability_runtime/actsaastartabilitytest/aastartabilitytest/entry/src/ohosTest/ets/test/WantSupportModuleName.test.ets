@@ -116,14 +116,14 @@ async function executeShellCmd(cmd: string) {
 
 export default function wantSupportModuleNameTest() {
   describe('WantSupportModuleNameTest', () => {
-    /*
-     * @tc.number: SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0100
-     * @tc.name:  After adding the moduleName field, test whether the original ability can be pulled up properly by using want without the module name field
-     * @tc.desc:  Check start ability by bundle name and ability name
-     * @tc.level: 1
-     * @tc.size: MediumTest
-     * @tc.type: Function
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0100
+     * @tc.number SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0100
+     * @tc.desc   Check start ability by bundle name and ability name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0100", Level.LEVEL1, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0100';
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -147,14 +147,14 @@ export default function wantSupportModuleNameTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0200
-     * @tc.name:  After adding the moduleName field, test whether the want with the module name field can pull up the original ability normally
-     * @tc.desc: Check start ability by bundle name , ability name and module name
-     * @tc.level: 1
-     * @tc.size: MediumTest
-     * @tc.type: Function
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0200
+     * @tc.number SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0200
+     * @tc.desc   Check start ability by bundle name , ability name and module name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0200', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0200';
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -193,14 +193,14 @@ export default function wantSupportModuleNameTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0500
-     * @tc.name:  If there are multiple haps with the same bundleName and AbilityName in the test system, use want without module name to pull the ability to the foreground
-     * @tc.desc:  Check start different hap with same bundle name and ability name by the first one going background
-     * @tc.level: 3
-     * @tc.size: MediumTest
-     * @tc.type: Function
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0500
+     * @tc.number SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0500
+     * @tc.desc   Check start different hap with same bundle name and ability name by the first one going background
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0500", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0500';
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -256,15 +256,15 @@ export default function wantSupportModuleNameTest() {
       }
     })
 
-    /*
-    * @tc.number: SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0400
-    * @tc.name:  If there are multiple haps with the same bundleName and AbilityName in the system, use want without module name to determine whether the ability can be pulled
-    * @tc.desc:  Check start different hap with same bundle name and ability name by killing the first one
-    * @tc.level: 3
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    */
 
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0400
+     * @tc.number SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0400
+     * @tc.desc   SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0400", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0400';
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -325,14 +325,14 @@ export default function wantSupportModuleNameTest() {
       }
     })
 
-    /*
-    * @tc.number: SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0300
-    * @tc.name:  If there are multiple haps with the same bundleName and AbilityName in the system, you can use want without modulename to pull up the ability
-    * @tc.desc: Check start one of hap with same bundle name and ability name
-    * @tc.level: 1
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0300
+     * @tc.number SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0300
+     * @tc.desc   Check start one of hap with same bundle name and ability name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0300", Level.LEVEL1, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityBase_WantParam_WantSupportModuleName_0300';
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {

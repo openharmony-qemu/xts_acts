@@ -47,12 +47,12 @@ export default function postInputEvent() {
     });
 
     /**
-     * @tc.number    postInputEventTest_0010
-     * @tc.name      postInputEventTest_0010 test return true
-     * @tc.desc      ReactiveBuilderNode postInputEventTest Test
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   postInputEventTest_0010
+     * @tc.number postInputEventTest_0010
+     * @tc.desc   ReactiveBuilderNode postInputEventTest Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('postInputEventTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('postInputEventTest_0010 START');
@@ -67,12 +67,12 @@ export default function postInputEvent() {
     });
 
     /**
-     * @tc.number    postInputEventTest_0020
-     * @tc.name      postInputEventTest_0020
-     * @tc.desc      api postInputEvent test return false
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   postInputEventTest_0020
+     * @tc.number postInputEventTest_0020
+     * @tc.desc   api postInputEvent test return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('postInputEventTest_0020', Level.LEVEL1, async (done: Function) => {
       console.info('postInputEventTest_0020 START');

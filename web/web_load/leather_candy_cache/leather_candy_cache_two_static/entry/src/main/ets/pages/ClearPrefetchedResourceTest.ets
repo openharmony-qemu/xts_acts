@@ -28,39 +28,33 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import web_webview from '@ohos.web.webview'
-import { BusinessError, Callback } from '@ohos.base';
+import { BusinessError, Callback,RecordData } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
+
 
 @Entry
 @Component
 struct clearPrefetchedResourceTest {
   controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
   @State str: string = ''
-  @State fontSize: int = 13
 
   aboutToAppear() {
-    console.info('Entry aboutToAppear');
     let valueChangeEvent: emitter.InnerEvent = {
       eventId: 10,
       priority: emitter.EventPriority.LOW
     }
     emitter.on(valueChangeEvent, this.valueChangeCallBack)
-    console.info('Finish aboutToAppear' + this.valueChangeCallBack);
   }
 
   private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
-    console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
-      if (data && data['ACTION'] != null) {
-        console.info('Received ACTION vaclue: ' + data['ACTION']);
+      const data = eventData.data as Record<string, RecordData>;
+      if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
-        console.info('strValue has been updated to: ' + strValue);
         this.str = strValue;
-        console.info('this.str has been updated to: ' + this.str);
       }
     }
   }
@@ -94,7 +88,8 @@ struct clearPrefetchedResourceTest {
                   ],
                   'KeyX', 500);
                 Utils.emitEvent(true, 10110)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 Utils.emitEvent(error.code, 10110)
                 console.error(`${msg} prefetchResource ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -102,7 +97,8 @@ struct clearPrefetchedResourceTest {
                 try {
                   web_webview.WebviewController.clearPrefetchedResource(['KeyX']);
                   Utils.emitEvent(true, 10112)
-                } catch (err: BusinessError) {
+                } catch (err) {
+                  err = err as BusinessError;
                   Utils.emitEvent(err.code, 10112)
                   console.error(msg + 'clearPrefetchedResource error: ' + err.code + ' Message: ' + err.message);
                 }
@@ -116,9 +112,7 @@ struct clearPrefetchedResourceTest {
             }
           }
         })
-      
       Web({ src: 'resource://rawfile/index.html', controller: this.controller })
-	  .defaultFontSize(this.fontSize)
     }
   }
 }

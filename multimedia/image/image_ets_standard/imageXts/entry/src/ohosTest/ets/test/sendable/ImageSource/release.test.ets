@@ -60,12 +60,12 @@ export default function sendableImageSourceReleaseTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_SOURCE_IMAGE_SOURCE_RELEASE_001
-     * @tc.name      : imageSourceRelease_sendable_promise_001
-     * @tc.desc      : release
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSourceRelease_sendable_promise_001
+     * @tc.number IMAGE_SOURCE_IMAGE_SOURCE_RELEASE_001
+     * @tc.desc   release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSourceRelease_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSourceRelease_sendable_promise_001';
@@ -78,12 +78,12 @@ export default function sendableImageSourceReleaseTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_IMAGE_SOURCE_RELEASE_002
-     * @tc.name      : imageSourceRelease_sendable_promise_002
-     * @tc.desc      : release
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSourceRelease_sendable_promise_002
+     * @tc.number IMAGE_SOURCE_IMAGE_SOURCE_RELEASE_002
+     * @tc.desc   release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSourceRelease_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSourceRelease_sendable_promise_002';
@@ -96,12 +96,12 @@ export default function sendableImageSourceReleaseTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_IMAGE_SOURCE_RELEASE_003
-     * @tc.name      : imageSourceRelease_sendable_promise_003
-     * @tc.desc      : release
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSourceRelease_sendable_promise_003
+     * @tc.number IMAGE_SOURCE_IMAGE_SOURCE_RELEASE_003
+     * @tc.desc   release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSourceRelease_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSourceRelease_sendable_promise_003';

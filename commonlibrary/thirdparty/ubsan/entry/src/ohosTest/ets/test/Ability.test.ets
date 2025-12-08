@@ -33,12 +33,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_UBSAN_ALIGNMENT
-     * @tc.name       : testAlignment
-     * @tc.desc       : test alignment
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testAlignment
+     * @tc.number SUB_THIRDPARTY_UBSAN_ALIGNMENT
+     * @tc.desc   test alignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignment', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result: number = ubsan.misAlign();
@@ -46,12 +46,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_UBSAN_BOOL
-     * @tc.name       : testBool
-     * @tc.desc       : test bool
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBool
+     * @tc.number SUB_THIRDPARTY_UBSAN_BOOL
+     * @tc.desc   test bool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBool', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.undefinedBool();
@@ -59,12 +59,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_UBSAN_NULL
-     * @tc.name       : testNull
-     * @tc.desc       : test null
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNull
+     * @tc.number SUB_THIRDPARTY_UBSAN_NULL
+     * @tc.desc   test null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.nullSanitize(0);
@@ -72,12 +72,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_UBSAN_BOUNDS
-     * @tc.name       : testBounds
-     * @tc.desc       : test bounds
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBounds
+     * @tc.number SUB_THIRDPARTY_UBSAN_BOUNDS
+     * @tc.desc   test bounds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.bounds(5);
@@ -85,12 +85,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_UBSAN_DIVIDEBYZERO
-     * @tc.name       : testUBSanDiv0
-     * @tc.desc       : test integerDivBy0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUBSanDiv0
+     * @tc.number SUB_THIRDPARTY_UBSAN_DIVIDEBYZERO
+     * @tc.desc   test integerDivBy0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUBSanDiv0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.integerDivBy0(0);
@@ -98,12 +98,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_UBSAN_POINTEROVERFLOW
-     * @tc.name       : testPointerOverflow
-     * @tc.desc       : test PointerOverflow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPointerOverflow
+     * @tc.number SUB_THIRDPARTY_UBSAN_POINTEROVERFLOW
+     * @tc.desc   test PointerOverflow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPointerOverflow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.pointerOverflow(4);
@@ -111,12 +111,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_UBSAN_ENUM
-     * @tc.name       : testEnum
-     * @tc.desc       : test enum
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testEnum
+     * @tc.number SUB_THIRDPARTY_UBSAN_ENUM
+     * @tc.desc   test enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEnum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.enumSan(42);
@@ -124,12 +124,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_UBSAN_FLOATCASTOVERFLOW
-     * @tc.name       : testFloatCastOverflow
-     * @tc.desc       : test floatCastOverflow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testFloatCastOverflow
+     * @tc.number SUB_THIRDPARTY_UBSAN_FLOATCASTOVERFLOW
+     * @tc.desc   test floatCastOverflow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFloatCastOverflow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.floatCastOverflow();
@@ -137,12 +137,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_UBSAN_VLABOUND
-     * @tc.name       : testVlaBound
-     * @tc.desc       : test VlaBound
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testVlaBound
+     * @tc.number SUB_THIRDPARTY_UBSAN_VLABOUND
+     * @tc.desc   test VlaBound
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testVlaBound', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.vlaBound(-1);
@@ -150,12 +150,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_UBSAN_SIGNED_INTEGER_OVERFLOW
-     * @tc.name       : testSignedIntegerOverflow
-     * @tc.desc       : test SignedIntegerOverflow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testSignedIntegerOverflow
+     * @tc.number SUB_THIRDPARTY_UBSAN_SIGNED_INTEGER_OVERFLOW
+     * @tc.desc   test SignedIntegerOverflow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSignedIntegerOverflow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.signedIntegerOverflow(1073741824);
@@ -163,12 +163,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_UBSAN_VPTR
-     * @tc.name       : testVptr
-     * @tc.desc       : test Vptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testVptr
+     * @tc.number SUB_THIRDPARTY_UBSAN_VPTR
+     * @tc.desc   test Vptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testVptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.vptrCheck();
@@ -176,12 +176,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_NONNULLATTRIBUTE
-     * @tc.name       : testNonnullAttribute
-     * @tc.desc       : test nonnullAttribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNonnullAttribute
+     * @tc.number SUB_THIRDPARTY_NONNULLATTRIBUTE
+     * @tc.desc   test nonnullAttribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNonnullAttribute', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.nonnullAttribute(0);
@@ -189,12 +189,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_RETURNNONNULLATTRIBUTE
-     * @tc.name       : testReturnNonnullAttribute
-     * @tc.desc       : test returnNonnullAttribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testReturnNonnullAttribute
+     * @tc.number SUB_THIRDPARTY_RETURNNONNULLATTRIBUTE
+     * @tc.desc   test returnNonnullAttribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testReturnNonnullAttribute', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.returnNonnullAttribute(0);
@@ -202,12 +202,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_UBSAN_SHIFT_BASE
-     * @tc.name       : testShiftBase
-     * @tc.desc       : test ShiftBase
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testShiftBase
+     * @tc.number SUB_THIRDPARTY_UBSAN_SHIFT_BASE
+     * @tc.desc   test ShiftBase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShiftBase', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.shiftBase(32);
@@ -215,12 +215,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_UBSAN_SHIFT_BASE_NEGATIVE
-     * @tc.name       : testShiftBaseNegative
-     * @tc.desc       : test ShiftBaseNegative
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testShiftBaseNegative
+     * @tc.number SUB_THIRDPARTY_UBSAN_SHIFT_BASE_NEGATIVE
+     * @tc.desc   test ShiftBaseNegative
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShiftBaseNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.shiftBaseNegative(-2);
@@ -228,25 +228,25 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_UBSAN_SHIFT_EXPONENT
-     * @tc.name       : testShiftExponent
-     * @tc.desc       : test ShiftExponent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testShiftExponent
+     * @tc.number SUB_THIRDPARTY_UBSAN_SHIFT_EXPONENT
+     * @tc.desc   test ShiftExponent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShiftExponent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.shiftExponent(32);
       expect(result).assertEqual(1);
     });
 
-      /**
-     * @tc.number     : SUB_THIRDPARTY_UBSAN_UNREACHABLE
-     * @tc.name       : testUnreachable
-     * @tc.desc       : test Unreachable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testUnreachable
+     * @tc.number SUB_THIRDPARTY_UBSAN_UNREACHABLE
+     * @tc.desc   test Unreachable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUnreachable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.unreachable(1);
@@ -254,12 +254,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_UBSAN_SHIFT_EXPONENT
-     * @tc.name       : testShiftExponentNegative
-     * @tc.desc       : test ShiftExponentNegative
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testShiftExponentNegative
+     * @tc.number SUB_THIRDPARTY_UBSAN_SHIFT_EXPONENT
+     * @tc.desc   test ShiftExponentNegative
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShiftExponentNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.shiftExponentNegative(-2);
@@ -267,12 +267,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_UBSAN_SHIFT_EXPONENT_BOUND
-     * @tc.name       : testShiftExponentBound
-     * @tc.desc       : test ShiftExponentBound
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testShiftExponentBound
+     * @tc.number SUB_THIRDPARTY_UBSAN_SHIFT_EXPONENT_BOUND
+     * @tc.desc   test ShiftExponentBound
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShiftExponentBound', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.shiftExponentBound(32);
@@ -280,12 +280,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_UBSAN_NO_RETURN
-     * @tc.name       : testNoReturn
-     * @tc.desc       : test NoReturn
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNoReturn
+     * @tc.number SUB_THIRDPARTY_UBSAN_NO_RETURN
+     * @tc.desc   test NoReturn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNoReturn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = ubsan.noReturn(1);

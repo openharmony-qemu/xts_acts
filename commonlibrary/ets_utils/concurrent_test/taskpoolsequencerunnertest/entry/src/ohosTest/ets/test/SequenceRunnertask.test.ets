@@ -83,12 +83,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_3000
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_3000
-     * @tc.name Sequence_Runner_TaskTest_3000
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sequence_Runner_TaskTest_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_3000'
@@ -148,12 +148,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_3100
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_3100
-     * @tc.name Sequence_Runner_TaskTest_3100
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sequence_Runner_TaskTest_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_3100'
@@ -203,12 +203,12 @@ export default function sequenceRunnerTaskTest() {
 
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_1000
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_1000
-     * @tc.name Sequence_Runner_TaskTest_1000
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -252,12 +252,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_1100
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_1100
-     * @tc.name Sequence_Runner_TaskTest_1100
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -298,12 +298,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_1200
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_1200
-     * @tc.name Sequence_Runner_TaskTest_1200
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -360,12 +360,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_1300
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_1300
-     * @tc.name Sequence_Runner_TaskTest_1300
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -426,12 +426,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_1400
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_1400
-     * @tc.name Sequence_Runner_TaskTest_1400
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -488,12 +488,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_1500
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_1500
-     * @tc.name Sequence_Runner_TaskTest_1500
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -549,12 +549,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_1600
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_1600
-     * @tc.name Sequence_Runner_TaskTest_1600
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -601,12 +601,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_1700
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_1700
-     * @tc.name Sequence_Runner_TaskTest_1700
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -653,12 +653,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_1800
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_1800
-     * @tc.name Sequence_Runner_TaskTest_1800
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -700,12 +700,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_1900
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_1900
-     * @tc.name Sequence_Runner_TaskTest_1900
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -754,12 +754,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_2000
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_2000
-     * @tc.name Sequence_Runner_TaskTest_2000
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_2000'
@@ -794,12 +794,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_2100
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_2100
-     * @tc.name Sequence_Runner_TaskTest_2100
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_2100'
@@ -837,12 +837,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_2200
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_2200
-     * @tc.name Sequence_Runner_TaskTest_2200
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_2200'
@@ -878,12 +878,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_2300
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_2300
-     * @tc.name Sequence_Runner_TaskTest_2300
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_2300'
@@ -919,12 +919,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_2400
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_2400
-     * @tc.name Sequence_Runner_TaskTest_2400
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_2400'
@@ -961,12 +961,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_2500
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_2500
-     * @tc.name Sequence_Runner_TaskTest_2500
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_2500'
@@ -1001,12 +1001,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_2600
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_2600
-     * @tc.name Sequence_Runner_TaskTest_2600
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_2600'
@@ -1042,12 +1042,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_2700
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_2700
-     * @tc.name Sequence_Runner_TaskTest_2700
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_2700'
@@ -1084,12 +1084,12 @@ export default function sequenceRunnerTaskTest() {
 
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_2800
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_2800
-     * @tc.name Sequence_Runner_TaskTest_2800
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_2800'
@@ -1126,12 +1126,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_2900
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_2900
-     * @tc.name Sequence_Runner_TaskTest_2900
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_2900'
@@ -1169,12 +1169,12 @@ export default function sequenceRunnerTaskTest() {
 
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_3200
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_3200
-     * @tc.name Sequence_Runner_TaskTest_3200
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_3200'
@@ -1212,12 +1212,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_3300
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_3300
-     * @tc.name Sequence_Runner_TaskTest_3300
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_3300'
@@ -1255,12 +1255,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_3400
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_3400
-     * @tc.name Sequence_Runner_TaskTest_3400
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_3400'
@@ -1298,12 +1298,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_3500
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_3500
-     * @tc.name Sequence_Runner_TaskTest_3500
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_3500'
@@ -1341,12 +1341,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_3600
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_3600
-     * @tc.name Sequence_Runner_TaskTest_3600
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_3600'
@@ -1384,12 +1384,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_3700
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_3700
-     * @tc.name Sequence_Runner_TaskTest_3700
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_3700'
@@ -1427,12 +1427,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_3800
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_3800
-     * @tc.name Sequence_Runner_TaskTest_3800
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_3800'
@@ -1470,12 +1470,12 @@ export default function sequenceRunnerTaskTest() {
     })
 
     /**
+     * @tc.name   Sequence_Runner_TaskTest_3900
      * @tc.number SUB_SEQUENCE_RUNNER_TASK_TEST_3900
-     * @tc.name Sequence_Runner_TaskTest_3800
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sequence_Runner_TaskTest_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const Tag: string = 'Sequence_Runner_TaskTest_3900'

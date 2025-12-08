@@ -116,14 +116,13 @@ export default function buttonThemeTest() {
     });
 
     /**
-      * @tc.number    : ActsButtonThemeColors_0100
-      * @tc.name      : ActsButtonThemeColors_0100
-      * @tc.desc      : Check button system colors ButtonStyleEx.NORMAL
-     *                  after changing the theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsButtonThemeColors_0100
+     * @tc.number ActsButtonThemeColors_0100
+     * @tc.desc   Check button system colors ButtonStyleEx.NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ActsButtonThemeColors_0100', Level.LEVEL2, () => {
       const CASE: string = 'ActsButtonThemeColors_0100';
       console.info(`${SUITE} ${CASE} START`);
@@ -142,14 +141,13 @@ export default function buttonThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsButtonThemeColors_0200
-      * @tc.name      : ActsButtonThemeColors_0200
-      * @tc.desc      : Check button system colors ButtonStyleEx.EMPHASIZED
-      *                 after changing the theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsButtonThemeColors_0200
+     * @tc.number ActsButtonThemeColors_0200
+     * @tc.desc   Check button system colors ButtonStyleEx.EMPHASIZED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ActsButtonThemeColors_0200', Level.LEVEL2, () => {
       const CASE: string = 'ActsButtonThemeColors_0200';
       console.info(`${SUITE} ${CASE} START`);
@@ -168,14 +166,13 @@ export default function buttonThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-        * @tc.number    : ActsButtonThemeColors_0300
-        * @tc.name      : ActsButtonThemeColors_0300
-        * @tc.desc      : Check button system colors ButtonStyleEx.TEXTUAL
-        *                 after changing the theme
-        * @tc.level     : Level 2
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+     * @tc.name   ActsButtonThemeColors_0300
+     * @tc.number ActsButtonThemeColors_0300
+     * @tc.desc   Check button system colors ButtonStyleEx.TEXTUAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ActsButtonThemeColors_0300', Level.LEVEL2, () => {
       const CASE: string = 'ActsButtonThemeColors_0300';
       console.info(`${SUITE} ${CASE} START`);
@@ -194,14 +191,13 @@ export default function buttonThemeTest() {
     });
 
     /**
-      * @tc.number    : ActsButtonThemeColors_0400
-      * @tc.name      : ActsButtonThemeColors_0400
-      * @tc.desc      : Check button withTheme colors ButtonStyleEx.NORMAL
-      *                 after changing the theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsButtonThemeColors_0400
+     * @tc.number ActsButtonThemeColors_0400
+     * @tc.desc   Check button withTheme colors ButtonStyleEx.NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ActsButtonThemeColors_0400', Level.LEVEL2, () => {
       const CASE: string = 'ActsButtonThemeColors_0400';
       console.info(`${SUITE} ${CASE} START`);
@@ -221,14 +217,13 @@ export default function buttonThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsButtonThemeColors_0500
-      * @tc.name      : ActsButtonThemeColors_0500
-      * @tc.desc      : Check button withTheme colors ButtonStyleEx.EMPHASIZED
-      *                 after changing the theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsButtonThemeColors_0500
+     * @tc.number ActsButtonThemeColors_0500
+     * @tc.desc   Check button withTheme colors ButtonStyleEx.EMPHASIZED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ActsButtonThemeColors_0500', Level.LEVEL2, () => {
       const CASE: string = 'ActsButtonThemeColors_0500';
       console.info(`${SUITE} ${CASE} START`);
@@ -247,13 +242,13 @@ export default function buttonThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsButtonThemeColors_0600
-      * @tc.name      : ActsButtonThemeColors_0600
-      * @tc.desc      : Check button withTheme colors ButtonStyleEx.TEXTUAL
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsButtonThemeColors_0600
+     * @tc.number ActsButtonThemeColors_0600
+     * @tc.desc   Check button withTheme colors ButtonStyleEx.TEXTUAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ActsButtonThemeColors_0600', Level.LEVEL2, () => {
       const CASE: string = 'ActsButtonThemeColors_0600';
       console.info(`${SUITE} ${CASE} START`);
@@ -273,14 +268,13 @@ export default function buttonThemeTest() {
       changeTheme = true;
     });
     /**
-      * @tc.number    : ActsButtonThemeColors_0700
-      * @tc.name      : ActsButtonThemeColors_0700
-      * @tc.desc      : Check button withTheme colors ButtonStyleEx.NORMAL
-      *                 after changing the theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsButtonThemeColors_0700
+     * @tc.number ActsButtonThemeColors_0700
+     * @tc.desc   Check button withTheme colors ButtonStyleEx.NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsButtonThemeColors_0700', Level.LEVEL0, async () => {
       const CASE: string = 'ActsButtonThemeColors_0700';
       console.info(`${SUITE} ${CASE} START`);
@@ -301,14 +295,13 @@ export default function buttonThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsButtonThemeColors_0800
-      * @tc.name      : ActsButtonThemeColors_0800
-      * @tc.desc      : Check button withTheme colors ButtonStyleEx.EMPHASIZED
-      *                 after changing the theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsButtonThemeColors_0800
+     * @tc.number ActsButtonThemeColors_0800
+     * @tc.desc   Check button withTheme colors ButtonStyleEx.EMPHASIZED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ActsButtonThemeColors_0800', Level.LEVEL2, () => {
       const CASE: string = 'ActsButtonThemeColors_0800';
       console.info(`${SUITE} ${CASE} START`);
@@ -329,14 +322,13 @@ export default function buttonThemeTest() {
 
 
     /**
-      * @tc.number    : ActsButtonThemeColors_0900
-      * @tc.name      : ActsButtonThemeColors_0900
-      * @tc.desc      : Check button withTheme colors ButtonStyleEx.TEXTUAL
-      *                 after changing the theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsButtonThemeColors_0900
+     * @tc.number ActsButtonThemeColors_0900
+     * @tc.desc   Check button withTheme colors ButtonStyleEx.TEXTUAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ActsButtonThemeColors_0900', Level.LEVEL2, () => {
       const CASE: string = 'ActsButtonThemeColors_0900';
       console.info(`${SUITE} ${CASE} START`);

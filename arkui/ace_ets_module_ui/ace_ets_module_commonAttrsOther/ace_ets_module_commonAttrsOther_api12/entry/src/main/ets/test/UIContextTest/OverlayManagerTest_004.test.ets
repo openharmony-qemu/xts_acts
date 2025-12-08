@@ -46,12 +46,12 @@ export default function OverlayManagerTest_004() {
     });
 
     /**
-     * @tc.number    hideAllComponentContents_004
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   hideComponentContent_004
+     * @tc.number hideAllComponentContents_004
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('hideComponentContent_004', Level.LEVEL0, async (done: Function) => {
       console.info('[hideComponentContent_004] START');

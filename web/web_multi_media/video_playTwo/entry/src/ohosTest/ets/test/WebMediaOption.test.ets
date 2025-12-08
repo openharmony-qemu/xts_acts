@@ -60,14 +60,14 @@ export default function webMediaOption() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_MEDIAOPTIONS_0100
-    * @tc.name        : testMediaOptions001
-    * @tc.desc        : test mediaOptions single instance
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testMediaOptions001
+     * @tc.number SUB_WEB_MEDIAOPTIONS_0100
+     * @tc.desc   test mediaOptions single instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testMediaOptions001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitMediaOptions001", 300600)
       Utils.registerBaseEvent("testMediaOptions001", false, 300610, done,

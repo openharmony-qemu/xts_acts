@@ -56,12 +56,12 @@ export default function motionBlurTest() {
     });
 
     /**
+     * @tc.name   motionBlurTest_0100
      * @tc.number motionBlurTest_0100
-     * @tc.name motionBlurTest_0100
-     * @tc.desc api: motionBlur
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api: motionBlur
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('motionBlurTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('motionBlurTest_0100 START');

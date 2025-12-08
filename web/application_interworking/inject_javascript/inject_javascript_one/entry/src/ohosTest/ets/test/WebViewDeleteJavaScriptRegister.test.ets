@@ -17,12 +17,14 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Test
 import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
+import { Driver, ON } from '@ohos.UiTest';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 let emitKey = "";
 
@@ -45,7 +47,7 @@ export default function ActsAceDeleteJavaScriptRegister() {
       } catch (err) {
         console.error('push index page error:' + err);
       }
-      await waitForComponent("deleteJavaScriptRegister_withOutRefresh");
+      await driver.waitForComponent(ON.id("deleteJavaScriptRegister_withOutRefresh"), 10000);
       done()
     });
     beforeEach(async (done: Function) => {
@@ -59,12 +61,12 @@ export default function ActsAceDeleteJavaScriptRegister() {
 
 
     /**
+     * @tc.name   testWebView_deleteJavaScriptRegister_0001
      * @tc.number SUB_ACE_WEB_deleteJavaScriptRegister_SDK_0001
-     * @tc.name testWebView_deleteJavaScriptRegister_0001
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_deleteJavaScriptRegister_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0001", '"success"', 10072, done,
@@ -79,12 +81,12 @@ export default function ActsAceDeleteJavaScriptRegister() {
     });
 
     /**
+     * @tc.name   testWebView_deleteJavaScriptRegister_0002
      * @tc.number SUB_ACE_WEB_deleteJavaScriptRegister_SDK_0002
-     * @tc.name testWebView_deleteJavaScriptRegister_0002
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_deleteJavaScriptRegister_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0002",
@@ -102,12 +104,12 @@ export default function ActsAceDeleteJavaScriptRegister() {
 
 
     /**
+     * @tc.name   testWebView_deleteJavaScriptRegister_0003
      * @tc.number SUB_ACE_WEB_deleteJavaScriptRegister_SDK_0003
-     * @tc.name testWebView_deleteJavaScriptRegister_0003
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_deleteJavaScriptRegister_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0003",
@@ -120,12 +122,12 @@ export default function ActsAceDeleteJavaScriptRegister() {
 
 
     /**
+     * @tc.name   testWebView_deleteJavaScriptRegister_0004
      * @tc.number SUB_ACE_WEB_deleteJavaScriptRegister_SDK_0004
-     * @tc.name testWebView_deleteJavaScriptRegister_0004
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_deleteJavaScriptRegister_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0004",

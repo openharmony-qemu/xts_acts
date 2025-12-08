@@ -220,12 +220,12 @@ export default function VideoOutputTest() {
     });
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_VIDEO_001
-     * @tc.name      : start_video_output_callback_001
-     * @tc.desc      : No abnormal scenarios-start()-callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   start_video_output_callback_001
+     * @tc.number CAMERA_OUTPUT_VIDEO_001
+     * @tc.desc   No abnormal scenarios-start()-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('start_video_output_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'start_video_output_callback_001';
@@ -265,12 +265,12 @@ export default function VideoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_VIDEO_002
-     * @tc.name      : start_video_output_promise_001
-     * @tc.desc      : No abnormal scenarios-start()-promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   start_video_output_promise_001
+     * @tc.number CAMERA_OUTPUT_VIDEO_002
+     * @tc.desc   No abnormal scenarios-start()-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('start_video_output_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'start_video_output_promise_001';
@@ -308,12 +308,12 @@ export default function VideoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_VIDEO_003
-     * @tc.name      : stop_video_output_callback_001
-     * @tc.desc      : No abnormal scenarios-stop()-callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   stop_video_output_callback_001
+     * @tc.number CAMERA_OUTPUT_VIDEO_003
+     * @tc.desc   No abnormal scenarios-stop()-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stop_video_output_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'stop_video_output_callback_001';
@@ -353,12 +353,12 @@ export default function VideoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_VIDEO_004
-     * @tc.name      : stop_video_output_promise_001
-     * @tc.desc      : No abnormal scenarios-stop()-promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   stop_video_output_promise_001
+     * @tc.number CAMERA_OUTPUT_VIDEO_004
+     * @tc.desc   No abnormal scenarios-stop()-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stop_video_output_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'stop_video_output_promise_001';
@@ -396,12 +396,12 @@ export default function VideoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_VIDEO_005
-     * @tc.name      : on_error_listen_video_output_001
-     * @tc.desc      : No abnormal scenarios-listen on error
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   on_error_listen_video_output_001
+     * @tc.number CAMERA_OUTPUT_VIDEO_005
+     * @tc.desc   No abnormal scenarios-listen on error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_error_listen_video_output_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_error_listen_video_output_001';
@@ -434,12 +434,12 @@ export default function VideoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_VIDEO_006
-     * @tc.name      : off_error_listen_video_output_001
-     * @tc.desc      : No abnormal scenarios-listen on error
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   off_error_listen_video_output_001
+     * @tc.number CAMERA_OUTPUT_VIDEO_006
+     * @tc.desc   No abnormal scenarios-listen on error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('off_error_listen_video_output_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'off_error_listen_video_output_001';
@@ -473,12 +473,12 @@ export default function VideoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_VIDEO_007
-     * @tc.name      : on_error_listen_video_output_abnormal_001
-     * @tc.desc      : No config, only listen error -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   on_error_listen_video_output_abnormal_001
+     * @tc.number CAMERA_OUTPUT_VIDEO_007
+     * @tc.desc   No config, only listen error -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_error_listen_video_output_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_error_listen_video_output_abnormal_001';
@@ -510,12 +510,12 @@ export default function VideoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_VIDEO_008
-     * @tc.name      : off_error_listen_video_output_abnormal_001
-     * @tc.desc      : No config, only listen error -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   off_error_listen_video_output_abnormal_001
+     * @tc.number CAMERA_OUTPUT_VIDEO_008
+     * @tc.desc   No config, only listen error -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('off_error_listen_video_output_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'off_error_listen_video_output_abnormal_001';
@@ -547,12 +547,12 @@ export default function VideoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_VIDEO_009
-     * @tc.name      : release_video_output_callback_001
-     * @tc.desc      : video output release-callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   release_video_output_callback_001
+     * @tc.number CAMERA_OUTPUT_VIDEO_009
+     * @tc.desc   video output release-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_video_output_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_video_output_callback_001';
@@ -596,12 +596,12 @@ export default function VideoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_VIDEO_010
-     * @tc.name      : release_video_output_promise_001
-     * @tc.desc      : video output release-promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   release_video_output_promise_001
+     * @tc.number CAMERA_OUTPUT_VIDEO_010
+     * @tc.desc   video output release-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_video_output_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_video_output_promise_001';

@@ -20,6 +20,7 @@ import common from '@ohos.app.ability.common';
 import hilog from '@ohos.hilog';
 import hdrCapability from '@ohos.graphics.hdrCapability';
 import display from '@ohos.display';
+import taskpool from '@ohos.taskpool';
 
 const TEST_DECODE_LARGE_IMAGE_JPEG = "big-30118x30118.jpg";
 const TEST_DECODE_LARGE_IMAGE_HEIC = "big-30000x30000.heic";
@@ -45,6 +46,18 @@ let testContext: common.UIAbilityContext;
 let filesDir: string|undefined;
 let cacheDir: string|undefined;
 
+class Logger {
+  testNum: string;
+
+  constructor(testNum: string) {
+    this.testNum = testNum;
+  }
+
+  log(msg: string) {
+    hilog.info(0x0000, "pixelMapNdkDecodeLargeImageTest", 'case: %{public}s msg:%{public}s', this.testNum, msg);
+  }
+}
+
 let sleep = async (delay: number): Promise<void> => {
   return new Promise((resolve, _) => {
     setTimeout(async () => {
@@ -52,6 +65,124 @@ let sleep = async (delay: number): Promise<void> => {
     }, delay);
   });
 };
+
+async function decodeLargeImageTestInTaskPool(
+  logger: Logger,
+  fileName: string,
+  desiredInfo: ndkTest.decodeOptions,
+  expectInfo: ndkTest.decodeOptions
+): Promise<boolean> {
+  if (!isSupportHdr) {
+    logger.log("device is not support hdr");
+    return true;
+  }
+
+  logger.log("taskpool start");
+  try {
+    let filePath = filesDir + "/" + fileName;
+    let task = new taskpool.Task(DecodeLargeImagePixelTest, filePath, desiredInfo, expectInfo);
+    let ret = (await taskpool.execute(task)) as boolean;
+    logger.log("taskpool ret: " + ret);
+    return ret;
+  } catch (error) {
+    logger.log("taskpool: taskpool execute error is " + error);
+    return false;
+  }
+}
+
+@Concurrent
+async function DecodeLargeImagePixelTest(
+  filePath: string,
+  desiredInfo: ndkTest.decodeOptions,
+  expectInfo: ndkTest.decodeOptions
+): Promise<boolean> {
+  console.log("start first time");
+  // 模拟异步操作
+  return await new Promise<boolean>((resolve) => {
+    setTimeout(() => {
+      console.log('asynchronous blocking: filePath: ' + filePath);
+
+      let imageInfo = ndkTest.CreatePixelMapAndGetInfo(filePath, desiredInfo);
+      console.log("asynchronous blocking: imageInfo is: " + JSON.stringify(imageInfo));
+
+      if (typeof imageInfo === 'object') {
+        let ret = (imageInfo.width  === expectInfo.width)  &&
+                  (imageInfo.height === expectInfo.height) &&
+                  (imageInfo.pixelFormat === expectInfo.pixelFormat);
+        console.log("asynchronous blocking: 333 " + ret);
+        console.log("end asynchronous blocking");
+        resolve(ret);
+      } else {
+        console.error("createPixelMapAndGetInfo result is not object!");
+        resolve(false);
+      }
+    }, 15000);
+  });
+}
+
+async function decodeLargeImageForDMATestInTaskPool(
+  logger: Logger,
+  fileName: string,
+  desiredInfo: ndkTest.decodeOptions,
+  expectInfo: ndkTest.decodeOptions,
+  allocatorType: image.AllocatorType = image.AllocatorType.AUTO
+): Promise<boolean> {
+  if (!isSupportHdr) {
+    logger.log("device is not support hdr");
+    return true;
+  }
+
+  logger.log("taskpool start");
+  try {
+    const filePath = filesDir + "/" + fileName;
+    const task = new taskpool.Task(
+      DecodeLargeImageForDMAPixelTest,
+      filePath,
+      desiredInfo,
+      expectInfo,
+      allocatorType
+    );
+    const ret = (await taskpool.execute(task)) as boolean;
+    logger.log("taskpool ret: " + ret);
+    return ret;
+  } catch (error) {
+    logger.log("taskpool: taskpool execute error is " + error);
+    return false;
+  }
+}
+
+@Concurrent
+async function DecodeLargeImageForDMAPixelTest(
+  filePath: string,
+  desiredInfo: ndkTest.decodeOptions,
+  expectInfo: ndkTest.decodeOptions,
+  allocatorType: image.AllocatorType
+): Promise<boolean> {
+  console.log("start first time");
+  // 模拟异步操作
+  return await new Promise<boolean>((resolve) => {
+    setTimeout(() => {
+      console.log('asynchronous blocking: filePath: ' + filePath);
+      console.log('asynchronous blocking: allocatorType: ' + allocatorType);
+      console.log('asynchronous blocking: desiredInfo: ' + JSON.stringify(desiredInfo));
+
+      const imageInfo = ndkTest.CreatePixelMapForDMAAndGetInfo(filePath, allocatorType, desiredInfo);
+      console.log('asynchronous blocking: imageInfo is: ' + JSON.stringify(imageInfo));
+
+      if (typeof imageInfo === 'object') {
+        const ret = (imageInfo.width  === expectInfo.width)  &&
+                    (imageInfo.height === expectInfo.height) &&
+                    (imageInfo.pixelFormat === expectInfo.pixelFormat);
+        console.log('asynchronous blocking: 333 ' + ret);
+        console.log('end asynchronous blocking');
+        resolve(ret);
+      } else {
+        console.error('CreatePixelMapForDMAAndGetInfo result is not object!');
+        resolve(false);
+      }
+    }, 15000);
+  });
+}
 
 export default function pixelMapNdkDecodeLargeImageTest() {
   describe('pixelMapNdkDecodeLargeImageTest', () => {
@@ -68,18 +199,6 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     afterEach(async () => {
       await sleep(2000);
     });
-
-    class Logger {
-      testNum: string;
-  
-      constructor(testNum: string) {
-        this.testNum = testNum;
-      }
-  
-      log(msg: string) {
-        hilog.info(0x0000, "pixelMapNdkDecodeLargeImageTest", 'case: %{public}s msg:%{public}s', this.testNum, msg);
-      }
-    }
 
     const DecodeLargeImageTest = (
       logger: Logger,
@@ -166,17 +285,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     }
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0100
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { size: { width: 1124, height: 1400 }, x: 0, y: 0 },
-     *                       desiredPixelFormat: RGBA_8888,
-     *                       cropAndScaleStrategy: CROP_FIRST
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0100");
@@ -200,17 +314,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0200
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { size: { width: 1124, height: 1400 }, x: 0, y: 0 },
-     *                       desiredPixelFormat: RGB_565,
-     *                       cropAndScaleStrategy: SCALE_FIRST
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0200");
@@ -234,15 +343,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0300
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0300
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0300");
@@ -265,15 +371,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0400
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0400
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0400
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0400");
@@ -296,15 +399,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0500
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0500
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: NV21
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0500");
@@ -327,15 +427,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0600
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0600
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: NV12
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0600
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0600', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0600");
@@ -358,14 +455,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0700
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0700
-     * @tc.desc        1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096}
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0700
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0700', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_0700");
@@ -387,15 +482,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_ERROR_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_ERROR_0100
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 4096, height: 4096 }
-     *                       desiredPixelFormat: RGB_888
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_ERROR_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_ERROR_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_ERROR_0100");
@@ -418,14 +510,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_ERROR_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_ERROR_0200
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 30000, height: 30000 }
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_ERROR_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_ERROR_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_ERROR_0200");
@@ -447,12 +537,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_ERROR_0300
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_ERROR_0300
-     * @tc.desc        1.create pixelmap object by imageSource, do not specify AllocatorType type
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_ERROR_0300
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_ERROR_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_JPEG_ERROR_0300");
@@ -464,15 +554,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0100
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0100");
@@ -499,15 +586,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0200
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0200");
@@ -534,15 +618,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0300
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0300
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0300");
@@ -569,15 +650,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0400
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0400
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: NV21
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0400
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0400");
@@ -604,15 +682,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0500
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0500
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: NV12
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0500");
@@ -639,14 +714,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0600
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0600
-     * @tc.desc        1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096}
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0600
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0600', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0600");
@@ -672,17 +745,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0700
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0700
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
-     *                       desiredPixelFormat: RGBA_8888,
-     *                       cropAndScaleStrategy: CROP_FIRST
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0700
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0700', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_0700");
@@ -711,15 +779,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0100
-     * @tc.desc        1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       pixelFormat: RGB_888
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0100
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0100");
@@ -742,14 +807,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0200
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 30000, height: 30000 }
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0200");
@@ -772,14 +835,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0300
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0300
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 4096, height: 4096 }
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0300");
@@ -807,12 +868,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0400
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0400
-     * @tc.desc        1.create pixelmap object by imageSource, do not specify AllocatorType type
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0400
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0400");
@@ -830,17 +891,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0500
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0500
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
-     *                       desiredPixelFormat: RGB_565,
-     *                       cropAndScaleStrategy: SCALE_FIRST
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_HEIC_ERROR_0500");
@@ -866,17 +922,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0100
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { x: 0, y: 0, width: 1124, height: 1400 },
-     *                       desiredPixelFormat: RGBA_8888,
-     *                       cropAndScaleStrategy: CROP_FIRST
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0100");
@@ -894,21 +945,18 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: RGBA_8888
       };
 
-      let ret = DecodeLargeImageForDMATest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, DMA);
+      let ret = await decodeLargeImageForDMATestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, DMA);
       expect(ret).assertTrue();
       done();
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0200
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGB_565
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0200");
@@ -924,21 +972,18 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: RGB_565
       };
 
-      let ret = DecodeLargeImageForDMATest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, DMA);
+      let ret = await decodeLargeImageForDMATestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, DMA);
       expect(ret).assertTrue();
       done();
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0300
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0300
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0300");
@@ -955,21 +1000,18 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: RGBA_8888
       };
 
-      let ret = DecodeLargeImageForDMATest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, SHARE_MEMORY);
+      let ret = await decodeLargeImageForDMATestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, SHARE_MEMORY);
       expect(ret).assertTrue();
       done();
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0400
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0400
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0400
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0400");
@@ -986,20 +1028,18 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: BGRA_8888
       };
 
-      let ret = DecodeLargeImageForDMATest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, SHARE_MEMORY);
+      let ret = await decodeLargeImageForDMATestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, SHARE_MEMORY);
       expect(ret).assertTrue();
       done();
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0500
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0500
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096}
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_0500");
@@ -1015,20 +1055,18 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: RGBA_8888
       };
 
-      let ret = DecodeLargeImageForDMATest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, AUTO);
+      let ret = await decodeLargeImageForDMATestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, AUTO);
       expect(ret).assertTrue();
       done();
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_ERROR_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_ERROR_0100
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096}
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_ERROR_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_ERROR_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_ERROR_0100");
@@ -1051,14 +1089,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_ERROR_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_ERROR_0200
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 30000, height: 30000 }
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_ERROR_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_ERROR_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_ERROR_0200");
@@ -1081,12 +1117,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_ERROR_0300
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_ERROR_0300
-     * @tc.desc        1.create pixelmap object by imageSource, do not specify AllocatorType type
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_ERROR_0300
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_ERROR_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_DMA_NATIVE_PNG_ERROR_0300");
@@ -1098,17 +1134,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0100
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { size: { width: 1124, height: 1400 }, x: 0, y: 0 },
-     *                       desiredPixelFormat: RGBA_8888,
-     *                       cropAndScaleStrategy: CROP_FIRST
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0100
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0100");
@@ -1132,17 +1163,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0200
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { size: { width: 1124, height: 1400 }, x: 0, y: 0 },
-     *                       desiredPixelFormat: RGB_565,
-     *                       cropAndScaleStrategy: SCALE_FIRST
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0200
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0200");
@@ -1166,15 +1192,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0300
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0300
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0300
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0300");
@@ -1197,15 +1220,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0400
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0400
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0400
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0400");
@@ -1228,15 +1248,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0500
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0500
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: NV21
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0500
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0500");
@@ -1259,15 +1276,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0600
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0600
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: NV12
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0600
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0600', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0600");
@@ -1290,14 +1304,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0700
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0700
-     * @tc.desc        1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096}
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0700
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0700', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_0700");
@@ -1319,15 +1331,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_ERROR_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_ERROR_0100
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 4096, height: 4096 }
-     *                       desiredPixelFormat: RGB_888
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_ERROR_0100
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_ERROR_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_ERROR_0100");
@@ -1345,14 +1354,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_ERROR_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_ERROR_0200
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 30000, height: 30000 }
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_ERROR_0200
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_ERROR_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_ERROR_0200");
@@ -1374,12 +1381,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_ERROR_0300
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_ERROR_0300
-     * @tc.desc        1.create pixelmap object by imageSource, do not specify AllocatorType type
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_ERROR_0300
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_ERROR_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_JPEG_ERROR_0300");
@@ -1391,15 +1398,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0100
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGB_565
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0100
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0100");
@@ -1427,15 +1431,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0200
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0200
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0200");
@@ -1463,15 +1464,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0300
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0300
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0300
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0300");
@@ -1499,15 +1497,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0400
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0400
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: NV21
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0400
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0400");
@@ -1535,15 +1530,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0500
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0500
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: NV12
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0500
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0500");
@@ -1571,14 +1563,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0600
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0600
-     * @tc.desc        1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096}
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0600
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0600', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0600");
@@ -1606,17 +1596,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
 
     
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0700
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0700
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
-     *                       desiredPixelFormat: RGBA_8888,
-     *                       cropAndScaleStrategy: CROP_FIRST
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0700
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0700', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_0700");
@@ -1646,15 +1631,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0100
-     * @tc.desc        1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       pixelFormat: RGB_888
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0100
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0100");
@@ -1678,14 +1660,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0200
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 30000, height: 30000 }
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0200
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0200");
@@ -1708,12 +1688,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0300
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0300
-     * @tc.desc        1.create pixelmap object by imageSource, do not specify AllocatorType type
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0300
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0300");
@@ -1731,17 +1711,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0400
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0400
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
-     *                       desiredPixelFormat: RGB_565,
-     *                       cropAndScaleStrategy: SCALE_FIRST
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0400
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_HEIC_ERROR_0400");
@@ -1767,17 +1742,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0100
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { x: 0, y: 0, width: 1500, height: 1500 },
-     *                       desiredPixelFormat: RGBA_8888,
-     *                       cropAndScaleStrategy: CROP_FIRST
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0100
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0100");
@@ -1795,21 +1765,18 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: RGBA_8888
       };
 
-      let ret = DecodeLargeImageTest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
+      let ret = await decodeLargeImageTestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
       expect(ret).assertTrue();
       done();
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0200
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGB_565
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0200
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0200");
@@ -1825,21 +1792,18 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: RGB_565
       };
 
-      let ret = DecodeLargeImageTest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
+      let ret = await decodeLargeImageTestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
       expect(ret).assertTrue();
       done();
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0300
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0300
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0300
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0300");
@@ -1856,21 +1820,18 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: RGBA_8888
       };
 
-      let ret = DecodeLargeImageTest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
+      let ret = await decodeLargeImageTestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
       expect(ret).assertTrue();
       done();
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0400
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0400
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0400
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0400");
@@ -1887,20 +1848,18 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: BGRA_8888
       };
 
-      let ret = DecodeLargeImageTest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
+      let ret = await decodeLargeImageTestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
       expect(ret).assertTrue();
       done();
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0500
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0500
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096}
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_0500");
@@ -1916,20 +1875,18 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: RGBA_8888
       };
 
-      let ret = DecodeLargeImageTest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
+      let ret = await decodeLargeImageTestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
       expect(ret).assertTrue();
       done();
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_ERROR_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_ERROR_0100
-     * @tc.desc        1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096}
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_ERROR_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_ERROR_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_ERROR_0100");
@@ -1952,14 +1909,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_ERROR_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_ERROR_0200
-     * @tc.desc        1.create pixelmap object by imageSource
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 30000, height: 30000 }
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_ERROR_0200
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_ERROR_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_ERROR_0200");
@@ -1982,13 +1937,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_ERROR_0300
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_ERROR_0300
-     * @tc.desc        1.create pixelmap object by imageSource, do not specify AllocatorType type
-     * @tc.size        MediumTest
-     * 
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_ERROR_0300
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_ERROR_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_LARGE_IMAGE_NATIVE_PNG_ERROR_0300");
@@ -2000,13 +1954,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0100
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_SONY_A350.ARW
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0100
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_SONY_A350.ARW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0100");
@@ -2023,13 +1976,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0200
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_SONY_A900.ARW
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0200
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_SONY_A900.ARW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ARW_0200");
@@ -2046,13 +1998,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0300
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_CANON_G9.CR2
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0300
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_CANON_G9.CR2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0300");
@@ -2069,13 +2020,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0400
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_CANON_G10.CR2
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0400
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_CANON_G10.CR2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR2_0400");
@@ -2092,13 +2042,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0500
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_NIKON_D90.NEF
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0500
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_NIKON_D90.NEF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0500");
@@ -2115,13 +2064,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0600
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_NIKON_D3300.NEF
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0600
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_NIKON_D3300.NEF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0600', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NEF_0600");
@@ -2138,13 +2086,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0700
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0700
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_NIKON_COOLPIX_P340.NRW
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0700
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_NIKON_COOLPIX_P340.NRW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0700', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0700");
@@ -2161,13 +2108,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0800
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0800
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_NIKON_P6000_GPS.NRW
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0800
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_NIKON_P6000_GPS.NRW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0800', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_NRW_0800");
@@ -2184,13 +2130,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_0900
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_0900
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_OLYMPUS_E3.ORF
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_0900
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_OLYMPUS_E3.ORF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_0900', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_0900");
@@ -2207,13 +2152,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_1000
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_1000
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_OLYMPUS_E410.ORF
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_1000
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_OLYMPUS_E410.ORF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_1000', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_ORF_1000");
@@ -2230,13 +2174,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1100
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_PENTAX_STAR_DL.PEF
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1100
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_PENTAX_STAR_DL.PEF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1100");
@@ -2253,13 +2196,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1200
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_PENTAX_STARISTD_SRGB.PEF
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1200
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_PENTAX_STARISTD_SRGB.PEF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_PEF_1200");
@@ -2276,13 +2218,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1300
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_FUJI_S6500FD.RAF
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1300
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_FUJI_S6500FD.RAF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1300");
@@ -2299,13 +2240,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1400
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_FUJI_S9500_SRGB.RAF
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1400
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_FUJI_S9500_SRGB.RAF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RAF_1400");
@@ -2322,13 +2262,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1500
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_PANASONIC_G1.RW2
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1500
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_PANASONIC_G1.RW2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1500");
@@ -2345,13 +2284,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1600
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_PANASONIC_LX3.RW2
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1600
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_PANASONIC_LX3.RW2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1600', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_RW2_1600");
@@ -2368,13 +2306,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_SRW_1700
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_SRW_1700
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_SAMSUNG_EX2F.SRW
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_SRW_1700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_SRW_1700
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_SAMSUNG_EX2F.SRW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_SRW_1700', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_SRW_1700");
@@ -2391,13 +2328,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1800
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1800
-     * @tc.desc      : 1.create pixelmap object by imageSource -- 023A9785.CR3
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1800
+     * @tc.desc   1.create pixelmap object by imageSource -- 023A9785.CR3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1800', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1800");
@@ -2414,13 +2350,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1900
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1900
-     * @tc.desc      : 1.create pixelmap object by imageSource -- 023A9867.CR3
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1900
+     * @tc.desc   1.create pixelmap object by imageSource -- 023A9867.CR3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1900', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_RAW_CR3_1900");
@@ -2437,13 +2372,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0100
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_SONY_A350.ARW
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0100
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_SONY_A350.ARW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0100");
@@ -2460,13 +2394,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0200
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_SONY_A900.ARW
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0200
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_SONY_A900.ARW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ARW_0200");
@@ -2483,13 +2416,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0300
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_CANON_G9.CR2
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0300
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_CANON_G9.CR2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0300");
@@ -2506,13 +2438,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0400
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_CANON_G10.CR2
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0400
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_CANON_G10.CR2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR2_0400");
@@ -2529,13 +2460,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0500
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_NIKON_D90.NEF
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0500
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_NIKON_D90.NEF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0500");
@@ -2552,13 +2482,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0600
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_NIKON_D3300.NEF
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0600
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_NIKON_D3300.NEF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0600', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NEF_0600");
@@ -2575,13 +2504,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0700
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0700
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_NIKON_COOLPIX_P340.NRW
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0700
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_NIKON_COOLPIX_P340.NRW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0700', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0700");
@@ -2598,13 +2526,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0800
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0800
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_NIKON_P6000_GPS.NRW
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0800
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_NIKON_P6000_GPS.NRW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0800', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_NRW_0800");
@@ -2621,13 +2548,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_0900
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_0900
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_OLYMPUS_E3.ORF
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_0900
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_OLYMPUS_E3.ORF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_0900', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_0900");
@@ -2644,13 +2570,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_1000
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_1000
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_OLYMPUS_E410.ORF
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_1000
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_OLYMPUS_E410.ORF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_1000', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_ORF_1000");
@@ -2667,13 +2592,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1100
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_PENTAX_STAR_DL.PEF
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1100
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_PENTAX_STAR_DL.PEF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1100");
@@ -2690,13 +2614,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1200
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_PENTAX_STARISTD_SRGB.PEF
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1200
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_PENTAX_STARISTD_SRGB.PEF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_PEF_1200");
@@ -2713,13 +2636,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1300
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_FUJI_S6500FD.RAF
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1300
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_FUJI_S6500FD.RAF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1300");
@@ -2736,13 +2658,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1400
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_FUJI_S9500_SRGB.RAF
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1400
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_FUJI_S9500_SRGB.RAF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RAF_1400");
@@ -2759,13 +2680,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1500
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_PANASONIC_G1.RW2
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1500
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_PANASONIC_G1.RW2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1500");
@@ -2782,13 +2702,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1600
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_PANASONIC_LX3.RW2
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1600
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_PANASONIC_LX3.RW2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1600', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_RW2_1600");
@@ -2805,13 +2724,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_SRW_1700
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_SRW_1700
-     * @tc.desc      : 1.create pixelmap object by imageSource -- RAW_SAMSUNG_EX2F.SRW
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_SRW_1700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_SRW_1700
+     * @tc.desc   1.create pixelmap object by imageSource -- RAW_SAMSUNG_EX2F.SRW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_SRW_1700', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_SRW_1700");
@@ -2828,13 +2746,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1800
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1800
-     * @tc.desc      : 1.create pixelmap object by imageSource -- 023A9785.CR3
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1800
+     * @tc.desc   1.create pixelmap object by imageSource -- 023A9785.CR3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1800', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1800");
@@ -2851,13 +2768,12 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1900
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1900
-     * @tc.desc      : 1.create pixelmap object by imageSource -- 023A9867.CR3
-     *                 2.get imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1900
+     * @tc.desc   1.create pixelmap object by imageSource -- 023A9867.CR3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1900', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_NATIVE_DMA_RAW_CR3_1900");

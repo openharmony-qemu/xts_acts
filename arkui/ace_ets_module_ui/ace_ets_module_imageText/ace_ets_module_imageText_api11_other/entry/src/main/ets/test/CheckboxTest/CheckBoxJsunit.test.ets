@@ -42,6 +42,14 @@ export default function checkBoxJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   checkBoxJsunit_0100
+     * @tc.number checkBoxJsunit_0100
+     * @tc.desc   checkBoxJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('checkBoxJsunit_0100', Level.LEVEL1, async (done: Function) => {
        console.info('checkBoxJsunit_0100 START');
        await CommonFunc.sleep(3000);
@@ -60,6 +68,14 @@ export default function checkBoxJsunit() {
        done(); 
     });
 
+   /**
+    * @tc.name   checkBoxJsunit_0200
+    * @tc.number checkBoxJsunit_0200
+    * @tc.desc   checkBoxJsunit_0200
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('checkBoxJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('checkBoxJsunit_0200 START');
       await CommonFunc.sleep(1000);
@@ -81,6 +97,14 @@ export default function checkBoxJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   checkBoxJsunit_0300
+     * @tc.number checkBoxJsunit_0300
+     * @tc.desc   checkBoxJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('checkBoxJsunit_0300', Level.LEVEL1, async (done: Function) => {
       console.info('checkBoxJsunit_0300 START');
       await CommonFunc.sleep(2000);
@@ -95,6 +119,14 @@ export default function checkBoxJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   checkBoxJsunit_0400
+     * @tc.number checkBoxJsunit_0400
+     * @tc.desc   checkBoxJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('checkBoxJsunit_0400', Level.LEVEL1, async (done: Function) => {
       console.info('checkBoxJsunit_0400 START');
       await CommonFunc.sleep(1000);
@@ -113,6 +145,14 @@ export default function checkBoxJsunit() {
       done();
     });
     
+    /**
+     * @tc.name   checkBoxJsunit_0500
+     * @tc.number checkBoxJsunit_0500
+     * @tc.desc   checkBoxJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('checkBoxJsunit_0500', Level.LEVEL1, async (done: Function) => {
       console.info('checkBoxJsunit_0300 START');
       await CommonFunc.sleep(2000);
@@ -127,6 +167,14 @@ export default function checkBoxJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   checkBoxJsunit_0600
+     * @tc.number checkBoxJsunit_0600
+     * @tc.desc   checkBoxJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('checkBoxJsunit_0600', Level.LEVEL1, async (done: Function) => {
       console.info('checkBoxJsunit_0600 START');
       await CommonFunc.sleep(2000);
@@ -141,6 +189,14 @@ export default function checkBoxJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   checkBoxJsunit_0700
+     * @tc.number checkBoxJsunit_0700
+     * @tc.desc   checkBoxJsunit_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('checkBoxJsunit_0700', Level.LEVEL1, async (done: Function) => {
       console.info('checkBoxJsunit_0700 START');
       await CommonFunc.sleep(1000);

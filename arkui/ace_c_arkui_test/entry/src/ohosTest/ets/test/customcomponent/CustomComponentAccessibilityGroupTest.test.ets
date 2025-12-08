@@ -26,52 +26,52 @@ export default function customComponentAccessibilityGroupTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ACCESSIBILITYGROUP_0100
-     * @tc.name       : testCustomComponentAccessibilityGroup001
-     * @tc.desc       : testing accessibilityGroup for CustomComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentAccessibilityGroup001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ACCESSIBILITYGROUP_0100
+     * @tc.desc   testing accessibilityGroup for CustomComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAccessibilityGroup001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAccessibilityGroup001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ACCESSIBILITYGROUP_0200
-     * @tc.name       : testCustomComponentAccessibilityGroup002
-     * @tc.desc       : testing accessibilityGroup for CustomComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentAccessibilityGroup002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ACCESSIBILITYGROUP_0200
+     * @tc.desc   testing accessibilityGroup for CustomComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAccessibilityGroup002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAccessibilityGroup002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ACCESSIBILITYGROUP_0300
-     * @tc.name       : testCustomComponentAccessibilityGroup003
-     * @tc.desc       : testing accessibilityGroup for CustomComponent with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentAccessibilityGroup003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ACCESSIBILITYGROUP_0300
+     * @tc.desc   testing accessibilityGroup for CustomComponent with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAccessibilityGroup003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAccessibilityGroup003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ACCESSIBILITYGROUP_0400
-     * @tc.name       : testCustomComponentAccessibilityGroup004
-     * @tc.desc       : testing accessibilityGroup for CustomComponent with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentAccessibilityGroup004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ACCESSIBILITYGROUP_0400
+     * @tc.desc   testing accessibilityGroup for CustomComponent with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAccessibilityGroup004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAccessibilityGroup004()).assertEqual(0)

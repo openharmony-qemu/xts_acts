@@ -82,12 +82,12 @@ export default function PasteboardUnifiedTest() {
     })
 
     /**
-     * @tc.name testSUBDistributedDataPasteboardApiCompatibility0100
+     * @tc.name   PasteboardSetUnifiedData_0100
      * @tc.number SUB_Pasteboard_Local_Fun_ApiCompatibility_1900
-     * @tc.desc setUnifiedData getUnifiedData interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   setUnifiedData getUnifiedData interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PasteboardSetUnifiedData_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let plainTextData = new unifiedDataChannel.UnifiedData();
@@ -128,12 +128,12 @@ export default function PasteboardUnifiedTest() {
     })
 
     /**
-     * @tc.name testSUBDistributedDataPasteboardApiCompatibility0200
+     * @tc.name   PasteboardSetUnifiedData_0200
      * @tc.number SUB_Pasteboard_Local_Fun_ApiCompatibility_2000
-     * @tc.desc setUnifiedDataSync getUnifiedDataSync interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   setUnifiedDataSync getUnifiedDataSync interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PasteboardSetUnifiedData_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let plainTextData = new unifiedDataChannel.UnifiedData();
@@ -175,12 +175,12 @@ export default function PasteboardUnifiedTest() {
     })
 
     /**
-     * @tc.name testSUBDistributedDataPasteboardApiCompatibility0300
+     * @tc.name   PasteboardSetUnifiedData_0300
      * @tc.number SUB_Pasteboard_Local_Fun_ApiCompatibility_2100
-     * @tc.desc setUnifiedData getUnifiedDataSync interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   setUnifiedData getUnifiedDataSync interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("PasteboardSetUnifiedData_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       let plainTextData = new unifiedDataChannel.UnifiedData();
@@ -220,12 +220,12 @@ export default function PasteboardUnifiedTest() {
     })
 
     /**
-     * @tc.name testSUBDistributedDataPasteboardApiCompatibility0400
+     * @tc.name   PasteboardSetUnifiedData_0400
      * @tc.number SUB_Pasteboard_Local_Fun_ApiCompatibility_2200
-     * @tc.desc setUnifiedDataSync getUnifiedData interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   setUnifiedDataSync getUnifiedData interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("PasteboardSetUnifiedData_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       let plainTextData = new unifiedDataChannel.UnifiedData();

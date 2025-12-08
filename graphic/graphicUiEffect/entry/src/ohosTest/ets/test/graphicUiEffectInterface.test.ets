@@ -24,12 +24,12 @@ export default function graphicUiEffectInterfaceTest() {
     beforeAll(async ()=> {
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICUIEFFECT_JS_API_001
-     * @tc.name      : testCreateFilter
-     * @tc.desc      : Filter instances are created to add multiple filter effects to the component.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCreateFilter
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICUIEFFECT_JS_API_001
+     * @tc.desc   Filter instances are created to add multiple filter effects to the component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreateFilter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =====testCreateFilter==== "

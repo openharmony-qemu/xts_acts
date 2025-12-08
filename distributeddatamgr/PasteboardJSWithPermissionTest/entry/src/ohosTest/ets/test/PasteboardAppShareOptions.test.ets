@@ -33,12 +33,12 @@ export default function PasteboardAppShareOptions() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0100
-     * @tc.name setAppShareOptions001
-     * @tc.desc PasteData setAppShareOptions inapp removeAppShareOption.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.desc   PasteData setAppShareOptions inapp removeAppShareOption.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0100 start ************')
@@ -62,12 +62,12 @@ export default function PasteboardAppShareOptions() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0200
-     * @tc.name setAppShareOptions002
-     * @tc.desc PasteData setAppShareOptions localDevice removeAppShareOption.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   PasteData setAppShareOptions localDevice removeAppShareOption.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0200 start ************')
@@ -92,12 +92,12 @@ export default function PasteboardAppShareOptions() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0300
-     * @tc.name setAppShareOptions003
-     * @tc.desc PasteData setAppShareOptions localDevice removeAppShareOption.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   PasteData setAppShareOptions localDevice removeAppShareOption.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0300 start ************')
@@ -122,12 +122,12 @@ export default function PasteboardAppShareOptions() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0400
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0400
-     * @tc.name setAppShareOptions004
-     * @tc.desc PasteData setAppShareOptions param undefined.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   PasteData setAppShareOptions param undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0400 start ************')
@@ -152,12 +152,12 @@ export default function PasteboardAppShareOptions() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0600
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0600
-     * @tc.name setAppShareOptions006
-     * @tc.desc PasteData setAppShareOptions inApp and crossDevice and remove
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   PasteData setAppShareOptions inApp and crossDevice and remove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0600 start ************')
@@ -190,12 +190,12 @@ export default function PasteboardAppShareOptions() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0800
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0800
-     * @tc.name setAppShareOptions008
-     * @tc.desc PasteData setAppShareOptions crossDevice and remove setAppShareOptions inApp and remove
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   PasteData setAppShareOptions crossDevice and remove setAppShareOptions inApp and remove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0800 start ************')
@@ -222,12 +222,12 @@ export default function PasteboardAppShareOptions() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0900
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0900
-     * @tc.name setAppShareOptions009
-     * @tc.desc PasteData setAppShareOptions localDevice and remove twice
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   PasteData setAppShareOptions localDevice and remove twice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_0900 start ************')
@@ -253,12 +253,12 @@ export default function PasteboardAppShareOptions() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1000
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1000
-     * @tc.name setAppShareOptions010
-     * @tc.desc PasteData setAppShareOptions inApp twice
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   PasteData setAppShareOptions inApp twice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1000 start ************')
@@ -283,12 +283,12 @@ export default function PasteboardAppShareOptions() {
     })
 
     /**
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1100
-     * @tc.name setAppShareOptions011
-     * @tc.desc PasteData removeAppShareOptions twice
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   PasteData removeAppShareOptions twice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteDataSetAppShareOptions_1100 start ************')

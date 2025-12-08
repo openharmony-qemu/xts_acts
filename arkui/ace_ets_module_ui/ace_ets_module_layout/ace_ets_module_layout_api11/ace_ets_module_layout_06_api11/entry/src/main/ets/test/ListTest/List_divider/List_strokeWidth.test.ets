@@ -64,9 +64,12 @@ export default function List_strokeWidth() {
 
 
     /**
+     * @tc.name   SUB_ACE_List_strokeWidth_0100
      * @tc.number SUB_ACE_List_strokeWidth_0100
-     * @tc.name testListItem
-     * @tc.desc Set strokeWidth to 10
+     * @tc.desc   Set strokeWidth to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_strokeWidth_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_strokeWidth_0100] START');

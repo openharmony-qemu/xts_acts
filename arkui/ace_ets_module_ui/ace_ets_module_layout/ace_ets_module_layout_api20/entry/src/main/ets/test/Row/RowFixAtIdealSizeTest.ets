@@ -45,6 +45,14 @@ export default function RowFixAtIdealSizeTest() {
     afterEach(async () => {
     });
     
+    /**
+     * @tc.name   RowFixAtIdealSizeTest_0100
+     * @tc.number RowFixAtIdealSizeTest_0100
+     * @tc.desc   RowFixAtIdealSizeTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RowFixAtIdealSizeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[RowFixAtIdealSizeTest_0100] START');
       let driver = await Driver.create()

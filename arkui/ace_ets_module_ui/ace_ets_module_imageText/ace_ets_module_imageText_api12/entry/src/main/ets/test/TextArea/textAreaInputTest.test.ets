@@ -45,10 +45,13 @@ export default function textAreaInputTest() {
       console.info("textAreaInputTest after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         textAreaInputTest0001
-     * @tc.desic        textAreaInputTest0001
+    /**
+     * @tc.name   textAreaInputTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   textAreaInputTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaInputTest0001',  Level.LEVEL0, async () => {
       let driver = Driver.create();
@@ -66,6 +69,11 @@ export default function textAreaInputTest() {
         let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);
         await button1?.click();
+        await CommonFunc.sleep(500);
+
+        let button2 = await driver.findComponent(ON.text('完成'));
+        await CommonFunc.sleep(500);
+        await button2?.click();
         await CommonFunc.sleep(500);
 
         await textArea1.longClick();

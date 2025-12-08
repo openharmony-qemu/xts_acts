@@ -69,12 +69,12 @@ export default function wifiSta() {
         })
 
         /**
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0037
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0037
-         * @tc.name SUB_Communication_WiFi_XTS_Sta_0037
-         * @tc.desc Test addDeviceConfig Sync API functionality.
-         * @tc.type Function
-         * @tc.size:MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test addDeviceConfig Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
             try {
@@ -131,13 +131,13 @@ export default function wifiSta() {
 	        done();
         })
 		
-		/**
+        /**
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0042
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0042
-         * @tc.name SUB_Communication_WiFi_XTS_Sta_0042
-         * @tc.desc Test addDeviceConfig Sync API functionality.
-         * @tc.type Function
-         * @tc.size:MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test addDeviceConfig Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
             try {
@@ -154,12 +154,12 @@ export default function wifiSta() {
         })
 
         /**
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0043
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0043
-         * @tc.name SUB_Communication_WiFi_XTS_Sta_0043
-         * @tc.desc Test addDeviceConfig Sync API functionality.
-         * @tc.type Function
-         * @tc.size:MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test addDeviceConfig Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
             let functionAddDeviceConfig= async ()=>{

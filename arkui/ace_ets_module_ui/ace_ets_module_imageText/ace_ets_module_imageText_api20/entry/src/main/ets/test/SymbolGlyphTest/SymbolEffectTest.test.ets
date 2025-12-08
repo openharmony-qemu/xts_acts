@@ -47,13 +47,13 @@ export default function SymbolEffectTest() {
       console.info("SymbolEffectTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_SYMBOL_GLYPH_EFFECT_API_0001
-    * @tc.name         SymbolEffectTest0001
-    * @tc.desc         test symbolEffect ReplaceSymbolEffect SEQUENTIAL  0
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   SymbolEffectTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_SYMBOL_GLYPH_EFFECT_API_0001
+     * @tc.desc   test symbolEffect ReplaceSymbolEffect SEQUENTIAL  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SymbolEffectTest0001', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
@@ -68,14 +68,14 @@ export default function SymbolEffectTest() {
       done();
     });
 
-    /*
-   * @tc.number       SUB_ACE_BASIC_ETS_SYMBOL_GLYPH_EFFECT_API_0002
-   * @tc.name         SymbolEffectTest0002
-   * @tc.desc         test symbolEffect ReplaceSymbolEffect CROSS_FADE 0
-   * @tc.size         MediumTest
-   * @tc.type         Function
-   * @tc.level        3
-    */
+    /**
+     * @tc.name   SymbolEffectTest0002
+     * @tc.number SUB_ACE_BASIC_ETS_SYMBOL_GLYPH_EFFECT_API_0002
+     * @tc.desc   test symbolEffect ReplaceSymbolEffect CROSS_FADE 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SymbolEffectTest0002', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
       console.info('SymbolEffectTest0002 START');
@@ -89,14 +89,14 @@ export default function SymbolEffectTest() {
       done();
     });
 
-    /*
-   * @tc.number       SUB_ACE_BASIC_ETS_SYMBOL_GLYPH_EFFECT_API_0003
-   * @tc.name         SymbolEffectTest0003
-   * @tc.desc         test symbolEffect ReplaceSymbolEffect SLASH_OVERLAY  0
-   * @tc.size         MediumTest
-   * @tc.type         Function
-   * @tc.level        3
-    */
+    /**
+     * @tc.name   SymbolEffectTest0003
+     * @tc.number SUB_ACE_BASIC_ETS_SYMBOL_GLYPH_EFFECT_API_0003
+     * @tc.desc   test symbolEffect ReplaceSymbolEffect SLASH_OVERLAY  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SymbolEffectTest0003', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
       console.info('SymbolEffectTest0003 START');
@@ -110,14 +110,14 @@ export default function SymbolEffectTest() {
       done();
     });
 
-    /*
-   * @tc.number       SUB_ACE_BASIC_ETS_SYMBOL_GLYPH_EFFECT_API_0004
-   * @tc.name         SymbolEffectTest0004
-   * @tc.desc         test symbolEffect ReplaceSymbolEffect SEQUENTIAL  1
-   * @tc.size         MediumTest
-   * @tc.type         Function
-   * @tc.level        3
-    */
+    /**
+     * @tc.name   SymbolEffectTest0004
+     * @tc.number SUB_ACE_BASIC_ETS_SYMBOL_GLYPH_EFFECT_API_0004
+     * @tc.desc   test symbolEffect ReplaceSymbolEffect SEQUENTIAL  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SymbolEffectTest0004', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
       console.info('SymbolEffectTest0004 START');
@@ -135,14 +135,14 @@ export default function SymbolEffectTest() {
       done();
     });
 
-    /*
-   * @tc.number       SUB_ACE_BASIC_ETS_SYMBOL_GLYPH_EFFECT_API_0005
-   * @tc.name         SymbolEffectTest0005
-   * @tc.desc         test symbolEffect ReplaceSymbolEffect CROSS_FADE 1
-   * @tc.size         MediumTest
-   * @tc.type         Function
-   * @tc.level        3
-    */
+    /**
+     * @tc.name   SymbolEffectTest0005
+     * @tc.number SUB_ACE_BASIC_ETS_SYMBOL_GLYPH_EFFECT_API_0005
+     * @tc.desc   test symbolEffect ReplaceSymbolEffect CROSS_FADE 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SymbolEffectTest0005', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
       console.info('SymbolEffectTest0005 START');
@@ -160,14 +160,14 @@ export default function SymbolEffectTest() {
       done();
     });
 
-    /*
-  * @tc.number       SUB_ACE_BASIC_ETS_SYMBOL_GLYPH_EFFECT_API_0006
-  * @tc.name         SymbolEffectTest0006
-  * @tc.desc         test symbolEffect ReplaceSymbolEffect SLASH_OVERLAY  1
-  * @tc.size         MediumTest
-  * @tc.type         Function
-  * @tc.level        3
-   */
+    /**
+     * @tc.name   SymbolEffectTest0006
+     * @tc.number SUB_ACE_BASIC_ETS_SYMBOL_GLYPH_EFFECT_API_0006
+     * @tc.desc   test symbolEffect ReplaceSymbolEffect SLASH_OVERLAY  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SymbolEffectTest0006', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
       console.info('SymbolEffectTest0006 START');

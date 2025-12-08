@@ -34,10 +34,13 @@ export default function AccountTest() {
         })
 
         /**
-        * @tc.number     ActsDistributedAccountDeviceId_0100
-        * @tc.name       Test query the distribruted id by callback.
-        * @tc.desc       Test distributedAccount.queryOsAccountDistributedInfo API functionality by callback.
-        */
+         * @tc.name   ActsDistributedAccountDeviceId_0100
+         * @tc.number ActsDistributedAccountDeviceId_0100
+         * @tc.desc   Test distributedAccount.queryOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsDistributedAccountDeviceId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done){
             console.info('====>ActsDistributedAccountDeviceId_0100 start====')
             try {
@@ -75,10 +78,13 @@ export default function AccountTest() {
         })
 
         /**
-        * @tc.number     SUB_Account_distributedAccount_JS_API_0100
-        * @tc.name       Test distributedAccount.getDistributedAccountAbility.
-        * @tc.desc      Test distributedAccount.getDistributedAccountAbility API functionality.
-        */
+         * @tc.name   account_getDistributedAccountAbility_test
+         * @tc.number SUB_Account_distributedAccount_JS_API_0100
+         * @tc.desc   Test distributedAccount.getDistributedAccountAbility API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('account_getDistributedAccountAbility_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('====>account_getDistributedAccountAbility_test start====')
             try {
@@ -98,10 +104,13 @@ export default function AccountTest() {
         })
 
         /**
-        * @tc.number     SUB_Account_distributedAccount_JS_API_0200
-        * @tc.name       Test distributedAccount.queryOsAccountDistributedInfo.
-        * @tc.desc       Test distributedAccount.queryOsAccountDistributedInfo API functionality.
-        */
+         * @tc.name   account_queryOsAccountDistributedInfo_test001
+         * @tc.number SUB_Account_distributedAccount_JS_API_0200
+         * @tc.desc   Test distributedAccount.queryOsAccountDistributedInfo API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('account_queryOsAccountDistributedInfo_test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             console.info('====>account_queryOsAccountDistributedInfo_test001 start====')
             try {
@@ -120,10 +129,13 @@ export default function AccountTest() {
         })
 
         /**
-        * @tc.number     SUB_Account_distributedAccount_JS_API_0300
-        * @tc.name       Test distributedAccount.queryOsAccountDistributedInfo by callback.
-        * @tc.desc       Test distributedAccount.queryOsAccountDistributedInfo API functionality by callback.
-        */
+         * @tc.name   account_queryOsAccountDistributedInfo_test002
+         * @tc.number SUB_Account_distributedAccount_JS_API_0300
+         * @tc.desc   Test distributedAccount.queryOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('account_queryOsAccountDistributedInfo_test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             console.info('====>account_queryOsAccountDistributedInfo_test002 start')
             try {
@@ -144,10 +156,13 @@ export default function AccountTest() {
         })
 
         /**
-        * @tc.number     SUB_Account_distributedAccount_JS_API_0400
-        * @tc.name       Test distributedAccount.updateOsAccountDistributedInfo.
-        * @tc.desc       Test distributedAccount.updateOsAccountDistributedInfo API functionality.
-        */
+         * @tc.name   account_updateOsAccountDistributedInfo_test001
+         * @tc.number SUB_Account_distributedAccount_JS_API_0400
+         * @tc.desc   Test distributedAccount.updateOsAccountDistributedInfo API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('account_updateOsAccountDistributedInfo_test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             console.info('====>account_updateOsAccountDistributedInfo_test001 start====')
             const accountAbility = account.getDistributedAccountAbility()
@@ -183,10 +198,13 @@ export default function AccountTest() {
         })
 
         /**
-        * @tc.number     SUB_Account_distributedAccount_JS_API_0500
-        * @tc.name       Test distributedAccount.updateOsAccountDistributedInfo by callback.
-        * @tc.desc       Test distributedAccount.updateOsAccountDistributedInfo API functionality by callback.
-        */
+         * @tc.name   account_updateOsAccountDistributedInfo_test002
+         * @tc.number SUB_Account_distributedAccount_JS_API_0500
+         * @tc.desc   Test distributedAccount.updateOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('account_updateOsAccountDistributedInfo_test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async function (done)  {
             console.info('====>account_updateOsAccountDistributedInfo_test002 start====')
             var accountAbility = account.getDistributedAccountAbility()
@@ -221,10 +239,13 @@ export default function AccountTest() {
         })
 
         /**
-        * @tc.number     SUB_Account_distributedAccount_JS_API_0600
-        * @tc.name       Test distributedAccount.updateOsAccountDistributedInfo by callback.
-        * @tc.desc       Test distributedAccount.updateOsAccountDistributedInfo API functionality by callback.
-        */
+         * @tc.name   account_updateOsAccountDistributedInfo_test003
+         * @tc.number SUB_Account_distributedAccount_JS_API_0600
+         * @tc.desc   Test distributedAccount.updateOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('account_updateOsAccountDistributedInfo_test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             console.info('====>account_updateOsAccountDistributedInfo_test003 start====')
             const accountAbility = account.getDistributedAccountAbility()
@@ -252,10 +273,13 @@ export default function AccountTest() {
         })
 
         /**
-        * @tc.number     SUB_Account_distributedAccount_JS_API_0700
-        * @tc.name       Test distributedAccount.updateOsAccountDistributedInfo by callback.
-        * @tc.desc       Test distributedAccount.updateOsAccountDistributedInfo API functionality by callback.
-        */
+         * @tc.name   account_updateOsAccountDistributedInfo_test004
+         * @tc.number SUB_Account_distributedAccount_JS_API_0700
+         * @tc.desc   Test distributedAccount.updateOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('account_updateOsAccountDistributedInfo_test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             console.info('====>account_updateOsAccountDistributedInfo_test004 start====')
             const accountAbility = account.getDistributedAccountAbility()
@@ -292,9 +316,12 @@ export default function AccountTest() {
         })
 
         /**
-         * @tc.number     SUB_Account_distributedAccount_JS_API_0800
-         * @tc.name       Test distributedAccount.updateOsAccountDistributedInfo.
-         * @tc.desc       Test distributedAccount.updateOsAccountDistributedInfo API functionality.
+         * @tc.name   account_updateOsAccountDistributedInfo_test005
+         * @tc.number SUB_Account_distributedAccount_JS_API_0800
+         * @tc.desc   Test distributedAccount.updateOsAccountDistributedInfo API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('account_updateOsAccountDistributedInfo_test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info('====>account_updateOsAccountDistributedInfo_test005 start====')
@@ -337,9 +364,12 @@ export default function AccountTest() {
         })
 
         /**
-         * @tc.number     SUB_Account_distributedAccount_JS_API_0900
-         * @tc.name       Test distributedAccount.updateOsAccountDistributedInfo by callback.
-         * @tc.desc       Test distributedAccount.updateOsAccountDistributedInfo API functionality by callback.
+         * @tc.name   account_updateOsAccountDistributedInfo_test006
+         * @tc.number SUB_Account_distributedAccount_JS_API_0900
+         * @tc.desc   Test distributedAccount.updateOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('account_updateOsAccountDistributedInfo_test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async function (done)  {
             console.info('====>account_updateOsAccountDistributedInfo_test006 start====')
@@ -378,9 +408,12 @@ export default function AccountTest() {
         })
 
         /**
-         * @tc.number     SUB_Account_distributedAccount_JS_API_1000
-         * @tc.name       Test distributedAccount.updateOsAccountDistributedInfo.
-         * @tc.desc       Test distributedAccount.updateOsAccountDistributedInfo API functionality.
+         * @tc.name   account_updateOsAccountDistributedInfo_test007
+         * @tc.number SUB_Account_distributedAccount_JS_API_1000
+         * @tc.desc   Test distributedAccount.updateOsAccountDistributedInfo API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('account_updateOsAccountDistributedInfo_test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info('====>account_updateOsAccountDistributedInfo_test007 start====')
@@ -419,9 +452,12 @@ export default function AccountTest() {
         })
 
         /**
-         * @tc.number     SUB_Account_distributedAccount_JS_API_1100
-         * @tc.name       Test distributedAccount.updateOsAccountDistributedInfo by callback.
-         * @tc.desc       Test distributedAccount.updateOsAccountDistributedInfo API functionality by callback.
+         * @tc.name   account_updateOsAccountDistributedInfo_test008
+         * @tc.number SUB_Account_distributedAccount_JS_API_1100
+         * @tc.desc   Test distributedAccount.updateOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('account_updateOsAccountDistributedInfo_test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async function (done)  {
             console.info('====>account_updateOsAccountDistributedInfo_test008 start====')
@@ -460,9 +496,12 @@ export default function AccountTest() {
         })
 
         /**
-         * @tc.number     SUB_Account_distributedAccount_JS_API_1200
-         * @tc.name       Test distributedAccount.updateOsAccountDistributedInfo.
-         * @tc.desc       Test distributedAccount.updateOsAccountDistributedInfo API functionality.
+         * @tc.name   account_updateOsAccountDistributedInfo_test009
+         * @tc.number SUB_Account_distributedAccount_JS_API_1200
+         * @tc.desc   Test distributedAccount.updateOsAccountDistributedInfo API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('account_updateOsAccountDistributedInfo_test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info('====>account_updateOsAccountDistributedInfo_test009 start====')
@@ -497,9 +536,12 @@ export default function AccountTest() {
         })
 
         /**
-         * @tc.number     SUB_Account_distributedAccount_JS_API_1300
-         * @tc.name       Test distributedAccount.updateOsAccountDistributedInfo by callback.
-         * @tc.desc       Test distributedAccount.updateOsAccountDistributedInfo API functionality by callback.
+         * @tc.name   account_updateOsAccountDistributedInfo_test010
+         * @tc.number SUB_Account_distributedAccount_JS_API_1300
+         * @tc.desc   Test distributedAccount.updateOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('account_updateOsAccountDistributedInfo_test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async function (done)  {
             console.info('====>account_updateOsAccountDistributedInfo_test010 start====')

@@ -22,13 +22,12 @@ export default function getFileLocationNdkTest(){
   describe('getFileLocation_test', async () => {
 
     /**
+     * @tc.name   getfilelocation_ndktest_001
      * @tc.number SUB_BASIC_FM_FileAPI_NDK_Environment_0400
-     * @tc.name getfilelocation_ndktest_001
-     * @tc.desc function of API, Test getUserDocumentDir, normal function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   function of API, Test getUserDocumentDir, normal function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getfilelocation_ndktest_001', Level.LEVEL0, async (done: Function) => {
       let filepath = '/data/storage/el2/base/files/fileio_location.txt';
@@ -42,13 +41,12 @@ export default function getFileLocationNdkTest(){
     });
 
     /**
+     * @tc.name   getfilelocation_ndktest_002
      * @tc.number SUB_BASIC_FM_FileAPI_NDK_Environment_0500
-     * @tc.name getfilelocation_ndktest_002
-     * @tc.desc function of API, Test getUserDocumentDir, file is not exist
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   function of API, Test getUserDocumentDir, file is not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getfilelocation_ndktest_002', Level.LEVEL0, async (done: Function) => {
       let data = fileio.GetFileLocation_noexist();

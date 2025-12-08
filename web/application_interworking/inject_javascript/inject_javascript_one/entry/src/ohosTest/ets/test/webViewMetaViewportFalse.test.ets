@@ -16,11 +16,13 @@ import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
+import { Driver, ON } from '@ohos.UiTest';
 import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 // @ts-nocheck
 let emitKey = "emitWebViewMetaViewportFalse"
 
@@ -44,7 +46,7 @@ export default function webViewMetaViewportFalse() {
         } catch (err) {
             console.error('push webViewMetaViewportFalse page error:' + err);
         }
-      await waitForComponent("webViewMetaViewportFalse");
+      await driver.waitForComponent(ON.id("webViewMetaViewportFalse"), 10000);
         done()
     });
     
@@ -58,18 +60,18 @@ export default function webViewMetaViewportFalse() {
     })
 
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_getLastJavascriptProxyCallingFrameUrl_API_0200
-    * @tc.name       : testWebViewMetaViewportFalse
-    * @tc.desc       : test interface of metaViewport with runjavascript
-    * @tc.size_t     : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testWebViewMetaViewportFalse
+     * @tc.number SUB_ACE_WEB_getLastJavascriptProxyCallingFrameUrl_API_0200
+     * @tc.desc   test interface of metaViewport with runjavascript
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebViewMetaViewportFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         Utils.emitEvent(emitKey, 172390)
         Utils.registerEvent("emitWebViewMetaViewportFalse", "false", 172400, done);
-        sendEventByKey('webViewMetaViewportFalse', 10, '');
+        await Utils.waitAndClickComponent(driver, 'webViewMetaViewportFalse');
     })
   })
 }

@@ -21,11 +21,14 @@ const EACHTIMEOUT = 500;
 export default function ActsAccountErrCode() {
     describe('ActsAccountErrCode', function () {
 
-        /*
-        * @tc.number    : ActsAccountErrCode_0100
-        * @tc.name      : createAccount callback
-        * @tc.desc      : test the number of parameters does not match (需要的参数顺序正确,后面有多余的,不报错)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_0100
+         * @tc.number ActsAccountErrCode_0100
+         * @tc.desc   test the number of parameters does not match (需要的参数顺序正确,后面有多余的,不报错)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_0100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -50,11 +53,14 @@ export default function ActsAccountErrCode() {
 
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_0200
-        * @tc.name      : createAccount callback
-        * @tc.desc      : test the number of parameters does not match(需要的参数顺序中有多余类型参数)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_0200
+         * @tc.number ActsAccountErrCode_0200
+         * @tc.desc   test the number of parameters does not match(需要的参数顺序中有多余类型参数)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_0200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -74,11 +80,14 @@ export default function ActsAccountErrCode() {
 
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_0300
-        * @tc.name      : createAccount callback
-        * @tc.desc      : test the number of parameters does not match(需要的参数数量少于预期)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_0300
+         * @tc.number ActsAccountErrCode_0300
+         * @tc.desc   test the number of parameters does not match(需要的参数数量少于预期)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_0300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -97,11 +106,14 @@ export default function ActsAccountErrCode() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_0400
-        * @tc.name      : createAccount callback
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_0400
+         * @tc.number ActsAccountErrCode_0400
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_0400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -120,11 +132,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_0500
-        * @tc.name      : createAccount callback
-        * @tc.desc      : test the type of parameters does not match(extrainfo不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_0500
+         * @tc.number ActsAccountErrCode_0500
+         * @tc.desc   test the type of parameters does not match(extrainfo不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_0500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -143,11 +158,14 @@ export default function ActsAccountErrCode() {
             } 
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_0510
-        * @tc.name      : createAccount callback
-        * @tc.desc      : test the type of parameters does not match(callback不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_0510
+         * @tc.number ActsAccountErrCode_0510
+         * @tc.desc   test the type of parameters does not match(callback不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_0510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_0510 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -162,11 +180,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_0600
-        * @tc.name      : createAccount promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_0600
+         * @tc.number ActsAccountErrCode_0600
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_0600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -181,11 +202,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_0610
-        * @tc.name      : createAccount promise
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_0610
+         * @tc.number ActsAccountErrCode_0610
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_0610', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_0610 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -201,11 +225,14 @@ export default function ActsAccountErrCode() {
         });
 
         //createAccountImplicitly
-        /*
-        * @tc.number    : ActsAccountErrCode_0700
-        * @tc.name      : createAccountImplicitly callback
-        * @tc.desc      : test the number of parameters does not match(extrainfo不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_0700
+         * @tc.number ActsAccountErrCode_0700
+         * @tc.desc   test the number of parameters does not match(extrainfo不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_0700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -227,11 +254,14 @@ export default function ActsAccountErrCode() {
             }  
         });
         
-        /*
-        * @tc.number    : ActsAccountErrCode_0800
-        * @tc.name      : createAccountImplicitly callback
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_0800
+         * @tc.number ActsAccountErrCode_0800
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_0800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -249,11 +279,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_0810
-        * @tc.name      : createAccountImplicitly callback
-        * @tc.desc      : test the type of parameters does not match(options不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_0810
+         * @tc.number ActsAccountErrCode_0810
+         * @tc.desc   test the type of parameters does not match(options不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_0810', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_0810 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -271,11 +304,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_0820
-        * @tc.name      : createAccountImplicitly callback
-        * @tc.desc      : test the type of parameters does not match(callback不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_0820
+         * @tc.number ActsAccountErrCode_0820
+         * @tc.desc   test the type of parameters does not match(callback不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_0820', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_0820 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -292,11 +328,14 @@ export default function ActsAccountErrCode() {
         });
 
         //removeAccount
-        /*
-        * @tc.number    : ActsAccountErrCode_0900
-        * @tc.name      : removeAccount callback
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_0900
+         * @tc.number ActsAccountErrCode_0900
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_0900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -316,11 +355,14 @@ export default function ActsAccountErrCode() {
         });
 
         //removeAccount
-        /*
-        * @tc.number    : ActsAccountErrCode_0910
-        * @tc.name      : removeAccount callback
-        * @tc.desc      : test the type of parameters does not match(callback不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_0910
+         * @tc.number ActsAccountErrCode_0910
+         * @tc.desc   test the type of parameters does not match(callback不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_0910', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_0910 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -335,11 +377,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_1000
-        * @tc.name      : removeAccount callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_1000
+         * @tc.number ActsAccountErrCode_1000
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_1000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -358,11 +403,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_1100
-        * @tc.name      : removeAccount promise
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_1100
+         * @tc.number ActsAccountErrCode_1100
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_1100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -377,11 +425,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_1200
-        * @tc.name      : removeAccount callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_1200
+         * @tc.number ActsAccountErrCode_1200
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_1200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -397,11 +448,14 @@ export default function ActsAccountErrCode() {
         });
 
         //setAppAccess
-        /*
-        * @tc.number    : ActsAccountErrCode_1300
-        * @tc.name      : setAppAccess callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_1300
+         * @tc.number ActsAccountErrCode_1300
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_1300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -420,11 +474,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_1400
-        * @tc.name      : setAppAccess callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_1400
+         * @tc.number ActsAccountErrCode_1400
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_1400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -443,11 +500,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_1410
-        * @tc.name      : setAppAccess callback
-        * @tc.desc      : test the type of parameters does not match(callback不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_1410
+         * @tc.number ActsAccountErrCode_1410
+         * @tc.desc   test the type of parameters does not match(callback不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_1410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_1410 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -462,11 +522,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_1500
-        * @tc.name      : setAppAccess promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_1500
+         * @tc.number ActsAccountErrCode_1500
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_1500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -481,11 +544,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_1600
-        * @tc.name      : setAppAccess promise
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_1600
+         * @tc.number ActsAccountErrCode_1600
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_1600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -500,11 +566,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_1610
-        * @tc.name      : setAppAccess promise
-        * @tc.desc      : test the type of parameters does not match(bundlename不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_1610
+         * @tc.number ActsAccountErrCode_1610
+         * @tc.desc   test the type of parameters does not match(bundlename不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_1610', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_1610 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -519,11 +588,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_1620
-        * @tc.name      : setAppAccess promise
-        * @tc.desc      : test the type of parameters does not match(isAccessible不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_1620
+         * @tc.number ActsAccountErrCode_1620
+         * @tc.desc   test the type of parameters does not match(isAccessible不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_1620', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_1620 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -539,11 +611,14 @@ export default function ActsAccountErrCode() {
         });
 
         //checkDataSyncEnabled
-        /*
-        * @tc.number    : ActsAccountErrCode_1700
-        * @tc.name      : checkDataSyncEnabled callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_1700
+         * @tc.number ActsAccountErrCode_1700
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_1700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -562,11 +637,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_1800
-        * @tc.name      : checkDataSyncEnabled callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_1800
+         * @tc.number ActsAccountErrCode_1800
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_1800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -585,11 +663,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_1810
-        * @tc.name      : checkDataSyncEnabled callback
-        * @tc.desc      : test the type of parameters does not match(callback不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_1810
+         * @tc.number ActsAccountErrCode_1810
+         * @tc.desc   test the type of parameters does not match(callback不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_1810', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_1810 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -604,11 +685,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_1900
-        * @tc.name      : checkDataSyncEnabled promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_1900
+         * @tc.number ActsAccountErrCode_1900
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_1900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -623,11 +707,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_2000
-        * @tc.name      : checkDataSyncEnabled promise
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_2000
+         * @tc.number ActsAccountErrCode_2000
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_2000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -643,11 +730,14 @@ export default function ActsAccountErrCode() {
         });
 
         //setCredential
-        /*
-        * @tc.number    : ActsAccountErrCode_2100
-        * @tc.name      : setCredential callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_2100
+         * @tc.number ActsAccountErrCode_2100
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_2100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -666,11 +756,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_2200
-        * @tc.name      : setCredential callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_2200
+         * @tc.number ActsAccountErrCode_2200
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_2200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -689,11 +782,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_2210
-        * @tc.name      : setCredential callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_2210
+         * @tc.number ActsAccountErrCode_2210
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_2210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_2210 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -708,11 +804,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_2300
-        * @tc.name      : setCredential promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_2300
+         * @tc.number ActsAccountErrCode_2300
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_2300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -727,11 +826,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_2400
-        * @tc.name      : setCredential promise
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_2400
+         * @tc.number ActsAccountErrCode_2400
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_2400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -746,11 +848,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_2410
-        * @tc.name      : setCredential promise
-        * @tc.desc      : test the type of parameters does not match(credentialType不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_2410
+         * @tc.number ActsAccountErrCode_2410
+         * @tc.desc   test the type of parameters does not match(credentialType不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_2410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_2410 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -765,11 +870,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_2420
-        * @tc.name      : setCredential promise
-        * @tc.desc      : test the type of parameters does not match(credential不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_2420
+         * @tc.number ActsAccountErrCode_2420
+         * @tc.desc   test the type of parameters does not match(credential不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_2420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_2420 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -785,11 +893,14 @@ export default function ActsAccountErrCode() {
         });
 
         //setDataSyncEnabled
-        /*
-        * @tc.number    : ActsAccountErrCode_2500
-        * @tc.name      : setDataSyncEnabled callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_2500
+         * @tc.number ActsAccountErrCode_2500
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_2500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -808,11 +919,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_2600
-        * @tc.name      : setDataSyncEnabled callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_2600
+         * @tc.number ActsAccountErrCode_2600
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_2600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -831,11 +945,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_2610
-        * @tc.name      : setDataSyncEnabled callback
-        * @tc.desc      : test the type of parameters does not match(callback不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_2610
+         * @tc.number ActsAccountErrCode_2610
+         * @tc.desc   test the type of parameters does not match(callback不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_2610', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_2610 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -850,11 +967,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_2700
-        * @tc.name      : setDataSyncEnabled promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_2700
+         * @tc.number ActsAccountErrCode_2700
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_2700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -869,11 +989,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_2800
-        * @tc.name      : setDataSyncEnabled promise
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_2800
+         * @tc.number ActsAccountErrCode_2800
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_2800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -888,11 +1011,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_2810
-        * @tc.name      : setDataSyncEnabled promise
-        * @tc.desc      : test the type of parameters does not match(isEnable不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_2810
+         * @tc.number ActsAccountErrCode_2810
+         * @tc.desc   test the type of parameters does not match(isEnable不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_2810', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_2810 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -908,11 +1034,14 @@ export default function ActsAccountErrCode() {
         });
 
         //setCustomData
-        /*
-        * @tc.number    : ActsAccountErrCode_2900
-        * @tc.name      : setCustomData callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_2900
+         * @tc.number ActsAccountErrCode_2900
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_2900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -931,11 +1060,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_3000
-        * @tc.name      : setCustomData callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_3000
+         * @tc.number ActsAccountErrCode_3000
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_3000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -954,11 +1086,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_3010
-        * @tc.name      : setCustomData callback
-        * @tc.desc      : test the type of parameters does not match(callback不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_3010
+         * @tc.number ActsAccountErrCode_3010
+         * @tc.desc   test the type of parameters does not match(callback不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_3010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_3010 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -973,11 +1108,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_3100
-        * @tc.name      : setCustomData promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_3100
+         * @tc.number ActsAccountErrCode_3100
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_3100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -992,11 +1130,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_3200
-        * @tc.name      : setCustomData promise
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_3200
+         * @tc.number ActsAccountErrCode_3200
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_3200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1011,11 +1152,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_3210
-        * @tc.name      : setCustomData promise
-        * @tc.desc      : test the type of parameters does not match(key不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_3210
+         * @tc.number ActsAccountErrCode_3210
+         * @tc.desc   test the type of parameters does not match(key不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_3210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_3210 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1030,11 +1174,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_3220
-        * @tc.name      : setCustomData promise
-        * @tc.desc      : test the type of parameters does not match(value不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_3220
+         * @tc.number ActsAccountErrCode_3220
+         * @tc.desc   test the type of parameters does not match(value不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_3220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_3220 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1050,18 +1197,16 @@ export default function ActsAccountErrCode() {
         });
 
         //getAllAccounts
-        /*
-        * @tc.number    : ActsAccountErrCode_3300
-        * @tc.name      : getAllAccounts callback
-        * @tc.desc      : test the type of parameters does not match
-        */
 
         //getAccountsByOwner
-        /*
-        * @tc.number    : ActsAccountErrCode_3500
-        * @tc.name      : getAccountsByOwner callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_3500
+         * @tc.number ActsAccountErrCode_3500
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_3500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1080,11 +1225,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_3600
-        * @tc.name      : getAccountsByOwner callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_3600
+         * @tc.number ActsAccountErrCode_3600
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_3600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1103,11 +1251,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_3610
-        * @tc.name      : getAccountsByOwner callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_3610
+         * @tc.number ActsAccountErrCode_3610
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_3610', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_3610 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1122,11 +1273,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_3700
-        * @tc.name      : getAccountsByOwner promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_3700
+         * @tc.number ActsAccountErrCode_3700
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_3700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1141,11 +1295,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_3800
-        * @tc.name      : getAccountsByOwner promise
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_3800
+         * @tc.number ActsAccountErrCode_3800
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_3800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1161,11 +1318,14 @@ export default function ActsAccountErrCode() {
         });
 
         //getCredential
-        /*
-        * @tc.number    : ActsAccountErrCode_3900
-        * @tc.name      : getCredential callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_3900
+         * @tc.number ActsAccountErrCode_3900
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_3900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1184,11 +1344,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_4000
-        * @tc.name      : getCredential callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_4000
+         * @tc.number ActsAccountErrCode_4000
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_4000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1207,11 +1370,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_4010
-        * @tc.name      : getCredential callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_4010
+         * @tc.number ActsAccountErrCode_4010
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_4010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_4010 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1226,11 +1392,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_4100
-        * @tc.name      : getCredential promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_4100
+         * @tc.number ActsAccountErrCode_4100
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_4100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1245,11 +1414,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_4200
-        * @tc.name      : getCredential promise
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_4200
+         * @tc.number ActsAccountErrCode_4200
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_4200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1264,11 +1436,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_4210
-        * @tc.name      : getCredential promise
-        * @tc.desc      : test the type of parameters does not match(credentialType不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_4210
+         * @tc.number ActsAccountErrCode_4210
+         * @tc.desc   test the type of parameters does not match(credentialType不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_4210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_4210 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1284,11 +1459,14 @@ export default function ActsAccountErrCode() {
         });
 
         //getCustomData
-        /*
-        * @tc.number    : ActsAccountErrCode_4300
-        * @tc.name      : getCustomData callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_4300
+         * @tc.number ActsAccountErrCode_4300
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_4300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1307,11 +1485,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_4400
-        * @tc.name      : getCustomData callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_4400
+         * @tc.number ActsAccountErrCode_4400
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_4400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1330,11 +1511,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_4410
-        * @tc.name      : getCustomData callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+         /**
+          * @tc.name   ActsAccountErrCode_4410
+          * @tc.number ActsAccountErrCode_4410
+          * @tc.desc   test the type of parameters does not match
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL3
+          */
          it('ActsAccountErrCode_4410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_4410 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1349,11 +1533,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_4500
-        * @tc.name      : getCustomData promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_4500
+         * @tc.number ActsAccountErrCode_4500
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_4500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1368,11 +1555,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_4600
-        * @tc.name      : getCustomData promise
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_4600
+         * @tc.number ActsAccountErrCode_4600
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_4600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1387,11 +1577,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_4610
-        * @tc.name      : getCustomData promise
-        * @tc.desc      : test the type of parameters does not match(key不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_4610
+         * @tc.number ActsAccountErrCode_4610
+         * @tc.desc   test the type of parameters does not match(key不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_4610', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_4610 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1408,11 +1601,14 @@ export default function ActsAccountErrCode() {
 
 
         //getCustomDataSync
-        /*
-        * @tc.number    : ActsAccountErrCode_4700
-        * @tc.name      : getCustomDataSync
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_4700
+         * @tc.number ActsAccountErrCode_4700
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_4700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1427,11 +1623,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_4710
-        * @tc.name      : getCustomDataSync
-        * @tc.desc      : test the type of parameters does not match(key不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_4710
+         * @tc.number ActsAccountErrCode_4710
+         * @tc.desc   test the type of parameters does not match(key不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_4710', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_4710 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1446,11 +1645,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_4800
-        * @tc.name      : getCustomDataSync
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_4800
+         * @tc.number ActsAccountErrCode_4800
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_4800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1465,11 +1667,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_4900
-        * @tc.name      : getCustomDataSync
-        * @tc.desc      : test service error
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_4900
+         * @tc.number ActsAccountErrCode_4900
+         * @tc.desc   test service error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_4900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1485,11 +1690,14 @@ export default function ActsAccountErrCode() {
         });
 
         //auth
-        /*
-        * @tc.number    : ActsAccountErrCode_5000
-        * @tc.name      : auth callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5000
+         * @tc.number ActsAccountErrCode_5000
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1504,11 +1712,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_5100
-        * @tc.name      : auth callback
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5100
+         * @tc.number ActsAccountErrCode_5100
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1526,11 +1737,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_5110
-        * @tc.name      : auth callback
-        * @tc.desc      : test the type of parameters does not match(owner不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5110
+         * @tc.number ActsAccountErrCode_5110
+         * @tc.desc   test the type of parameters does not match(owner不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5110 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1548,11 +1762,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_5120
-        * @tc.name      : auth callback
-        * @tc.desc      : test the type of parameters does not match(authtype不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5120
+         * @tc.number ActsAccountErrCode_5120
+         * @tc.desc   test the type of parameters does not match(authtype不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5120 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1570,11 +1787,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_5130
-        * @tc.name      : auth callback
-        * @tc.desc      : test the type of parameters does not match(callback不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5130
+         * @tc.number ActsAccountErrCode_5130
+         * @tc.desc   test the type of parameters does not match(callback不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5130 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1589,14 +1809,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_5140
-        * @tc.name      : ActsAccountErrCode_5140
-        * @tc.desc      : test the type of parameters does not match(callback不匹配) auth callback with option 401
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5140
+         * @tc.number ActsAccountErrCode_5140
+         * @tc.desc   test the type of parameters does not match(callback不匹配) auth callback with option 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5140 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1630,11 +1850,14 @@ export default function ActsAccountErrCode() {
         });
 
         //getAuthToken
-        /*
-        * @tc.number    : ActsAccountErrCode_5200
-        * @tc.name      : getAuthToken callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5200
+         * @tc.number ActsAccountErrCode_5200
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1653,11 +1876,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_5300
-        * @tc.name      : getAuthToken callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5300
+         * @tc.number ActsAccountErrCode_5300
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1676,11 +1902,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_5310
-        * @tc.name      : getAuthToken callback
-        * @tc.desc      : test the type of parameters does not match(callback不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5310
+         * @tc.number ActsAccountErrCode_5310
+         * @tc.desc   test the type of parameters does not match(callback不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5310 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1695,11 +1924,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_5400
-        * @tc.name      : getAuthToken promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5400
+         * @tc.number ActsAccountErrCode_5400
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1714,11 +1946,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_5500
-        * @tc.name      : getAuthToken promise
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5500
+         * @tc.number ActsAccountErrCode_5500
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1733,11 +1968,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_5510
-        * @tc.name      : getAuthToken promise
-        * @tc.desc      : test the type of parameters does not match(owner不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5510
+         * @tc.number ActsAccountErrCode_5510
+         * @tc.desc   test the type of parameters does not match(owner不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5510 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1752,11 +1990,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_5520
-        * @tc.name      : getAuthToken promise
-        * @tc.desc      : test the type of parameters does not match(owner不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5520
+         * @tc.number ActsAccountErrCode_5520
+         * @tc.desc   test the type of parameters does not match(owner不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5520', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5520 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1772,11 +2013,14 @@ export default function ActsAccountErrCode() {
         });
 
         //setAuthToken
-        /*
-        * @tc.number    : ActsAccountErrCode_5600
-        * @tc.name      : setAuthToken callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5600
+         * @tc.number ActsAccountErrCode_5600
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1795,11 +2039,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_5700
-        * @tc.name      : setAuthToken callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5700
+         * @tc.number ActsAccountErrCode_5700
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1818,11 +2065,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_5710
-        * @tc.name      : setAuthToken callback
-        * @tc.desc      : test the type of parameters does not match(callback不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5710
+         * @tc.number ActsAccountErrCode_5710
+         * @tc.desc   test the type of parameters does not match(callback不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5710', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5710 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1837,11 +2087,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_5400
-        * @tc.name      : setAuthToken promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5800
+         * @tc.number ActsAccountErrCode_5400
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1856,11 +2109,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_5900
-        * @tc.name      : setAuthToken promise
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5900
+         * @tc.number ActsAccountErrCode_5900
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1875,11 +2131,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_5910
-        * @tc.name      : setAuthToken promise
-        * @tc.desc      : test the type of parameters does not match(authType不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5910
+         * @tc.number ActsAccountErrCode_5910
+         * @tc.desc   test the type of parameters does not match(authType不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5910', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5910 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1894,11 +2153,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_5920
-        * @tc.name      : setAuthToken promise
-        * @tc.desc      : test the type of parameters does not match(token不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_5920
+         * @tc.number ActsAccountErrCode_5920
+         * @tc.desc   test the type of parameters does not match(token不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_5920', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_5920 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1914,11 +2176,14 @@ export default function ActsAccountErrCode() {
         });
 
         //deleteAuthToken
-        /*
-        * @tc.number    : ActsAccountErrCode_6000
-        * @tc.name      : deleteAuthToken callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6000
+         * @tc.number ActsAccountErrCode_6000
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1937,11 +2202,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6100
-        * @tc.name      : deleteAuthToken callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6100
+         * @tc.number ActsAccountErrCode_6100
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1960,11 +2228,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6110
-        * @tc.name      : deleteAuthToken callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6110
+         * @tc.number ActsAccountErrCode_6110
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6110 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1979,11 +2250,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6200
-        * @tc.name      : deleteAuthToken promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6200
+         * @tc.number ActsAccountErrCode_6200
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1998,11 +2272,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6300
-        * @tc.name      : deleteAuthToken promise
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6300
+         * @tc.number ActsAccountErrCode_6300
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2017,11 +2294,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6310
-        * @tc.name      : deleteAuthToken promise
-        * @tc.desc      : test the type of parameters does not match(owner不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6310
+         * @tc.number ActsAccountErrCode_6310
+         * @tc.desc   test the type of parameters does not match(owner不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6310 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2036,11 +2316,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6320
-        * @tc.name      : deleteAuthToken promise
-        * @tc.desc      : test the type of parameters does not match(authType不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6320
+         * @tc.number ActsAccountErrCode_6320
+         * @tc.desc   test the type of parameters does not match(authType不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6320 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2055,11 +2338,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6330
-        * @tc.name      : deleteAuthToken promise
-        * @tc.desc      : test the type of parameters does not match(token不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6330
+         * @tc.number ActsAccountErrCode_6330
+         * @tc.desc   test the type of parameters does not match(token不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6330 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2075,11 +2361,14 @@ export default function ActsAccountErrCode() {
         });
 
         //setAuthTokenVisibility
-        /*
-        * @tc.number    : ActsAccountErrCode_6000
-        * @tc.name      : setAuthTokenVisibility callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6400
+         * @tc.number ActsAccountErrCode_6000
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2098,11 +2387,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6500
-        * @tc.name      : setAuthTokenVisibility callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6500
+         * @tc.number ActsAccountErrCode_6500
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2121,11 +2413,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6510
-        * @tc.name      : setAuthTokenVisibility callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6510
+         * @tc.number ActsAccountErrCode_6510
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6510 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2140,11 +2435,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6600
-        * @tc.name      : setAuthTokenVisibility promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6600
+         * @tc.number ActsAccountErrCode_6600
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2159,11 +2457,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6700
-        * @tc.name      : setAuthTokenVisibility promise
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6700
+         * @tc.number ActsAccountErrCode_6700
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2178,11 +2479,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6710
-        * @tc.name      : setAuthTokenVisibility promise
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6710
+         * @tc.number ActsAccountErrCode_6710
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6710', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6710 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2197,11 +2501,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6710
-        * @tc.name      : setAuthTokenVisibility promise
-        * @tc.desc      : test the type of parameters does not match(authType不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6720
+         * @tc.number ActsAccountErrCode_6710
+         * @tc.desc   test the type of parameters does not match(authType不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6720', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6720 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2216,11 +2523,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6720
-        * @tc.name      : setAuthTokenVisibility promise
-        * @tc.desc      : test the type of parameters does not match(bundleName不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6730
+         * @tc.number ActsAccountErrCode_6720
+         * @tc.desc   test the type of parameters does not match(bundleName不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6730', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6730 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2235,11 +2545,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6730
-        * @tc.name      : setAuthTokenVisibility promise
-        * @tc.desc      : test the type of parameters does not match(isVisible不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6740
+         * @tc.number ActsAccountErrCode_6730
+         * @tc.desc   test the type of parameters does not match(isVisible不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6740', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6740 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2257,11 +2570,14 @@ export default function ActsAccountErrCode() {
         
 
         //getAllAuthTokens
-        /*
-        * @tc.number    : ActsAccountErrCode_6800
-        * @tc.name      : getAllAuthTokens callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6800
+         * @tc.number ActsAccountErrCode_6800
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2280,11 +2596,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6900
-        * @tc.name      : getAllAuthTokens callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6900
+         * @tc.number ActsAccountErrCode_6900
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2303,11 +2622,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6910
-        * @tc.name      : getAllAuthTokens callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_6910
+         * @tc.number ActsAccountErrCode_6910
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_6910', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6910 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2322,11 +2644,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_7000
-        * @tc.name      : getAllAuthTokens promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_7000
+         * @tc.number ActsAccountErrCode_7000
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_7000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2343,11 +2668,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_7100
-        * @tc.name      : getAllAuthTokens promise
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_7100
+         * @tc.number ActsAccountErrCode_7100
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_7100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2364,11 +2692,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_7110
-        * @tc.name      : getAllAuthTokens promise
-        * @tc.desc      : test the type of parameters does not match(owner不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_7110
+         * @tc.number ActsAccountErrCode_7110
+         * @tc.desc   test the type of parameters does not match(owner不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_7110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_7110 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2386,11 +2717,14 @@ export default function ActsAccountErrCode() {
         });
 
         //getAuthList
-        /*
-        * @tc.number    : ActsAccountErrCode_7200
-        * @tc.name      : getAuthList callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_7200
+         * @tc.number ActsAccountErrCode_7200
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_7200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2409,11 +2743,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_7300
-        * @tc.name      : getAuthList callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_7300
+         * @tc.number ActsAccountErrCode_7300
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_7300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2432,11 +2769,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_7310
-        * @tc.name      : getAuthList callback
-        * @tc.desc      : test the type of parameters does not match(callback不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_7310
+         * @tc.number ActsAccountErrCode_7310
+         * @tc.desc   test the type of parameters does not match(callback不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_7310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_7310 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2451,11 +2791,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_7400
-        * @tc.name      : getAuthList promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_7400
+         * @tc.number ActsAccountErrCode_7400
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_7400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2472,11 +2815,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_7500
-        * @tc.name      : getAuthList promise
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_7500
+         * @tc.number ActsAccountErrCode_7500
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_7500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2493,11 +2839,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_7510
-        * @tc.name      : getAuthList promise
-        * @tc.desc      : test the type of parameters does not match(authType不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_7510
+         * @tc.number ActsAccountErrCode_7510
+         * @tc.desc   test the type of parameters does not match(authType不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_7510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_7510 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2515,11 +2864,14 @@ export default function ActsAccountErrCode() {
         });
 
         //getAuthCallback
-        /*
-        * @tc.number    : ActsAccountErrCode_7600
-        * @tc.name      : getAuthCallback callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_7600
+         * @tc.number ActsAccountErrCode_7600
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_7600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2538,11 +2890,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_7700
-        * @tc.name      : getAuthCallback callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_7700
+         * @tc.number ActsAccountErrCode_7700
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_7700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2561,11 +2916,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_7710
-        * @tc.name      : getAuthCallback callback
-        * @tc.desc      : test the type of parameters does not match(callback不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_7710
+         * @tc.number ActsAccountErrCode_7710
+         * @tc.desc   test the type of parameters does not match(callback不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_7710', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_7710 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2580,11 +2938,14 @@ export default function ActsAccountErrCode() {
             }  
         }); 
 
-        /*
-        * @tc.number    : ActsAccountErrCode_7800
-        * @tc.name      : getAuthCallback promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_7800
+         * @tc.number ActsAccountErrCode_7800
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_7800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2601,11 +2962,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_7900
-        * @tc.name      : getAuthCallback promise
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_7900
+         * @tc.number ActsAccountErrCode_7900
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_7900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2623,11 +2987,14 @@ export default function ActsAccountErrCode() {
         });
 
         //queryAuthenticatorInfo
-        /*
-        * @tc.number    : ActsAccountErrCode_8000
-        * @tc.name      : queryAuthenticatorInfo callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_8000
+         * @tc.number ActsAccountErrCode_8000
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_8000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2646,11 +3013,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_8100
-        * @tc.name      : queryAuthenticatorInfo callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_8100
+         * @tc.number ActsAccountErrCode_8100
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_8100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2669,11 +3039,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_8110
-        * @tc.name      : queryAuthenticatorInfo callback
-        * @tc.desc      : test the type of parameters does not match(callback不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_8110
+         * @tc.number ActsAccountErrCode_8110
+         * @tc.desc   test the type of parameters does not match(callback不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_8110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_8110 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2688,11 +3061,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_8200
-        * @tc.name      : queryAuthenticatorInfo promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_8200
+         * @tc.number ActsAccountErrCode_8200
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_8200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2709,11 +3085,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_8300
-        * @tc.name      : queryAuthenticatorInfo promise
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_8300
+         * @tc.number ActsAccountErrCode_8300
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_8300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2732,11 +3111,14 @@ export default function ActsAccountErrCode() {
 
         
         //deleteCredential 
-        /*
-        * @tc.number    : ActsAccountErrCode_8400
-        * @tc.name      : deleteCredential callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_8400
+         * @tc.number ActsAccountErrCode_8400
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_8400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2755,11 +3137,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_8500
-        * @tc.name      : deleteCredential callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_8500
+         * @tc.number ActsAccountErrCode_8500
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_8500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2778,11 +3163,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_8510
-        * @tc.name      : deleteCredential callback
-        * @tc.desc      : test the type of parameters does not match(callback不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_8510
+         * @tc.number ActsAccountErrCode_8510
+         * @tc.desc   test the type of parameters does not match(callback不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_8510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_8510 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2797,11 +3185,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_8600
-        * @tc.name      : deleteCredential promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_8600
+         * @tc.number ActsAccountErrCode_8600
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_8600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2818,11 +3209,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_8700
-        * @tc.name      : deleteCredential promise
-        * @tc.desc      : test the type of parameters does not match(credentialType不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_8700
+         * @tc.number ActsAccountErrCode_8700
+         * @tc.desc   test the type of parameters does not match(credentialType不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_8700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2839,11 +3233,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_8710
-        * @tc.name      : deleteCredential promise
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_8710
+         * @tc.number ActsAccountErrCode_8710
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_8710', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_8710 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2861,11 +3258,14 @@ export default function ActsAccountErrCode() {
         });
 
         //verifyCredential
-        /*
-        * @tc.number    : ActsAccountErrCode_8800
-        * @tc.name      : verifyCredential callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_8800
+         * @tc.number ActsAccountErrCode_8800
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_8800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2886,11 +3286,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_8900
-        * @tc.name      : verifyCredential callback
-        * @tc.desc      : test the type of parameters does not match(owner不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_8900
+         * @tc.number ActsAccountErrCode_8900
+         * @tc.desc   test the type of parameters does not match(owner不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_8900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2911,11 +3314,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_8910
-        * @tc.name      : verifyCredential callback
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+         /**
+          * @tc.name   ActsAccountErrCode_8910
+          * @tc.number ActsAccountErrCode_8910
+          * @tc.desc   test the type of parameters does not match(name不匹配)
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL3
+          */
          it('ActsAccountErrCode_8910', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_8910 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2936,11 +3342,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_8920
-        * @tc.name      : verifyCredential callback
-        * @tc.desc      : test the type of parameters does not match(option不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_8920
+         * @tc.number ActsAccountErrCode_8920
+         * @tc.desc   test the type of parameters does not match(option不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_8920', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_8920 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2961,11 +3370,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_8930
-        * @tc.name      : verifyCredential callback
-        * @tc.desc      : test the type of parameters does not match(callback不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_8930
+         * @tc.number ActsAccountErrCode_8930
+         * @tc.desc   test the type of parameters does not match(callback不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_8930', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_8930 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -2983,11 +3395,14 @@ export default function ActsAccountErrCode() {
 
         
         //setAuthenticatorProperties
-        /*
-        * @tc.number    : ActsAccountErrCode_9000
-        * @tc.name      : setAuthenticatorProperties callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_9000
+         * @tc.number ActsAccountErrCode_9000
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_9000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -3008,11 +3423,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_9100
-        * @tc.name      : setAuthenticatorProperties callback
-        * @tc.desc      : test the type of parameters does not match(owner不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_9100
+         * @tc.number ActsAccountErrCode_9100
+         * @tc.desc   test the type of parameters does not match(owner不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_9100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -3033,11 +3451,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_9110
-        * @tc.name      : setAuthenticatorProperties callback
-        * @tc.desc      : test the type of parameters does not match(option不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_9110
+         * @tc.number ActsAccountErrCode_9110
+         * @tc.desc   test the type of parameters does not match(option不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_9110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_9110 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -3058,11 +3479,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_9120
-        * @tc.name      : setAuthenticatorProperties callback
-        * @tc.desc      : test the type of parameters does not match(callback不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_9120
+         * @tc.number ActsAccountErrCode_9120
+         * @tc.desc   test the type of parameters does not match(callback不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_9120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_9120 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -3079,11 +3503,14 @@ export default function ActsAccountErrCode() {
         });
 
         //on
-        /*
-        * @tc.number    : ActsAccountErrCode_9200
-        * @tc.name      : on callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_9200
+         * @tc.number ActsAccountErrCode_9200
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_9200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -3100,11 +3527,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_9300
-        * @tc.name      : on callback
-        * @tc.desc      : test the type of parameters does not match(Array<owner>不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_9300
+         * @tc.number ActsAccountErrCode_9300
+         * @tc.desc   test the type of parameters does not match(Array<owner>不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_9300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_9300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -3121,11 +3551,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_9400
-        * @tc.name      : on callback
-        * @tc.desc      : test the type of parameters does not match(accountChange不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_9400
+         * @tc.number ActsAccountErrCode_9400
+         * @tc.desc   test the type of parameters does not match(accountChange不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_9400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_9400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -3143,11 +3576,14 @@ export default function ActsAccountErrCode() {
         });
 
         //off
-        /*
-        * @tc.number    : ActsAccountErrCode_9500
-        * @tc.name      : off callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_9500
+         * @tc.number ActsAccountErrCode_9500
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_9500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_9500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -3162,11 +3598,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_9600
-        * @tc.name      : off callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_9600
+         * @tc.number ActsAccountErrCode_9600
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_9600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -3182,11 +3621,14 @@ export default function ActsAccountErrCode() {
         });
 
         //checkAuthTokenVisibility
-        /*
-        * @tc.number    : ActsAccountErrCode_6000
-        * @tc.name      : checkAuthTokenVisibility callback
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_9700
+         * @tc.number ActsAccountErrCode_6000
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_9700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_9700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -3205,11 +3647,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_9800
-        * @tc.name      : checkAuthTokenVisibility callback
-        * @tc.desc      : test the type of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_9800
+         * @tc.number ActsAccountErrCode_9800
+         * @tc.desc   test the type of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_9800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_9800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -3228,11 +3673,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_9810
-        * @tc.name      : checkAuthTokenVisibility callback
-        * @tc.desc      : test the type of parameters does not match(callback不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_9810
+         * @tc.number ActsAccountErrCode_9810
+         * @tc.desc   test the type of parameters does not match(callback不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_9810', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_9810 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -3247,11 +3695,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6600
-        * @tc.name      : checkAuthTokenVisibility promise
-        * @tc.desc      : test the number of parameters does not match
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_9900
+         * @tc.number ActsAccountErrCode_6600
+         * @tc.desc   test the number of parameters does not match
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_9900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_9900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -3266,11 +3717,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_10000
-        * @tc.name      : checkAuthTokenVisibility promise
-        * @tc.desc      : test the type of parameters does not match(name不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_10000
+         * @tc.number ActsAccountErrCode_10000
+         * @tc.desc   test the type of parameters does not match(name不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_10000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_6700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -3285,11 +3739,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6710
-        * @tc.name      : checkAuthTokenVisibility promise
-        * @tc.desc      : test the type of parameters does not match(authType不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_10010
+         * @tc.number ActsAccountErrCode_6710
+         * @tc.desc   test the type of parameters does not match(authType不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_10010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_10010 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -3304,11 +3761,14 @@ export default function ActsAccountErrCode() {
             }  
         });
 
-        /*
-        * @tc.number    : ActsAccountErrCode_6720
-        * @tc.name      : checkAuthTokenVisibility promise
-        * @tc.desc      : test the type of parameters does not match(authType不匹配)
-        */
+        /**
+         * @tc.name   ActsAccountErrCode_10020
+         * @tc.number ActsAccountErrCode_6720
+         * @tc.desc   test the type of parameters does not match(authType不匹配)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountErrCode_10020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountErrCode_10020 start====");
             var appAccountManager = account.createAppAccountManager();

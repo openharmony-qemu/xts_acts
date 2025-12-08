@@ -194,13 +194,13 @@ export default function AVSessionErrorCode() {
             console.info('TestLog: End Testing avSession Interfaces');
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0100
-         * @tc.name      : setAVMetadata(promise) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test setAVMetadata(promise) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0100
+         * @tc.desc   test setAVMetadata(promise) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(async () => {
@@ -217,13 +217,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0200
-         * @tc.name      : setAVMetadata(promise) with invalid params(errcode 401)
-         * @tc.desc      : test setAVMetadata(promise) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0200
+         * @tc.desc   test setAVMetadata(promise) errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await session.setAVMetadata().then(() => {
@@ -236,13 +236,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0300
-         * @tc.name      : setAVMetadata(callback) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test setAVMetadata(callback) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0300
+         * @tc.desc   test setAVMetadata(callback) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(() => {
@@ -265,13 +265,13 @@ export default function AVSessionErrorCode() {
             })
         })
         
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0400
-         * @tc.name      : setAVMetadata(callback) with invalid params(errcode 401)
-         * @tc.desc      : test setAVMetadata(callback) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0400
+         * @tc.desc   test setAVMetadata(callback) errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
@@ -292,13 +292,13 @@ export default function AVSessionErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0100
-         * @tc.name      : setAVPlaybackState(promise) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test setAVPlaybackState(promise) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0100
+         * @tc.desc   test setAVPlaybackState(promise) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(async () => {
@@ -313,13 +313,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0100
-         * @tc.name      : setAVPlaybackState(promise) with invalid params(errcode 401)
-         * @tc.desc      : test setAVPlaybackState(promise) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0100
+         * @tc.desc   test setAVPlaybackState(promise) errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await session.setAVPlaybackState().then(() => {
@@ -332,13 +332,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0300
-         * @tc.name      : setAVPlaybackState(callback) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test setAVPlaybackState(callback) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0300
+         * @tc.desc   test setAVPlaybackState(callback) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let PlaybackState = {
@@ -369,13 +369,13 @@ export default function AVSessionErrorCode() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0400
-         * @tc.name      : setAVPlaybackState(callback) with invalid params(errcode 401)
-         * @tc.desc      : test setAVPlaybackState(callback) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0400
+         * @tc.desc   test setAVPlaybackState(callback) errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let PlaybackState = {
@@ -405,13 +405,13 @@ export default function AVSessionErrorCode() {
             
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_0100
-         * @tc.name      : setLaunchAbility(promise) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test setLaunchAbility(promise) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level1
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_0100
+         * @tc.desc   test setLaunchAbility(promise) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let wantAgentInfo = {
@@ -441,13 +441,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_0200
-         * @tc.name      : setLaunchAbility(promise) with invalid params(errcode 401)
-         * @tc.desc      : test setLaunchAbility(promise) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level1
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_0200
+         * @tc.desc   test setLaunchAbility(promise) errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await session.setLaunchAbility().then(() => {
@@ -460,13 +460,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_0300
-         * @tc.name      : setLaunchAbility(callback) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test setLaunchAbility(callback) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_0300
+         * @tc.desc   test setLaunchAbility(callback) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function(done) {
             let wantAgentInfo = {
@@ -504,13 +504,13 @@ export default function AVSessionErrorCode() {
             })
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_0400
-         * @tc.name      : setLaunchAbility(callback) with invalid params(errcode 401)
-         * @tc.desc      : test setLaunchAbility(callback) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_0400
+         * @tc.desc   test setLaunchAbility(callback) errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function(done) {
             try {
@@ -531,13 +531,13 @@ export default function AVSessionErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_0100
-         * @tc.name      : session destroy(callback) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test session destroy(callback) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_0100
+         * @tc.desc   test session destroy(callback) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(() => {
@@ -560,13 +560,13 @@ export default function AVSessionErrorCode() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_0200
-         * @tc.name      : session destroy(promise) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test session destroy(promise) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_0200
+         * @tc.desc   test session destroy(promise) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(async () => {
@@ -581,13 +581,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_0100
-         * @tc.name      : activate(promise) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test activate(promise) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level1
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_0100
+         * @tc.desc   test activate(promise) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(async () => {
@@ -602,13 +602,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_0200
-         * @tc.name      : activate(callback) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test activate(callback) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_0200
+         * @tc.desc   test activate(callback) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(() => {
@@ -631,13 +631,13 @@ export default function AVSessionErrorCode() {
             })
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_0100
-         * @tc.name      : deactivate(promise) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test deactivate(promise) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level1
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_0100
+         * @tc.desc   test deactivate(promise) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(async () => {
@@ -652,13 +652,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_0200
-         * @tc.name      : deactivate(callback) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test deactivate(callback) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_0200
+         * @tc.desc   test deactivate(callback) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(() => {
@@ -681,13 +681,13 @@ export default function AVSessionErrorCode() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_0100
-         * @tc.name      : on('play') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test on('play') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_0100
+         * @tc.desc   test on('play') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -700,13 +700,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_0200
-         * @tc.name      : on('play') with invalid params(errcode 401)
-         * @tc.desc      : test on('play') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_0200
+         * @tc.desc   test on('play') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -719,13 +719,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSTOP_ERRORCODE_0100
-         * @tc.name      : on('stop') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test on('stop') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSTOP_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSTOP_ERRORCODE_0100
+         * @tc.desc   test on('stop') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSTOP_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -738,13 +738,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSTOP_ERRORCODE_0200
-         * @tc.name      : on('stop') with invalid params(errcode 401)
-         * @tc.desc      : test on('stop') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSTOP_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSTOP_ERRORCODE_0200
+         * @tc.desc   test on('stop') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSTOP_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -757,13 +757,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPAUSE_ERRORCODE_0100
-         * @tc.name      : on('pause') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test on('pause') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPAUSE_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPAUSE_ERRORCODE_0100
+         * @tc.desc   test on('pause') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPAUSE_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -776,13 +776,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPAUSE_ERRORCODE_0200
-         * @tc.name      : on('pause') with invalid params(errcode 401)
-         * @tc.desc      : test on('pause') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPAUSE_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPAUSE_ERRORCODE_0200
+         * @tc.desc   test on('pause') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPAUSE_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -795,13 +795,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_0100
-         * @tc.name      : on('playNext') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test on('playNext') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_0100
+         * @tc.desc   test on('playNext') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -814,13 +814,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_0200
-         * @tc.name      : on('playNext') with invalid params(errcode 401)
-         * @tc.desc      : test on('playNext') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_0200
+         * @tc.desc   test on('playNext') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -833,13 +833,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_0100
-         * @tc.name      : on('playPrevious') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test on('playPrevious') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_0100
+         * @tc.desc   test on('playPrevious') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -852,13 +852,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_0200
-         * @tc.name      : on('playPrevious') with invalid params(errcode 401)
-         * @tc.desc      : test on('playPrevious') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_0200
+         * @tc.desc   test on('playPrevious') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -871,13 +871,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_0100
-         * @tc.name      : on('fastForward') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test on('fastForward') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_0100
+         * @tc.desc   test on('fastForward') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -890,13 +890,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_0200
-         * @tc.name      : on('fastForward') with invalid params(errcode 401)
-         * @tc.desc      : test on('fastForward') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_0200
+         * @tc.desc   test on('fastForward') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -909,13 +909,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_0100
-         * @tc.name      : on('rewind') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test on('rewind') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_0100
+         * @tc.desc   test on('rewind') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -928,13 +928,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_0200
-         * @tc.name      : on('rewind') with invalid params(errcode 401)
-         * @tc.desc      : test on('rewind') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_0200
+         * @tc.desc   test on('rewind') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -947,13 +947,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSEEK_ERRORCODE_0100
-         * @tc.name      : on('seek') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test on('seek') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSEEK_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSEEK_ERRORCODE_0100
+         * @tc.desc   test on('seek') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSEEK_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -966,13 +966,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSEEK_ERRORCODE_0200
-         * @tc.name      : on('seek') with invalid params(errcode 401)
-         * @tc.desc      : test on('seek') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSEEK_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSEEK_ERRORCODE_0200
+         * @tc.desc   test on('seek') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSEEK_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -985,13 +985,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_ERRORCODE_0100
-         * @tc.name      : on('setSpeed') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test on('setSpeed') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_ERRORCODE_0100
+         * @tc.desc   test on('setSpeed') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1004,13 +1004,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_ERRORCODE_0200
-         * @tc.name      : on('setSpeed') with invalid params(errcode 401)
-         * @tc.desc      : test on('setSpeed') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_ERRORCODE_0200
+         * @tc.desc   test on('setSpeed') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1023,13 +1023,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_ERRORCODE_0100
-         * @tc.name      : on('setLoopMode') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test on('setLoopMode') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_ERRORCODE_0100
+         * @tc.desc   test on('setLoopMode') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1042,13 +1042,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_ERRORCODE_0200
-         * @tc.name      : on('setLoopMode') with invalid params(errcode 401)
-         * @tc.desc      : test on('setLoopMode') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_ERRORCODE_0200
+         * @tc.desc   test on('setLoopMode') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1061,13 +1061,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_ERRORCODE_0100
-         * @tc.name      : on('toggleFavorite') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test on('toggleFavorite') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_ERRORCODE_0100
+         * @tc.desc   test on('toggleFavorite') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1080,13 +1080,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_ERRORCODE_0200
-         * @tc.name      : on('toggleFavorite') with invalid params(errcode 401)
-         * @tc.desc      : test on('toggleFavorite') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_ERRORCODE_0200
+         * @tc.desc   test on('toggleFavorite') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1099,13 +1099,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_ERRORCODE_0100
-         * @tc.name      : on('handleKeyEvent') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test on('handleKeyEvent') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_ERRORCODE_0100
+         * @tc.desc   test on('handleKeyEvent') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1118,13 +1118,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_ERRORCODE_0200
-         * @tc.name      : on('handleKeyEvent') with invalid params(errcode 401)
-         * @tc.desc      : test on('handleKeyEvent') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_ERRORCODE_0200
+         * @tc.desc   test on('handleKeyEvent') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1137,13 +1137,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_0100
-         * @tc.name      : off('play') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test off('play') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_0100
+         * @tc.desc   test off('play') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1156,13 +1156,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_0200
-         * @tc.name      : off('play') with invalid params(errcode 401)
-         * @tc.desc      : test off('play') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_0200
+         * @tc.desc   test off('play') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1175,13 +1175,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_ERRORCODE_0100
-         * @tc.name      : off('pause') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test off('pause') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_ERRORCODE_0100
+         * @tc.desc   test off('pause') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1194,13 +1194,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_ERRORCODE_0200
-         * @tc.name      : off('pause') with invalid params(errcode 401)
-         * @tc.desc      : test off('pause') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_ERRORCODE_0200
+         * @tc.desc   test off('pause') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1213,13 +1213,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSTOP_ERRORCODE_0100
-         * @tc.name      : off('stop') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test off('stop') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFSTOP_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFSTOP_ERRORCODE_0100
+         * @tc.desc   test off('stop') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSTOP_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1232,13 +1232,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSTOP_ERRORCODE_0200
-         * @tc.name      : off('stop') with invalid params(errcode 401)
-         * @tc.desc      : test off('stop') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFSTOP_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFSTOP_ERRORCODE_0200
+         * @tc.desc   test off('stop') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSTOP_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1251,13 +1251,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_0100
-         * @tc.name      : off('playNext') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test off('playNext') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_0100
+         * @tc.desc   test off('playNext') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1270,13 +1270,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_0200
-         * @tc.name      : off('playNext') with invalid params(errcode 401)
-         * @tc.desc      : test off('playNext') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_0200
+         * @tc.desc   test off('playNext') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1289,13 +1289,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_0100
-         * @tc.name      : off('playPrevious') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test off('playPrevious') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_0100
+         * @tc.desc   test off('playPrevious') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1308,13 +1308,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_0200
-         * @tc.name      : off('playPrevious') with invalid params(errcode 401)
-         * @tc.desc      : test off('playPrevious') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_0200
+         * @tc.desc   test off('playPrevious') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1327,13 +1327,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_0100
-         * @tc.name      : off('fastForward') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test off('fastForward') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_0100
+         * @tc.desc   test off('fastForward') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1346,13 +1346,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_0200
-         * @tc.name      : off('fastForward') with invalid params(errcode 401)
-         * @tc.desc      : test off('fastForward') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_0200
+         * @tc.desc   test off('fastForward') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1365,13 +1365,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_0100
-         * @tc.name      : off('rewind') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test off('rewind') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_0100
+         * @tc.desc   test off('rewind') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1384,13 +1384,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_0200
-         * @tc.name      : off('rewind') with invalid params(errcode 401)
-         * @tc.desc      : test off('rewind') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_0200
+         * @tc.desc   test off('rewind') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1403,13 +1403,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSEEK_ERRORCODE_0100
-         * @tc.name      : off('seek') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test off('seek') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFSEEK_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFSEEK_ERRORCODE_0100
+         * @tc.desc   test off('seek') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSEEK_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1422,13 +1422,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSEEK_ERRORCODE_0200
-         * @tc.name      : off('seek') with invalid params(errcode 401)
-         * @tc.desc      : test off('seek') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFSEEK_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFSEEK_ERRORCODE_0200
+         * @tc.desc   test off('seek') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSEEK_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1441,13 +1441,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_ERRORCODE_0100
-         * @tc.name      : off('setSpeed') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test off('setSpeed') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_ERRORCODE_0100
+         * @tc.desc   test off('setSpeed') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1460,13 +1460,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_ERRORCODE_0200
-         * @tc.name      : off('setSpeed') with invalid params(errcode 401)
-         * @tc.desc      : test off('setSpeed') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_ERRORCODE_0200
+         * @tc.desc   test off('setSpeed') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1479,13 +1479,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_ERRORCODE_0100
-         * @tc.name      : off('setLoopMode') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test off('setLoopMode') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_ERRORCODE_0100
+         * @tc.desc   test off('setLoopMode') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1498,13 +1498,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_ERRORCODE_0200
-         * @tc.name      : off('setLoopMode') with invalid params(errcode 401)
-         * @tc.desc      : test off('setLoopMode') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_ERRORCODE_0200
+         * @tc.desc   test off('setLoopMode') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1517,13 +1517,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_ERRORCODE_0100
-         * @tc.name      : off('toggleFavorite') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test off('toggleFavorite') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_ERRORCODE_0100
+         * @tc.desc   test off('toggleFavorite') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1536,13 +1536,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_ERRORCODE_0200
-         * @tc.name      : off('toggleFavorite') with invalid params(errcode 401)
-         * @tc.desc      : test off('toggleFavorite') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_ERRORCODE_0200
+         * @tc.desc   test off('toggleFavorite') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1555,13 +1555,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_ERRORCODE_0100
-         * @tc.name      : off('handleKeyEvent') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test off('handleKeyEvent') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_ERRORCODE_0100
+         * @tc.desc   test off('handleKeyEvent') errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1574,13 +1574,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_ERRORCODE_0200
-         * @tc.name      : off('handleKeyEvent') with invalid params(errcode 401)
-         * @tc.desc      : test off('handleKeyEvent') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_ERRORCODE_0200
+         * @tc.desc   test off('handleKeyEvent') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
@@ -1593,13 +1593,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_0100
-         * @tc.name      : getOutputDevice(callback) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test getOutputDevice(callback) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_0100
+         * @tc.desc   test getOutputDevice(callback) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(() => {
@@ -1616,13 +1616,13 @@ export default function AVSessionErrorCode() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_0200
-         * @tc.name      : getOutputDevice(promise) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test getOutputDevice(promise) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_0200
+         * @tc.desc   test getOutputDevice(promise) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(async () => {
@@ -1637,13 +1637,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_0100
-         * @tc.name      : getController(promise) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test getController(promise) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_0100
+         * @tc.desc   test getController(promise) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(async () => {
@@ -1658,13 +1658,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_0200
-         * @tc.name      : getController(callback) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test getController(callback) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_0200
+         * @tc.desc   test getController(callback) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(() => {
@@ -1681,14 +1681,14 @@ export default function AVSessionErrorCode() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0100
-         * @tc.name      : dispatchSessionEvent(promise) with invalid param number(errcode 401)
-         * @tc.desc      : test dispatchSessionEvent(promise) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0100
+   * @tc.desc   test dispatchSessionEvent(promise) errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await session.dispatchSessionEvent(UPDATE_LYRICS_EVENT).then(() => {
                 console.info(`TestLog: dispatchSessionEvent success.`);
@@ -1700,14 +1700,14 @@ export default function AVSessionErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0200
-         * @tc.name      : dispatchSessionEvent(promise) with invalid param type(errcode 401)
-         * @tc.desc      : test dispatchSessionEvent(promise) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0200
+   * @tc.desc   test dispatchSessionEvent(promise) errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await session.dispatchSessionEvent(UPDATE_LYRICS_WANT_PARAMS, UPDATE_LYRICS_WANT_PARAMS).then(() => {
                 console.info(`TestLog: dispatchSessionEvent success.`);
@@ -1719,14 +1719,14 @@ export default function AVSessionErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0300
-         * @tc.name      : dispatchSessionEvent(promise) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test dispatchSessionEvent(promise) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0300
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0300
+   * @tc.desc   test dispatchSessionEvent(promise) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await invalidSession(async () => {
                 await session.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS).then(() => {
@@ -1740,14 +1740,14 @@ export default function AVSessionErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0400
-         * @tc.name      : dispatchSessionEvent(callback) with invalid param number(errcode 401)
-         * @tc.desc      : test dispatchSessionEvent(callback) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0400
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0400
+   * @tc.desc   test dispatchSessionEvent(callback) errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
                 session.dispatchSessionEvent(UPDATE_LYRICS_EVENT, null, err => {
@@ -1767,14 +1767,14 @@ export default function AVSessionErrorCode() {
             }
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0500
-         * @tc.name      : dispatchSessionEvent(callback) with invalid param type(errcode 401)
-         * @tc.desc      : test dispatchSessionEvent(callback) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0500
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0500
+   * @tc.desc   test dispatchSessionEvent(callback) errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
                 session.dispatchSessionEvent(UPDATE_LYRICS_WANT_PARAMS, UPDATE_LYRICS_WANT_PARAMS, err => {
@@ -1794,14 +1794,14 @@ export default function AVSessionErrorCode() {
             }
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0600
-         * @tc.name      : dispatchSessionEvent(callback) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test dispatchSessionEvent(callback) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0600
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0600
+   * @tc.desc   test dispatchSessionEvent(callback) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await invalidSession(() => {
                 try {
@@ -1823,14 +1823,14 @@ export default function AVSessionErrorCode() {
             });
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0100
-         * @tc.name      : setExtras(promise) with invalid param number(errcode 401)
-         * @tc.desc      : test setExtras(promise) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0100
+   * @tc.desc   test setExtras(promise) errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await session.setExtras().then(() => {
                 console.info(`TestLog: setExtras success.`);
@@ -1842,14 +1842,14 @@ export default function AVSessionErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0200
-         * @tc.name      : setExtras(promise) with invalid param type(errcode 401)
-         * @tc.desc      : test setExtras(promise) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0200
+   * @tc.desc   test setExtras(promise) errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await session.setExtras(INVALID_STRING).then(() => {
                 console.info(`TestLog: setExtras success.`);
@@ -1861,14 +1861,14 @@ export default function AVSessionErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0300
-         * @tc.name      : setExtras(promise) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test setExtras(promise) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0300
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0300
+   * @tc.desc   test setExtras(promise) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await invalidSession(async () => {
                 await session.setExtras(CUSTOM_EXTRAS).then(() => {
@@ -1882,14 +1882,14 @@ export default function AVSessionErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0400
-         * @tc.name      : setExtras(callback) with invalid param number(errcode 401)
-         * @tc.desc      : test setExtras(callback) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0400
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0400
+   * @tc.desc   test setExtras(callback) errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
                 session.setExtras(null, err => {
@@ -1909,14 +1909,14 @@ export default function AVSessionErrorCode() {
             }
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0500
-         * @tc.name      : setExtras(callback) with invalid param type(errcode 401)
-         * @tc.desc      : test setExtras(callback) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0500
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0500
+   * @tc.desc   test setExtras(callback) errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
                 session.setExtras(INVALID_STRING, err => {
@@ -1936,14 +1936,14 @@ export default function AVSessionErrorCode() {
             }
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0600
-         * @tc.name      : setExtras(callback) with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test setExtras(callback) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0600
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0600
+   * @tc.desc   test setExtras(callback) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(async () => {
                 try {
@@ -1965,14 +1965,14 @@ export default function AVSessionErrorCode() {
             });
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_0100
-         * @tc.name      : on('commonCommand') with none param (errcode 401)
-         * @tc.desc      : test on('commonCommand') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_0100
+   * @tc.desc   test on('commonCommand') errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
                 onCallbackInvalidParam('commonCommand');
@@ -1984,14 +1984,14 @@ export default function AVSessionErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_0200
-         * @tc.name      : on('commonCommand') with too many params (errcode 401)
-         * @tc.desc      : test on('commonCommand') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_0200
+   * @tc.desc   test on('commonCommand') errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			try {
 				session.on('commonCommand', callback1, callback2);
@@ -2002,14 +2002,14 @@ export default function AVSessionErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_0300
-         * @tc.name      : on('commonCommand') with invalid param type(errcode 401)
-         * @tc.desc      : test on('commonCommand') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_0300
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_0300
+   * @tc.desc   test on('commonCommand') errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			try {
 				session.on('commonCommand', INVALID_STRING);
@@ -2020,14 +2020,14 @@ export default function AVSessionErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_0400
-         * @tc.name      : on('commonCommand') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test on('commonCommand') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_0400
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_0400
+   * @tc.desc   test on('commonCommand') errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
                 await onCallbackInvalidSession('commonCommand');
@@ -2039,14 +2039,14 @@ export default function AVSessionErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_ERRORCODE_0100
-         * @tc.name      : off('commonCommand') with invalid param number(errcode 401)
-         * @tc.desc      : test off('commonCommand') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_ERRORCODE_0100
+   * @tc.desc   test off('commonCommand') errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
                 offCallbackInvalidParam('commonCommand');
@@ -2058,14 +2058,14 @@ export default function AVSessionErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_ERRORCODE_0200
-         * @tc.name      : off('commonCommand') with avsession does not exit(errcode 6600102)
-         * @tc.desc      : test off('commonCommand') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_ERRORCODE_0200
+   * @tc.desc   test off('commonCommand') errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
                 await offCallbackInvalidSession('commonCommand');
@@ -2077,14 +2077,14 @@ export default function AVSessionErrorCode() {
 			done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_0100
-         * @tc.name      : setAVQueueItems(promise) with invalid params(errcode 401)
-         * @tc.desc      : test setAVQueueItems(promise) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_0100
+   * @tc.desc   test setAVQueueItems(promise) errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await session.setAVQueueItems(ITEMS_ARRAY_ERROR).then(() => {
                 console.info('setAVQueueItems Successfully');
@@ -2096,14 +2096,14 @@ export default function AVSessionErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_0200
-         * @tc.name      : setAVQueueItems(promise) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test setAVQueueItems(promise) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_0200
+   * @tc.desc   test setAVQueueItems(promise) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(async () => {
                 await session.setAVQueueItems(ITEMS_ARRAY).then(() => {
@@ -2117,14 +2117,14 @@ export default function AVSessionErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_0300
-         * @tc.name      : setAVQueueItems(callback) with invalid params(errcode 401)
-         * @tc.desc      : test setAVQueueItems(callback) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_0300
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_0300
+   * @tc.desc   test setAVQueueItems(callback) errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
                 session.setAVQueueItems(ITEMS_ARRAY_ERROR, err => {
@@ -2144,14 +2144,14 @@ export default function AVSessionErrorCode() {
             }
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_0400
-         * @tc.name      : setAVQueueItems(callback) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test setAVQueueItems(callback) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_0400
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_0400
+   * @tc.desc   test setAVQueueItems(callback) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(() => {
                 try {
@@ -2173,14 +2173,14 @@ export default function AVSessionErrorCode() {
             });
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_0100
-         * @tc.name      : setAVQueueTitle(promise) with invalid params(errcode 401)
-         * @tc.desc      : test setAVQueueTitle(promise) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_0100
+   * @tc.desc   test setAVQueueTitle(promise) errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await session.setAVQueueTitle({}).then(() => {
                 console.info('setAVQueueTitle Successfully');
@@ -2192,14 +2192,14 @@ export default function AVSessionErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_0200
-         * @tc.name      : setAVQueueTitle(promise) with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test setAVQueueTitle(promise) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_0200
+   * @tc.desc   test setAVQueueTitle(promise) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await invalidSession(async () => {
                 await session.setAVQueueTitle(QUEUE_TITLE).then(() => {
@@ -2213,14 +2213,14 @@ export default function AVSessionErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_0300
-         * @tc.name      : setAVQueueTitle(callback) with invalid params(errcode 401)
-         * @tc.desc      : test setAVQueueTitle(callback) errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_0300
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_0300
+   * @tc.desc   test setAVQueueTitle(callback) errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
                 session.setAVQueueTitle({}, err => {
@@ -2240,14 +2240,14 @@ export default function AVSessionErrorCode() {
             }
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_0400
-         * @tc.name      : setAVQueueTitle(callback) with session does not exist(errcode 6600102)
-         * @tc.desc      : test setAVQueueTitle(callback) errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_0400
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_0400
+   * @tc.desc   test setAVQueueTitle(callback) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 			await invalidSession(() => {
                 try {
@@ -2269,14 +2269,14 @@ export default function AVSessionErrorCode() {
             });
 		})
 
-		/* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_0100
-         * @tc.name      : on('skipToQueueItem') with none param (errcode 401)
-         * @tc.desc      : test on('skipToQueueItem') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_0100
+   * @tc.desc   test on('skipToQueueItem') errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
                 onCallbackInvalidParam('skipToQueueItem');
@@ -2288,14 +2288,14 @@ export default function AVSessionErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_0200
-         * @tc.name      : on('skipToQueueItem') with too many params (errcode 401)
-         * @tc.desc      : test on('skipToQueueItem') errcode 401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_0200
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_0200
+   * @tc.desc   test on('skipToQueueItem') errcode 401
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
                 session.on('skipToQueueItem', callback1, callback2);
@@ -2306,14 +2306,14 @@ export default function AVSessionErrorCode() {
             done();
 		})
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_0300
-         * @tc.name      : on('skipToQueueItem') with avsession does not exist(errcode 6600102)
-         * @tc.desc      : test on('skipToQueueItem') errcode 6600102
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_0300
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_0300
+   * @tc.desc   test on('skipToQueueItem') errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try{
                 await onCallbackInvalidSession('skipToQueueItem');

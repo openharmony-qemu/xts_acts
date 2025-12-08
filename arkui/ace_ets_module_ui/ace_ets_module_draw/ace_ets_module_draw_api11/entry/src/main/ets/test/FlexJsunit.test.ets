@@ -46,6 +46,14 @@ export default function flexJsunit() {
       console.info("flex after each called");
     });
 
+    /**
+     * @tc.name   testFlex_0100
+     * @tc.number testFlex_0100
+     * @tc.desc   testFlex_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFlex_0100', Level.LEVEL0, async (done:Function) => {
       console.info("testFlex_0100 START");
       await Utils.sleep(1000);
@@ -58,6 +66,14 @@ export default function flexJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testFlex_0200
+     * @tc.number testFlex_0200
+     * @tc.desc   testFlex_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFlex_0200', Level.LEVEL0, async (done:Function) => {
       console.info('testFlex_0200 START');
       await Utils.sleep(1000);
@@ -69,6 +85,14 @@ export default function flexJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testFlex_0300
+     * @tc.number testFlex_0300
+     * @tc.desc   testFlex_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFlex_0300', Level.LEVEL0, async (done:Function) => {
       console.info('testFlex_0300 START');
       await Utils.sleep(1000);
@@ -80,6 +104,14 @@ export default function flexJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testFlex_0400
+     * @tc.number testFlex_0400
+     * @tc.desc   testFlex_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFlex_0400', Level.LEVEL0, async (done:Function) => {
       console.info('testFlex_0400 START');
       await Utils.sleep(1000);
@@ -91,6 +123,14 @@ export default function flexJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testFlex_0500
+     * @tc.number testFlex_0500
+     * @tc.desc   testFlex_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFlex_0500', Level.LEVEL0, async (done:Function) => {
       console.info('testFlex_0500 START');
       let strJson: string = getInspectorByKey('flex');
@@ -100,6 +140,14 @@ export default function flexJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testFlex_0600
+     * @tc.number testFlex_0600
+     * @tc.desc   testFlex_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFlex_0600', Level.LEVEL0, async (done:Function) => {
       console.info('testFlex_0600 START');
       let strJson: string = getInspectorByKey('flex');

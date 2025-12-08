@@ -26,39 +26,39 @@ export default function textInputPlaceholderColorTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_PLACEHOLDERCOLOR_0100
-     * @tc.name: testTextInputPlaceholderColor001
-     * @tc.desc: testing PlaceHolderColor for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputPlaceholderColor001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_PLACEHOLDERCOLOR_0100
+     * @tc.desc   testing PlaceHolderColor for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputPlaceholderColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputPlaceholderColor001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_PLACEHOLDERCOLOR_0200
-     * @tc.name: testTextInputPlaceholderColor002
-     * @tc.desc: testing PlaceHolderColor for textInput with black value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputPlaceholderColor002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_PLACEHOLDERCOLOR_0200
+     * @tc.desc   testing PlaceHolderColor for textInput with black value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputPlaceholderColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputPlaceholderColor002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_PLACEHOLDERCOLOR_0300
-     * @tc.name: testTextInputPlaceholderColor003
-     * @tc.desc: testing PlaceHolderColor for textInput with white value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputPlaceholderColor003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_PLACEHOLDERCOLOR_0300
+     * @tc.desc   testing PlaceHolderColor for textInput with white value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputPlaceholderColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputPlaceholderColor003()).assertEqual(0)

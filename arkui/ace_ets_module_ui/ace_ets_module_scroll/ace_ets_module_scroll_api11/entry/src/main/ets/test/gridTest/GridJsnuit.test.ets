@@ -55,9 +55,12 @@ export default function gridJsunit1() {
     });
 
     /**
+     * @tc.name   gridTest001
      * @tc.number SUB_ACE_BASIC_ETS_API_0350
-     * @tc.name gridItemTest001
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('gridTest001', Level.LEVEL1, async () => {
       console.info('gridTest001 START');

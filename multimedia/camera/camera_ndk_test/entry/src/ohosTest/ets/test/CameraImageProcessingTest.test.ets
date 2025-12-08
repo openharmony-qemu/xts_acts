@@ -221,12 +221,12 @@ export default function CameraImageProcessingTest() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SECONDARY_IMAGE_PROCESSING_PREVIEW
-     * @tc.name      : CameraInput api
-     * @tc.desc      : CameraInput api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SECONDARY_IMAGE_PROCESSING_PREVIEW
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SECONDARY_IMAGE_PROCESSING_PREVIEW
+     * @tc.desc   CameraInput api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SECONDARY_IMAGE_PROCESSING_PREVIEW', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SECONDARY_IMAGE_PROCESSING_PREVIEW--------------");
@@ -248,12 +248,12 @@ export default function CameraImageProcessingTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SECONDARY_IMAGE_PROCESSING_PREVIEW ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SECONDARY_IMAGE_PROCESSING_PREVIEW_AND_VIDEO
-     * @tc.name      : CameraInput api
-     * @tc.desc      : CameraInput api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SECONDARY_IMAGE_PROCESSING_PREVIEW_AND_VIDEO
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SECONDARY_IMAGE_PROCESSING_PREVIEW_AND_VIDEO
+     * @tc.desc   CameraInput api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SECONDARY_IMAGE_PROCESSING_PREVIEW_AND_VIDEO', Level.LEVEL0, async () => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_NDK_SECONDARY_IMAGE_PROCESSING_PREVIEW_AND_VIDEO--------------");

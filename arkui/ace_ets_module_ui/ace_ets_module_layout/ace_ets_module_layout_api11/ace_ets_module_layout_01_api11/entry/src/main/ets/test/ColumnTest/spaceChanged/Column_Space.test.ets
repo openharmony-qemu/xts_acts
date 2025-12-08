@@ -47,9 +47,12 @@ export default function Column_Space() {
       console.info("Column_Space after each called")
     });
     /**
+     * @tc.name   testColumnSpaceToThirty
      * @tc.number SUB_ACE_COLUMN_SPACE_TEST_0100
-     * @tc.name testColumnSpaceToThirty
-     * @tc.desc The value of space set to 30, and the layout size of the parent and child components is fixed
+     * @tc.desc   The value of space set to 30, and the layout size of the parent and child components is fixed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSpaceToThirty',  Level.LEVEL0, async () => {
       console.info('[testColumnSpaceToThirty] START');
@@ -78,9 +81,12 @@ export default function Column_Space() {
       console.info('[testColumnSpaceToThirty] END');
     });
     /**
+     * @tc.name   testColumnSpaceToFifty
      * @tc.number SUB_ACE_COLUMN_SPACE_TEST_0200
-     * @tc.name testColumnSpaceToFifty
-     * @tc.desc The value of space set to 50, and the layout size of the parent and child components is fixed
+     * @tc.desc   The value of space set to 50, and the layout size of the parent and child components is fixed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSpaceToFifty',  Level.LEVEL0, async () => {
       console.info('[testColumnSpaceToFifty] START');
@@ -112,9 +118,12 @@ export default function Column_Space() {
       console.info('[testColumnSpaceToFifty] END');
     });
     /**
+     * @tc.name   testColumnSpaceToSeventy
      * @tc.number SUB_ACE_COLUMN_SPACE_TEST_0300
-     * @tc.name testColumnSpaceToSeventy
-     * @tc.desc The value of space set to 70, and the layout size of the parent and child components is fixed
+     * @tc.desc   The value of space set to 70, and the layout size of the parent and child components is fixed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSpaceToSeventy',  Level.LEVEL0, async () => {
       console.info('[testColumnSpaceToSeventy] START');

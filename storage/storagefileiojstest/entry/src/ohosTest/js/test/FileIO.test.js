@@ -29,9 +29,12 @@ export default function fileIOTest() {
   describe('fileIOTest', function () {
 
     /**
+     * @tc.name   fileio_test_open_close_sync_000
      * @tc.number SUB_STORAGE_FileIO_open&closesync_0000
-     * @tc.name fileio_test_open_close_sync_000
-     * @tc.desc Function of API, openSync. The test file is exist.
+     * @tc.desc   Function of API, openSync. The test file is exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_close_sync_000', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_close_sync_000');
@@ -48,9 +51,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_000
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0000
-     * @tc.name fileio_test_open_000
-     * @tc.desc Function of API, openSync(mode not for value). The test file is exist.
+     * @tc.desc   Function of API, openSync(mode not for value). The test file is exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_000', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_000');
@@ -68,9 +74,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_001
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0100
-     * @tc.name fileio_test_open_001
-     * @tc.desc Function of API, flags=0o100. mode=0o001
+     * @tc.desc   Function of API, flags=0o100. mode=0o001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_001', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_001');
@@ -88,9 +97,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_002
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0200
-     * @tc.name fileio_test_open_002
-     * @tc.desc Function of API,
+     * @tc.desc   Function of API,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_002', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_002');
@@ -108,9 +120,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_003
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0300
-     * @tc.name fileio_test_open_003
-     * @tc.desc Function of API, flags=0o100. mode=0o004
+     * @tc.desc   Function of API, flags=0o100. mode=0o004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_003', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_003');
@@ -131,9 +146,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_004
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0400
-     * @tc.name fileio_test_open_004
-     * @tc.desc Function of API, flags=0o101. mode=0o002
+     * @tc.desc   Function of API, flags=0o101. mode=0o002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_004', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_004');
@@ -152,9 +170,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_005
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0500
-     * @tc.name fileio_test_open_005
-     * @tc.desc Function of API, flags=0o102. mode=0o001.
+     * @tc.desc   Function of API, flags=0o102. mode=0o001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_005', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_005');
@@ -182,9 +203,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_006
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0600
-     * @tc.name fileio_test_open_006
-     * @tc.desc Function of API, flags=0o200. mode=0o700
+     * @tc.desc   Function of API, flags=0o200. mode=0o700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_006', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_006');
@@ -200,9 +224,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_007
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0700
-     * @tc.name fileio_test_open_007
-     * @tc.desc Function of API, flags=0o302. mode=0o700.
+     * @tc.desc   Function of API, flags=0o302. mode=0o700.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_007', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_007');
@@ -229,9 +256,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_008
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0800
-     * @tc.name fileio_test_open_008
-     * @tc.desc Function of API, flags=0o102. mode=0o700
+     * @tc.desc   Function of API, flags=0o102. mode=0o700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_008', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_008');
@@ -258,9 +288,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_009
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0900
-     * @tc.name fileio_test_open_009
-     * @tc.desc Function of API, flags=0o302.
+     * @tc.desc   Function of API, flags=0o302.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_009', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_009');
@@ -273,9 +306,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_010
      * @tc.number SUB_STORAGE_FileIO_OpenSync_1000
-     * @tc.name fileio_test_open_010
-     * @tc.desc Function of API, flags=0o402.
+     * @tc.desc   Function of API, flags=0o402.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_010', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_010');
@@ -303,9 +339,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_011
      * @tc.number SUB_STORAGE_FileIO_OpenSync_1100
-     * @tc.name fileio_test_open_011
-     * @tc.desc Function of API, flags=0o1000.
+     * @tc.desc   Function of API, flags=0o1000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_011', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_011');
@@ -327,9 +366,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_012
      * @tc.number SUB_STORAGE_FileIO_OpenSync_1200
-     * @tc.name fileio_test_open_012
-     * @tc.desc Function of API, flags=0o1001.
+     * @tc.desc   Function of API, flags=0o1001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_012', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_012');
@@ -349,9 +391,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_013
      * @tc.number SUB_STORAGE_FileIO_OpenSync_1300
-     * @tc.name fileio_test_open_013
-     * @tc.desc Function of API, flags=0o2002.
+     * @tc.desc   Function of API, flags=0o2002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_013', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_013');
@@ -379,9 +424,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_014
      * @tc.number SUB_STORAGE_FileIO_OpenSync_1400
-     * @tc.name fileio_test_open_014
-     * @tc.desc Function of API, flags=0o4002.
+     * @tc.desc   Function of API, flags=0o4002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_014', Level.LEVEL1, async function (done) {
       let fpath = await nextFileName('fileio_test_open_014');
@@ -403,9 +451,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_015
      * @tc.number SUB_STORAGE_FileIO_OpenSync_1500
-     * @tc.name fileio_test_open_015
-     * @tc.desc Function of API, flags=0o20002.
+     * @tc.desc   Function of API, flags=0o20002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_015', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_015');
@@ -423,9 +474,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_016
      * @tc.number SUB_STORAGE_FileIO_OpenSync_1600
-     * @tc.name fileio_test_open_016
-     * @tc.desc Function of API, flags=0o10002.
+     * @tc.desc   Function of API, flags=0o10002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_016', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_016');
@@ -443,9 +497,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_017
      * @tc.number SUB_STORAGE_FileIO_OpenSync_1700
-     * @tc.name fileio_test_open_017
-     * @tc.desc Function of API, flags=0o4010002.
+     * @tc.desc   Function of API, flags=0o4010002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_017', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_017');
@@ -463,9 +520,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_018
      * @tc.number SUB_STORAGE_FileIO_OpenSync_1800
-     * @tc.name fileio_test_open_018
-     * @tc.desc Function of API, flags=0o100002.
+     * @tc.desc   Function of API, flags=0o100002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_018', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_018');
@@ -483,9 +543,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_019
      * @tc.number SUB_STORAGE_FileIO_OpenSync_1900
-     * @tc.name fileio_test_open_019
-     * @tc.desc Function of API, flags=0o40002. mode=0o700
+     * @tc.desc   Function of API, flags=0o40002. mode=0o700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_019', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_019');
@@ -500,9 +563,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_021
      * @tc.number SUB_STORAGE_FileIO_OpenSync_2100
-     * @tc.name fileio_test_open_021
-     * @tc.desc Function of API, flags=0o2000002.
+     * @tc.desc   Function of API, flags=0o2000002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_021', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_021');
@@ -520,9 +586,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_022
      * @tc.number SUB_STORAGE_FileIO_OpenSync_2200
-     * @tc.name fileio_test_open_022
-     * @tc.desc Function of API, flags=0o200000.
+     * @tc.desc   Function of API, flags=0o200000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_022', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_open_022') + 'd';
@@ -538,9 +607,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_023
      * @tc.number SUB_STORAGE_FileIO_OpenSync_2300
-     * @tc.name fileio_test_open_023
-     * @tc.desc Function of API, flags=0o400002.
+     * @tc.desc   Function of API, flags=0o400002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_023', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_023');
@@ -558,9 +630,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_024
      * @tc.number SUB_STORAGE_FileIO_OpenSync_2400
-     * @tc.name fileio_test_open_024
-     * @tc.desc Function of API, flags=0o1000002.mode=0o700
+     * @tc.desc   Function of API, flags=0o1000002.mode=0o700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_024', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_024');
@@ -578,9 +653,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_025
      * @tc.number SUB_STORAGE_FileIO_OpenSync_2500
-     * @tc.name fileio_test_open_025
-     * @tc.desc Function of API, flags=0o10000002.
+     * @tc.desc   Function of API, flags=0o10000002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_025', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_025');
@@ -598,9 +676,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_026
      * @tc.number SUB_STORAGE_FileIO_OpenSync_2600
-     * @tc.name fileio_test_open_026
-     * @tc.desc Function of API,flags=0o002.mode=0o700
+     * @tc.desc   Function of API,flags=0o002.mode=0o700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_026', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_026');
@@ -618,9 +699,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_027
      * @tc.number SUB_STORAGE_FileIO_OpenSync_2700
-     * @tc.name fileio_test_open_027
-     * @tc.desc Function of API, flags=0o002.mode=0o400
+     * @tc.desc   Function of API, flags=0o002.mode=0o400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_027', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_027');
@@ -646,9 +730,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_028
      * @tc.number SUB_STORAGE_FileIO_OpenSync_2800
-     * @tc.name fileio_test_open_028
-     * @tc.desc Function of API, flags=0o002.mode=0o200
+     * @tc.desc   Function of API, flags=0o002.mode=0o200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_028', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_028');
@@ -674,9 +761,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_029
      * @tc.number SUB_STORAGE_FileIO_OpenSync_2900
-     * @tc.name fileio_test_open_029
-     * @tc.desc Function of API, flags=0o002.mode=0o100
+     * @tc.desc   Function of API, flags=0o002.mode=0o100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_029', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_029');
@@ -694,9 +784,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_030
      * @tc.number SUB_STORAGE_FileIO_OpenSync_3000
-     * @tc.name fileio_test_open_030
-     * @tc.desc Function of API,  flags=0o002.mode=0o070
+     * @tc.desc   Function of API,  flags=0o002.mode=0o070
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_030', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_030');
@@ -724,9 +817,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_031
      * @tc.number SUB_STORAGE_FileIO_OpenSync_3100
-     * @tc.name fileio_test_open_031
-     * @tc.desc Function of API, flags=0o002.mode=0o040
+     * @tc.desc   Function of API, flags=0o002.mode=0o040
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_031', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_031');
@@ -752,9 +848,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_032
      * @tc.number SUB_STORAGE_FileIO_OpenSync_3200
-     * @tc.name fileio_test_open_032
-     * @tc.desc Function of API, flags=0o002.mode=0o020
+     * @tc.desc   Function of API, flags=0o002.mode=0o020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_032', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_032');
@@ -780,9 +879,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_033
      * @tc.number SUB_STORAGE_FileIO_OpenSync_3300
-     * @tc.name fileio_test_open_033
-     * @tc.desc Function of API, flags=0o002.mode=0o010
+     * @tc.desc   Function of API, flags=0o002.mode=0o010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_033', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_033');
@@ -800,9 +902,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_034
      * @tc.number SUB_STORAGE_FileIO_OpenSync_3400
-     * @tc.name fileio_test_open_034
-     * @tc.desc Function of API, flags=0o002.mode=0o007
+     * @tc.desc   Function of API, flags=0o002.mode=0o007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_034', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_034');
@@ -830,9 +935,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_035
      * @tc.number SUB_STORAGE_FileIO_OpenSync_3500
-     * @tc.name fileio_test_open_035
-     * @tc.desc Function of API, flags=0o002.mode=0o004
+     * @tc.desc   Function of API, flags=0o002.mode=0o004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_035', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_035');
@@ -858,9 +966,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_036
      * @tc.number SUB_STORAGE_FileIO_OpenSync_3600
-     * @tc.name fileio_test_open_036
-     * @tc.desc Function of API, flags=0o002.mode=0o002
+     * @tc.desc   Function of API, flags=0o002.mode=0o002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_036', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_036');
@@ -886,9 +997,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_037
      * @tc.number SUB_STORAGE_FileIO_OpenSync_3700
-     * @tc.name fileio_test_open_037
-     * @tc.desc Function of API, flags=0o002.mode=0o001
+     * @tc.desc   Function of API, flags=0o002.mode=0o001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_037', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_037');
@@ -905,9 +1019,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_038
      * @tc.number SUB_STORAGE_FileIO_OpenSync_3800
-     * @tc.name fileio_test_open_038
-     * @tc.desc Function of API, flags=0o102.mode=0o700
+     * @tc.desc   Function of API, flags=0o102.mode=0o700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_038', Level.LEVEL1, async function () {
       let txt = randomString(4100);
@@ -922,9 +1039,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_sync_001
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0100
-     * @tc.name fileio_test_open_sync_001
-     * @tc.desc Function of API, openSync(flags=0o200). The test file is exist.
+     * @tc.desc   Function of API, openSync(flags=0o200). The test file is exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_sync_001', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_sync_001');
@@ -942,9 +1062,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_sync_002
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0200
-     * @tc.name fileio_test_open_sync_002
-     * @tc.desc Function of API, openSync(flags=0o201). The test file is exist.
+     * @tc.desc   Function of API, openSync(flags=0o201). The test file is exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_sync_002', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_sync_002');
@@ -962,9 +1085,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_sync_003
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0300
-     * @tc.name fileio_test_open_sync_003
-     * @tc.desc Function of API, openSync(flags=0o202). The test file is exist.
+     * @tc.desc   Function of API, openSync(flags=0o202). The test file is exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_sync_003', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_sync_003');
@@ -982,9 +1108,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_sync_004
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0400
-     * @tc.name fileio_test_open_sync_004
-     * @tc.desc Function of API, openSync(flags=0o102, mode=0o777). The test file is not exist.
+     * @tc.desc   Function of API, openSync(flags=0o102, mode=0o777). The test file is not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_sync_004', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_open_sync_004');
@@ -1001,9 +1130,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_sync_005
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0500
-     * @tc.name fileio_test_open_sync_005
-     * @tc.desc Function of API, openSync(flags not for value, mode not for value).
+     * @tc.desc   Function of API, openSync(flags not for value, mode not for value).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_sync_005', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_open_sync_005') + 'd'
@@ -1021,9 +1153,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_sync_006
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0600
-     * @tc.name fileio_test_open_sync_006
-     * @tc.desc Function of API, openSync(flags=0o1, illegal parameter).
+     * @tc.desc   Function of API, openSync(flags=0o1, illegal parameter).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_sync_006', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_open_sync_006') + 'd'
@@ -1038,9 +1173,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_sync_007
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0700
-     * @tc.name fileio_test_open_sync_007
-     * @tc.desc Function of API, openSync(fpath too long).
+     * @tc.desc   Function of API, openSync(fpath too long).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_sync_007', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_open_sync_007');
@@ -1065,9 +1203,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_sync_008
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0800
-     * @tc.name fileio_test_open_sync_008
-     * @tc.desc Function of API, openSync(filename too long).
+     * @tc.desc   Function of API, openSync(filename too long).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_sync_008', Level.LEVEL1, async function () {
       let fpath = await nextFileName(randomString(256));
@@ -1081,9 +1222,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_sync_009
      * @tc.number SUB_STORAGE_FileIO_OpenSync_0900
-     * @tc.name fileio_test_open_sync_009
-     * @tc.desc Function of API, openSync(dir layers too long).
+     * @tc.desc   Function of API, openSync(dir layers too long).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_sync_009', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_open_sync_009');
@@ -1108,9 +1252,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_open_sync_010
      * @tc.number SUB_STORAGE_FileIO_OpenSync_1000
-     * @tc.name fileio_test_open_sync_010
-     * @tc.desc Function of API, openSync(filename has special characters).
+     * @tc.desc   Function of API, openSync(filename has special characters).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_open_sync_010', Level.LEVEL1, async function () {
       let fpath = await nextFileName('?*:<>/|');
@@ -1123,9 +1270,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_close_sync_000
      * @tc.number SUB_STORAGE_FileIO_CloseSync_0000
-     * @tc.name fileio_test_close_sync_000
-     * @tc.desc Function of API, close. The test file is not exist.
+     * @tc.desc   Function of API, close. The test file is not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_close_sync_000', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_chmod_sync_000');
@@ -1139,9 +1289,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_close_sync_001
      * @tc.number SUB_STORAGE_FileIO_CloseSync_0100
-     * @tc.name fileio_test_close_sync_001
-     * @tc.desc Function of API, close(fpath=vaild value). The test file is not exist.
+     * @tc.desc   Function of API, close(fpath=vaild value). The test file is not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_close_sync_001', Level.LEVEL1, async function () {
       try {
@@ -1155,9 +1308,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_access_sync_000
      * @tc.number SUB_STORAGE_FileIO_AccessSync_0000
-     * @tc.name fileio_test_access_sync_000
-     * @tc.desc Function of API,access. The test file is exist.
+     * @tc.desc   Function of API,access. The test file is exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_access_sync_000', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_access_sync_000');
@@ -1173,9 +1329,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_access_sync_001
      * @tc.number SUB_STORAGE_FileIO_AccessSync_0100
-     * @tc.name fileio_test_access_sync_001
-     * @tc.desc Function of API, launch via fileio. The test file is not exist.
+     * @tc.desc   Function of API, launch via fileio. The test file is not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_access_sync_001', Level.LEVEL1, async function () {
       try {
@@ -1187,9 +1346,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_access_sync_002
      * @tc.number SUB_STORAGE_FileIO_AccessSync_0200
-     * @tc.name fileio_test_access_sync_002
-     * @tc.desc Function of API, access. The test file is not exist.
+     * @tc.desc   Function of API, access. The test file is not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_access_sync_002', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileIOTest');
@@ -1202,9 +1364,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_access_sync_003
      * @tc.number SUB_STORAGE_FileIO_AccessSync_0300
-     * @tc.name fileio_test_access_sync_003
-     * @tc.desc Function of API, access(mode=1). The test file is exist and have the authority.
+     * @tc.desc   Function of API, access(mode=1). The test file is exist and have the authority.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_access_sync_003', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_access_sync_004');
@@ -1221,9 +1386,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_access_sync_004
      * @tc.number SUB_STORAGE_FileIO_AccessSync_0400
-     * @tc.name fileio_test_access_sync_004
-     * @tc.desc Function of API, access(mode=2). The test file is exist and have the authority.
+     * @tc.desc   Function of API, access(mode=2). The test file is exist and have the authority.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_access_sync_004', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_access_sync_004');
@@ -1240,9 +1408,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_access_sync_005
      * @tc.number SUB_STORAGE_FileIO_AccessSync_0500
-     * @tc.name fileio_test_access_sync_005
-     * @tc.desc Function of API, access(fpath=dir address). The test dir is exist.
+     * @tc.desc   Function of API, access(fpath=dir address). The test dir is exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_access_sync_005', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_access_sync_005') + 'd'
@@ -1258,9 +1429,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_access_sync_006
      * @tc.number SUB_STORAGE_FileIO_AccessSync_0600
-     * @tc.name fileio_test_access_sync_006
-     * @tc.desc Function of API, access(fpath=dir address). The test dir is not exist.
+     * @tc.desc   Function of API, access(fpath=dir address). The test dir is not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_access_sync_006', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_access_sync_006') + 'd'
@@ -1274,9 +1448,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_access_sync_007
      * @tc.number SUB_STORAGE_FileIO_AccessSync_0700
-     * @tc.name fileio_test_access_sync_007
-     * @tc.desc Function of API, access(mode=4).
+     * @tc.desc   Function of API, access(mode=4).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_access_sync_007', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_access_sync_007');
@@ -1293,9 +1470,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_access_promise_001
      * @tc.number SUB_STORAGE_FileIO_Access_Promise_001
-     * @tc.name fileio_test_access_promise_001
-     * @tc.desc Function of API, access(mode=4).
+     * @tc.desc   Function of API, access(mode=4).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_access_promise_001', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_access_promise_001');
@@ -1311,9 +1491,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_access_async_001
      * @tc.number SUB_STORAGE_FileIO_Access_Async_001
-     * @tc.name fileio_test_access_async_001
-     * @tc.desc Function of API, access(mode=4).
+     * @tc.desc   Function of API, access(mode=4).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_access_async_001', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_access_async_001');
@@ -1325,9 +1508,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_unlink_sync_000
      * @tc.number SUB_STORAGE_FileIO_UnlinkSync_0000
-     * @tc.name fileio_test_unlink_sync_000
-     * @tc.desc Function of API,unlinkSync. The test file is exist.
+     * @tc.desc   Function of API,unlinkSync. The test file is exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_unlink_sync_000', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_unlink_sync_000');
@@ -1342,9 +1528,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_unlink_sync_001
      * @tc.number SUB_STORAGE_FileIO_UnlinkSync_0100
-     * @tc.name fileio_test_unlink_sync_001
-     * @tc.desc Function of API, no parameter.
+     * @tc.desc   Function of API, no parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_unlink_sync_001', Level.LEVEL1, async function () {
       try {
@@ -1357,9 +1546,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_unlink_sync_002
      * @tc.number SUB_STORAGE_FileIO_UnlinkSync_0200
-     * @tc.name fileio_test_unlink_sync_002
-     * @tc.desc Function of API, invalid parameter
+     * @tc.desc   Function of API, invalid parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_unlink_sync_002', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileIOTest');
@@ -1372,9 +1564,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_write_sync_000
      * @tc.number SUB_STORAGE_FileIO_WriteSync_0000
-     * @tc.name fileio_test_write_sync_000
-     * @tc.desc Function of API, writeSync.
+     * @tc.desc   Function of API, writeSync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_write_sync_000', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_write_sync_000');
@@ -1392,9 +1587,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_write_sync_001
      * @tc.number SUB_STORAGE_FileIO_WriteSync_0100
-     * @tc.name fileio_test_write_sync_001
-     * @tc.desc Function of API, encoding=UTF-8.
+     * @tc.desc   Function of API, encoding=UTF-8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_write_sync_001', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_write_sync_001');
@@ -1414,9 +1612,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_write_sync_002
      * @tc.number SUB_STORAGE_FileIO_WriteSync_0200
-     * @tc.name fileio_test_write_sync_002
-     * @tc.desc Function of API, offset=1.
+     * @tc.desc   Function of API, offset=1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_write_sync_002', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_write_sync_002');
@@ -1436,9 +1637,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_write_sync_003
      * @tc.number SUB_STORAGE_FileIO_WriteSync_0300
-     * @tc.name fileio_test_write_sync_003
-     * @tc.desc Function of API, length = - 1.
+     * @tc.desc   Function of API, length = - 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_write_sync_003', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_write_sync_003');
@@ -1457,9 +1661,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_write_sync_004
      * @tc.number SUB_STORAGE_FileIO_WriteSync_0400
-     * @tc.name fileio_test_write_sync_004
-     * @tc.desc Function of API, length = 1, offset = 1.
+     * @tc.desc   Function of API, length = 1, offset = 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_write_sync_004', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_write_sync_004');
@@ -1480,9 +1687,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_write_sync_005
      * @tc.number SUB_STORAGE_FileIO_WriteSync_0500
-     * @tc.name fileio_test_write_sync_005
-     * @tc.desc Function of API, invalid offset.
+     * @tc.desc   Function of API, invalid offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_write_sync_005', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_write_sync_005');
@@ -1504,9 +1714,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_write_sync_006
      * @tc.number SUB_STORAGE_FileIO_WriteSync_0600
-     * @tc.name fileio_test_write_sync_006
-     * @tc.desc Function of API, invalid length.
+     * @tc.desc   Function of API, invalid length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_write_sync_006', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_write_sync_006');
@@ -1528,9 +1741,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_write_sync_007
      * @tc.number SUB_STORAGE_FileIO_WriteSync_0700
-     * @tc.name fileio_test_write_sync_007
-     * @tc.desc Function of API, no parameter.
+     * @tc.desc   Function of API, no parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_write_sync_007', Level.LEVEL1, async function () {
       try {
@@ -1542,9 +1758,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_write_sync_008
      * @tc.number SUB_STORAGE_FileIO_WriteSync_0800
-     * @tc.name fileio_test_write_sync_008
-     * @tc.desc Function of API, invalid parameter.
+     * @tc.desc   Function of API, invalid parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_write_sync_008', Level.LEVEL1, async function () {
       try {
@@ -1558,9 +1777,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_write_sync_009
      * @tc.number SUB_STORAGE_FileIO_WriteSync_0900
-     * @tc.name fileio_test_write_sync_009
-     * @tc.desc Function of API, Set all parameters.
+     * @tc.desc   Function of API, Set all parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_write_sync_009', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_write_sync_009');
@@ -1583,9 +1805,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_write_sync_010
      * @tc.number SUB_STORAGE_FileIO_WriteSync_1000
-     * @tc.name fileio_test_write_sync_010
-     * @tc.desc Function of API, encoding=gb2312.
+     * @tc.desc   Function of API, encoding=gb2312.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_write_sync_010', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_write_sync_010');
@@ -1603,9 +1828,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_read_sync_001
      * @tc.number SUB_STORAGE_FileIO_ReadSync_0100
-     * @tc.name fileio_test_read_sync_001
-     * @tc.desc Function of API, offset = 1.
+     * @tc.desc   Function of API, offset = 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_read_sync_001', Level.LEVEL1, async function () {
       let bufLen = 5
@@ -1628,9 +1856,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_read_sync_002
      * @tc.number SUB_STORAGE_FileIO_ReadSync_0200
-     * @tc.name fileio_test_read_sync_002
-     * @tc.desc Function of API, length = 1.
+     * @tc.desc   Function of API, length = 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_read_sync_002', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_read_sync_002');
@@ -1651,9 +1882,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_read_sync_003
      * @tc.number SUB_STORAGE_FileIO_ReadSync_0300
-     * @tc.name fileio_test_read_sync_003
-     * @tc.desc Function of API, invalid offset
+     * @tc.desc   Function of API, invalid offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_read_sync_003', Level.LEVEL1, async function () {
       let fd
@@ -1674,9 +1908,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_read_sync_004
      * @tc.number SUB_STORAGE_FileIO_ReadSync_0300
-     * @tc.name fileio_test_read_sync_004
-     * @tc.desc Function of API, invalid length.
+     * @tc.desc   Function of API, invalid length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_read_sync_004', Level.LEVEL1, async function () {
       let fd
@@ -1698,9 +1935,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_read_sync_005
      * @tc.number SUB_STORAGE_FileIO_ReadSync_0500
-     * @tc.name fileio_test_read_sync_005
-     * @tc.desc Function of API, fpatch = -1.
+     * @tc.desc   Function of API, fpatch = -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_read_sync_005', Level.LEVEL1, async function () {
       try {
@@ -1713,9 +1953,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_read_sync_006
      * @tc.number SUB_STORAGE_FileIO_ReadSync_0600
-     * @tc.name fileio_test_read_sync_006
-     * @tc.desc Function of API, offset & length & position = 1.
+     * @tc.desc   Function of API, offset & length & position = 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_read_sync_006', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_read_sync_006');
@@ -1736,9 +1979,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_read_sync_007
      * @tc.number SUB_STORAGE_FileIO_ReadSync_0700
-     * @tc.name fileio_test_read_sync_007
-     * @tc.desc Function of API, invalid position.
+     * @tc.desc   Function of API, invalid position.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_read_sync_007', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_read_sync_007');
@@ -1759,9 +2005,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_read_sync_008
      * @tc.number SUB_STORAGE_FileIO_ReadSync_0800
-     * @tc.name fileio_test_read_sync_008
-     * @tc.desc Function of API, Enter all parameters correctly.
+     * @tc.desc   Function of API, Enter all parameters correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_read_sync_008', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_read_sync_008');
@@ -1784,9 +2033,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_read_sync_009
      * @tc.number SUB_STORAGE_FileIO_ReadSync_0900
-     * @tc.name fileio_test_read_sync_009
-     * @tc.desc Function of API, Set offset and length.
+     * @tc.desc   Function of API, Set offset and length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_read_sync_009', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_read_sync_009');
@@ -1808,9 +2060,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_read_sync_010
      * @tc.number SUB_STORAGE_FileIO_ReadSync_1000
-     * @tc.name fileio_test_read_sync_010
-     * @tc.desc Function of API, Set error parameters (options).
+     * @tc.desc   Function of API, Set error parameters (options).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_read_sync_010', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_read_sync_010');
@@ -1831,9 +2086,12 @@ export default function fileIOTest() {
     });
 
     /**
+     * @tc.name   fileio_test_copy_file_sync_000
      * @tc.number SUB_STORAGE_FileIO_copyFileSync_0000
-     * @tc.name fileio_test_copy_file_sync_000
-     * @tc.desc Function of API, copy. fpatch is vaild, fpathTarget is vaild, same path, file not same.
+     * @tc.desc   Function of API, copy. fpatch is vaild, fpathTarget is vaild, same path, file not same.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_copy_file_sync_000', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_copy_file_sync_000');
@@ -1851,9 +2109,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_copy_file_sync_001
      * @tc.number SUB_STORAGE_FileIO_copyFileSync_0100
-     * @tc.name fileio_test_copy_file_sync_001
-     * @tc.desc Function of API, copy. fpatch is invalid, fpathTarget is vaild, same path, file not same.
+     * @tc.desc   Function of API, copy. fpatch is invalid, fpathTarget is vaild, same path, file not same.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_copy_file_sync_001', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_copy_file_sync_001') + 'd'
@@ -1867,9 +2128,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_copy_file_sync_002
      * @tc.number SUB_STORAGE_FileIO_copyFileSync_0200
-     * @tc.name fileio_test_copy_file_sync_002
-     * @tc.desc Function of API, copyFileSync. fpath is vaild, fpathTarget is invalid.
+     * @tc.desc   Function of API, copyFileSync. fpath is vaild, fpathTarget is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_copy_file_sync_002', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_copy_file_sync_002');
@@ -1883,9 +2147,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_copy_file_sync_003
      * @tc.number SUB_STORAGE_FileIO_copyFileSync_0300
-     * @tc.name fileio_test_copy_file_sync_003
-     * @tc.desc Function of API, copy. fpatch is vaild, fpathTarget is vaild, path not same, file not same.
+     * @tc.desc   Function of API, copy. fpatch is vaild, fpathTarget is vaild, path not same, file not same.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_copy_file_sync_003', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_copy_file_sync_003');
@@ -1903,9 +2170,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_copy_file_sync_004
      * @tc.number SUB_STORAGE_FileIO_copyFileSync_0400
-     * @tc.name fileio_test_copy_file_sync_004
-     * @tc.desc Function of API, copy. fpatch is vaild, fpathTarget is vaild, path not same, file not same.
+     * @tc.desc   Function of API, copy. fpatch is vaild, fpathTarget is vaild, path not same, file not same.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_copy_file_sync_004', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_copy_file_sync_004');
@@ -1923,9 +2193,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_copy_file_sync_005
      * @tc.number SUB_STORAGE_FileIO_copyFileSync_0500
-     * @tc.name fileio_test_copy_file_sync_005
-     * @tc.desc Function of API, copy. fpatch is vaild, fpathTarget is vaild, path not same, file not same.
+     * @tc.desc   Function of API, copy. fpatch is vaild, fpathTarget is vaild, path not same, file not same.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_copy_file_sync_005', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_copy_file_sync_005');
@@ -1942,9 +2215,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_copy_file_sync_006
      * @tc.number SUB_STORAGE_FileIO_copyFileSync_0600
-     * @tc.name fileio_test_copy_file_sync_006
-     * @tc.desc Function of API, copy.When missing parameters.
+     * @tc.desc   Function of API, copy.When missing parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_copy_file_sync_006', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_copy_file_sync_006');
@@ -1957,9 +2233,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_copy_file_sync_007
      * @tc.number SUB_STORAGE_FileIO_copyFileSync_0700
-     * @tc.name fileio_test_copy_file_sync_007
-     * @tc.desc Function of API, copy. fpatch is invalid, fpathTarget is invalid.
+     * @tc.desc   Function of API, copy. fpatch is invalid, fpathTarget is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_copy_file_sync_007', Level.LEVEL1, async function () {
       try {
@@ -1971,9 +2250,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_copy_file_sync_008
      * @tc.number SUB_STORAGE_FileIO_copyFileSync_0800
-     * @tc.name fileio_test_copy_file_sync_008
-     * @tc.desc Function of API, parameter more than 4096.
+     * @tc.desc   Function of API, parameter more than 4096.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_copy_file_sync_008', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_copy_file_sync_008');
@@ -2001,9 +2283,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_copy_file_sync_009
      * @tc.number SUB_STORAGE_FileIO_copyFileSync_0900
-     * @tc.name fileio_test_copy_file_sync_009
-     * @tc.desc Function of API, filename is too long.
+     * @tc.desc   Function of API, filename is too long.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_copy_file_sync_009', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_copy_file_sync_009');
@@ -2020,9 +2305,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_copy_file_sync_010
      * @tc.number SUB_STORAGE_FileIO_copyFileSync_1000
-     * @tc.name fileio_test_copy_file_sync_010
-     * @tc.desc Function of API, dir layers too long
+     * @tc.desc   Function of API, dir layers too long
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_copy_file_sync_010', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_copy_file_sync_010');
@@ -2050,9 +2338,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_copy_file_sync_011
      * @tc.number SUB_STORAGE_FileIO_copyFileSync_1100
-     * @tc.name fileio_test_copy_file_sync_011
-     * @tc.desc Function of API, special parameter.
+     * @tc.desc   Function of API, special parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_copy_file_sync_011', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_copy_file_sync_011');
@@ -2069,9 +2360,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_copy_file_sync_012
      * @tc.number SUB_STORAGE_FileIO_copyFileSync_1200
-     * @tc.name fileio_test_copy_file_sync_012
-     * @tc.desc Function of API, copy. fpatch is vaild, fpathTarget is vaild, same path, file not same, mode is 0.
+     * @tc.desc   Function of API, copy. fpatch is vaild, fpathTarget is vaild, same path, file not same, mode is 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_copy_file_sync_012', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_copy_file_sync_012');
@@ -2089,9 +2383,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_copy_file_async_001
      * @tc.number SUB_STORAGE_FileIO_copyFileSync_1200
-     * @tc.name fileio_test_copy_file_async_001
-     * @tc.desc Function of API, copy. fpatch is vaild, fpathTarget is vaild, same path, file not same, mode is 0.
+     * @tc.desc   Function of API, copy. fpatch is vaild, fpathTarget is vaild, same path, file not same, mode is 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_copy_file_async_001', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_copy_file_async_001');
@@ -2108,9 +2405,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_truncate_sync_000
      * @tc.number SUB_STORAGE_FileIO_truncateSync_0000
-     * @tc.name fileio_test_truncate_sync_000
-     * @tc.desc Function of API, truncateSync.
+     * @tc.desc   Function of API, truncateSync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_truncate_sync_000', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_truncate_sync_000');
@@ -2127,9 +2427,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_truncate_sync_001
      * @tc.number SUB_STORAGE_FileIO_truncateSync_0100
-     * @tc.name fileio_test_truncate_sync_001
-     * @tc.desc Function of API, no value for parameter.
+     * @tc.desc   Function of API, no value for parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_truncate_sync_001', Level.LEVEL1, async function () {
       try {
@@ -2141,9 +2444,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_truncate_sync_002
      * @tc.number SUB_STORAGE_FileIO_truncateSync_0200
-     * @tc.name fileio_test_truncate_sync_002
-     * @tc.desc Function of API, no invalid parameter.
+     * @tc.desc   Function of API, no invalid parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_truncate_sync_002', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_truncate_sync_001');
@@ -2156,9 +2462,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_truncate_sync_003
      * @tc.number SUB_STORAGE_FileIO_truncateSync_0300
-     * @tc.name fileio_test_truncate_sync_003
-     * @tc.desc Function of API, .
+     * @tc.desc   Function of API, .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_truncate_sync_003', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_truncate_sync_003');
@@ -2171,10 +2480,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_rename_sync_000
      * @tc.number SUB_STORAGE_FileIO_RenameSync_0000
-     * @tc.name fileio_test_rename_sync_000
-     * @tc.desc Function of API, renameSync. The test file is exist,
-     * fpathTarget is not same with fpatch, file name are same.
+     * @tc.desc   Function of API, renameSync. The test file is exist,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_rename_sync_000', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_rename_sync_000');
@@ -2192,10 +2503,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_rename_sync_001
      * @tc.number SUB_STORAGE_FileIO_RenameSync_0100
-     * @tc.name fileio_test_rename_sync_001
-     * @tc.desc Function of API, renameSync. The test file is not exist, 
-     * fpathTarget is not same with fpatch, file name are same.
+     * @tc.desc   Function of API, renameSync. The test file is not exist,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_rename_sync_001', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_rename_sync_001');
@@ -2209,9 +2522,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_rename_sync_002
      * @tc.number SUB_STORAGE_FileIO_RenameSync_0200
-     * @tc.name fileio_test_rename_sync_002
-     * @tc.desc Function of API, renameSync. The test file is exist, fpathTarget is invalid.
+     * @tc.desc   Function of API, renameSync. The test file is exist, fpathTarget is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_rename_sync_002', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_rename_sync_002');
@@ -2226,10 +2542,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_rename_sync_003
      * @tc.number SUB_STORAGE_FileIO_RenameSync_0300
-     * @tc.name fileio_test_rename_sync_003
-     * @tc.desc Function of API, renameSync.
-     * The test file is not exist, fpathTarget is same with fpatch, file name are same.
+     * @tc.desc   Function of API, renameSync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_rename_sync_003', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_rename_sync_003');
@@ -2246,9 +2564,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_rename_sync_004
      * @tc.number SUB_STORAGE_FileIO_RenameSync_0400
-     * @tc.name fileio_test_rename_sync_004
-     * @tc.desc Function of API, no fpath parameter.
+     * @tc.desc   Function of API, no fpath parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_rename_sync_004', Level.LEVEL1, async function () {
       try {
@@ -2261,9 +2582,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_rename_sync_005
      * @tc.number SUB_STORAGE_FileIO_RenameSync_0500
-     * @tc.name fileio_test_rename_sync_005
-     * @tc.desc Function of API, no fpathTarget parameter.
+     * @tc.desc   Function of API, no fpathTarget parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_rename_sync_005', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_rename_sync_005');
@@ -2279,9 +2603,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_rename_sync_006
      * @tc.number SUB_STORAGE_FileIO_RenameSync_0600
-     * @tc.name fileio_test_rename_sync_006
-     * @tc.desc Function of API, rename dir.
+     * @tc.desc   Function of API, rename dir.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_rename_sync_006', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_rename_sync_006') + 'd'
@@ -2299,9 +2626,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_rename_sync_007
      * @tc.number SUB_STORAGE_FileIO_RenameSync_0700
-     * @tc.name fileio_test_rename_sync_007
-     * @tc.desc Function of API, dir not exist. The test dir is not exist.
+     * @tc.desc   Function of API, dir not exist. The test dir is not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_rename_sync_007', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_rename_sync_007') + 'd'
@@ -2315,9 +2645,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_rename_sync_008
      * @tc.number SUB_STORAGE_FileIO_RenameSync_0800
-     * @tc.name fileio_test_rename_sync_008
-     * @tc.desc Function of API, fpathTarget not exist. fpathTarget not exist.
+     * @tc.desc   Function of API, fpathTarget not exist. fpathTarget not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_rename_sync_008', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_rename_sync_008') + 'd'
@@ -2333,9 +2666,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_rename_sync_009
      * @tc.number SUB_STORAGE_FileIO_RenameSync_0900
-     * @tc.name fileio_test_rename_sync_009
-     * @tc.desc Function of API, fpath is same with fpathTarget. fpath is same with fpathTarget.
+     * @tc.desc   Function of API, fpath is same with fpathTarget. fpath is same with fpathTarget.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_rename_sync_009', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_rename_sync_009') + 'd'
@@ -2352,9 +2688,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_ftruncate_sync_000
      * @tc.number SUB_STORAGE_FileIO_FtruncateSync_0000
-     * @tc.name fileio_test_ftruncate_sync_000
-     * @tc.desc Function of API, ftruncateSync. The test file is exist.
+     * @tc.desc   Function of API, ftruncateSync. The test file is exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_ftruncate_sync_000', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_ftruncate_sync_000');
@@ -2372,9 +2711,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_ftruncate_sync_001
      * @tc.number SUB_STORAGE_FileIO_FtruncateSync_0100
-     * @tc.name fileio_test_ftruncate_sync_001
-     * @tc.desc Function of API, len not for value. The test file is exist.
+     * @tc.desc   Function of API, len not for value. The test file is exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_ftruncate_sync_001', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_ftruncate_sync_001');
@@ -2392,9 +2734,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_ftruncate_sync_002
      * @tc.number SUB_STORAGE_FileIO_FtruncateSync_0200
-     * @tc.name fileio_test_ftruncate_sync_002
-     * @tc.desc Function of API, invalid parameter. The test file is not exist.
+     * @tc.desc   Function of API, invalid parameter. The test file is not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_ftruncate_sync_002', Level.LEVEL1, async function () {
       try {
@@ -2406,9 +2751,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_ftruncate_sync_003
      * @tc.number SUB_STORAGE_FileIO_FtruncateSync_0300
-     * @tc.name fileio_test_ftruncate_sync_003
-     * @tc.desc Function of API, invalid parameter. The test file is not exist.
+     * @tc.desc   Function of API, invalid parameter. The test file is not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_ftruncate_sync_003', Level.LEVEL1, async function () {
       try {
@@ -2420,9 +2768,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_ftruncate_sync_004
      * @tc.number SUB_STORAGE_FileIO_FtruncateSync_0400
-     * @tc.name fileio_test_ftruncate_sync_004
-     * @tc.desc Function of API, Parameter exception(len = -1).
+     * @tc.desc   Function of API, Parameter exception(len = -1).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_ftruncate_sync_004', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_ftruncate_sync_004');
@@ -2438,9 +2789,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_fsync_sync_000
      * @tc.number SUB_STORAGE_FileIO_FsyncSync_0000
-     * @tc.name fileio_test_fsync_sync_000
-     * @tc.desc Function of API, fsyneSync.
+     * @tc.desc   Function of API, fsyneSync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_fsync_sync_000', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_fsync_sync_000');
@@ -2458,9 +2812,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_fsync_sync_001
      * @tc.number SUB_STORAGE_FileIO_FsyncSync_0100
-     * @tc.name fileio_test_fsync_sync_001
-     * @tc.desc Function of API, no value of parameter.
+     * @tc.desc   Function of API, no value of parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_fsync_sync_001', Level.LEVEL1, async function () {
       try {
@@ -2473,9 +2830,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_fsync_sync_002
      * @tc.number SUB_STORAGE_FileIO_FsyncSync_0200
-     * @tc.name fileio_test_fsync_sync_002
-     * @tc.desc Function of API, invalid parameter.
+     * @tc.desc   Function of API, invalid parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_fsync_sync_002', Level.LEVEL1, async function () {
       try {
@@ -2489,9 +2849,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_mkdir_sync_rmdir_sync_000
      * @tc.number SUB_STORAGE_FileIO_MkdirSync_RmdirSync_0000
-     * @tc.name fileio_test_mkdir_sync_rmdir_sync_000
-     * @tc.desc Sync to mkdir and rmdir.
+     * @tc.desc   Sync to mkdir and rmdir.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_mkdir_sync_rmdir_sync_000', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_fsync_sync_000') + 'd'
@@ -2506,9 +2869,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_mkdir_sync_rmdir_sync_001
      * @tc.number SUB_STORAGE_FileIO_MkdirSync_RmdirSync_0100
-     * @tc.name fileio_test_mkdir_sync_rmdir_sync_001
-     * @tc.desc Sync to mkdir and rmdir. mkdirSync(mode=0o660).
+     * @tc.desc   Sync to mkdir and rmdir. mkdirSync(mode=0o660).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_mkdir_sync_rmdir_sync_001', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_mkdir_sync_rmdir_sync_001') + 'd'
@@ -2523,9 +2889,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_mkdir_sync_rmdir_sync_002
      * @tc.number SUB_STORAGE_FileIO_MkdirSync_RmdirSync_0200
-     * @tc.name fileio_test_mkdir_sync_rmdir_sync_002
-     * @tc.desc Sync to mkdir and rmdir. mkdirSync(mode=0o460).
+     * @tc.desc   Sync to mkdir and rmdir. mkdirSync(mode=0o460).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_mkdir_sync_rmdir_sync_002', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_mkdir_sync_rmdir_sync_002') + 'd'
@@ -2540,9 +2909,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_mkdir_sync_rmdir_sync_003
      * @tc.number SUB_STORAGE_FileIO_MkdirSync_RmdirSync_0300
-     * @tc.name fileio_test_mkdir_sync_rmdir_sync_003
-     * @tc.desc Sync to mkdir and rmdir. mkdirSync(mode=0o260).
+     * @tc.desc   Sync to mkdir and rmdir. mkdirSync(mode=0o260).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_mkdir_sync_rmdir_sync_003', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_mkdir_sync_rmdir_sync_003') + 'd'
@@ -2557,9 +2929,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_mkdir_sync_rmdir_sync_004
      * @tc.number SUB_STORAGE_FileIO_MkdirSync_RmdirSync_0400
-     * @tc.name fileio_test_mkdir_sync_rmdir_sync_004
-     * @tc.desc Function of API, invalid parameter. The test file is not exist.
+     * @tc.desc   Function of API, invalid parameter. The test file is not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_mkdir_sync_rmdir_sync_004', Level.LEVEL1, async function () {
       try {
@@ -2571,9 +2946,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_mkdir_sync_rmdir_sync_005
      * @tc.number SUB_STORAGE_FileIO_MkdirSync_RmdirSync_0500
-     * @tc.name fileio_test_mkdir_sync_rmdir_sync_005
-     * @tc.desc Function of API, invalid parameter. The test file is not exist.
+     * @tc.desc   Function of API, invalid parameter. The test file is not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_mkdir_sync_rmdir_sync_005', Level.LEVEL1, async function () {
       try {
@@ -2586,9 +2964,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_mkdir_sync_rmdir_sync_006
      * @tc.number SUB_STORAGE_FileIO_MkdirSync_RmdirSync_0600
-     * @tc.name fileio_test_mkdir_sync_rmdir_sync_006
-     * @tc.desc Sync to mkdir and rmdir. mkdirSync(mode=0o700).
+     * @tc.desc   Sync to mkdir and rmdir. mkdirSync(mode=0o700).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_mkdir_sync_rmdir_sync_006', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_mkdir_sync_rmdir_sync_006') + 'd'
@@ -2603,9 +2984,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_mkdir_sync_rmdir_sync_007
      * @tc.number SUB_STORAGE_FileIO_MkdirSync_RmdirSync_0700
-     * @tc.name fileio_test_mkdir_sync_rmdir_sync_007
-     * @tc.desc Sync to mkdir and rmdir. mkdirSync(mode=0o400).
+     * @tc.desc   Sync to mkdir and rmdir. mkdirSync(mode=0o400).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_mkdir_sync_rmdir_sync_007', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_mkdir_sync_rmdir_sync_007') + 'd'
@@ -2620,9 +3004,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_mkdir_sync_rmdir_sync_008
      * @tc.number SUB_STORAGE_FileIO_MkdirSync_RmdirSync_0800
-     * @tc.name fileio_test_mkdir_sync_rmdir_sync_008
-     * @tc.desc Sync to mkdir and rmdir. mkdirSync(mode=0o200).
+     * @tc.desc   Sync to mkdir and rmdir. mkdirSync(mode=0o200).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_mkdir_sync_rmdir_sync_008', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_mkdir_sync_rmdir_sync_008') + 'd'
@@ -2637,9 +3024,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_mkdir_sync_rmdir_sync_009
      * @tc.number SUB_STORAGE_FileIO_MkdirSync_RmdirSync_0900
-     * @tc.name fileio_test_mkdir_sync_rmdir_sync_009
-     * @tc.desc Sync to mkdir and rmdir. mkdirSync(mode=0o100).
+     * @tc.desc   Sync to mkdir and rmdir. mkdirSync(mode=0o100).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_mkdir_sync_rmdir_sync_009', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_mkdir_sync_rmdir_sync_009') + 'd'
@@ -2654,9 +3044,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_mkdir_sync_rmdir_sync_010
      * @tc.number SUB_STORAGE_FileIO_MkdirSync_RmdirSync_1000
-     * @tc.name fileio_test_mkdir_sync_rmdir_sync_010
-     * @tc.desc Sync to mkdir and rmdir. mkdirSync(mode=0o070).
+     * @tc.desc   Sync to mkdir and rmdir. mkdirSync(mode=0o070).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_mkdir_sync_rmdir_sync_010', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_mkdir_sync_rmdir_sync_010') + 'd';
@@ -2671,9 +3064,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_mkdir_sync_rmdir_sync_011
      * @tc.number SUB_STORAGE_FileIO_MkdirSync_RmdirSync_1100
-     * @tc.name fileio_test_mkdir_sync_rmdir_sync_011
-     * @tc.desc Sync to mkdir and rmdir. mkdirSync(mode=0o040).
+     * @tc.desc   Sync to mkdir and rmdir. mkdirSync(mode=0o040).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_mkdir_sync_rmdir_sync_011', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_mkdir_sync_rmdir_sync_011') + 'd';
@@ -2688,9 +3084,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_mkdir_sync_rmdir_sync_012
      * @tc.number SUB_STORAGE_FileIO_MkdirSync_RmdirSync_1200
-     * @tc.name fileio_test_mkdir_sync_rmdir_sync_012
-     * @tc.desc Sync to mkdir and rmdir. mkdirSync(mode=0o020).
+     * @tc.desc   Sync to mkdir and rmdir. mkdirSync(mode=0o020).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_mkdir_sync_rmdir_sync_012', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_mkdir_sync_rmdir_sync_012') + 'd';
@@ -2705,9 +3104,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_mkdir_sync_rmdir_sync_013
      * @tc.number SUB_STORAGE_FileIO_MkdirSync_RmdirSync_1300
-     * @tc.name fileio_test_mkdir_sync_rmdir_sync_013
-     * @tc.desc Sync to mkdir and rmdir. mkdirSync(mode=0o010).
+     * @tc.desc   Sync to mkdir and rmdir. mkdirSync(mode=0o010).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_mkdir_sync_rmdir_sync_013', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_mkdir_sync_rmdir_sync_013') + 'd';
@@ -2722,9 +3124,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_mkdir_sync_rmdir_sync_014
      * @tc.number SUB_STORAGE_FileIO_MkdirSync_RmdirSync_1400
-     * @tc.name fileio_test_mkdir_sync_rmdir_sync_014
-     * @tc.desc Sync to mkdir and rmdir. mkdirSync(mode=0o007).
+     * @tc.desc   Sync to mkdir and rmdir. mkdirSync(mode=0o007).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_mkdir_sync_rmdir_sync_014', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_mkdir_sync_rmdir_sync_014') + 'd';
@@ -2739,9 +3144,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_mkdir_sync_rmdir_sync_015
      * @tc.number SUB_STORAGE_FileIO_MkdirSync_RmdirSync_1500
-     * @tc.name fileio_test_mkdir_sync_rmdir_sync_015
-     * @tc.desc Sync to mkdir and rmdir. mkdirSync(mode=0o004).
+     * @tc.desc   Sync to mkdir and rmdir. mkdirSync(mode=0o004).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_mkdir_sync_rmdir_sync_015', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_mkdir_sync_rmdir_sync_015') + 'd';
@@ -2756,9 +3164,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_mkdir_sync_rmdir_sync_016
      * @tc.number SUB_STORAGE_FileIO_MkdirSync_RmdirSync_1600
-     * @tc.name fileio_test_mkdir_sync_rmdir_sync_016
-     * @tc.desc Sync to mkdir and rmdir. mkdirSync(mode=0o002).
+     * @tc.desc   Sync to mkdir and rmdir. mkdirSync(mode=0o002).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_mkdir_sync_rmdir_sync_016', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_mkdir_sync_rmdir_sync_016') + 'd';
@@ -2773,9 +3184,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_mkdir_sync_rmdir_sync_017
      * @tc.number SUB_STORAGE_FileIO_MkdirSync_RmdirSync_1700
-     * @tc.name fileio_test_mkdir_sync_rmdir_sync_017
-     * @tc.desc Sync to mkdir and rmdir. mkdirSync(mode=0o001).
+     * @tc.desc   Sync to mkdir and rmdir. mkdirSync(mode=0o001).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_mkdir_sync_rmdir_sync_017', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_mkdir_sync_rmdir_sync_017') + 'd';
@@ -2790,9 +3204,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_fstat_sync_000
      * @tc.number SUB_STORAGE_FileIO_FstatSync_0000
-     * @tc.name fileio_test_fstat_sync_000
-     * @tc.desc Function of API, fstatSync. The test file is exist.
+     * @tc.desc   Function of API, fstatSync. The test file is exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_fstat_sync_000', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_fstat_sync_000');
@@ -2811,9 +3228,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_fstat_sync_001
      * @tc.number SUB_STORAGE_FileIO_FstatSync_0100
-     * @tc.name fileio_test_fstat_sync_001
-     * @tc.desc Function of API, fstatSync, fd = -1. The test file is not exist.
+     * @tc.desc   Function of API, fstatSync, fd = -1. The test file is not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_fstat_sync_001', Level.LEVEL1, async function () {
       try {
@@ -2826,9 +3246,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_fstat_sync_002
      * @tc.number SUB_STORAGE_FileIO_FstatSync_0200
-     * @tc.name fileio_test_fstat_sync_002
-     * @tc.desc Function of API, fstatSync, fd is string type.
+     * @tc.desc   Function of API, fstatSync, fd is string type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_fstat_sync_002', Level.LEVEL1, async function () {
       try {
@@ -2840,9 +3263,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_fstat_sync_003
      * @tc.number SUB_STORAGE_FileIO_FstatSync_0300
-     * @tc.name fileio_test_fstat_sync_003
-     * @tc.desc Function of API, fstatSync, vaild fd. The test file is exist.
+     * @tc.desc   Function of API, fstatSync, vaild fd. The test file is exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_fstat_sync_003', Level.LEVEL1, async function () {
       let dpath = await nextFileName('fileio_test_fstat_sync_003') + 'd'
@@ -2862,9 +3288,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_prop_write_open_read_4k_sync
      * @tc.number SUB_STORAGE_FileIO_prop_write_open_read_4k_sync
-     * @tc.name fileio_test_prop_write_open_read_4k_sync
-     * @tc.desc Sync to write & open & read 4K file.
+     * @tc.desc   Sync to write & open & read 4K file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_prop_write_open_read_4k_sync', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_prop_write_open_read_4k_sync');
@@ -2886,9 +3315,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_prop_copyFile_4k_sync
      * @tc.number SUB_STORAGE_FileIO_prop_write_open_read_4k_sync
-     * @tc.name fileio_test_prop_copyFile_4k_sync
-     * @tc.desc Sync to copy 4K file.
+     * @tc.desc   Sync to copy 4K file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_prop_copyFile_4k_sync', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_prop_copyFile_4k_sync');
@@ -2909,9 +3341,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_close_async_000
      * @tc.number fileio_test_close_async_000
-     * @tc.name fileio_test_close_async_000
-     * @tc.desc Function of API close promise
+     * @tc.desc   Function of API close promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_close_async_000', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_close_async_000');
@@ -2923,9 +3358,12 @@ export default function fileIOTest() {
     });
   
     /**
+     * @tc.name   fileio_test_close_async_001
      * @tc.number fileio_test_close_async_001
-     * @tc.name fileio_test_close_async_001
-     * @tc.desc Function of API close
+     * @tc.desc   Function of API close
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fileio_test_close_async_001', Level.LEVEL1, async function () {
       let fpath = await nextFileName('fileio_test_close_async_001');

@@ -62,13 +62,12 @@ export default function CustomAvoidAroundTargetTest() {
     });
 
     /**
-     * @tc.number    customAvoidAroundTarget_0010
-     * @tc.name      customAvoidAroundTarget_0010
-     * @tc.desc      avoidAroundTarget, determine that the y-axis in the upper left corner of the customPopup is 
-     *               greater than the y-axis in the lower right corner of the parent component
-     * @tc.level:    Level 0
-     * @tc.type :    Function
-     * @tc.size :    MediumTest
+     * @tc.name   customAvoidAroundTarget_0010
+     * @tc.number customAvoidAroundTarget_0010
+     * @tc.desc   avoidAroundTarget, determine that the y-axis in the upper left corner of the customPopup is
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('customAvoidAroundTarget_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('customAvoidAroundTarget_0010 START');

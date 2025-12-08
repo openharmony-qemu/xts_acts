@@ -26,12 +26,12 @@ export default function DialogXComponent() {
       await Utils.pushPageNoClear(`NativeXComponent/DialogXComponent`, done);
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_CUSTOMDIALOG_GETSTATE_0100
-     * @tc.name      testCustomDialogGetStateOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testCustomDialogGetStateOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_CUSTOMDIALOG_GETSTATE_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogGetStateOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -51,12 +51,12 @@ export default function DialogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_CUSTOMDIALOG_GETSTATE_0200
-     * @tc.name      testCustomDialogGetStateParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testCustomDialogGetStateParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_CUSTOMDIALOG_GETSTATE_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogGetStateParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -72,12 +72,12 @@ export default function DialogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_DIALOG_UNINITIALIZED_0100
-     * @tc.name      testCustomDialogGetState0100
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testCustomDialogGetState0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DIALOG_UNINITIALIZED_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogGetState0100', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -97,12 +97,12 @@ export default function DialogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_DIALOG_INITIALIZED_0100
-     * @tc.name      testCustomDialogGetState0200
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testCustomDialogGetState0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DIALOG_INITIALIZED_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogGetState0200', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -122,12 +122,12 @@ export default function DialogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_DIALOG_APPEARING_0100
-     * @tc.name      testCustomDialogGetState0300
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testCustomDialogGetState0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DIALOG_APPEARING_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogGetState0300', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -147,12 +147,12 @@ export default function DialogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_DIALOG_APPEARED_0100
-     * @tc.name      testCustomDialogGetState0400
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testCustomDialogGetState0400
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DIALOG_APPEARED_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogGetState0400', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -172,12 +172,12 @@ export default function DialogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_DIALOG_DISAPPEARING_0100
-     * @tc.name      testCustomDialogGetState0500
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testCustomDialogGetState0500
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DIALOG_DISAPPEARING_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogGetState0500', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -197,12 +197,12 @@ export default function DialogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_DIALOG_DISAPPEARED_0100
-     * @tc.name      testCustomDialogGetState0600
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testCustomDialogGetState0600
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DIALOG_DISAPPEARED_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogGetState0600', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

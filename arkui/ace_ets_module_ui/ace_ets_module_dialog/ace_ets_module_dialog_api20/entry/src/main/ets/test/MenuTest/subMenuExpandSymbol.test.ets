@@ -40,12 +40,12 @@ export default function menuSubMenuExpandSymbolTest() {
     });
 
     /**
-     * @tc.number    menuSubMenuExpandSymbolTest_0010
-     * @tc.name      menuSubMenuExpandSymbolTest_0010
-     * @tc.desc      createMenuToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   menuSubMenuExpandSymbolTest_0010
+     * @tc.number menuSubMenuExpandSymbolTest_0010
+     * @tc.desc   createMenuToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('menuSubMenuExpandSymbolTest_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'menuSubMenuExpandSymbolTest_0010';
@@ -68,12 +68,12 @@ export default function menuSubMenuExpandSymbolTest() {
     });
 
     /**
-     * @tc.number    menuSubMenuExpandSymbolTest_0020
-     * @tc.name      menuSubMenuExpandSymbolTest_0020
-     * @tc.desc      createMenuToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   menuSubMenuExpandSymbolTest_0020
+     * @tc.number menuSubMenuExpandSymbolTest_0020
+     * @tc.desc   createMenuToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('menuSubMenuExpandSymbolTest_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'menuSubMenuExpandSymbolTest_0020';
@@ -96,12 +96,12 @@ export default function menuSubMenuExpandSymbolTest() {
     });
 
     /**
-     * @tc.number    menuSubMenuExpandSymbolTest_0030
-     * @tc.name      menuSubMenuExpandSymbolTest_0030
-     * @tc.desc      createMenuToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   menuSubMenuExpandSymbolTest_0030
+     * @tc.number menuSubMenuExpandSymbolTest_0030
+     * @tc.desc   createMenuToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('menuSubMenuExpandSymbolTest_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'menuSubMenuExpandSymbolTest_0030';
@@ -124,12 +124,12 @@ export default function menuSubMenuExpandSymbolTest() {
     });
 
     /**
-     * @tc.number    menuSubMenuExpandSymbolTest_0040
-     * @tc.name      menuSubMenuExpandSymbolTest_0040
-     * @tc.desc      createMenuToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   menuSubMenuExpandSymbolTest_0040
+     * @tc.number menuSubMenuExpandSymbolTest_0040
+     * @tc.desc   createMenuToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('menuSubMenuExpandSymbolTest_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'menuSubMenuExpandSymbolTest_0040';
@@ -152,12 +152,12 @@ export default function menuSubMenuExpandSymbolTest() {
     });
 
     /**
-     * @tc.number    menuSubMenuExpandSymbolTest_0050
-     * @tc.name      menuSubMenuExpandSymbolTest_0050
-     * @tc.desc      createMenuToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   menuSubMenuExpandSymbolTest_0050
+     * @tc.number menuSubMenuExpandSymbolTest_0050
+     * @tc.desc   createMenuToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('menuSubMenuExpandSymbolTest_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'menuSubMenuExpandSymbolTest_0050';
@@ -180,12 +180,12 @@ export default function menuSubMenuExpandSymbolTest() {
     });
 
     /**
-     * @tc.number    menuSubMenuExpandSymbolTest_0060
-     * @tc.name      menuSubMenuExpandSymbolTest_0060
-     * @tc.desc      createMenuToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   menuSubMenuExpandSymbolTest_0060
+     * @tc.number menuSubMenuExpandSymbolTest_0060
+     * @tc.desc   createMenuToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('menuSubMenuExpandSymbolTest_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'menuSubMenuExpandSymbolTest_0060';

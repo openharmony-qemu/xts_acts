@@ -47,9 +47,12 @@ export default function AlignEnd_AddOffset() {
     });
 
     /**
+     * @tc.name   testFlexAlignEndTextOffset
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_END_TEST_0900
-     * @tc.name testFlexAlignEndTextOffset
-     * @tc.desc The interface display of the component that sets the offset position when drawing
+     * @tc.desc   The interface display of the component that sets the offset position when drawing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignEndTextOffset',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignEndTextOffset] START');

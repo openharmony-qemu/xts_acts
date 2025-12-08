@@ -63,35 +63,41 @@ export default function webViewOnWindowNewJsunit() {
       done();
     })
 
-    /*
-    *tc.number SUB_ACE_BASIC_ETS_API_ONWINDOWNEW_0100
-    *tc.name testOnWindowNew01
-    *tc.desc test api OnWindowNew by execute window.open function,at the same time,set MutliWindowAccess to true,
-    *         allowWindowOpenMethod to true,javaScriptAccess to true
-    */
+    /**
+     * @tc.name   testOnWindowNew01
+     * @tc.number SUB_ACE_BASIC_ETS_API_ONWINDOWNEW_0100
+     * @tc.desc   test api OnWindowNew by execute window.open function,at the same time,set MutliWindowAccess to true,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnWindowNew01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitOnWindowNew01", 134050)
       Utils.registerEvent("emitOnWindowNew01", 1, 134060, done);
       sendEventByKey('onWindowNew', 10, '');
     })
 
-     /*
-     *tc.number SUB_ACE_BASIC_ETS_API_ONWINDOWNEW_0200
-     *tc.name testOnWindowNew02
-     *tc.desc test api OnWindowNew by execute window.open function,at the same time,set MutliWindowAccess to true,
-     *         allowWindowOpenMethod to false,javaScriptAccess to true
-     */
+     /**
+      * @tc.name   testOnWindowNew02
+      * @tc.number SUB_ACE_BASIC_ETS_API_ONWINDOWNEW_0200
+      * @tc.desc   test api OnWindowNew by execute window.open function,at the same time,set MutliWindowAccess to true,
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('testOnWindowNew02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitOnWindowNew02", 134050)
       Utils.registerEvent("emitOnWindowNew02", 0, 134070, done);
       sendEventByKey('onWindowNew', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_ONWINDOWNEW_0300
-     *tc.name testOnWindowNew03
-     *tc.desc test api OnWindowNew by execute window.open function,at the same time,set MutliWindowAccess to true,
-     *         allowWindowOpenMethod to false,javaScriptAccess to false
+    /**
+     * @tc.name   testOnWindowNew03
+     * @tc.number SUB_ACE_BASIC_ETS_API_ONWINDOWNEW_0300
+     * @tc.desc   test api OnWindowNew by execute window.open function,at the same time,set MutliWindowAccess to true,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnWindowNew03',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitOnWindowNew03", 134050)
@@ -99,11 +105,13 @@ export default function webViewOnWindowNewJsunit() {
       sendEventByKey('onWindowNew', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_ONWINDOWNEW_0400
-     *tc.name testOnWindowNew04
-     *tc.desc test api OnWindowNew by execute window.open function,at the same time,set MutliWindowAccess to false,
-     *         allowWindowOpenMethod to false,javaScriptAccess to true
+    /**
+     * @tc.name   testOnWindowNew04
+     * @tc.number SUB_ACE_BASIC_ETS_API_ONWINDOWNEW_0400
+     * @tc.desc   test api OnWindowNew by execute window.open function,at the same time,set MutliWindowAccess to false,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnWindowNew04',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitOnWindowNew04", 134050)

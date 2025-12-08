@@ -16,7 +16,7 @@
 import Utils from '../../src/test/Util.test';
 import web_webview from '@ohos.web.webview'
 import emitter from '@ohos.events.emitter';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { State } from "@ohos.arkui.stateManagement";
 import { Callback } from '@ohos.base';
 import { CopyOptions,WebMediaOptions,Entry, Component, Column, Row, Button,Text,ClickEvent, Web } from "@ohos.arkui.component";
@@ -50,7 +50,7 @@ struct webFantasyFont {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION vaclue: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);

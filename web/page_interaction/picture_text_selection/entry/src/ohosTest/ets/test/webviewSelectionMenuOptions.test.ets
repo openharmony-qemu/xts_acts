@@ -59,10 +59,13 @@ export default function webviewSelectionMenuOptions() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_SELECTIONMENUOPTIONS_API_0100
-     *tc.name testSelectionMenuOptions
-     *tc.desc selectionMenuOptions
+    /**
+     * @tc.name   emitSelectionMenuOptions0100
+     * @tc.number SUB_ACE_BASIC_ETS_SELECTIONMENUOPTIONS_API_0100
+     * @tc.desc   selectionMenuOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitSelectionMenuOptions0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = 'emitSelectionMenuOptions0100';

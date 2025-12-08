@@ -27,14 +27,14 @@ export default function textAreaOnEditChangeTest() {
       await Utils.pushPage(`textarea/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_ON_EDIT_CHANGE_0001
-    * @tc.name       : testTextAreaOnEditChange001
-    * @tc.desc       : test OnEditChange event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextAreaOnEditChange001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ON_EDIT_CHANGE_0001
+     * @tc.desc   test OnEditChange event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextAreaOnEditChange001', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnEditChangeTestTextArea')
       await Utils.sleep(1000)

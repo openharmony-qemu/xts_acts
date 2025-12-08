@@ -47,13 +47,13 @@ export default function GeneralLayoutOriginalTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_2800
-     *@tc.name       : ArkUIHDS_General_Layout_2800
-     *@tc.desc       : test original parameters of position
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_2800
+     * @tc.number ArkUIHDS_General_Layout_2800
+     * @tc.desc   test original parameters of position
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_2800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_2800 START');
@@ -73,13 +73,13 @@ export default function GeneralLayoutOriginalTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_2900
-     *@tc.name       : ArkUIHDS_General_Layout_2900
-     *@tc.desc       : test original parameters of position
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_2900
+     * @tc.number ArkUIHDS_General_Layout_2900
+     * @tc.desc   test original parameters of position
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_2900', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_2900 START');
@@ -105,13 +105,13 @@ export default function GeneralLayoutOriginalTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_3000
-     *@tc.name       : ArkUIHDS_General_Layout_3000
-     *@tc.desc       : test original parameters of position
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_3000
+     * @tc.number ArkUIHDS_General_Layout_3000
+     * @tc.desc   test original parameters of position
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_3000', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_3000 START');
@@ -131,13 +131,13 @@ export default function GeneralLayoutOriginalTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_3100
-     *@tc.name       : ArkUIHDS_General_Layout_3100
-     *@tc.desc       : test original parameters of markAnchor
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_3100
+     * @tc.number ArkUIHDS_General_Layout_3100
+     * @tc.desc   test original parameters of markAnchor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_3100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_3100 START');
@@ -165,13 +165,13 @@ export default function GeneralLayoutOriginalTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_3200
-     *@tc.name       : ArkUIHDS_General_Layout_3200
-     *@tc.desc       : test original parameters of markAnchor
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_3200
+     * @tc.number ArkUIHDS_General_Layout_3200
+     * @tc.desc   test original parameters of markAnchor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_3200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_3200 START');
@@ -202,13 +202,13 @@ export default function GeneralLayoutOriginalTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_3300
-     *@tc.name       : ArkUIHDS_General_Layout_3300
-     *@tc.desc       : test original parameters of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_3300
+     * @tc.number ArkUIHDS_General_Layout_3300
+     * @tc.desc   test original parameters of offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_3300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_3300 START');
@@ -235,13 +235,13 @@ export default function GeneralLayoutOriginalTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_3400
-     *@tc.name       : ArkUIHDS_General_Layout_3400
-     *@tc.desc       : test original parameters of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_3400
+     * @tc.number ArkUIHDS_General_Layout_3400
+     * @tc.desc   test original parameters of offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_3400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_3400 START');
@@ -272,13 +272,13 @@ export default function GeneralLayoutOriginalTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_3500
-     *@tc.name       : ArkUIHDS_General_Layout_3500
-     *@tc.desc       : test original parameters of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_3500
+     * @tc.number ArkUIHDS_General_Layout_3500
+     * @tc.desc   test original parameters of offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_3500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_3500 START');

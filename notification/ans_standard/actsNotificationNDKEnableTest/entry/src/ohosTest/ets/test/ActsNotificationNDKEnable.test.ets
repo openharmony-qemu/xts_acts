@@ -14,13 +14,13 @@ let ctx = getContext(this) as common.UIAbilityContext;
 export default function ActsNotificationNDKEnableTest() {
   describe('ActsNotificationNDKEnableTest', () => {
 
-    /*
-     * @tc.number    : ACTS_Notification_Ans_enableVerification_0010
-     * @tc.name      : OH_Notification_IsNotificationEnabled Interface verification.
-     * @tc.desc      : OH_Notification_IsNotificationEnabled Interface verification.
-     * @tc.size      : Medium-sized Test
-     * @tc.type      : Function test
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   ACTS_Notification_Ans_enableVerification_0010
+     * @tc.number ACTS_Notification_Ans_enableVerification_0010
+     * @tc.desc   OH_Notification_IsNotificationEnabled Interface verification.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ACTS_Notification_Ans_enableVerification_0010', Level.LEVEL2,async (done: Function) => {
       try {
