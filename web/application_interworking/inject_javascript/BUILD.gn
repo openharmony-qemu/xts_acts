@@ -18,6 +18,7 @@ group("ActsWebInjectJavascriptTest") {
       "inject_javascript_one:ActsWebInjectJavascriptOneTest",
       "inject_javascript_one_static:ActsWebInjectJavascriptOneStaticTest",
       "inject_javascript_three:ActsWebInjectJavacriptThreeTest",
+      "inject_javascript_three_static:ActsWebInjectJavacriptThreeStaticTest",
       "inject_javascript_two:ActsWebInjectJavacriptTwoTest",
     ]
   }
