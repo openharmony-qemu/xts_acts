@@ -39,7 +39,7 @@ export default function OHEffectBufferInfoSetTextureIdTest() {
     /**
      * @tc.number  SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_SET_TEXTURE_ID_SUPP_001
      * @tc.name    SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_SET_TEXTURE_ID_SUPP_001
-     * @tc.desc    OHEffectBufferInfoSetTextureIdTest
+     * @tc.desc    OHEffectBufferInfoSetTextureIdTest-EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -54,7 +54,7 @@ export default function OHEffectBufferInfoSetTextureIdTest() {
     /**
      * @tc.number  SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_SET_TEXTURE_ID_SUPP_002
      * @tc.name    SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_SET_TEXTURE_ID_SUPP_002
-     * @tc.desc    OHEffectBufferInfoSetTextureIdTest
+     * @tc.desc    OHEffectBufferInfoSetTextureIdTest-EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -69,7 +69,7 @@ export default function OHEffectBufferInfoSetTextureIdTest() {
     /**
      * @tc.number  SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_SET_TEXTURE_ID_SUPP_003
      * @tc.name    SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_SET_TEXTURE_ID_SUPP_003
-     * @tc.desc    OHEffectBufferInfoSetTextureIdTest
+     * @tc.desc    OHEffectBufferInfoSetTextureIdTest-EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
