@@ -80,6 +80,7 @@ import registerChangeTest from './photoAccessHelper/photoAccessHelper/registerCh
 import releaseTest from './photoAccessHelper/photoAccessHelper/release.test';
 import MediaAssetChangeRequestConstructorTest from './photoAccessHelper/MediaAssetChangeRequest/constructor.test';
 import provisionResourcesTest from './provisionResources.test';
+import getAlbumIdByLPathTest from './photoAccessHelper/photoAccessHelper/getAlbumIdByLPath.test';
 
 export default function testsuite() {
   provisionResourcesTest();
@@ -156,4 +157,5 @@ export default function testsuite() {
   MovingPhotoGetUriTest();
   MovingPhotoRequestContentTest();
   MediaAssetChangeRequestDeleteAssetsTest();
+  getAlbumIdByLPathTest();
 }
