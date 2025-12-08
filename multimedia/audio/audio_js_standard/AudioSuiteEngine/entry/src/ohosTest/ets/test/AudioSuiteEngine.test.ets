@@ -2,7 +2,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { afterAll, afterEach, beforeAll, beforeEach, describe,
  expect, it, TestType, Size, Level } from '@ohos/hypium';
 import audiosuiteenginetest from 'libaudiosuiteenginetest.so';
-import { TEST_RESULT } from './Constants.test'
+import { TEST_RESULT, AUDIOSUITE_RESULT } from './Constants.test'
 
 export default function AudioSuiteEngineTest() {
   describe('ActsAudioSuiteEngineTest', () => {
@@ -2373,6 +2373,182 @@ export default function AudioSuiteEngineTest() {
       let result : number = audiosuiteenginetest.AudioSuiteEngine_StopPipeline_0004();
       console.info(`Tag: AudioSuiteEngine_StopPipeline_0004 : ${result}`);
       expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+    
+    /**
+     * @tc.number     OH_AudioSuiteEngine_AudioNodeType_001
+     * @tc.name       OH_AudioSuiteEngine_AudioNodeType_001
+     * @tc.desc       AudioNodeType test
+     * @tc.size       MEDIUM
+     * @tc.type       FUNCTION
+     * @tc.level      LEVEL 0
+     */
+    it('OH_AudioSuiteEngine_AudioNodeType_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.OH_AudioSuiteEngine_AudioNodeType_001();
+      console.info(`Tag: OH_AudioSuiteEngine_AudioNodeType_001 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+    
+    /**
+     * @tc.number     OH_AudioSuiteEngine_AudioNodeType_002
+     * @tc.name       OH_AudioSuiteEngine_AudioNodeType_002
+     * @tc.desc       AudioNodeType test
+     * @tc.size       MEDIUM
+     * @tc.type       FUNCTION
+     * @tc.level      LEVEL 0
+     */
+    it('OH_AudioSuiteEngine_AudioNodeType_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.OH_AudioSuiteEngine_AudioNodeType_002();
+      console.info(`Tag: OH_AudioSuiteEngine_AudioNodeType_002 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+    
+    /**
+     * @tc.number     OH_AudioSuiteEngine_PipelineWorkMode_001
+     * @tc.name       OH_AudioSuiteEngine_PipelineWorkMode_001
+     * @tc.desc       AudioSuite PipelineWorkMode test
+     * @tc.size       MEDIUM
+     * @tc.type       FUNCTION
+     * @tc.level      LEVEL 0
+     */
+    it('OH_AudioSuiteEngine_PipelineWorkMode_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.OH_AudioSuiteEngine_PipelineWorkMode_001();
+      console.info(`Tag: OH_AudioSuiteEngine_PipelineWorkMode_001 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+    
+    /**
+     * @tc.number     OH_AudioSuiteEngine_AudioSuitePipelineState_001
+     * @tc.name       OH_AudioSuiteEngine_AudioSuitePipelineState_001
+     * @tc.desc       AudioSuitePipelineState test
+     * @tc.size       MEDIUM
+     * @tc.type       FUNCTION
+     * @tc.level      LEVEL 0
+     */
+    it('OH_AudioSuiteEngine_AudioSuitePipelineState_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.OH_AudioSuiteEngine_AudioSuitePipelineState_001();
+      console.info(`Tag: OH_AudioSuiteEngine_AudioSuitePipelineState_001 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+    
+    /**
+     * @tc.number     OH_AudioSuiteEngine_SampleFormat_001
+     * @tc.name       OH_AudioSuiteEngine_SampleFormat_001
+     * @tc.desc       AudioSuite SampleFormat test
+     * @tc.size       MEDIUM
+     * @tc.type       FUNCTION
+     * @tc.level      LEVEL 0
+     */
+    it('OH_AudioSuiteEngine_SampleFormat_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.OH_AudioSuiteEngine_SampleFormat_001();
+      console.info(`Tag: OH_AudioSuiteEngine_SampleFormat_001 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+    
+    /**
+     * @tc.number     OH_AudioSuiteEngine_SampleRate_001
+     * @tc.name       OH_AudioSuiteEngine_SampleRate_001
+     * @tc.desc       AudioSuite SampleRate test
+     * @tc.size       MEDIUM
+     * @tc.type       FUNCTION
+     * @tc.level      LEVEL 0
+     */
+    it('OH_AudioSuiteEngine_SampleRate_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.OH_AudioSuiteEngine_SampleRate_001();
+      console.info(`Tag: OH_AudioSuiteEngine_SampleRate_001 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+    
+    /**
+     * @tc.number     OH_AudioSuiteEngine_SampleRate_002
+     * @tc.name       OH_AudioSuiteEngine_SampleRate_002
+     * @tc.desc       AudioSuite SampleRate test
+     * @tc.size       MEDIUM
+     * @tc.type       FUNCTION
+     * @tc.level      LEVEL 0
+     */
+    it('OH_AudioSuiteEngine_SampleRate_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.OH_AudioSuiteEngine_SampleRate_002();
+      console.info(`Tag: OH_AudioSuiteEngine_SampleRate_002 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+    
+    /**
+     * @tc.number     OH_AudioSuiteEngine_AudioSuiteResult_001
+     * @tc.name       OH_AudioSuiteEngine_AudioSuiteResult_001
+     * @tc.desc       AudioSuiteResult test
+     * @tc.size       MEDIUM
+     * @tc.type       FUNCTION
+     * @tc.level      LEVEL 0
+     */
+    it('OH_AudioSuiteEngine_AudioSuiteResult_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.OH_AudioSuiteEngine_AudioSuiteResult_001();
+      console.info(`Tag: OH_AudioSuiteEngine_AudioSuiteResult_001 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+    
+    /**
+     * @tc.number     OH_AudioSuiteEngine_VoiceBeautifierType_001
+     * @tc.name       OH_AudioSuiteEngine_VoiceBeautifierType_001
+     * @tc.desc       AudioSuite VoiceBeautifierType test
+     * @tc.size       MEDIUM
+     * @tc.type       FUNCTION
+     * @tc.level      LEVEL 0
+     */
+    it('OH_AudioSuiteEngine_VoiceBeautifierType_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.OH_AudioSuiteEngine_VoiceBeautifierType_001();
+      console.info(`Tag: OH_AudioSuiteEngine_VoiceBeautifierType_001 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_IsNodeTypeSupported_0001
+     * @tc.name       AudioSuiteEngine_IsNodeTypeSupported_0001
+     * @tc.desc       AudioSuite IsNodeTypeSupported test - AUDIOSUITE_SUCCESS
+     * @tc.size       MEDIUM
+     * @tc.type       FUNCTION
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_IsNodeTypeSupported_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_IsNodeTypeSupported_0001();
+      console.info(`Tag: AudioSuiteEngine_IsNodeTypeSupported_0001 : ${result}`);
+      expect(result).assertEqual(AUDIOSUITE_RESULT.AUDIOSUITE_SUCCESS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_IsNodeTypeSupported_0002
+     * @tc.name       AudioSuiteEngine_IsNodeTypeSupported_0002
+     * @tc.desc       AudioSuite IsNodeTypeSupported test - AUDIOSUITE_ERROR_INVALID_PARAM
+     * @tc.size       MEDIUM
+     * @tc.type       FUNCTION
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_IsNodeTypeSupported_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_IsNodeTypeSupported_0002();
+      console.info(`Tag: AudioSuiteEngine_IsNodeTypeSupported_0002 : ${result}`);
+      expect(result).assertEqual(AUDIOSUITE_RESULT.AUDIOSUITE_ERROR_INVALID_PARAM);
       done();
     })
 

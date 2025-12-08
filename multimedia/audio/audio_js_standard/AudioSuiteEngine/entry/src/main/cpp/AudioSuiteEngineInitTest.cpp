@@ -4866,6 +4866,374 @@ static napi_value AudioSuiteEngine_StopPipeline_0004(napi_env env, napi_callback
     }
 }
 
+static napi_value AudioSuiteEngine_IsNodeTypeSupported_0001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    bool isSupported = false;
+    for (const auto setNodeType : audioNodeTypeTest) {
+        OH_AudioSuite_Result result = OH_AudioSuiteEngine_IsNodeTypeSupported(setNodeType, &isSupported);
+        napi_create_int32(env, result, &res);
+        if (result != OH_AudioSuite_Result::AUDIOSUITE_SUCCESS) {
+            LOG("AudioSuiteEngine_IsNodeTypeSupported_0001 fail, result is: %{public}d", result);
+            return res;
+        }
+    }
+    return res;
+}
+
+static napi_value AudioSuiteEngine_IsNodeTypeSupported_0002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioNode_Type nodeType = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_IsNodeTypeSupported(nodeType, nullptr);
+    if (result != OH_AudioSuite_Result::AUDIOSUITE_ERROR_INVALID_PARAM) {
+        LOG("AudioSuiteEngine_IsNodeTypeSupported_0002 fail, result is: %{public}d", result);
+    }
+    napi_create_int32(env, result, &res);
+    return res;
+}
+
+static napi_value OH_AudioSuiteEngine_AudioNodeType_001(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AudioNode_Type input = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST);
+    OH_AudioNode_Type output = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST);
+    OH_AudioNode_Type equalizer = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_EQUALIZER_TEST);
+    OH_AudioNode_Type noise = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_NOISE_REDUCTION_TEST);
+    OH_AudioNode_Type sound = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SOUND_FIELD_TEST);
+
+    if (input != INPUT_NODE_TYPE_DEFAULT) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioNodeType_001 fail, INPUT_NODE_TYPE_DEFAULT_TEST is: %{public}d", INPUT_NODE_TYPE_DEFAULT);
+        return result;
+    }
+    if (output != OUTPUT_NODE_TYPE_DEFAULT) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioNodeType_001 fail, OUTPUT_NODE_TYPE_DEFAULT is: %{public}d", OUTPUT_NODE_TYPE_DEFAULT);
+        return result;
+    }
+    if (equalizer != EFFECT_NODE_TYPE_EQUALIZER) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioNodeType_001 fail, EFFECT_NODE_TYPE_EQUALIZER is: %{public}d", EFFECT_NODE_TYPE_EQUALIZER);
+        return result;
+    }
+    if (noise != EFFECT_NODE_TYPE_NOISE_REDUCTION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioNodeType_001 fail,EFFECT_NODE_TYPE_NOISE_REDUCTION is: %{public}d", EFFECT_NODE_TYPE_NOISE_REDUCTION);
+        return result;
+    }
+    if (sound != EFFECT_NODE_TYPE_SOUND_FIELD) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioNodeType_001 fail, EFFECT_NODE_TYPE_SOUND_FIELD is: %{public}d", EFFECT_NODE_TYPE_SOUND_FIELD);
+        return result;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
+    return result;
+}
+
+static napi_value OH_AudioSuiteEngine_AudioNodeType_002(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AudioNode_Type separation =
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_MULTII_OUTPUT_NODE_TYPE_AUDIO_SEPARATION_TEST);
+    OH_AudioNode_Type beaudifier =
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_VOICE_BEAUTIFIER_TEST);
+    OH_AudioNode_Type environment =
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_ENVIRONMENT_EFFECT_TEST);
+    OH_AudioNode_Type mixer = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_AUDIO_MIXER_TEST);
+
+    if (separation != EFFECT_MULTII_OUTPUT_NODE_TYPE_AUDIO_SEPARATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioNodeType_002 fail, EFFECT_MULTII_OUTPUT_NODE_TYPE_AUDIO_SEPARATION is: %{public}d",
+            EFFECT_MULTII_OUTPUT_NODE_TYPE_AUDIO_SEPARATION);
+        return result;
+    }
+    if (beaudifier != EFFECT_NODE_TYPE_VOICE_BEAUTIFIER) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioNodeType_002 fail, EFFECT_NODE_TYPE_VOICE_BEAUTIFIER is: %{public}d",
+            EFFECT_NODE_TYPE_VOICE_BEAUTIFIER);
+        return result;
+    }
+    if (environment != EFFECT_NODE_TYPE_ENVIRONMENT_EFFECT) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioNodeType_002 fail, EFFECT_NODE_TYPE_ENVIRONMENT_EFFECT is: %{public}d",
+            EFFECT_NODE_TYPE_ENVIRONMENT_EFFECT);
+        return result;
+    }
+    if (mixer != EFFECT_NODE_TYPE_AUDIO_MIXER) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioNodeType_002 fail, EFFECT_NODE_TYPE_AUDIO_MIXER is: %{public}d", EFFECT_NODE_TYPE_AUDIO_MIXER);
+        return result;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
+    return result;
+}
+
+static napi_value OH_AudioSuiteEngine_PipelineWorkMode_001(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AudioSuite_PipelineWorkMode editMode =
+        static_cast<OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST);
+    OH_AudioSuite_PipelineWorkMode realtimeMode = static_cast<OH_AudioSuite_PipelineWorkMode>(
+        AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_REALTIME_MODE_TEST);
+
+    if (editMode != AUDIOSUITE_PIPELINE_EDIT_MODE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_PipelineWorkMode_001 fail, AUDIOSUITE_PIPELINE_EDIT_MODE is: %{public}d",
+            AUDIOSUITE_PIPELINE_EDIT_MODE);
+        return result;
+    }
+    if (realtimeMode != AUDIOSUITE_PIPELINE_REALTIME_MODE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_PipelineWorkMode_001 fail, AUDIOSUITE_PIPELINE_REALTIME_MODE is: %{public}d",
+            AUDIOSUITE_PIPELINE_REALTIME_MODE);
+        return result;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
+    return result;
+}
+
+static napi_value OH_AudioSuiteEngine_AudioSuitePipelineState_001(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AudioSuite_PipelineState stopped =
+        static_cast<OH_AudioSuite_PipelineState>(AudioSuitePipelineStateTest::AUDIOSUITE_PIPELINE_STOPPED_TEST);
+    OH_AudioSuite_PipelineState running =
+        static_cast<OH_AudioSuite_PipelineState>(AudioSuitePipelineStateTest::AUDIOSUITE_PIPELINE_RUNNING_TEST);
+
+    if (stopped != AUDIOSUITE_PIPELINE_STOPPED) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_AudioSuitePipelineState_001 fail, AUDIOSUITE_PIPELINE_STOPPED is: %{public}d",
+            AUDIOSUITE_PIPELINE_STOPPED);
+        return result;
+    }
+    if (running != AUDIOSUITE_PIPELINE_RUNNING) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_AudioSuitePipelineState_001 fail, AUDIOSUITE_PIPELINE_RUNNING is: %{public}d",
+            AUDIOSUITE_PIPELINE_RUNNING);
+        return result;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
+    return result;
+}
+
+static napi_value OH_AudioSuiteEngine_SampleFormat_001(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_Audio_SampleFormat u8 = static_cast<OH_Audio_SampleFormat>(AudioSampleFormatTest::AUDIO_SAMPLE_U8_TEST);
+    OH_Audio_SampleFormat s16le = static_cast<OH_Audio_SampleFormat>(AudioSampleFormatTest::AUDIO_SAMPLE_S16LE_TEST);
+    OH_Audio_SampleFormat s24le = static_cast<OH_Audio_SampleFormat>(AudioSampleFormatTest::AUDIO_SAMPLE_S24LE_TEST);
+    OH_Audio_SampleFormat s32le = static_cast<OH_Audio_SampleFormat>(AudioSampleFormatTest::AUDIO_SAMPLE_S32LE_TEST);
+    OH_Audio_SampleFormat f32le = static_cast<OH_Audio_SampleFormat>(AudioSampleFormatTest::AUDIO_SAMPLE_F32LE_TEST);
+
+    if (u8 != AUDIO_SAMPLE_U8) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleFormat_001 fail, AUDIO_SAMPLE_U8 is: %{public}d", AUDIO_SAMPLE_U8);
+        return result;
+    }
+    if (s16le != AUDIO_SAMPLE_S16LE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleFormat_001 fail, AUDIO_SAMPLE_S16LE is: %{public}d", AUDIO_SAMPLE_S16LE);
+        return result;
+    }
+    if (s24le != AUDIO_SAMPLE_S24LE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleFormat_001 fail, AUDIO_SAMPLE_S24LE is: %{public}d", AUDIO_SAMPLE_S24LE);
+        return result;
+    }
+    if (s32le != AUDIO_SAMPLE_S32LE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleFormat_001 fail, AUDIO_SAMPLE_S32LE is: %{public}d", AUDIO_SAMPLE_S32LE);
+        return result;
+    }
+    if (f32le != AUDIO_SAMPLE_F32LE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleFormat_001 fail, AUDIO_SAMPLE_F32LE is: %{public}d", AUDIO_SAMPLE_F32LE);
+        return result;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
+    return result;
+}
+
+static napi_value OH_AudioSuiteEngine_SampleRate_001(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_Audio_SampleRate rate8000 = static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_8000_TEST);
+    OH_Audio_SampleRate rate11025 = static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_11025_TEST);
+    OH_Audio_SampleRate rate12000 = static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_12000_TEST);
+    OH_Audio_SampleRate rate16000 = static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_16000_TEST);
+    OH_Audio_SampleRate rate22050 = static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_22050_TEST);
+    OH_Audio_SampleRate rate24000 = static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_24000_TEST);
+    OH_Audio_SampleRate rate32000 = static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_32000_TEST);
+
+    if (rate8000 != SAMPLE_RATE_8000) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleRate_001 fail, SAMPLE_RATE_8000 is: %{public}d", SAMPLE_RATE_8000);
+        return result;
+    }
+    if (rate11025 != SAMPLE_RATE_11025) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleRate_001 fail, SAMPLE_RATE_11025 is: %{public}d", SAMPLE_RATE_11025);
+        return result;
+    }
+    if (rate12000 != SAMPLE_RATE_12000) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleRate_001 fail, SAMPLE_RATE_12000 is: %{public}d", SAMPLE_RATE_12000);
+        return result;
+    }
+    if (rate16000 != SAMPLE_RATE_16000) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleRate_001 fail, SAMPLE_RATE_16000 is: %{public}d", SAMPLE_RATE_16000);
+        return result;
+    }
+    if (rate22050 != SAMPLE_RATE_22050) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleRate_001 fail, SAMPLE_RATE_22050 is: %{public}d", SAMPLE_RATE_22050);
+        return result;
+    }
+    if (rate24000 != SAMPLE_RATE_24000) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleRate_001 fail, SAMPLE_RATE_24000 is: %{public}d", SAMPLE_RATE_24000);
+        return result;
+    }
+    if (rate32000 != SAMPLE_RATE_32000) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleRate_001 fail, SAMPLE_RATE_32000 is: %{public}d", SAMPLE_RATE_32000);
+        return result;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
+    return result;
+}
+
+static napi_value OH_AudioSuiteEngine_SampleRate_002(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_Audio_SampleRate rate44100 = static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_44100_TEST);
+    OH_Audio_SampleRate rate48000 = static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_48000_TEST);
+    OH_Audio_SampleRate rate64000 = static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_64000_TEST);
+    OH_Audio_SampleRate rate88200 = static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_88200_TEST);
+    OH_Audio_SampleRate rate96000 = static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_96000_TEST);
+    OH_Audio_SampleRate rate176400 = static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_176400_TEST);
+    OH_Audio_SampleRate rate192000 = static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_192000_TEST);
+
+    if (rate44100 != SAMPLE_RATE_44100) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleRate_002 fail, SAMPLE_RATE_44100 is: %{public}d", SAMPLE_RATE_44100);
+        return result;
+    }
+    if (rate48000 != SAMPLE_RATE_48000) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleRate_002 fail, SAMPLE_RATE_48000 is: %{public}d", SAMPLE_RATE_48000);
+        return result;
+    }
+    if (rate64000 != SAMPLE_RATE_64000) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleRate_002 fail, SAMPLE_RATE_64000 is: %{public}d", SAMPLE_RATE_64000);
+        return result;
+    }
+    if (rate88200 != SAMPLE_RATE_88200) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleRate_002 fail, SAMPLE_RATE_88200 is: %{public}d", SAMPLE_RATE_88200);
+        return result;
+    }
+    if (rate96000 != SAMPLE_RATE_96000) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleRate_002 fail, SAMPLE_RATE_96000 is: %{public}d", SAMPLE_RATE_96000);
+        return result;
+    }
+    if (rate176400 != SAMPLE_RATE_176400) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleRate_002 fail, SAMPLE_RATE_176400 is: %{public}d", SAMPLE_RATE_176400);
+        return result;
+    }
+    if (rate192000 != SAMPLE_RATE_192000) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_SampleRate_002 fail, SAMPLE_RATE_192000 is: %{public}d", SAMPLE_RATE_192000);
+        return result;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
+    return result;
+}
+
+static napi_value OH_AudioSuiteEngine_AudioSuiteResult_001(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AudioSuite_Result errorSystem =
+        static_cast<OH_AudioSuite_Result>(AudioSuiteResultTest::AUDIOSUITE_ERROR_SYSTEM_TEST);
+    OH_AudioSuite_Result engineNotExist =
+        static_cast<OH_AudioSuite_Result>(AudioSuiteResultTest::AUDIOSUITE_ERROR_ENGINE_NOT_EXIST_TEST);
+    OH_AudioSuite_Result timeout =
+        static_cast<OH_AudioSuite_Result>(AudioSuiteResultTest::AUDIOSUITE_ERROR_TIMEOUT_TEST);
+    OH_AudioSuite_Result memory =
+        static_cast<OH_AudioSuite_Result>(AudioSuiteResultTest::AUDIOSUITE_ERROR_MEMORY_ALLOC_FAILED_TEST);
+
+    if (errorSystem != AUDIOSUITE_ERROR_SYSTEM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_AudioSuiteResult_001 fail, AUDIOSUITE_ERROR_SYSTEM is: %{public}d",
+            AUDIOSUITE_ERROR_SYSTEM);
+        return result;
+    }
+    if (engineNotExist != AUDIOSUITE_ERROR_ENGINE_NOT_EXIST) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_AudioSuiteResult_001 fail, AUDIOSUITE_ERROR_ENGINE_NOT_EXIST is: %{public}d",
+            AUDIOSUITE_ERROR_ENGINE_NOT_EXIST);
+        return result;
+    }
+    if (timeout != AUDIOSUITE_ERROR_TIMEOUT) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_AudioSuiteResult_001 fail, AUDIOSUITE_ERROR_TIMEOUT is: %{public}d",
+            AUDIOSUITE_ERROR_TIMEOUT);
+        return result;
+    }
+    if (memory != AUDIOSUITE_ERROR_MEMORY_ALLOC_FAILED) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_AudioSuiteResult_001 fail, AUDIOSUITE_ERROR_MEMORY_ALLOC_FAILED is: %{public}d",
+            AUDIOSUITE_ERROR_MEMORY_ALLOC_FAILED);
+        return result;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
+    return result;
+}
+
+static napi_value OH_AudioSuiteEngine_VoiceBeautifierType_001(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_VoiceBeautifierType clear =
+        static_cast<OH_VoiceBeautifierType>(AudioSuiteVoiceBeautifierTypeTest::VOICE_BEAUTIFIER_TYPE_CLEAR_TEST);
+    OH_VoiceBeautifierType theater =
+        static_cast<OH_VoiceBeautifierType>(AudioSuiteVoiceBeautifierTypeTest::VOICE_BEAUTIFIER_TYPE_THEATRE_TEST);
+    OH_VoiceBeautifierType cd =
+        static_cast<OH_VoiceBeautifierType>(AudioSuiteVoiceBeautifierTypeTest::VOICE_BEAUTIFIER_TYPE_CD_TEST);
+    OH_VoiceBeautifierType studio = static_cast<OH_VoiceBeautifierType>(
+        AudioSuiteVoiceBeautifierTypeTest::VOICE_BEAUTIFIER_TYPE_RECORDING_STUDIO_TEST);
+
+    if (clear != VOICE_BEAUTIFIER_TYPE_CLEAR) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_VoiceBeautifierType_001 fail, VOICE_BEAUTIFIER_TYPE_CLEAR is: %{public}d",
+            VOICE_BEAUTIFIER_TYPE_CLEAR);
+        return result;
+    }
+    if (theater != VOICE_BEAUTIFIER_TYPE_THEATRE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_VoiceBeautifierType_001 fail, VOICE_BEAUTIFIER_TYPE_THEATRE is: %{public}d",
+            VOICE_BEAUTIFIER_TYPE_THEATRE);
+        return result;
+    }
+    if (cd != VOICE_BEAUTIFIER_TYPE_CD) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_VoiceBeautifierType_001 fail, VOICE_BEAUTIFIER_TYPE_CD is: %{public}d",
+            VOICE_BEAUTIFIER_TYPE_CD);
+        return result;
+    }
+    if (studio != VOICE_BEAUTIFIER_TYPE_RECORDING_STUDIO) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("OH_AudioSuiteEngine_VoiceBeautifierType_001 fail, VOICE_BEAUTIFIER_TYPE_RECORDING_STUDIO is: %{public}d",
+            VOICE_BEAUTIFIER_TYPE_RECORDING_STUDIO);
+        return result;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
+    return result;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -5166,6 +5534,28 @@ static napi_value Init(napi_env env, napi_value exports)
         nullptr, nullptr, nullptr, napi_default, nullptr },
         { "AudioSuiteEngine_StopPipeline_0004", nullptr, AudioSuiteEngine_StopPipeline_0004,
         nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OH_AudioSuiteEngine_AudioNodeType_001", nullptr, OH_AudioSuiteEngine_AudioNodeType_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OH_AudioSuiteEngine_AudioNodeType_002", nullptr, OH_AudioSuiteEngine_AudioNodeType_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OH_AudioSuiteEngine_PipelineWorkMode_001", nullptr, OH_AudioSuiteEngine_PipelineWorkMode_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OH_AudioSuiteEngine_AudioSuitePipelineState_001", nullptr, OH_AudioSuiteEngine_AudioSuitePipelineState_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OH_AudioSuiteEngine_SampleFormat_001", nullptr, OH_AudioSuiteEngine_SampleFormat_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OH_AudioSuiteEngine_SampleRate_001", nullptr, OH_AudioSuiteEngine_SampleRate_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OH_AudioSuiteEngine_SampleRate_002", nullptr, OH_AudioSuiteEngine_SampleRate_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OH_AudioSuiteEngine_AudioSuiteResult_001", nullptr, OH_AudioSuiteEngine_AudioSuiteResult_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OH_AudioSuiteEngine_VoiceBeautifierType_001", nullptr, OH_AudioSuiteEngine_VoiceBeautifierType_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_IsNodeTypeSupported_0001", nullptr, AudioSuiteEngine_IsNodeTypeSupported_0001,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_IsNodeTypeSupported_0002", nullptr, AudioSuiteEngine_IsNodeTypeSupported_0002,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
