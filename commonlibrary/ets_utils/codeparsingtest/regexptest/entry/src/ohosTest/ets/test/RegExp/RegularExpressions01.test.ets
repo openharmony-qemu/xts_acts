@@ -1892,5 +1892,123 @@ export default function RegularExpressions01Test() {
         console.log(TAG + " end");
         console.log(`78. existence of grouping in test method: ${testResult}, Group 1 =${group1Content}`);
       });
+    /**
+     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_7900
+     * @tc.name      testGroupingModuleCase0079
+     * @tc.desc      Verify combination of match method and groups in regular expressions.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("testGroupingModuleCase0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG = "testGroupingModuleCase0079";
+        console.log(TAG + " start");
+        const re79: RegExp = /(\d+)/;
+        const result79: RegExpMatchArray | null = "abc123def".match(re79);
+        const fullMatch: string = result79?.[0] || "";
+        const group1Content: string = result79?.[1] || "";
+        const isFullMatchCorrect: boolean = fullMatch === "123";
+        const isGroupCorrect: boolean = group1Content === "123";
+        const testPassed: boolean = isFullMatchCorrect && isGroupCorrect;
+        expect(testPassed).assertTrue();
+        console.log(TAG + " done");
+        done();
+        console.log(TAG + " end");
+        console.log(`79.Match method grouping results: overall=${fullMatch}, Group 1 =${group1Content}`);
+      });
+    /**
+     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_8000
+     * @tc.name      testGroupingModuleCase0080
+     * @tc.desc      Verify the matchAll method with capturing groups in regular expressions.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("testGroupingModuleCase0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG = "testGroupingModuleCase0080";
+        console.log(TAG + " start");
+        const re80: RegExp = /(\w)/g;
+        const matches80 = Array.from("abc".matchAll(re80), m => m[1]);
+        const result80: string = matches80.join(",");
+        const expected: string = "a,b,c";
+        const testPassed: boolean = result80 === expected;
+        expect(testPassed).assertTrue();
+        console.log(TAG + " done");
+        done();
+        console.log(TAG + " end");
+        console.log(`80. matchAll method grouping results: ${result80}`);
+      });
+    /**
+     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_8100
+     * @tc.name      testGroupingModuleCase0081
+     * @tc.desc      Verify the split method with capturing groups in regular expressions, which preserves the delimiter in the result.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("testGroupingModuleCase0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG = "testGroupingModuleCase0081";
+        console.log(TAG + " start");
+        const re81: RegExp = /(\s)/;
+        const result81: string[] = "a b c".split(re81);
+        const output: string = result81.join("|");
+        const expected: string = "a| |b| |c";
+        const testPassed: boolean = output === expected;
+        expect(testPassed).assertTrue();
+        console.log(TAG + " done");
+        done();
+        console.log(TAG + " end");
+        console.log(`81. split method preserves grouping results: ${output}`);
+      });
+    /**
+     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_8200
+     * @tc.name      testGroupingModuleCase0082
+     * @tc.desc      Verify the lastIndex property of a global regular expression after exec with capturing groups.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("testGroupingModuleCase0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG = "testGroupingModuleCase0082";
+        console.log(TAG + " start");
+        const re82: RegExp = /(\w+)/g;
+        re82.exec("a b c");
+        const result82: number = re82.lastIndex;
+        const expected: number = 1;
+        const testPassed: boolean = result82 === expected;
+        expect(testPassed).assertTrue();
+        console.log(TAG + " done");
+        done();
+        console.log(TAG + " end");
+        console.log(`82. lastIndex after grouping matching: ${result82}`);
+      });
+    /**
+     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_8300
+     * @tc.name      testGroupingModuleCase0083
+     * @tc.desc      Verify capturing group behavior when matching an empty string with a zero-or-more quantifier.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("testGroupingModuleCase0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG = "testGroupingModuleCase0083";
+        console.log(TAG + " start");
+        const re83: RegExp = /(a*)/;
+        const result83: RegExpExecArray | null = re83.exec("");
+        const group1: string = result83?.[1] ?? "undefined";
+        const isMatchEmpty: boolean = group1 === "";
+        const displayValue: string = isMatchEmpty ? "空字符串" : group1;
+        const testPassed: boolean = isMatchEmpty;
+        expect(testPassed).assertTrue();
+        console.log(TAG + " done");
+        done();
+        console.log(TAG + " end");
+        console.log(`83. Group match empty string: ${displayValue}`);
+      });
   })
 }
