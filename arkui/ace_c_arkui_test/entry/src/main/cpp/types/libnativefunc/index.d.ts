@@ -6689,6 +6689,18 @@ export const testAnimateCurve010: () => number;
 
 export const testAnimateCurve011: () => number;
 
+export const testAnimateCurve012: () => number;
+
+export const testAnimateCurve013: () => number;
+
+export const testAnimateCurve014: () => number;
+
+export const testAnimateCurve015: () => number;
+
+export const testAnimateCurve016: () => number;
+
+export const testAnimateCurve017: () => number;
+
 export const testKeyframeAnimateOption001: () => number;
 
 export const testKeyframeAnimateOption002: () => number;

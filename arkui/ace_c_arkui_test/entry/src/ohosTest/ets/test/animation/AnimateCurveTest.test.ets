@@ -169,5 +169,83 @@ export default function animateCurveTest() {
       done()
     })
 
+        /*
+     * @tc.number     testAnimateCurve012
+     * @tc.name       testAnimateCurve012
+     * @tc.desc       testing OH_ArkUI_Curve_CreateCustomCurve minimum boundary
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testAnimateCurve012', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testAnimateCurve012()).assertEqual(0)
+      done()
+    })
+
+    /*
+     * @tc.number     testAnimateCurve013
+     * @tc.name       testAnimateCurve013
+     * @tc.desc       testing OH_ArkUI_Curve_CreateCustomCurve Maximum
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testAnimateCurve013', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testAnimateCurve013()).assertEqual(0)
+      done()
+    })
+
+    /*
+     * @tc.number     testAnimateCurve014
+     * @tc.name       testAnimateCurve014
+     * @tc.desc       testing OH_ArkUI_Curve_CreateCustomCurve 
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testAnimateCurve014', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testAnimateCurve014()).assertEqual(0)
+      done()
+    })
+
+    /*
+     * @tc.number     testAnimateCurve015
+     * @tc.name       testAnimateCurve015
+     * @tc.desc       testing OH_ArkUI_Curve_CreateCubicBezierCurve 
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testAnimateCurve015', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testAnimateCurve015()).assertEqual(0)
+      done()
+    })
+
+     /*
+     * @tc.number     testAnimateCurve016
+     * @tc.name       testAnimateCurve016
+     * @tc.desc       testing OH_ArkUI_Curve_CreateCubicBezierCurve 
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testAnimateCurve016', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testAnimateCurve016()).assertEqual(0)
+      done()
+    })
+
+    /*
+     * @tc.number     testAnimateCurve017
+     * @tc.name       testAnimateCurve017
+     * @tc.desc       testing OH_ArkUI_Curve_CreateCubicBezierCurve
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testAnimateCurve017', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testAnimateCurve017()).assertEqual(0)
+      done()
+    })
+
   })
 }
