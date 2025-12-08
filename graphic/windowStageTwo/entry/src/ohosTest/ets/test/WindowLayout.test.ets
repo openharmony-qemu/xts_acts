@@ -4454,7 +4454,8 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           minWidth: windowLimits.minWidth as number + 10,
           minHeight: windowLimits.minHeight as number + 10,
           maxWidth: windowLimits.maxWidth as number - 10,
-          maxHeight: windowLimits.maxHeight as number - 10
+          maxHeight: windowLimits.maxHeight as number - 10,
+          pixelUnit: window.PixelUnit.VP
         }
         await windowClass?.setWindowLimits(setWindowLimits);
         let windowLimits2 = windowClass?.getWindowLimitsVP();
@@ -4506,9 +4507,10 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           minWidth: vp2px(windowLimits.minWidth as number + 10),
           minHeight: vp2px(windowLimits.minHeight as number + 10),
           maxWidth: vp2px(windowLimits.maxWidth as number - 10),
-          maxHeight: vp2px(windowLimits.maxHeight as number - 10)
+          maxHeight: vp2px(windowLimits.maxHeight as number - 10),
+          pixelUnit: window.PixelUnit.PX
         }
-        await windowClass?.setwindowlimitVP(setWindowLimits);
+        await windowClass?.setWindowLimits(setWindowLimits);
         let windowLimits2 = windowClass?.getWindowLimitsVP();
         console.log(`${caseName} windowLimits2: ${JSON.stringify(windowLimits2)}`);
 
