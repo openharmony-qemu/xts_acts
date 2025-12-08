@@ -76,7 +76,7 @@ let sleepForPermissions = async () => {
 
 export default function audioNDK() {
   describe('audioNDKTest', () => {
-    beforeAll(() => {      
+    beforeAll(() => {
       console.info('beforeAll case');
     })
 
@@ -2508,8 +2508,23 @@ export default function audioNDK() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_APPLICATION_INTERNAL_RECORDING_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.audioAudioInternalRecordingSuccess03();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_APPLICATION_INTERNAL_RECORDING_0005 audioAudioInternalRecordingSuccess: ${result}`);
+      expect(result).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_APPLICATION_INTERNAL_RECORDING_0006
+     * @tc.number SUB_MULTIMEDIA_AUDIO_APPLICATION_INTERNAL_RECORDING_0006
+     * @tc.desc   test Renderer Privacy with Internal Recording
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_APPLICATION_INTERNAL_RECORDING_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioAudioInternalRecordingFalse();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_APPLICATION_INTERNAL_RECORDING_0005 audioAudioInternalRecordingFalse: ${result}`);
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_APPLICATION_INTERNAL_RECORDING_0006 audioAudioInternalRecordingFalse: ${result}`);
       expect(result).assertEqual(1)
       done()
     })
@@ -2953,7 +2968,7 @@ export default function audioNDK() {
       expect(0).assertEqual(result)
       done()
     })
-  
+
     /**
      * @tc.name   SUM_MULTIMEDIA_AUDIO_OH_AudioSessionManagerRegisterStateChangeCallback_003
      * @tc.number SUM_MULTIMEDIA_AUDIO_OH_AudioSessionManagerRegisterStateChangeCallback_003
@@ -3048,7 +3063,7 @@ export default function audioNDK() {
       expect(0).assertEqual(result)
       done()
     })
-  
+
     /**
      * @tc.name   SUM_MULTIMEDIA_AUDIO_OH_AudioSessionManagerRegisterDeviceCallback_003
      * @tc.number SUM_MULTIMEDIA_AUDIO_OH_AudioSessionManagerRegisterDeviceCallback_003
@@ -3193,10 +3208,10 @@ export default function audioNDK() {
 
         myaudioNdk.audioRendererStop();
         console.log(`${caseTag} audioRendererStop success`);
-          
+
         myaudioNdk.audioRendererRelease();
         console.log(`${caseTag} audioRendererRelease success`);
-        
+
         expect(true).assertTrue();
       } catch (err) {
         console.log(`${caseTag} fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -3254,10 +3269,10 @@ export default function audioNDK() {
 
         myaudioNdk.audioRendererStop();
         console.log(`${caseTag} audioRendererStop success`);
-          
+
         myaudioNdk.audioRendererRelease();
         console.log(`${caseTag} audioRendererRelease success`);
-        
+
         expect(true).assertTrue();
       } catch (err) {
         console.log(`${caseTag} fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -3315,10 +3330,10 @@ export default function audioNDK() {
 
         myaudioNdk.audioRendererStop();
         console.log(`${caseTag} audioRendererStop success`);
-          
+
         myaudioNdk.audioRendererRelease();
         console.log(`${caseTag} audioRendererRelease success`);
-        
+
         expect(true).assertTrue();
       } catch (err) {
         console.log(`${caseTag} fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -3376,10 +3391,10 @@ export default function audioNDK() {
 
         myaudioNdk.audioRendererStop();
         console.log(`${caseTag} audioRendererStop success`);
-          
+
         myaudioNdk.audioRendererRelease();
         console.log(`${caseTag} audioRendererRelease success`);
-        
+
         expect(true).assertTrue();
       } catch (err) {
         console.log(`${caseTag} fail: ${JSON.stringify(err)}, ${err.code}`);
@@ -3399,7 +3414,7 @@ export default function audioNDK() {
      */
     it('audioStreamBuilderSetVolumeModeTest_001', TestType.FUNCTION | TestType.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: Number = myaudioNdk.audioStreamBuilderSetVolumeModeTest_001();
-      console.info(`TAG: audioStreamBuilderSetVolumeModeTest_001: 
+      console.info(`TAG: audioStreamBuilderSetVolumeModeTest_001:
         result: ${result}`);
       expect(result).assertEqual(0);
       done();
@@ -3415,7 +3430,7 @@ export default function audioNDK() {
      */
     it('audioStreamBuilderSetVolumeModeTest_002', TestType.FUNCTION | TestType.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: Number = myaudioNdk.audioStreamBuilderSetVolumeModeTest_002();
-      console.info(`TAG: audioStreamBuilderSetVolumeModeTest_002: 
+      console.info(`TAG: audioStreamBuilderSetVolumeModeTest_002:
         result: ${result}`);
       expect(result).assertEqual(0);
       done();
@@ -3431,7 +3446,7 @@ export default function audioNDK() {
      */
     it('audioStreamBuilderSetVolumeModeTest_003', TestType.FUNCTION | TestType.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result: Number = myaudioNdk.audioStreamBuilderSetVolumeModeTest_003();
-      console.info(`TAG: audioStreamBuilderSetVolumeModeTest_003: 
+      console.info(`TAG: audioStreamBuilderSetVolumeModeTest_003:
         result: ${result}`);
       expect(result).assertEqual(0);
       done();
@@ -3447,7 +3462,7 @@ export default function audioNDK() {
      */
     it('audioStreamBuilderSetVolumeModeTest_004', TestType.FUNCTION | TestType.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let result: Number = myaudioNdk.audioStreamBuilderSetVolumeModeTest_004();
-      console.info(`TAG: audioStreamBuilderSetVolumeModeTest_004: 
+      console.info(`TAG: audioStreamBuilderSetVolumeModeTest_004:
         result: ${result}`);
       expect(result).assertEqual(0);
       done();
