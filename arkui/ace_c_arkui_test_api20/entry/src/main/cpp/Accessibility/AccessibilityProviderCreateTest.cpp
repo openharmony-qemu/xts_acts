@@ -27,6 +27,46 @@ static napi_value AccessibilityProviderCreateTest(napi_env env, napi_callback_in
     ArkUI_AccessibilityProvider* provider = OH_ArkUI_AccessibilityProvider_Create(nullptr);
     ASSERT_OBJ(provider, nullptr);
     NAPI_END;
+} 
+
+static napi_value EmbeddedComponentOptionTest(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Custom, ARKUI_NODE_CUSTOM);
+    auto ec_option = OH_ArkUI_EmbeddedComponentOption_Create();
+    ASSERT_OBJ_NE(ec_option, nullptr);
+    NAPI_END;
+}
+    
+static napi_value AccessibilityValueCreateTest(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Custom, ARKUI_NODE_CUSTOM);
+    auto ret = OH_ArkUI_AccessibilityValue_Create();
+    ASSERT_OBJ_NE(ret, nullptr);
+    NAPI_END;
+}
+
+static napi_value AccessibilityStateCreateTest(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Custom, ARKUI_NODE_CUSTOM);
+    auto statePrt = OH_ArkUI_AccessibilityState_Create();
+    ASSERT_OBJ_NE(statePrt, nullptr);
+    NAPI_END;
+}
+
+static napi_value CreateAccessibilityEventInfoTest(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Custom, ARKUI_NODE_CUSTOM);
+    ArkUI_AccessibilityEventInfo *eventInfo = OH_ArkUI_CreateAccessibilityEventInfo();
+    ASSERT_OBJ_NE(eventInfo, nullptr);
+    NAPI_END;
+}
+
+static napi_value CreateAccessibilityElementInfoTest(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Custom, ARKUI_NODE_CUSTOM);
+    ArkUI_AccessibilityElementInfo* elementInfo = OH_ArkUI_CreateAccessibilityElementInfo();
+    ASSERT_OBJ_NE(elementInfo, nullptr);
+    NAPI_END;
 }
 
 } // namespace ArkUICapiTest
