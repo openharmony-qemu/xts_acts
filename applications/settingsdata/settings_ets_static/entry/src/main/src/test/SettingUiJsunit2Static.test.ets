@@ -24,6 +24,21 @@ import { BusinessError } from '@ohos.base';
 
 let abilityContext: common.UIAbilityContext
 
+const SETTINGS_PARAM_INVALID_CODE:number = 16900010;
+const deviceType = deviceInfo.deviceType;
+
+function isDevicePhone(): boolean {
+  return deviceType === 'phone';
+}
+
+function isDeviceTablet(): boolean {
+  return deviceType === 'tablet';
+}
+
+function isDeviceSupportInputMethod(): boolean {
+  return isDevicePhone() || isDeviceTablet();
+}
+
 export default function settingUiJsunit() {
   beforeAll(() => {
     console.info("beforeAll start");
@@ -1547,6 +1562,110 @@ export default function settingUiJsunit() {
             }
             done();
           })
+    });
+
+    /**
+     * @tc.name   openInputMethodSettings_valid_param
+     * @tc.number openInputMethodSettings_valid_param
+     * @tc.desc   openInputMethodSettings_valid_param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodSettings_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openInputMethodSettings(abilityContext);
+      } catch (err) {
+        console.error("[openInputMethodSettings_valid_param] error = " + err);
+        if ((err as BusinessError).code) {
+          code = (err as BusinessError).code;
+        }
+      }
+      expect(code).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   openInputMethodDetail_invalid_bundleName
+     * @tc.number openInputMethodDetail_invalid_bundleName
+     * @tc.desc   openInputMethodDetail_invalid_bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_invalid_bundleName', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(abilityContext, '', 'inputMethodId');
+      } catch (err) {
+        console.error("[openInputMethodDetail_invalid_bundleName] error = " + err);
+        if ((err as BusinessError).code) {
+          code = (err as BusinessError).code;
+        }
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+    /**
+     * @tc.name   openInputMethodDetail_invalid_method
+     * @tc.number openInputMethodDetail_invalid_method
+     * @tc.desc   openInputMethodDetail_invalid_method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_invalid_method', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(abilityContext, 'bundleName', '');
+      } catch (err) {
+        console.error("[openInputMethodDetail_invalid_method] error = " + err);
+        if ((err as BusinessError).code) {
+          code = (err as BusinessError).code;
+        }
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+    /**
+     * @tc.name   openInputMethodDetail_valid_param
+     * @tc.number openInputMethodDetail_valid_param
+     * @tc.desc   openInputMethodDetail_valid_param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(abilityContext, 'bundleName', 'inputMethodId');
+      } catch (err) {
+        console.error("[openInputMethodDetail_valid_param] error = " + err);
+        if ((err as BusinessError).code) {
+          code = (err as BusinessError).code;
+        }
+      }
+      expect(code).assertEqual(0);
+      done();
     });
   })
 }
