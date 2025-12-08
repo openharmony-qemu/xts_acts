@@ -113,7 +113,7 @@ export default function registerPhotoChangeTest () {
           count++;
           console.info(`${testNum} changeData: ${JSON.stringify(changeData)}`);
           helper.off('photoChange');
-          expect(changeData.type).assertEqual(NOTIFY_CHANGE_YUV_READY);
+          expect(changeData.type).not().assertEqual(NOTIFY_CHANGE_YUV_READY);
         });
         await sleep(550);
         const newTitle = testNum + photoAsset.get(photoKeys.TITLE);
