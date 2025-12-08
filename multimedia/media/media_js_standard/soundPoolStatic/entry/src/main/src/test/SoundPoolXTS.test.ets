@@ -158,7 +158,7 @@ export default function soundPoolTest() {
       await getFileUrl('/test_02.mp3', uri2);
       await getFileUrl('/test_03.mp3', uri3);
       await getFileUrl('/test_04.mp3', uri4);
-      await getFileUrl('/test_05.mp3', uri5);
+      await getFileUrl('/test_05.wav', uri5);
       console.info(`${TAG}: uri1 is: ${uri1}; uri2 is: ${uri2}; uri3 is: ${uri3}; uri4 is: ${uri4}; uri5 is: ${uri5}`);
       console.info(`${TAG}: fd1 is: ${fd1}; fd2 is: ${fd2}; fd3 is: ${fd3}; fd4 is: ${fd4}; fd5 is: ${fd5}`);
     });
