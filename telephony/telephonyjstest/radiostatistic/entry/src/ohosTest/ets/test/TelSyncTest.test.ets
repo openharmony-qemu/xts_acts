@@ -28,7 +28,7 @@ export default function telSyncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Telephony_call_hasCallSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_Telephony_call_hasCallSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'SUB_Telephony_call_hasCallSync_0100';
       let simState: sim.SimState = await sim.getSimStateSync(0);
       if (simState == sim.SimState.SIM_STATE_UNKNOWN) {
@@ -56,7 +56,7 @@ export default function telSyncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Telephony_call_getCallStateSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_Telephony_call_getCallStateSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'SUB_Telephony_call_getCallStateSync_0100';
       let simState: sim.SimState = await sim.getSimStateSync(0);
       if (simState == sim.SimState.SIM_STATE_UNKNOWN) {
@@ -137,12 +137,13 @@ export default function telSyncTest() {
         done();
       } else {
         let slotId = 0;
-        radio.isRadioOn((err, data) => {
+        let res = radio.getSignalInformationSync(slotId)
+        radio.isRadioOn((err) => {
           if (err) {
             try {
               console.info("SUB_Telephony_radio_getSignalInformationSync_0100 111  " +
-              radio.getSignalInformationSync(slotId));
-              expect(radio.getSignalInformationSync(slotId).length).assertEqual(0);
+                res);
+              expect(res.length).assertEqual(0);
               done();
             } catch (err) {
               console.info("SUB_Telephony_radio_getSignalInformationSync_0100 err " + JSON.stringify(err));
@@ -152,8 +153,8 @@ export default function telSyncTest() {
           } else {
             try {
               console.info("SUB_Telephony_radio_getSignalInformationSync_0100 " +
-              radio.getSignalInformationSync(slotId));
-              expect(radio.getSignalInformationSync(slotId).length >= 0).assertTrue();
+                res);
+              expect(res.length >= 0).assertTrue();
               done();
             } catch (err) {
               console.info("SUB_Telephony_radio_getSignalInformationSync_0100 err " + JSON.stringify(err));
