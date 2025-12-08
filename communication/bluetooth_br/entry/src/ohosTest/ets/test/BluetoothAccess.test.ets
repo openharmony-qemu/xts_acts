@@ -96,8 +96,14 @@ export default function btAccessTest() {
         afterEach(() => {
             console.info('afterEach called')
         })
-        afterAll(() => {
+        afterAll(async (done : Function) =>  {
             console.info('afterAll called')
+            await sleep(3000);
+            bluetooth.enableBluetoothAsync();
+            await sleep(3000);
+            await clickRequestPermission(OPEN_BT_TEXT);
+            await sleep(3000);
+            console.info('[bluetooth_js] bluetooth enable state ='+ JSON.stringify(bluetooth.getState()));
         })
 
         /**
