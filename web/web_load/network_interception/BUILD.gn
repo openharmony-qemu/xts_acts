@@ -31,6 +31,7 @@ group("ActsWebNetworkInterceptionTest") {
       "ace_network_interception_enhanced_two:ActsWebNetworkInterceptionEnhancedTwoTest",
       "ace_network_interception_enhanced_two_static:ActsWebNetworkInterceptionEnhancedTwoStaticTest",
       "ace_network_interception_webController:ActsWebNetworkInterceptionWebControllerTest",
+      "ace_network_interception_webController_static:ActsWebNetworkInterceptionWebControllerStaticTest",
       "ace_network_interception_web_scheme_handler_four_napis:ActsWebNetworkInterceptionNativeWebSchemeHandlerFourTest",
       "ace_network_interception_web_scheme_handler_napis:ActsWebNetworkInterceptionNativeWebSchemeHandlerOneTest",
       "ace_network_interception_webviewController:ActsWebNetworkInterceptionWebViewControllerTest",
