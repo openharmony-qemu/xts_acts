@@ -202,6 +202,8 @@ export const getWhiteBalanceTest: () => number;
 
 export const getMacroStatusChangeTest: () => number;
 
+export const getIsoInfoChangeTest: () => number;
+
 export const createCameraInput: () => number;
 
 export const createCameraInputWithPositionAndType: (position: number, type: number) => number;

@@ -471,6 +471,10 @@ export default function cameraSessionTest() {
     return true;
   }
 
+  let isoInfoCallback = async (isoInfo: cameraObj.IsoInfo) => {
+    console.info(TAG + `Iso info: ${isoInfo}`);
+  }
+
   describe('CameraSessionBaseTest', () => {
     console.info(TAG + '----------CameraSessionTest--------------')
     let dr = Driver.create();
@@ -1021,6 +1025,56 @@ export default function cameraSessionTest() {
       } catch (error) {
         let err = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ERROR_0100 ERRORCODE: " + err.code);
+        expect().assertFail();
+        done();
+      }
+      done();
+    })
+    
+    /**
+     * @tc.number   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ISOINFOCHANGE_0100
+     * @tc.name     videosession callback on isoInfoChange
+     * @tc.desc     videosession callback on isoInfoChange
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ISOINFOCHANGE_0100', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ISOINFOCHANGE_0100--------------");
+      try {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ISOINFOCHANGE_0100");
+
+        mCameraSession.onIsoInfoChange(isoInfoCallback);
+        mCameraSession.offIsoInfoChange();
+        done();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.info(TAG + "SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ISOINFOCHANGE_0100 ERRORCODE: " + err.code);
+        expect().assertFail();
+        done();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ISOINFOCHANGE_0200
+     * @tc.name     videosession callback on isoInfoChange
+     * @tc.desc     videosession callback on isoInfoChange
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ISOINFOCHANGE_0200', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ISOINFOCHANGE_0200--------------");
+      try {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ISOINFOCHANGE_0200");
+
+        mCameraSession.onIsoInfoChange(isoInfoCallback);
+        mCameraSession.offIsoInfoChange(isoInfoCallback);
+        done();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.info(TAG + "SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ISOINFOCHANGE_0200 ERRORCODE: " + err.code);
         expect().assertFail();
         done();
       }
