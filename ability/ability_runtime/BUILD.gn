@@ -32,6 +32,7 @@ group("ability_runtime") {
       "abilitytoolabilitydelegatortest:abilitytoolabilitydelegatortest",
       "abilitytoolabilitydelegatorteststatic:ActsAbilityToolAbilityDelegatorStaticTest",
       "actlaunchandlatestparameter:getlaunchandlatestparameteracttest",
+      "actsSetMissionWindowIconTest:ActsSetMissionWindowIconTest",
       "actsNotificationWantAgentTest:ActsNotificationWantAgentTest",
       "actsNotificationWantAgentTestStatic:ActsNotificationWantAgentStaticTest",
       "actsaaappdebugtest:actsaaappdebugtest",
