@@ -39,7 +39,7 @@ export default function OHEffectBufferInfoGetTimestampTest() {
     /**
      * @tc.number  SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_001
      * @tc.name    SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_001
-     * @tc.desc    OHEffectBufferInfoGetTimestampTest
+     * @tc.desc    OHEffectBufferInfoGetTimestampTest-EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -54,7 +54,7 @@ export default function OHEffectBufferInfoGetTimestampTest() {
     /**
      * @tc.number  SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_002
      * @tc.name    SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_002
-     * @tc.desc    OHEffectBufferInfoGetTimestampTest
+     * @tc.desc    OHEffectBufferInfoGetTimestampTest-EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -69,7 +69,7 @@ export default function OHEffectBufferInfoGetTimestampTest() {
     /**
      * @tc.number  SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_003
      * @tc.name    SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TIMESTAMP_SUPP_003
-     * @tc.desc    OHEffectBufferInfoGetTimestampTest
+     * @tc.desc    OHEffectBufferInfoGetTimestampTest-EFFECT_ERROR_PARAM_INVALID
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
