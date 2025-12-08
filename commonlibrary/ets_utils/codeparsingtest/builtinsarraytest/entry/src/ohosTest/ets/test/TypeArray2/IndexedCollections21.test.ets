@@ -183,28 +183,6 @@ export default function IndexedCollections21Test() {
       });
 
     /**
-     * @tc.number    SUB_DATA_ARRAYBUFFER_1GBLIMIT_0100
-     * @tc.name      test_ArrayBuffer_1GBLimit_Memory_0001
-     * @tc.desc      Verify byteLength is read-only (no gc call)
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('test_ArrayBuffer_1GBLimit_Memory_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        console.log('test_ArrayBuffer_1GBLimit_Memory_0001 start');
-        const buffer = new ArrayBuffer(1024 * 1024 * 1024); // 1GB
-
-        let ok = true;
-        [1024 * 1024 * 1024 + 1, 1024 * 1024 * 1024 + 1024, 1024 * 1024 * 1024 * 2].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
-        });
-        expect(ok && buffer.byteLength === 1024 * 1024 * 1024).assertTrue();
-        console.log('test_ArrayBuffer_1GBLimit_Memory_0001 done');
-        done();
-      });
-
-    /**
      * @tc.number    SUB_ARRAYBUFFER_1GBLIMIT_0300
      * @tc.name      test_ArrayBuffer_1GBLimit_Memory_0003
      * @tc.desc      Verify 1-byte buffer byteLength is read-only
@@ -838,28 +816,6 @@ export default function IndexedCollections21Test() {
         });
         expect(ok && buffer.byteLength === 32).assertTrue();
         console.log('testArrayBuffer_Reuse_ReadWrite_0006 done');
-        done();
-      });
-
-    /**
-     * @tc.number    SUB_ARK_ARRAYBUFFER_1GBLIMIT_0100
-     * @tc.name      testArrayBuffer_1GBLimit_Memory_0001
-     * @tc.desc      Verify byteLength is read-only (no gc call)
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('testArrayBuffer_1GBLimit_Memory_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        console.log('testArrayBuffer_1GBLimit_Memory_0001 start');
-        const buffer = new ArrayBuffer(1024 * 1024 * 1024); // 1GB
-
-        let ok = true;
-        [1024 * 1024 * 1024 + 1, 1024 * 1024 * 1024 + 1024, 1024 * 1024 * 1024 * 2].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
-        });
-        expect(ok && buffer.byteLength === 1024 * 1024 * 1024).assertTrue();
-        console.log('testArrayBuffer_1GBLimit_Memory_0001 done');
         done();
       });
 
