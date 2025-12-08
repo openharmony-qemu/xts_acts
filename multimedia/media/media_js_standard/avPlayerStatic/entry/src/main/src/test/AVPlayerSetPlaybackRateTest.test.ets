@@ -31,13 +31,11 @@ const COMPLETED = 'completed';
 const STOPPED = 'stopped';
 const RELEASED = 'released';
 const ERROR = 'error';
-let avFd: media.AVFileDescriptor;
 let movFd: media.AVFileDescriptor;
 let mkvFd: media.AVFileDescriptor;
 let mp3Fd: media.AVFileDescriptor;
 let aacFd: media.AVFileDescriptor;
 let wavFd: media.AVFileDescriptor;
-const VIDEO_SOURCE_MP4 = 'H264_NONE.mp4';
 const VIDEO_SOURCE_MOV = "No_Support_Format.mov";
 const VIDEO_SOURCE_MKV = "H264_AAC.mkv";
 const AUDIO_SOURCE_MP3 = "01.mp3";
@@ -146,13 +144,6 @@ export default function AVPlayerSetPlaybackRateTest() {
   describe('AVPlayerSetPlaybackRateTest', () => {
     beforeAll(async () => {
       console.info('beforeAll case');
-      await mediaTestBase.getStageFileDescriptor(VIDEO_SOURCE_MP4).then((res) => {
-        if (res != undefined) {
-          avFd = res
-        } else {
-          console.info('VIDEO_SOURCE_MP4 fail');
-        }
-      });
       await mediaTestBase.getFileDescriptorFromFileDir(VIDEO_SOURCE_MOV, openFileFailed).then((res) => {
         movFd = res;
       });
@@ -188,7 +179,6 @@ export default function AVPlayerSetPlaybackRateTest() {
     afterAll(async () => {
       console.info('afterAll case');
       try {
-        await mediaTestBase.closeFdNumber(avFd.fd)
         await mediaTestBase.closeFdNumber(movFd.fd)
         await mediaTestBase.closeFdNumber(mkvFd.fd)
         await mediaTestBase.closeFdNumber(mp3Fd.fd)
@@ -461,7 +451,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(Math.abs(setrate - rate) < 0.0000001).assertTrue();
         done()
       }
-      await testSetPlaybackSpeed(movFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
     });
   })
 }
