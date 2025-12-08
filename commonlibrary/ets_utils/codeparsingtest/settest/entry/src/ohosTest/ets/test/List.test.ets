@@ -12,6 +12,10 @@ import SetSymbolTest from './set/SetSymbol.test';
 import SetSymbolIteratorTest from './set/Symboliterator.test';
 import SetComboTest from './set1/set_combo.test';
 
+import keyedCollections02Test from './set2/KeyedCollections_02.test';
+import keyedCollections05Test from './set2/KeyedCollections_05.test';
+import keyedCollections12Test from './set2/KeyedCollections_12.test';
+import keyedCollections13Test from './set2/KeyedCollections_13.test';
 
 export default function testsuite() {
   SetSetTest();
@@ -27,4 +31,9 @@ export default function testsuite() {
   SetSymbolTest();
   SetSymbolIteratorTest();
   SetComboTest();
+
+  keyedCollections02Test();
+  keyedCollections05Test();
+  keyedCollections12Test();
+  keyedCollections13Test();
 }
