@@ -1945,5 +1945,213 @@ export default function RegularExpressions12Test() {
       console.log('testRegexUuidMiddle0001 done');
     });
 
+    /**
+     * @tc.number REGEX_IPV6_FIRST_SEGMENT_0100
+     * @tc.name testRegexIpv6FirstSegment0001
+     * @tc.desc Verify IPv6 first segment extraction with lookahead.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testRegexIpv6FirstSegment0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testRegexIpv6FirstSegment0001 start');
+
+      const re91 = /^[0-9a-fA-F:]+?(?=:)/;
+      const match91 = re91.exec("2001:0db8:85a3:0000:0000:8a2e:0370:7334");
+      const result91 = match91?.[0] ?? null;
+      console.log(`91. IPv6 first segment extraction: ${result91}`);
+      expect(result91).assertEqual("2001");
+      done();
+      console.log('testRegexIpv6FirstSegment0001 done');
+    });
+
+    /**
+     * @tc.number REGEX_MAC_LAST_SEGMENT_0100
+     * @tc.name testRegexMacLastSegment0001
+     * @tc.desc Verify MAC address last segment extraction with lookbehind.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testRegexMacLastSegment0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testRegexMacLastSegment0001 start');
+
+      const re92 = /(?<=:)[0-9a-fA-F]{2}$/;
+      const match92 = re92.exec("00:1B:44:11:3A:B7");
+      const result92 = match92?.[0] ?? null;
+      console.log(`92. MAC last segment extraction: ${result92}`);
+      expect(result92).assertEqual("B7");
+      done();
+      console.log('testRegexMacLastSegment0001 done');
+    });
+
+    /**
+     * @tc.number SUB_REGEX_SCIENTIFIC_NOTATION_0100
+     * @tc.name testRegexScientificNotation0001
+     * @tc.desc Verify scientific notation exponent extraction with lookahead.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testRegexScientificNotation0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testRegexScientificNotation0001 start');
+
+      const re93 = /(?=[eE][+-]?\d+).+/;
+      const match93 = re93.exec("1.23e+45");
+      const result93 = match93?.[0] ?? null;
+      console.log(`93. Scientific notation exponent extraction: ${result93}`);
+      expect(result93).assertEqual("e+45");
+      done();
+      console.log('testRegexScientificNotation0001 done');
+    });
+
+    /**
+     * @tc.number REGEX_CURRENCY_VALUE_0100
+     * @tc.name testRegexCurrencyValue0001
+     * @tc.desc Verify currency value extraction with lookbehind.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testRegexCurrencyValue0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testRegexCurrencyValue0001 start');
+
+      const re94 = /(?<=[€$£])\d+(\.\d+)?/;
+      const match94 = re94.exec("€123.45");
+      const result94 = match94?.[0] ?? null;
+      console.log(`94. Currency value extraction: ${result94}`);
+      expect(result94).assertEqual("123.45");
+      done();
+      console.log('testRegexCurrencyValue0001 done');
+    });
+
+    /**
+     * @tc.number REGEX_PERCENTAGE_VALUE_0100
+     * @tc.name testRegexPercentageValue0001
+     * @tc.desc Verify percentage value extraction with lookahead.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testRegexPercentageValue0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testRegexPercentageValue0001 start');
+
+      const re95 = /\d+(?=%)/;
+      const match95 = re95.exec("75%");
+      const result95 = match95?.[0] ?? null;
+      console.log(`95. Percentage value extraction: ${result95}`);
+      expect(result95).assertEqual("75");
+      done();
+      console.log('testRegexPercentageValue0001 done');
+    });
+
+    /**
+     * @tc.number REGEX_VERSION_RANGE_0100
+     * @tc.name testRegexVersionRange0001
+     * @tc.desc Verify version range upper bound extraction with lookbehind.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testRegexVersionRange0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testRegexVersionRange0001 start');
+
+      const re96 = /(?<=<=)\d+\.\d+\.\d+/;
+      const match96 = re96.exec("1.0.0 <= version <= 2.0.0");
+      const result96 = match96?.[0] ?? null;
+      console.log(`96. Version range upper bound extraction: ${result96}`);
+      expect(result96).assertNull();
+      done();
+      console.log('testRegexVersionRange0001 done');
+    });
+
+    /**
+     * @tc.number REGEX_MATH_OPERATOR_0100
+     * @tc.name testRegexMathOperator0001
+     * @tc.desc Verify math operator extraction with lookaround.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testRegexMathOperator0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testRegexMathOperator0001 start');
+
+      const re97 = /(?<=\d)[+\-*/](?=\d)/;
+      const match97 = re97.exec("10+5 * 3");
+      const result97 = match97?.[0] ?? null;
+      console.log(`97. Math operator extraction: ${result97}`);
+      expect(result97).assertEqual("+");
+      done();
+      console.log('testRegexMathOperator0001 done');
+    });
+
+    /**
+     * @tc.number REGEX_ARRAY_ELEMENT_0100
+     * @tc.name testRegexArrayElement0001
+     * @tc.desc Verify array first element extraction with lookaround.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testRegexArrayElement0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testRegexArrayElement0001 start');
+
+      const re98 = /(?<=\[)[^,\]]+(?=,)/;
+      const match98 = re98.exec("[1, 2, 3, 4]");
+      const result98 = match98?.[0]?.trim() ?? null;
+      console.log(`98. Array first element extraction: ${result98}`);
+      expect(result98).assertEqual("1");
+      done();
+      console.log('testRegexArrayElement0001 done');
+    });
+
+    /**
+     * @tc.number REGEX_COMPLEX_PASSWORD_0100
+     * @tc.name testRegexComplexPassword0001
+     * @tc.desc Verify complex password validation with multiple assertions.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testRegexComplexPassword0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testRegexComplexPassword0001 start');
+
+      const re99 = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*])(?!.*\s).{8,16}$/;
+      const result99 = re99.test("Passw0rd!");
+      console.log(`99. Complex password validation: ${result99}`);
+      expect(result99).assertTrue();
+      done();
+      console.log('testRegexComplexPassword0001 done');
+    });
+
+    /**
+     * @tc.number REGEX_NESTED_PARENTHESES_0100
+     * @tc.name testRegexNestedParentheses0001
+     * @tc.desc Verify nested parentheses content extraction with lookaround.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testRegexNestedParentheses0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testRegexNestedParentheses0001 start');
+
+      const re100 = /(?<=\()(?:[^()]+|\((?:[^()]+|\([^()]*\))*\))*(?=\))/;
+      const match100 = re100.exec("a(b(c)d)e");
+      const result100 = match100?.[0] ?? null;
+      console.log(`100. Nested parentheses content extraction: ${result100}`);
+      expect(result100).assertEqual("b(c)d");
+      done();
+      console.log('testRegexNestedParentheses0001 done');
+    });
   })
 }

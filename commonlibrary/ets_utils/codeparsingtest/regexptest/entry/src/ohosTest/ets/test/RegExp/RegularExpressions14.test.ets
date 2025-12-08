@@ -1986,5 +1986,147 @@ export default function RegularExpressions14Test() {
       console.log('testRegexEmptyLine0001 done');
     });
 
+    /**
+     * @tc.number REGEX_CAPITALIZED_WORD_0100
+     * @tc.name testRegexCapitalizedWord0001
+     * @tc.desc Verify capitalized word pattern matching.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testRegexCapitalizedWord0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testRegexCapitalizedWord0001 start');
+
+      const re97: RegExp = /\b[A-Z][a-z]*\b/;
+      const result97: boolean = re97.test("Hello");
+      console.log(`97. Capitalized word match: ${result97}`);
+      expect(result97).assertTrue();
+      done();
+      console.log('testRegexCapitalizedWord0001 done');
+    });
+
+    /**
+     * @tc.number REGEX_CAMEL_CASE_0100
+     * @tc.name testRegexCamelCase0001
+     * @tc.desc Verify camelCase pattern matching.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testRegexCamelCase0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testRegexCamelCase0001 start');
+
+      const re98: RegExp = /^[a-z]+([A-Z][a-z]+)*$/;
+      const result98: boolean = re98.test("camelCaseVariable");
+      console.log(`98. CamelCase match: ${result98}`);
+      expect(result98).assertTrue();
+      done();
+      console.log('testRegexCamelCase0001 done');
+    });
+
+    /**
+     * @tc.number REGEX_SNAKE_CASE_0100
+     * @tc.name testRegexSnakeCase0001
+     * @tc.desc Verify snake_case pattern matching.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testRegexSnakeCase0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testRegexSnakeCase0001 start');
+
+      const re99: RegExp = /^[a-z]+(_[a-z]+)*$/;
+      const result99: boolean = re99.test("snake_case_variable");
+      console.log(`99. Snake_case match: ${result99}`);
+      expect(result99).assertTrue();
+      done();
+      console.log('testRegexSnakeCase0001 done');
+    });
+
+    /**
+     * @tc.number REGEX_PASCAL_CASE_0100
+     * @tc.name testRegexPascalCase0001
+     * @tc.desc Verify PascalCase pattern matching.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testRegexPascalCase0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testRegexPascalCase0001 start');
+
+      const re100: RegExp = /^[A-Z][a-z]+([A-Z][a-z]+)*$/;
+      const result100: boolean = re100.test("PascalCaseClass");
+      console.log(`100. PascalCase match: ${result100}`);
+      expect(result100).assertTrue();
+      done();
+      console.log('testRegexPascalCase0001 done');
+    });
+    /**
+     * @tc.number STRING_SPLIT_DYNAMIC_0100
+     * @tc.name testStringSplitDynamic0001
+     * @tc.desc Verify String.split() with dynamic separator.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testStringSplitDynamic0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testStringSplitDynamic0001 start');
+
+      const separator99: string = ",|;";
+      const re99: RegExp = new RegExp(separator99);
+      const result99: string[] = "a,b;c,d;e".split(re99);
+      console.log(`99. split() dynamic: ${result99.join("|")}`);
+      expect(result99).assertDeepEquals(["a", "b", "c", "d", "e"]);
+      done();
+      console.log('testStringSplitDynamic0001 done');
+    });
+
+    /**
+     * @tc.number REGEX_METHODS_COMPARISON_0100
+     * @tc.name testRegexMethodsComparison0001
+     * @tc.desc Compare different RegExp methods behavior.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testRegexMethodsComparison0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testRegexMethodsComparison0001 start');
+
+      const re100: RegExp = /abc/;
+      const str100: string = "xyzabc123abc";
+
+      interface RegexMethodsResult {
+        exec: string | undefined;
+        test: boolean;
+        match: string | undefined;
+        search: number;
+        replace: string;
+      }
+
+      const result100: RegexMethodsResult = {
+        exec: re100.exec(str100)?.[0],
+        test: re100.test(str100),
+        match: str100.match(re100)?.[0],
+        search: str100.search(re100),
+        replace: str100.replace(re100, "def").slice(0, 10)
+      };
+
+      console.log(`100. methods comparison: exec=${result100.exec}, test=${result100.test}, ` +
+        `match=${result100.match}, search=${result100.search}, ` +
+        `replace=${result100.replace}`);
+      expect(result100.exec).assertEqual("abc");
+      expect(result100.test).assertTrue();
+      expect(result100.match).assertEqual("abc");
+      expect(result100.search).assertEqual(3);
+      expect(result100.replace).assertEqual("xyzdef123a");
+      done();
+      console.log('testRegexMethodsComparison0001 done');
+    });
   })
 }

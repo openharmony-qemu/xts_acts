@@ -1966,5 +1966,223 @@ export default function RegularExpressions13Test() {
       console.log('testStringMatchWordBoundary0001 done');
     });
 
+    /**
+     * @tc.number STRING_MATCHALL_EMPTY_0100
+     * @tc.name testStringMatchAllEmpty0001
+     * @tc.desc Verify String.matchAll() with empty regex.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testStringMatchAllEmpty0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testStringMatchAllEmpty0001 start');
+
+      const re89: RegExp = /()/g;
+      const str89: string = "ab";
+      const result89: number = Array.from(str89.matchAll(re89)).length;
+      console.log(`89. matchAll() empty: ${result89}`);
+      expect(result89).assertEqual(3);
+      done();
+      console.log('testStringMatchAllEmpty0001 done');
+    });
+
+    /**
+     * @tc.number STRING_SEARCH_LOOKBEHIND_0100
+     * @tc.name testStringSearchLookbehind0001
+     * @tc.desc Verify String.search() with lookbehind assertion.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testStringSearchLookbehind0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testStringSearchLookbehind0001 start');
+
+      const re90: RegExp = /(?<=@)/;
+      const result90: number = "user@example.com".search(re90);
+      console.log(`90. search() lookbehind: ${result90}`);
+      expect(result90).assertEqual(5);
+      done();
+      console.log('testStringSearchLookbehind0001 done');
+    });
+
+    /**
+     * @tc.number STRING_REPLACE_URL_0100
+     * @tc.name testStringReplaceUrl0001
+     * @tc.desc Verify String.replace() with URL parameters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testStringReplaceUrl0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testStringReplaceUrl0001 start');
+
+      const re91: RegExp = /(\?|&)page=\d+/;
+      const result91: string = "https://example.com?page=1&sort=asc".replace(re91, "$1page=2");
+      console.log(`91. replace() URL: ${result91}`);
+      expect(result91).assertEqual("https://example.com?page=2&sort=asc");
+      done();
+      console.log('testStringReplaceUrl0001 done');
+    });
+
+    /**
+     * @tc.number STRING_SPLIT_CAPTURE_COMPARE_0100
+     * @tc.name testStringSplitCaptureCompare0001
+     * @tc.desc Verify String.split() comparing capture vs non-capture groups.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testStringSplitCaptureCompare0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testStringSplitCaptureCompare0001 start');
+
+      const re92c: RegExp = /(\d)/;
+      const re92nc: RegExp = /(?:\d)/;
+      const str92: string = "a1b2c";
+
+      const result92c: string = str92.split(re92c).join("|");
+      const result92nc: string = str92.split(re92nc).join("|");
+
+      console.log(`92. split() capture vs non-capture: ${result92c}; ${result92nc}`);
+      expect(result92c).assertEqual("a|1|b|2|c");
+      expect(result92nc).assertEqual("a|b|c");
+      done();
+      console.log('testStringSplitCaptureCompare0001 done');
+    });
+
+    /**
+     * @tc.number REGEX_EXEC_FLAGS_0100
+     * @tc.name testRegexExecFlags0001
+     * @tc.desc Verify RegExp.exec() with multiple flags.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testRegexExecFlags0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testRegexExecFlags0001 start');
+
+      const re93: RegExp = /abc/gim;
+      const str93: string = "ABC\nabc\nAbC";
+      const result93: string[] = [];
+      let match93: RegExpExecArray | null;
+
+      while ((match93 = re93.exec(str93)) !== null) {
+        result93.push(match93[0]);
+      }
+
+      console.log(`93. exec() multiple flags: ${result93.join(",")}`);
+      expect(result93).assertDeepEquals(["ABC", "abc", "AbC"]);
+      done();
+      console.log('testRegexExecFlags0001 done');
+    });
+
+    /**
+     * @tc.number REGEX_TEST_DYNAMIC_0100
+     * @tc.name testRegexTestDynamic0001
+     * @tc.desc Verify RegExp.test() with dynamic pattern.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testRegexTestDynamic0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testRegexTestDynamic0001 start');
+
+      const pattern94: string = "abc";
+      const re94: RegExp = new RegExp(pattern94);
+      const result94: boolean = re94.test("xyzabc123");
+      console.log(`94. test() dynamic: ${result94}`);
+      expect(result94).assertTrue();
+      done();
+      console.log('testRegexTestDynamic0001 done');
+    });
+
+    /**
+     * @tc.number STRING_MATCH_DYNAMIC_FLAGS_0100
+     * @tc.name testStringMatchDynamicFlags0001
+     * @tc.desc Verify String.match() with dynamic flags.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testStringMatchDynamicFlags0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testStringMatchDynamicFlags0001 start');
+
+      const re95: RegExp = new RegExp("abc", "gi");
+      const result95: string[] | null = "ABCabcAbC".match(re95);
+      console.log(`95. match() dynamic flags: ${result95?.join(",")}`);
+      expect(result95).assertDeepEquals(["ABC", "abc", "AbC"]);
+      done();
+      console.log('testStringMatchDynamicFlags0001 done');
+    });
+
+    /**
+     * @tc.number STRING_MATCHALL_COMPLEX_0100
+     * @tc.name testStringMatchAllComplex0001
+     * @tc.desc Verify String.matchAll() with complex pattern.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testStringMatchAllComplex0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testStringMatchAllComplex0001 start');
+
+      const re96: RegExp = /(\d{4})-(\d{2})-(\d{2})/g;
+      const str96: string = "日期: 2023-12-31, 2024-01-01";
+      const result96: string[] = Array.from(str96.matchAll(re96),
+        (m: RegExpMatchArray) => `${m[3]}/${m[2]}/${m[1]}`
+      );
+
+      console.log(`96. matchAll() complex: ${result96.join(", ")}`);
+      expect(result96).assertDeepEquals(["31/12/2023", "01/01/2024"]);
+      done();
+      console.log('testStringMatchAllComplex0001 done');
+    });
+
+    /**
+     * @tc.number STRING_SEARCH_DYNAMIC_0100
+     * @tc.name testStringSearchDynamic0001
+     * @tc.desc Verify String.search() with dynamic pattern.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testStringSearchDynamic0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testStringSearchDynamic0001 start');
+
+      const keyword97: string = "test";
+      const re97: RegExp = new RegExp(keyword97);
+      const result97: number = "this is a test string".search(re97);
+      console.log(`97. search() dynamic: ${result97}`);
+      expect(result97).assertEqual(10);
+      done();
+      console.log('testStringSearchDynamic0001 done');
+    });
+
+    /**
+     * @tc.number STRING_REPLACE_DYNAMIC_0100
+     * @tc.name testStringReplaceDynamic0001
+     * @tc.desc Verify String.replace() with dynamic pattern.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it("testStringReplaceDynamic0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('testStringReplaceDynamic0001 start');
+      const re98: RegExp = new RegExp("(\\w+) (\\w+)", "g");
+      const result98: string = "John Doe, Jane Smith".replace(re98, "$2, $1");
+      console.log(`98. replace() dynamic: ${result98}`);
+      expect(result98).assertEqual("Doe, John, Smith, Jane");
+      done();
+      console.log('testStringReplaceDynamic0001 done');
+    });
   })
 }
