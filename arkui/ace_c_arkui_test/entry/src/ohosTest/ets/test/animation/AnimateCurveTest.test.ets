@@ -169,7 +169,7 @@ export default function animateCurveTest() {
       done()
     })
 
-    /*
+    /**
      * @tc.number  testAnimateCurve012
      * @tc.name    testAnimateCurve012
      * @tc.desc    testing OH_ArkUI_Curve_CreateCustomCurve minimum boundary
@@ -182,7 +182,7 @@ export default function animateCurveTest() {
       done()
     })
 
-    /*
+    /**
      * @tc.number  testAnimateCurve013
      * @tc.name    testAnimateCurve013
      * @tc.desc    testing OH_ArkUI_Curve_CreateCustomCurve Maximum
@@ -195,7 +195,7 @@ export default function animateCurveTest() {
       done()
     })
 
-    /*
+    /**
      * @tc.number  testAnimateCurve014
      * @tc.name    testAnimateCurve014
      * @tc.desc    testing OH_ArkUI_Curve_CreateCustomCurve 
@@ -208,7 +208,7 @@ export default function animateCurveTest() {
       done()
     })
 
-    /*
+    /**
      * @tc.number  testAnimateCurve015
      * @tc.name    testAnimateCurve015
      * @tc.desc    testing OH_ArkUI_Curve_CreateCubicBezierCurve 
@@ -221,7 +221,7 @@ export default function animateCurveTest() {
       done()
     })
 
-     /*
+    /**
      * @tc.number  testAnimateCurve016
      * @tc.name    testAnimateCurve016
      * @tc.desc    testing OH_ArkUI_Curve_CreateCubicBezierCurve 
@@ -234,7 +234,7 @@ export default function animateCurveTest() {
       done()
     })
 
-    /*
+    /**
      * @tc.number     testAnimateCurve017
      * @tc.name       testAnimateCurve017
      * @tc.desc       testing OH_ArkUI_Curve_CreateCubicBezierCurve
