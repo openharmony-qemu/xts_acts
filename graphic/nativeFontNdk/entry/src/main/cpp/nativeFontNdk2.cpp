@@ -877,6 +877,73 @@ napi_value OHDrawingSetTextStyleAttributeDouble001(napi_env env, napi_callback_i
     return result;
 }
 
+napi_value OHDrawingSetTextStyleAttributeDouble002(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TextStyle* txtStyle = nullptr;
+    double maxLineHeight = 30.0;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTextStyleAttributeDouble(txtStyle,
+        OH_Drawing_TextStyleAttributeId::TEXT_STYLE_ATTR_D_LINE_HEIGHT_MAXIMUM, maxLineHeight);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_ERROR_INVALID_PARAMETER,
+        "SetTextStyleAttributeDouble errorCode != OH_DRAWING_ERROR_INVALID_PARAMETER");
+    errorCode = OH_Drawing_GetTextStyleAttributeDouble(txtStyle,
+        OH_Drawing_TextStyleAttributeId::TEXT_STYLE_ATTR_D_LINE_HEIGHT_MAXIMUM, &maxLineHeight);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_ERROR_INVALID_PARAMETER,
+        "GetTextStyleAttributeDouble errorCode != OH_DRAWING_ERROR_INVALID_PARAMETER");
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHDrawingSetTextStyleAttributeDouble003(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TextStyle* txtStyle = OH_Drawing_CreateTextStyle();
+    double value = 3.0;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTextStyleAttributeDouble(txtStyle,
+        OH_Drawing_TextStyleAttributeId::TEXT_STYLE_ATTR_I_LINE_HEIGHT_STYLE, value);
+    // _I_ in ID general tip this is a int type ID, but function name has double word only use _D_ ID
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH,
+        "SetTextStyleAttributeDouble I_LINE_HEIGHT_STYLE errorCode != OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH");
+    errorCode = OH_Drawing_SetTextStyleAttributeDouble(txtStyle,
+        OH_Drawing_TextStyleAttributeId::TEXT_STYLE_ATTR_I_FONT_WIDTH, value);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH,
+        "SetTextStyleAttributeDouble I_FONT_WIDTH errorCode != OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH");
+    errorCode = OH_Drawing_GetTextStyleAttributeDouble(txtStyle, TEXT_STYLE_ATTR_I_LINE_HEIGHT_STYLE, &value);
+    // _I_ in ID general tip this is a int type ID, but function name has double word only use _D_ ID
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH,
+        "GetTextStyleAttributeDouble I_LINE_HEIGHT_STYLE errorCode != OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH");
+    errorCode = OH_Drawing_GetTextStyleAttributeDouble(txtStyle,
+        OH_Drawing_TextStyleAttributeId::TEXT_STYLE_ATTR_I_FONT_WIDTH, &value);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH,
+        "GetTextStyleAttributeDouble  I_FONT_WIDTH errorCode != OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH");
+    napi_create_int32(env, SUCCESS, &result);
+    OH_Drawing_DestroyTextStyle(txtStyle);
+    return result;
+}
+
+napi_value OHDrawingSetTextStyleAttributeDouble004(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TextStyle* txtStyle = OH_Drawing_CreateTextStyle();
+    NAPI_ASSERT(env, txtStyle != nullptr, "txtStyle == nullptr, create error");
+    double maxLineHeight = 30.0f;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTextStyleAttributeDouble(txtStyle,
+        OH_Drawing_TextStyleAttributeId::TEXT_STYLE_ATTR_D_LINE_HEIGHT_MINIMUM, maxLineHeight);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_SUCCESS,
+        "SetTextStyleAttributeDouble errorCode != OH_DRAWING_SUCCESS");
+    double getResult = 0;
+    errorCode = OH_Drawing_GetTextStyleAttributeDouble(txtStyle,
+        OH_Drawing_TextStyleAttributeId::TEXT_STYLE_ATTR_D_LINE_HEIGHT_MINIMUM, &getResult);
+    NAPI_ASSERT(env, errorCode == OH_DRAWING_SUCCESS,
+        "GetTextStyleAttributeDouble errorCode != OH_DRAWING_SUCCESS");
+    bool isEqual = NearEqual(getResult, maxLineHeight);
+    NAPI_ASSERT(env, isEqual == true,
+        "TEXT_STYLE_ATTR_D_LINE_HEIGHT_MINIMUM get != TEXT_STYLE_ATTR_D_LINE_HEIGHT_MINIMUM set");
+    napi_create_int32(env, SUCCESS, &result);
+    OH_Drawing_DestroyTextStyle(txtStyle);
+    return result;
+}
+
 napi_value OHDrawingSetTextStyleAttributeInt001(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;

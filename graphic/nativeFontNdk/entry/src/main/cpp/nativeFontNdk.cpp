@@ -184,6 +184,12 @@ napi_property_descriptor desc[] = {
      nullptr, nullptr, nullptr, napi_default, nullptr},
     {"oHDrawingSetTextStyleAttributeDouble001", nullptr, OHDrawingSetTextStyleAttributeDouble001,
      nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHDrawingSetTextStyleAttributeDouble002", nullptr, OHDrawingSetTextStyleAttributeDouble002,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHDrawingSetTextStyleAttributeDouble003", nullptr, OHDrawingSetTextStyleAttributeDouble003,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHDrawingSetTextStyleAttributeDouble004", nullptr, OHDrawingSetTextStyleAttributeDouble004,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
     {"oHDrawingSetTextStyleAttributeInt001", nullptr, OHDrawingSetTextStyleAttributeInt001,
      nullptr, nullptr, nullptr, napi_default, nullptr},
 };
