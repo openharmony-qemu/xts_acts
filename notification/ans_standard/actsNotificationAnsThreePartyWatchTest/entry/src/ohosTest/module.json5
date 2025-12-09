@@ -55,18 +55,6 @@
         "label": "$string:NotificationSubscriberExtAbility_label",
         "exported": true
       }
-    ],
-    "requestPermissions": [
-      {
-        "name": "ohos.permission.ACCESS_BLUETOOTH",
-        "reason": "$string:Blutooth_reason",
-        "usedScene": {
-          "when": "always"
-        }
-      },
-      {
-        "name": "ohos.permission.NOTIFICATION_CONTROLLER"
-      }
     ]
   }
 }
