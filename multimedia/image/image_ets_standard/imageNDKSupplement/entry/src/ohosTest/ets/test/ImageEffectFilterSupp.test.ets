@@ -305,7 +305,5 @@ export default function ImageEffectFilterSuppTest() {
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
-
-
   });
   }
