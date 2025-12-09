@@ -2725,6 +2725,7 @@ export default function TextPicker() {
         let expectedBackgroundColor: String = '#f00000';
         let expectedBrowserColorMode: PickerColorMode = PickerColorMode.DARK;
         let expectedUiComponentColorMode: PickerColorMode = PickerColorMode.DARK;
+        let expectedIsSlidingSupported: boolean = true;
 
         let msg: PhotoPickerResult = event?.data?.msg;
         console.info('testPicker56 result msg ' + JSON.stringify(msg));
@@ -2736,6 +2737,7 @@ export default function TextPicker() {
         expect(expectedBackgroundColor).assertEqual(msg.backgroundColor);
         expect(expectedBrowserColorMode).assertEqual(msg.photoBrowserBackgroundColorMode);
         expect(expectedUiComponentColorMode).assertEqual(msg.uiComponentColorMode);
+        expect(expectedIsSlidingSupported).assertEqual(msg.isSlidingSupported);
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
