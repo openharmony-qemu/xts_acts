@@ -35,14 +35,14 @@ struct VideoOneBoundary {
         }).width(65).height(25).id('VideoOneBoundaryStart')
       }
       Row() {
-        Button("setTime_0").onClick(() => {
+        Button('setTime_0').onClick(() => {
           this.controller.setCurrentTime(0);
           this.str = '0'
         })
           .width(80)
           .height(25)
           .id('setCurrentTime_0')
-        Button("setTime_-1").onClick(() => {
+        Button('setTime_-1').onClick(() => {
           this.controller.setCurrentTime(-1);
           this.str = '-1'
         })
