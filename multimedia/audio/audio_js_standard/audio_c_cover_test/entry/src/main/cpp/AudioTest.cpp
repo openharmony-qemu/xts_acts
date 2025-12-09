@@ -977,7 +977,6 @@ napi_value AudioRendererSetLoudnessGainSuccess_001(napi_env env, napi_callback_i
     OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
     OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_MUSIC;
     OH_AudioDevice_Type deviceType = AUDIO_DEVICE_TYPE_SPEAKER;
-    loudnessGain = 
     OH_AudioStreamBuilder_Create(&builder, type);
 
     // 2. set builder params
@@ -1006,7 +1005,6 @@ napi_value AudioRendererSetLoudnessGainSuccess_002(napi_env env, napi_callback_i
     OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
     OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_MUSIC;
     OH_AudioDevice_Type deviceType = AUDIO_DEVICE_TYPE_SPEAKER;
-    loudnessGain = 
     OH_AudioStreamBuilder_Create(&builder, type);
 
     // 2. set builder params
@@ -1035,7 +1033,6 @@ napi_value AudioRendererSetLoudnessGainSuccess_003(napi_env env, napi_callback_i
     OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
     OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_MUSIC;
     OH_AudioDevice_Type deviceType = AUDIO_DEVICE_TYPE_SPEAKER;
-    loudnessGain = 
     OH_AudioStreamBuilder_Create(&builder, type);
 
     // 2. set builder params
@@ -1064,7 +1061,6 @@ napi_value AudioRendererSetLoudnessGainSuccess_004(napi_env env, napi_callback_i
     OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
     OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_MUSIC;
     OH_AudioDevice_Type deviceType = AUDIO_DEVICE_TYPE_SPEAKER;
-    loudnessGain = 
     OH_AudioStreamBuilder_Create(&builder, type);
 
     // 2. set builder params
@@ -1093,7 +1089,6 @@ napi_value AudioRendererSetLoudnessGainSuccess_005(napi_env env, napi_callback_i
     OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
     OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_MUSIC;
     OH_AudioDevice_Type deviceType = AUDIO_DEVICE_TYPE_SPEAKER;
-    loudnessGain = 
     OH_AudioStreamBuilder_Create(&builder, type);
 
     // 2. set builder params
@@ -1122,7 +1117,6 @@ napi_value AudioRendererSetLoudnessGainSuccess_006(napi_env env, napi_callback_i
     OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
     OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_MUSIC;
     OH_AudioDevice_Type deviceType = AUDIO_DEVICE_TYPE_SPEAKER;
-    loudnessGain = 
     OH_AudioStreamBuilder_Create(&builder, type);
 
     // 2. set builder params

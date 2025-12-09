@@ -260,11 +260,11 @@ static napi_value AudioWorkGroup(napi_env env, napi_callback_info info)
 }
 
 static napi_value AudioWorkGroup_001(napi_env env, napi_callback_info info)
-{   
+{
     OH_AudioResourceManager *mgr;
     OH_AudioWorkgroup *grp;
     OH_AudioManager_GetAudioResourceManager(&mgr);
-    OH_AudioCommon_Result result= OH_AudioResourceManager_CreateWorkgroup(mgr, nullptr, &grp);
+    OH_AudioCommon_Result result = OH_AudioResourceManager_CreateWorkgroup(mgr, nullptr, &grp);
     napi_value res;
     if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
         napi_create_int32(env, TEST_PASS, &res);
