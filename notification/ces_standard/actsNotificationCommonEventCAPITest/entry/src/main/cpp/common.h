@@ -93,22 +93,22 @@
         }                                                                                                              \
     } while (0)
 
-#define ASSERT_TRUE(a)      \
-    {                       \
-        ASSERT_EA(a, true); \
+#define ASSERT_TRUE(a)                                                                                                 \
+    {                                                                                                                  \
+        ASSERT_EA(a, true);                                                                                            \
     }
 
-#define ASSERT_FALSE(a)      \
-    {                        \
-        ASSERT_EA(a, false); \
+#define ASSERT_FALSE(a)                                                                                                \
+    {                                                                                                                  \
+        ASSERT_EA(a, false);                                                                                           \
     }
 
-#define ASSERT_EA(a, b)                           \
-    {                                             \
-        if (a != b) {                             \
-            OH_LOG_ERROR(LOG_APP, "test failed", a); \
-        }                                         \
-    }
+#define ASSERT_EA(a, b)                                                                                                \
+    do {                                                                                                               \
+        if ((a) != (b)) {                                                                                              \
+            OH_LOG_ERROR(LOG_APP, "test failed", a);                                                                   \
+        }                                                                                                              \
+    } while (0)
 
 static const char* COMMON_EVENT_TEST = "event_test";
 static const char* KEY_INT = "int";
