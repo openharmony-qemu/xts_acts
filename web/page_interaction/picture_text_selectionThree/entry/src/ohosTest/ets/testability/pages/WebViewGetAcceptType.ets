@@ -40,6 +40,7 @@ struct webViewController {
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
   @State FileSelectorParaGetAcceptType: Array<String> = []
+  @State uri: string = "file://docs/storage/Users/currentUser/Documents/1.json";
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -166,6 +167,7 @@ struct webViewController {
             console.info('getAcceptType:', event.fileSelector.getAcceptType())
             console.info('isCapture:', event.fileSelector.isCapture())
             this.FileSelectorParaGetAcceptType = event.fileSelector.getAcceptType();
+            event.result.handleFileList([this.uri]);
             console.info('getMimeTypes:', event.fileSelector.getMimeTypes())
           }
           return true
