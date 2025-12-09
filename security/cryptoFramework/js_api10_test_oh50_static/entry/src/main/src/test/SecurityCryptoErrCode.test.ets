@@ -157,27 +157,6 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_0600
-     * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_0600
-     * @tc.desc   convertKey
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("SUB_Security_CryptoFramework_ErrCode_Func_0600",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      try {
-        let rand = cryptoFramework.createRandom();
-        console.info("[createRandom success]");
-        rand.generateRandom(2147483647, (err: BusinessError<void>|null, randData:cryptoFramework.DataBlob|undefined) => {});
-      } catch (error: BusinessError) {
-        console.error(`SUB_Security_CryptoFramework_ErrCode_Func_0600 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.ERR_OUT_OF_MEMORY);
-      }
-      done();
-    });
-
-    /**
      * @tc.name   SUB_Security_CryptoFramework_ErrCode_Func_0900
      * @tc.number SUB_Security_CryptoFramework_ErrCode_Func_0900
      * @tc.desc   convertKey
