@@ -34,7 +34,7 @@ let mediaTestBase = new MediaTestBase()
 function openFileFailed() {
   console.info('case file fail');
 }
-
+//
 function fullZero(num: string, digitalNum: number = 2){
   const stringLength = num.length
   let len = digitalNum - stringLength
