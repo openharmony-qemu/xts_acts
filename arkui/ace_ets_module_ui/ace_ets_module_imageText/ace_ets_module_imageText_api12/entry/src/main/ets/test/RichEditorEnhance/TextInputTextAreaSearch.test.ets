@@ -47,12 +47,12 @@ export default function TextInputTextAreaSearch() {
       console.info("TextInputTextAreaSearch after each called");
     });
     /**
-     * @tc.number TextInputTextAreaSearch_0100
      * @tc.name   TextInputTextAreaSearch_0100
+     * @tc.number TextInputTextAreaSearch_0100
      * @tc.desc   Test custom keyboard avoidance.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputTextAreaSearch_0100',  Level.LEVEL0, async (done: Function) => {
       // Test stop
@@ -73,12 +73,12 @@ export default function TextInputTextAreaSearch() {
     });
 
     /**
-     * @tc.number TextInputTextAreaSearch_0200
      * @tc.name   TextInputTextAreaSearch_0200
+     * @tc.number TextInputTextAreaSearch_0200
      * @tc.desc   Test custom keyboard avoidance.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputTextAreaSearch_0200',  Level.LEVEL0, async (done: Function) => {
       // Test stop
@@ -98,12 +98,12 @@ export default function TextInputTextAreaSearch() {
     });
 
     /**
-     * @tc.number TextInputTextAreaSearch_0300
      * @tc.name   TextInputTextAreaSearch_0300
+     * @tc.number TextInputTextAreaSearch_0300
      * @tc.desc   Test custom keyboard avoidance.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputTextAreaSearch_0300',  Level.LEVEL0, async (done: Function) => {
       // Test stop

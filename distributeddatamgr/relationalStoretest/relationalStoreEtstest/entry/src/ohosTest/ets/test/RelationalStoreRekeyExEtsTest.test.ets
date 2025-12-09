@@ -43,7 +43,6 @@ export default function rdbStoreRekeyExEtsTest() {
     console.log(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_0100
      * @tc.desc   invalid iterationCount test
@@ -79,7 +78,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_0200
      * @tc.desc   invalid encryptionAlgo test
@@ -115,7 +113,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_0300
      * @tc.desc   invalid parameters test
@@ -151,7 +148,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_0400
      * @tc.desc   invalid kdfAlgo test
@@ -187,7 +183,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_0500
      * @tc.desc   invalid cryptoPageSize test
@@ -223,7 +218,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_0600
      * @tc.desc   non-encrypted database rekey to encrypted database test
@@ -285,7 +279,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_0700
      * @tc.desc   rekey iterationCount test
@@ -344,7 +337,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_0800
      * @tc.desc   rekey encryptionAlgo test
@@ -404,7 +396,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_0900
      * @tc.desc   rekey hmacAlgo test
@@ -464,7 +455,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1000
      * @tc.desc   rekey kdfAlgo test
@@ -524,7 +514,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1100
      * @tc.desc   rekey cryptoPageSize test
@@ -584,7 +573,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0013
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1300
      * @tc.desc   default encrypt rekey to custom test
@@ -640,7 +628,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1400
      * @tc.desc   default rekey to default test
@@ -696,7 +683,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0015
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1500
      * @tc.desc   custom rekey to fault test
@@ -756,7 +742,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0016
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1600
      * @tc.desc   transaction rekey test
@@ -803,7 +788,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0016 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0017
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1700
      * @tc.desc   default encry to custom encry rekey 14800011 test
@@ -852,7 +836,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0018
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1800
      * @tc.desc   undefined parameters rekey test
@@ -882,7 +865,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0019
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1900
      * @tc.desc   null parameters rekey test
@@ -912,7 +894,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2000
      * @tc.desc   not close resultSet  rekey test 14800024
@@ -959,7 +940,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0020 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0021
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2100
      * @tc.desc   no encry to encry rekey 14800011 test
@@ -1006,7 +986,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0021 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0022
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2200
      * @tc.desc   encry database to no encry database 14800011 test
@@ -1068,7 +1047,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0022 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0023
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2300
      * @tc.desc   custom encry to default encry rekey 14800011 test
@@ -1117,7 +1095,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0023 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0025
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2500
      * @tc.desc   default encry to custom encry test
@@ -1170,7 +1147,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0026
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2600
      * @tc.desc   non-encrypted database to encrypted database test
@@ -1222,7 +1198,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0027
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2700
      * @tc.desc   encrypted database to non-encrypted database test
@@ -1277,7 +1252,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0028
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2800
      * @tc.desc   encryptionAlgo is plain_test create database test
@@ -1323,7 +1297,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0029
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2900
      * @tc.desc   default encry to custom encry
@@ -1390,7 +1363,6 @@ export default function rdbStoreRekeyExEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0030
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3000
      * @tc.desc   default encry to custom encry
@@ -1456,7 +1428,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0031
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3100
      * @tc.desc   errcode is 801
@@ -1510,7 +1481,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0031 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0032
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3200
      * @tc.desc   errcode is 14800014
@@ -1544,7 +1514,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0032 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0033
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3300
      * @tc.desc   custom encry to default encry
@@ -1607,7 +1576,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0033 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0034
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3400
      * @tc.desc   encry database to no encry database
@@ -1684,7 +1652,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0034 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0035
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3500
      * @tc.desc   no encry database to encry database
@@ -1754,7 +1721,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0035 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0036
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3600
      * @tc.desc   custom encry to default encry
@@ -1828,7 +1794,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0036 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0037
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3700
      * @tc.desc   custom encry to default encry
@@ -1900,7 +1865,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0037 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0038
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3800
      * @tc.desc   custom encry to custom encry
@@ -1986,7 +1950,6 @@ export default function rdbStoreRekeyExEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0039
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3900
      * @tc.desc   all enum test
@@ -2055,7 +2018,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0039 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0040
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_4000
      * @tc.desc   all enum test
@@ -2135,7 +2097,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0040 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0041
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_4100
      * @tc.desc   all enum test
@@ -2216,7 +2177,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0041 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0042
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_4200
      * @tc.desc   all enum test
@@ -2297,7 +2257,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0042 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0043
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_4300
      * @tc.desc   invalid kdfAlgo test
@@ -2335,7 +2294,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0043 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0044
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_4400
      * @tc.desc   invalid encryptionAlgo test
@@ -2374,7 +2332,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0044 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0045
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_4500
      * @tc.desc   invalid hmacAlgo test
@@ -2413,7 +2370,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0045 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0046
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_4600
      * @tc.desc   encryptionAlgo all enum test
@@ -2467,7 +2423,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0046 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0047
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_4700
      * @tc.desc   hmacAlgo all enum test
@@ -2521,7 +2476,6 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0047 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRekeyEx0048
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_4800
      * @tc.desc   kdfAlgo all enum test

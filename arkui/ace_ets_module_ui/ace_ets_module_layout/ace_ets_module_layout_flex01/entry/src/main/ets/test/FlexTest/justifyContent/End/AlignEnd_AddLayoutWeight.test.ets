@@ -47,9 +47,12 @@ export default function AlignEnd_AddLayoutWeight() {
     });
 
     /**
+     * @tc.name   testFlexAlignEndTextLayoutWeight01
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_END_TEST_1200
-     * @tc.name testFlexAlignEndTextLayoutWeight01
-     * @tc.desc The interface displays all subcomponents that set different layoutWeight properties
+     * @tc.desc   The interface displays all subcomponents that set different layoutWeight properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignEndTextLayoutWeight01',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignEndTextLayoutWeight01] START');
@@ -95,9 +98,12 @@ export default function AlignEnd_AddLayoutWeight() {
 
     });
     /**
+     * @tc.name   testFlexAlignEndTextLayoutWeight02
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_END_TEST_1600
-     * @tc.name testFlexAlignEndTextLayoutWeight02
-     * @tc.desc Some subcomponents are displayed with different layoutWeight properties
+     * @tc.desc   Some subcomponents are displayed with different layoutWeight properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignEndTextLayoutWeight02',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignEndTextLayoutWeight02] START');

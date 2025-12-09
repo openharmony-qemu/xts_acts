@@ -25,12 +25,12 @@ export default function personalityNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_PERSONALITY_PERSONALITY_0100
-     * @tc.name       : testMuslPersonalityPersonality001
-     * @tc.desc       : test personality
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMuslPersonalityPersonality001
+     * @tc.number SUB_THIRDPARTY_MUSL_PERSONALITY_PERSONALITY_0100
+     * @tc.desc   test personality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslPersonalityPersonality001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = Personality.personality();

@@ -45,9 +45,12 @@ export default function grid_RowCol_ItemPositionTest() {
       console.info("Grid_RowCol_ItemPositionTest after each called");
     });
     /**
+     * @tc.name   testGridRowColItemPosition
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDITEMCHANGE_0500
-     * @tc.name testGridRowColItemPosition
-     * @tc.desc The second griditem set position to {x:20,y:20}
+     * @tc.desc   The second griditem set position to {x:20,y:20}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColItemPosition',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColItemPosition] START');

@@ -46,9 +46,12 @@ export default function stackMarginChange() {
     });
 
     /**
+     * @tc.name   testStackMarginAlignContentTopStart
      * @tc.number SUB_ACE_STACK_ALIGNMARGINCHANGED_0100
-     * @tc.name testStackMarginAlignContentTopStart
-     * @tc.desc Set stack's  margin 20  and alignContent mode 'TopStart'.
+     * @tc.desc   Set stack's  margin 20  and alignContent mode 'TopStart'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackMarginAlignContentTopStart',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackMarginAlignContentTopStart START');
@@ -78,9 +81,12 @@ export default function stackMarginChange() {
     });
 
     /**
+     * @tc.name   testStackMarginAlignContentTop
      * @tc.number SUB_ACE_STACK_ALIGNMARGINCHANGED_0200
-     * @tc.name testStackMarginAlignContentTop
-     * @tc.desc Set stack's  margin 20  and alignContent mode 'Top'.
+     * @tc.desc   Set stack's  margin 20  and alignContent mode 'Top'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackMarginAlignContentTop',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackMarginAlignContentTop START');
@@ -111,9 +117,12 @@ export default function stackMarginChange() {
     });
 
     /**
+     * @tc.name   testStackMarginAlignContentTopEnd
      * @tc.number SUB_ACE_STACK_ALIGNMARGINCHANGED_0300
-     * @tc.name testStackMarginAlignContentTopEnd
-     * @tc.desc Set stack's  margin 20  and alignContent mode 'TopEnd'.
+     * @tc.desc   Set stack's  margin 20  and alignContent mode 'TopEnd'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackMarginAlignContentTopEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackMarginAlignContentTopEnd START');
@@ -143,9 +152,12 @@ export default function stackMarginChange() {
     });
 
     /**
+     * @tc.name   testStackMarginAlignContentStart
      * @tc.number SUB_ACE_STACK_ALIGNMARGINCHANGED_0400
-     * @tc.name testStackMarginAlignContentStart
-     * @tc.desc Set stack's  margin 20  and alignContent mode 'START'.
+     * @tc.desc   Set stack's  margin 20  and alignContent mode 'START'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackMarginAlignContentStart',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackMarginAlignContentStart START');
@@ -176,9 +188,12 @@ export default function stackMarginChange() {
     });
 
     /**
+     * @tc.name   testStackMarginAlignContentCenter
      * @tc.number SUB_ACE_STACK_ALIGNMARGINCHANGED_0500
-     * @tc.name testStackMarginAlignContentCenter
-     * @tc.desc Set stack's  margin 20  and alignContent mode 'Center'.
+     * @tc.desc   Set stack's  margin 20  and alignContent mode 'Center'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackMarginAlignContentCenter',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackMarginAlignContentCenter START');
@@ -210,9 +225,12 @@ export default function stackMarginChange() {
     });
 
     /**
+     * @tc.name   testStackMarginAlignContentEnd
      * @tc.number SUB_ACE_STACK_ALIGNMARGINCHANGED_0600
-     * @tc.name testStackMarginAlignContentEnd
-     * @tc.desc Set stack's  margin 20  and alignContent mode 'End'.
+     * @tc.desc   Set stack's  margin 20  and alignContent mode 'End'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackMarginAlignContentEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackMarginAlignContentEnd START');
@@ -243,9 +261,12 @@ export default function stackMarginChange() {
     });
 
     /**
+     * @tc.name   testStackMarginAlignContentBottomStart
      * @tc.number SUB_ACE_STACK_ALIGNMARGINCHANGED_0700
-     * @tc.name testStackMarginAlignContentBottomStart
-     * @tc.desc Set stack's  margin 20  and alignContent mode 'BottomStart'.
+     * @tc.desc   Set stack's  margin 20  and alignContent mode 'BottomStart'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackMarginAlignContentBottomStart',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackMarginAlignContentBottomStart START');
@@ -275,9 +296,12 @@ export default function stackMarginChange() {
     });
 
     /**
+     * @tc.name   testStackMarginAlignContentBottom
      * @tc.number SUB_ACE_STACK_ALIGNMARGINCHANGED_0800
-     * @tc.name testStackMarginAlignContentBottom
-     * @tc.desc Set stack's  margin 20  and alignContent mode 'Bottom'.
+     * @tc.desc   Set stack's  margin 20  and alignContent mode 'Bottom'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackMarginAlignContentBottom',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackMarginAlignContentBottom START');
@@ -308,9 +332,12 @@ export default function stackMarginChange() {
     });
 
     /**
+     * @tc.name   testStackMarginAlignContentBottomEnd
      * @tc.number SUB_ACE_STACK_ALIGNMARGINCHANGED_0900
-     * @tc.name testStackMarginAlignContentBottomEnd
-     * @tc.desc Set stack's  margin 20  and alignContent mode 'BottomEnd'.
+     * @tc.desc   Set stack's  margin 20  and alignContent mode 'BottomEnd'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackMarginAlignContentBottomEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackMarginAlignContentBottomEnd START');

@@ -52,12 +52,12 @@ export default function abilityTest() {
 
 
     /**
+     * @tc.name   testWebView_deleteAllGeolocation0002
      * @tc.number SUB_ACE_WEB_INCOGNITO_API_0006
-     * @tc.name testWebView_deleteAllGeolocation0002
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testWebView_deleteAllGeolocation0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("SUB_ACE_WEB_INCOGNITO_API_0006", 160130)
@@ -69,12 +69,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testWebView_getAccessibleGeolocation0001
      * @tc.number SUB_ACE_WEB_INCOGNITO_API_0007
-     * @tc.name testWebView_getAccessibleGeolocation0001
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testWebView_getAccessibleGeolocation0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("SUB_ACE_WEB_INCOGNITO_API_0007", 160130)
@@ -86,12 +86,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testWebView_getAccessibleGeolocation0002
      * @tc.number SUB_ACE_WEB_INCOGNITO_API_0008
-     * @tc.name testWebView_getAccessibleGeolocation0002
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testWebView_getAccessibleGeolocation0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("SUB_ACE_WEB_INCOGNITO_API_0008", 160130)
@@ -103,12 +103,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testWebView_getStoredGeolocation0001
      * @tc.number SUB_ACE_WEB_INCOGNITO_API_0009
-     * @tc.name testWebView_getStoredGeolocation0001
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testWebView_getStoredGeolocation0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("SUB_ACE_WEB_INCOGNITO_API_0009", 160130)
@@ -120,12 +120,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testWebView_getStoredGeolocation0002
      * @tc.number SUB_ACE_WEB_INCOGNITO_API_00010
-     * @tc.name testWebView_getStoredGeolocation0002
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testWebView_getStoredGeolocation0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("SUB_ACE_WEB_INCOGNITO_API_00010", 160130)
@@ -138,12 +138,12 @@ export default function abilityTest() {
 
 
     /**
+     * @tc.name   testWebView_fetchCookieSync0001
      * @tc.number SUB_ACE_WEB_INCOGNITO_API_00011
-     * @tc.name testWebView_fetchCookieSync0001
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testWebView_fetchCookieSync0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("SUB_ACE_WEB_INCOGNITO_API_00011", 160130)
@@ -155,12 +155,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testWebView_fetchCookieSync0002
      * @tc.number SUB_ACE_WEB_INCOGNITO_API_00012
-     * @tc.name testWebView_fetchCookieSync0002
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testWebView_fetchCookieSync0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("SUB_ACE_WEB_INCOGNITO_API_00012", 160130)

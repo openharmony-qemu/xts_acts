@@ -47,7 +47,6 @@ export default function btConnectionNopUiJsunit() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testIsBluetoothDiscoveringNop
      * @tc.number testIsBluetoothDiscoveringNop
      * @tc.desc   test isBluetoothDiscovering without permission
@@ -67,7 +66,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testSetDevicePinCodeAsyncCallbackNop
      * @tc.number testSetDevicePinCodeAsyncCallbackNop
      * @tc.desc   test setDevicePinCode by async callback without permission
@@ -98,7 +96,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testGetBluetoothScanModeNop
      * @tc.number testGetBluetoothScanModeNop
      * @tc.desc   test getBluetoothScanMode without permission
@@ -118,7 +115,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testSetBluetoothScanModeNop
      * @tc.number testSetBluetoothScanModeNop
      * @tc.desc   test setBluetoothScanMode without permission
@@ -138,7 +134,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testGetLocalNameNop
      * @tc.number testGetLocalNameNop
      * @tc.desc   test getLocalName without permission
@@ -158,7 +153,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testGetProfileConnectionStateNop
      * @tc.number testGetProfileConnectionStateNop
      * @tc.desc   test getProfileConnectionState without permission
@@ -178,7 +172,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testSetDevicePinCodeNop
      * @tc.number testSetDevicePinCodeNop
      * @tc.desc   test setDevicePinCode by promise without permission
@@ -197,7 +190,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testEnableBluetoothNop
      * @tc.number testEnableBluetoothNop
      * @tc.desc   test enableBluetooth without permission
@@ -216,7 +208,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testDisableBluetoothNop
      * @tc.number testDisableBluetoothNop
      * @tc.desc   test disableBluetooth without permission
@@ -235,7 +226,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testGetPersistentDeviceIdsNop
      * @tc.number testGetPersistentDeviceIdsNop
      * @tc.desc   test getPersistentDeviceIds without permission
@@ -260,7 +250,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testIsValidRandomDeviceIdNop
      * @tc.number testIsValidRandomDeviceIdNop
      * @tc.desc   test isValidRandomDeviceId without permission
@@ -285,7 +274,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testAddPersistentDeviceIdNop
      * @tc.number testAddPersistentDeviceIdNop
      * @tc.desc   test addPersistentDeviceId without permission
@@ -311,7 +299,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testDeletePersistentDeviceIdNop
      * @tc.number testDeletePersistentDeviceIdNop
      * @tc.desc   test deletePersistentDeviceId without permission
@@ -337,7 +324,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testConnectAllowedProfilesCallbackNop
      * @tc.number testConnectAllowedProfilesCallbackNop
      * @tc.desc   test connectAllowedProfiles callback without permission
@@ -372,7 +358,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testConnectAllowedProfilesPromiseNop
      * @tc.number testConnectAllowedProfilesPromiseNop
      * @tc.desc   test connectAllowedProfiles promise without permission
@@ -398,7 +383,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testPairDeviceCallbackNop
      * @tc.number testPairDeviceCallbackNop
      * @tc.desc   test pairdevice callback without permission
@@ -428,7 +412,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testPairDevicePromiseNop
      * @tc.number testPairDevicePromiseNop
      * @tc.desc   test pairdevice promise without permission
@@ -449,7 +432,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testGetRemoteDeviceNameNop
      * @tc.number testGetRemoteDeviceNameNop
      * @tc.desc   test getRemoteDeviceName without permission
@@ -468,7 +450,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testGetRemoteDeviceNameAliasNop
      * @tc.number testGetRemoteDeviceNameAliasNop
      * @tc.desc   test getRemoteDeviceName without permission
@@ -487,7 +468,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testGetPairedDevicesNop
      * @tc.number testGetPairedDevicesNop
      * @tc.desc   test getPairedDevices without permission
@@ -505,7 +485,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testGetPairStateNop
      * @tc.number testGetPairStateNop
      * @tc.desc   test getPairState without permission
@@ -524,7 +503,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testSetDevicePairingConfirmationNop
      * @tc.number testSetDevicePairingConfirmationNop
      * @tc.desc   test setDevicePairingConfirmation without permission
@@ -543,7 +521,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testStartBluetoothDiscoveryNop
      * @tc.number testStartBluetoothDiscoveryNop
      * @tc.desc   test startBluetoothDiscovery without permission
@@ -562,7 +539,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testStopBluetoothDiscoveryNop
      * @tc.number testStopBluetoothDiscoveryNop
      * @tc.desc   test stopBluetoothDiscovery without permission
@@ -581,7 +557,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testGetRemoteProfileUuidsCallbackNop
      * @tc.number testGetRemoteProfileUuidsCallbackNop
      * @tc.desc   test getRemoteProfileUuids callback without permission
@@ -610,7 +585,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testGetRemoteProfileUuidsPromiseNop
      * @tc.number testGetRemoteProfileUuidsPromiseNop
      * @tc.desc   test getRemoteProfileUuids promise without permission
@@ -630,7 +604,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testGetRemoteDeviceBatteryInfoNop
      * @tc.number testGetRemoteDeviceBatteryInfoNop
      * @tc.desc   test getRemoteDeviceBatteryInfo without permission
@@ -651,7 +624,6 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testSetRemoteDeviceNameNop
      * @tc.number testSetRemoteDeviceNameNop
      * @tc.desc   test setRemoteDeviceName without permission
@@ -673,7 +645,6 @@ export default function btConnectionNopUiJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testDisableBluetoothAsyncNop
      * @tc.number testDisableBluetoothAsyncNop
      * @tc.desc   test disableBluetoothAsync without permission
@@ -695,7 +666,6 @@ export default function btConnectionNopUiJsunit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   testEnableBluetoothAsyncNop
      * @tc.number testEnableBluetoothAsyncNop
      * @tc.desc   test enableBluetoothAsync without permission

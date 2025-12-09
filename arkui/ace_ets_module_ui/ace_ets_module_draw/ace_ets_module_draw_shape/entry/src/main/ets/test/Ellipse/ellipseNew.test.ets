@@ -45,12 +45,12 @@ export default function ellipseNewTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testEllipseNew0001
-     * @tc.name: testEllipseNew0001
-     * @tc.desc: EllipseAPI 
-     * @tc.level: Level 0
-     * @tc.type : Ellipse
-     * @tc.size : EllipseTest
+     * @tc.name   testEllipseNew0001
+     * @tc.number SUB_ARKUI_API_testEllipseNew0001
+     * @tc.desc   EllipseAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEllipseNew0001', Level.LEVEL0, async () => {
       console.info('ellipseNe testellipseNe0001 START');
@@ -65,12 +65,12 @@ export default function ellipseNewTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testEllipseNew0002
-     * @tc.name: testellitestEllipseNew0002pseNe0002
-     * @tc.desc: EllipseAPI 
-     * @tc.level: Level 0
-     * @tc.type : Ellipse
-     * @tc.size : EllipseTest
+     * @tc.name   testEllipseNew0002
+     * @tc.number SUB_ARKUI_API_testEllipseNew0002
+     * @tc.desc   EllipseAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEllipseNew0002', Level.LEVEL0, async () => {
       console.info('ellipseNe testellipseNe0002 START');

@@ -43,13 +43,13 @@ export default function ImageSpanJsunit() {
       }
       done();
     });
-     /**
-     * @tc.number    SUB_ACE_imageSpanJsunit_0100
-     * @tc.name      imageSpanJsunit_0100
-     * @tc.desc      test ImageSpan ImageLoadResult: width and height
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   imageSpanJsunit_0100
+     * @tc.number SUB_ACE_imageSpanJsunit_0100
+     * @tc.desc   test ImageSpan ImageLoadResult: width and height
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSpanJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('imageSpanJsunit_0100 START');

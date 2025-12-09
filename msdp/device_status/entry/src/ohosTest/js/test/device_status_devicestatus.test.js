@@ -46,7 +46,6 @@ export default function DeviceStatusDeviceStatusTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_0100
      * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_0100
      * @tc.desc   DeviceStatus callback interface test
@@ -72,7 +71,6 @@ export default function DeviceStatusDeviceStatusTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_0200
      * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_0200
      * @tc.desc   DeviceStatus callback interface test
@@ -97,7 +95,6 @@ export default function DeviceStatusDeviceStatusTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_0300
      * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_0300
      * @tc.desc   DeviceStatus callback interface test
@@ -123,7 +120,6 @@ export default function DeviceStatusDeviceStatusTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_0400
      * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_0400
      * @tc.desc   DeviceStatus callback interface test
@@ -149,7 +145,6 @@ export default function DeviceStatusDeviceStatusTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_0500
      * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_0500
      * @tc.desc   DeviceStatus callback interface test
@@ -182,7 +177,6 @@ export default function DeviceStatusDeviceStatusTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_0600
      * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_0600
      * @tc.desc   DeviceStatus callback interface test
@@ -208,7 +202,6 @@ export default function DeviceStatusDeviceStatusTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_0700
      * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_0700
      * @tc.desc   DeviceStatus callback interface test
@@ -235,7 +228,6 @@ export default function DeviceStatusDeviceStatusTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_0800
      * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_0800
      * @tc.desc   DeviceStatus callback interface test
@@ -263,7 +255,6 @@ export default function DeviceStatusDeviceStatusTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_0900
      * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_0900
      * @tc.desc   DeviceStatus callback interface test
@@ -289,7 +280,6 @@ export default function DeviceStatusDeviceStatusTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_1000
      * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_1000
      * @tc.desc   DeviceStatus callback interface test

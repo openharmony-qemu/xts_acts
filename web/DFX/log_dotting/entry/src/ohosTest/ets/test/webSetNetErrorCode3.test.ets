@@ -58,13 +58,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0051
-     *@tc.name testWebSetNetErrorCode_ERR_NO_PRIVATE_KEY_FOR_CERT
-     *@tc.desc test WebSetNetErrorCode_ERR_NO_PRIVATE_KEY_FOR_CERT (-502)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_NO_PRIVATE_KEY_FOR_CERT
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0051
+     * @tc.desc   test WebSetNetErrorCode_ERR_NO_PRIVATE_KEY_FOR_CERT (-502)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_NO_PRIVATE_KEY_FOR_CERT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_NO_PRIVATE_KEY_FOR_CERT"
@@ -73,13 +73,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0052
-     *@tc.name testWebSetNetErrorCode_ERR_ADD_USER_CERT_FAILED
-     *@tc.desc test WebSetNetErrorCode_ERR_ADD_USER_CERT_FAILED (-503)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_ADD_USER_CERT_FAILED
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0052
+     * @tc.desc   test WebSetNetErrorCode_ERR_ADD_USER_CERT_FAILED (-503)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_ADD_USER_CERT_FAILED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_ADD_USER_CERT_FAILED"
@@ -88,13 +88,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0053
-     *@tc.name testWebSetNetErrorCode_ERR_INVALID_SIGNED_EXCHANGE
-     *@tc.desc test WebSetNetErrorCode_ERR_INVALID_SIGNED_EXCHANGE (-504)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_INVALID_SIGNED_EXCHANGE
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0053
+     * @tc.desc   test WebSetNetErrorCode_ERR_INVALID_SIGNED_EXCHANGE (-504)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_INVALID_SIGNED_EXCHANGE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_INVALID_SIGNED_EXCHANGE"
@@ -103,13 +103,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0054
-     *@tc.name testWebSetNetErrorCode_ERR_INVALID_WEB_BUNDLE
-     *@tc.desc test WebSetNetErrorCode_ERR_INVALID_WEB_BUNDLE (-505)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_INVALID_WEB_BUNDLE
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0054
+     * @tc.desc   test WebSetNetErrorCode_ERR_INVALID_WEB_BUNDLE (-505)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_INVALID_WEB_BUNDLE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_INVALID_WEB_BUNDLE"
@@ -118,13 +118,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0055
-     *@tc.name testWebSetNetErrorCode_ERR_TRUST_TOKEN_OPERATION_FAILED
-     *@tc.desc test WebSetNetErrorCode_ERR_TRUST_TOKEN_OPERATION_FAILED (-506)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_TRUST_TOKEN_OPERATION_FAILED
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0055
+     * @tc.desc   test WebSetNetErrorCode_ERR_TRUST_TOKEN_OPERATION_FAILED (-506)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_TRUST_TOKEN_OPERATION_FAILED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_TRUST_TOKEN_OPERATION_FAILED"
@@ -133,13 +133,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0056
-     *@tc.name testWebSetNetErrorCode_ERR_TRUST_TOKEN_OPERATION_SUCCESS_WITHOUT_SENDING_REQUEST
-     *@tc.desc test WebSetNetErrorCode_ERR_TRUST_TOKEN_OPERATION_SUCCESS_WITHOUT_SENDING_REQUEST (-507)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_TRUST_TOKEN_OPERATION_SUCCESS_WITHOUT_SENDING_REQUEST
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0056
+     * @tc.desc   test WebSetNetErrorCode_ERR_TRUST_TOKEN_OPERATION_SUCCESS_WITHOUT_SENDING_REQUEST (-507)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_TRUST_TOKEN_OPERATION_SUCCESS_WITHOUT_SENDING_REQUEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_TRUST_TOKEN_OPERATION_SUCCESS_WITHOUT_SENDING_REQUEST"
@@ -148,13 +148,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0057
-     *@tc.name testWebSetNetErrorCode_ERR_FTP_FAILED
-     *@tc.desc test WebSetNetErrorCode_ERR_FTP_FAILED (-601)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_FTP_FAILED
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0057
+     * @tc.desc   test WebSetNetErrorCode_ERR_FTP_FAILED (-601)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_FTP_FAILED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_FTP_FAILED"
@@ -163,13 +163,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0058
-     *@tc.name testWebSetNetErrorCode_ERR_FTP_SERVICE_UNAVAILABLE
-     *@tc.desc test WebSetNetErrorCode_ERR_FTP_SERVICE_UNAVAILABLE (-602)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_FTP_SERVICE_UNAVAILABLE
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0058
+     * @tc.desc   test WebSetNetErrorCode_ERR_FTP_SERVICE_UNAVAILABLE (-602)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_FTP_SERVICE_UNAVAILABLE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_FTP_SERVICE_UNAVAILABLE"
@@ -178,13 +178,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0059
-     *@tc.name testWebSetNetErrorCode_ERR_FTP_TRANSFER_ABORTED
-     *@tc.desc test WebSetNetErrorCode_ERR_FTP_TRANSFER_ABORTED (-603)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_FTP_TRANSFER_ABORTED
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0059
+     * @tc.desc   test WebSetNetErrorCode_ERR_FTP_TRANSFER_ABORTED (-603)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_FTP_TRANSFER_ABORTED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_FTP_TRANSFER_ABORTED"
@@ -193,13 +193,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0060
-     *@tc.name testWebSetNetErrorCode_ERR_FTP_FILE_BUSY
-     *@tc.desc test WebSetNetErrorCode_ERR_FTP_FILE_BUSY (-604)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_FTP_FILE_BUSY
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0060
+     * @tc.desc   test WebSetNetErrorCode_ERR_FTP_FILE_BUSY (-604)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_FTP_FILE_BUSY', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_FTP_FILE_BUSY"
@@ -208,13 +208,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0061
-     *@tc.name testWebSetNetErrorCode_ERR_FTP_SYNTAX_ERROR
-     *@tc.desc test WebSetNetErrorCode_ERR_FTP_SYNTAX_ERROR (-605)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_FTP_SYNTAX_ERROR
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0061
+     * @tc.desc   test WebSetNetErrorCode_ERR_FTP_SYNTAX_ERROR (-605)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_FTP_SYNTAX_ERROR', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_FTP_SYNTAX_ERROR"
@@ -223,13 +223,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0062
-     *@tc.name testWebSetNetErrorCode_ERR_FTP_COMMAND_UNSUPPORTED
-     *@tc.desc test WebSetNetErrorCode_ERR_FTP_COMMAND_UNSUPPORTED (-606)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_FTP_COMMAND_UNSUPPORTED
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0062
+     * @tc.desc   test WebSetNetErrorCode_ERR_FTP_COMMAND_UNSUPPORTED (-606)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_FTP_COMMAND_UNSUPPORTED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_FTP_COMMAND_UNSUPPORTED"
@@ -238,13 +238,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0063
-     *@tc.name testWebSetNetErrorCode_ERR_FTP_BAD_COMMAND_SEQUENCE
-     *@tc.desc test WebSetNetErrorCode_ERR_FTP_BAD_COMMAND_SEQUENCE (-607)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_FTP_BAD_COMMAND_SEQUENCE
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0063
+     * @tc.desc   test WebSetNetErrorCode_ERR_FTP_BAD_COMMAND_SEQUENCE (-607)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_FTP_BAD_COMMAND_SEQUENCE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_FTP_BAD_COMMAND_SEQUENCE"
@@ -253,13 +253,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0064
-     *@tc.name testWebSetNetErrorCode_ERR_PKCS12_IMPORT_BAD_PASSWORD
-     *@tc.desc test WebSetNetErrorCode_ERR_PKCS12_IMPORT_BAD_PASSWORD (-701)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_PKCS12_IMPORT_BAD_PASSWORD
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0064
+     * @tc.desc   test WebSetNetErrorCode_ERR_PKCS12_IMPORT_BAD_PASSWORD (-701)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_PKCS12_IMPORT_BAD_PASSWORD', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_PKCS12_IMPORT_BAD_PASSWORD"
@@ -268,13 +268,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0065
-     *@tc.name testWebSetNetErrorCode_ERR_PKCS12_IMPORT_FAILED
-     *@tc.desc test WebSetNetErrorCode_ERR_PKCS12_IMPORT_FAILED (-702)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_PKCS12_IMPORT_FAILED
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0065
+     * @tc.desc   test WebSetNetErrorCode_ERR_PKCS12_IMPORT_FAILED (-702)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_PKCS12_IMPORT_FAILED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_PKCS12_IMPORT_FAILED"
@@ -283,13 +283,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0066
-     *@tc.name testWebSetNetErrorCode_ERR_IMPORT_CA_CERT_NOT_CA
-     *@tc.desc test WebSetNetErrorCode_ERR_IMPORT_CA_CERT_NOT_CA (-703)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_IMPORT_CA_CERT_NOT_CA
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0066
+     * @tc.desc   test WebSetNetErrorCode_ERR_IMPORT_CA_CERT_NOT_CA (-703)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_IMPORT_CA_CERT_NOT_CA', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_IMPORT_CA_CERT_NOT_CA"
@@ -298,13 +298,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0067
-     *@tc.name testWebSetNetErrorCode_ERR_IMPORT_CERT_ALREADY_EXISTS
-     *@tc.desc test WebSetNetErrorCode_ERR_IMPORT_CERT_ALREADY_EXISTS (-704)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_IMPORT_CERT_ALREADY_EXISTS
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0067
+     * @tc.desc   test WebSetNetErrorCode_ERR_IMPORT_CERT_ALREADY_EXISTS (-704)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_IMPORT_CERT_ALREADY_EXISTS', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_IMPORT_CERT_ALREADY_EXISTS"
@@ -313,13 +313,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0068
-     *@tc.name testWebSetNetErrorCode_ERR_IMPORT_CA_CERT_FAILED
-     *@tc.desc test WebSetNetErrorCode_ERR_IMPORT_CA_CERT_FAILED (-705)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_IMPORT_CA_CERT_FAILED
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0068
+     * @tc.desc   test WebSetNetErrorCode_ERR_IMPORT_CA_CERT_FAILED (-705)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_IMPORT_CA_CERT_FAILED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_IMPORT_CA_CERT_FAILED"
@@ -328,13 +328,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0069
-     *@tc.name testWebSetNetErrorCode_ERR_IMPORT_SERVER_CERT_FAILED
-     *@tc.desc test WebSetNetErrorCode_ERR_IMPORT_SERVER_CERT_FAILED (-706)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_IMPORT_SERVER_CERT_FAILED
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0069
+     * @tc.desc   test WebSetNetErrorCode_ERR_IMPORT_SERVER_CERT_FAILED (-706)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_IMPORT_SERVER_CERT_FAILED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_IMPORT_SERVER_CERT_FAILED"
@@ -343,13 +343,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0070
-     *@tc.name testWebSetNetErrorCode_ERR_PKCS12_IMPORT_INVALID_MAC
-     *@tc.desc test WebSetNetErrorCode_ERR_PKCS12_IMPORT_INVALID_MAC (-707)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_PKCS12_IMPORT_INVALID_MAC
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0070
+     * @tc.desc   test WebSetNetErrorCode_ERR_PKCS12_IMPORT_INVALID_MAC (-707)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_PKCS12_IMPORT_INVALID_MAC', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_PKCS12_IMPORT_INVALID_MAC"
@@ -358,13 +358,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0071
-     *@tc.name testWebSetNetErrorCode_ERR_PKCS12_IMPORT_INVALID_FILE
-     *@tc.desc test WebSetNetErrorCode_ERR_PKCS12_IMPORT_INVALID_FILE (-708)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_PKCS12_IMPORT_INVALID_FILE
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0071
+     * @tc.desc   test WebSetNetErrorCode_ERR_PKCS12_IMPORT_INVALID_FILE (-708)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_PKCS12_IMPORT_INVALID_FILE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_PKCS12_IMPORT_INVALID_FILE"
@@ -373,13 +373,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0072
-     *@tc.name testWebSetNetErrorCode_ERR_PKCS12_IMPORT_UNSUPPORTED
-     *@tc.desc test WebSetNetErrorCode_ERR_PKCS12_IMPORT_UNSUPPORTED (-709)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_PKCS12_IMPORT_UNSUPPORTED
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0072
+     * @tc.desc   test WebSetNetErrorCode_ERR_PKCS12_IMPORT_UNSUPPORTED (-709)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_PKCS12_IMPORT_UNSUPPORTED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_PKCS12_IMPORT_UNSUPPORTED"
@@ -388,13 +388,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0073
-     *@tc.name testWebSetNetErrorCode_ERR_KEY_GENERATION_FAILED
-     *@tc.desc test WebSetNetErrorCode_ERR_KEY_GENERATION_FAILED (-710)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_KEY_GENERATION_FAILED
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0073
+     * @tc.desc   test WebSetNetErrorCode_ERR_KEY_GENERATION_FAILED (-710)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_KEY_GENERATION_FAILED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_KEY_GENERATION_FAILED"
@@ -403,13 +403,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0074
-     *@tc.name testWebSetNetErrorCode_ERR_PRIVATE_KEY_EXPORT_FAILED
-     *@tc.desc test WebSetNetErrorCode_ERR_PRIVATE_KEY_EXPORT_FAILED (-712)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_PRIVATE_KEY_EXPORT_FAILED
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0074
+     * @tc.desc   test WebSetNetErrorCode_ERR_PRIVATE_KEY_EXPORT_FAILED (-712)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_PRIVATE_KEY_EXPORT_FAILED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_PRIVATE_KEY_EXPORT_FAILED"
@@ -418,13 +418,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0075
-     *@tc.name testWebSetNetErrorCode_ERR_SELF_SIGNED_CERT_GENERATION_FAILED
-     *@tc.desc test WebSetNetErrorCode_ERR_SELF_SIGNED_CERT_GENERATION_FAILED (-713)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_SELF_SIGNED_CERT_GENERATION_FAILED
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0075
+     * @tc.desc   test WebSetNetErrorCode_ERR_SELF_SIGNED_CERT_GENERATION_FAILED (-713)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_SELF_SIGNED_CERT_GENERATION_FAILED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_SELF_SIGNED_CERT_GENERATION_FAILED"
@@ -433,13 +433,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0076
-     *@tc.name testWebSetNetErrorCode_ERR_CERT_DATABASE_CHANGED
-     *@tc.desc test WebSetNetErrorCode_ERR_CERT_DATABASE_CHANGED (-714)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_CERT_DATABASE_CHANGED
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0076
+     * @tc.desc   test WebSetNetErrorCode_ERR_CERT_DATABASE_CHANGED (-714)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_CERT_DATABASE_CHANGED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_CERT_DATABASE_CHANGED"
@@ -448,13 +448,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0077
-     *@tc.name testWebSetNetErrorCode_ERR_CERT_VERIFIER_CHANGED
-     *@tc.desc test WebSetNetErrorCode_ERR_CERT_VERIFIER_CHANGED (-716)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_CERT_VERIFIER_CHANGED
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0077
+     * @tc.desc   test WebSetNetErrorCode_ERR_CERT_VERIFIER_CHANGED (-716)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_CERT_VERIFIER_CHANGED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_CERT_VERIFIER_CHANGED"
@@ -463,13 +463,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0078
-     *@tc.name testWebSetNetErrorCode_ERR_DNS_MALFORMED_RESPONSE
-     *@tc.desc test WebSetNetErrorCode_ERR_DNS_MALFORMED_RESPONSE (-800)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_DNS_MALFORMED_RESPONSE
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0078
+     * @tc.desc   test WebSetNetErrorCode_ERR_DNS_MALFORMED_RESPONSE (-800)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_DNS_MALFORMED_RESPONSE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_DNS_MALFORMED_RESPONSE"
@@ -478,13 +478,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0079
-     *@tc.name testWebSetNetErrorCode_ERR_DNS_SERVER_REQUIRES_TCP
-     *@tc.desc test WebSetNetErrorCode_ERR_DNS_SERVER_REQUIRES_TCP (-801)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_DNS_SERVER_REQUIRES_TCP
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0079
+     * @tc.desc   test WebSetNetErrorCode_ERR_DNS_SERVER_REQUIRES_TCP (-801)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_DNS_SERVER_REQUIRES_TCP', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_DNS_SERVER_REQUIRES_TCP"
@@ -493,13 +493,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0080
-     *@tc.name testWebSetNetErrorCode_ERR_DNS_SERVER_FAILED
-     *@tc.desc test WebSetNetErrorCode_ERR_DNS_SERVER_FAILED (-802)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_DNS_SERVER_FAILED
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0080
+     * @tc.desc   test WebSetNetErrorCode_ERR_DNS_SERVER_FAILED (-802)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_DNS_SERVER_FAILED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_DNS_SERVER_FAILED"
@@ -508,13 +508,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0081
-     *@tc.name testWebSetNetErrorCode_ERR_DNS_TIMED_OUT
-     *@tc.desc test WebSetNetErrorCode_ERR_DNS_TIMED_OUT (-803)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_DNS_TIMED_OUT
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0081
+     * @tc.desc   test WebSetNetErrorCode_ERR_DNS_TIMED_OUT (-803)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_DNS_TIMED_OUT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_DNS_TIMED_OUT"
@@ -523,13 +523,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0082
-     *@tc.name testWebSetNetErrorCode_ERR_DNS_CACHE_MISS
-     *@tc.desc test WebSetNetErrorCode_ERR_DNS_CACHE_MISS (-804)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_DNS_CACHE_MISS
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0082
+     * @tc.desc   test WebSetNetErrorCode_ERR_DNS_CACHE_MISS (-804)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_DNS_CACHE_MISS', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_DNS_CACHE_MISS"
@@ -538,13 +538,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0083
-     *@tc.name testWebSetNetErrorCode_ERR_DNS_SEARCH_EMPTY
-     *@tc.desc test WebSetNetErrorCode_ERR_DNS_SEARCH_EMPTY (-805)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_DNS_SEARCH_EMPTY
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0083
+     * @tc.desc   test WebSetNetErrorCode_ERR_DNS_SEARCH_EMPTY (-805)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_DNS_SEARCH_EMPTY', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_DNS_SEARCH_EMPTY"
@@ -553,13 +553,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0084
-     *@tc.name testWebSetNetErrorCode_ERR_DNS_SORT_ERROR
-     *@tc.desc test WebSetNetErrorCode_ERR_DNS_SORT_ERROR (-806)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_DNS_SORT_ERROR
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0084
+     * @tc.desc   test WebSetNetErrorCode_ERR_DNS_SORT_ERROR (-806)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_DNS_SORT_ERROR', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_DNS_SORT_ERROR"
@@ -568,13 +568,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0085
-     *@tc.name testWebSetNetErrorCode_ERR_DNS_SECURE_RESOLVER_HOSTNAME_RESOLUTION_FAILED
-     *@tc.desc test WebSetNetErrorCode_ERR_DNS_SECURE_RESOLVER_HOSTNAME_RESOLUTION_FAILED (-808)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_DNS_SECURE_RESOLVER_HOSTNAME_RESOLUTION_FAILED
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0085
+     * @tc.desc   test WebSetNetErrorCode_ERR_DNS_SECURE_RESOLVER_HOSTNAME_RESOLUTION_FAILED (-808)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_DNS_SECURE_RESOLVER_HOSTNAME_RESOLUTION_FAILED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_DNS_SECURE_RESOLVER_HOSTNAME_RESOLUTION_FAILED"
@@ -583,13 +583,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0086
-     *@tc.name testWebSetNetErrorCode_ERR_DNS_NAME_HTTPS_ONLY
-     *@tc.desc test WebSetNetErrorCode_ERR_DNS_NAME_HTTPS_ONLY (-809)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_DNS_NAME_HTTPS_ONLY
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0086
+     * @tc.desc   test WebSetNetErrorCode_ERR_DNS_NAME_HTTPS_ONLY (-809)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_DNS_NAME_HTTPS_ONLY', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_DNS_NAME_HTTPS_ONLY"
@@ -598,13 +598,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0087
-     *@tc.name testWebSetNetErrorCode_ERR_DNS_REQUEST_CANCELED
-     *@tc.desc test WebSetNetErrorCode_ERR_DNS_REQUEST_CANCELED (-810)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_DNS_REQUEST_CANCELED
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0087
+     * @tc.desc   test WebSetNetErrorCode_ERR_DNS_REQUEST_CANCELED (-810)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_DNS_REQUEST_CANCELED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_DNS_REQUEST_CANCELED"
@@ -613,13 +613,13 @@ export default function ActsAceWebSetNetErrorCode3() {
       Utils.waitAndClickComponent(driver, "ActsAceWebSetNetErrorCode3Button");
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0088
-     *@tc.name testWebSetNetErrorCode_ERR_DNS_NO_MATCHING_SUPPORTED_ALPN
-     *@tc.desc test WebSetNetErrorCode_ERR_DNS_NO_MATCHING_SUPPORTED_ALPN (-810)
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebSetNetErrorCode_ERR_DNS_NO_MATCHING_SUPPORTED_ALPN
+     * @tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0088
+     * @tc.desc   test WebSetNetErrorCode_ERR_DNS_NO_MATCHING_SUPPORTED_ALPN (-810)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebSetNetErrorCode_ERR_DNS_NO_MATCHING_SUPPORTED_ALPN', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetNetErrorCode_ERR_DNS_NO_MATCHING_SUPPORTED_ALPN"

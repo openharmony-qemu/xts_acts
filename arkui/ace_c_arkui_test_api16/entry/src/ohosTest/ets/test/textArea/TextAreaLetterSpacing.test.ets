@@ -25,16 +25,15 @@ export default function TextAreaLetterSpacing(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOM_PRPPERTY_0100
-     * @tc.name       : TextAreaLetterSpacing001
-     * @tc.desc       : The letterspacing property of the textArea component 
-                          and the previewText callback interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   textAreaLetterSpacing001
+     * @tc.number textAreaLetterSpacing001
+     * @tc.desc   textAreaLetterSpacing001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAreaLetterSpacing001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TextAreaLetterSpacing';
       await Utils.pushPage(`textArea/${PAGE_TAG}`);

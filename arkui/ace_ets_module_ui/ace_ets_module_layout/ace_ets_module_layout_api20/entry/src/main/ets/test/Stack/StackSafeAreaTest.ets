@@ -46,6 +46,14 @@ export default function StackSafeAreaTest() {
     });
 
     
+     /**
+      * @tc.name   StackSafeAreaTest_0100
+      * @tc.number StackSafeAreaTest_0100
+      * @tc.desc   StackSafeAreaTest_0100
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('StackSafeAreaTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[StackSafeAreaTest_0100] START');
       let driver = await Driver.create()

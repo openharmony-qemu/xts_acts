@@ -45,10 +45,13 @@ export default function preventDefault() {
       console.info("preventDefault after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         preventDefault0001
-     * @tc.desic        Intercepting Hyperlinks
+    /**
+     * @tc.name   preventDefault0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   preventDefault0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('preventDefault0001', Level.LEVEL0, async () => {
         let driver = Driver.create();

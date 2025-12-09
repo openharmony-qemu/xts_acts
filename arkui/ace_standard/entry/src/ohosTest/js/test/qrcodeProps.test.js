@@ -79,9 +79,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testqrcodeIdProp
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeIdProp', Level.LEVEL0, async function(done) {
             console.info('testQrcodeIdProp START');
@@ -98,9 +101,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeClassProp
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeClassProp', Level.LEVEL0, async function(done) {
             console.info('testQrcodeClassProp START');
@@ -117,9 +123,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testQrcodeClassPropNone START');
@@ -138,9 +147,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeRefProp
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeRefProp', Level.LEVEL0, async function(done) {
             console.info('testQrcodeRefProp START');
@@ -158,9 +170,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testQrcodeRefPropNone START');
@@ -179,9 +194,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testQrcodeDisabledPropTrue START');
@@ -199,9 +217,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testQrcodeDisabledPropFalse START');
@@ -219,9 +240,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testQrcodeDisabledPropNone START');
@@ -239,9 +263,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testQrcodeFocusablePropTrue START');
@@ -259,9 +286,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testQrcodeFocusablePropFalse START');
@@ -279,9 +309,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testQrcodeFocusablePropNone START');
@@ -299,9 +332,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeDataProp
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeDataProp', Level.LEVEL0, async function(done) {
             console.info('testQrcodeDataProp START');
@@ -320,9 +356,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testQrcodeDataPropNone START');
@@ -341,9 +380,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testQrcodeClickEffectPropSmall START');
@@ -361,9 +403,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testQrcodeClickEffectPropMedium START');
@@ -381,9 +426,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testQrcodeClickEffectPropLarge START');
@@ -401,9 +449,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testQrcodeClickEffectPropNone START');
@@ -422,9 +473,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testQrcodeDirPropRtl START');
@@ -442,9 +496,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testQrcodeDirPropLtr START');
@@ -462,9 +519,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testQrcodeDirPropAuto START');
@@ -482,9 +542,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testQrcodeDirPropNone START');
@@ -502,9 +565,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeForPropNull', Level.LEVEL0, async function(done) {
             console.info('testQrcodeForPropNull START');
@@ -523,9 +589,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeForPropOne', Level.LEVEL0, async function(done) {
             console.info('testQrcodeForPropOne START');
@@ -544,9 +613,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeForPropThree', Level.LEVEL0, async function(done) {
             console.info('testQrcodeForPropThree START');
@@ -565,9 +637,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testQrcodeIfPropTrue START');
@@ -586,9 +661,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testQrcodeShowPropTrue START');
@@ -607,9 +685,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testQrcodeShowPropFalse START');
@@ -628,9 +709,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testQrcodeShowPropNone START');
@@ -649,9 +733,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeQrcodeTypeValue
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeQrcodeTypeValue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeQrcodeTypeValue', Level.LEVEL0, async function(done) {
             console.info('testQrcodeQrcodeTypeValue START');
@@ -669,9 +756,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeQrcodeTypeValueNone
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeQrcodeTypeValueNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeQrcodeTypeValueNone', Level.LEVEL0, async function(done) {
             console.info('testQrcodeQrcodeTypeValueNone START');
@@ -689,9 +779,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeQrcodeTypeRect
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeQrcodeTypeRect
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeQrcodeTypeRect', Level.LEVEL0, async function(done) {
             console.info('testQrcodeQrcodeTypeRect START');
@@ -710,9 +803,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeQrcodeTypeCircle
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeQrcodeTypeCircle
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeQrcodeTypeCircle', Level.LEVEL0, async function(done) {
             console.info('testQrcodeQrcodeTypeCircle START');
@@ -731,9 +827,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeQrcodeTypeNone
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeQrcodeTypeNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeQrcodeTypeNone', Level.LEVEL0, async function(done) {
             console.info('testQrcodeQrcodeTypeNone START');

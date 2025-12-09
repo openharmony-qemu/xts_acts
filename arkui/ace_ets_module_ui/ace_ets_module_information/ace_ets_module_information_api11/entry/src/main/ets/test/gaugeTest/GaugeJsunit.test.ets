@@ -46,6 +46,14 @@ export default function gaugeJsunit() {
       console.info("gauge after each called");
     });
 
+    /**
+     * @tc.name   testGauge001
+     * @tc.number testGauge001
+     * @tc.desc   testGauge001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGauge001', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge001] START');
       await CommonFunc.sleep(1000);
@@ -59,6 +67,14 @@ export default function gaugeJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGauge002
+     * @tc.number testGauge002
+     * @tc.desc   testGauge002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGauge002', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge002] START');
       await CommonFunc.sleep(1000);
@@ -85,6 +101,14 @@ export default function gaugeJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGauge003
+     * @tc.number testGauge003
+     * @tc.desc   testGauge003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGauge003', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge003] START');
       await CommonFunc.sleep(1000);
@@ -111,6 +135,14 @@ export default function gaugeJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGauge004
+     * @tc.number testGauge004
+     * @tc.desc   testGauge004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGauge004', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge004] START');
       await CommonFunc.sleep(1000);
@@ -137,6 +169,14 @@ export default function gaugeJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGauge005
+     * @tc.number testGauge005
+     * @tc.desc   testGauge005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGauge005', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge005] START');
       await CommonFunc.sleep(1000);
@@ -163,6 +203,14 @@ export default function gaugeJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGauge006
+     * @tc.number testGauge006
+     * @tc.desc   testGauge006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGauge006', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge006] START');
       await CommonFunc.sleep(1000);
@@ -184,6 +232,14 @@ export default function gaugeJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGauge007
+     * @tc.number testGauge007
+     * @tc.desc   testGauge007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGauge007', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge007] START');
       await CommonFunc.sleep(1000);
@@ -210,6 +266,14 @@ export default function gaugeJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGauge008
+     * @tc.number testGauge008
+     * @tc.desc   testGauge008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGauge008', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge008] START');
       await CommonFunc.sleep(1000);
@@ -236,6 +300,14 @@ export default function gaugeJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGauge009
+     * @tc.number testGauge009
+     * @tc.desc   testGauge009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGauge009', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge009] START');
       await CommonFunc.sleep(1000);
@@ -262,6 +334,14 @@ export default function gaugeJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGauge010
+     * @tc.number testGauge010
+     * @tc.desc   testGauge010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGauge010', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge010] START');
       await CommonFunc.sleep(1000);
@@ -287,6 +367,14 @@ export default function gaugeJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGauge011
+     * @tc.number testGauge011
+     * @tc.desc   testGauge011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGauge011', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge011] START');
       await CommonFunc.sleep(1000);

@@ -326,11 +326,14 @@ OH_NNExecutor* RunExecutor(OH_NNCompilation* compilation, size_t deviceId, bool 
     return executor;
 }
 
-/*
-* @tc.name:sub_AI_NNRt_Core_Func_North_EndToEnd_0100
-* @tc.desc:定长模型编译端到端测试
-* @tc.type:FUNC
-*/
+/**
+ * @tc.name   sub_AI_NNRt_Core_Func_North_EndToEnd_0100
+ * @tc.number sub_AI_NNRt_Core_Func_North_EndToEnd_0100
+ * @tc.desc   定长模型编译端到端测试
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(EndToEndTest, sub_AI_NNRt_Core_Func_North_EndToEnd_0100, Function | MediumTest | Level1)
 {
     size_t deviceId = 0;
@@ -349,11 +352,14 @@ HWTEST_F(EndToEndTest, sub_AI_NNRt_Core_Func_North_EndToEnd_0100, Function | Med
     OH_NNExecutor_Destroy(&executor);
 }
 
-/*
-* @tc.name:sub_AI_NNRt_Core_Func_North_EndToEnd_0200
-* @tc.desc:变长模型编译端到端测试
-* @tc.type:FUNC
-*/
+/**
+ * @tc.name   sub_AI_NNRt_Core_Func_North_EndToEnd_0200
+ * @tc.number sub_AI_NNRt_Core_Func_North_EndToEnd_0200
+ * @tc.desc   变长模型编译端到端测试
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(EndToEndTest, sub_AI_NNRt_Core_Func_North_EndToEnd_0200, Function | MediumTest | Level1)
 {
     size_t deviceId = 0;
@@ -370,11 +376,14 @@ HWTEST_F(EndToEndTest, sub_AI_NNRt_Core_Func_North_EndToEnd_0200, Function | Med
     OH_NNExecutor_Destroy(&executor);
 }
 
-/*
-* @tc.name:sub_AI_NNRt_Core_Func_North_EndToEnd_0300
-* @tc.desc:定长模型编译带量化参数端到端测试
-* @tc.type:FUNC
-*/
+/**
+ * @tc.name   sub_AI_NNRt_Core_Func_North_EndToEnd_0300
+ * @tc.number sub_AI_NNRt_Core_Func_North_EndToEnd_0300
+ * @tc.desc   定长模型编译带量化参数端到端测试
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(EndToEndTest, sub_AI_NNRt_Core_Func_North_EndToEnd_0300, Function | MediumTest | Level1)
 {
     size_t deviceId = 0;
@@ -392,11 +401,14 @@ HWTEST_F(EndToEndTest, sub_AI_NNRt_Core_Func_North_EndToEnd_0300, Function | Med
     OH_NNExecutor_Destroy(&executor);
 }
 
-/*
-* @tc.name:sub_AI_NNRt_Core_Func_North_Reliability_0100
-* @tc.desc:定长模型编译长稳测试
-* @tc.type:FUNC
-*/
+/**
+ * @tc.name   sub_AI_NNRt_Core_Func_North_Reliability_0100
+ * @tc.number sub_AI_NNRt_Core_Func_North_Reliability_0100
+ * @tc.desc   定长模型编译长稳测试
+ * @tc.type   RELIABILITY
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(EndToEndTest, sub_AI_NNRt_Core_Func_North_Reliability_0100, Reliability | MediumTest | Level2)
 {
     size_t deviceId = 0;
@@ -418,11 +430,14 @@ HWTEST_F(EndToEndTest, sub_AI_NNRt_Core_Func_North_Reliability_0100, Reliability
     OH_NNModel_Destroy(&model);
 }
 
-/*
-* @tc.name:sub_AI_NNRt_Core_Func_North_Reliability_0200
-* @tc.desc:变长模型编译端到端测试
-* @tc.type:FUNC
-*/
+/**
+ * @tc.name   sub_AI_NNRt_Core_Func_North_Reliability_0200
+ * @tc.number sub_AI_NNRt_Core_Func_North_Reliability_0200
+ * @tc.desc   变长模型编译端到端测试
+ * @tc.type   RELIABILITY
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(EndToEndTest, sub_AI_NNRt_Core_Func_North_Reliability_0200, Reliability | MediumTest | Level2)
 {
     size_t deviceId = 0;

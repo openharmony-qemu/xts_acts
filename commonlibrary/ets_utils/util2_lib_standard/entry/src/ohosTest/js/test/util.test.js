@@ -45,12 +45,12 @@ var rangeHpFif = new util.ScopeHelper(tempMiDF, tempMore);
 export default function UtilFunTest() {
 describe('TextEncoderTest', function () {
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_NUMBER_OBJECT_001
-     * @tc.name: testIsNumberObject001
-     * @tc.desc: Check whether the entered value is of the number object type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsNumberObject001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NUMBER_OBJECT_001
+     * @tc.desc   Check whether the entered value is of the number object type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsNumberObject001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var proc = new util.types();
@@ -59,12 +59,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_NUMBER_OBJECT_002
-     * @tc.name: testIsNumberObject002
-     * @tc.desc: Check whether the entered value is of the number object type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsNumberObject002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NUMBER_OBJECT_002
+     * @tc.desc   Check whether the entered value is of the number object type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsNumberObject002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -73,12 +73,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_NUMBER_OBJECT_003
-     * @tc.name: testIsNumberObject003
-     * @tc.desc: Check whether the entered value is of the number object type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsNumberObject003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NUMBER_OBJECT_003
+     * @tc.desc   Check whether the entered value is of the number object type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsNumberObject003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -87,12 +87,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_NUMBER_OBJECT_004
-     * @tc.name: testIsNumberObject004
-     * @tc.desc: Check whether the entered value is of the number object type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsNumberObject004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NUMBER_OBJECT_004
+     * @tc.desc   Check whether the entered value is of the number object type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsNumberObject004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -101,12 +101,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_NUMBER_OBJECT_005
-     * @tc.name: testIsNumberObject005
-     * @tc.desc: Check whether the entered value is of the number object type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsNumberObject005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NUMBER_OBJECT_005
+     * @tc.desc   Check whether the entered value is of the number object type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsNumberObject005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -115,12 +115,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_PROMISE_001
-     * @tc.name: testIsPromise001
-     * @tc.desc: Check whether the entered value is of promise type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsPromise001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROMISE_001
+     * @tc.desc   Check whether the entered value is of promise type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsPromise001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -129,12 +129,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_PROMISE_002
-     * @tc.name: testIsPromise002
-     * @tc.desc: Check whether the entered value is of promise type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsPromise002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROMISE_002
+     * @tc.desc   Check whether the entered value is of promise type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsPromise002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -143,12 +143,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_PROMISE_003
-     * @tc.name: testIsPromise003
-     * @tc.desc: Check whether the entered value is of promise type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsPromise003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROMISE_003
+     * @tc.desc   Check whether the entered value is of promise type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsPromise003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -157,12 +157,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_PROMISE_004
-     * @tc.name: testIsPromise004
-     * @tc.desc: Check whether the entered value is of promise type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsPromise004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROMISE_004
+     * @tc.desc   Check whether the entered value is of promise type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsPromise004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -172,12 +172,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_PROMISE_005
-     * @tc.name: testIsPromise005
-     * @tc.desc: Check whether the entered value is of promise type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsPromise005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROMISE_005
+     * @tc.desc   Check whether the entered value is of promise type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsPromise005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -187,12 +187,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_PROXY_001
-     * @tc.name: testIsProxy001
-     * @tc.desc: Check whether the value entered is of proxy type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsProxy001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROXY_001
+     * @tc.desc   Check whether the value entered is of proxy type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsProxy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -203,12 +203,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_PROXY_002
-     * @tc.name: testIsProxy002
-     * @tc.desc: Check whether the value entered is of proxy type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsProxy002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROXY_002
+     * @tc.desc   Check whether the value entered is of proxy type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsProxy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -219,12 +219,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_PROXY_003
-     * @tc.name: testIsProxy003
-     * @tc.desc: Check whether the value entered is of proxy type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsProxy003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROXY_003
+     * @tc.desc   Check whether the value entered is of proxy type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsProxy003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -239,12 +239,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_PROXY_004
-     * @tc.name: testIsProxy004
-     * @tc.desc: Check whether the value entered is of proxy type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsProxy004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROXY_004
+     * @tc.desc   Check whether the value entered is of proxy type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsProxy004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -259,12 +259,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_PROXY_005
-     * @tc.name: testIsProxy005
-     * @tc.desc: Check whether the value entered is of proxy type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsProxy005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROXY_005
+     * @tc.desc   Check whether the value entered is of proxy type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsProxy005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -279,12 +279,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_REGEXP_001
-     * @tc.name: testIsRegExp001
-     * @tc.desc: Check whether the entered value is of type regexp.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsRegExp001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_REGEXP_001
+     * @tc.desc   Check whether the entered value is of type regexp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsRegExp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -293,12 +293,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_REGEXP_002
-     * @tc.name: testIsRegExp002
-     * @tc.desc: Check whether the entered value is of type regexp.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsRegExp002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_REGEXP_002
+     * @tc.desc   Check whether the entered value is of type regexp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsRegExp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -307,12 +307,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_REGEXP_003
-     * @tc.name: testIsRegExp003
-     * @tc.desc: Check whether the entered value is of type regexp.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsRegExp003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_REGEXP_003
+     * @tc.desc   Check whether the entered value is of type regexp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsRegExp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -321,12 +321,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_REGEXP_004
-     * @tc.name: testIsRegExp004
-     * @tc.desc: Check whether the entered value is of type regexp.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsRegExp004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_REGEXP_004
+     * @tc.desc   Check whether the entered value is of type regexp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsRegExp004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -335,12 +335,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_REGEXP_005
-     * @tc.name: testIsRegExp005
-     * @tc.desc: Check whether the entered value is of type regexp.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsRegExp005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_REGEXP_005
+     * @tc.desc   Check whether the entered value is of type regexp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsRegExp005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -349,12 +349,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SET_001
-     * @tc.name: testIsSet001
-     * @tc.desc: Check whether the entered value is of type set.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSet001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SET_001
+     * @tc.desc   Check whether the entered value is of type set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -363,12 +363,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SET_002
-     * @tc.name: testIsSet002
-     * @tc.desc: Check whether the entered value is of type set.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSet002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SET_002
+     * @tc.desc   Check whether the entered value is of type set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -377,12 +377,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SET_003
-     * @tc.name: testIsSet003
-     * @tc.desc: Check whether the entered value is of type set.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSet003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SET_003
+     * @tc.desc   Check whether the entered value is of type set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -391,12 +391,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SET_004
-     * @tc.name: testIsSet004
-     * @tc.desc: Check whether the entered value is of type set.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSet004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SET_004
+     * @tc.desc   Check whether the entered value is of type set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -405,12 +405,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SET_005
-     * @tc.name: testIsSet005
-     * @tc.desc: Check whether the entered value is of type set.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSet005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SET_005
+     * @tc.desc   Check whether the entered value is of type set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -419,12 +419,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SET_ITERATOR_001
-     * @tc.name: testIsSetIterator001
-     * @tc.desc: Check whether the entered value is the iterator type of set.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSetIterator001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SET_ITERATOR_001
+     * @tc.desc   Check whether the entered value is the iterator type of set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSetIterator001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -434,12 +434,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SET_ITERATOR_002
-     * @tc.name: testIsSetIterator002
-     * @tc.desc: Check whether the entered value is the iterator type of set.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSetIterator002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SET_ITERATOR_002
+     * @tc.desc   Check whether the entered value is the iterator type of set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSetIterator002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -449,12 +449,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SET_ITERATOR_003
-     * @tc.name: testIsSetIterator003
-     * @tc.desc: Check whether the entered value is the iterator type of set.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSetIterator003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SET_ITERATOR_003
+     * @tc.desc   Check whether the entered value is the iterator type of set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSetIterator003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -464,12 +464,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SET_ITERATOR_004
-     * @tc.name: testIsSetIterator004
-     * @tc.desc: Check whether the entered value is the iterator type of set.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSetIterator004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SET_ITERATOR_004
+     * @tc.desc   Check whether the entered value is the iterator type of set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSetIterator004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -479,12 +479,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SET_ITERATOR_005
-     * @tc.name: testIsSetIterator005
-     * @tc.desc: Check whether the entered value is the iterator type of set.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSetIterator005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SET_ITERATOR_005
+     * @tc.desc   Check whether the entered value is the iterator type of set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSetIterator005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -494,12 +494,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SHARED_ARRAY_BUFFER_001
-     * @tc.name: testIsSharedArrayBuffer001
-     * @tc.desc: Check whether the entered value is of type sharedarraybuffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSharedArrayBuffer001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SHARED_ARRAY_BUFFER_001
+     * @tc.desc   Check whether the entered value is of type sharedarraybuffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSharedArrayBuffer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -508,12 +508,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SHARED_ARRAY_BUFFER_002
-     * @tc.name: testIsSharedArrayBuffer002
-     * @tc.desc: Check whether the entered value is of type sharedarraybuffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSharedArrayBuffer002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SHARED_ARRAY_BUFFER_002
+     * @tc.desc   Check whether the entered value is of type sharedarraybuffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSharedArrayBuffer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -522,12 +522,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SHARED_ARRAY_BUFFER_003
-     * @tc.name: testIsSharedArrayBuffer003
-     * @tc.desc: Check whether the entered value is of type sharedarraybuffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSharedArrayBuffer003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SHARED_ARRAY_BUFFER_003
+     * @tc.desc   Check whether the entered value is of type sharedarraybuffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSharedArrayBuffer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -536,12 +536,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SHARED_ARRAY_BUFFER_004
-     * @tc.name: testIsSharedArrayBuffer004
-     * @tc.desc: Check whether the entered value is of type sharedarraybuffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSharedArrayBuffer004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SHARED_ARRAY_BUFFER_004
+     * @tc.desc   Check whether the entered value is of type sharedarraybuffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSharedArrayBuffer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -550,12 +550,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SHARED_ARRAY_BUFFER_005
-     * @tc.name: testIsSharedArrayBuffer005
-     * @tc.desc: Check whether the entered value is of type sharedarraybuffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSharedArrayBuffer005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SHARED_ARRAY_BUFFER_005
+     * @tc.desc   Check whether the entered value is of type sharedarraybuffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSharedArrayBuffer005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -564,12 +564,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_STRING_OBJECT_001
-     * @tc.name: testIsStringObject001
-     * @tc.desc: Check whether the entered value is a string object type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsStringObject001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_STRING_OBJECT_001
+     * @tc.desc   Check whether the entered value is a string object type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsStringObject001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -578,12 +578,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_STRING_OBJECT_002
-     * @tc.name: testIsStringObject002
-     * @tc.desc: Check whether the entered value is a string object type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsStringObject002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_STRING_OBJECT_002
+     * @tc.desc   Check whether the entered value is a string object type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsStringObject002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -592,12 +592,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_STRING_OBJECT_003
-     * @tc.name: testIsStringObject003
-     * @tc.desc: Check whether the entered value is a string object type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsStringObject003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_STRING_OBJECT_003
+     * @tc.desc   Check whether the entered value is a string object type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsStringObject003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -606,12 +606,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_STRING_OBJECT_004
-     * @tc.name: testIsStringObject004
-     * @tc.desc: Check whether the entered value is a string object type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsStringObject004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_STRING_OBJECT_004
+     * @tc.desc   Check whether the entered value is a string object type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsStringObject004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -620,12 +620,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_STRING_OBJECT_005
-     * @tc.name: testIsStringObject005
-     * @tc.desc: Check whether the entered value is a string object type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsStringObject005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_STRING_OBJECT_005
+     * @tc.desc   Check whether the entered value is a string object type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsStringObject005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -634,12 +634,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SYMBOL_OBJECT_001
-     * @tc.name: testIsSymbolObject001
-     * @tc.desc: Check whether the entered value is a symbol object type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSymbolObject001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SYMBOL_OBJECT_001
+     * @tc.desc   Check whether the entered value is a symbol object type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSymbolObject001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -649,12 +649,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SYMBOL_OBJECT_002
-     * @tc.name: testIsSymbolObject002
-     * @tc.desc: Check whether the entered value is a symbol object type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSymbolObject002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SYMBOL_OBJECT_002
+     * @tc.desc   Check whether the entered value is a symbol object type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSymbolObject002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -664,12 +664,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SYMBOL_OBJECT_003
-     * @tc.name: testIsSymbolObject003
-     * @tc.desc: Check whether the entered value is a symbol object type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSymbolObject003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SYMBOL_OBJECT_003
+     * @tc.desc   Check whether the entered value is a symbol object type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSymbolObject003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -679,12 +679,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SYMBOL_OBJECT_004
-     * @tc.name: testIsSymbolObject004
-     * @tc.desc: Check whether the entered value is a symbol object type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSymbolObject004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SYMBOL_OBJECT_004
+     * @tc.desc   Check whether the entered value is a symbol object type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSymbolObject004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -694,12 +694,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_SYMBOL_OBJECT_005
-     * @tc.name: testIsSymbolObject005
-     * @tc.desc: Check whether the entered value is a symbol object type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsSymbolObject005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SYMBOL_OBJECT_005
+     * @tc.desc   Check whether the entered value is a symbol object type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSymbolObject005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -709,12 +709,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_TYPED_ARRAY_001
-     * @tc.name: testIsTypedArray001
-     * @tc.desc: Check whether the entered value is a type contained in typedarray.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsTypedArray001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_TYPED_ARRAY_001
+     * @tc.desc   Check whether the entered value is a type contained in typedarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsTypedArray001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -723,12 +723,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_TYPED_ARRAY_002
-     * @tc.name: testIsTypedArray002
-     * @tc.desc: Check whether the entered value is a type contained in typedarray.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsTypedArray002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_TYPED_ARRAY_002
+     * @tc.desc   Check whether the entered value is a type contained in typedarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsTypedArray002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -737,12 +737,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_TYPED_ARRAY_003
-     * @tc.name: testIsTypedArray003
-     * @tc.desc: Check whether the entered value is a type contained in typedarray.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsTypedArray003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_TYPED_ARRAY_003
+     * @tc.desc   Check whether the entered value is a type contained in typedarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsTypedArray003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -751,12 +751,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_TYPED_ARRAY_004
-     * @tc.name: testIsTypedArray004
-     * @tc.desc: Check whether the entered value is a type contained in typedarray.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsTypedArray004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_TYPED_ARRAY_004
+     * @tc.desc   Check whether the entered value is a type contained in typedarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsTypedArray004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -765,12 +765,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_TYPED_ARRAY_005
-     * @tc.name: testIsTypedArray005
-     * @tc.desc: Check whether the entered value is a type contained in typedarray.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsTypedArray005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_TYPED_ARRAY_005
+     * @tc.desc   Check whether the entered value is a type contained in typedarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsTypedArray005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -779,12 +779,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT8_ARRAY_001
-     * @tc.name: testIsUint8Array001
-     * @tc.desc: Check whether the entered value is the uint8array array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint8Array001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_ARRAY_001
+     * @tc.desc   Check whether the entered value is the uint8array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8Array001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -793,12 +793,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT8_ARRAY_002
-     * @tc.name: testIsUint8Array002
-     * @tc.desc: Check whether the entered value is the uint8array array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint8Array002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_ARRAY_002
+     * @tc.desc   Check whether the entered value is the uint8array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8Array002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -807,12 +807,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT8_ARRAY_003
-     * @tc.name: testIsUint8Array003
-     * @tc.desc: Check whether the entered value is the uint8array array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint8Array003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_ARRAY_003
+     * @tc.desc   Check whether the entered value is the uint8array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8Array003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -821,12 +821,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT8_ARRAY_004
-     * @tc.name: testIsUint8Array004
-     * @tc.desc: Check whether the entered value is the uint8array array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint8Array004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_ARRAY_004
+     * @tc.desc   Check whether the entered value is the uint8array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8Array004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -835,12 +835,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT8_ARRAY_005
-     * @tc.name: testIsUint8Array005
-     * @tc.desc: Check whether the entered value is the uint8array array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint8Array005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_ARRAY_005
+     * @tc.desc   Check whether the entered value is the uint8array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8Array005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -849,12 +849,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT8_CLAMPED_ARRAY_001
-     * @tc.name: testIsUint8ClampedArray001
-     * @tc.desc: Check whether the entered value is the uint8clapedarray array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint8ClampedArray001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_CLAMPED_ARRAY_001
+     * @tc.desc   Check whether the entered value is the uint8clapedarray array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8ClampedArray001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -863,12 +863,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT8_CLAMPED_ARRAY_002
-     * @tc.name: testIsUint8ClampedArray002
-     * @tc.desc: Check whether the entered value is the uint8clapedarray array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint8ClampedArray002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_CLAMPED_ARRAY_002
+     * @tc.desc   Check whether the entered value is the uint8clapedarray array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8ClampedArray002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -877,12 +877,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT8_CLAMPED_ARRAY_003
-     * @tc.name: testIsUint8ClampedArray003
-     * @tc.desc: Check whether the entered value is the uint8clapedarray array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint8ClampedArray003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_CLAMPED_ARRAY_003
+     * @tc.desc   Check whether the entered value is the uint8clapedarray array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8ClampedArray003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -891,12 +891,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT8_CLAMPED_ARRAY_004
-     * @tc.name: testIsUint8ClampedArray004
-     * @tc.desc: Check whether the entered value is the uint8clapedarray array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint8ClampedArray004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_CLAMPED_ARRAY_004
+     * @tc.desc   Check whether the entered value is the uint8clapedarray array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8ClampedArray004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -905,12 +905,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT8_CLAMPED_ARRAY_005
-     * @tc.name: testIsUint8ClampedArray005
-     * @tc.desc: Check whether the entered value is the uint8clapedarray array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint8ClampedArray005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_CLAMPED_ARRAY_005
+     * @tc.desc   Check whether the entered value is the uint8clapedarray array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8ClampedArray005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -919,12 +919,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT16_ARRAY_001
-     * @tc.name: testIsUint16Array001
-     * @tc.desc: Check whether the entered value is the uint16array array array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint16Array001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT16_ARRAY_001
+     * @tc.desc   Check whether the entered value is the uint16array array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint16Array001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -933,12 +933,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT16_ARRAY_002
-     * @tc.name: testIsUint16Array002
-     * @tc.desc: Check whether the entered value is the uint16array array array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint16Array002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT16_ARRAY_002
+     * @tc.desc   Check whether the entered value is the uint16array array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint16Array002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -947,12 +947,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT16_ARRAY_003
-     * @tc.name: testIsUint16Array003
-     * @tc.desc: Check whether the entered value is the uint16array array array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint16Array003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT16_ARRAY_003
+     * @tc.desc   Check whether the entered value is the uint16array array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint16Array003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -961,12 +961,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT16_ARRAY_004
-     * @tc.name: testIsUint16Array004
-     * @tc.desc: Check whether the entered value is the uint16array array array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint16Array004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT16_ARRAY_004
+     * @tc.desc   Check whether the entered value is the uint16array array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint16Array004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -975,12 +975,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT16_ARRAY_005
-     * @tc.name: testIsUint16Array005
-     * @tc.desc: Check whether the entered value is the uint16array array array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint16Array005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT16_ARRAY_005
+     * @tc.desc   Check whether the entered value is the uint16array array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint16Array005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -989,12 +989,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT32_ARRAY_001
-     * @tc.name: testIsUint32Array001
-     * @tc.desc: Check whether the entered value is the uint32array array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint32Array001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT32_ARRAY_001
+     * @tc.desc   Check whether the entered value is the uint32array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint32Array001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -1003,12 +1003,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT32_ARRAY_002
-     * @tc.name: testIsUint32Array002
-     * @tc.desc: Check whether the entered value is the uint32array array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint32Array002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT32_ARRAY_002
+     * @tc.desc   Check whether the entered value is the uint32array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint32Array002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -1017,12 +1017,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT32_ARRAY_003
-     * @tc.name: testIsUint32Array003
-     * @tc.desc: Check whether the entered value is the uint32array array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint32Array003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT32_ARRAY_003
+     * @tc.desc   Check whether the entered value is the uint32array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint32Array003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -1031,12 +1031,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT32_ARRAY_004
-     * @tc.name: testIsUint32Array004
-     * @tc.desc: Check whether the entered value is the uint32array array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint32Array004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT32_ARRAY_004
+     * @tc.desc   Check whether the entered value is the uint32array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint32Array004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -1045,12 +1045,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_UINT32_ARRAY_005
-     * @tc.name: testIsUint32Array005
-     * @tc.desc: Check whether the entered value is the uint32array array type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsUint32Array005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT32_ARRAY_005
+     * @tc.desc   Check whether the entered value is the uint32array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint32Array005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -1059,12 +1059,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_WEAK_MAP_001
-     * @tc.name: testIsWeakMap001
-     * @tc.desc: Check whether the entered value is of type weakmap.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsWeakMap001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_MAP_001
+     * @tc.desc   Check whether the entered value is of type weakmap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakMap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -1073,12 +1073,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_WEAK_MAP_002
-     * @tc.name: testIsWeakMap002
-     * @tc.desc: Check whether the entered value is of type weakmap.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsWeakMap002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_MAP_002
+     * @tc.desc   Check whether the entered value is of type weakmap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakMap002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -1087,12 +1087,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_WEAK_MAP_003
-     * @tc.name: testIsWeakMap003
-     * @tc.desc: Check whether the entered value is of type weakmap.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsWeakMap003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_MAP_003
+     * @tc.desc   Check whether the entered value is of type weakmap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakMap003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -1101,12 +1101,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_WEAK_MAP_004
-     * @tc.name: testIsWeakMap004
-     * @tc.desc: Check whether the entered value is of type weakmap.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsWeakMap004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_MAP_004
+     * @tc.desc   Check whether the entered value is of type weakmap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakMap004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -1115,12 +1115,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_WEAK_MAP_005
-     * @tc.name: testIsWeakMap005
-     * @tc.desc: Check whether the entered value is of type weakmap.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsWeakMap005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_MAP_005
+     * @tc.desc   Check whether the entered value is of type weakmap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakMap005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -1129,12 +1129,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_WEAK_SET_001
-     * @tc.name: testIsWeakSet001
-     * @tc.desc: Check whether the entered value is of type weakset.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsWeakSet001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_SET_001
+     * @tc.desc   Check whether the entered value is of type weakset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -1143,12 +1143,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_WEAK_SET_002
-     * @tc.name: testIsWeakSet002
-     * @tc.desc: Check whether the entered value is of type weakset.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsWeakSet002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_SET_002
+     * @tc.desc   Check whether the entered value is of type weakset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -1157,12 +1157,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_WEAK_SET_003
-     * @tc.name: testIsWeakSet003
-     * @tc.desc: Check whether the entered value is of type weakset.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsWeakSet003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_SET_003
+     * @tc.desc   Check whether the entered value is of type weakset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakSet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -1171,12 +1171,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_WEAK_SET_004
-     * @tc.name: testIsWeakSet004
-     * @tc.desc: Check whether the entered value is of type weakset.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsWeakSet004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_SET_004
+     * @tc.desc   Check whether the entered value is of type weakset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakSet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -1185,12 +1185,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_IS_WEAK_SET_005
-     * @tc.name: testIsWeakSet005
-     * @tc.desc: Check whether the entered value is of type weakset.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testIsWeakSet005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_SET_005
+     * @tc.desc   Check whether the entered value is of type weakset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakSet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var proc = new util.types();
@@ -1199,12 +1199,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_RANDOM_UUID_001
-     * @tc.name: testUtilRandomUUID001
-     * @tc.desc: Generate a random RFC 4122 version 4 UUID.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testUtilRandomUUID001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_RANDOM_UUID_001
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilRandomUUID001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         var result = util.randomUUID(true);
@@ -1212,12 +1212,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_RANDOM_UUID_002
-     * @tc.name: testUtilRandomUUID002
-     * @tc.desc: Generate a random RFC 4122 version 4 UUID.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testUtilRandomUUID002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_RANDOM_UUID_002
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilRandomUUID002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         var result = util.randomUUID(false);
@@ -1225,12 +1225,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_RANDOM_BINARY_UUID_001
-     * @tc.name: testUtilRandomBinaryUUID001
-     * @tc.desc: Generate a random RFC 4122 version 4 UUID.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testUtilRandomBinaryUUID001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_RANDOM_BINARY_UUID_001
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilRandomBinaryUUID001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         var result = util.randomBinaryUUID(true);
@@ -1238,12 +1238,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_RANDOM_BINARY_UUID_002
-     * @tc.name: testUtilRandomBinaryUUID002
-     * @tc.desc: Generate a random RFC 4122 version 4 UUID.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testUtilRandomBinaryUUID002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_RANDOM_BINARY_UUID_002
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilRandomBinaryUUID002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         var result = util.randomBinaryUUID(false);
@@ -1251,12 +1251,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_PARSE_UUID_001
-     * @tc.name: testUtilParseUUID001
-     * @tc.desc: Generate a random RFC 4122 version 4 UUID.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testUtilParseUUID001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PARSE_UUID_001
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilParseUUID001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         var result = util.parseUUID('84bdf796-66cc-4655-9b89-d6218d100f9c');
@@ -1264,12 +1264,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_PARSE_UUID_002
-     * @tc.name: testUtilParseUUID002
-     * @tc.desc: Generate a random RFC 4122 version 4 UUID.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testUtilParseUUID002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PARSE_UUID_002
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilParseUUID002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         try {
@@ -1280,12 +1280,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_PARSE_UUID_003
-     * @tc.name: testUtilParseUUID003
-     * @tc.desc: Generate a random RFC 4122 version 4 UUID.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testUtilParseUUID003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PARSE_UUID_003
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilParseUUID003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         try {
@@ -1296,12 +1296,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GENERATE_RANDOM_UUID_001
-     * @tc.name: testUtilgenerateRandomUUID001
-     * @tc.desc: Generate a random RFC 4122 version 4 UUID.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testUtilgenerateRandomUUID001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERATE_RANDOM_UUID_001
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilgenerateRandomUUID001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         var result = util.generateRandomUUID(true);
@@ -1309,12 +1309,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GENERATE_RANDOM_UUID_002
-     * @tc.name: testUtilgenerateRandomUUID002
-     * @tc.desc: Generate a random RFC 4122 version 4 UUID.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testUtilgenerateRandomUUID002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERATE_RANDOM_UUID_002
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilgenerateRandomUUID002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         var result = util.generateRandomUUID(false);
@@ -1322,12 +1322,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GENERATE_RANDOM_UUID_003
-     * @tc.name: testUtilgenerateRandomUUID003
-     * @tc.desc: Generate a random RFC 4122 version 4 UUID.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testUtilgenerateRandomUUID003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERATE_RANDOM_UUID_003
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilgenerateRandomUUID003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         let sum = 0
@@ -1341,12 +1341,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GENERATE_RANDOM_BINARY_UUID_001
-     * @tc.name: testUtilgenerateRandomBinaryUUID001
-     * @tc.desc: Generate a random RFC 4122 version 4 UUID.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testUtilgenerateRandomBinaryUUID001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERATE_RANDOM_BINARY_UUID_001
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilgenerateRandomBinaryUUID001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         var result = util.generateRandomBinaryUUID(true);
@@ -1354,12 +1354,12 @@ describe('TextEncoderTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GENERATE_RANDOM_BINARY_UUID_002
-     * @tc.name: testUtilgenerateRandomBinaryUUID002
-     * @tc.desc: Generate a random RFC 4122 version 4 UUID.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testUtilgenerateRandomBinaryUUID002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERATE_RANDOM_BINARY_UUID_002
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilgenerateRandomBinaryUUID002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
         var result = util.generateRandomBinaryUUID(false);
@@ -1369,12 +1369,12 @@ describe('TextEncoderTest', function () {
 
 describe('ScopeHelperTest', function () {
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GET_LOWER_001
-     * @tc.name: test_getLower_001
-     * @tc.desc: Obtains the lower bound of the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_getLower_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_LOWER_001
+     * @tc.desc   Obtains the lower bound of the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_getLower_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.getLower()
@@ -1382,12 +1382,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GET_LOWER_002
-     * @tc.name: test_getLower_002
-     * @tc.desc: Obtains the lower bound of the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_getLower_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_LOWER_002
+     * @tc.desc   Obtains the lower bound of the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_getLower_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHpFir.getLower()
@@ -1395,12 +1395,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GET_LOWER_003
-     * @tc.name: test_getLower_003
-     * @tc.desc: Obtains the lower bound of the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_getLower_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_LOWER_003
+     * @tc.desc   Obtains the lower bound of the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_getLower_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHpSec.getLower()
@@ -1408,12 +1408,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GET_LOWER_004
-     * @tc.name: test_getLower_004
-     * @tc.desc: Obtains the lower bound of the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_getLower_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_LOWER_004
+     * @tc.desc   Obtains the lower bound of the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_getLower_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHpThi.getLower()
@@ -1421,12 +1421,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GET_LOWER_005
-     * @tc.name: test_getLower_005
-     * @tc.desc: Obtains the lower bound of the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_getLower_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_LOWER_005
+     * @tc.desc   Obtains the lower bound of the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_getLower_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHpFif.getLower()
@@ -1434,12 +1434,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GET_UPPER_001
-     * @tc.name: test_getUpper_001
-     * @tc.desc: Obtains the upper bound of the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_getUpper_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_UPPER_001
+     * @tc.desc   Obtains the upper bound of the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_getUpper_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.getUpper()
@@ -1447,12 +1447,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GET_UPPER_002
-     * @tc.name: test_getUpper_002
-     * @tc.desc: Obtains the upper bound of the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_getUpper_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_UPPER_002
+     * @tc.desc   Obtains the upper bound of the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_getUpper_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHpFir.getUpper()
@@ -1460,12 +1460,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GET_UPPER_003
-     * @tc.name: test_getUpper_003
-     * @tc.desc: Obtains the upper bound of the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_getUpper_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_UPPER_003
+     * @tc.desc   Obtains the upper bound of the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_getUpper_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHpSec.getUpper()
@@ -1473,12 +1473,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GET_UPPER_004
-     * @tc.name: test_getUpper_004
-     * @tc.desc: Obtains the upper bound of the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_getUpper_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_UPPER_004
+     * @tc.desc   Obtains the upper bound of the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_getUpper_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHpThi.getUpper()
@@ -1486,12 +1486,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GET_UPPER_005
-     * @tc.name: test_getUpper_005
-     * @tc.desc: Obtains the upper bound of the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_getUpper_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_UPPER_005
+     * @tc.desc   Obtains the upper bound of the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_getUpper_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHpFif.getUpper()
@@ -1499,12 +1499,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_CLAMP_001
-     * @tc.name: test_clamp_001
-     * @tc.desc: Clamps a given value to the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_clamp_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLAMP_001
+     * @tc.desc   Clamps a given value to the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_clamp_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.clamp(tempLess)
@@ -1512,12 +1512,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_CLAMP_002
-     * @tc.name: test_clamp_002
-     * @tc.desc: Clamps a given value to the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_clamp_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLAMP_002
+     * @tc.desc   Clamps a given value to the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_clamp_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.clamp(tempMiDF)
@@ -1525,12 +1525,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_CLAMP_003
-     * @tc.name: test_clamp_003
-     * @tc.desc: Clamps a given value to the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_clamp_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLAMP_003
+     * @tc.desc   Clamps a given value to the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_clamp_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.clamp(tempMore)
@@ -1538,12 +1538,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_CLAMP_004
-     * @tc.name: test_clamp_004
-     * @tc.desc: Clamps a given value to the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_clamp_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLAMP_004
+     * @tc.desc   Clamps a given value to the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_clamp_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.clamp(tempLower)
@@ -1551,12 +1551,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_CLAMP_005
-     * @tc.name: test_clamp_005
-     * @tc.desc: Clamps a given value to the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_clamp_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLAMP_005
+     * @tc.desc   Clamps a given value to the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_clamp_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.clamp(tempUpper)
@@ -1564,12 +1564,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_CONTAINS_001
-     * @tc.name: test_contains_001
-     * @tc.desc: Checks whether a given value is within the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_contains_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONTAINS_001
+     * @tc.desc   Checks whether a given value is within the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_contains_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.contains(tempLess)
@@ -1577,12 +1577,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_CONTAINS_002
-     * @tc.name: test_contains_002
-     * @tc.desc: Checks whether a given value is within the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_contains_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONTAINS_002
+     * @tc.desc   Checks whether a given value is within the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_contains_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.contains(tempMiDF)
@@ -1590,12 +1590,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_CONTAINS_003
-     * @tc.name: test_contains_003
-     * @tc.desc: Checks whether a given value is within the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_contains_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONTAINS_003
+     * @tc.desc   Checks whether a given value is within the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_contains_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.contains(tempMore)
@@ -1603,12 +1603,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_CONTAINS_004
-     * @tc.name: test_contains_004
-     * @tc.desc: Checks whether a given value is within the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_contains_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONTAINS_004
+     * @tc.desc   Checks whether a given value is within the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_contains_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.contains(tempLower)
@@ -1616,12 +1616,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_CONTAINS_005
-     * @tc.name: test_contains_005
-     * @tc.desc: Checks whether a given value is within the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_contains_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONTAINS_005
+     * @tc.desc   Checks whether a given value is within the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_contains_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.contains(tempUpper)
@@ -1629,12 +1629,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_CONTAINS_006
-     * @tc.name: test_contains_006
-     * @tc.desc: Checks whether a given range is within the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_contains_006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONTAINS_006
+     * @tc.desc   Checks whether a given range is within the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_contains_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.contains(rangeHpFir)
@@ -1642,12 +1642,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_CONTAINS_007
-     * @tc.name: test_contains_007
-     * @tc.desc: Checks whether a given range is within the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_contains_007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONTAINS_007
+     * @tc.desc   Checks whether a given range is within the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_contains_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.contains(rangeHpSec)
@@ -1655,12 +1655,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_CONTAINS_008
-     * @tc.name: test_contains_008
-     * @tc.desc: Checks whether a given range is within the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_contains_008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONTAINS_008
+     * @tc.desc   Checks whether a given range is within the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_contains_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.contains(rangeHpThi)
@@ -1668,12 +1668,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_CONTAINS_009
-     * @tc.name: test_contains_009
-     * @tc.desc: Checks whether a given range is within the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_contains_009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONTAINS_009
+     * @tc.desc   Checks whether a given range is within the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_contains_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.contains(rangeHpFif)
@@ -1681,12 +1681,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_CONTAINS_010
-     * @tc.name: test_contains_010
-     * @tc.desc: Checks whether a given range is within the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_contains_010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONTAINS_010
+     * @tc.desc   Checks whether a given range is within the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_contains_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.contains(rangeHp)
@@ -1694,12 +1694,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_EXPAND_001
-     * @tc.name: test_expand_001
-     * @tc.desc: Creates the smallest range that includes the current range and the given lower and upper bounds.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_expand_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EXPAND_001
+     * @tc.desc   Creates the smallest range that includes the current range and the given lower and upper bounds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_expand_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.expand(tempMiDF, tempMidS)
@@ -1707,12 +1707,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_EXPAND_002
-     * @tc.name: test_expand_002
-     * @tc.desc: Creates the smallest range that includes the current range and the given lower and upper bounds.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_expand_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EXPAND_002
+     * @tc.desc   Creates the smallest range that includes the current range and the given lower and upper bounds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_expand_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.expand(tempLess, tempMore)
@@ -1720,12 +1720,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_EXPAND_003
-     * @tc.name: test_expand_003
-     * @tc.desc: Creates the smallest range that includes the current range and the given lower and upper bounds.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_expand_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EXPAND_003
+     * @tc.desc   Creates the smallest range that includes the current range and the given lower and upper bounds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_expand_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.expand(tempLess, tempMiDF)
@@ -1733,12 +1733,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_EXPAND_004
-     * @tc.name: test_expand_004
-     * @tc.desc: Creates the smallest range that includes the current range and the given lower and upper bounds.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_expand_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EXPAND_004
+     * @tc.desc   Creates the smallest range that includes the current range and the given lower and upper bounds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_expand_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.expand(tempMiDF, tempMore)
@@ -1746,12 +1746,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_EXPAND_005
-     * @tc.name: test_expand_005
-     * @tc.desc: Creates the smallest range that includes the current range and the given lower and upper bounds.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_expand_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EXPAND_005
+     * @tc.desc   Creates the smallest range that includes the current range and the given lower and upper bounds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_expand_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.expand(tempLower, tempUpper)
@@ -1759,12 +1759,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_EXPAND_006
-     * @tc.name: test_expand_006
-     * @tc.desc: Creates the smallest range that includes the current range and a given range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_expand_006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EXPAND_006
+     * @tc.desc   Creates the smallest range that includes the current range and a given range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_expand_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.expand(rangeHpFir)
@@ -1772,12 +1772,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_EXPAND_007
-     * @tc.name: test_expand_007
-     * @tc.desc: Creates the smallest range that includes the current range and a given range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_expand_007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EXPAND_007
+     * @tc.desc   Creates the smallest range that includes the current range and a given range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_expand_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.expand(rangeHpSec)
@@ -1785,12 +1785,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_EXPAND_008
-     * @tc.name: test_expand_008
-     * @tc.desc: Creates the smallest range that includes the current range and a given range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_expand_008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EXPAND_008
+     * @tc.desc   Creates the smallest range that includes the current range and a given range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_expand_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.expand(rangeHpThi)
@@ -1798,12 +1798,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_EXPAND_009
-     * @tc.name: test_expand_009
-     * @tc.desc: Creates the smallest range that includes the current range and a given range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_expand_009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EXPAND_009
+     * @tc.desc   Creates the smallest range that includes the current range and a given range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_expand_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.expand(rangeHpFif)
@@ -1811,12 +1811,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_EXPAND_010
-     * @tc.name: test_expand_010
-     * @tc.desc: Creates the smallest range that includes the current range and a given range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_expand_010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EXPAND_010
+     * @tc.desc   Creates the smallest range that includes the current range and a given range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_expand_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.expand(rangeHp)
@@ -1824,12 +1824,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_EXPAND_011
-     * @tc.name: test_expand_011
-     * @tc.desc: Creates the smallest range that includes the current range and a given value.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_expand_011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EXPAND_011
+     * @tc.desc   Creates the smallest range that includes the current range and a given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_expand_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.expand(tempMiDF)
@@ -1837,12 +1837,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_EXPAND_012
-     * @tc.name: test_expand_012
-     * @tc.desc: Creates the smallest range that includes the current range and a given value.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_expand_012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EXPAND_012
+     * @tc.desc   Creates the smallest range that includes the current range and a given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_expand_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.expand(tempLess)
@@ -1850,12 +1850,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_EXPAND_013
-     * @tc.name: test_expand_013
-     * @tc.desc: Creates the smallest range that includes the current range and a given value.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_expand_013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EXPAND_013
+     * @tc.desc   Creates the smallest range that includes the current range and a given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_expand_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.expand(tempMore)
@@ -1863,12 +1863,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_EXPAND_014
-     * @tc.name: test_expand_014
-     * @tc.desc: Creates the smallest range that includes the current range and a given value.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_expand_014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EXPAND_014
+     * @tc.desc   Creates the smallest range that includes the current range and a given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_expand_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.expand(tempLower)
@@ -1876,12 +1876,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_EXPAND_015
-     * @tc.name: test_expand_015
-     * @tc.desc: Creates the smallest range that includes the current range and a given value.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_expand_015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EXPAND_015
+     * @tc.desc   Creates the smallest range that includes the current range and a given value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_expand_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.expand(tempUpper)
@@ -1889,12 +1889,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_INTERSECT_001
-     * @tc.name: test_intersect_001
-     * @tc.desc: Returns the intersection of a given range and the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_intersect_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTERSECT_001
+     * @tc.desc   Returns the intersection of a given range and the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_intersect_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.intersect(rangeHpFir)
@@ -1902,12 +1902,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_INTERSECT_002
-     * @tc.name: test_intersect_002
-     * @tc.desc: Returns the intersection of a given range and the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_intersect_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTERSECT_002
+     * @tc.desc   Returns the intersection of a given range and the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_intersect_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.intersect(rangeHpSec)
@@ -1915,12 +1915,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_INTERSECT_003
-     * @tc.name: test_intersect_003
-     * @tc.desc: Returns the intersection of a given range and the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_intersect_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTERSECT_003
+     * @tc.desc   Returns the intersection of a given range and the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_intersect_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.intersect(rangeHpThi)
@@ -1928,12 +1928,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_INTERSECT_004
-     * @tc.name: test_intersect_004
-     * @tc.desc: Returns the intersection of a given range and the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_intersect_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTERSECT_004
+     * @tc.desc   Returns the intersection of a given range and the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_intersect_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.intersect(rangeHpFif)
@@ -1941,12 +1941,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_INTERSECT_005
-     * @tc.name: test_intersect_005
-     * @tc.desc: Returns the intersection of a given range and the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_intersect_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTERSECT_005
+     * @tc.desc   Returns the intersection of a given range and the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_intersect_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.intersect(rangeHp)
@@ -1954,13 +1954,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_INTERSECT_006
-     * @tc.name: test_intersect_006
-     * @tc.desc: Returns the intersection of the current range and the range specified by
-       the given lower and upper bounds.
-       @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_intersect_006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTERSECT_006
+     * @tc.desc   Returns the intersection of the current range and the range specified by
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_intersect_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.intersect(tempMiDF, tempMidS)
@@ -1968,13 +1967,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_INTERSECT_007
-     * @tc.name: test_intersect_007
-     * @tc.desc: Returns the intersection of the current range and the range specified by
-       the given lower and upper bounds.
-       @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_intersect_007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTERSECT_007
+     * @tc.desc   Returns the intersection of the current range and the range specified by
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_intersect_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.intersect(tempLess, tempMore)
@@ -1982,13 +1980,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_INTERSECT_008
-     * @tc.name: test_intersect_008
-     * @tc.desc: Returns the intersection of the current range and the range specified by
-       the given lower and upper bounds.
-       @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_intersect_008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTERSECT_008
+     * @tc.desc   Returns the intersection of the current range and the range specified by
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_intersect_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.intersect(tempLess, tempMiDF)
@@ -1996,13 +1993,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_INTERSECT_009
-     * @tc.name: test_intersect_009
-     * @tc.desc: Returns the intersection of the current range and the range specified by
-       the given lower and upper bounds.
-       @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_intersect_009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTERSECT_009
+     * @tc.desc   Returns the intersection of the current range and the range specified by
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_intersect_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.intersect(tempMiDF, tempMore)
@@ -2010,13 +2006,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_INTERSECT_010
-     * @tc.name: test_intersect_010
-     * @tc.desc: Returns the intersection of the current range and the range specified by
-       the given lower and upper bounds.
-       @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   test_intersect_010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTERSECT_010
+     * @tc.desc   Returns the intersection of the current range and the range specified by
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_intersect_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         var result = rangeHp.intersect(tempLower, tempUpper)
@@ -2024,12 +2019,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_TO_STRING_001
-     * @tc.name: test_toString_001
-     * @tc.desc: Obtains a string representation of the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_toString_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TO_STRING_001
+     * @tc.desc   Obtains a string representation of the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_toString_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var result = rangeHp.toString()
@@ -2037,12 +2032,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_TO_STRING_002
-     * @tc.name: test_toString_002
-     * @tc.desc: Obtains a string representation of the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_toString_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TO_STRING_002
+     * @tc.desc   Obtains a string representation of the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_toString_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var result = rangeHpFir.toString()
@@ -2050,12 +2045,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_TO_STRING_003
-     * @tc.name: test_toString_003
-     * @tc.desc: Obtains a string representation of the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_toString_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TO_STRING_003
+     * @tc.desc   Obtains a string representation of the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_toString_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var result = rangeHpSec.toString()
@@ -2063,12 +2058,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_TO_STRING_004
-     * @tc.name: test_toString_004
-     * @tc.desc: Obtains a string representation of the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_toString_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TO_STRING_004
+     * @tc.desc   Obtains a string representation of the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_toString_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var result = rangeHpThi.toString()
@@ -2076,12 +2071,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_TO_STRING_005
-     * @tc.name: test_toString_005
-     * @tc.desc: Obtains a string representation of the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_toString_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TO_STRING_005
+     * @tc.desc   Obtains a string representation of the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_toString_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var result = rangeHpFif.toString()
@@ -2089,12 +2084,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_THROW_ERROR_001
-     * @tc.name: test_constructor_throwError_001
-     * @tc.desc: A constructor used to create a Scope instance with the lower and upper bounds specified.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_constructor_throwError_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_THROW_ERROR_001
+     * @tc.desc   A constructor used to create a Scope instance with the lower and upper bounds specified.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_constructor_throwError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2105,12 +2100,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_INTERSECT_THROW_ERROR_001
-     * @tc.name: test_intersect_throwError_001
-     * @tc.desc: Returns the intersection of a given range and the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_intersect_throwError_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTERSECT_THROW_ERROR_001
+     * @tc.desc   Returns the intersection of a given range and the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_intersect_throwError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2123,13 +2118,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_INTERSECT_THROW_ERROR_002
-     * @tc.name: test_intersect_throwError_002
-     * @tc.desc: Returns the intersection of the current range and the range specified by
-       the given lower and upper bounds.
-       @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_intersect_throwError_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTERSECT_THROW_ERROR_002
+     * @tc.desc   Returns the intersection of the current range and the range specified by
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_intersect_throwError_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2141,12 +2135,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_EXPAND_THROW_ERROR_001
-     * @tc.name: test_expand_throwError_001
-     * @tc.desc: Creates the smallest range that includes the current range and the given lower and upper bounds.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_expand_throwError_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EXPAND_THROW_ERROR_001
+     * @tc.desc   Creates the smallest range that includes the current range and the given lower and upper bounds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_expand_throwError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2158,12 +2152,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_EXPAND_THROW_ERROR_002
-     * @tc.name: test_expand_throwError_002
-     * @tc.desc: Creates the smallest range that includes the current range and a given range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_expand_throwError_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EXPAND_THROW_ERROR_002
+     * @tc.desc   Creates the smallest range that includes the current range and a given range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_expand_throwError_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2176,12 +2170,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_CONTAINS_THROW_ERROR_001
-     * @tc.name: test_contains_throwError_001
-     * @tc.desc: Checks whether a given value is within the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_contains_throwError_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONTAINS_THROW_ERROR_001
+     * @tc.desc   Checks whether a given value is within the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_contains_throwError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2194,12 +2188,12 @@ describe('ScopeHelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_CLAMP_THROW_ERROR_001
-     * @tc.name: test_clamp_throwError_001
-     * @tc.desc: Clamps a given value to the current range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_clamp_throwError_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLAMP_THROW_ERROR_001
+     * @tc.desc   Clamps a given value to the current range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_clamp_throwError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -2213,12 +2207,12 @@ describe('ScopeHelperTest', function () {
 
 describe('LRUCacheTest', function () {
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_UPDATE_GET_CAPACITY_001
-     * @tc.name: testLRUCacheUpdateGetCapacity001
-     * @tc.desc: Updates the buffer capacity to a specified capacity.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheUpdateGetCapacity001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_UPDATE_GET_CAPACITY_001
+     * @tc.desc   Updates the buffer capacity to a specified capacity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateGetCapacity001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2228,12 +2222,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_UPDATE_GET_CAPACITY_002
-     * @tc.name: testLRUCacheUpdateGetCapacity002
-     * @tc.desc: Updates the buffer capacity to a specified capacity.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheUpdateGetCapacity002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_UPDATE_GET_CAPACITY_002
+     * @tc.desc   Updates the buffer capacity to a specified capacity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateGetCapacity002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2243,12 +2237,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_UPDATE_GET_CAPACITY_003
-     * @tc.name: testLRUCacheUpdateGetCapacity003
-     * @tc.desc: Updates the buffer capacity to a specified capacity.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheUpdateGetCapacity003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_UPDATE_GET_CAPACITY_003
+     * @tc.desc   Updates the buffer capacity to a specified capacity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateGetCapacity003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache(100)
@@ -2258,12 +2252,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_UPDATE_GET_CAPACITY_004
-     * @tc.name: testLRUCacheUpdateGetCapacity004
-     * @tc.desc: Updates the buffer capacity to a specified capacity.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheUpdateGetCapacity004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_UPDATE_GET_CAPACITY_004
+     * @tc.desc   Updates the buffer capacity to a specified capacity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateGetCapacity004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache(50)
@@ -2273,12 +2267,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_UPDATE_GET_CAPACITY_005
-     * @tc.name: testLRUCacheUpdateGetCapacity005
-     * @tc.desc: Updates the buffer capacity to a specified capacity.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheUpdateGetCapacity005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_UPDATE_GET_CAPACITY_005
+     * @tc.desc   Updates the buffer capacity to a specified capacity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateGetCapacity005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache(200)
@@ -2288,12 +2282,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_UPDATE_GET_CAPACITY_006
-     * @tc.name: testLRUCacheUpdateGetCapacity006
-     * @tc.desc: Updates the buffer capacity to a specified capacity.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheUpdateGetCapacity006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_UPDATE_GET_CAPACITY_006
+     * @tc.desc   Updates the buffer capacity to a specified capacity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateGetCapacity006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache(200)
@@ -2307,12 +2301,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_001
-     * @tc.name: testLRUCacheGet001
-     * @tc.desc: Obtains the value associated with a specified key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGet001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_001
+     * @tc.desc   Obtains the value associated with a specified key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache(100)
@@ -2322,12 +2316,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_002
-     * @tc.name: testLRUCacheGet002
-     * @tc.desc: Obtains the value associated with a specified key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGet002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_002
+     * @tc.desc   Obtains the value associated with a specified key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache(100)
@@ -2337,12 +2331,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_003
-     * @tc.name: testLRUCacheGet003
-     * @tc.desc: Obtains the value associated with a specified key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGet003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_003
+     * @tc.desc   Obtains the value associated with a specified key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache(100)
@@ -2358,12 +2352,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_004
-     * @tc.name: testLRUCacheGet004
-     * @tc.desc: Obtains the value associated with a specified key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGet004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_004
+     * @tc.desc   Obtains the value associated with a specified key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2381,12 +2375,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_005
-     * @tc.name: testLRUCacheGet005
-     * @tc.desc: Obtains the value associated with a specified key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGet005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_005
+     * @tc.desc   Obtains the value associated with a specified key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2405,12 +2399,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_006
-     * @tc.name: testLRUCacheGet006
-     * @tc.desc: Obtains the value associated with a specified key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGet006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_006
+     * @tc.desc   Obtains the value associated with a specified key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2426,12 +2420,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_PUT_001
-     * @tc.name: testLRUCachePut001
-     * @tc.desc: Adds a key-value pair to the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCachePut001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_PUT_001
+     * @tc.desc   Adds a key-value pair to the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCachePut001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2440,12 +2434,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_PUT_002
-     * @tc.name: testLRUCachePut002
-     * @tc.desc: Adds a key-value pair to the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCachePut002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_PUT_002
+     * @tc.desc   Adds a key-value pair to the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCachePut002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2455,12 +2449,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_PUT_003
-     * @tc.name: testLRUCachePut003
-     * @tc.desc: Adds a key-value pair to the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCachePut003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_PUT_003
+     * @tc.desc   Adds a key-value pair to the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCachePut003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2476,12 +2470,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_PUT_004
-     * @tc.name: testLRUCachePut004
-     * @tc.desc: Adds a key-value pair to the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCachePut004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_PUT_004
+     * @tc.desc   Adds a key-value pair to the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCachePut004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2499,12 +2493,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_PUT_005
-     * @tc.name: testLRUCachePut005
-     * @tc.desc: Adds a key-value pair to the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCachePut005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_PUT_005
+     * @tc.desc   Adds a key-value pair to the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCachePut005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2523,12 +2517,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_PUT_006
-     * @tc.name: testLRUCachePut006
-     * @tc.desc: Adds a key-value pair to the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCachePut006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_PUT_006
+     * @tc.desc   Adds a key-value pair to the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCachePut006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2543,12 +2537,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CREATE_COUNT_001
-     * @tc.name: testLRUCacheGetCreateCount001
-     * @tc.desc: Obtains the number of times createDefault(Object) returned a value.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetCreateCount001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CREATE_COUNT_001
+     * @tc.desc   Obtains the number of times createDefault(Object) returned a value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetCreateCount001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2563,12 +2557,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CREATE_COUNT_002
-     * @tc.name: testLRUCacheGetCreateCount002
-     * @tc.desc: Obtains the number of times createDefault(Object) returned a value.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetCreateCount002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CREATE_COUNT_002
+     * @tc.desc   Obtains the number of times createDefault(Object) returned a value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetCreateCount002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2583,12 +2577,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CREATE_COUNT_003
-     * @tc.name: testLRUCacheGetCreateCount003
-     * @tc.desc: Obtains the number of times createDefault(Object) returned a value.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetCreateCount003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CREATE_COUNT_003
+     * @tc.desc   Obtains the number of times createDefault(Object) returned a value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetCreateCount003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2601,12 +2595,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CREATE_COUNT_004
-     * @tc.name: testLRUCacheGetCreateCount004
-     * @tc.desc: Obtains the number of times createDefault(Object) returned a value.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetCreateCount004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CREATE_COUNT_004
+     * @tc.desc   Obtains the number of times createDefault(Object) returned a value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetCreateCount004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2621,12 +2615,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CREATE_COUNT_005
-     * @tc.name: testLRUCacheGetCreateCount005
-     * @tc.desc: Obtains the number of times createDefault(Object) returned a value.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetCreateCount005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CREATE_COUNT_005
+     * @tc.desc   Obtains the number of times createDefault(Object) returned a value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetCreateCount005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2641,12 +2635,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MISS_COUNT_001
-     * @tc.name: testLRUCacheGetMissCount001
-     * @tc.desc: Obtains the number of times that the queried values are not matched.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetMissCount001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MISS_COUNT_001
+     * @tc.desc   Obtains the number of times that the queried values are not matched.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMissCount001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2661,12 +2655,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MISS_COUNT_002
-     * @tc.name: testLRUCacheGetMissCount002
-     * @tc.desc: Obtains the number of times that the queried values are not matched.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetMissCount002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MISS_COUNT_002
+     * @tc.desc   Obtains the number of times that the queried values are not matched.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMissCount002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2681,12 +2675,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MISS_COUNT_003
-     * @tc.name: testLRUCacheGetMissCount003
-     * @tc.desc: Obtains the number of times that the queried values are not matched.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetMissCount003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MISS_COUNT_003
+     * @tc.desc   Obtains the number of times that the queried values are not matched.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMissCount003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2701,12 +2695,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MISS_COUNT_004
-     * @tc.name: testLRUCacheGetMissCount004
-     * @tc.desc: Obtains the number of times that the queried values are not matched.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetMissCount004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MISS_COUNT_004
+     * @tc.desc   Obtains the number of times that the queried values are not matched.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMissCount004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2721,12 +2715,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MISS_COUNT_005
-     * @tc.name: testLRUCacheGetMissCount005
-     * @tc.desc: Obtains the number of times that the queried values are not matched.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetMissCount005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MISS_COUNT_005
+     * @tc.desc   Obtains the number of times that the queried values are not matched.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMissCount005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2743,12 +2737,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MISS_COUNT_006
-     * @tc.name: testLRUCacheGetMissCount006
-     * @tc.desc: Obtains the number of times that the queried values are not matched.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetMissCount006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MISS_COUNT_006
+     * @tc.desc   Obtains the number of times that the queried values are not matched.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMissCount006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2763,12 +2757,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_REMOVAL_COUNT_001
-     * @tc.name: testLRUCacheGetRemovalCount001
-     * @tc.desc: Obtains the number of times that values are evicted from the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetRemovalCount001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_REMOVAL_COUNT_001
+     * @tc.desc   Obtains the number of times that values are evicted from the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetRemovalCount001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2782,12 +2776,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_REMOVAL_COUNT_002
-     * @tc.name: testLRUCacheGetRemovalCount002
-     * @tc.desc: Obtains the number of times that values are evicted from the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetRemovalCount002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_REMOVAL_COUNT_002
+     * @tc.desc   Obtains the number of times that values are evicted from the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetRemovalCount002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2800,12 +2794,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_REMOVAL_COUNT_003
-     * @tc.name: testLRUCacheGetRemovalCount003
-     * @tc.desc: Obtains the number of times that values are evicted from the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetRemovalCount003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_REMOVAL_COUNT_003
+     * @tc.desc   Obtains the number of times that values are evicted from the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetRemovalCount003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2817,12 +2811,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_REMOVAL_COUNT_004
-     * @tc.name: testLRUCacheGetRemovalCount004
-     * @tc.desc: Obtains the number of times that values are evicted from the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetRemovalCount004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_REMOVAL_COUNT_004
+     * @tc.desc   Obtains the number of times that values are evicted from the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetRemovalCount004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2837,12 +2831,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_REMOVAL_COUNT_005
-     * @tc.name: testLRUCacheGetRemovalCount005
-     * @tc.desc: Obtains the number of times that values are evicted from the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetRemovalCount005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_REMOVAL_COUNT_005
+     * @tc.desc   Obtains the number of times that values are evicted from the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetRemovalCount005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2858,12 +2852,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MATCH_COUNT_001
-     * @tc.name: testLRUCacheGetMatchCount001
-     * @tc.desc: Obtains the number of times that the queried values are successfully matched.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetMatchCount001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MATCH_COUNT_001
+     * @tc.desc   Obtains the number of times that the queried values are successfully matched.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMatchCount001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2878,12 +2872,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MATCH_COUNT_002
-     * @tc.name: testLRUCacheGetMatchCount002
-     * @tc.desc: Obtains the number of times that the queried values are successfully matched.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetMatchCount002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MATCH_COUNT_002
+     * @tc.desc   Obtains the number of times that the queried values are successfully matched.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMatchCount002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2899,12 +2893,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MATCH_COUNT_003
-     * @tc.name: testLRUCacheGetMatchCount003
-     * @tc.desc: Obtains the number of times that the queried values are successfully matched.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetMatchCount003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MATCH_COUNT_003
+     * @tc.desc   Obtains the number of times that the queried values are successfully matched.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMatchCount003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2919,12 +2913,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MATCH_COUNT_004
-     * @tc.name: testLRUCacheGetMatchCount004
-     * @tc.desc: Obtains the number of times that the queried values are successfully matched.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetMatchCount004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MATCH_COUNT_004
+     * @tc.desc   Obtains the number of times that the queried values are successfully matched.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMatchCount004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2942,12 +2936,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MATCH_COUNT_005
-     * @tc.name: testLRUCacheGetMatchCount005
-     * @tc.desc: Obtains the number of times that the queried values are successfully matched.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetMatchCount005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MATCH_COUNT_005
+     * @tc.desc   Obtains the number of times that the queried values are successfully matched.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMatchCount005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2968,12 +2962,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MATCH_COUNT_006
-     * @tc.name: testLRUCacheGetMatchCount006
-     * @tc.desc: Obtains the number of times that the queried values are successfully matched.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetMatchCount006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_MATCH_COUNT_006
+     * @tc.desc   Obtains the number of times that the queried values are successfully matched.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMatchCount006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -2986,12 +2980,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_PUT_COUNT_001
-     * @tc.name: testLRUCacheGetPutCount001
-     * @tc.desc: Obtains the number of times that values are added to the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetPutCount001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_PUT_COUNT_001
+     * @tc.desc   Obtains the number of times that values are added to the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetPutCount001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3001,12 +2995,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_PUT_COUNT_002
-     * @tc.name: testLRUCacheGetPutCount002
-     * @tc.desc: Obtains the number of times that values are added to the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetPutCount002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_PUT_COUNT_002
+     * @tc.desc   Obtains the number of times that values are added to the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetPutCount002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3017,12 +3011,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_PUT_COUNT_003
-     * @tc.name: testLRUCacheGetPutCount003
-     * @tc.desc: Obtains the number of times that values are added to the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetPutCount003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_PUT_COUNT_003
+     * @tc.desc   Obtains the number of times that values are added to the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetPutCount003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3034,12 +3028,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_PUT_COUNT_004
-     * @tc.name: testLRUCacheGetPutCount004
-     * @tc.desc: Obtains the number of times that values are added to the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetPutCount004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_PUT_COUNT_004
+     * @tc.desc   Obtains the number of times that values are added to the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetPutCount004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3051,12 +3045,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_PUT_COUNT_005
-     * @tc.name: testLRUCacheGetPutCount005
-     * @tc.desc: Obtains the number of times that values are added to the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetPutCount005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_PUT_COUNT_005
+     * @tc.desc   Obtains the number of times that values are added to the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetPutCount005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3069,12 +3063,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CAPACITY_001
-     * @tc.name: testLRUCacheGetCapacity001
-     * @tc.desc: Obtains the capacity of the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetCapacity001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CAPACITY_001
+     * @tc.desc   Obtains the capacity of the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetCapacity001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3083,12 +3077,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CAPACITY_002
-     * @tc.name: testLRUCacheGetCapacity002
-     * @tc.desc: Obtains the capacity of the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetCapacity002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CAPACITY_002
+     * @tc.desc   Obtains the capacity of the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetCapacity002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache(2)
@@ -3097,12 +3091,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CAPACITY_003
-     * @tc.name: testLRUCacheGetCapacity003
-     * @tc.desc: Obtains the capacity of the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetCapacity003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CAPACITY_003
+     * @tc.desc   Obtains the capacity of the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetCapacity003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache(100)
@@ -3111,12 +3105,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CAPACITY_004
-     * @tc.name: testLRUCacheGetCapacity004
-     * @tc.desc: Obtains the capacity of the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetCapacity004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CAPACITY_004
+     * @tc.desc   Obtains the capacity of the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetCapacity004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3126,12 +3120,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CAPACITY_005
-     * @tc.name: testLRUCacheGetCapacity005
-     * @tc.desc: Obtains the capacity of the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGetCapacity005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_CAPACITY_005
+     * @tc.desc   Obtains the capacity of the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetCapacity005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache(100)
@@ -3141,12 +3135,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_LENGTH_001
-     * @tc.name: testLRUCacheLength001
-     * @tc.desc: Obtains the total number of values in the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheLength001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_LENGTH_001
+     * @tc.desc   Obtains the total number of values in the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheLength001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3155,12 +3149,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_LENGTH_002
-     * @tc.name: testLRUCacheLength002
-     * @tc.desc: Obtains the total number of values in the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheLength002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_LENGTH_002
+     * @tc.desc   Obtains the total number of values in the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheLength002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3170,12 +3164,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_LENGTH_003
-     * @tc.name: testLRUCacheLength003
-     * @tc.desc: Obtains the total number of values in the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheLength003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_LENGTH_003
+     * @tc.desc   Obtains the total number of values in the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheLength003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3186,12 +3180,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_LENGTH_004
-     * @tc.name: testLRUCacheLength004
-     * @tc.desc: Obtains the total number of values in the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheLength004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_LENGTH_004
+     * @tc.desc   Obtains the total number of values in the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheLength004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3204,12 +3198,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_LENGTH_005
-     * @tc.name: testLRUCacheLength005
-     * @tc.desc: Obtains the total number of values in the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheLength005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_LENGTH_005
+     * @tc.desc   Obtains the total number of values in the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheLength005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3225,12 +3219,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CLEAR_001
-     * @tc.name: testLRUCacheClear001
-     * @tc.desc: Clears key-value pairs from the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheClear001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CLEAR_001
+     * @tc.desc   Clears key-value pairs from the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheClear001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3243,12 +3237,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CLEAR_002
-     * @tc.name: testLRUCacheClear002
-     * @tc.desc: Clears key-value pairs from the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheClear002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CLEAR_002
+     * @tc.desc   Clears key-value pairs from the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheClear002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3264,12 +3258,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CLEAR_003
-     * @tc.name: testLRUCacheClear003
-     * @tc.desc: Clears key-value pairs from the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheClear003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CLEAR_003
+     * @tc.desc   Clears key-value pairs from the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheClear003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3285,12 +3279,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CLEAR_004
-     * @tc.name: testLRUCacheClear004
-     * @tc.desc: Clears key-value pairs from the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheClear004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CLEAR_004
+     * @tc.desc   Clears key-value pairs from the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheClear004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3306,12 +3300,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CLEAR_005
-     * @tc.name: testLRUCacheClear005
-     * @tc.desc: Clears key-value pairs from the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheClear005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CLEAR_005
+     * @tc.desc   Clears key-value pairs from the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheClear005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3328,12 +3322,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_IS_EMPTY_001
-     * @tc.name: testLRUCacheIsEmpty001
-     * @tc.desc: Checks whether the current buffer is empty.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheIsEmpty001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_IS_EMPTY_001
+     * @tc.desc   Checks whether the current buffer is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheIsEmpty001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3343,12 +3337,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_IS_EMPTY_002
-     * @tc.name: testLRUCacheIsEmpty002
-     * @tc.desc: Checks whether the current buffer is empty.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheIsEmpty002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_IS_EMPTY_002
+     * @tc.desc   Checks whether the current buffer is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheIsEmpty002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3359,12 +3353,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_IS_EMPTY_003
-     * @tc.name: testLRUCacheIsEmpty003
-     * @tc.desc: Checks whether the current buffer is empty.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheIsEmpty003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_IS_EMPTY_003
+     * @tc.desc   Checks whether the current buffer is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheIsEmpty003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3376,12 +3370,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_IS_EMPTY_004
-     * @tc.name: testLRUCacheIsEmpty004
-     * @tc.desc: Checks whether the current buffer is empty.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheIsEmpty004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_IS_EMPTY_004
+     * @tc.desc   Checks whether the current buffer is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheIsEmpty004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3393,12 +3387,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_IS_EMPTY_005
-     * @tc.name: testLRUCacheIsEmpty005
-     * @tc.desc: Checks whether the current buffer is empty.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheIsEmpty005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_IS_EMPTY_005
+     * @tc.desc   Checks whether the current buffer is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheIsEmpty005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3411,12 +3405,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CONTAINS_001
-     * @tc.name: testLRUCacheContains001
-     * @tc.desc: Checks whether the current buffer contains a specified key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheContains001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CONTAINS_001
+     * @tc.desc   Checks whether the current buffer contains a specified key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheContains001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3426,12 +3420,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CONTAINS_002
-     * @tc.name: testLRUCacheContains002
-     * @tc.desc: Checks whether the current buffer contains a specified key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheContains002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CONTAINS_002
+     * @tc.desc   Checks whether the current buffer contains a specified key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheContains002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3441,12 +3435,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CONTAINS_003
-     * @tc.name: testLRUCacheContains003
-     * @tc.desc: Checks whether the current buffer contains a specified key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheContains003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CONTAINS_003
+     * @tc.desc   Checks whether the current buffer contains a specified key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheContains003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3456,12 +3450,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CONTAINS_004
-     * @tc.name: testLRUCacheContains004
-     * @tc.desc: Checks whether the current buffer contains a specified key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheContains004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CONTAINS_004
+     * @tc.desc   Checks whether the current buffer contains a specified key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheContains004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3474,12 +3468,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CONTAINS_005
-     * @tc.name: testLRUCacheContains005
-     * @tc.desc: Checks whether the current buffer contains a specified key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheContains005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CONTAINS_005
+     * @tc.desc   Checks whether the current buffer contains a specified key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheContains005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3494,12 +3488,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CONTAINS_006
-     * @tc.name: testLRUCacheContains006
-     * @tc.desc: Checks whether the current buffer contains a specified key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheContains006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CONTAINS_006
+     * @tc.desc   Checks whether the current buffer contains a specified key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheContains006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3515,12 +3509,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_REMOVE_001
-     * @tc.name: testLRUCacheRemove001
-     * @tc.desc: Deletes a specified key and its associated value from the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheRemove001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_REMOVE_001
+     * @tc.desc   Deletes a specified key and its associated value from the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheRemove001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3530,12 +3524,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_REMOVE_002
-     * @tc.name: testLRUCacheRemove002
-     * @tc.desc: Deletes a specified key and its associated value from the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheRemove002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_REMOVE_002
+     * @tc.desc   Deletes a specified key and its associated value from the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheRemove002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3548,12 +3542,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_REMOVE_003
-     * @tc.name: testLRUCacheRemove003
-     * @tc.desc: Deletes a specified key and its associated value from the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheRemove003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_REMOVE_003
+     * @tc.desc   Deletes a specified key and its associated value from the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheRemove003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3565,12 +3559,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_REMOVE_004
-     * @tc.name: testLRUCacheRemove004
-     * @tc.desc: Deletes a specified key and its associated value from the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheRemove004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_REMOVE_004
+     * @tc.desc   Deletes a specified key and its associated value from the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheRemove004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3583,12 +3577,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_REMOVE_005
-     * @tc.name: testLRUCacheRemove005
-     * @tc.desc: Deletes a specified key and its associated value from the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheRemove005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_REMOVE_005
+     * @tc.desc   Deletes a specified key and its associated value from the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheRemove005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3604,12 +3598,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_REMOVE_006
-     * @tc.name: testLRUCacheRemove006
-     * @tc.desc: Deletes a specified key and its associated value from the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheRemove006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_REMOVE_006
+     * @tc.desc   Deletes a specified key and its associated value from the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheRemove006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3625,12 +3619,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CREATE_DEFAULT_001
-     * @tc.name: testLRUCacheCreateDefault001
-     * @tc.desc: Executes subsequent operations if miss to compute a value for the specific key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheCreateDefault001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CREATE_DEFAULT_001
+     * @tc.desc   Executes subsequent operations if miss to compute a value for the specific key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheCreateDefault001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3639,12 +3633,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CREATE_DEFAULT_002
-     * @tc.name: testLRUCacheCreateDefault002
-     * @tc.desc: Executes subsequent operations if miss to compute a value for the specific key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheCreateDefault002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CREATE_DEFAULT_002
+     * @tc.desc   Executes subsequent operations if miss to compute a value for the specific key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheCreateDefault002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3653,12 +3647,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CREATE_DEFAULT_003
-     * @tc.name: testLRUCacheCreateDefault003
-     * @tc.desc: Executes subsequent operations if miss to compute a value for the specific key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheCreateDefault003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CREATE_DEFAULT_003
+     * @tc.desc   Executes subsequent operations if miss to compute a value for the specific key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheCreateDefault003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3667,12 +3661,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CREATE_DEFAULT_004
-     * @tc.name: testLRUCacheCreateDefault004
-     * @tc.desc: Executes subsequent operations if miss to compute a value for the specific key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheCreateDefault004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CREATE_DEFAULT_004
+     * @tc.desc   Executes subsequent operations if miss to compute a value for the specific key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheCreateDefault004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3681,12 +3675,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CREATE_DEFAULT_005
-     * @tc.name: testLRUCacheCreateDefault005
-     * @tc.desc: Executes subsequent operations if miss to compute a value for the specific key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheCreateDefault005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CREATE_DEFAULT_005
+     * @tc.desc   Executes subsequent operations if miss to compute a value for the specific key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheCreateDefault005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3697,12 +3691,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CREATE_DEFAULT_006
-     * @tc.name: testLRUCacheCreateDefault006
-     * @tc.desc: Executes subsequent operations if miss to compute a value for the specific key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheCreateDefault006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CREATE_DEFAULT_006
+     * @tc.desc   Executes subsequent operations if miss to compute a value for the specific key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheCreateDefault006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3717,12 +3711,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_KEYS_001
-     * @tc.name: testLRUCacheKeys001
-     * @tc.desc: Obtains a list of keys for the values in the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheKeys001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_KEYS_001
+     * @tc.desc   Obtains a list of keys for the values in the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheKeys001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3732,12 +3726,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_KEYS_002
-     * @tc.name: testLRUCacheKeys002
-     * @tc.desc: Obtains a list of keys for the values in the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheKeys002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_KEYS_002
+     * @tc.desc   Obtains a list of keys for the values in the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheKeys002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3753,12 +3747,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_KEYS_003
-     * @tc.name: testLRUCacheKeys003
-     * @tc.desc: Obtains a list of keys for the values in the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheKeys003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_KEYS_003
+     * @tc.desc   Obtains a list of keys for the values in the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheKeys003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3775,12 +3769,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_KEYS_004
-     * @tc.name: testLRUCacheKeys004
-     * @tc.desc: Obtains a list of keys for the values in the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheKeys004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_KEYS_004
+     * @tc.desc   Obtains a list of keys for the values in the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheKeys004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3798,12 +3792,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_KEYS_005
-     * @tc.name: testLRUCacheKeys005
-     * @tc.desc: Obtains a list of keys for the values in the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheKeys005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_KEYS_005
+     * @tc.desc   Obtains a list of keys for the values in the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheKeys005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3823,12 +3817,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_VALUES_001
-     * @tc.name: testLRUCacheValues001
-     * @tc.desc: Obtains a list of all values in the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheValues001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_VALUES_001
+     * @tc.desc   Obtains a list of all values in the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheValues001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3838,12 +3832,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_VALUES_002
-     * @tc.name: testLRUCacheValues002
-     * @tc.desc: Obtains a list of all values in the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheValues002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_VALUES_002
+     * @tc.desc   Obtains a list of all values in the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheValues002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3859,12 +3853,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_VALUES_003
-     * @tc.name: testLRUCacheValues003
-     * @tc.desc: Obtains a list of all values in the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheValues003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_VALUES_003
+     * @tc.desc   Obtains a list of all values in the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheValues003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3881,12 +3875,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_VALUES_004
-     * @tc.name: testLRUCacheValues004
-     * @tc.desc: Obtains a list of all values in the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheValues004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_VALUES_004
+     * @tc.desc   Obtains a list of all values in the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheValues004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3904,12 +3898,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_VALUES_005
-     * @tc.name: testLRUCacheValues005
-     * @tc.desc: Obtains a list of all values in the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheValues005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_VALUES_005
+     * @tc.desc   Obtains a list of all values in the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheValues005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3929,12 +3923,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_TO_STRING_001
-     * @tc.name: testLRUCacheToString001
-     * @tc.desc: Returns a string representation of the object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheToString001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_TO_STRING_001
+     * @tc.desc   Returns a string representation of the object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3945,12 +3939,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_TO_STRING_002
-     * @tc.name: testLRUCacheToString002
-     * @tc.desc: Returns a string representation of the object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheToString002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_TO_STRING_002
+     * @tc.desc   Returns a string representation of the object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -3963,12 +3957,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_TO_STRING_003
-     * @tc.name: testLRUCacheToString003
-     * @tc.desc: Returns a string representation of the object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheToString003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_TO_STRING_003
+     * @tc.desc   Returns a string representation of the object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheToString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache(100)
@@ -3982,12 +3976,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_TO_STRING_004
-     * @tc.name: testLRUCacheToString004
-     * @tc.desc: Returns a string representation of the object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheToString004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_TO_STRING_004
+     * @tc.desc   Returns a string representation of the object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheToString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache(100)
@@ -4002,12 +3996,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_TO_STRING_005
-     * @tc.name: testLRUCacheToString005
-     * @tc.desc: Returns a string representation of the object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheToString005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_TO_STRING_005
+     * @tc.desc   Returns a string representation of the object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheToString005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache(100)
@@ -4024,12 +4018,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_ENTRIES_001
-     * @tc.name: testLRUCacheEntries001
-     * @tc.desc: Returns an array of key-value pairs of enumeratable properties of a given object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheEntries001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_ENTRIES_001
+     * @tc.desc   Returns an array of key-value pairs of enumeratable properties of a given object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheEntries001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -4046,12 +4040,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_ENTRIES_002
-     * @tc.name: testLRUCacheEntries002
-     * @tc.desc: Returns an array of key-value pairs of enumeratable properties of a given object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheEntries002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_ENTRIES_002
+     * @tc.desc   Returns an array of key-value pairs of enumeratable properties of a given object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheEntries002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -4071,12 +4065,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_ENTRIES_003
-     * @tc.name: testLRUCacheEntries003
-     * @tc.desc: Returns an array of key-value pairs of enumeratable properties of a given object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheEntries003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_ENTRIES_003
+     * @tc.desc   Returns an array of key-value pairs of enumeratable properties of a given object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheEntries003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -4097,12 +4091,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_ENTRIES_004
-     * @tc.name: testLRUCacheEntries004
-     * @tc.desc: Returns an array of key-value pairs of enumeratable properties of a given object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheEntries004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_ENTRIES_004
+     * @tc.desc   Returns an array of key-value pairs of enumeratable properties of a given object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheEntries004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -4125,12 +4119,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_ENTRIES_005
-     * @tc.name: testLRUCacheEntries005
-     * @tc.desc: Returns an array of key-value pairs of enumeratable properties of a given object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheEntries005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_ENTRIES_005
+     * @tc.desc   Returns an array of key-value pairs of enumeratable properties of a given object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheEntries005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -4157,12 +4151,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_[SYMBOL.ITERATOR]_001
-     * @tc.name: testLRUCache[Symbol.iterator]001
-     * @tc.desc: Returns a two - dimensional array in the form of key - value pairs.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCache[Symbol.iterator]001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_[SYMBOL.ITERATOR]_001
+     * @tc.desc   Returns a two - dimensional array in the form of key - value pairs.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCache[Symbol.iterator]001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -4180,12 +4174,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_[SYMBOL.ITERATOR]_002
-     * @tc.name: testLRUCache[Symbol.iterator]002
-     * @tc.desc: Returns a two - dimensional array in the form of key - value pairs.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCache[Symbol.iterator]002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_[SYMBOL.ITERATOR]_002
+     * @tc.desc   Returns a two - dimensional array in the form of key - value pairs.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCache[Symbol.iterator]002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -4205,12 +4199,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_[SYMBOL.ITERATOR]_003
-     * @tc.name: testLRUCache[Symbol.iterator]003
-     * @tc.desc: Returns a two - dimensional array in the form of key - value pairs.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCache[Symbol.iterator]003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_[SYMBOL.ITERATOR]_003
+     * @tc.desc   Returns a two - dimensional array in the form of key - value pairs.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCache[Symbol.iterator]003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -4231,12 +4225,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_[SYMBOL.ITERATOR]_004
-     * @tc.name: testLRUCache[Symbol.iterator]004
-     * @tc.desc: Returns a two - dimensional array in the form of key - value pairs.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCache[Symbol.iterator]004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_[SYMBOL.ITERATOR]_004
+     * @tc.desc   Returns a two - dimensional array in the form of key - value pairs.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCache[Symbol.iterator]004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -4259,12 +4253,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_[SYMBOL.ITERATOR]_005
-     * @tc.name: testLRUCache[Symbol.iterator]005
-     * @tc.desc: Returns a two - dimensional array in the form of key - value pairs.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCache[Symbol.iterator]005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_[SYMBOL.ITERATOR]_005
+     * @tc.desc   Returns a two - dimensional array in the form of key - value pairs.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCache[Symbol.iterator]005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -4291,12 +4285,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_AFTER_REMOVAL_001
-     * @tc.name: testLRUCacheAfterRemoval001
-     * @tc.desc: Executes subsequent operations after a value is deleted.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheAfterRemoval001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_AFTER_REMOVAL_001
+     * @tc.desc   Executes subsequent operations after a value is deleted.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheAfterRemoval001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var arr = [];
@@ -4327,12 +4321,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_AFTER_REMOVAL_002
-     * @tc.name: testLRUCacheAfterRemoval002
-     * @tc.desc: Executes subsequent operations after a value is deleted.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheAfterRemoval002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_AFTER_REMOVAL_002
+     * @tc.desc   Executes subsequent operations after a value is deleted.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheAfterRemoval002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var arr = [];
@@ -4363,12 +4357,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_AFTER_REMOVAL_003
-     * @tc.name: testLRUCacheAfterRemoval003
-     * @tc.desc: Executes subsequent operations after a value is deleted.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheAfterRemoval003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_AFTER_REMOVAL_003
+     * @tc.desc   Executes subsequent operations after a value is deleted.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheAfterRemoval003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var arr = [];
@@ -4399,12 +4393,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_AFTER_REMOVAL_004
-     * @tc.name: testLRUCacheAfterRemoval004
-     * @tc.desc: Executes subsequent operations after a value is deleted.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheAfterRemoval004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_AFTER_REMOVAL_004
+     * @tc.desc   Executes subsequent operations after a value is deleted.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheAfterRemoval004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var arr = [];
@@ -4435,12 +4429,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_AFTER_REMOVAL_005
-     * @tc.name: testLRUCacheAfterRemoval005
-     * @tc.desc: Executes subsequent operations after a value is deleted.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheAfterRemoval005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_AFTER_REMOVAL_005
+     * @tc.desc   Executes subsequent operations after a value is deleted.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheAfterRemoval005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var arr = [];
@@ -4471,12 +4465,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_AFTER_REMOVAL_006
-     * @tc.name: testLRUCacheAfterRemoval006
-     * @tc.desc: Executes subsequent operations after a value is deleted.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheAfterRemoval006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_AFTER_REMOVAL_006
+     * @tc.desc   Executes subsequent operations after a value is deleted.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheAfterRemoval006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var arr = [];
@@ -4502,12 +4496,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_AFTER_REMOVAL_007
-     * @tc.name: testLRUCacheAfterRemoval007
-     * @tc.desc: Executes subsequent operations after a value is deleted.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheAfterRemoval007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_AFTER_REMOVAL_007
+     * @tc.desc   Executes subsequent operations after a value is deleted.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheAfterRemoval007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var arr = [];
@@ -4533,12 +4527,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_AFTER_REMOVAL_008
-     * @tc.name: testLRUCacheAfterRemoval008
-     * @tc.desc: Executes subsequent operations after a value is deleted.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheAfterRemoval008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_AFTER_REMOVAL_008
+     * @tc.desc   Executes subsequent operations after a value is deleted.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheAfterRemoval008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var arrk = [];
@@ -4572,12 +4566,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CONSTRUCTOR_001
-     * @tc.name: testLRUCacheConstrcutor001
-     * @tc.desc: The default constructor is used to create a new LRUCache instance with a default capacity of 64.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheConstrcutor001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CONSTRUCTOR_001
+     * @tc.desc   The default constructor is used to create a new LRUCache instance with a default capacity of 64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheConstrcutor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try{
@@ -4590,12 +4584,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CONSTRUCTOR_00
-     * @tc.name: testLRUCacheConstrcutor001
-     * @tc.desc: The default constructor is used to create a new LRUCache instance with a default capacity of 64.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheConstrcutor002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_CONSTRUCTOR_00
+     * @tc.desc   The default constructor is used to create a new LRUCache instance with a default capacity of 64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheConstrcutor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try{
@@ -4608,12 +4602,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_UPDATE_GET_CAPACITY_007
-     * @tc.name: testLRUCacheUpdateGetCapacity007
-     * @tc.desc: Updates the buffer capacity to a specified capacity.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheUpdateGetCapacity007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_UPDATE_GET_CAPACITY_007
+     * @tc.desc   Updates the buffer capacity to a specified capacity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateGetCapacity007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache(200)
@@ -4627,12 +4621,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_UPDATE_GET_CAPACITY_008
-     * @tc.name: testLRUCacheUpdateGetCapacity008
-     * @tc.desc: Updates the buffer capacity to a specified capacity.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheUpdateGetCapacity008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_UPDATE_GET_CAPACITY_008
+     * @tc.desc   Updates the buffer capacity to a specified capacity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateGetCapacity008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache(200)
@@ -4646,12 +4640,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_007
-     * @tc.name: testLRUCacheGet007
-     * @tc.desc: Obtains the value associated with a specified key.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheGet007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_GET_007
+     * @tc.desc   Obtains the value associated with a specified key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGet007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -4666,12 +4660,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_PUT_007
-     * @tc.name: testLRUCachePut007
-     * @tc.desc: Adds a key-value pair to the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCachePut007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_PUT_007
+     * @tc.desc   Adds a key-value pair to the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCachePut007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -4685,12 +4679,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_PUT_008
-     * @tc.name: testLRUCachePut008
-     * @tc.desc: Adds a key-value pair to the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCachePut008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_PUT_008
+     * @tc.desc   Adds a key-value pair to the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCachePut008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -4704,12 +4698,12 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_LRU_CACHE_REMOVE_007
-     * @tc.name: testLRUCacheRemove007
-     * @tc.desc: Deletes a specified key and its associated value from the current buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLRUCacheRemove007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_REMOVE_007
+     * @tc.desc   Deletes a specified key and its associated value from the current buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheRemove007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
@@ -4726,12 +4720,12 @@ describe('LRUCacheTest', function () {
 
 describe('FunctionTest', function () {
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_FORMAT_001
-     * @tc.name: testUtilformat001
-     * @tc.desc: Returns the formatted string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilformat001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FORMAT_001
+     * @tc.desc   Returns the formatted string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilformat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var format = "%i,%s";
@@ -4743,12 +4737,12 @@ describe('FunctionTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_FORMAT_002
-     * @tc.name: testUtilformat002
-     * @tc.desc: Returns the formatted string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilformat002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FORMAT_002
+     * @tc.desc   Returns the formatted string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilformat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var format = "%O";
@@ -4758,12 +4752,12 @@ describe('FunctionTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_FORMAT_003
-     * @tc.name: testUtilformat003
-     * @tc.desc: Returns the formatted string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilformat003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FORMAT_003
+     * @tc.desc   Returns the formatted string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilformat003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var format = "%o";
@@ -4774,12 +4768,12 @@ describe('FunctionTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_FORMAT_004
-     * @tc.name: testUtilformat004
-     * @tc.desc: Returns the formatted string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilformat004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FORMAT_004
+     * @tc.desc   Returns the formatted string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilformat004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var format = "%s,%s,%s";
@@ -4790,12 +4784,12 @@ describe('FunctionTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_FORMAT_005
-     * @tc.name: testUtilformat005
-     * @tc.desc: Returns the formatted string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilformat005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FORMAT_005
+     * @tc.desc   Returns the formatted string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilformat005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var format = "%d,%d";
@@ -4806,12 +4800,12 @@ describe('FunctionTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_FORMAT_THROW_ERROR_001
-     * @tc.name: testUtilformatThrowError001
-     * @tc.desc: Returns the formatted string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilformatThrowError001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FORMAT_THROW_ERROR_001
+     * @tc.desc   Returns the formatted string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilformatThrowError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -4828,12 +4822,12 @@ describe('FunctionTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_001
-     * @tc.name: testUtilerrnoToString001
-     * @tc.desc: Get the string name of the system errno.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilerrnoToString001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_001
+     * @tc.desc   Get the string name of the system errno.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilerrnoToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var errnum = 10;
@@ -4842,12 +4836,12 @@ describe('FunctionTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_002
-     * @tc.name: testUtilerrnoToString002
-     * @tc.desc: Get the string name of the system errno.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilerrnoToString002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_002
+     * @tc.desc   Get the string name of the system errno.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilerrnoToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var errnum = 0;
@@ -4856,12 +4850,12 @@ describe('FunctionTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_003
-     * @tc.name: testUtilerrnoToString003
-     * @tc.desc: Get the string name of the system errno.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilerrnoToString003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_003
+     * @tc.desc   Get the string name of the system errno.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilerrnoToString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var errnum = -1;
@@ -4870,12 +4864,12 @@ describe('FunctionTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_004
-     * @tc.name: testUtilerrnoToString004
-     * @tc.desc: Get the string name of the system errno.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilerrnoToString004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_004
+     * @tc.desc   Get the string name of the system errno.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilerrnoToString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var errnum = 9;
@@ -4884,12 +4878,12 @@ describe('FunctionTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_005
-     * @tc.name: testUtilerrnoToString005
-     * @tc.desc: Get the string name of the system errno.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilerrnoToString005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_005
+     * @tc.desc   Get the string name of the system errno.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilerrnoToString005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var errnum = 555;
@@ -4898,12 +4892,12 @@ describe('FunctionTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_THROW_ERROR_001
-     * @tc.name: testUtilerrnoToStringThrowError001
-     * @tc.desc: Get the string name of the system errno.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilerrnoToStringThrowError001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_THROW_ERROR_001
+     * @tc.desc   Get the string name of the system errno.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilerrnoToStringThrowError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         try {
@@ -4916,13 +4910,12 @@ describe('FunctionTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_PROMISIFY_THROW_ERROR_001
-     * @tc.name: testUtilPromisifyThrowError001
-     * @tc.desc: Takes a function following the common error-first callback style,
-       taking an callback as the last argument, and return a function that returns promises.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilPromisifyThrowError001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROMISIFY_THROW_ERROR_001
+     * @tc.desc   Takes a function following the common error-first callback style,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilPromisifyThrowError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         try {
@@ -4936,15 +4929,15 @@ describe('FunctionTest', function () {
         }
     })
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_RANDOM_UUID_THROW_ERROR_001
-     * @tc.name: testUtilRandomUUIDThrowError001
-     * @tc.desc: Generate a random RFC 4122 version 4 UUID.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
 
+    /**
+     * @tc.name   testUtilRandomUUIDThrowError001
+     * @tc.number testUtilRandomUUIDThrowError001
+     * @tc.desc   testUtilRandomUUIDThrowError001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testUtilRandomUUIDThrowError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         try {
             var result = util.randomUUID(123);
@@ -4955,12 +4948,12 @@ describe('FunctionTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_RANDOM_BINARY_UUID_THROW_ERROR_001
-     * @tc.name: testUtilRandomBinaryUUIDThrowError001
-     * @tc.desc: Generate a random RFC 4122 version 4 UUID.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilRandomBinaryUUIDThrowError001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_RANDOM_BINARY_UUID_THROW_ERROR_001
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilRandomBinaryUUIDThrowError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         try {
@@ -4972,12 +4965,12 @@ describe('FunctionTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_RANDOM_PARSE_UUID_THROW_001
-     * @tc.name: testUtilParseUUIDThrow001
-     * @tc.desc: Generate a random RFC 4122 version 4 UUID.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilParseUUIDThrow001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_RANDOM_PARSE_UUID_THROW_001
+     * @tc.desc   Generate a random RFC 4122 version 4 UUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilParseUUIDThrow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         try {
@@ -4991,12 +4984,12 @@ describe('FunctionTest', function () {
 
 describe('RationalNumberTest', function () {
     /**
-     * @tc.number: SUB_COMMONLIBRARY_PARSE_RATIONAL_NUMBER_001
-     * @tc.name: test_parseRationalNumber_001
-     * @tc.desc: Creates a RationalNumber object based on a given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_parseRationalNumber_001
+     * @tc.number SUB_COMMONLIBRARY_PARSE_RATIONAL_NUMBER_001
+     * @tc.desc   Creates a RationalNumber object based on a given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_parseRationalNumber_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var res = util.RationalNumber.parseRationalNumber(2, 1)
@@ -5005,12 +4998,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_PARSE_RATIONAL_NUMBER_THROW_ERROR_001
-     * @tc.name: test_parseRationalNumberThrowError_001
-     * @tc.desc: Creates a RationalNumber object based on a given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_parseRationalNumberThrowError_001
+     * @tc.number SUB_COMMONLIBRARY_PARSE_RATIONAL_NUMBER_THROW_ERROR_001
+     * @tc.desc   Creates a RationalNumber object based on a given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_parseRationalNumberThrowError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -5023,12 +5016,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_CREATE_RATIONAL_FROM_STRING_001
-     * @tc.name: test_createRationalFromString_001
-     * @tc.desc: Creates a RationalNumber object based on a given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_createRationalFromString_001
+     * @tc.number SUB_COMMONLIBRARY_CREATE_RATIONAL_FROM_STRING_001
+     * @tc.desc   Creates a RationalNumber object based on a given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_createRationalFromString_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var res = util.RationalNumber.createRationalFromString('-1:2')
@@ -5037,12 +5030,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_CREATE_RATIONAL_FROM_STRING_002
-     * @tc.name: test_createRationalFromString_002
-     * @tc.desc: Creates a RationalNumber object based on a given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_createRationalFromString_002
+     * @tc.number SUB_COMMONLIBRARY_CREATE_RATIONAL_FROM_STRING_002
+     * @tc.desc   Creates a RationalNumber object based on a given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_createRationalFromString_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var res = util.RationalNumber.createRationalFromString('+3/4')
@@ -5051,12 +5044,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_CREATE_RATIONAL_FROM_STRING_003
-     * @tc.name: test_createRationalFromString_003
-     * @tc.desc: Creates a RationalNumber object based on a given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_createRationalFromString_003
+     * @tc.number SUB_COMMONLIBRARY_CREATE_RATIONAL_FROM_STRING_003
+     * @tc.desc   Creates a RationalNumber object based on a given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_createRationalFromString_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var res = util.RationalNumber.createRationalFromString('+3:-4')
@@ -5065,12 +5058,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_CREATE_RATIONAL_FROM_STRING_004
-     * @tc.name: test_createRationalFromString_004
-     * @tc.desc: Creates a RationalNumber object based on a given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_createRationalFromString_004
+     * @tc.number SUB_COMMONLIBRARY_CREATE_RATIONAL_FROM_STRING_004
+     * @tc.desc   Creates a RationalNumber object based on a given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_createRationalFromString_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var res = util.RationalNumber.createRationalFromString('+2:4')
@@ -5079,12 +5072,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_CREATE_RATIONAL_FROM_STRING_005
-     * @tc.name: test_createRationalFromString_005
-     * @tc.desc: Creates a RationalNumber object based on a given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_createRationalFromString_005
+     * @tc.number SUB_COMMONLIBRARY_CREATE_RATIONAL_FROM_STRING_005
+     * @tc.desc   Creates a RationalNumber object based on a given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_createRationalFromString_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var res = util.RationalNumber.createRationalFromString('+2:-4')
@@ -5093,12 +5086,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_CREATE_RATIONAL_FROM_STRING_THROW_ERROR_001
-     * @tc.name: test_createRationalFromStringThrowError_001
-     * @tc.desc: Creates a RationalNumber object based on a given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_createRationalFromStringThrowError_001
+     * @tc.number SUB_COMMONLIBRARY_CREATE_RATIONAL_FROM_STRING_THROW_ERROR_001
+     * @tc.desc   Creates a RationalNumber object based on a given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_createRationalFromStringThrowError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -5111,12 +5104,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_COMPARE_001
-     * @tc.name: test_compare_001
-     * @tc.desc: Compares the current RationalNumber object with a given object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_compare_001
+     * @tc.number SUB_COMMONLIBRARY_COMPARE_001
+     * @tc.desc   Compares the current RationalNumber object with a given object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_compare_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var pro = util.RationalNumber.parseRationalNumber(2, 1)
@@ -5126,12 +5119,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_COMPARE_002
-     * @tc.name: test_compare_002
-     * @tc.desc: Compares the current RationalNumber object with a given object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_compare_002
+     * @tc.number SUB_COMMONLIBRARY_COMPARE_002
+     * @tc.desc   Compares the current RationalNumber object with a given object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_compare_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var pro = util.RationalNumber.parseRationalNumber(2, 1)
@@ -5141,12 +5134,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_COMPARE_003
-     * @tc.name: test_compare_003
-     * @tc.desc: Compares the current RationalNumber object with a given object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_compare_003
+     * @tc.number SUB_COMMONLIBRARY_COMPARE_003
+     * @tc.desc   Compares the current RationalNumber object with a given object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_compare_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var pro = util.RationalNumber.parseRationalNumber(2, 1)
@@ -5156,12 +5149,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_COMPARE_004
-     * @tc.name: test_compare_004
-     * @tc.desc: Compares the current RationalNumber object with a given object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_compare_004
+     * @tc.number SUB_COMMONLIBRARY_COMPARE_004
+     * @tc.desc   Compares the current RationalNumber object with a given object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_compare_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var pro = util.RationalNumber.parseRationalNumber(2, 1)
@@ -5171,12 +5164,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_COMPARE_005
-     * @tc.name: test_compare_005
-     * @tc.desc: Compares the current RationalNumber object with a given object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_compare_005
+     * @tc.number SUB_COMMONLIBRARY_COMPARE_005
+     * @tc.desc   Compares the current RationalNumber object with a given object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_compare_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var pro = util.RationalNumber.parseRationalNumber(0, 0)
@@ -5186,12 +5179,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_COMPARE_THROW_ERROR_001
-     * @tc.name: test_compareThrowError_001
-     * @tc.desc: Compares the current RationalNumber object with a given object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_compareThrowError_001
+     * @tc.number SUB_COMMONLIBRARY_COMPARE_THROW_ERROR_001
+     * @tc.desc   Compares the current RationalNumber object with a given object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_compareThrowError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -5205,12 +5198,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_GET_COMMON_FACTOR_001
-     * @tc.name: testgetCommonFactor001
-     * @tc.desc: Obtains the greatest common divisor of two specified numbers.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testgetCommonFactor001
+     * @tc.number SUB_COMMONLIBRARY_GET_COMMON_FACTOR_001
+     * @tc.desc   Obtains the greatest common divisor of two specified numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testgetCommonFactor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var res = util.RationalNumber.getCommonFactor(4, 8)
@@ -5218,12 +5211,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_GET_COMMON_FACTOR_002
-     * @tc.name: testgetCommonFactor002
-     * @tc.desc: Obtains the greatest common divisor of two specified numbers.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testgetCommonFactor002
+     * @tc.number SUB_COMMONLIBRARY_GET_COMMON_FACTOR_002
+     * @tc.desc   Obtains the greatest common divisor of two specified numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testgetCommonFactor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var res = util.RationalNumber.getCommonFactor(10, 15)
@@ -5231,12 +5224,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_GET_COMMON_FACTOR_003
-     * @tc.name: testgetCommonFactor003
-     * @tc.desc: Obtains the greatest common divisor of two specified numbers.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testgetCommonFactor003
+     * @tc.number SUB_COMMONLIBRARY_GET_COMMON_FACTOR_003
+     * @tc.desc   Obtains the greatest common divisor of two specified numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testgetCommonFactor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var res = util.RationalNumber.getCommonFactor(8, 4)
@@ -5244,12 +5237,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_GET_COMMON_FACTOR_004
-     * @tc.name: testgetCommonFactor004
-     * @tc.desc: Obtains the greatest common divisor of two specified numbers.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testgetCommonFactor004
+     * @tc.number SUB_COMMONLIBRARY_GET_COMMON_FACTOR_004
+     * @tc.desc   Obtains the greatest common divisor of two specified numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testgetCommonFactor004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var res = util.RationalNumber.getCommonFactor(8, 16)
@@ -5257,12 +5250,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_GET_COMMON_FACTOR_005
-     * @tc.name: testgetCommonFactor005
-     * @tc.desc: Obtains the greatest common divisor of two specified numbers.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testgetCommonFactor005
+     * @tc.number SUB_COMMONLIBRARY_GET_COMMON_FACTOR_005
+     * @tc.desc   Obtains the greatest common divisor of two specified numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testgetCommonFactor005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var res = util.RationalNumber.getCommonFactor(2, 16)
@@ -5270,12 +5263,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_GET_COMMON_FACTOR_THROW_ERROR_001
-     * @tc.name: testgetCommonFactorThrowError001
-     * @tc.desc: Obtains the greatest common divisor of two specified numbers.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testgetCommonFactorThrowError001
+     * @tc.number SUB_COMMONLIBRARY_GET_COMMON_FACTOR_THROW_ERROR_001
+     * @tc.desc   Obtains the greatest common divisor of two specified numbers.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testgetCommonFactorThrowError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -5287,12 +5280,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GET_HASH_001
-     * @tc.name: testUtilGetHash001
-     * @tc.desc: Get the hash value of an object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilGetHash001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_HASH_001
+     * @tc.desc   Get the hash value of an object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let person = {
@@ -5305,12 +5298,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GET_HASH_002
-     * @tc.name: testUtilGetHash002
-     * @tc.desc: Get the hash value of an object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilGetHash002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_HASH_002
+     * @tc.desc   Get the hash value of an object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let numbers = [1, 2, 3, 4, 5];
@@ -5320,12 +5313,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GET_HASH_003
-     * @tc.name: testUtilGetHash003
-     * @tc.desc: Get the hash value of an object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilGetHash003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_HASH_003
+     * @tc.desc   Get the hash value of an object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         class Car {
@@ -5345,12 +5338,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GET_HASH_004
-     * @tc.name: testUtilGetHash004
-     * @tc.desc: Get the hash value of an object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilGetHash004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_HASH_004
+     * @tc.desc   Get the hash value of an object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let now = new Date();
@@ -5360,12 +5353,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GET_HASH_005
-     * @tc.name: testUtilGetHash005
-     * @tc.desc: Get the hash value of an object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilGetHash005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_HASH_005
+     * @tc.desc   Get the hash value of an object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let regex = new RegExp("abc");
@@ -5375,12 +5368,12 @@ describe('RationalNumberTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_GET_HASH_006
-     * @tc.name: testUtilGetHash006
-     * @tc.desc: Get the hash value of an object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUtilGetHash006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_HASH_006
+     * @tc.desc   Get the hash value of an object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let mathObject = Math;
@@ -5392,13 +5385,12 @@ describe('RationalNumberTest', function () {
 
 describe('Base64HelperTest', function () {
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODESYNC_BASE64_001
-     * @tc.name: test_encodeSync_base64_001
-     * @tc.desc: Encodes all bytes from the specified u8 array into a newly-allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeSync_base64_001
+     * @tc.number SUB_COMMONLIBRARY_ENCODESYNC_BASE64_001
+     * @tc.desc   Encodes all bytes from the specified u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeSync_base64_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5411,13 +5403,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODESYNC_BASE64_002
-     * @tc.name: test_encodeSync_base64_002
-     * @tc.desc: Encodes all bytes from the specified u8 array into a newly-allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeSync_base64_002
+     * @tc.number SUB_COMMONLIBRARY_ENCODESYNC_BASE64_002
+     * @tc.desc   Encodes all bytes from the specified u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeSync_base64_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5430,13 +5421,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODESYNC_BASE64_003
-     * @tc.name: test_encodeSync_base64_003
-     * @tc.desc: Encodes all bytes from the specified u8 array into a newly-allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeSync_base64_003
+     * @tc.number SUB_COMMONLIBRARY_ENCODESYNC_BASE64_003
+     * @tc.desc   Encodes all bytes from the specified u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeSync_base64_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5451,13 +5441,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODESYNC_BASE64_004
-     * @tc.name: test_encodeSync_base64_004
-     * @tc.desc: Encodes all bytes from the specified u8 array into a newly-allocated u8
-       array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeSync_base64_004
+     * @tc.number SUB_COMMONLIBRARY_ENCODESYNC_BASE64_004
+     * @tc.desc   Encodes all bytes from the specified u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeSync_base64_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5470,13 +5459,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODESYNC_BASE64_005
-     * @tc.name: test_encodeSync_base64_005
-     * @tc.desc: Encodes all bytes from the specified u8 array into a newly-allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeSync_base64_005
+     * @tc.number SUB_COMMONLIBRARY_ENCODESYNC_BASE64_005
+     * @tc.desc   Encodes all bytes from the specified u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeSync_base64_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5489,13 +5477,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODESYNC_BASE64_006
-     * @tc.name: test_encodeSync_base64_006
-     * @tc.desc: Encodes all bytes from the specified u8 array into a newly-allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeSync_base64_006
+     * @tc.number SUB_COMMONLIBRARY_ENCODESYNC_BASE64_006
+     * @tc.desc   Encodes all bytes from the specified u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeSync_base64_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -5509,12 +5496,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_001
-     * @tc.name: test_encodeToStringSync_base64_001
-     * @tc.desc: Encodes the specified byte array into a String using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToStringSync_base64_001
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_001
+     * @tc.desc   Encodes the specified byte array into a String using the Base64 encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToStringSync_base64_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5524,12 +5511,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_002
-     * @tc.name: test_encodeToStringSync_base64_002
-     * @tc.desc: Encodes the specified byte array into a String using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToStringSync_base64_002
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_002
+     * @tc.desc   Encodes the specified byte array into a String using the Base64 encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToStringSync_base64_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5539,12 +5526,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_003
-     * @tc.name: test_encodeToStringSync_base64_003
-     * @tc.desc: Encodes the specified byte array into a String using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToStringSync_base64_003
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_003
+     * @tc.desc   Encodes the specified byte array into a String using the Base64 encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToStringSync_base64_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5555,12 +5542,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_005
-     * @tc.name: test_encodeToStringSync_base64_004
-     * @tc.desc: Encodes the specified byte array into a String using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToStringSync_base64_004
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_005
+     * @tc.desc   Encodes the specified byte array into a String using the Base64 encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToStringSync_base64_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5570,12 +5557,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_005
-     * @tc.name: test_encodeToStringSync_base64_005
-     * @tc.desc: Encodes the specified byte array into a String using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToStringSync_base64_005
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_005
+     * @tc.desc   Encodes the specified byte array into a String using the Base64 encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToStringSync_base64_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5584,14 +5571,14 @@ describe('Base64HelperTest', function () {
         expect(result).assertEqual('QmFzZTY0')
     })
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_006
-     * @tc.name: test_encodeToStringSync_base64_006
-     * @tc.desc: Encodes the specified byte array into a String using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
+        /**
+         * @tc.name   test_encodeToStringSync_base64_006
+         * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_006
+         * @tc.desc   Encodes the specified byte array into a String using the Base64 encoding scheme.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('test_encodeToStringSync_base64_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
             var that = new util.Base64Helper()
@@ -5604,13 +5591,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODESYC_BASE64_001
-     * @tc.name: test_decodeSync_base64_001
-     * @tc.desc: Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64_001
+     * @tc.number SUB_COMMONLIBRARY_DECODESYC_BASE64_001
+     * @tc.desc   Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5623,13 +5609,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODESYC_BASE64_002
-     * @tc.name: test_decodeSync_base64_002
-     * @tc.desc: Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64_002
+     * @tc.number SUB_COMMONLIBRARY_DECODESYC_BASE64_002
+     * @tc.desc   Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5642,13 +5627,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODESYC_BASE64_003
-     * @tc.name: test_decodeSync_base64_003
-     * @tc.desc: Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64_003
+     * @tc.number SUB_COMMONLIBRARY_DECODESYC_BASE64_003
+     * @tc.desc   Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5662,13 +5646,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODESYC_BASE64_004
-     * @tc.name: test_decodeSync_base64_004
-     * @tc.desc: Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64_004
+     * @tc.number SUB_COMMONLIBRARY_DECODESYC_BASE64_004
+     * @tc.desc   Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5681,13 +5664,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODESYC_BASE64_005
-     * @tc.name: test_decodeSync_base64_005
-     * @tc.desc: Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64_005
+     * @tc.number SUB_COMMONLIBRARY_DECODESYC_BASE64_005
+     * @tc.desc   Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5700,13 +5682,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODESYC_BASE64_006
-     * @tc.name: test_decodeSync_base64_006
-     * @tc.desc: Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64_006
+     * @tc.number SUB_COMMONLIBRARY_DECODESYC_BASE64_006
+     * @tc.desc   Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -5720,13 +5701,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODESYC_BASE64_007
-     * @tc.name: test_decodeSync_base64_007
-     * @tc.desc: Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64_007
+     * @tc.number SUB_COMMONLIBRARY_DECODESYC_BASE64_007
+     * @tc.desc   Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5739,13 +5719,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODESYC_BASE64_008
-     * @tc.name: test_decodeSync_base64_008
-     * @tc.desc: Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64_008
+     * @tc.number SUB_COMMONLIBRARY_DECODESYC_BASE64_008
+     * @tc.desc   Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5760,13 +5739,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODESYC_BASE64_009
-     * @tc.name: test_decodeSync_base64_009
-     * @tc.desc: Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64_009
+     * @tc.number SUB_COMMONLIBRARY_DECODESYC_BASE64_009
+     * @tc.desc   Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5779,13 +5757,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODESYC_BASE64_010
-     * @tc.name: test_decodeSync_base64_010
-     * @tc.desc: Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64_010
+     * @tc.number SUB_COMMONLIBRARY_DECODESYC_BASE64_010
+     * @tc.desc   Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -5799,13 +5776,12 @@ describe('Base64HelperTest', function () {
 
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODEASYNC_BASE64_001
-     * @tc.name: test_encodeAsync_base64_001
-     * @tc.desc: Asynchronously encodes all bytes in the specified u8 array into the newly
-         allocated u8 array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeAsync_base64_001
+     * @tc.number SUB_COMMONLIBRARY_ENCODEASYNC_BASE64_001
+     * @tc.desc   Asynchronously encodes all bytes in the specified u8 array into the newly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeAsync_base64_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = await new util.Base64Helper();
@@ -5819,13 +5795,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODEASYNC_BASE64_002
-     * @tc.name: test_encodeAsync_base64_002
-     * @tc.desc: Asynchronously encodes all bytes in the specified u8 array into the newly
-         allocated u8 array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeAsync_base64_002
+     * @tc.number SUB_COMMONLIBRARY_ENCODEASYNC_BASE64_002
+     * @tc.desc   Asynchronously encodes all bytes in the specified u8 array into the newly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeAsync_base64_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -5839,13 +5814,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODEASYNC_BASE64_003
-     * @tc.name: test_encodeAsync_base64_003
-     * @tc.desc: Asynchronously encodes all bytes in the specified u8 array into the newly allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeAsync_base64_003
+     * @tc.number SUB_COMMONLIBRARY_ENCODEASYNC_BASE64_003
+     * @tc.desc   Asynchronously encodes all bytes in the specified u8 array into the newly allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeAsync_base64_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -5861,13 +5835,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODEASYNC_BASE64_004
-     * @tc.name: test_encodeAsync_base64_004
-     * @tc.desc: Asynchronously encodes all bytes in the specified u8 array into the newly allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeAsync_base64_004
+     * @tc.number SUB_COMMONLIBRARY_ENCODEASYNC_BASE64_004
+     * @tc.desc   Asynchronously encodes all bytes in the specified u8 array into the newly allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeAsync_base64_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -5881,13 +5854,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODEASYNC_BASE64_005
-     * @tc.name: test_encodeAsync_base64_005
-     * @tc.desc: Asynchronously encodes all bytes in the specified u8 array into the newly allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeAsync_base64_005
+     * @tc.number SUB_COMMONLIBRARY_ENCODEASYNC_BASE64_005
+     * @tc.desc   Asynchronously encodes all bytes in the specified u8 array into the newly allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeAsync_base64_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -5900,15 +5872,14 @@ describe('Base64HelperTest', function () {
         })
     })
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODEASYNC_BASE64_THROW_ERROR_001
-     * @tc.name: test_encodeSync_base64_throwError_001
-     * @tc.desc: Asynchronously encodes all bytes in the specified u8 array into the newly allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1   
-     */
+        /**
+         * @tc.name   test_encodeSync_base64_throwError_001
+         * @tc.number SUB_COMMONLIBRARY_ENCODEASYNC_BASE64_THROW_ERROR_001
+         * @tc.desc   Asynchronously encodes all bytes in the specified u8 array into the newly allocated u8
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('test_encodeSync_base64_throwError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         try {
             var that = new util.Base64Helper()
@@ -5922,12 +5893,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_001
-     * @tc.name: test_encodeToString_base64_001
-     * @tc.desc: Asynchronously encodes the specified byte array into a String using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToString_base64_001
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_001
+     * @tc.desc   Asynchronously encodes the specified byte array into a String using the Base64 encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToString_base64_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -5938,12 +5909,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_002
-     * @tc.name: test_encodeToString_base64_002
-     * @tc.desc: Asynchronously encodes the specified byte array into a String using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToString_base64_002
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_002
+     * @tc.desc   Asynchronously encodes the specified byte array into a String using the Base64 encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToString_base64_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -5954,12 +5925,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_003
-     * @tc.name: test_encodeToString_base64_003
-     * @tc.desc: Asynchronously encodes the specified byte array into a String using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToString_base64_003
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_003
+     * @tc.desc   Asynchronously encodes the specified byte array into a String using the Base64 encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToString_base64_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -5971,12 +5942,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_004
-     * @tc.name: test_encodeToString_base64_004
-     * @tc.desc: Asynchronously encodes the specified byte array into a String using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToString_base64_004
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_004
+     * @tc.desc   Asynchronously encodes the specified byte array into a String using the Base64 encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToString_base64_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -5987,12 +5958,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_005
-     * @tc.name: test_encodeToString_base64_005
-     * @tc.desc: Asynchronously encodes the specified byte array into a String using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToString_base64_005
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_005
+     * @tc.desc   Asynchronously encodes the specified byte array into a String using the Base64 encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToString_base64_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -6002,14 +5973,14 @@ describe('Base64HelperTest', function () {
         })
     })
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_006
-     * @tc.name: test_encodeToString_base64_006
-     * @tc.desc: Asynchronously encodes the specified byte array into a String using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
+        /**
+         * @tc.name   test_encodeToString_base64_006
+         * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_006
+         * @tc.desc   Asynchronously encodes the specified byte array into a String using the Base64 encoding scheme.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('test_encodeToString_base64_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         try {
             var that = new util.Base64Helper()
@@ -6022,13 +5993,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64_001
-     * @tc.name: test_decode_base64_001
-     * @tc.desc: Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
-        array into a newly allocated u8 array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decode_base64_001
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64_001
+     * @tc.desc   Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decode_base64_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -6042,13 +6012,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64_002
-     * @tc.name: test_decode_base64_002
-     * @tc.desc: Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
-        array into a newly allocated u8 array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decode_base64_002
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64_002
+     * @tc.desc   Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decode_base64_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -6062,13 +6031,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64_003
-     * @tc.name: test_decode_base64_003
-     * @tc.desc: Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
-        array into a newly allocated u8 array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decode_base64_003
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64_003
+     * @tc.desc   Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decode_base64_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -6083,13 +6051,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64_004
-     * @tc.name: test_decode_base64_004
-     * @tc.desc: Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
-        array into a newly allocated u8 array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decode_base64_004
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64_004
+     * @tc.desc   Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decode_base64_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -6103,13 +6070,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64_005
-     * @tc.name: test_decode_base64_005
-     * @tc.desc: Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
-        array into a newly allocated u8 array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1 
+     * @tc.name   test_decode_base64_005
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64_005
+     * @tc.desc   Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decode_base64_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -6123,13 +6089,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64_006
-     * @tc.name: test_decode_base64_006
-     * @tc.desc: Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
-        array into a newly allocated u8 array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decode_base64_006
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64_006
+     * @tc.desc   Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decode_base64_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -6143,13 +6108,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64_007
-     * @tc.name: test_decode_base64_007
-     * @tc.desc: Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
-        array into a newly allocated u8 array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decode_base64_007
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64_007
+     * @tc.desc   Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decode_base64_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -6163,12 +6127,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64_008
-     * @tc.name: test_decode_base64_008
-     * @tc.desc: Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decode_base64_008
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64_008
+     * @tc.desc   Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decode_base64_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -6184,13 +6148,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64_009
-     * @tc.name: test_decode_base64_009
-     * @tc.desc: Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8 array
-         into a newly allocated u8 array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decode_base64_009
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64_009
+     * @tc.desc   Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8 array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decode_base64_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -6204,13 +6167,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64_010
-     * @tc.name: test_decode_base64_010
-     * @tc.desc: Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
-        array into a newly allocated u8 array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decode_base64_010
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64_010
+     * @tc.desc   Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decode_base64_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -6224,13 +6186,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64_THROW_ERROR_001
-     * @tc.name: test_decode_base64_throwError_001
-     * @tc.desc: Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
-        array into a newly allocated u8 array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decode_base64_throwError_001
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64_THROW_ERROR_001
+     * @tc.desc   Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decode_base64_throwError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         try {
@@ -6243,14 +6204,14 @@ describe('Base64HelperTest', function () {
         }
     })
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_SYNC_MIME_BASE64_001
-     * @tc.name: test_encodeToStringSync_mime_base64_001
-     * @tc.desc: Encodes the specified byte array into a String using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
+ /**
+  * @tc.name   test_encodeToStringSync_mime_base64_001
+  * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_SYNC_MIME_BASE64_001
+  * @tc.desc   Encodes the specified byte array into a String using the Base64 encoding scheme.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL1
+  */
 	it('test_encodeToStringSync_mime_base64_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
         var array = new Uint8Array([77,97,110,105,115,100,105,115,116,105,110,103,117,105,115,104,101,100,110,111,116,111,110,108,121,98,121,104,105,115,114,101,97,115,111,110,98,117,116,98,121,116,104,105,115,115,105,110,103,117,108,97,114,112,97,115,115,105,111,110,102,114,111,109,111,116,104,101,114,97,110,105,109,97,108,115,119,104,105,99,104,105,115,97,108,117,115,116,111,102,116,104,101,109,105,110,100,101,120,99,101,101,100,115,116,104,101,115,104,111,114,116,118,101,104,101,109,101,110,99,101,111,102,97,110,121,99,97,114,110,97,108,112,108,101,97,115,117,114,101]);
@@ -6259,13 +6220,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_SYNC_MIME_BASE64_002
-     * @tc.name: test_decodeSync_mime_base64_002
-     * @tc.desc: Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_mime_base64_002
+     * @tc.number SUB_COMMONLIBRARY_DECODE_SYNC_MIME_BASE64_002
+     * @tc.desc   Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_mime_base64_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -6278,12 +6238,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_MIME_BASE64_003
-     * @tc.name: test_encodeToString_mime_base64_003
-     * @tc.desc: Asynchronously encodes the specified byte array into a String using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToString_mime_base64_003
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_MIME_BASE64_003
+     * @tc.desc   Asynchronously encodes the specified byte array into a String using the Base64 encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToString_mime_base64_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -6294,13 +6254,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE__MIME_BASE64_004
-     * @tc.name: test_decode_mime_base64_004
-     * @tc.desc: Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
-        array into a newly allocated u8 array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToString_mime_base64_004
+     * @tc.number SUB_COMMONLIBRARY_DECODE__MIME_BASE64_004
+     * @tc.desc   Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToString_mime_base64_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -6314,12 +6273,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_SYNC_BASIC_BASE64_001
-     * @tc.name: test_encodeToStringSync_basic_base64_001
-     * @tc.desc: Encodes the specified byte array into a String using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToStringSync_basic_base64_001
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_SYNC_BASIC_BASE64_001
+     * @tc.desc   Encodes the specified byte array into a String using the Base64 encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToStringSync_basic_base64_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -6329,13 +6288,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_SYNC_BASIC_BASE64_002
-     * @tc.name: test_decodeSync_basic_base64_002
-     * @tc.desc: Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_basic_base64_002
+     * @tc.number SUB_COMMONLIBRARY_DECODE_SYNC_BASIC_BASE64_002
+     * @tc.desc   Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_basic_base64_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.Base64Helper()
@@ -6348,12 +6306,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASIC_BASE64_003
-     * @tc.name: test_encodeToString_basic_base64_003
-     * @tc.desc: Asynchronously encodes the specified byte array into a String using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToString_basic_base64_003
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASIC_BASE64_003
+     * @tc.desc   Asynchronously encodes the specified byte array into a String using the Base64 encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToString_basic_base64_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -6364,13 +6322,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASIC_BASE64_004
-     * @tc.name: test_decode_basic_base64_004
-     * @tc.desc: Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
-         array into a newly allocated u8 array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToString_basic_base64_004
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASIC_BASE64_004
+     * @tc.desc   Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToString_basic_base64_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         var that = new util.Base64Helper()
@@ -6384,12 +6341,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_SYNC_BASE64_THROW_ERROR_001
-     * @tc.name: test_decodeSync_base64_throwError_001
-     * @tc.desc: Use base64 for synchronous decoding, an exception is thrown when the input parameter exceeds the decoding range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64_throwError_001
+     * @tc.number SUB_COMMONLIBRARY_DECODE_SYNC_BASE64_THROW_ERROR_001
+     * @tc.desc   Use base64 for synchronous decoding, an exception is thrown when the input parameter exceeds the decoding range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64_throwError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -6402,12 +6359,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_SYNC_BASE64_THROW_ERROR_002
-     * @tc.name: test_decodeSync_base64_throwError_002
-     * @tc.desc: Use base64 for synchronous decoding, an exception is thrown when the input parameter exceeds the decoding range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64_throwError_002
+     * @tc.number SUB_COMMONLIBRARY_DECODE_SYNC_BASE64_THROW_ERROR_002
+     * @tc.desc   Use base64 for synchronous decoding, an exception is thrown when the input parameter exceeds the decoding range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64_throwError_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -6420,12 +6377,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_SYNC_BASE64_THROW_ERROR_003
-     * @tc.name: test_decodeSync_base64_throwError_003
-     * @tc.desc: Use base64 for synchronous decoding, an exception is thrown when the input parameter exceeds the decoding range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64_throwError_003
+     * @tc.number SUB_COMMONLIBRARY_DECODE_SYNC_BASE64_THROW_ERROR_003
+     * @tc.desc   Use base64 for synchronous decoding, an exception is thrown when the input parameter exceeds the decoding range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64_throwError_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -6438,12 +6395,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_SYNC_BASE64_THROW_ERROR_004
-     * @tc.name: test_decodeSync_base64_throwError_004
-     * @tc.desc: Use base64 for synchronous decoding, an exception is thrown when the input parameter exceeds the decoding range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64_throwError_004
+     * @tc.number SUB_COMMONLIBRARY_DECODE_SYNC_BASE64_THROW_ERROR_004
+     * @tc.desc   Use base64 for synchronous decoding, an exception is thrown when the input parameter exceeds the decoding range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64_throwError_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -6456,12 +6413,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_SYNC_BASE64_THROW_ERROR_005
-     * @tc.name: test_decodeSync_base64_throwError_005
-     * @tc.desc: Use base64 for synchronous decoding, an exception is thrown when the input parameter exceeds the decoding range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64_throwError_005
+     * @tc.number SUB_COMMONLIBRARY_DECODE_SYNC_BASE64_THROW_ERROR_005
+     * @tc.desc   Use base64 for synchronous decoding, an exception is thrown when the input parameter exceeds the decoding range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64_throwError_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -6474,12 +6431,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_SYNC_BASE64_THROW_ERROR_006
-     * @tc.name: test_decodeSync_base64_throwError_006
-     * @tc.desc: Use base64 for synchronous decoding, an exception is thrown when the input parameter exceeds the decoding range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64_throwError_006
+     * @tc.number SUB_COMMONLIBRARY_DECODE_SYNC_BASE64_THROW_ERROR_006
+     * @tc.desc   Use base64 for synchronous decoding, an exception is thrown when the input parameter exceeds the decoding range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64_throwError_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -6492,13 +6449,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_SYNC_MIME_BASE64_THROW_ERROR_007
-     * @tc.name: test_encodeToStringSync_mime_base64_throwError_007
-     * @tc.desc: Use base64 for synchronous encode, an exception is thrown when the input
-        parameter length does not meet the MIME encoding format.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToStringSync_mime_base64_throwError_007
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_SYNC_MIME_BASE64_THROW_ERROR_007
+     * @tc.desc   Use base64 for synchronous encode, an exception is thrown when the input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToStringSync_mime_base64_throwError_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -6511,13 +6467,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_MIME_BASE64_THROW_ERROR_008
-     * @tc.name: test_encodeToString_mime_base64_throwError_008
-     * @tc.desc: Use base64 for synchronous encode, an exception is thrown when the input
-        parameter length does not meet the MIME encoding format.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToString_mime_base64_throwError_008
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_MIME_BASE64_THROW_ERROR_008
+     * @tc.desc   Use base64 for synchronous encode, an exception is thrown when the input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToString_mime_base64_throwError_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -6532,12 +6487,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODETOSTRINGSYNC_BASE64URL_001
-     * @tc.name: test_encodeToStringSync_base64url_001
-     * @tc.desc: Encodes the specified byte array into a String using the Base64 and Base64URL encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToStringSync_base64url_001
+     * @tc.number SUB_COMMONLIBRARY_ENCODETOSTRINGSYNC_BASE64URL_001
+     * @tc.desc   Encodes the specified byte array into a String using the Base64 and Base64URL encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToStringSync_base64url_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper()
@@ -6550,14 +6505,14 @@ describe('Base64HelperTest', function () {
         expect(resUrl).assertEqual('AsD-_QWERQ');
     })
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODETOSTRINGSYNC_BASE64URL_002
-     * @tc.name: test_encodeToStringSync_base64url_002
-     * @tc.desc: Encodes the specified byte array into a String using the Base64 and Base64URL encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
+     /**
+      * @tc.name   test_encodeToStringSync_base64url_002
+      * @tc.number SUB_COMMONLIBRARY_ENCODETOSTRINGSYNC_BASE64URL_002
+      * @tc.desc   Encodes the specified byte array into a String using the Base64 and Base64URL encoding scheme.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('test_encodeToStringSync_base64url_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper()
         let array = new Uint8Array([2,192,254,65,97,17,67,223,178]);
@@ -6570,12 +6525,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODETOSTRINGSYNC_BASE64URL_003
-     * @tc.name: test_encodeToStringSync_base64url_003
-     * @tc.desc: Encodes the specified byte array into a String using the Base64 and Base64URL encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToStringSync_base64url_003
+     * @tc.number SUB_COMMONLIBRARY_ENCODETOSTRINGSYNC_BASE64URL_003
+     * @tc.desc   Encodes the specified byte array into a String using the Base64 and Base64URL encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToStringSync_base64url_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper()
@@ -6589,12 +6544,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODESYNC_BASE64URL_001
-     * @tc.name: test_encodeSync_base64url_001
-     * @tc.desc: Encodes all bytes from the specified u8 array into a newly-allocated u8.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeSync_base64url_001
+     * @tc.number SUB_COMMONLIBRARY_ENCODESYNC_BASE64URL_001
+     * @tc.desc   Encodes all bytes from the specified u8 array into a newly-allocated u8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeSync_base64url_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper()
@@ -6610,12 +6565,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODESYNC_BASE64URL_002
-     * @tc.name: test_encodeSync_base64url_002
-     * @tc.desc: Encodes all bytes from the specified u8 array into a newly-allocated u8.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeSync_base64url_002
+     * @tc.number SUB_COMMONLIBRARY_ENCODESYNC_BASE64URL_002
+     * @tc.desc   Encodes all bytes from the specified u8 array into a newly-allocated u8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeSync_base64url_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper()
@@ -6631,12 +6586,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODESYNC_BASE64URL_003
-     * @tc.name: test_encodeSync_base64url_003
-     * @tc.desc: Encodes all bytes from the specified u8 array into a newly-allocated u8.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeSync_base64url_003
+     * @tc.number SUB_COMMONLIBRARY_ENCODESYNC_BASE64URL_003
+     * @tc.desc   Encodes all bytes from the specified u8 array into a newly-allocated u8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeSync_base64url_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper()
@@ -6652,13 +6607,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODETOSTRING_BASE64URL_001
-     * @tc.name: test_encodeToString_base64url_001
-     * @tc.desc: Asynchronously encodes the specified byte array into a String using the Base64 and
-     * Base64URL encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToString_base64url_001
+     * @tc.number SUB_COMMONLIBRARY_ENCODETOSTRING_BASE64URL_001
+     * @tc.desc   Asynchronously encodes the specified byte array into a String using the Base64 and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToString_base64url_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper();
@@ -6675,13 +6629,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODETOSTRING_BASE64URL_002
-     * @tc.name: test_encodeToString_base64url_002
-     * @tc.desc: Asynchronously encodes the specified byte array into a String using the Base64 and
-     * Base64URL encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToString_base64url_002
+     * @tc.number SUB_COMMONLIBRARY_ENCODETOSTRING_BASE64URL_002
+     * @tc.desc   Asynchronously encodes the specified byte array into a String using the Base64 and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToString_base64url_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper();
@@ -6698,13 +6651,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODETOSTRING_BASE64URL_003
-     * @tc.name: test_encodeToString_base64url_003
-     * @tc.desc: Asynchronously encodes the specified byte array into a String using the Base64 and
-     * Base64URL encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToString_base64url_003
+     * @tc.number SUB_COMMONLIBRARY_ENCODETOSTRING_BASE64URL_003
+     * @tc.desc   Asynchronously encodes the specified byte array into a String using the Base64 and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToString_base64url_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper();
@@ -6721,13 +6673,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_BASE64URL_001
-     * @tc.name: test_encode_base64url_001
-     * @tc.desc: Asynchronously encodes all bytes in the specified u8 array into the newly allocated
-     * u8 array using the Base64 and Base64URL encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encode_base64url_001
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_BASE64URL_001
+     * @tc.desc   Asynchronously encodes all bytes in the specified u8 array into the newly allocated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encode_base64url_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper();
@@ -6746,13 +6697,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_BASE64URL_002
-     * @tc.name: test_encode_base64url_002
-     * @tc.desc: Asynchronously encodes all bytes in the specified u8 array into the newly allocated
-     * u8 array using the Base64 and Base64URL encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encode_base64url_002
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_BASE64URL_002
+     * @tc.desc   Asynchronously encodes all bytes in the specified u8 array into the newly allocated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encode_base64url_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper();
@@ -6771,13 +6721,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_BASE64URL_003
-     * @tc.name: test_encode_base64url_003
-     * @tc.desc: Asynchronously encodes all bytes in the specified u8 array into the newly allocated
-     * u8 array using the Base64 and Base64URL encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encode_base64url_003
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_BASE64URL_003
+     * @tc.desc   Asynchronously encodes all bytes in the specified u8 array into the newly allocated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encode_base64url_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper();
@@ -6796,12 +6745,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODESYNC_BASE64URL_001
-     * @tc.name: test_decodeSync_base64url_001
-     * @tc.desc: Decodes String into a newly-allocated u8 array using the Base64 and Base64URL encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64url_001
+     * @tc.number SUB_COMMONLIBRARY_DECODESYNC_BASE64URL_001
+     * @tc.desc   Decodes String into a newly-allocated u8 array using the Base64 and Base64URL encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64url_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper();
@@ -6817,12 +6766,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODESYNC_BASE64URL_002
-     * @tc.name: test_decodeSync_base64url_002
-     * @tc.desc: Decodes String into a newly-allocated u8 array using the Base64 and Base64URL encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64url_002
+     * @tc.number SUB_COMMONLIBRARY_DECODESYNC_BASE64URL_002
+     * @tc.desc   Decodes String into a newly-allocated u8 array using the Base64 and Base64URL encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64url_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper();
@@ -6838,12 +6787,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODESYNC_BASE64URL_003
-     * @tc.name: test_decodeSync_base64url_003
-     * @tc.desc: Decodes String into a newly-allocated u8 array using the Base64 and Base64URL encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64url_003
+     * @tc.number SUB_COMMONLIBRARY_DECODESYNC_BASE64URL_003
+     * @tc.desc   Decodes String into a newly-allocated u8 array using the Base64 and Base64URL encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64url_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper();
@@ -6859,12 +6808,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODESYNC_BASE64URL_004
-     * @tc.name: test_decodeSync_base64url_004
-     * @tc.desc: Decodes input u8 array into a newly-allocated u8 array using the Base64 and Base64URL encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64url_004
+     * @tc.number SUB_COMMONLIBRARY_DECODESYNC_BASE64URL_004
+     * @tc.desc   Decodes input u8 array into a newly-allocated u8 array using the Base64 and Base64URL encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64url_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper();
@@ -6880,12 +6829,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODESYNC_BASE64URL_005
-     * @tc.name: test_decodeSync_base64url_005
-     * @tc.desc: Decodes input u8 array into a newly-allocated u8 array using the Base64 and Base64URL encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64url_005
+     * @tc.number SUB_COMMONLIBRARY_DECODESYNC_BASE64URL_005
+     * @tc.desc   Decodes input u8 array into a newly-allocated u8 array using the Base64 and Base64URL encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64url_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper();
@@ -6901,12 +6850,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODESYNC_BASE64URL_006
-     * @tc.name: test_decodeSync_base64url_006
-     * @tc.desc: Decodes input u8 array into a newly-allocated u8 array using the Base64 and Base64URL encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decodeSync_base64url_006
+     * @tc.number SUB_COMMONLIBRARY_DECODESYNC_BASE64URL_006
+     * @tc.desc   Decodes input u8 array into a newly-allocated u8 array using the Base64 and Base64URL encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decodeSync_base64url_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper();
@@ -6922,13 +6871,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64URL_001
-     * @tc.name: test_decode_base64url_001
-     * @tc.desc: Use the Base64 and Base64URL encoding scheme to asynchronously decode a string into
-     * a newly allocated u8 array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decode_base64url_001
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64URL_001
+     * @tc.desc   Use the Base64 and Base64URL encoding scheme to asynchronously decode a string into
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decode_base64url_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper();
@@ -6947,13 +6895,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64URL_002
-     * @tc.name: test_decode_base64url_002
-     * @tc.desc: Use the Base64 and Base64URL encoding scheme to asynchronously decode a string into
-     * a newly allocated u8 array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decode_base64url_002
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64URL_002
+     * @tc.desc   Use the Base64 and Base64URL encoding scheme to asynchronously decode a string into
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decode_base64url_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper();
@@ -6972,13 +6919,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64URL_003
-     * @tc.name: test_decode_base64url_003
-     * @tc.desc: Use the Base64 and Base64URL encoding scheme to asynchronously decode a string into
-     * a newly allocated u8 array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decode_base64url_003
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64URL_003
+     * @tc.desc   Use the Base64 and Base64URL encoding scheme to asynchronously decode a string into
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decode_base64url_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper();
@@ -6997,13 +6943,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64URL_004
-     * @tc.name: test_decode_base64url_004
-     * @tc.desc: Use the Base64 and Base64URL encoding scheme to asynchronously decode a input u8 array into
-     * a newly allocated u8 array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decode_base64url_004
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64URL_004
+     * @tc.desc   Use the Base64 and Base64URL encoding scheme to asynchronously decode a input u8 array into
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decode_base64url_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper();
@@ -7022,13 +6967,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64URL_005
-     * @tc.name: test_decode_base64url_005
-     * @tc.desc: Use the Base64 and Base64URL encoding scheme to asynchronously decode a input u8 array into
-     * a newly allocated u8 array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decode_base64url_005
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64URL_005
+     * @tc.desc   Use the Base64 and Base64URL encoding scheme to asynchronously decode a input u8 array into
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decode_base64url_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper();
@@ -7047,13 +6991,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64URL_006
-     * @tc.name: test_decode_base64url_006
-     * @tc.desc: Use the Base64 and Base64URL encoding scheme to asynchronously decode a input u8 array into
-     * a newly allocated u8 array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_decode_base64url_006
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64URL_006
+     * @tc.desc   Use the Base64 and Base64URL encoding scheme to asynchronously decode a input u8 array into
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_decode_base64url_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.Base64Helper();
@@ -7072,12 +7015,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODESYNC_THROWERROR_001
-     * @tc.name: test_encodesync_throwError_001
-     * @tc.desc: An error is thrown when the parameter does not meet the interface requirements.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodesync_throwError_001
+     * @tc.number SUB_COMMONLIBRARY_ENCODESYNC_THROWERROR_001
+     * @tc.desc   An error is thrown when the parameter does not meet the interface requirements.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodesync_throwError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -7091,12 +7034,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODESYNC_THROWERROR_002
-     * @tc.name: test_encodesync_throwError_002
-     * @tc.desc: An error is thrown when the parameter does not meet the interface requirements.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodesync_throwError_002
+     * @tc.number SUB_COMMONLIBRARY_ENCODESYNC_THROWERROR_002
+     * @tc.desc   An error is thrown when the parameter does not meet the interface requirements.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodesync_throwError_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -7110,12 +7053,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODESYNC_THROWERROR_003
-     * @tc.name: test_encodesync_throwError_003
-     * @tc.desc: An error is thrown when the parameter does not meet the interface requirements.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodesync_throwError_003
+     * @tc.number SUB_COMMONLIBRARY_ENCODESYNC_THROWERROR_003
+     * @tc.desc   An error is thrown when the parameter does not meet the interface requirements.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodesync_throwError_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -7129,12 +7072,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODETOSTRINGSYNC_THROWERROR_001
-     * @tc.name: test_encodeToStringSync_throwError_001
-     * @tc.desc: An error is thrown when the argument is out of enumeration range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToStringSync_throwError_001
+     * @tc.number SUB_COMMONLIBRARY_ENCODETOSTRINGSYNC_THROWERROR_001
+     * @tc.desc   An error is thrown when the argument is out of enumeration range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToStringSync_throwError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -7148,12 +7091,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_THROWERROR_001
-     * @tc.name: test_encode_throwError_001
-     * @tc.desc: An error is thrown when the parameter does not meet the interface requirements.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encode_throwError_001
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_THROWERROR_001
+     * @tc.desc   An error is thrown when the parameter does not meet the interface requirements.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encode_throwError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -7167,12 +7110,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_THROWERROR_002
-     * @tc.name: test_encode_throwError_002
-     * @tc.desc: An error is thrown when the parameter does not meet the interface requirements.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encode_throwError_002
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_THROWERROR_002
+     * @tc.desc   An error is thrown when the parameter does not meet the interface requirements.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encode_throwError_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -7186,12 +7129,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_THROWERROR_003
-     * @tc.name: test_encode_throwError_003
-     * @tc.desc: An error is thrown when the parameter does not meet the interface requirements.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encode_throwError_003
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_THROWERROR_003
+     * @tc.desc   An error is thrown when the parameter does not meet the interface requirements.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encode_throwError_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -7205,12 +7148,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODETOSTRING_THROWERROR_001
-     * @tc.name: test_encodeToString_throwError_001
-     * @tc.desc: An error is thrown when the argument is out of enumeration range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToString_throwError_001
+     * @tc.number SUB_COMMONLIBRARY_ENCODETOSTRING_THROWERROR_001
+     * @tc.desc   An error is thrown when the argument is out of enumeration range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToString_throwError_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -7224,13 +7167,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODESYNC_THROW_ERROR_001
-     * @tc.name: test_encodeSync_base64_throw_error_001
-     * @tc.desc: Encodes all bytes from the specified u8 array into a newly-allocated u8
-        array using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeSync_base64_throw_error_001
+     * @tc.number SUB_COMMONLIBRARY_ENCODESYNC_THROW_ERROR_001
+     * @tc.desc   Encodes all bytes from the specified u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeSync_base64_throw_error_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -7244,12 +7186,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_THROW_ERROR_002
-     * @tc.name: test_encodeToStringSync_base64_throw_error_002
-     * @tc.desc: Encodes the specified byte array into a String using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToStringSync_base64_throw_error_002
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_THROW_ERROR_002
+     * @tc.desc   Encodes the specified byte array into a String using the Base64 encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToStringSync_base64_throw_error_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -7263,14 +7205,13 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODESYNC_BASE64_THROW_ERROR_003
-     * @tc.name: test_decodeSync_base64_throw_error_003
-     * @tc.desc: Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
-       array using the Base64 encoding scheme.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   test_decodeSync_base64_throw_error_003
+     * @tc.number SUB_COMMONLIBRARY_DECODESYNC_BASE64_THROW_ERROR_003
+     * @tc.desc   Decodes a Base64 encoded String or input u8 array into a newly-allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('test_decodeSync_base64_throw_error_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
             var that = new util.Base64Helper()
@@ -7283,14 +7224,13 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODEASYNC_BASE64_THROW_ERROR_004
-     * @tc.name: test_encodeAsync_base64_throwError_004
-     * @tc.desc: Asynchronously encodes all bytes in the specified u8 array into the newly allocated u8
-       array using the Base64 encoding scheme.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   test_encodeAsync_base64_throwError_004
+     * @tc.number SUB_COMMONLIBRARY_ENCODEASYNC_BASE64_THROW_ERROR_004
+     * @tc.desc   Asynchronously encodes all bytes in the specified u8 array into the newly allocated u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('test_encodeAsync_base64_throwError_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         try {
             var that = new util.Base64Helper()
@@ -7303,12 +7243,12 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_THROW_ERROR_005
-     * @tc.name: test_encodeToString_base64_throwError_005
-     * @tc.desc: Asynchronously encodes the specified byte array into a String using the Base64 encoding scheme.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   test_encodeToString_base64_throwError_005
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_TO_STRING_BASE64_THROW_ERROR_005
+     * @tc.desc   Asynchronously encodes the specified byte array into a String using the Base64 encoding scheme.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_encodeToString_base64_throwError_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         try {
@@ -7322,14 +7262,13 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64_THROW_ERROR_006
-     * @tc.name: test_decode_base64_throwError_006
-     * @tc.desc: Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
-       array into a newly allocated u8 array.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   test_decode_base64_throwError_006
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64_THROW_ERROR_006
+     * @tc.desc   Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('test_decode_base64_throwError_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         try {
             var that = new util.Base64Helper()
@@ -7342,14 +7281,13 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64_THROW_ERROR_007
-     * @tc.name: test_decode_base64_throwError_007
-     * @tc.desc: Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
-       array into a newly allocated u8 array.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   test_decode_base64_throwError_007
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64_THROW_ERROR_007
+     * @tc.desc   Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('test_decode_base64_throwError_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         let base64Helper = new util.Base64Helper();
         base64Helper.decode('1').then((val) => {
@@ -7361,14 +7299,13 @@ describe('Base64HelperTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64_THROW_ERROR_008
-     * @tc.name: test_decode_base64_throwError_008
-     * @tc.desc: Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
-       array into a newly allocated u8 array.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   test_decode_base64_throwError_008
+     * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64_THROW_ERROR_008
+     * @tc.desc   Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('test_decode_base64_throwError_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         let base64Helper = new util.Base64Helper();
         base64Helper.decode('12').then((val) => {
@@ -7379,15 +7316,14 @@ describe('Base64HelperTest', function () {
         })
     })
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_DECODE_BASE64_THROW_ERROR_009
-     * @tc.name: test_decode_base64_throwError_009
-     * @tc.desc: Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
-       array into a newly allocated u8 array.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+       /**
+        * @tc.name   test_decode_base64_throwError_009
+        * @tc.number SUB_COMMONLIBRARY_DECODE_BASE64_THROW_ERROR_009
+        * @tc.desc   Use the Base64 encoding scheme to asynchronously decode a Base64-encoded string or input u8
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL1
+        */
        it('test_decode_base64_throwError_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function () {
         let base64Helper = new util.Base64Helper();
         base64Helper.decode('150').then((val) => {
@@ -7401,12 +7337,12 @@ describe('Base64HelperTest', function () {
 
 describe('DecodeEncodeTest', function () {
     /**
-     * @tc.number: SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_001
-     * @tc.name: testTextDecoderCreate001
-     * @tc.desc: The source encoding's name, lowercased.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testTextDecoderCreate001
+     * @tc.number SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_001
+     * @tc.desc   The source encoding's name, lowercased.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var  that = util.TextDecoder.create('utf-8', { ignoreBOM : true })
@@ -7415,12 +7351,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_002
-     * @tc.name: testTextDecoderCreate002
-     * @tc.desc: The source encoding's name, lowercased.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testTextDecoderCreate002
+     * @tc.number SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_002
+     * @tc.desc   The source encoding's name, lowercased.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = util.TextDecoder.create('utf-16le')
@@ -7429,12 +7365,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_003
-     * @tc.name: testTextDecoderCreate003
-     * @tc.desc: The source encoding's name, lowercased.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testTextDecoderCreate003
+     * @tc.number SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_003
+     * @tc.desc   The source encoding's name, lowercased.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = util.TextDecoder.create('utf-16be')
@@ -7443,12 +7379,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_004
-     * @tc.name: testTextDecoderCreate004
-     * @tc.desc: The source encoding's name, lowercased.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testTextDecoderCreate004
+     * @tc.number SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_004
+     * @tc.desc   The source encoding's name, lowercased.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = util.TextDecoder.create('utf-16be', { ignoreBOM : true })
@@ -7457,12 +7393,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_005
-     * @tc.name: testTextDecoderCreate005
-     * @tc.desc: The source encoding's name, lowercased.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testTextDecoderCreate005
+     * @tc.number SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_005
+     * @tc.desc   The source encoding's name, lowercased.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = util.TextDecoder.create('utf-16be', { ignoreBOM : false })
@@ -7471,12 +7407,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_006
-     * @tc.name: testTextDecoderCreate006
-     * @tc.desc: The source encoding's name, lowercased.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testTextDecoderCreate006
+     * @tc.number SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_006
+     * @tc.desc   The source encoding's name, lowercased.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = util.TextDecoder.create()
@@ -7485,12 +7421,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_007
-     * @tc.name: testTextDecoderCreate007
-     * @tc.desc: The source encoding's name, lowercased.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testTextDecoderCreate007
+     * @tc.number SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_007
+     * @tc.desc   The source encoding's name, lowercased.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = util.TextDecoder.create(undefined, { ignoreBOM : false })
@@ -7498,14 +7434,14 @@ describe('DecodeEncodeTest', function () {
         expect(encodingStr).assertEqual('utf-8')
     })
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_008
-     * @tc.name: testTextDecoderCreate008
-     * @tc.desc: The source encoding's name, lowercased.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
+     /**
+      * @tc.name   testTextDecoderCreate008
+      * @tc.number SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_008
+      * @tc.desc   The source encoding's name, lowercased.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('testTextDecoderCreate008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = util.TextDecoder.create(undefined);
         var encodingStr = that.encoding;
@@ -7513,12 +7449,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_009
-     * @tc.name: testTextDecoderCreate009
-     * @tc.desc: The source encoding's name, lowercased.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testTextDecoderCreate009
+     * @tc.number SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_009
+     * @tc.desc   The source encoding's name, lowercased.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = util.TextDecoder.create('utf-8', undefined);
@@ -7527,12 +7463,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_010
-     * @tc.name: testTextDecoderCreate0010
-     * @tc.desc: The source encoding's name, lowercased.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testTextDecoderCreate0010
+     * @tc.number SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_010
+     * @tc.desc   The source encoding's name, lowercased.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = util.TextDecoder.create(undefined, { ignoreBOM : true });
@@ -7541,12 +7477,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_011
-     * @tc.name: testTextDecoderCreate011
-     * @tc.desc: The source encoding's name, lowercased.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testTextDecoderCreate011
+     * @tc.number SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_011
+     * @tc.desc   The source encoding's name, lowercased.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = util.TextDecoder.create(null);
@@ -7555,12 +7491,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_012
-     * @tc.name: testTextDecoderCreate012
-     * @tc.desc: The source encoding's name, lowercased.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testTextDecoderCreate012
+     * @tc.number SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_012
+     * @tc.desc   The source encoding's name, lowercased.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = util.TextDecoder.create('utf-8', null);
@@ -7569,12 +7505,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_013
-     * @tc.name: testTextDecoderCreate0013
-     * @tc.desc: The source encoding's name, lowercased.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testTextDecoderCreate0013
+     * @tc.number SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_013
+     * @tc.desc   The source encoding's name, lowercased.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = util.TextDecoder.create(null, { ignoreBOM : true });
@@ -7583,12 +7519,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_THROW_ERROR_001
-     * @tc.name: testTextDecoderCreateThrowError001
-     * @tc.desc: The source encoding's name, lowercased.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testTextDecoderCreateThrowError001
+     * @tc.number SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_THROW_ERROR_001
+     * @tc.desc   The source encoding's name, lowercased.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreateThrowError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -7601,12 +7537,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_THROW_ERROR_002
-     * @tc.name: testTextDecoderCreateThrowError002
-     * @tc.desc: The source encoding's name, lowercased.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testTextDecoderCreateThrowError002
+     * @tc.number SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_THROW_ERROR_002
+     * @tc.desc   The source encoding's name, lowercased.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreateThrowError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -7619,12 +7555,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_THROW_ERROR_003
-     * @tc.name: testTextDecoderCreateThrowError003
-     * @tc.desc: The source encoding's name, lowercased.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testTextDecoderCreateThrowError003
+     * @tc.number SUB_COMMONLIBRARY_TEXT_DECODER_CREATE_THROW_ERROR_003
+     * @tc.desc   The source encoding's name, lowercased.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreateThrowError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -7637,12 +7573,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDE_WITH_STREAM_001
-     * @tc.name: decodeWithStream001
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeWithStream001
+     * @tc.number SUB_COMMONLIBRARY_DEOCDE_WITH_STREAM_001
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeWithStream001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const that = util.TextDecoder.create('utf-8');
@@ -7652,12 +7588,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDE_WITH_STREAM_002
-     * @tc.name: decodeWithStream002
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeWithStream002
+     * @tc.number SUB_COMMONLIBRARY_DEOCDE_WITH_STREAM_002
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeWithStream002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const that = util.TextDecoder.create('utf-8');
@@ -7667,12 +7603,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDE_WITH_STREAM_003
-     * @tc.name: decodeWithStream003
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeWithStream003
+     * @tc.number SUB_COMMONLIBRARY_DEOCDE_WITH_STREAM_003
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeWithStream003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         const that = util.TextDecoder.create('utf-8');
@@ -7682,12 +7618,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING001
-     * @tc.name: decodeTostring001
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring001
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING001
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textDecoder = util.TextDecoder.create('utf-8', {ignoreBOM:true});
@@ -7698,12 +7634,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING002
-     * @tc.name: decodeTostring002
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring002
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING002
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textDecoder = util.TextDecoder.create('utf-8', {ignoreBOM:false});
@@ -7715,12 +7651,12 @@ describe('DecodeEncodeTest', function () {
 
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING003
-     * @tc.name: decodeTostring003
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring003
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING003
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textDecoder = util.TextDecoder.create('utf-8', {ignoreBOM:true});
@@ -7731,12 +7667,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING004
-     * @tc.name: decodeTostring004
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring004
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING004
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textDecoder = util.TextDecoder.create('utf-8', {ignoreBOM:false});
@@ -7747,12 +7683,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING005
-     * @tc.name: decodeTostring005
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring005
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING005
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textDecoder = util.TextDecoder.create('utf-8', {ignoreBOM:false});
@@ -7765,12 +7701,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING006
-     * @tc.name: decodeTostring006
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring006
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING006
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textDecoder = util.TextDecoder.create('utf-8', {ignoreBOM:false});
@@ -7780,12 +7716,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING007
-     * @tc.name: decodeTostring007
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring007
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING007
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textDecoder = util.TextDecoder.create('utf-8', {ignoreBOM:false});
@@ -7794,12 +7730,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING008
-     * @tc.name: decodeTostring008
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring008
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING008
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('gb18030');
@@ -7810,12 +7746,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING009
-     * @tc.name: decodeTostring009
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring009
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING009
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('big5');
@@ -7826,12 +7762,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0010
-     * @tc.name: decodeTostring0010
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0010
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0010
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('shift_jis');
@@ -7842,12 +7778,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0011
-     * @tc.name: decodeTostring0011
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0011
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0011
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-2022-jp');
@@ -7858,12 +7794,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0012
-     * @tc.name: decodeTostring0012
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0012
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0012
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('ibm866');
@@ -7874,12 +7810,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0013
-     * @tc.name: decodeTostring0013
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0013
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0013
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('GBK');
@@ -7890,12 +7826,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0014
-     * @tc.name: decodeTostring0014
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0014
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0014
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('GB2312');
@@ -7906,12 +7842,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0015
-     * @tc.name: decodeTostring0015
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0015
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0015
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-2');
@@ -7922,12 +7858,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0016
-     * @tc.name: decodeTostring0016
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0016
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0016
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-4');
@@ -7938,12 +7874,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0017
-     * @tc.name: decodeTostring0017
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0017
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0017
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-5');
@@ -7954,12 +7890,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0018
-     * @tc.name: decodeTostring0018
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0018
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0018
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-6');
@@ -7970,12 +7906,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0019
-     * @tc.name: decodeTostring0019
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0019
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0019
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-7');
@@ -7986,12 +7922,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0020
-     * @tc.name: decodeTostring0020
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0020
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0020
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-8');
@@ -8002,12 +7938,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0021
-     * @tc.name: decodeTostring0021
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0021
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0021
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-8');
@@ -8018,12 +7954,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0022
-     * @tc.name: decodeTostring0022
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0022
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0022
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-8-i');
@@ -8034,12 +7970,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0023
-     * @tc.name: decodeTostring0023
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0023
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0023
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-10');
@@ -8049,14 +7985,14 @@ describe('DecodeEncodeTest', function () {
         expect(data).assertEqual('Hei');
     })
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0024
-     * @tc.name: decodeTostring0024
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
+     /**
+      * @tc.name   decodeTostring0024
+      * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0024
+      * @tc.desc   Returns the result of running encoding's decoder.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('decodeTostring0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-13');
         let result = that.encodeInto('Sveiki');
@@ -8066,12 +8002,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0025
-     * @tc.name: decodeTostring0025
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0025
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0025
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-14');
@@ -8082,12 +8018,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0026
-     * @tc.name: decodeTostring0026
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0026
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0026
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-15');
@@ -8098,12 +8034,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0027
-     * @tc.name: decodeTostring0027
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0027
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0027
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('koi8-r');
@@ -8114,12 +8050,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_DEOCDETOSTRING0028
-     * @tc.name: decodeTostring0028
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0028
+     * @tc.number SUB_COMMONLIBRARY_DEOCDETOSTRING0028
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('koi8-u');
@@ -8130,12 +8066,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_001
-     * @tc.name: testEncodeInto001
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testencodeInto001
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_001
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testencodeInto001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder()
@@ -8146,12 +8082,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_002
-     * @tc.name: testEncodeInto002
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto002
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_002
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder()
@@ -8162,12 +8098,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_003
-     * @tc.name: testEncodeInto003
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto003
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_003
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder()
@@ -8178,12 +8114,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_004
-     * @tc.name: testEncodeInto004
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto004
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_004
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder()
@@ -8194,12 +8130,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_005
-     * @tc.name: testEncodeInto005
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto005
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_005
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder()
@@ -8211,12 +8147,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_006
-     * @tc.name: testEncodeInto006
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto006
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_006
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder()
@@ -8227,12 +8163,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_007
-     * @tc.name: testEncodeInto007
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto007
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_007
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder()
@@ -8243,12 +8179,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_008
-     * @tc.name: testEncodeInto008
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto008
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_008
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder()
@@ -8259,12 +8195,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_009
-     * @tc.name: testEncodeInto009
-     * @tc.desc: Returns the result of encoder for gb18030.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto009
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_009
+     * @tc.desc   Returns the result of encoder for gb18030.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('gb18030')
@@ -8279,12 +8215,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_010
-     * @tc.name: testEncodeInto010
-     * @tc.desc: Returns the result of encoder for GB18030.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto010
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_010
+     * @tc.desc   Returns the result of encoder for GB18030.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('GB18030')
@@ -8299,12 +8235,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_THROW_ERROR_001
-     * @tc.name: testEncodeIntoThrowError001
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeIntoThrowError001
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_THROW_ERROR_001
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeIntoThrowError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -8320,12 +8256,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_THROW_ERROR_002
-     * @tc.name: testEncodeIntoThrowError002
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeIntoThrowError002
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_THROW_ERROR_002
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeIntoThrowError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -8341,12 +8277,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_001
-     * @tc.name: testencodeIntoUint8Array001
-     * @tc.desc: encode string, write the result to dest array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testencodeIntoUint8Array001
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_001
+     * @tc.desc   encode string, write the result to dest array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testencodeIntoUint8Array001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder()
@@ -8359,12 +8295,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_002
-     * @tc.name: testencodeIntoUint8Array002
-     * @tc.desc: encode string, write the result to dest array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testencodeIntoUint8Array002
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_002
+     * @tc.desc   encode string, write the result to dest array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testencodeIntoUint8Array002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder()
@@ -8377,12 +8313,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_003
-     * @tc.name: testencodeIntoUint8Array003
-     * @tc.desc: encode string, write the result to dest array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testencodeIntoUint8Array003
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_003
+     * @tc.desc   encode string, write the result to dest array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testencodeIntoUint8Array003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder()
@@ -8395,12 +8331,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_004
-     * @tc.name: testencodeIntoUint8Array004
-     * @tc.desc: encode string, write the result to dest array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testencodeIntoUint8Array004
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_004
+     * @tc.desc   encode string, write the result to dest array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testencodeIntoUint8Array004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder()
@@ -8413,12 +8349,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_005
-     * @tc.name: testencodeIntoUint8Array005
-     * @tc.desc: encode string, write the result to dest array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testencodeIntoUint8Array005
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_005
+     * @tc.desc   encode string, write the result to dest array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testencodeIntoUint8Array005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder()
@@ -8431,12 +8367,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_006
-     * @tc.name: testencodeIntoUint8Array006
-     * @tc.desc: encode string, write the result to dest array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testencodeIntoUint8Array006
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_006
+     * @tc.desc   encode string, write the result to dest array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testencodeIntoUint8Array006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder()
@@ -8449,12 +8385,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_007
-     * @tc.name: testencodeIntoUint8Array007
-     * @tc.desc: encode string, write the result to dest array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testencodeIntoUint8Array007
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_007
+     * @tc.desc   encode string, write the result to dest array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testencodeIntoUint8Array007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder()
@@ -8467,12 +8403,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_008
-     * @tc.name: testencodeIntoUint8Array008
-     * @tc.desc: encode string, write the result to dest array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testencodeIntoUint8Array008
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_008
+     * @tc.desc   encode string, write the result to dest array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testencodeIntoUint8Array008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder()
@@ -8485,12 +8421,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_THROW_ERROR_001
-     * @tc.name: testencodeIntoUint8ArrayThrowError001
-     * @tc.desc: encode string, write the result to dest array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testencodeIntoUint8ArrayThrowError001
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_THROW_ERROR_001
+     * @tc.desc   encode string, write the result to dest array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testencodeIntoUint8ArrayThrowError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -8507,12 +8443,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_THROW_ERROR_002
-     * @tc.name: testencodeIntoUint8ArrayThrowError002
-     * @tc.desc: encode string, write the result to dest array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testencodeIntoUint8ArrayThrowError002
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_THROW_ERROR_002
+     * @tc.desc   encode string, write the result to dest array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testencodeIntoUint8ArrayThrowError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -8529,12 +8465,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODING_001
-     * @tc.name: testEncoding_001
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncoding_001
+     * @tc.number SUB_COMMONLIBRARY_ENCODING_001
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncoding_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder('big5')
@@ -8543,12 +8479,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODING_002
-     * @tc.name: testEncoding_002
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncoding_002
+     * @tc.number SUB_COMMONLIBRARY_ENCODING_002
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncoding_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder('iso-8859-2')
@@ -8557,12 +8493,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODING_003
-     * @tc.name: testEncoding_003
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncoding_003
+     * @tc.number SUB_COMMONLIBRARY_ENCODING_003
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncoding_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder('euc-kr')
@@ -8571,12 +8507,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODING_004
-     * @tc.name: testEncoding_004
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncoding_004
+     * @tc.number SUB_COMMONLIBRARY_ENCODING_004
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncoding_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder('ibm866')
@@ -8585,12 +8521,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODING_005
-     * @tc.name: testEncoding_005
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncoding_005
+     * @tc.number SUB_COMMONLIBRARY_ENCODING_005
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncoding_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder('x-mac-cyrillic')
@@ -8599,12 +8535,12 @@ describe('DecodeEncodeTest', function () {
     })
 	
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODING_CREATE_001
-     * @tc.name: testEncoding_create_001
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncoding_create_001
+     * @tc.number SUB_COMMONLIBRARY_ENCODING_CREATE_001
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncoding_create_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = util.TextEncoder.create()
@@ -8613,12 +8549,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODING_CREATE_002
-     * @tc.name: testEncoding_create_002
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncoding_create_002
+     * @tc.number SUB_COMMONLIBRARY_ENCODING_CREATE_002
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncoding_create_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = util.TextEncoder.create('iso-8859-2')
@@ -8627,12 +8563,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODING_CREATE_003
-     * @tc.name: testEncoding_create_003
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncoding_create_003
+     * @tc.number SUB_COMMONLIBRARY_ENCODING_CREATE_003
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncoding_create_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = util.TextEncoder.create('euc-kr')
@@ -8641,12 +8577,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODING_CREATE_004
-     * @tc.name: testEncoding_create_004
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncoding_create_004
+     * @tc.number SUB_COMMONLIBRARY_ENCODING_CREATE_004
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncoding_create_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = util.TextEncoder.create('ibm866')
@@ -8655,12 +8591,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODING_CREATE_005
-     * @tc.name: testEncoding_create_005
-     * @tc.desc: Returns the result of encoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncoding_create_005
+     * @tc.number SUB_COMMONLIBRARY_ENCODING_CREATE_005
+     * @tc.desc   Returns the result of encoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncoding_create_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = util.TextEncoder.create('x-mac-cyrillic')
@@ -8669,12 +8605,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_011
-     * @tc.name: testEncodeInto011
-     * @tc.desc: Returns the result of encoder for GB18030.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto011
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_011
+     * @tc.desc   Returns the result of encoder for GB18030.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('big5')
@@ -8689,12 +8625,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_012
-     * @tc.name: testEncodeInto012
-     * @tc.desc: Returns the result of encoder for GB18030.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto012
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_012
+     * @tc.desc   Returns the result of encoder for GB18030.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('shift_jis')
@@ -8709,12 +8645,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_013
-     * @tc.name: testEncodeInto013
-     * @tc.desc: Returns the result of encoder for GB18030.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto013
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_013
+     * @tc.desc   Returns the result of encoder for GB18030.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-2022-jp')
@@ -8729,12 +8665,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_014
-     * @tc.name: testEncodeInto014
-     * @tc.desc: Returns the result of encoder for GB18030.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto014
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_014
+     * @tc.desc   Returns the result of encoder for GB18030.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('ibm866')
@@ -8747,12 +8683,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_015
-     * @tc.name: testEncodeInto015
-     * @tc.desc: Returns the result of encoder for GB18030.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto015
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_015
+     * @tc.desc   Returns the result of encoder for GB18030.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('macintosh')
@@ -8765,12 +8701,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_016
-     * @tc.name: testEncodeInto016
-     * @tc.desc: Returns the result of encoder for GBK.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto016
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_016
+     * @tc.desc   Returns the result of encoder for GBK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('GBK');
@@ -8782,12 +8718,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_017
-     * @tc.name: testEncodeInto017
-     * @tc.desc: Returns the result of encoder for GB2312.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto017
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_017
+     * @tc.desc   Returns the result of encoder for GB2312.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('GB2312');
@@ -8799,12 +8735,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_018
-     * @tc.name: testEncodeInto018
-     * @tc.desc: Returns the result of encoder for iso-8859-2.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto018
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_018
+     * @tc.desc   Returns the result of encoder for iso-8859-2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-2');
@@ -8816,12 +8752,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_019
-     * @tc.name: testEncodeInto019
-     * @tc.desc: Returns the result of encoder for iso-8859-3.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto019
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_019
+     * @tc.desc   Returns the result of encoder for iso-8859-3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-3');
@@ -8833,12 +8769,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_020
-     * @tc.name: testEncodeInto020
-     * @tc.desc: Returns the result of encoder for iso-8859-4.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto020
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_020
+     * @tc.desc   Returns the result of encoder for iso-8859-4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-4');
@@ -8850,12 +8786,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_021
-     * @tc.name: testEncodeInto021
-     * @tc.desc: Returns the result of encoder for iso-8859-5.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto021
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_021
+     * @tc.desc   Returns the result of encoder for iso-8859-5.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-5');
@@ -8867,12 +8803,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_022
-     * @tc.name: testEncodeInto022
-     * @tc.desc: Returns the result of encoder for iso-8859-6.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto022
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_022
+     * @tc.desc   Returns the result of encoder for iso-8859-6.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-6');
@@ -8884,12 +8820,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_023
-     * @tc.name: testEncodeInto023
-     * @tc.desc: Returns the result of encoder for iso-8859-7.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto023
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_023
+     * @tc.desc   Returns the result of encoder for iso-8859-7.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-7');
@@ -8901,12 +8837,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_024
-     * @tc.name: testEncodeInto024
-     * @tc.desc: Returns the result of encoder for iso-8859-8.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto024
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_024
+     * @tc.desc   Returns the result of encoder for iso-8859-8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-8');
@@ -8918,12 +8854,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_025
-     * @tc.name: testEncodeInto025
-     * @tc.desc: Returns the result of encoder for iso-8859-8-i.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto025
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_025
+     * @tc.desc   Returns the result of encoder for iso-8859-8-i.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-8-i');
@@ -8935,12 +8871,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_026
-     * @tc.name: testEncodeInto026
-     * @tc.desc: Returns the result of encoder for iso-8859-10.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto026
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_026
+     * @tc.desc   Returns the result of encoder for iso-8859-10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-10');
@@ -8952,12 +8888,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_027
-     * @tc.name: testEncodeInto027
-     * @tc.desc: Returns the result of encoder for iso-8859-13.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto027
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_027
+     * @tc.desc   Returns the result of encoder for iso-8859-13.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-13');
@@ -8969,12 +8905,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_028
-     * @tc.name: testEncodeInto028
-     * @tc.desc: Returns the result of encoder for iso-8859-14.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto028
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_028
+     * @tc.desc   Returns the result of encoder for iso-8859-14.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-14');
@@ -8986,12 +8922,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_029
-     * @tc.name: testEncodeInto029
-     * @tc.desc: Returns the result of encoder for iso-8859-15.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto029
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_029
+     * @tc.desc   Returns the result of encoder for iso-8859-15.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('iso-8859-15');
@@ -9003,12 +8939,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_030
-     * @tc.name: testEncodeInto030
-     * @tc.desc: Returns the result of encoder for koi8-r.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto030
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_030
+     * @tc.desc   Returns the result of encoder for koi8-r.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('koi8-r');
@@ -9020,12 +8956,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_031
-     * @tc.name: testEncodeInto031
-     * @tc.desc: Returns the result of encoder for koi8-u.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto031
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_031
+     * @tc.desc   Returns the result of encoder for koi8-u.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('koi8-u');
@@ -9037,12 +8973,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_032
-     * @tc.name: testEncodeInto032
-     * @tc.desc: Returns the result of encoder for windows-874.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto032
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_032
+     * @tc.desc   Returns the result of encoder for windows-874.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('windows-874');
@@ -9054,12 +8990,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_033
-     * @tc.name: testEncodeInto033
-     * @tc.desc: Returns the result of encoder for windows-1250.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto033
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_033
+     * @tc.desc   Returns the result of encoder for windows-1250.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('windows-1250');
@@ -9071,12 +9007,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_034
-     * @tc.name: testEncodeInto034
-     * @tc.desc: Returns the result of encoder for windows-1251.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto034
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_034
+     * @tc.desc   Returns the result of encoder for windows-1251.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('windows-1251');
@@ -9088,12 +9024,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_035
-     * @tc.name: testEncodeInto035
-     * @tc.desc: Returns the result of encoder for windows-1252.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto035
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_035
+     * @tc.desc   Returns the result of encoder for windows-1252.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('windows-1252');
@@ -9105,12 +9041,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_036
-     * @tc.name: testEncodeInto036
-     * @tc.desc: Returns the result of encoder for windows-1253.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto036
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_036
+     * @tc.desc   Returns the result of encoder for windows-1253.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('windows-1253');
@@ -9122,12 +9058,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_037
-     * @tc.name: testEncodeInto037
-     * @tc.desc: Returns the result of encoder for windows-1254.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto037
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_037
+     * @tc.desc   Returns the result of encoder for windows-1254.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('windows-1254');
@@ -9139,12 +9075,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_038
-     * @tc.name: testEncodeInto038
-     * @tc.desc: Returns the result of encoder for windows-1255.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto038
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_038
+     * @tc.desc   Returns the result of encoder for windows-1255.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('windows-1255');
@@ -9156,12 +9092,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_039
-     * @tc.name: testEncodeInto039
-     * @tc.desc: Returns the result of encoder for windows-1256.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto039
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_039
+     * @tc.desc   Returns the result of encoder for windows-1256.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('windows-1256');
@@ -9173,12 +9109,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_040
-     * @tc.name: testEncodeInto040
-     * @tc.desc: Returns the result of encoder for windows-1257.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto040
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_040
+     * @tc.desc   Returns the result of encoder for windows-1257.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('windows-1257');
@@ -9190,12 +9126,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_041
-     * @tc.name: testEncodeInto041
-     * @tc.desc: Returns the result of encoder for windows-1258.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto041
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_041
+     * @tc.desc   Returns the result of encoder for windows-1258.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('windows-1258');
@@ -9207,12 +9143,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_042
-     * @tc.name: testEncodeInto042
-     * @tc.desc: Returns the result of encoder for euc-jp.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto042
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_042
+     * @tc.desc   Returns the result of encoder for euc-jp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('euc-jp');
@@ -9224,12 +9160,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_043
-     * @tc.name: testEncodeInto043
-     * @tc.desc: Returns the result of encoder for euc-kr.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto043
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_043
+     * @tc.desc   Returns the result of encoder for euc-kr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('euc-kr');
@@ -9241,12 +9177,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_044
-     * @tc.name: testEncodeInto044
-     * @tc.desc: Returns the result of encoder for x-mac-cyrillic.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto044
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_044
+     * @tc.desc   Returns the result of encoder for x-mac-cyrillic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('x-mac-cyrillic');
@@ -9258,12 +9194,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_045
-     * @tc.name: testEncodeInto045
-     * @tc.desc: Returns the result of encoder for utf-16be.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto045
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_045
+     * @tc.desc   Returns the result of encoder for utf-16be.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('utf-16be');
@@ -9275,12 +9211,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_046
-     * @tc.name: testEncodeInto046
-     * @tc.desc: Returns the result of encoder for utf-16le.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEncodeInto046
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_046
+     * @tc.desc   Returns the result of encoder for utf-16le.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeInto046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let that = new util.TextEncoder('utf-16le');
@@ -9292,12 +9228,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_009
-     * @tc.name: testencodeIntoUint8Array009
-     * @tc.desc: encode string, write the result to dest array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testencodeIntoUint8Array009
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_009
+     * @tc.desc   encode string, write the result to dest array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testencodeIntoUint8Array009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder('big5')
@@ -9310,12 +9246,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_010
-     * @tc.name: testencodeIntoUint8Array010
-     * @tc.desc: encode string, write the result to dest array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testencodeIntoUint8Array010
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_010
+     * @tc.desc   encode string, write the result to dest array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testencodeIntoUint8Array010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder('shift_jis')
@@ -9328,12 +9264,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_011
-     * @tc.name: testencodeIntoUint8Array011
-     * @tc.desc: encode string, write the result to dest array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testencodeIntoUint8Array011
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_011
+     * @tc.desc   encode string, write the result to dest array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testencodeIntoUint8Array011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder('iso-2022-jp')
@@ -9346,12 +9282,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_012
-     * @tc.name: testencodeIntoUint8Array012
-     * @tc.desc: encode string, write the result to dest array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testencodeIntoUint8Array012
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_012
+     * @tc.desc   encode string, write the result to dest array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testencodeIntoUint8Array012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder('ibm866')
@@ -9364,12 +9300,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_013
-     * @tc.name: testencodeIntoUint8Array013
-     * @tc.desc: encode string, write the result to dest array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testencodeIntoUint8Array013
+     * @tc.number SUB_COMMONLIBRARY_ENCODE_INTO_UINT8ARRAY_013
+     * @tc.desc   encode string, write the result to dest array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testencodeIntoUint8Array013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.TextEncoder('macintosh')
@@ -9381,16 +9317,15 @@ describe('DecodeEncodeTest', function () {
         expect(result.written).assertEqual(8)
     })
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_00100 
-     * @tc.name: testWrite001
-     * @tc.desc: Returns a decoded string, ensuring that any incomplete multibyte characters at the end of the Uint8Array are
-     * comitted from the returned string and stored in an internal buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
 
+     /**
+      * @tc.name   testWrite001
+      * @tc.number testWrite001
+      * @tc.desc   testWrite001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it("testWrite001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
       let decoder = new util.StringDecoder('utf-8');
       let input =  new Uint8Array([0xE4, 0xBD, 0xA0, 0xE5, 0xA5, 0xBD]);
@@ -9399,13 +9334,12 @@ describe('DecodeEncodeTest', function () {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_00200
-     * @tc.name: testWrite002
-     * @tc.desc: Returns a decoded string, ensuring that any incomplete multibyte characters at the end of the Uint8Array are
-     * comitted from the returned string and stored in an internal buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_00200
+     * @tc.desc   Returns a decoded string, ensuring that any incomplete multibyte characters at the end of the Uint8Array are
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testWrite002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
       let decoder = new util.StringDecoder('utf-8');
@@ -9414,13 +9348,12 @@ describe('DecodeEncodeTest', function () {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_00300
-     * @tc.name: testWrite003
-     * @tc.desc:  Returns a decoded string, ensuring that any incomplete multibyte characters at the end of the Uint8Array are
-     * comitted from the returned string and stored in an internal buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_00300
+     * @tc.desc   Returns a decoded string, ensuring that any incomplete multibyte characters at the end of the Uint8Array are
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testWrite003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
       let decoder = new util.StringDecoder('big5');
@@ -9430,13 +9363,12 @@ describe('DecodeEncodeTest', function () {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_00400
-     * @tc.name: testWrite004
-     * @tc.desc:  Returns a decoded string, ensuring that any incomplete multibyte characters at the end of the Uint8Array are
-     * comitted from the returned string and stored in an internal buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_00400
+     * @tc.desc   Returns a decoded string, ensuring that any incomplete multibyte characters at the end of the Uint8Array are
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testWrite004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
       let decoder = new util.StringDecoder('iso-8859-2');
@@ -9446,13 +9378,12 @@ describe('DecodeEncodeTest', function () {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_00500
-     * @tc.name: testWrite005
-     * @tc.desc:  Returns a decoded string, ensuring that any incomplete multibyte characters at the end of the Uint8Array are
-     * comitted from the returned string and stored in an internal buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_00500
+     * @tc.desc   Returns a decoded string, ensuring that any incomplete multibyte characters at the end of the Uint8Array are
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testWrite005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
       let decoder = new util.StringDecoder('koi8-r');
@@ -9462,13 +9393,12 @@ describe('DecodeEncodeTest', function () {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_00600
-     * @tc.name: testWrite006
-     * @tc.desc: Returns a decoded string, ensuring that any incomplete multibyte characters at the end of the Uint8Array are
-     * comitted from the returned string and stored in an internal buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_00600
+     * @tc.desc   Returns a decoded string, ensuring that any incomplete multibyte characters at the end of the Uint8Array are
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testWrite006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
       let decoder = new util.StringDecoder('windows-1250');
@@ -9478,12 +9408,12 @@ describe('DecodeEncodeTest', function () {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_00700
-     * @tc.name: testEnd001
-     * @tc.desc: Returns any remaining input stored in the internal buffer as a string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEnd001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_00700
+     * @tc.desc   Returns any remaining input stored in the internal buffer as a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testEnd001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
       let decoder = new util.StringDecoder('macintosh');
@@ -9493,12 +9423,12 @@ describe('DecodeEncodeTest', function () {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_00800
-     * @tc.name: testEnd002
-     * @tc.desc: Returns any remaining input stored in the internal buffer as a string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEnd002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_00800
+     * @tc.desc   Returns any remaining input stored in the internal buffer as a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testEnd002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
       let decoder = new util.StringDecoder('utf-8');
@@ -9507,12 +9437,12 @@ describe('DecodeEncodeTest', function () {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_00900
-     * @tc.name: testEnd003
-     * @tc.desc: Returns any remaining input stored in the internal buffer as a string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEnd003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_00900
+     * @tc.desc   Returns any remaining input stored in the internal buffer as a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testEnd003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
       let decoder = new util.StringDecoder('utf-8');
@@ -9522,12 +9452,12 @@ describe('DecodeEncodeTest', function () {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_01000
-     * @tc.name: testEnd004
-     * @tc.desc: Returns any remaining input stored in the internal buffer as a string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEnd004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_01000
+     * @tc.desc   Returns any remaining input stored in the internal buffer as a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testEnd004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
       let decoder = new util.StringDecoder('utf-8');
@@ -9539,12 +9469,12 @@ describe('DecodeEncodeTest', function () {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_01100
-     * @tc.name: testWrite007
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_01100
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let stringDecoder = new util.StringDecoder('utf-8');
@@ -9555,12 +9485,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_01200
-     * @tc.name: testWrite008
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_01200
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let stringDecoder = new util.StringDecoder('utf-8');
@@ -9573,12 +9503,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_01300
-     * @tc.name: testWrite009
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_01300
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('gb18030');
@@ -9589,12 +9519,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_01400
-     * @tc.name: testWrite010
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_01400
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('big5');
@@ -9605,12 +9535,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_01500
-     * @tc.name: testWrite011
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_01500
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('shift_jis');
@@ -9621,12 +9551,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_01600
-     * @tc.name: testWrite012
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_01600
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('iso-2022-jp');
@@ -9637,12 +9567,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_01700
-     * @tc.name: testWrite013
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_01700
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('ibm866');
@@ -9653,12 +9583,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_01800
-     * @tc.name: testWrite014
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_01800
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('GBK');
@@ -9669,12 +9599,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_01900
-     * @tc.name: testWrite015
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_01900
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('GB2312');
@@ -9685,12 +9615,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_02000
-     * @tc.name: testWrite016
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite016
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_02000
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('iso-8859-2');
@@ -9701,12 +9631,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_02100
-     * @tc.name: testWrite017
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite017
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_02100
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('iso-8859-4');
@@ -9717,12 +9647,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_02200
-     * @tc.name: testWrite018
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite018
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_02200
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('iso-8859-5');
@@ -9733,12 +9663,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_02300
-     * @tc.name: testWrite019
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite019
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_02300
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('iso-8859-6');
@@ -9749,12 +9679,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_02400
-     * @tc.name: testWrite020
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_02400
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('iso-8859-7');
@@ -9765,12 +9695,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_02500
-     * @tc.name: testWrite021
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite021
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_02500
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('iso-8859-8');
@@ -9781,12 +9711,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_02600
-     * @tc.name: testWrite022
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite022
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_02600
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('macintosh');
@@ -9797,12 +9727,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_02700
-     * @tc.name: testWrite023
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite023
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_02700
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('iso-8859-8-i');
@@ -9813,12 +9743,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_02800
-     * @tc.name: stringDecoder0024
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite024
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_02800
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('iso-8859-10');
@@ -9829,12 +9759,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_02900
-     * @tc.name: testWrite025
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite025
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_02900
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('iso-8859-13');
@@ -9845,12 +9775,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_03000
-     * @tc.name: testWrite026
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite026
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_03000
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('iso-8859-14');
@@ -9861,12 +9791,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_03100
-     * @tc.name: testWrite027
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite027
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_03100
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('iso-8859-15');
@@ -9877,12 +9807,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_03200
-     * @tc.name: testWrite028
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite028
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_03200
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('koi8-r');
@@ -9893,12 +9823,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_03300
-     * @tc.name: testWrite029
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite029
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_03300
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('koi8-u');
@@ -9909,12 +9839,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_03400
-     * @tc.name: testWrite030
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite030
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_03400
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder();
@@ -9927,12 +9857,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_03500
-     * @tc.name: testWrite031
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Functio
-     * @tc.level: Level 1
+     * @tc.name   testWrite031
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_03500
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder();
@@ -9945,12 +9875,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_03600
-     * @tc.name: testWrite032
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite032
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_03600
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder();
@@ -9963,12 +9893,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_03700
-     * @tc.name: testWrite033
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite033
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_03700
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder();
@@ -9981,12 +9911,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_03800
-     * @tc.name: testWrite034
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite034
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_03800
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder();
@@ -9999,12 +9929,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_03900
-     * @tc.name: testWrite035
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite035
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_03900
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('windows-874');
@@ -10016,12 +9946,12 @@ describe('DecodeEncodeTest', function () {
 
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_04000
-     * @tc.name: testWrite036
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite036
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_04000
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('windows-1251');
@@ -10032,12 +9962,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_04100
-     * @tc.name: testWrite037
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite037
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_04100
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('windows-1252');
@@ -10048,12 +9978,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_04200
-     * @tc.name: testWrite038
-     * @tc.desc: Returns a decoded string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testWrite038
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_04200
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('windows-1253');
@@ -10064,13 +9994,13 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_04300
-    * @tc.name: testWrite039
-    * @tc.desc: Returns a decoded string.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWrite039
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_04300
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWrite039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
        let textEncoder = new util.TextEncoder('windows-1254');
        let result = textEncoder.encodeInto('Merhaba, dünya');
@@ -10080,13 +10010,13 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_04400
-    * @tc.name: testWrite040
-    * @tc.desc: Returns a decoded string.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWrite040
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_04400
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWrite040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('windows-1255');
         let result = textEncoder.encodeInto('שלום, עולם');
@@ -10096,13 +10026,13 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_04500
-    * @tc.name: testWrite041
-    * @tc.desc: Returns a decoded string.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWrite041
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_04500
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWrite041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('windows-1256');
         let result = textEncoder.encodeInto('مرحبا, العالم');
@@ -10112,13 +10042,13 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_04600
-    * @tc.name: testWrite042
-    * @tc.desc: Returns a decoded string.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWrite042
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_04600
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWrite042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('windows-1257');
         let result = textEncoder.encodeInto('Tere, maailma');
@@ -10128,13 +10058,13 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_04700
-    * @tc.name: testWrite043
-    * @tc.desc: Returns a decoded string.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWrite043
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_04700
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWrite043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('windows-1258');
         let result = textEncoder.encodeInto('Chào');
@@ -10144,13 +10074,13 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_04800
-    * @tc.name: testWrite044
-    * @tc.desc: Returns a decoded string.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWrite044
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_04800
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWrite044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('euc-jp');
         let result = textEncoder.encodeInto('こんにちは');
@@ -10160,13 +10090,13 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_04900
-    * @tc.name: testWrite045
-    * @tc.desc: Returns a decoded string.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWrite045
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_04900
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWrite045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('euc-kr');
         let result = textEncoder.encodeInto('안녕, 세상');
@@ -10176,13 +10106,13 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_05000
-    * @tc.name: testWrite046
-    * @tc.desc: Returns a decoded string.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWrite046
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_05000
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWrite046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('euc-kr');
         let result = textEncoder.encodeInto('안녕, 세상');
@@ -10191,14 +10121,14 @@ describe('DecodeEncodeTest', function () {
         expect(data).assertEqual('안녕, 세상');
     })
 
-   /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_05100
-    * @tc.name: testWrite047
-    * @tc.desc: Returns a decoded string.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testWrite047
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_05100
+     * @tc.desc   Returns a decoded string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWrite047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textEncoder = new util.TextEncoder('x-mac-cyrillic');
         let result = textEncoder.encodeInto('Привет, мир!');
@@ -10208,12 +10138,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_05200
-     * @tc.name: decodeTostring0029
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0029
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_05200
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -10227,12 +10157,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_05300
-     * @tc.name: decodeTostring0030
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0030
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_05300
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textDecoder = util.TextDecoder.create('UTF-8', {fatal: false});
@@ -10242,12 +10172,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_05400
-     * @tc.name: decodeTostring0031
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0031
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_05400
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -10261,12 +10191,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_05500
-     * @tc.name: decodeTostring0032
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0032
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_05500
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textDecoder = util.TextDecoder.create('utf-16le', {fatal: false});
@@ -10276,12 +10206,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_05600
-     * @tc.name: decodeTostring0033
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0033
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_05600
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -10295,12 +10225,12 @@ describe('DecodeEncodeTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_UTIL_05700
-     * @tc.name: decodeTostring0034
-     * @tc.desc: Returns the result of running encoding's decoder.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   decodeTostring0034
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_UTIL_05700
+     * @tc.desc   Returns the result of running encoding's decoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('decodeTostring0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let textDecoder = util.TextDecoder.create('utf-16be', {fatal: false});

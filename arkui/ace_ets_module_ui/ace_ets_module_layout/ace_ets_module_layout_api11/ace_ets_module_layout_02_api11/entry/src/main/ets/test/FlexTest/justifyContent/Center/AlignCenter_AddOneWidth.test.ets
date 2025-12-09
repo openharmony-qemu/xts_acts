@@ -47,9 +47,12 @@ export default function AlignCenter_AddOneWidth() {
     });
 
     /**
+     * @tc.name   testFlexAlignCenterTextWidth
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_CENTER_TEST_1300
-     * @tc.name testFlexAlignCenterTextWidth
-     * @tc.desc The interface is displayed when you change the width of the first subcomponent
+     * @tc.desc   The interface is displayed when you change the width of the first subcomponent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignCenterTextWidth',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignCenterTextWidth] START');

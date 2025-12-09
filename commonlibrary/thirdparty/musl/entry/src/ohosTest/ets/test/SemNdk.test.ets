@@ -25,12 +25,12 @@ export default function semNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SEM_SEMCTL_0100
-     * @tc.name       : testMuslSemSemctl001
-     * @tc.desc       : test semctl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSemSemctl001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEM_SEMCTL_0100
+     * @tc.desc   test semctl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSemSemctl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = sem.semctl(0);
@@ -39,12 +39,12 @@ export default function semNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SEM_SEMGET_0100
-     * @tc.name       : testMuslSemSemget001
-     * @tc.desc       : test semget
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSemSemget001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEM_SEMGET_0100
+     * @tc.desc   test semget
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSemSemget001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = sem.semget();
@@ -53,12 +53,12 @@ export default function semNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SEM_SEMOP_0100
-     * @tc.name       : testMuslSemSemop001
-     * @tc.desc       : test semop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSemSemop001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEM_SEMOP_0100
+     * @tc.desc   test semop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSemSemop001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = sem.semop();
@@ -66,12 +66,12 @@ export default function semNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SEM_SEMTIMEDOP_0100
-     * @tc.name       : testMuslSemSemtimedop001
-     * @tc.desc       : test semtimedop
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSemSemtimedop001
+     * @tc.number SUB_THIRDPARTY_MUSL_SEM_SEMTIMEDOP_0100
+     * @tc.desc   test semtimedop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSemSemtimedop001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = sem.semtimedop();

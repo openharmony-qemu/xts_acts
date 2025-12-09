@@ -107,9 +107,12 @@ static void TestAieClientDestroy(bool isAsync)
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientDestroy_0100
- * @tc.name   : 01. 初始化之后，调用AieClientDestroy返回成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientDestroyFunction001
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientDestroy_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(AieClientDestroyFunctionTest, testAieClientDestroyFunction001, Function | MediumTest | Level2)
 {
@@ -143,9 +146,12 @@ HWTEST_F(AieClientDestroyFunctionTest, testAieClientDestroyFunction001, Function
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientDestroy_0200
- * @tc.name   : 02. 同步执行算法之后，调用AieClientDestroy返回成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientDestroyFunction002
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientDestroy_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientDestroyFunctionTest, testAieClientDestroyFunction002, Function | MediumTest | Level3)
 {
@@ -154,9 +160,12 @@ HWTEST_F(AieClientDestroyFunctionTest, testAieClientDestroyFunction002, Function
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientDestroy_0300
- * @tc.name   : 03. 异步执行算法之后，调用AieClientDestroy返回成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testAieClientDestroyFunction003
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientDestroy_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientDestroyFunctionTest, testAieClientDestroyFunction003, Function | MediumTest | Level3)
 {

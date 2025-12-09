@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
@@ -29,13 +30,13 @@ class EntryAbility extends UIAbility {
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageCreate');
-    windowStage.loadContent('pages/webViewContCreatePdfAndOthersError', (err: BusinessError<void> | null): void => {
+    windowStage.loadContent('pages/webViewContJavaScriptError', (err: BusinessError<void>|null, data: undefined): void => {
       hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
       if (err?.code) {
         hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error');
         return;
       }
-      hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok' + JSON.stringify(this.context));
+      hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok'+JSON.stringify(this.context));
       hilog.info(0x0000, 'testTag EntryAbility', 'onWindowStageCreate ok');
     });
   }
@@ -51,6 +52,12 @@ class EntryAbility extends UIAbility {
 
   onForeground() {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onForeground');
+    if (this.context) {
+      hilog.info(0x0000, 'testTag EntryAbility', 'context ok'+JSON.stringify(this.context));
+    }else{
+      hilog.info(0x0000, 'testTag EntryAbility', 'context is undefined');
+    }
+    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context)
   }
 
   onBackground() {

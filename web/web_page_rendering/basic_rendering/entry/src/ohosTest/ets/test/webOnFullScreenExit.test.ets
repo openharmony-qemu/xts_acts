@@ -73,10 +73,13 @@ export default function webOnFullScreenExit() {
       await Utils.sleep(2000);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBFULLSCREEN_API_0200
-     *tc.name testOnFullScreenExitWebc
-     *tc.desc test interface of onfullscreenexit with runjavascript exitFullscreen
+    /**
+     * @tc.name   testOnFullScreenExitWebc
+     * @tc.number SUB_ACE_BASIC_ETS_WEBFULLSCREEN_API_0200
+     * @tc.desc   test interface of onfullscreenexit with runjavascript exitFullscreen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnFullScreenExitWebc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitOnfullscreenexitWebc";

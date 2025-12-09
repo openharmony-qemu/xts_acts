@@ -25,12 +25,12 @@ import { ArrayList } from '@kit.ArkTS';
 export default function staticLoadHap() {
   describe('HapTest', () => {
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_HAP_0100
-     * @tc.name      : testStaticLoadHap01
-     * @tc.desc      : In this project HAP, use the relative path to load the file ./xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticLoadHap01
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_HAP_0100
+     * @tc.desc   In this project HAP, use the relative path to load the file ./xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStaticLoadHap01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testStaticLoadHap01";
@@ -43,12 +43,12 @@ export default function staticLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_HAP_0200
-     * @tc.name      : testStaticLoadHap02
-     * @tc.desc      : In this project HAP, use the relative path to load the file ../xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticLoadHap02
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_HAP_0200
+     * @tc.desc   In this project HAP, use the relative path to load the file ../xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStaticLoadHap02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testStaticLoadHap02";
@@ -61,13 +61,12 @@ export default function staticLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_HAP_0300
-     * @tc.name      : testStaticLoadHap03
-     * @tc.desc      : In this project HAP, use the relative path to load the folder ./file,
-     *                 equivalent to loading index.ets inside the folder.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticLoadHap03
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_HAP_0300
+     * @tc.desc   In this project HAP, use the relative path to load the folder ./file,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStaticLoadHap03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testStaticLoadHap03";
@@ -80,12 +79,12 @@ export default function staticLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_HAP_0400
-     * @tc.name      : testStaticLoadHap04
-     * @tc.desc      : In this project hap, use a relative path to load a file with a Chinese name.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticLoadHap04
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_HAP_0400
+     * @tc.desc   In this project hap, use a relative path to load a file with a Chinese name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStaticLoadHap04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testStaticLoadHap04";
@@ -98,12 +97,12 @@ export default function staticLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_HAP_0500
-     * @tc.name      : testStaticLoadHap05
-     * @tc.desc      : In this project hap, load the kit, import {} from '@kit.xxx'
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticLoadHap05
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_HAP_0500
+     * @tc.desc   In this project hap, load the kit, import {} from '@kit.xxx'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testStaticLoadHap05", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testStaticLoadHap05";
@@ -120,12 +119,12 @@ export default function staticLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_HAP_0600
-     * @tc.name      : testStaticLoadHap06
-     * @tc.desc      : In this project hap, load the system so, @ohos.xxx.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticLoadHap06
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_HAP_0600
+     * @tc.desc   In this project hap, load the system so, @ohos.xxx.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testStaticLoadHap06", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testStaticLoadHap06";
@@ -138,12 +137,12 @@ export default function staticLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_HAP_0700
-     * @tc.name      : testStaticLoadHap07
-     * @tc.desc      : In this project hap, load the application so, import napi from 'libentry.so'
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticLoadHap07
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_HAP_0700
+     * @tc.desc   In this project hap, load the application so, import napi from 'libentry.so'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testStaticLoadHap07", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testStaticLoadHap07";
@@ -156,12 +155,12 @@ export default function staticLoadHap() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_STATIC_LOAD_HAP_0800
-     * @tc.name      : testStaticLoadHap08
-     * @tc.desc      : In this project hap, load the JSON file, import json from './test.json'
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testStaticLoadHap08
+     * @tc.number SUB_COMPILER_RUNTIME_STATIC_LOAD_HAP_0800
+     * @tc.desc   In this project hap, load the JSON file, import json from './test.json'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testStaticLoadHap08", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testStaticLoadHap08";

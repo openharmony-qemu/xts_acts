@@ -26,49 +26,49 @@ export default function unitLengthMetricsTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_LENGTH_METRICS_0001
-     * @tc.name: testUnitLengthMetrics001
-     * @tc.desc: testing text for unitlengthMetrics with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitLengthMetrics001
+     * @tc.number SUB_ARKUI_CAPI_UNIT_LENGTH_METRICS_0001
+     * @tc.desc   testing text for unitlengthMetrics with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitLengthMetrics001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitLengthMetrics001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_LENGTH_METRICS_0002
-     * @tc.name: testUnitLengthMetrics002
-     * @tc.desc: testing text for unitlengthMetrics with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitLengthMetrics002
+     * @tc.number SUB_ARKUI_CAPI_UNIT_LENGTH_METRICS_0002
+     * @tc.desc   testing text for unitlengthMetrics with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitLengthMetrics002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitLengthMetrics002()).assertEqual(0)
       done();
     }); 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_LENGTH_METRICS_0003
-     * @tc.name: testUnitLengthMetrics003
-     * @tc.desc: testing text for unitlengthMetrics with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitLengthMetrics003
+     * @tc.number SUB_ARKUI_CAPI_UNIT_LENGTH_METRICS_0003
+     * @tc.desc   testing text for unitlengthMetrics with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitLengthMetrics003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitLengthMetrics003()).assertEqual(0)
       done();
     }); 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_LENGTH_METRICS_0004
-     * @tc.name: testUnitLengthMetrics004
-     * @tc.desc: testing text for unitlengthMetrics with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitLengthMetrics004
+     * @tc.number SUB_ARKUI_CAPI_UNIT_LENGTH_METRICS_0004
+     * @tc.desc   testing text for unitlengthMetrics with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitLengthMetrics004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitLengthMetrics004()).assertEqual(0)

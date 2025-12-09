@@ -56,13 +56,13 @@ export default function webOnInterceptReqOne() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_BASIC_ETS_WEBPATR2_API_0100
-     * @tc.name       : testOnInterceptRequestWebC
-     * @tc.desc       : onInterceptRequest without setting webresourceresponse
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testOnInterceptRequestWebC
+     * @tc.number SUB_ACE_BASIC_ETS_WEBPATR2_API_0100
+     * @tc.desc   onInterceptRequest without setting webresourceresponse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnInterceptRequestWebC', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnInterceptRequestWebC", EVENT_ID_SET_EMIT_KEY);

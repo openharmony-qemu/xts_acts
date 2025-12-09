@@ -40,12 +40,12 @@ export default function setLayout() {
       done();
     });
     /**
-     * @tc.number    setLayout_0100
-     * @tc.name      setLayout_0100
-     * @tc.desc      frameNode: setLayoutToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   setLayout_0100
+     * @tc.number setLayout_0100
+     * @tc.desc   frameNode: setLayoutToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLayout_0100', Level.LEVEL0, async (done: Function) => {
       console.info('setLayout_0100 START');

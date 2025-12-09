@@ -15,7 +15,6 @@
 
 import { afterEach, beforeAll, beforeEach, describe, it, Level, Size, TestType } from '../../../hypium/index';
 import Utils from './Util.test';
-import { sendEventByKey } from '@internal.full.global';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
@@ -34,14 +33,14 @@ export default function webAttributeTest() {
       console.log("App start")
     });
 
-    /*
-    * @tc.number      : SUB_WEB_ONALERT_0100
-    * @tc.name        : testOnAlertStatic001
-    * @tc.desc        : test onAlert callback
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testOnAlertStatic001
+     * @tc.number SUB_WEB_ONALERT_0100
+     * @tc.desc   test onAlert callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnAlertStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -52,14 +51,14 @@ export default function webAttributeTest() {
         done();
       })
 
-    /*
-    * @tc.number      : SUB_WEB_ONCONFIRM_0100
-    * @tc.name        : testOnConfirmStatic001
-    * @tc.desc        : test onConfirm normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testOnConfirmStatic001
+     * @tc.number SUB_WEB_ONCONFIRM_0100
+     * @tc.desc   test onConfirm normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnConfirmStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -70,14 +69,14 @@ export default function webAttributeTest() {
         done();
       })
 
-    /*
-    * @tc.number      : SUB_WEB_ONPROMPT_0100
-    * @tc.name        : testOnPromptStatic001
-    * @tc.desc        : test onPrompt normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testOnPromptStatic001
+     * @tc.number SUB_WEB_ONPROMPT_0100
+     * @tc.desc   test onPrompt normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnPromptStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -89,6 +88,14 @@ export default function webAttributeTest() {
         done();
       })
 
+    /**
+     * @tc.name   SwitchNextPageStatic
+     * @tc.number SwitchNextPageStatic
+     * @tc.desc   SwitchNextPageStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000);

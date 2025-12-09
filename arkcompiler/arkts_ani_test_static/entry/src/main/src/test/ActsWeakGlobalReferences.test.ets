@@ -31,12 +31,12 @@ export default function weakGlobalReferencesTest() {
     }
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_DELETE_0100
-     * @tc.name      test_WeakReference_Delete_0001
-     * @tc.desc      weakreference delete from null ref
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_Delete_0001
+     * @tc.number SUB_ANI_WEAKREFERENCE_DELETE_0100
+     * @tc.desc   weakreference delete from null ref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_Delete_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -50,12 +50,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_DELETE_0200
-     * @tc.name      test_WeakReference_Delete_0002
-     * @tc.desc      weakreference delete from undefined ref
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_Delete_0002
+     * @tc.number SUB_ANI_WEAKREFERENCE_DELETE_0200
+     * @tc.desc   weakreference delete from undefined ref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_Delete_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -69,12 +69,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_DELETE_0300
-     * @tc.name      test_WeakReference_Delete_0003
-     * @tc.desc      weakreference delete from object ref
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_Delete_0003
+     * @tc.number SUB_ANI_WEAKREFERENCE_DELETE_0300
+     * @tc.desc   weakreference delete from object ref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_Delete_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -88,12 +88,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_DELETE_0400
-     * @tc.name      test_WeakReference_Delete_0004
-     * @tc.desc      weakreference delete from object gref
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_Delete_0004
+     * @tc.number SUB_ANI_WEAKREFERENCE_DELETE_0400
+     * @tc.desc   weakreference delete from object gref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_Delete_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -107,12 +107,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_DELETE_0500
-     * @tc.name      test_WeakReference_Delete_0005
-     * @tc.desc      weakreference delete invalid env
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_Delete_0005
+     * @tc.number SUB_ANI_WEAKREFERENCE_DELETE_0500
+     * @tc.desc   weakreference delete invalid env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_Delete_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -126,12 +126,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_CREATE_0100
-     * @tc.name      test_WeakReference_Create_0001
-     * @tc.desc      create weakreference from undefined ref
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_Create_0001
+     * @tc.number SUB_ANI_WEAKREFERENCE_CREATE_0100
+     * @tc.desc   create weakreference from undefined ref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_Create_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -145,12 +145,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_CREATE_0200
-     * @tc.name      test_WeakReference_Create_0002
-     * @tc.desc      create weakreference from undefined ref
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_Create_0002
+     * @tc.number SUB_ANI_WEAKREFERENCE_CREATE_0200
+     * @tc.desc   create weakreference from undefined ref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_Create_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -164,12 +164,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_CREATE_0300
-     * @tc.name      test_WeakReference_Create_0003
-     * @tc.desc      create weakreference from object ref
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_Create_0003
+     * @tc.number SUB_ANI_WEAKREFERENCE_CREATE_0300
+     * @tc.desc   create weakreference from object ref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_Create_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -183,12 +183,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_CREATE_0400
-     * @tc.name      test_WeakReference_Create_0004
-     * @tc.desc      create weakreference from object gref
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_Create_0004
+     * @tc.number SUB_ANI_WEAKREFERENCE_CREATE_0400
+     * @tc.desc   create weakreference from object gref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_Create_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -202,12 +202,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_CREATE_0500
-     * @tc.name      test_WeakReference_Create_0005
-     * @tc.desc      create weakreference invalid result
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_Create_0005
+     * @tc.number SUB_ANI_WEAKREFERENCE_CREATE_0500
+     * @tc.desc   create weakreference invalid result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_Create_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -221,12 +221,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_CREATE_0600
-     * @tc.name      test_WeakReference_Create_0006
-     * @tc.desc      create undefined weakreference is normal
-     * @tc.size      MediumTest
-     * @tc.type      Function test
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_Create_0006
+     * @tc.number SUB_ANI_WEAKREFERENCE_CREATE_0600
+     * @tc.desc   create undefined weakreference is normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_Create_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -240,12 +240,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_CREATE_0700
-     * @tc.name      test_WeakReference_Create_0007
-     * @tc.desc      create a/b/c/d/e weakreference and get reference is normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_Create_0007
+     * @tc.number SUB_ANI_WEAKREFERENCE_CREATE_0700
+     * @tc.desc   create a/b/c/d/e weakreference and get reference is normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_Create_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -259,12 +259,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_CREATE_0800
-     * @tc.name      test_WeakReference_Create_0008
-     * @tc.desc      create one weakreference and get reference is normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_Create_0008
+     * @tc.number SUB_ANI_WEAKREFERENCE_CREATE_0800
+     * @tc.desc   create one weakreference and get reference is normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_Create_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -278,12 +278,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_CREATE_0900
-     * @tc.name      test_WeakReference_Create_0009
-     * @tc.desc      create A/B weakreference and get A/B reference is normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_Create_0009
+     * @tc.number SUB_ANI_WEAKREFERENCE_CREATE_0900
+     * @tc.desc   create A/B weakreference and get A/B reference is normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_Create_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -297,12 +297,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_CREATE_1000
-     * @tc.name      test_WeakReference_Create_0010
-     * @tc.desc      create two weakreference and get reference is normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_Create_0010
+     * @tc.number SUB_ANI_WEAKREFERENCE_CREATE_1000
+     * @tc.desc   create two weakreference and get reference is normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_Create_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -316,12 +316,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_CREATE_1100
-     * @tc.name      test_WeakReference_Create_0011
-     * @tc.desc      create weakreference and get reference is normal
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_Create_0011
+     * @tc.number SUB_ANI_WEAKREFERENCE_CREATE_1100
+     * @tc.desc   create weakreference and get reference is normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_Create_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -335,12 +335,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_CREATE_1200
-     * @tc.name      test_WeakReference_Create_0012
-     * @tc.desc      create weakreference invalid env
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_Create_0012
+     * @tc.number SUB_ANI_WEAKREFERENCE_CREATE_1200
+     * @tc.desc   create weakreference invalid env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_Create_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -354,12 +354,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_GETREFERENCE_0100
-     * @tc.name      test_WeakReference_GetReference_0001
-     * @tc.desc      get reference from null ref
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_GetReference_0001
+     * @tc.number SUB_ANI_WEAKREFERENCE_GETREFERENCE_0100
+     * @tc.desc   get reference from null ref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_GetReference_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -373,12 +373,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_GETREFERENCE_0200
-     * @tc.name      test_WeakReference_GetReference_0002
-     * @tc.desc      get reference from undefined ref
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_GetReference_0002
+     * @tc.number SUB_ANI_WEAKREFERENCE_GETREFERENCE_0200
+     * @tc.desc   get reference from undefined ref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_GetReference_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -392,12 +392,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_GETREFERENCE_0300
-     * @tc.name      test_WeakReference_GetReference_0003
-     * @tc.desc      get reference from object ref
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_GetReference_0003
+     * @tc.number SUB_ANI_WEAKREFERENCE_GETREFERENCE_0300
+     * @tc.desc   get reference from object ref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_GetReference_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -411,12 +411,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_GETREFERENCE_0400
-     * @tc.name      test_WeakReference_GetReference_0004
-     * @tc.desc      get reference freed wref
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_GetReference_0004
+     * @tc.number SUB_ANI_WEAKREFERENCE_GETREFERENCE_0400
+     * @tc.desc   get reference freed wref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_GetReference_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -430,12 +430,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_GETREFERENCE_0500
-     * @tc.name      test_WeakReference_GetReference_0005
-     * @tc.desc      get reference from object gref
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_GetReference_0005
+     * @tc.number SUB_ANI_WEAKREFERENCE_GETREFERENCE_0500
+     * @tc.desc   get reference from object gref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_GetReference_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -449,12 +449,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_GETREFERENCE_0600
-     * @tc.name      test_WeakReference_GetReference_0006
-     * @tc.desc      get reference invalid was reslease result
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_GetReference_0006
+     * @tc.number SUB_ANI_WEAKREFERENCE_GETREFERENCE_0600
+     * @tc.desc   get reference invalid was reslease result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_GetReference_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -468,12 +468,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_GETREFERENCE_0700
-     * @tc.name      test_WeakReference_GetReference_0007
-     * @tc.desc      get reference invalid ref result
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_GetReference_0007
+     * @tc.number SUB_ANI_WEAKREFERENCE_GETREFERENCE_0700
+     * @tc.desc   get reference invalid ref result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_GetReference_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -487,12 +487,12 @@ export default function weakGlobalReferencesTest() {
       });
 
     /**
-     * @tc.number    SUB_ANI_WEAKREFERENCE_GETREFERENCE_0800
-     * @tc.name      test_WeakReference_GetReference_0008
-     * @tc.desc      get reference invalid ref env
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_WeakReference_GetReference_0008
+     * @tc.number SUB_ANI_WEAKREFERENCE_GETREFERENCE_0800
+     * @tc.desc   get reference invalid ref env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WeakReference_GetReference_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

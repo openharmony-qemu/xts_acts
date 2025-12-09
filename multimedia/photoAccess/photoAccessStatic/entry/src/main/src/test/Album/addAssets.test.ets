@@ -34,12 +34,12 @@ export default function addAssetsTest() {
     const helper = photoAccessHelper.getPhotoAccessHelper(testContext)
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_ADD_ASSETS_STATIC_0400
-      * @tc.name    addAssets_promise_static_004
-      * @tc.desc    add empty array to user album
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   addAssets_promise_static_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_ADD_ASSETS_STATIC_0400
+     * @tc.desc   add empty array to user album
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('addAssets_promise_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

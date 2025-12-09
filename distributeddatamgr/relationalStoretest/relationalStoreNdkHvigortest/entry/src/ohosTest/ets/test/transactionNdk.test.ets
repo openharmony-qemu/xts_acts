@@ -50,7 +50,6 @@ export default function transactionNdktest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_Transaction0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_Rdb_Transaction0100
      * @tc.desc   OH_Rdb_Transaction0100
@@ -66,7 +65,6 @@ export default function transactionNdktest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_CreateTransaction0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_Rdb_CreateTransaction0100
      * @tc.desc   OH_Rdb_CreateTransaction0100
@@ -82,7 +80,6 @@ export default function transactionNdktest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_RdbTrans_Rollback0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_RdbTrans_Rollback0100
      * @tc.desc   OH_RdbTrans_Rollback0100
@@ -98,7 +95,6 @@ export default function transactionNdktest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_RdbTrans_Query0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_RdbTrans_Query0100
      * @tc.desc   OH_RdbTrans_Query0100
@@ -114,7 +110,6 @@ export default function transactionNdktest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_VBuckets_Create0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_VBuckets_Create0100
      * @tc.desc   OH_VBuckets_Create0100
@@ -130,7 +125,6 @@ export default function transactionNdktest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_VBuckets_Destroy0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_VBuckets_Destroy0100
      * @tc.desc   OH_VBuckets_Destroy0100
@@ -146,7 +140,6 @@ export default function transactionNdktest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_RdbTrans_Update0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_RdbTrans_Update0100
      * @tc.desc   OH_RdbTrans_Update0100
@@ -162,7 +155,6 @@ export default function transactionNdktest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_RdbTrans_Delete0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_RdbTrans_Delete0100
      * @tc.desc   OH_RdbTrans_Delete0100
@@ -178,7 +170,6 @@ export default function transactionNdktest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_RdbTrans_QuerySql0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_RdbTrans_QuerySql0100
      * @tc.desc   OH_RdbTrans_QuerySql0100
@@ -194,7 +185,6 @@ export default function transactionNdktest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_VBucket_PutFloatVector0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_VBucket_PutFloatVector0100
      * @tc.desc   OH_VBucket_PutFloatVector0100
@@ -210,7 +200,6 @@ export default function transactionNdktest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_VBucket_PutUnlimitedInt0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_OH_VBucket_PutUnlimitedInt0100
      * @tc.desc   OH_VBucket_PutUnlimitedInt0100
@@ -227,7 +216,6 @@ export default function transactionNdktest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_SetTokenizer0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_SetTokenizer_0100
      * @tc.desc   OH_Rdb_SetTokenizer0100
@@ -244,7 +232,6 @@ export default function transactionNdktest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_IsTokenizerSupported0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_IsTokenizerSupported0100
      * @tc.desc   OH_Rdb_IsTokenizerSupported0100
@@ -261,7 +248,6 @@ export default function transactionNdktest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_RdbTrans_Commit0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_RdbTrans_Commit0100
      * @tc.desc   OH_RdbTrans_Commit0100
@@ -278,7 +264,6 @@ export default function transactionNdktest() {
 
     
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_RdbTrans_InsertWithConflictResolution0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_RdbTrans_InsertWithConflictResolution0100
      * @tc.desc   OH_RdbTrans_InsertWithConflictResolution0100
@@ -295,7 +280,6 @@ export default function transactionNdktest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_SetCustomDir0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_SetCustomDir0100
      * @tc.desc   OH_Rdb_SetCustomDir0100
@@ -312,7 +296,6 @@ export default function transactionNdktest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_SetReadOnly0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_SetReadOnly0100
      * @tc.desc   OH_Rdb_SetReadOnly0100
@@ -329,7 +312,6 @@ export default function transactionNdktest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_SetPlugins0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_SetPlugins0100
      * @tc.desc   OH_Rdb_SetPlugins0100
@@ -345,7 +327,6 @@ export default function transactionNdktest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_SetSemanticIndex_Param_0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_SetSemanticIndex_Param_0100
      * @tc.desc   OH_Rdb_SetSemanticIndex_Param_0100
@@ -364,7 +345,6 @@ export default function transactionNdktest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_SetSemanticIndex_Param_0200
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_SetSemanticIndex_Param_0200
      * @tc.desc   OH_Rdb_SetSemanticIndex_Param_0200
@@ -383,7 +363,6 @@ export default function transactionNdktest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_SetSemanticIndex_Param_0300
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Rdb_SetSemanticIndex_Param_0300
      * @tc.desc   OH_Rdb_SetSemanticIndex_Param_0300

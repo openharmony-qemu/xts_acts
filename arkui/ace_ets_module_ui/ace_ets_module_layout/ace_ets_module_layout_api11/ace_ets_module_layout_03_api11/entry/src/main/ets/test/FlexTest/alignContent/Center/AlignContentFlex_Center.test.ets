@@ -51,13 +51,15 @@ export default function AlignContentFlex_Center() {
       console.info("AlignContentFlex_Center after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_CENTER_0100
-     * @tc.name testAlignContentCenterFlexHeightSatisfy
-     * @tc.desc The Flex component alignContent property is set to FlexAlign.Center, and the height of the Flex
-     *               component meets the size requirements of the subcomponent.
-     */
 
+    /**
+     * @tc.name   testAlignContentCenterFlexHeightSatisfy
+     * @tc.number testAlignContentCenterFlexHeightSatisfy
+     * @tc.desc   testAlignContentCenterFlexHeightSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentCenterFlexHeightSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexHeightSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -106,13 +108,15 @@ export default function AlignContentFlex_Center() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_Center_0200
-     * @tc.name testAlignContentCenterFlexHeightNoSatisfy
-     * @tc.desc The AlignContent property of the Flex component is set to FlexAlign.Center, and the height of the
-     *               Flex component does not meet the size requirements of the subcomponent.
-     */
 
+    /**
+     * @tc.name   testAlignContentCenterFlexHeightNoSatisfy
+     * @tc.number testAlignContentCenterFlexHeightNoSatisfy
+     * @tc.desc   testAlignContentCenterFlexHeightNoSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentCenterFlexHeightNoSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexHeightNoSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

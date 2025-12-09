@@ -47,12 +47,12 @@ export default function RenderNodeMethodNullTest() {
     });
 
     /**
-     * @tc.number    RenderNodeMethodNullTest_0100
-     * @tc.name      RenderNodeMethodNullTest_0100
-     * @tc.desc      renderNode method return null test.
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeMethodNullTest_0100
+     * @tc.number RenderNodeMethodNullTest_0100
+     * @tc.desc   renderNode method return null test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeMethodNullTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeMethodNullTest_0100 START');

@@ -45,12 +45,12 @@ export default function symbolAsyncIteratorTestTest() {
 
 
     /**
+     * @tc.name   BasicAsyncIterableTest001
      * @tc.number SUB_SYMBOL_ASYNCITERATOR_STANDALONE_TEST_001
-     * @tc.name BasicAsyncIterableTest001
-     * @tc.desc Verify basic async iterable with Symbol.asyncIterator works with for await...of
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify basic async iterable with Symbol.asyncIterator works with for await...of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('BasicAsyncIterableTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolAsyncIteratorStandaloneTestUtils.test001_BasicAsyncIterable();
@@ -58,12 +58,12 @@ export default function symbolAsyncIteratorTestTest() {
     });
 
     /**
+     * @tc.name   AsyncIteratorNextShapeTest002
      * @tc.number SUB_SYMBOL_ASYNCITERATOR_STANDALONE_TEST_002
-     * @tc.name AsyncIteratorNextShapeTest002
-     * @tc.desc Verify async iterator next() returns Promise with { value, done } shape
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify async iterator next() returns Promise with { value, done } shape
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AsyncIteratorNextShapeTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolAsyncIteratorStandaloneTestUtils.test002_AsyncIteratorNextShape();
@@ -71,12 +71,12 @@ export default function symbolAsyncIteratorTestTest() {
     });
 
     /**
+     * @tc.name   EmptyAsyncIterableTest003
      * @tc.number SUB_SYMBOL_ASYNCITERATOR_STANDALONE_TEST_003
-     * @tc.name EmptyAsyncIterableTest003
-     * @tc.desc Verify empty async iterable returns no values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify empty async iterable returns no values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('EmptyAsyncIterableTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolAsyncIteratorStandaloneTestUtils.test003_EmptyAsyncIterable();
@@ -84,12 +84,12 @@ export default function symbolAsyncIteratorTestTest() {
     });
 
     /**
+     * @tc.name   AsyncIteratorReturnMethodTest004
      * @tc.number SUB_SYMBOL_ASYNCITERATOR_STANDALONE_TEST_004
-     * @tc.name AsyncIteratorReturnMethodTest004
-     * @tc.desc Verify async iterator return() method stops iteration early
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify async iterator return() method stops iteration early
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AsyncIteratorReturnMethodTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolAsyncIteratorStandaloneTestUtils.test004_AsyncIteratorReturnMethod();
@@ -97,12 +97,12 @@ export default function symbolAsyncIteratorTestTest() {
     });
 
     /**
+     * @tc.name   AsyncIteratorThrowErrorTest005
      * @tc.number SUB_SYMBOL_ASYNCITERATOR_STANDALONE_TEST_005
-     * @tc.name AsyncIteratorThrowErrorTest005
-     * @tc.desc Verify async iterator error (rejected Promise) propagates
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify async iterator error (rejected Promise) propagates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AsyncIteratorThrowErrorTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolAsyncIteratorStandaloneTestUtils.test005_AsyncIteratorThrowError();
@@ -110,12 +110,12 @@ export default function symbolAsyncIteratorTestTest() {
     });
 
     /**
+     * @tc.name   ClassAsyncIterableTest006
      * @tc.number SUB_SYMBOL_ASYNCITERATOR_STANDALONE_TEST_006
-     * @tc.name ClassAsyncIterableTest006
-     * @tc.desc Verify class implementing Symbol.asyncIterator creates async iterable instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify class implementing Symbol.asyncIterator creates async iterable instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ClassAsyncIterableTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolAsyncIteratorStandaloneTestUtils.test006_ClassAsyncIterable();
@@ -123,12 +123,12 @@ export default function symbolAsyncIteratorTestTest() {
     });
 
     /**
+     * @tc.name   AsyncIteratorNextWithArgumentTest007
      * @tc.number SUB_SYMBOL_ASYNCITERATOR_STANDALONE_TEST_007
-     * @tc.name AsyncIteratorNextWithArgumentTest007
-     * @tc.desc Verify async iterator next() accepts and uses optional argument
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify async iterator next() accepts and uses optional argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AsyncIteratorNextWithArgumentTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolAsyncIteratorStandaloneTestUtils.test007_AsyncIteratorNextWithArgument();

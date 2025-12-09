@@ -81,12 +81,12 @@ export default function sendableOpacityTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_001
-     * @tc.name      : opacity_sendable_promise_001
-     * @tc.desc      : opacity
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacity_sendable_promise_001
+     * @tc.number PIXEL_MAP_OPACITY_001
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacity_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacity_sendable_promise_001';
@@ -97,12 +97,12 @@ export default function sendableOpacityTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_002
-     * @tc.name      : opacity_sendable_promise_002
-     * @tc.desc      : opacity
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacity_sendable_promise_002
+     * @tc.number PIXEL_MAP_OPACITY_002
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacity_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacity_sendable_promise_002';
@@ -113,12 +113,12 @@ export default function sendableOpacityTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_003
-     * @tc.name      : opacity_sendable_promise_003
-     * @tc.desc      : opacity
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacity_sendable_promise_003
+     * @tc.number PIXEL_MAP_OPACITY_003
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacity_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacity_sendable_promise_003';
@@ -129,12 +129,12 @@ export default function sendableOpacityTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_004 //TODO 传入rate不符合区间范围(0,1] 错误码格式不对 为62980115 文档没错误码参考
-     * @tc.name      : opacity_abnormal_sendable_promise_001
-     * @tc.desc      : opacity
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacity_abnormal_sendable_promise_001
+     * @tc.number PIXEL_MAP_OPACITY_004 //TODO 传入rate不符合区间范围(0,1] 错误码格式不对 为62980115 文档没错误码参考
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacity_abnormal_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacity_abnormal_sendable_promise_001';
@@ -145,12 +145,12 @@ export default function sendableOpacityTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_005 //TODO 传入rate不符合区间范围(0,1] 错误码格式不对 为62980115
-     * @tc.name      : opacity_abnormal_sendable_promise_002
-     * @tc.desc      : opacity
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacity_abnormal_sendable_promise_002
+     * @tc.number PIXEL_MAP_OPACITY_005 //TODO 传入rate不符合区间范围(0,1] 错误码格式不对 为62980115
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacity_abnormal_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacity_abnormal_sendable_promise_002';
@@ -161,12 +161,12 @@ export default function sendableOpacityTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_006 //TODO 传入rate不符合区间范围(0,1] 错误码格式不对 为62980115
-     * @tc.name      : opacity_abnormal_sendable_promise_003
-     * @tc.desc      : opacity
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacity_abnormal_sendable_promise_003
+     * @tc.number PIXEL_MAP_OPACITY_006 //TODO 传入rate不符合区间范围(0,1] 错误码格式不对 为62980115
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacity_abnormal_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacity_abnormal_sendable_promise_003';
@@ -177,12 +177,12 @@ export default function sendableOpacityTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_007 //TODO 传入NaN不会报错
-     * @tc.name      : opacity_abnormal_sendable_promise_004
-     * @tc.desc      : opacity
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacity_abnormal_sendable_promise_004
+     * @tc.number PIXEL_MAP_OPACITY_007 //TODO 传入NaN不会报错
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacity_abnormal_sendable_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacity_abnormal_sendable_promise_004';
@@ -193,12 +193,12 @@ export default function sendableOpacityTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_008 //TODO 传入异常参数 错误码格式不对 为62980115
-     * @tc.name      : opacity_abnormal_sendable_promise_005
-     * @tc.desc      : opacity
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacity_abnormal_sendable_promise_005
+     * @tc.number PIXEL_MAP_OPACITY_008 //TODO 传入异常参数 错误码格式不对 为62980115
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacity_abnormal_sendable_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacity_abnormal_sendable_promise_005';
@@ -209,12 +209,12 @@ export default function sendableOpacityTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_009 //TODO 传入异常参数 错误码格式不对 为62980115
-     * @tc.name      : opacity_abnormal_sendable_promise_006
-     * @tc.desc      : opacity
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacity_abnormal_sendable_promise_006
+     * @tc.number PIXEL_MAP_OPACITY_009 //TODO 传入异常参数 错误码格式不对 为62980115
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacity_abnormal_sendable_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacity_abnormal_sendable_promise_006';
@@ -225,12 +225,12 @@ export default function sendableOpacityTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_OPACITY_010 //TODO 传入异常参数 错误码格式不对 为62980115
-     * @tc.name      : opacity_abnormal_sendable_promise_007
-     * @tc.desc      : opacity
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   opacity_abnormal_sendable_promise_007
+     * @tc.number PIXEL_MAP_OPACITY_010 //TODO 传入异常参数 错误码格式不对 为62980115
+     * @tc.desc   opacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('opacity_abnormal_sendable_promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'opacity_abnormal_sendable_promise_007';

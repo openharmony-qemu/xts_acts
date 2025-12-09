@@ -40,13 +40,13 @@ export default function ActsUIExtensionContextMethodTest() {
     afterEach(async () => {
       await sleep(500);
     })
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_0100
-     * @tc.name: When the input parameter want is null, an error code is returned(startability cllback).
-     * @tc.desc: When the input parameter want is null, an error code is returned(startability).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_0100
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_0100
+     * @tc.desc   When the input parameter want is null, an error code is returned(startability).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_0100', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_0100";
@@ -92,13 +92,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_0200
-     * @tc.name: When the input parameter want is null, an error code is returned(startability options).
-     * @tc.desc: When the input parameter want is null, an error code is returned(startability options).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_0200
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_0200
+     * @tc.desc   When the input parameter want is null, an error code is returned(startability options).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_0200', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_0200";
@@ -144,13 +144,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_0300
-     * @tc.name: When the input parameter want is null, an error code is returned(startability options promise).
-     * @tc.desc: When the input parameter want is null, an error code is returned(startability options promise).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_0300
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_0300
+     * @tc.desc   When the input parameter want is null, an error code is returned(startability options promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_0300', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_0300";
@@ -196,13 +196,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_0400
-     * @tc.name: When the input parameter want is null, an error code is returned(oplink promise).
-     * @tc.desc: When the input parameter want is null, an error code is returned(oplink promise).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_0400
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_0400
+     * @tc.desc   When the input parameter want is null, an error code is returned(oplink promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_0400', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_0400";
@@ -248,13 +248,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_0500
-     * @tc.name: When the input parameter want is null, an error code is returned(startAbilityForResult callback).
-     * @tc.desc: When the input parameter want is null, an error code is returned(startAbilityForResult callback).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_0500
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_0500
+     * @tc.desc   When the input parameter want is null, an error code is returned(startAbilityForResult callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_0500', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_0500";
@@ -300,13 +300,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_0600
-     * @tc.name: When the input parameter want is null, an error code is returned(startAbilityForResult options callback).
-     * @tc.desc: When the input parameter want is null, an error code is returned(startAbilityForResult options callback).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_0600
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_0600
+     * @tc.desc   When the input parameter want is null, an error code is returned(startAbilityForResult options callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_0600', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_0600";
@@ -352,13 +352,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_0700
-     * @tc.name: When the input parameter want is null, an error code is returned(startAbilityForResult options promise).
-     * @tc.desc: When the input parameter want is null, an error code is returned(startAbilityForResult options promise).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_0700
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_0700
+     * @tc.desc   When the input parameter want is null, an error code is returned(startAbilityForResult options promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_0700', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_0700";
@@ -404,13 +404,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_0800
-     * @tc.name: When the input parameter want is null, an error code is returned(connectServiceExtensionAbility).
-     * @tc.desc: When the input parameter want is null, an error code is returned(connectServiceExtensionAbility).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_0800
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_0800
+     * @tc.desc   When the input parameter want is null, an error code is returned(connectServiceExtensionAbility).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_0800', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_0800";
@@ -456,13 +456,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_0900
-     * @tc.name: When the input parameter want is null, an error code is returned(disconnectServiceExtensionAbility callback).
-     * @tc.desc: When the input parameter want is null, an error code is returned(disconnectServiceExtensionAbility callback).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_0900
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_0900
+     * @tc.desc   When the input parameter want is null, an error code is returned(disconnectServiceExtensionAbility callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_0900', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_0900";
@@ -508,13 +508,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_1000
-     * @tc.name: When the input parameter want is null, an error code is returned(disconnectServiceExtensionAbility promise).
-     * @tc.desc: When the input parameter want is null, an error code is returned(disconnectServiceExtensionAbility promise).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_1000
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_1000
+     * @tc.desc   When the input parameter want is null, an error code is returned(disconnectServiceExtensionAbility promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_1000', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_1000";
@@ -560,13 +560,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_1100
-     * @tc.name: When the input parameter want is null, an error code is returned(terminateSelfWithResult callback).
-     * @tc.desc: When the input parameter want is null, an error code is returned(terminateSelfWithResult callback).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_1100
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_1100
+     * @tc.desc   When the input parameter want is null, an error code is returned(terminateSelfWithResult callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_1100', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_1100";
@@ -612,13 +612,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_1200
-     * @tc.name: When the input parameter want is null, an error code is returned(terminateSelfWithResult promise).
-     * @tc.desc: When the input parameter want is null, an error code is returned(terminateSelfWithResult promise).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_1200
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_1200
+     * @tc.desc   When the input parameter want is null, an error code is returned(terminateSelfWithResult promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_1200', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_1200";
@@ -664,13 +664,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_1300
-     * @tc.name: When the input parameter want is null, an error code is returned(openAtomicService promise).
-     * @tc.desc: When the input parameter want is null, an error code is returned(openAtomicService promise).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_1300
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_1300
+     * @tc.desc   When the input parameter want is null, an error code is returned(openAtomicService promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_1300', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_1300";
@@ -716,13 +716,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_1400
-     * @tc.name: When the input parameter want is null, an error code is returned(startUIServiceExtensionAbility promise).
-     * @tc.desc: When the input parameter want is null, an error code is returned(startUIServiceExtensionAbility promise).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_1400
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_1400
+     * @tc.desc   When the input parameter want is null, an error code is returned(startUIServiceExtensionAbility promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_1400', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_1400";
@@ -768,13 +768,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_1500
-     * @tc.name: When the input parameter want is null, an error code is returned(connectUIServiceExtensionAbility promise).
-     * @tc.desc: When the input parameter want is null, an error code is returned(connectUIServiceExtensionAbility promise).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_1500
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_1500
+     * @tc.desc   When the input parameter want is null, an error code is returned(connectUIServiceExtensionAbility promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_1500', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_1500";
@@ -820,14 +820,14 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-    * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_1600
-    * @tc.name: When the input parameter want is null, an error code is returned(disconnectUIServiceExtensionAbility promise).
-    * @tc.desc: When the input parameter want is null, an error code is returned(disconnectUIServiceExtensionAbility promise).
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 3
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_1600
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_1600
+     * @tc.desc   When the input parameter want is null, an error code is returned(disconnectUIServiceExtensionAbility promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_1600', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_1600";
       if (mpEnable === 'true') {
@@ -872,14 +872,14 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-    * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_1700
-    * @tc.name: When the input parameter want is null, an error code is returned(setColorMode).
-    * @tc.desc: When the input parameter want is null, an error code is returned(setColorMode).
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 3
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_1700
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_1700
+     * @tc.desc   When the input parameter want is null, an error code is returned(setColorMode).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_1700', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_1700";
       if (mpEnable === 'true') {
@@ -924,13 +924,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_1800
-     * @tc.name: When the input parameter want is null, an error code is returned(startability cllback).
-     * @tc.desc: When the input parameter want is null, an error code is returned(startability).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_1800
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_1800
+     * @tc.desc   When the input parameter want is null, an error code is returned(startability).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_1800', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_1800";
@@ -976,13 +976,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_1900
-     * @tc.name: When the input parameter want is null, an error code is returned(startability options).
-     * @tc.desc: When the input parameter want is null, an error code is returned(startability options).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_1900
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_1900
+     * @tc.desc   When the input parameter want is null, an error code is returned(startability options).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_1900', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_1900";
@@ -1028,13 +1028,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_2000
-     * @tc.name: When the input parameter want is null, an error code is returned(startability options promise).
-     * @tc.desc: When the input parameter want is null, an error code is returned(startability options promise).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_2000
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_2000
+     * @tc.desc   When the input parameter want is null, an error code is returned(startability options promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_2000', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_2000";
@@ -1080,13 +1080,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_2100
-     * @tc.name: When the input parameter want is null, an error code is returned(oplink promise).
-     * @tc.desc: When the input parameter want is null, an error code is returned(oplink promise).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_2100
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_2100
+     * @tc.desc   When the input parameter want is null, an error code is returned(oplink promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_2100', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_2100";
@@ -1132,13 +1132,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_2200
-     * @tc.name: When the input parameter want is null, an error code is returned(startAbilityForResult callback).
-     * @tc.desc: When the input parameter want is null, an error code is returned(startAbilityForResult callback).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_2200
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_2200
+     * @tc.desc   When the input parameter want is null, an error code is returned(startAbilityForResult callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_2200', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_2200";
@@ -1184,13 +1184,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_2300
-     * @tc.name: When the input parameter want is null, an error code is returned(startAbilityForResult options callback).
-     * @tc.desc: When the input parameter want is null, an error code is returned(startAbilityForResult options callback).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_2300
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_2300
+     * @tc.desc   When the input parameter want is null, an error code is returned(startAbilityForResult options callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_2300', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_2300";
@@ -1236,13 +1236,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_2400
-     * @tc.name: When the input parameter want is null, an error code is returned(startAbilityForResult options promise).
-     * @tc.desc: When the input parameter want is null, an error code is returned(startAbilityForResult options promise).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_2400
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_2400
+     * @tc.desc   When the input parameter want is null, an error code is returned(startAbilityForResult options promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_2400', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_2400";
@@ -1288,13 +1288,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_2500
-     * @tc.name: When the input parameter want is null, an error code is returned(connectServiceExtensionAbility).
-     * @tc.desc: When the input parameter want is null, an error code is returned(connectServiceExtensionAbility).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_2500
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_2500
+     * @tc.desc   When the input parameter want is null, an error code is returned(connectServiceExtensionAbility).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_2500', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_2500";
@@ -1340,13 +1340,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_2600
-     * @tc.name: When the input parameter want is null, an error code is returned(disconnectServiceExtensionAbility callback).
-     * @tc.desc: When the input parameter want is null, an error code is returned(disconnectServiceExtensionAbility callback).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_2600
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_2600
+     * @tc.desc   When the input parameter want is null, an error code is returned(disconnectServiceExtensionAbility callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_2600', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_2600";
@@ -1392,13 +1392,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_2700
-     * @tc.name: When the input parameter want is null, an error code is returned(disconnectServiceExtensionAbility promise).
-     * @tc.desc: When the input parameter want is null, an error code is returned(disconnectServiceExtensionAbility promise).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_2700
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_2700
+     * @tc.desc   When the input parameter want is null, an error code is returned(disconnectServiceExtensionAbility promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_2700', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_2700";
@@ -1444,13 +1444,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_2800
-     * @tc.name: When the input parameter want is null, an error code is returned(terminateSelfWithResult callback).
-     * @tc.desc: When the input parameter want is null, an error code is returned(terminateSelfWithResult callback).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_2800
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_2800
+     * @tc.desc   When the input parameter want is null, an error code is returned(terminateSelfWithResult callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_2800', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_2800";
@@ -1496,13 +1496,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_2900
-     * @tc.name: When the input parameter want is null, an error code is returned(terminateSelfWithResult promise).
-     * @tc.desc: When the input parameter want is null, an error code is returned(terminateSelfWithResult promise).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_2900
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_2900
+     * @tc.desc   When the input parameter want is null, an error code is returned(terminateSelfWithResult promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_2900', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_2900";
@@ -1548,13 +1548,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_3000
-     * @tc.name: When the input parameter want is null, an error code is returned(openAtomicService promise).
-     * @tc.desc: When the input parameter want is null, an error code is returned(openAtomicService promise).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_3000
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_3000
+     * @tc.desc   When the input parameter want is null, an error code is returned(openAtomicService promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_3000', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_3000";
@@ -1600,13 +1600,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_3100
-     * @tc.name: When the input parameter want is null, an error code is returned(startUIServiceExtensionAbility promise).
-     * @tc.desc: When the input parameter want is null, an error code is returned(startUIServiceExtensionAbility promise).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_3100
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_3100
+     * @tc.desc   When the input parameter want is null, an error code is returned(startUIServiceExtensionAbility promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_3100', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_3100";
@@ -1652,13 +1652,13 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_3200
-     * @tc.name: When the input parameter want is null, an error code is returned(connectUIServiceExtensionAbility promise).
-     * @tc.desc: When the input parameter want is null, an error code is returned(connectUIServiceExtensionAbility promise).
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_3200
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_3200
+     * @tc.desc   When the input parameter want is null, an error code is returned(connectUIServiceExtensionAbility promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_3200', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_3200";
@@ -1705,14 +1705,14 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-    * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_3300
-    * @tc.name: When the input parameter want is null, an error code is returned(disconnectUIServiceExtensionAbility promise).
-    * @tc.desc: When the input parameter want is null, an error code is returned(disconnectUIServiceExtensionAbility promise).
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 3
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_3300
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_3300
+     * @tc.desc   When the input parameter want is null, an error code is returned(disconnectUIServiceExtensionAbility promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_3300', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_3300";
       if (mpEnable === 'true') {
@@ -1757,14 +1757,14 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-    * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_3400
-    * @tc.name: When the input parameter want is null, an error code is returned(setColorMode).
-    * @tc.desc: When the input parameter want is null, an error code is returned(setColorMode).
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 3
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_3400
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_3400
+     * @tc.desc   When the input parameter want is null, an error code is returned(setColorMode).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_3400', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_3400";
       if (mpEnable === 'true') {
@@ -1809,14 +1809,14 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-    * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_3500
-    * @tc.name: When the input parameter want is null, an error code is returned(openAtomicService).
-    * @tc.desc: When the input parameter want is null, an error code is returned(openAtomicService).
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 3
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_3500
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_3500
+     * @tc.desc   When the input parameter want is null, an error code is returned(openAtomicService).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_3500', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_3500";
       if (mpEnable === 'true') {
@@ -1861,14 +1861,14 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-   * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_3600
-   * @tc.name: When the input parameter want is null, an error code is returned(openlink).
-   * @tc.desc: When the input parameter want is null, an error code is returned(openlink).
-   * @tc.size: MediumTest
-   * @tc.type: Function
-   * @tc.level: Level 3
-   */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_3600
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_3600
+     * @tc.desc   When the input parameter want is null, an error code is returned(openlink).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_3600', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_3600";
       if (mpEnable === 'true') {
@@ -1913,14 +1913,14 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-   * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_3700
-   * @tc.name: When the input parameter want is null, an error code is returned(loadcontent).
-   * @tc.desc: When the input parameter want is null, an error code is returned(loadcontent).
-   * @tc.size: MediumTest
-   * @tc.type: Function
-   * @tc.level: Level 3
-   */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_3700
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_3700
+     * @tc.desc   When the input parameter want is null, an error code is returned(loadcontent).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_3700', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_3700";
       if (mpEnable === 'true') {
@@ -1965,14 +1965,14 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
 
-    /*
-   * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_3800
-   * @tc.name: When the input parameter want is null, an error code is returned(openAtomicService).
-   * @tc.desc: When the input parameter want is null, an error code is returned(openAtomicService).
-   * @tc.size: MediumTest
-   * @tc.type: Function
-   * @tc.level: Level 3
-   */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContext_3800
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContext_3800
+     * @tc.desc   When the input parameter want is null, an error code is returned(openAtomicService).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_UIExtensionContext_3800', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_UIExtensionContext_3800";
       if (mpEnable === 'true') {

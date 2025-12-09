@@ -26,37 +26,37 @@ export default function textAreaContentLineCountTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_CONTENT_LINE_COUNT_0001
-     * @tc.name: testTextAreaContentLineCount001
-     * @tc.desc: testing text for textarea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaContentLineCount001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_CONTENT_LINE_COUNT_0001
+     * @tc.desc   testing text for textarea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaContentLineCount001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaContentLineCount001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_CONTENT_LINE_COUNT_0002
-     * @tc.name: testTextAreaContentLineCount002
-     * @tc.desc: testing text for textarea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaContentLineCount002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_CONTENT_LINE_COUNT_0002
+     * @tc.desc   testing text for textarea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaContentLineCount002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaContentLineCount002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_CONTENT_LINE_COUNT_0003
-     * @tc.name: testTextAreaContentLineCount003
-     * @tc.desc: testing text for textarea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaContentLineCount003
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_CONTENT_LINE_COUNT_0003
+     * @tc.desc   testing text for textarea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaContentLineCount003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaContentLineCount003()).assertEqual(0)

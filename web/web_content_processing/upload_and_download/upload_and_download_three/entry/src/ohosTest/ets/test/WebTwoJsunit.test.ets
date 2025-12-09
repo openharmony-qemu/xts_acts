@@ -63,10 +63,13 @@ export default function webTwoJsunit() {
       done();
     })
 
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_002                                                                                                                                                                     
-     *tc.name onDownloadFailed                                                                                                                                                                                                                 
-     *tc.desic Sets allow the Web access overview mode
+    /**
+     * @tc.name   onDownloadFailed
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_002
+     * @tc.desc   onDownloadFailed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onDownloadFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitonDownloadFailed", 130540);
@@ -76,10 +79,13 @@ export default function webTwoJsunit() {
         });
       await Utils.waitAndClickComponent(driver, "webcomponenttwo");
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_003                                                                                                                                                                   
-     *tc.name setDownloadDelegate                                                                                                                                                                                                                 
-     *tc.desic Sets allow the Web access overview mode
+    /**
+     * @tc.name   setDownloadDelegate
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_003
+     * @tc.desc   setDownloadDelegate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setDownloadDelegate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitsetDownloadDelegate", 130540);
@@ -89,10 +95,13 @@ export default function webTwoJsunit() {
         });
       await Utils.waitAndClickComponent(driver, "webcomponenttwo");
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_004                                                                                                                                                                 
-     *tc.name resumeDownload                                                                                                                                                                                                                 
-     *tc.desic Sets allow the Web access overview mode
+    /**
+     * @tc.name   resumeDownload
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_004
+     * @tc.desc   resumeDownload
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('resumeDownload', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitresumeDownload", 130540);

@@ -23,9 +23,12 @@ export default function getNameForUid() {
     describe('ActsBmsgetNameForUidTest', function () {
 
     /**
+     * @tc.name   getNameForUid_0100
      * @tc.number getNameForUid_0100
-     * @tc.name BUNDLE::getBundleInfo
-     * @tc.desc Test getBundleInfo interfaces with other hap.
+     * @tc.desc   Test getBundleInfo interfaces with other hap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getNameForUid_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
         let dataInfo = await bundle.getBundleInfo(BUNDLE_NAME1, bundle.BundleFlag.GET_BUNDLE_DEFAULT);
@@ -44,9 +47,12 @@ export default function getNameForUid() {
     });
 
     /**
+     * @tc.name   getNameForUid_0200
      * @tc.number getNameForUid_0200
-     * @tc.name BUNDLE::getBundleInfo
-     * @tc.desc Test getBundleInfo interfaces with hap.
+     * @tc.desc   Test getBundleInfo interfaces with hap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getNameForUid_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
         let dataInfo = await bundle.getBundleInfo(BUNDLE_NAME2,bundle.BundleFlag.GET_BUNDLE_DEFAULT);
@@ -65,9 +71,12 @@ export default function getNameForUid() {
     });
 
     /**
+     * @tc.name   getNameForUid_0300
      * @tc.number getNameForUid_0300
-     * @tc.name BUNDLE::getBundleInfo
-     * @tc.desc Test getBundleInfo interfaces with notexist hap.
+     * @tc.desc   Test getBundleInfo interfaces with notexist hap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getNameForUid_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await bundle.getNameForUid(123456).then(data => {
@@ -84,9 +93,12 @@ export default function getNameForUid() {
     });
 
     /**
+     * @tc.name   getNameForUid_0400
      * @tc.number getNameForUid_0400
-     * @tc.name BUNDLE::getBundleInfo
-     * @tc.desc Test getBundleInfo interfaces with error param.
+     * @tc.desc   Test getBundleInfo interfaces with error param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getNameForUid_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await bundle.getNameForUid(undefined).then(data => {

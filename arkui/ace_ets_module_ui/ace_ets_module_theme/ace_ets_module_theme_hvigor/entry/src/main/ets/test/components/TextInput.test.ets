@@ -93,12 +93,12 @@ export default function textInputThemeTest() {
       }
     })
     /**
-     * @tc.number    : ActsTextInputThemeColors_0100
-     * @tc.name      : ActsTextInputThemeColors_0100
-     * @tc.desc      : Check system colors values of the TextInput component
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsTextInputThemeColors_0100
+     * @tc.number ActsTextInputThemeColors_0100
+     * @tc.desc   Check system colors values of the TextInput component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it(`ActsTextInputThemeColors_0100`, Level.LEVEL2, () => {
       const CASE: string = `ActsTextInputThemeColors_0100`
@@ -110,12 +110,12 @@ export default function textInputThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     })
     /**
-     * @tc.number    : ActsTextInputThemeColors_0200
-     * @tc.name      : ActsTextInputThemeColors_0200
-     * @tc.desc      : Check custom theme colors values of the TextInput component
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsTextInputThemeColors_0200
+     * @tc.number ActsTextInputThemeColors_0200
+     * @tc.desc   Check custom theme colors values of the TextInput component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it(`ActsTextInputThemeColors_0200`, Level.LEVEL2, () => {
       const CASE: string = `ActsTextInputThemeColors_0200`
@@ -128,12 +128,12 @@ export default function textInputThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     })
     /**
-     * @tc.number    : ActsTextInputThemeColors_0300
-     * @tc.name      : ActsTextInputThemeColors_0300
-     * @tc.desc      : Check custom theme colors values of the TextInput component after theme change
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsTextInputThemeColors_0300
+     * @tc.number ActsTextInputThemeColors_0300
+     * @tc.desc   Check custom theme colors values of the TextInput component after theme change
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsTextInputThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsTextInputThemeColors_0300`
@@ -147,12 +147,12 @@ export default function textInputThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     })
     /**
-     * @tc.number    : ActsTextInputThemeColors_0400
-     * @tc.name      : ActsTextInputThemeColors_0400
-     * @tc.desc      : Check system colors values of the TextInput component after theme reset
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsTextInputThemeColors_0400
+     * @tc.number ActsTextInputThemeColors_0400
+     * @tc.desc   Check system colors values of the TextInput component after theme reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsTextInputThemeColors_0400`, Level.LEVEL0, async () => {
       const CASE: string = `ActsTextInputThemeColors_0400`

@@ -56,12 +56,12 @@ export default function enableSecureTest() {
     });
 
     /**
+     * @tc.name   enableSecureTest_0010
      * @tc.number enableSecureTest_0010
-     * @tc.name enableSecureTest_0010
-     * @tc.desc Xcomponent: get the api of enableSecureTest
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   Xcomponent: get the api of enableSecureTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('enableSecureTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('enableSecureTest_0010 START');

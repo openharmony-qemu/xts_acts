@@ -42,13 +42,13 @@ export default function MaxwidthTest() {
       done();
     });
     /**
-     * @tc.number: popup_maxWidth_0101
-     * @tc.name  : popup_maxWidth_0101
-     * @tc.desc  : Test the width of the maxwidth interface of the popup component when a custom normal value is passed in
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
-    */
+     * @tc.name   popup_maxWidth_0101
+     * @tc.number popup_maxWidth_0101
+     * @tc.desc   Test the width of the maxwidth interface of the popup component when a custom normal value is passed in
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('popup_maxWidth_0101', Level.LEVEL2, async (done: Function) => {
         console.info('popup_maxWidth_0101 START');
         await CommonFunc.sleep(1000);
@@ -63,12 +63,12 @@ export default function MaxwidthTest() {
       });
   
       /**
-       * @tc.number: popup_maxWidth_0102
-       * @tc.name  : popup_maxWidth_0102
-       * @tc.desc  : Test the width of the maxwidth interface of the popup component when a custom normal value is passed in
-       * @tc.level : Level 3
-       * @tc.type
-       * @tc.size
+       * @tc.name   popup_maxWidth_0102
+       * @tc.number popup_maxWidth_0102
+       * @tc.desc   Test the width of the maxwidth interface of the popup component when a custom normal value is passed in
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('popup_maxWidth_0102', Level.LEVEL2, async (done: Function) => {
         console.info('popup_maxWidth_0102 START');
@@ -95,12 +95,12 @@ export default function MaxwidthTest() {
       });
   
       /**
-       * @tc.number: popup_maxWidth_0103
-       * @tc.name  : popup_maxWidth_0103
-       * @tc.desc  : Test the width of the maxwidth interface of the popup component when a custom normal value is passed in
-       * @tc.level : Level 3
-       * @tc.type
-       * @tc.size
+       * @tc.name   popup_maxWidth_0103
+       * @tc.number popup_maxWidth_0103
+       * @tc.desc   Test the width of the maxwidth interface of the popup component when a custom normal value is passed in
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('popup_maxWidth_0103', Level.LEVEL2, async (done: Function) => {
         console.info('popup_maxWidth_0103 START');

@@ -58,12 +58,12 @@ export default function RepeatWaterFlowBoolean() {
     });
 
     /**
+     * @tc.name   RepeatWaterFlowBoolean_001
      * @tc.number RepeatWaterFlowBoolean_001
-     * @tc.name RepeatWaterFlowBoolean_001
-     * @tc.desc Test RepeatWaterFlowBoolean component
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Test RepeatWaterFlowBoolean component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatWaterFlowBoolean_001', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatWaterFlowBoolean_001] START');

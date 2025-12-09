@@ -47,12 +47,12 @@ export default function frameNodeMoveTwoTest() {
     });
 
     /**
-     * @tc.number    frameNodeMoveTwoTest_0100
-     * @tc.name      frameNodeMoveTwoTest_0100
-     * @tc.desc      frameNode: test UINode node move
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeMoveTwoTest_0100
+     * @tc.number frameNodeMoveTwoTest_0100
+     * @tc.desc   frameNode: test UINode node move
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('frameNodeMoveTwoTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('frameNodeMoveTwoTest_0100 START');

@@ -45,13 +45,13 @@ class DrawingNativeRegionTest : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0100
- * @tc.name: testRegionCreateNormal
- * @tc.desc: test for testRegionCreateNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testRegionCreateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0100
+ * @tc.desc   test for testRegionCreateNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionCreateNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_RegionCreate
@@ -60,13 +60,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionCreateNormal, Function | SmallTest |
     OH_Drawing_RegionDestroy(region);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0101
- * @tc.name: testRegionCreateMoreTimes
- * @tc.desc: test for testRegionCreateMoreTimes.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testRegionCreateMoreTimes
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0101
+ * @tc.desc   test for testRegionCreateMoreTimes.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionCreateMoreTimes, Function | SmallTest | Level1) {
     // 1. OH_Drawing_RegionCreate
@@ -81,13 +81,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionCreateMoreTimes, Function | SmallTes
     OH_Drawing_RegionDestroy(region2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0200
- * @tc.name: testRegionDestroyNormal
- * @tc.desc: test for testRegionDestroyNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testRegionDestroyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0200
+ * @tc.desc   test for testRegionDestroyNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionDestroyNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_RegionCreate returns a pointer value regionObject
@@ -97,13 +97,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionDestroyNormal, Function | SmallTest 
     OH_Drawing_RegionDestroy(regionObject);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0201
- * @tc.name: testRegionDestroyNull
- * @tc.desc: test for testRegionDestroyNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testRegionDestroyNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0201
+ * @tc.desc   test for testRegionDestroyNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionDestroyNull, Function | SmallTest | Level1) {
     // 1. OH_Drawing_RegionDestroy takes nullptr as input
@@ -112,13 +112,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionDestroyNull, Function | SmallTest | 
     EXPECT_TRUE(true);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0300
- * @tc.name: testRegionContainsInRange
- * @tc.desc: test for testRegionContainsInRange.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testRegionContainsInRange
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0300
+ * @tc.desc   test for testRegionContainsInRange.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionContainsInRange, Function | SmallTest | Level0) {
     // 1. OH_Drawing_RegionCreate returns a pointer value regionObject, the call is successful and the return value is
@@ -141,13 +141,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionContainsInRange, Function | SmallTes
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0301
- * @tc.name: testRegionContainsXvalueNotInRange
- * @tc.desc: test for testRegionContainsXvalueNotInRange.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testRegionContainsXvalueNotInRange
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0301
+ * @tc.desc   test for testRegionContainsXvalueNotInRange.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionContainsXvalueNotInRange, Function | SmallTest | Level1) {
     // 1. OH_Drawing_RegionCreate returns a pointer value regionObject
@@ -169,13 +169,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionContainsXvalueNotInRange, Function |
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0302
- * @tc.name: testRegionContainsYvalueNotInRange
- * @tc.desc: test for testRegionContainsYvalueNotInRange.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testRegionContainsYvalueNotInRange
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0302
+ * @tc.desc   test for testRegionContainsYvalueNotInRange.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionContainsYvalueNotInRange, Function | SmallTest | Level1) {
     // 1. OH_Drawing_RegionCreate returns a pointer value regionObject
@@ -197,13 +197,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionContainsYvalueNotInRange, Function |
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0303
- * @tc.name: testRegionContainsAllNotInRange
- * @tc.desc: test for testRegionContainsAllNotInRange.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testRegionContainsAllNotInRange
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0303
+ * @tc.desc   test for testRegionContainsAllNotInRange.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionContainsAllNotInRange, Function | SmallTest | Level1) {
     // 1. OH_Drawing_RegionCreate returns a pointer value regionObject
@@ -225,13 +225,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionContainsAllNotInRange, Function | Sm
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0304
- * @tc.name: testRegionContainsRegionNull
- * @tc.desc: test for testRegionContainsRegionNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testRegionContainsRegionNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0304
+ * @tc.desc   test for testRegionContainsRegionNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionContainsRegionNull, Function | SmallTest | Level1) {
     // 1. OH_Drawing_RegionContains takes nullptr as input, x: a value within the range, y: a value within the range
@@ -239,13 +239,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionContainsRegionNull, Function | Small
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0400
- * @tc.name: testRegionOpNormal
- * @tc.desc: test for testRegionOpNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testRegionOpNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0400
+ * @tc.desc   test for testRegionOpNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionOpNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_RegionCreate returns a pointer value regionObject
@@ -276,13 +276,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionOpNormal, Function | SmallTest | Lev
     OH_Drawing_RegionDestroy(dst);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0401
- * @tc.name: testRegionOpRegionNull
- * @tc.desc: test for testRegionOpRegionNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testRegionOpRegionNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0401
+ * @tc.desc   test for testRegionOpRegionNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionOpRegionNull, Function | SmallTest | Level1) {
     // 1. OH_Drawing_RegionCreate returns a pointer value dst
@@ -301,13 +301,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionOpRegionNull, Function | SmallTest |
     OH_Drawing_RegionDestroy(dst);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0402
- * @tc.name: testRegionOpRegionDstNull
- * @tc.desc: test for testRegionOpRegionDstNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testRegionOpRegionDstNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0402
+ * @tc.desc   test for testRegionOpRegionDstNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionOpRegionDstNull, Function | SmallTest | Level1) {
     // 1. OH_Drawing_RegionCreate returns a pointer value region
@@ -325,13 +325,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionOpRegionDstNull, Function | SmallTes
     OH_Drawing_RegionDestroy(region);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0500
- * @tc.name: testRegionSetRectResultTrue
- * @tc.desc: test for testRegionSetRectResultTrue.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testRegionSetRectResultTrue
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0500
+ * @tc.desc   test for testRegionSetRectResultTrue.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionSetRectResultTrue, Function | SmallTest | Level0) {
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
@@ -347,13 +347,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionSetRectResultTrue, Function | SmallT
     OH_Drawing_RegionDestroy(region);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0501
- * @tc.name: testRegionSetRectRegionNull
- * @tc.desc: test for testRegionSetRectRegionNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testRegionSetRectRegionNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0501
+ * @tc.desc   test for testRegionSetRectRegionNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionSetRectRegionNull, Function | SmallTest | Level1) {
     // 1. OH_Drawing_RegionSetRect takes a correct rect object pointer as input, region is nullptr, returns
@@ -366,13 +366,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionSetRectRegionNull, Function | SmallT
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0502
- * @tc.name: testRegionSetRectRectNull
- * @tc.desc: test for testRegionSetRectRectNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testRegionSetRectRectNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0502
+ * @tc.desc   test for testRegionSetRectRectNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionSetRectRectNull, Function | SmallTest | Level1) {
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
@@ -384,13 +384,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionSetRectRectNull, Function | SmallTes
     OH_Drawing_RegionDestroy(region);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0503
- * @tc.name: testRegionSetRectResultFalse
- * @tc.desc: test for testRegionSetRectResultFalse.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testRegionSetRectResultFalse
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0503
+ * @tc.desc   test for testRegionSetRectResultFalse.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionSetRectResultFalse, Function | SmallTest | Level1) {
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
@@ -407,13 +407,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionSetRectResultFalse, Function | Small
     OH_Drawing_RegionDestroy(region);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0600
- * @tc.name: testRegionSetPathResultTrue
- * @tc.desc: test for testRegionSetPathResultTrue.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testRegionSetPathResultTrue
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0600
+ * @tc.desc   test for testRegionSetPathResultTrue.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionSetPathResultTrue, Function | SmallTest | Level0) {
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -442,13 +442,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionSetPathResultTrue, Function | SmallT
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0601
- * @tc.name: testRegionSetPathRegionNull
- * @tc.desc: test for testRegionSetPathRegionNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testRegionSetPathRegionNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0601
+ * @tc.desc   test for testRegionSetPathRegionNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionSetPathRegionNull, Function | SmallTest | Level1) {
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -475,13 +475,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionSetPathRegionNull, Function | SmallT
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0602
- * @tc.name: testRegionSetPathPathNull
- * @tc.desc: test for testRegionSetPathPathNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testRegionSetPathPathNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0602
+ * @tc.desc   test for testRegionSetPathPathNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionSetPathPathNull, Function | SmallTest | Level1) {
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -508,13 +508,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionSetPathPathNull, Function | SmallTes
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0603
- * @tc.name: testRegionSetPathClipNull
- * @tc.desc: test for testRegionSetPathClipNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testRegionSetPathClipNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0603
+ * @tc.desc   test for testRegionSetPathClipNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionSetPathClipNull, Function | SmallTest | Level1) {
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -541,13 +541,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionSetPathClipNull, Function | SmallTes
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0604
- * @tc.name: testRegionSetPathResultFalse
- * @tc.desc: test for testRegionSetPathResultFalse.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testRegionSetPathResultFalse
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0604
+ * @tc.desc   test for testRegionSetPathResultFalse.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionSetPathResultFalse, Function | SmallTest | Level1) {
     OH_Drawing_Path *path = OH_Drawing_PathCreate();
@@ -576,13 +576,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionSetPathResultFalse, Function | Small
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0700
- * @tc.name: testRegionCopyNormal
- * @tc.desc: test for testRegionCopyNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testRegionCopyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0700
+ * @tc.desc   test for testRegionCopyNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionCopyNormal, Function | SmallTest | Level0) {
     // 1. Create a region object by OH_Drawing_RegionCreate.
@@ -602,13 +602,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionCopyNormal, Function | SmallTest | L
     OH_Drawing_RegionDestroy(region2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0701
- * @tc.name: testRegionCopyNull
- * @tc.desc: test for testRegionCopyNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRegionCopyNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0701
+ * @tc.desc   test for testRegionCopyNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionCopyNull, Function | SmallTest | Level3) {
     // 1. Create a region object by OH_Drawing_RegionCreate.
@@ -628,13 +628,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionCopyNull, Function | SmallTest | Lev
     OH_Drawing_RegionDestroy(region2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0702
- * @tc.name: testRegionCopyAbnormal
- * @tc.desc: test for testRegionCopyAbnormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRegionCopyAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0702
+ * @tc.desc   test for testRegionCopyAbnormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionCopyAbnormal, Function | SmallTest | Level3) {
     // 1. Create a region object by OH_Drawing_RegionCreate.
@@ -681,13 +681,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionCopyAbnormal, Function | SmallTest |
     OH_Drawing_RegionDestroy(region2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0703
- * @tc.name: testRegionCopyMultipleCalls
- * @tc.desc: test for testRegionCopyMultipleCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRegionCopyMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0703
+ * @tc.desc   test for testRegionCopyMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionCopyMultipleCalls, Function | SmallTest | Level0) {
     // 1. Create a region object by OH_Drawing_RegionCreate.
@@ -711,13 +711,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionCopyMultipleCalls, Function | SmallT
     OH_Drawing_RegionDestroy(region2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0800
- * @tc.name: testRegionEmptyNormal
- * @tc.desc: test for testRegionEmptyNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testRegionEmptyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0800
+ * @tc.desc   test for testRegionEmptyNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionEmptyNormal, Function | SmallTest | Level0) {
     // 1. Create a region object by OH_Drawing_RegionCreate.
@@ -736,13 +736,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionEmptyNormal, Function | SmallTest | 
     OH_Drawing_RegionDestroy(region);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0801
- * @tc.name: testRegionEmptyNull
- * @tc.desc: test for testRegionEmptyNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRegionEmptyNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0801
+ * @tc.desc   test for testRegionEmptyNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionEmptyNull, Function | SmallTest | Level3) {
     // 1. Create a region object by OH_Drawing_RegionCreate.
@@ -761,13 +761,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionEmptyNull, Function | SmallTest | Le
     OH_Drawing_RegionDestroy(region);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0802
- * @tc.name: testRegionEmptyCalls
- * @tc.desc: test for testRegionEmptyCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRegionEmptyCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0802
+ * @tc.desc   test for testRegionEmptyCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionEmptyCalls, Function | SmallTest | Level3) {
     // 1. Create a region object by OH_Drawing_RegionCreate.

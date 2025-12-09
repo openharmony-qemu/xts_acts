@@ -306,13 +306,12 @@ export default function AVTransCoderTest() {
       console.info('afterAll case');
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVTANSCODER_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVTANSCODER_static_0100
-      * @tc.desc    Transcoder start-pause-resume-stop-release
-      *               : 001.test start-pause-resume-stop-release
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_0100
+     * @tc.desc   Transcoder start-pause-resume-stop-release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVTANSCODER_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info('SUB_MULTIMEDIA_AVTANSCODER_0100 start');
@@ -340,13 +339,12 @@ export default function AVTransCoderTest() {
       console.info('SUB_MULTIMEDIA_AVTANSCODER_0100 end');
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVTANSCODER_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVTANSCODER_static_0200
-      * @tc.desc    Transcoder start-pause-resume-cancel-release
-      *               : 001.test start-pause-resume-cancel-release
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_0200
+     * @tc.desc   Transcoder start-pause-resume-cancel-release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVTANSCODER_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info('SUB_MULTIMEDIA_AVTANSCODER_0200 start');

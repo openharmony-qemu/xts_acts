@@ -26,37 +26,37 @@ export default function customComponentGetPreviousSiblingTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_PREVIOUS_SIBLING_0001
-     * @tc.name       : testCustomComponentGetPreviousSibling001
-     * @tc.desc       : testing height for previousSibling with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentGetPreviousSibling001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_PREVIOUS_SIBLING_0001
+     * @tc.desc   testing height for previousSibling with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGetPreviousSibling001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGetPreviousSibling001()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_PREVIOUS_SIBLING_0002
-     * @tc.name       : testCustomComponentGetPreviousSibling002
-     * @tc.desc       : testing height for previousSibling with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentGetPreviousSibling002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_PREVIOUS_SIBLING_0002
+     * @tc.desc   testing height for previousSibling with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGetPreviousSibling002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGetPreviousSibling002()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_PREVIOUS_SIBLING_0003
-     * @tc.name       : testCustomComponentGetPreviousSibling003
-     * @tc.desc       : testing height for previousSibling with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentGetPreviousSibling003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_PREVIOUS_SIBLING_0003
+     * @tc.desc   testing height for previousSibling with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGetPreviousSibling003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGetPreviousSibling003()).assertEqual(0)

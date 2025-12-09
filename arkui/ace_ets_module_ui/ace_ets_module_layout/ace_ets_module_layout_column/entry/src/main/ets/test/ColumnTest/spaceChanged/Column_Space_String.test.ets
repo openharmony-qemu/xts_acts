@@ -49,9 +49,12 @@ export default function Column_Space_String() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Column_Space_String_TEST_0100
      * @tc.number SUB_ACE_Column_Space_String_TEST_0100
-     * @tc.name testColumnSpace
-     * @tc.desc The value of space is set to '30'
+     * @tc.desc   The value of space is set to '30'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Column_Space_String_TEST_0100',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_Column_Space_String_TEST_0100] START');
@@ -90,9 +93,12 @@ export default function Column_Space_String() {
       console.info('[SUB_ACE_Column_Space_String_TEST_0100] END');
     });
     /**
+     * @tc.name   SUB_ACE_Column_Space_String_TEST_0200
      * @tc.number SUB_ACE_Column_Space_String_TEST_0200
-     * @tc.name testColumnSpace
-     * @tc.desc The value of space is set to '50px'
+     * @tc.desc   The value of space is set to '50px'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Column_Space_String_TEST_0200',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_Column_Space_String_TEST_0200] START');
@@ -131,9 +137,12 @@ export default function Column_Space_String() {
       console.info('[SUB_ACE_Column_Space_String_TEST_0200] END');
     });
     /**
+     * @tc.name   SUB_ACE_Column_Space_String_TEST_0300
      * @tc.number SUB_ACE_Column_Space_String_TEST_0300
-     * @tc.name testColumnSpace
-     * @tc.desc The value of space is set to '50fp'
+     * @tc.desc   The value of space is set to '50fp'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Column_Space_String_TEST_0300',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_Column_Space_String_TEST_0300] START');
@@ -173,9 +182,12 @@ export default function Column_Space_String() {
       console.info('[SUB_ACE_Column_Space_String_TEST_0300] END');
     });
     /**
+     * @tc.name   SUB_ACE_Column_Space_String_TEST_0400
      * @tc.number SUB_ACE_Column_Space_String_TEST_0400
-     * @tc.name testColumnSpace
-     * @tc.desc The value of space is set to '50lpx'
+     * @tc.desc   The value of space is set to '50lpx'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Column_Space_String_TEST_0400',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_Column_Space_String_TEST_0400] START');
@@ -217,9 +229,12 @@ export default function Column_Space_String() {
       console.info('[SUB_ACE_Column_Space_String_TEST_0400] END');
     });
     /**
+     * @tc.name   SUB_ACE_Column_Space_String_TEST_0500
      * @tc.number SUB_ACE_Column_Space_String_TEST_0500
-     * @tc.name testColumnSpace
-     * @tc.desc The value of space is set to vp2px(10)
+     * @tc.desc   The value of space is set to vp2px(10)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Column_Space_String_TEST_0500',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_Column_Space_String_TEST_0500] START');
@@ -258,9 +273,12 @@ export default function Column_Space_String() {
       console.info('[SUB_ACE_Column_Space_String_TEST_0500] END');
     });
     /**
+     * @tc.name   SUB_ACE_Column_Space_String_TEST_0600
      * @tc.number SUB_ACE_Column_Space_String_TEST_0600
-     * @tc.name testColumnSpace
-     * @tc.desc The value of space is set to px2vp(10)
+     * @tc.desc   The value of space is set to px2vp(10)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Column_Space_String_TEST_0600',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_Column_Space_String_TEST_0600] START');
@@ -299,9 +317,12 @@ export default function Column_Space_String() {
       console.info('[SUB_ACE_Column_Space_String_TEST_0600] END');
     });
     /**
+     * @tc.name   SUB_ACE_Column_Space_String_TEST_0700
      * @tc.number SUB_ACE_Column_Space_String_TEST_0700
-     * @tc.name testColumnSpace
-     * @tc.desc The value of space is set to fp2px(10)
+     * @tc.desc   The value of space is set to fp2px(10)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Column_Space_String_TEST_0700',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_Column_Space_String_TEST_0700] START');
@@ -340,9 +361,12 @@ export default function Column_Space_String() {
       console.info('[SUB_ACE_Column_Space_String_TEST_0700] END');
     });
     /**
+     * @tc.name   SUB_ACE_Column_Space_String_TEST_0800
      * @tc.number SUB_ACE_Column_Space_String_TEST_0800
-     * @tc.name testColumnSpace
-     * @tc.desc The value of space is set to px2fp(10)
+     * @tc.desc   The value of space is set to px2fp(10)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Column_Space_String_TEST_0800',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_Column_Space_String_TEST_0800] START');
@@ -381,9 +405,12 @@ export default function Column_Space_String() {
       console.info('[SUB_ACE_Column_Space_String_TEST_0800] END');
     });
     /**
+     * @tc.name   SUB_ACE_Column_Space_String_TEST_0900
      * @tc.number SUB_ACE_Column_Space_String_TEST_0900
-     * @tc.name testColumnSpace
-     * @tc.desc The value of space is set to lpx2px(10)
+     * @tc.desc   The value of space is set to lpx2px(10)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Column_Space_String_TEST_0900',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_Column_Space_String_TEST_0900] START');
@@ -422,9 +449,12 @@ export default function Column_Space_String() {
       console.info('[SUB_ACE_Column_Space_String_TEST_0900] END');
     });
     /**
+     * @tc.name   SUB_ACE_Column_Space_String_TEST_1000
      * @tc.number SUB_ACE_Column_Space_String_TEST_1000
-     * @tc.name testColumnSpace
-     * @tc.desc The value of space is set to px2lpx(10)
+     * @tc.desc   The value of space is set to px2lpx(10)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Column_Space_String_TEST_1000',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_Column_Space_String_TEST_1000] START');
@@ -465,9 +495,12 @@ export default function Column_Space_String() {
       console.info('[SUB_ACE_Column_Space_String_TEST_01000] END');
     });
     /**
+     * @tc.name   SUB_ACE_Column_Space_String_TEST_1100
      * @tc.number SUB_ACE_Column_Space_String_TEST_1100
-     * @tc.name testColumnSpace
-     * @tc.desc The value of space is set to '3'+'0'
+     * @tc.desc   The value of space is set to '3'+'0'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Column_Space_String_TEST_1100',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_Column_Space_String_TEST_01100] START');
@@ -506,9 +539,12 @@ export default function Column_Space_String() {
       console.info('[SUB_ACE_Column_Space_String_TEST_01100] END');
     });
     /**
+     * @tc.name   SUB_ACE_Column_Space_String_TEST_1200
      * @tc.number SUB_ACE_Column_Space_String_TEST_1200
-     * @tc.name testColumnSpace
-     * @tc.desc The value of space is set to '50'
+     * @tc.desc   The value of space is set to '50'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Column_Space_String_TEST_1200',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_Column_Space_String_TEST_1200] START');

@@ -46,12 +46,12 @@ export default function richEditorApi111() {
       console.info("richEditorApi111 after each called");
     });
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_richEditorApi111_0100
-     * @tc.name      testRichEditor
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   richEditorApi111_0100
+     * @tc.number SUB_ACE_RICHEDITOR_richEditorApi111_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('richEditorApi111_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[richEditorApi111_0100] START');

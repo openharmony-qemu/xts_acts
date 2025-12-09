@@ -58,14 +58,14 @@ export default function AVScreenCaptureRecorderMicro() {
     })
 
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_1100
-        * @tc.name      : 01.AvScreenCaptureRecorder
-        * @tc.desc      : AvScreenCaptureRecorder
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_1100
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_1100', Level.LEVEL0, async (done: Function) => {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_1100 start')
 
@@ -108,14 +108,14 @@ export default function AVScreenCaptureRecorderMicro() {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_1100 end')
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_1200
-        * @tc.name      : 02.AvScreenCaptureRecorder
-        * @tc.desc      : AvScreenCaptureRecorder
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_1200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_1200
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_1200', Level.LEVEL0, async (done: Function) => {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_1200 start')
       let result: number = myScreenCaptureNdk.OHAVMuxerByAddTrackH265();
@@ -162,14 +162,14 @@ export default function AVScreenCaptureRecorderMicro() {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_1200 end')
     })
     
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_1300
-        * @tc.name      : 01.AvScreenCaptureRecorder
-        * @tc.desc      : AvScreenCaptureRecorder
-        * @tc.size      : MediumTest
-        * @tc.type      : Performance test
-        * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_1300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_1300
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_1300', 0, async (done: Function) => {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_1300 start')
 

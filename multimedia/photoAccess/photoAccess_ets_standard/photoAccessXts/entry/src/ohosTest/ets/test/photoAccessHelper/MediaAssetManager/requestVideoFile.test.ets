@@ -71,12 +71,12 @@ export default function MediaAssetManagerRequestVideoFileTest() {
     });
 
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_REQUEST_IMAGE_DATA_001
-     * @tc.name      : MediaAssetManager_requestVideoFile_promise_001
-     * @tc.desc      : requestVideoFile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetManager_requestVideoFile_promise_001
+     * @tc.number MEDIA_ASSET_MANAGER_REQUEST_IMAGE_DATA_001
+     * @tc.desc   requestVideoFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('MediaAssetManager_requestVideoFile_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetManager_requestVideoFile_promise_001';

@@ -27,12 +27,12 @@ export default function pixelMapNewAPI() {
     });
 
     /**
-     * @tc.number    pixelMapNewAPI_0100
-     * @tc.name      pixelMapNewAPI_0100
-     * @tc.desc      image pixelMap newAPI
-     * @tc.level:    Level 1
-     * @tc.size:     MediumTest
-     * @tc.type:     Function
+     * @tc.name   pixelMapNewAPI_0100
+     * @tc.number pixelMapNewAPI_0100
+     * @tc.desc   image pixelMap newAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("pixelMapNewAPI_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
@@ -50,12 +50,12 @@ export default function pixelMapNewAPI() {
     });
 
     /**
-     * @tc.number    pixelMapNewAPI_0200
-     * @tc.name      pixelMapNewAPI_0200
-     * @tc.desc      image pixelMap newAPI
-     * @tc.level:    Level 1
-     * @tc.size:     MediumTest
-     * @tc.type:     Function
+     * @tc.name   pixelMapNewAPI_0200
+     * @tc.number pixelMapNewAPI_0200
+     * @tc.desc   image pixelMap newAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("pixelMapNewAPI_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
@@ -73,12 +73,12 @@ export default function pixelMapNewAPI() {
     });
 
     /**
-     * @tc.number    pixelMapNewAPI_0300
-     * @tc.name      pixelMapNewAPI_0300
-     * @tc.desc      image pixelMap newAPI
-     * @tc.level:    Level 1
-     * @tc.size:     MediumTest
-     * @tc.type:     Function
+     * @tc.name   pixelMapNewAPI_0300
+     * @tc.number pixelMapNewAPI_0300
+     * @tc.desc   image pixelMap newAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("pixelMapNewAPI_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
@@ -96,12 +96,12 @@ export default function pixelMapNewAPI() {
     });
 
     /**
-     * @tc.number    pixelMapNewAPI_0400
-     * @tc.name      pixelMapNewAPI_0400
-     * @tc.desc      image pixelMap newAPI
-     * @tc.level:    Level 1
-     * @tc.size:     MediumTest
-     * @tc.type:     Function
+     * @tc.name   pixelMapNewAPI_0400
+     * @tc.number pixelMapNewAPI_0400
+     * @tc.desc   image pixelMap newAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("pixelMapNewAPI_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
@@ -119,12 +119,12 @@ export default function pixelMapNewAPI() {
     });
 
     /**
-     * @tc.number    pixelMapNewAPI_0500
-     * @tc.name      pixelMapNewAPI_0500
-     * @tc.desc      image pixelMap newAPI
-     * @tc.level:    Level 1
-     * @tc.size:     MediumTest
-     * @tc.type:     Function
+     * @tc.name   pixelMapNewAPI_0500
+     * @tc.number pixelMapNewAPI_0500
+     * @tc.desc   image pixelMap newAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("pixelMapNewAPI_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
@@ -142,12 +142,12 @@ export default function pixelMapNewAPI() {
     });
 
     /**
-     * @tc.number    pixelMapNewAPI_0600
-     * @tc.name      pixelMapNewAPI_0600
-     * @tc.desc      image pixelMap newAPI
-     * @tc.level:    Level 1
-     * @tc.size:     MediumTest
-     * @tc.type:     Function
+     * @tc.name   pixelMapNewAPI_0600
+     * @tc.number pixelMapNewAPI_0600
+     * @tc.desc   image pixelMap newAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("pixelMapNewAPI_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
@@ -165,12 +165,12 @@ export default function pixelMapNewAPI() {
     });
 
     /**
-     * @tc.number    pixelMapNewAPI_0700
-     * @tc.name      pixelMapNewAPI_0700
-     * @tc.desc      image pixelMap newAPI
-     * @tc.level:    Level 1
-     * @tc.size:     MediumTest
-     * @tc.type:     Function
+     * @tc.name   pixelMapNewAPI_0700
+     * @tc.number pixelMapNewAPI_0700
+     * @tc.desc   image pixelMap newAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("pixelMapNewAPI_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
       let opts: image.InitializationOptions = { 
@@ -187,12 +187,12 @@ export default function pixelMapNewAPI() {
     });
 
     /**
-     * @tc.number    pixelMapNewAPI_0800
-     * @tc.name      pixelMapNewAPI_0800
-     * @tc.desc      image pixelMap newAPI
-     * @tc.level:    Level 1
-     * @tc.size:     MediumTest
-     * @tc.type:     Function
+     * @tc.name   pixelMapNewAPI_0800
+     * @tc.number pixelMapNewAPI_0800
+     * @tc.desc   image pixelMap newAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("pixelMapNewAPI_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
       let opts: image.InitializationOptions = { 
@@ -209,12 +209,12 @@ export default function pixelMapNewAPI() {
     });
 
     /**
-     * @tc.number    pixelMapNewAPI_0900
-     * @tc.name      pixelMapNewAPI_0900
-     * @tc.desc      image pixelMap newAPI
-     * @tc.level:    Level 1
-     * @tc.size:     MediumTest
-     * @tc.type:     Function
+     * @tc.name   pixelMapNewAPI_0900
+     * @tc.number pixelMapNewAPI_0900
+     * @tc.desc   image pixelMap newAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("pixelMapNewAPI_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
       let opts: image.InitializationOptions = { 
@@ -231,12 +231,12 @@ export default function pixelMapNewAPI() {
     });
 
     /**
-     * @tc.number    pixelMapNewAPI_1000
-     * @tc.name      pixelMapNewAPI_1000
-     * @tc.desc      image pixelMap newAPI
-     * @tc.level:    Level 1
-     * @tc.size:     MediumTest
-     * @tc.type:     Function
+     * @tc.name   pixelMapNewAPI_1000
+     * @tc.number pixelMapNewAPI_1000
+     * @tc.desc   image pixelMap newAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("pixelMapNewAPI_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
       try {
@@ -251,12 +251,12 @@ export default function pixelMapNewAPI() {
     });
 
     /**
-     * @tc.number    pixelMapNewAPI_1100
-     * @tc.name      pixelMapNewAPI_1100
-     * @tc.desc      image pixelMap newAPI
-     * @tc.level:    Level 1
-     * @tc.size:     MediumTest
-     * @tc.type:     Function
+     * @tc.name   pixelMapNewAPI_1100
+     * @tc.number pixelMapNewAPI_1100
+     * @tc.desc   image pixelMap newAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("pixelMapNewAPI_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
       let opts: image.InitializationOptions = { 
@@ -274,12 +274,12 @@ export default function pixelMapNewAPI() {
     });
 
     /**
-     * @tc.number    pixelMapNewAPI_1200
-     * @tc.name      pixelMapNewAPI_1200
-     * @tc.desc      image pixelMap newAPI
-     * @tc.level:    Level 1
-     * @tc.size:     MediumTest
-     * @tc.type:     Function
+     * @tc.name   pixelMapNewAPI_1200
+     * @tc.number pixelMapNewAPI_1200
+     * @tc.desc   image pixelMap newAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("pixelMapNewAPI_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
       let opts: image.InitializationOptions = { 

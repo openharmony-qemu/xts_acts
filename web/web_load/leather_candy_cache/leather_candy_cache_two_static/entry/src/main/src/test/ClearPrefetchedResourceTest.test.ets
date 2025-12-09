@@ -55,14 +55,14 @@ export default function ClearPrefetchedResourceTest() {
       console.info("componentLifeCycleTestOne beforeEach start");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_CLEARPREFETCHEDRESOURCES_STATIC_0100
-    * @tc.name       : testClearPrefetchedResourceStatic001
-    * @tc.desc       : test clearPrefetchedResource
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testClearPrefetchedResourceStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARPREFETCHEDRESOURCES_STATIC_0100
+     * @tc.desc   test clearPrefetchedResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testClearPrefetchedResourceStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -77,14 +77,14 @@ export default function ClearPrefetchedResourceTest() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_CLEARPREFETCHEDRESOURCES_STATIC_0200
-    * @tc.name       : testClearPrefetchedResourceStatic002
-    * @tc.desc       : PAGE_REDIRECT
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testClearPrefetchedResourceStatic002
+     * @tc.number testClearPrefetchedResourceStatic002
+     * @tc.desc   testClearPrefetchedResourceStatic002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testClearPrefetchedResourceStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);

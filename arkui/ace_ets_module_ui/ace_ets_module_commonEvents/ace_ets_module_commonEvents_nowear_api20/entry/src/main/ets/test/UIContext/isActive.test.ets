@@ -48,12 +48,12 @@ export default function isActiveTest() {
     });
 
     /**
-     * @tc.number    isActiveTest_0010
-     * @tc.name      isActiveTest_0010
-     * @tc.desc      api for test isActive true and false
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   isActiveTest_0010
+     * @tc.number isActiveTest_0010
+     * @tc.desc   api for test isActive true and false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isActiveTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('isActive_0010 START');

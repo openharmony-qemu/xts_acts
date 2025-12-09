@@ -25,12 +25,12 @@ export default function locale1NdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_LOCALE_NEWLOCALE_0200
-     * @tc.name       : testMuslLocaleNewlocale002
-     * @tc.desc       : test newlocale
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslLocaleNewlocale002
+     * @tc.number SUB_THIRDPARTY_MUSL_LOCALE_NEWLOCALE_0200
+     * @tc.desc   test newlocale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslLocaleNewlocale002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = locale.newlocale();
@@ -39,12 +39,12 @@ export default function locale1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_LOCALE_SETLOCALE_0200
-     * @tc.name       : testMuslLocaleSetlocale002
-     * @tc.desc       : test setlocale
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslLocaleSetlocale002
+     * @tc.number SUB_THIRDPARTY_MUSL_LOCALE_SETLOCALE_0200
+     * @tc.desc   test setlocale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslLocaleSetlocale002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = locale.setlocale();

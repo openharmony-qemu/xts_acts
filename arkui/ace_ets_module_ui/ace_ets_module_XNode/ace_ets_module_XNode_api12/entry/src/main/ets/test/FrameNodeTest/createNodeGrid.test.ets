@@ -40,12 +40,12 @@ export default function createNodeGrid() {
       done();
     });
     /**
-     * @tc.number    createNodeGrid_0100
-     * @tc.name      createNodeGrid_0100
-     * @tc.desc      frameNode: createNodeGridToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   createNodeGrid_0100
+     * @tc.number createNodeGrid_0100
+     * @tc.desc   frameNode: createNodeGridToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createNodeGrid_0100', Level.LEVEL0, async (done: Function) => {
       console.info('createNodeGrid_0100 START');

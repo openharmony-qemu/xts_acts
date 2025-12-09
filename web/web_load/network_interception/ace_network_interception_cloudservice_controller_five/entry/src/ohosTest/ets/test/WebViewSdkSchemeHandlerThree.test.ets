@@ -58,12 +58,12 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
     })
 
     /**
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0100
-     *@tc.name testSchemeHandlerDidFailCompleteIfNoResponse001
-     *@tc.desc test didFail didReceiveResponse completeIfNoResponse true
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+     * @tc.name   testSchemeHandlerDidFailCompleteIfNoResponse001
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0100
+     * @tc.desc   test didFail didReceiveResponse completeIfNoResponse true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSchemeHandlerDidFailCompleteIfNoResponse001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse001", 142401);
@@ -77,12 +77,12 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
       done();
     })
     /**
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0200
-     *@tc.name testSchemeHandlerDidFailCompleteIfNoResponse002
-     *@tc.desc test didFail didReceiveResponse completeIfNoResponse false
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+     * @tc.name   testSchemeHandlerDidFailCompleteIfNoResponse002
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0200
+     * @tc.desc   test didFail didReceiveResponse completeIfNoResponse false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSchemeHandlerDidFailCompleteIfNoResponse002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse002", 142401);
@@ -96,12 +96,12 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
       done();
     })
     /**
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0300
-     *@tc.name testSchemeHandlerDidFailCompleteIfNoResponse003
-     *@tc.desc test didFail completeIfNoResponse true
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+     * @tc.name   testSchemeHandlerDidFailCompleteIfNoResponse003
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0300
+     * @tc.desc   test didFail completeIfNoResponse true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSchemeHandlerDidFailCompleteIfNoResponse003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse003", 142401);
@@ -115,12 +115,12 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
       done();
     })
     /**
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0400
-     *@tc.name testSchemeHandlerDidFailCompleteIfNoResponse004
-     *@tc.desc test didFail completeIfNoResponse false
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+     * @tc.name   testSchemeHandlerDidFailCompleteIfNoResponse004
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0400
+     * @tc.desc   test didFail completeIfNoResponse false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSchemeHandlerDidFailCompleteIfNoResponse004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse004", 142401);
@@ -134,12 +134,12 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
       done();
     })
     /**
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0500
-     *@tc.name testSchemeHandlerDidFailCompleteIfNoResponse005
-     *@tc.desc test didFail completeIfNoResponse true errorCode 17100021
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+     * @tc.name   testSchemeHandlerDidFailCompleteIfNoResponse005
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0500
+     * @tc.desc   test didFail completeIfNoResponse true errorCode 17100021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSchemeHandlerDidFailCompleteIfNoResponse005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse005", 142401);
@@ -153,12 +153,12 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
       done();
     })
     /**
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0600
-     *@tc.name testSchemeHandlerDidFailCompleteIfNoResponse006
-     *@tc.desc test didFail completeIfNoResponse false errorCode 17100021
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+     * @tc.name   testSchemeHandlerDidFailCompleteIfNoResponse006
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0600
+     * @tc.desc   test didFail completeIfNoResponse false errorCode 17100021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSchemeHandlerDidFailCompleteIfNoResponse006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSchemeHandlerDidFailCompleteIfNoResponse006", 142401);
@@ -172,12 +172,12 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
       done();
     })
     /**
-     *@tc.number       SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0700
-     *@tc.name         testSchemeHandlerDidFailCompleteIfNoResponse007
-     *@tc.desc         test didFail completeIfNoResponse true errorCode 17100101
-     *@tc.size         MediumTest
-     *@tc.type         Function
-     *@tc.level        Level 2
+     * @tc.name   testSchemeHandlerDidFailCompleteIfNoResponse007
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0700
+     * @tc.desc   test didFail completeIfNoResponse true errorCode 17100101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSchemeHandlerDidFailCompleteIfNoResponse007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSchemeHandlerDidFailCompleteIfNoResponse007', 142401);
@@ -188,12 +188,12 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
       sendEventByKey('webViewSdkSchemeHandlerThreeButton', 10, '');
     })
     /**
-     *@tc.number       SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0800
-     *@tc.name         testSchemeHandlerDidFailCompleteIfNoResponse008
-     *@tc.desc         test didFail completeIfNoResponse false errorCode 17100101
-     *@tc.size         MediumTest
-     *@tc.type         Function
-     *@tc.level        Level 2
+     * @tc.name   testSchemeHandlerDidFailCompleteIfNoResponse008
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_didFail_completeIfNoResponse_API_0800
+     * @tc.desc   test didFail completeIfNoResponse false errorCode 17100101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSchemeHandlerDidFailCompleteIfNoResponse008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSchemeHandlerDidFailCompleteIfNoResponse008', 142401);

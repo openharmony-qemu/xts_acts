@@ -58,112 +58,112 @@ export default function webHitTestTypeEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBHITTESTTYPE_ENUM_0100
-    * @tc.name        : testWebHitTestTypeEnum001
-    * @tc.desc        : test the value of WebHitTestType.EditText is 0
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebHitTestTypeEnum001
+     * @tc.number SUB_WEB_WEBHITTESTTYPE_ENUM_0100
+     * @tc.desc   test the value of WebHitTestType.EditText is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebHitTestTypeEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebHitTestTypeEnum001", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebHitTestTypeEnum001", 0, 175010, done);
       Utils.waitAndClickComponent(driver, "WebHitTestTypeEnumTestButton");
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBHITTESTTYPE_ENUM_0200
-    * @tc.name        : testWebHitTestTypeEnum002
-    * @tc.desc        : test the value of WebHitTestType.Email is 1
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebHitTestTypeEnum002
+     * @tc.number SUB_WEB_WEBHITTESTTYPE_ENUM_0200
+     * @tc.desc   test the value of WebHitTestType.Email is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebHitTestTypeEnum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebHitTestTypeEnum002", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebHitTestTypeEnum002", 1, 175020, done);
       Utils.waitAndClickComponent(driver, "WebHitTestTypeEnumTestButton");
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBHITTESTTYPE_ENUM_0300
-    * @tc.name        : testWebHitTestTypeEnum003
-    * @tc.desc        : test the value of WebHitTestType.HttpAnchor is 2
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebHitTestTypeEnum003
+     * @tc.number SUB_WEB_WEBHITTESTTYPE_ENUM_0300
+     * @tc.desc   test the value of WebHitTestType.HttpAnchor is 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebHitTestTypeEnum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebHitTestTypeEnum003", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebHitTestTypeEnum003", 2, 175030, done);
       Utils.waitAndClickComponent(driver, "WebHitTestTypeEnumTestButton");
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBHITTESTTYPE_ENUM_0400
-    * @tc.name        : testWebHitTestTypeEnum004
-    * @tc.desc        : test the value of WebHitTestType.HttpAnchorImg is 3
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebHitTestTypeEnum004
+     * @tc.number SUB_WEB_WEBHITTESTTYPE_ENUM_0400
+     * @tc.desc   test the value of WebHitTestType.HttpAnchorImg is 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebHitTestTypeEnum004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebHitTestTypeEnum004", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebHitTestTypeEnum004", 3, 175040, done);
       Utils.waitAndClickComponent(driver, "WebHitTestTypeEnumTestButton");
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBHITTESTTYPE_ENUM_0500
-    * @tc.name        : testWebHitTestTypeEnum005
-    * @tc.desc        : test the value of WebHitTestType.Img is 4
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebHitTestTypeEnum005
+     * @tc.number SUB_WEB_WEBHITTESTTYPE_ENUM_0500
+     * @tc.desc   test the value of WebHitTestType.Img is 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebHitTestTypeEnum005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebHitTestTypeEnum005", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebHitTestTypeEnum005", 4, 175050, done);
       Utils.waitAndClickComponent(driver, "WebHitTestTypeEnumTestButton");
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBHITTESTTYPE_ENUM_0600
-    * @tc.name        : testWebHitTestTypeEnum006
-    * @tc.desc        : test the value of WebHitTestType.Map is 5
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebHitTestTypeEnum006
+     * @tc.number SUB_WEB_WEBHITTESTTYPE_ENUM_0600
+     * @tc.desc   test the value of WebHitTestType.Map is 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebHitTestTypeEnum006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebHitTestTypeEnum006", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebHitTestTypeEnum006", 5, 175060, done);
       Utils.waitAndClickComponent(driver, "WebHitTestTypeEnumTestButton");
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBHITTESTTYPE_ENUM_0700
-    * @tc.name        : testWebHitTestTypeEnum007
-    * @tc.desc        : test the value of WebHitTestType.Phone is 6
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebHitTestTypeEnum007
+     * @tc.number SUB_WEB_WEBHITTESTTYPE_ENUM_0700
+     * @tc.desc   test the value of WebHitTestType.Phone is 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebHitTestTypeEnum007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebHitTestTypeEnum007", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebHitTestTypeEnum007", 6, 175070, done);
       Utils.waitAndClickComponent(driver, "WebHitTestTypeEnumTestButton");
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBHITTESTTYPE_ENUM_0800
-    * @tc.name        : testWebHitTestTypeEnum008
-    * @tc.desc        : test the value of WebHitTestType.Unknown is 7
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebHitTestTypeEnum008
+     * @tc.number SUB_WEB_WEBHITTESTTYPE_ENUM_0800
+     * @tc.desc   test the value of WebHitTestType.Unknown is 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebHitTestTypeEnum008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebHitTestTypeEnum008", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebHitTestTypeEnum008", 7, 175080, done);

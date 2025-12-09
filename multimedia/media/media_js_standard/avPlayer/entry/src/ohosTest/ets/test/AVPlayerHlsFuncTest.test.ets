@@ -140,14 +140,14 @@ export default function AVPlayerHlsFuncTest() {
             avPlayer.url = src;
         }
         
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0100
-            * @tc.name      : 001.test hls
-            * @tc.desc      : HLS setBitrate test
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0100
+         * @tc.desc   HLS setBitrate test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0100', Level.LEVEL0,async function (done) {
             await initAVPlayer(HTTP_PATH + '05.hls/hls_variant/index.m3u8', done);
             expectBitrateArray = [165340, 344388, 387360, 765178, 1676816];
@@ -156,14 +156,14 @@ export default function AVPlayerHlsFuncTest() {
             videoSizeArray = [ [256, 144], [426, 240], [640, 360], [854, 480], [1280, 720] ];
         })
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0200
-            * @tc.name      : 001.test hls
-            * @tc.desc      : HLS setBitrate test
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0200
+         * @tc.desc   HLS setBitrate test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0200', Level.LEVEL0,async function (done) {
             await initAVPlayer(HTTP_PATH + '05.hls/hls_variant/index.m3u8', done);
             expectBitrateArray = [165340, 344388, 387360, 765178, 1676816];
@@ -172,14 +172,14 @@ export default function AVPlayerHlsFuncTest() {
             videoSizeArray = [ [256, 144], [426, 240], [640, 360], [854, 480], [1280, 720] ];
         })
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0300
-            * @tc.name      : 001.test hls
-            * @tc.desc      : HLS setBitrate test
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0300
+         * @tc.desc   HLS setBitrate test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0300', Level.LEVEL0,async function (done) {
             await initAVPlayer(HTTP_PATH + '05.hls/hls_variant/index.m3u8', done);
             expectBitrateArray = [165340, 344388, 387360, 765178, 1676816];
@@ -190,14 +190,14 @@ export default function AVPlayerHlsFuncTest() {
             avPlayer.pause();
         })
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0400
-            * @tc.name      : 001.test hls
-            * @tc.desc      : HLS setBitrate test
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0400
+         * @tc.desc   HLS setBitrate test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0400', Level.LEVEL0,async function (done) {
             await initAVPlayer(HTTP_PATH + '05.hls/hls_variant/index.m3u8', done);
             expectBitrateArray = [165340, 344388, 387360, 765178, 1676816];
@@ -208,14 +208,14 @@ export default function AVPlayerHlsFuncTest() {
             avPlayer.loop = false;
         })
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0500
-            * @tc.name      : 001.test hls
-            * @tc.desc      : HLS setBitrate test
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0500
+         * @tc.desc   HLS setBitrate test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_HLS_setBitrate_0500', Level.LEVEL0,async function (done) {
             await initAVPlayer(HTTP_PATH + '05.hls/hls_variant/index.m3u8', done);
             expectBitrateArray = [165340, 344388, 387360, 765178, 1676816];

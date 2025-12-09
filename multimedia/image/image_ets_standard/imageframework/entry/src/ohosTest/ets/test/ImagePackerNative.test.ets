@@ -289,12 +289,12 @@ export default function ImagePackerNativeTest() {
     }
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGESIZE_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGESIZE_0100
-     * @tc.desc      : OH_ImageNative_GetImageSize error code is IMAGE_SUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGESIZE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGESIZE_0100
+     * @tc.desc   OH_ImageNative_GetImageSize error code is IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGESIZE_0100', Level.LEVEL3, async (done: Function) => {
       if (!isSupportedCamerasResult) {
@@ -358,12 +358,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGESIZE_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGESIZE_0200
-     * @tc.desc      : OH_ImageNative_GetImageSize error code is IMAGE_BAD_PARAMETER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGESIZE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGESIZE_0200
+     * @tc.desc   OH_ImageNative_GetImageSize error code is IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGESIZE_0200', Level.LEVEL3, async (done: Function) => {
       let result: number = ndkTest.jsGetImageSizeBadParameter();
@@ -372,12 +372,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGECOMPONENTTYPES_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGECOMPONENTTYPES_0100
-     * @tc.desc      : OH_ImageNative_GetComponentTypes error code is IMAGE_SUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGECOMPONENTTYPES_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGECOMPONENTTYPES_0100
+     * @tc.desc   OH_ImageNative_GetComponentTypes error code is IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGECOMPONENTTYPES_0100', Level.LEVEL3, async (done: Function) => {
       if (!isSupportedCamerasResult) {
@@ -442,12 +442,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_GETBYTEBUFFER_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NATIVE_GETBYTEBUFFER_0100
-     * @tc.desc      : OH_ImageNative_GetByteBuffer error code is IMAGE_SUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GETBYTEBUFFER_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GETBYTEBUFFER_0100
+     * @tc.desc   OH_ImageNative_GetByteBuffer error code is IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_NATIVE_GETBYTEBUFFER_0100', Level.LEVEL3, async (done: Function) => {
       if (!isSupportedCamerasResult) {
@@ -517,12 +517,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_GETBYTEBUFFER_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NATIVE_GETBYTEBUFFER_0200
-     * @tc.desc      : OH_ImageNative_GetByteBuffer error code is IMAGE_BAD_PARAMETER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GETBYTEBUFFER_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GETBYTEBUFFER_0200
+     * @tc.desc   OH_ImageNative_GetByteBuffer error code is IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_NATIVE_GETBYTEBUFFER_0200', Level.LEVEL3, async (done: Function) => {
       let result: number = ndkTest.jsGetImageByteBufferBadParameter();
@@ -531,12 +531,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_GETBUFFERSIZE_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NATIVE_GETBUFFERSIZE_0100
-     * @tc.desc      : OH_ImageNative_GetBufferSize error code is IMAGE_SUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GETBUFFERSIZE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GETBUFFERSIZE_0100
+     * @tc.desc   OH_ImageNative_GetBufferSize error code is IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_NATIVE_GETBUFFERSIZE_0100', Level.LEVEL3, async (done: Function) => {
       if (!isSupportedCamerasResult) {
@@ -606,12 +606,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_GETBUFFERSIZE_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NATIVE_GETBUFFERSIZE_0200
-     * @tc.desc      : OH_ImageNative_GetBufferSize error code is IMAGE_BAD_PARAMETER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GETBUFFERSIZE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GETBUFFERSIZE_0200
+     * @tc.desc   OH_ImageNative_GetBufferSize error code is IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_NATIVE_GETBUFFERSIZE_0200', Level.LEVEL3, async (done: Function) => {
       let result: number = ndkTest.jsGetImageBufferSizeBadParameter();
@@ -620,12 +620,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_GETROWSTRIDE_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NATIVE_GETROWSTRIDE_0100
-     * @tc.desc      : OH_ImageNative_GetRowStride error code is IMAGE_SUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GETROWSTRIDE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GETROWSTRIDE_0100
+     * @tc.desc   OH_ImageNative_GetRowStride error code is IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_NATIVE_GETROWSTRIDE_0100', Level.LEVEL3, async (done: Function) => {
       if (!isSupportedCamerasResult) {
@@ -695,12 +695,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_GETROWSTRIDE_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NATIVE_GETROWSTRIDE_0200
-     * @tc.desc      : OH_ImageNative_GetRowStride error code is IMAGE_BAD_PARAMETER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GETROWSTRIDE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GETROWSTRIDE_0200
+     * @tc.desc   OH_ImageNative_GetRowStride error code is IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_NATIVE_GETROWSTRIDE_0200', Level.LEVEL3, async (done: Function) => {
       let result: number = ndkTest.jsGetImageRowStrideBadParameter();
@@ -709,12 +709,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_GETPIXELSTRIDE_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NATIVE_GETPIXELSTRIDE_0100
-     * @tc.desc      : OH_ImageNative_GetPixelStride error code is IMAGE_SUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GETPIXELSTRIDE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GETPIXELSTRIDE_0100
+     * @tc.desc   OH_ImageNative_GetPixelStride error code is IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_NATIVE_GETPIXELSTRIDE_0100', Level.LEVEL3, async (done: Function) => {
       if (!isSupportedCamerasResult) {
@@ -784,12 +784,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_GETPIXELSTRIDE_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NATIVE_GETPIXELSTRIDE_0200
-     * @tc.desc      : OH_ImageNative_GetPixelStride error code is IMAGE_BAD_PARAMETER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GETPIXELSTRIDE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GETPIXELSTRIDE_0200
+     * @tc.desc   OH_ImageNative_GetPixelStride error code is IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_NATIVE_GETPIXELSTRIDE_0200', Level.LEVEL3, async (done: Function) => {
       let result: number = ndkTest.jsGetImagePixelStrideBadParameter();
@@ -798,12 +798,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_GETTIMESTAMP_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NATIVE_GETTIMESTAMP_0100
-     * @tc.desc      : OH_ImageNative_GetTimestamp error code is IMAGE_SUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GETTIMESTAMP_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GETTIMESTAMP_0100
+     * @tc.desc   OH_ImageNative_GetTimestamp error code is IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_NATIVE_GETTIMESTAMP_0100', Level.LEVEL3, async (done: Function) => {
       if (!isSupportedCamerasResult) {
@@ -865,12 +865,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_GETTIMESTAMP_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NATIVE_GETTIMESTAMP_0200
-     * @tc.desc      : OH_ImageNative_GetTimestamp error code is IMAGE_BAD_PARAMETER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GETTIMESTAMP_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GETTIMESTAMP_0200
+     * @tc.desc   OH_ImageNative_GetTimestamp error code is IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_NATIVE_GETTIMESTAMP_0200', Level.LEVEL3, async (done: Function) => {
       let result: number = ndkTest.jsGetImageTimestampBadParameter();
@@ -879,12 +879,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_RELEASE_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NATIVE_RELEASE_0100
-     * @tc.desc      : OH_ImageNative_Release error code is IMAGE_SUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_RELEASE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_RELEASE_0100
+     * @tc.desc   OH_ImageNative_Release error code is IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_NATIVE_RELEASE_0100', Level.LEVEL3, async (done: Function) => {
       if (!isSupportedCamerasResult) {
@@ -946,12 +946,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_RELEASE_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_NATIVE_RELEASE_0200
-     * @tc.desc      : OH_ImageNative_Release error code is IMAGE_BAD_PARAMETER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_RELEASE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_RELEASE_0200
+     * @tc.desc   OH_ImageNative_Release error code is IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_NATIVE_RELEASE_0200', Level.LEVEL3, async (done: Function) => {
       let result: number = ndkTest.jsReleaseImageBadParameter();
@@ -961,12 +961,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_DYNAMIC_RANGE_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_DYNAMIC_RANGE_0100
-     * @tc.desc      : Test the IMAGE_PACKER_DYNAMIC_RANGE_AUTO in the enumeration IMAGE_PACKER_DYNAMIC_RANGE.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_DYNAMIC_RANGE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_DYNAMIC_RANGE_0100
+     * @tc.desc   Test the IMAGE_PACKER_DYNAMIC_RANGE_AUTO in the enumeration IMAGE_PACKER_DYNAMIC_RANGE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_DYNAMIC_RANGE_0100', Level.LEVEL3, async (done: Function) => {
       let result: number = ndkTest.jSImagePackerDynamicRangeAuto();
@@ -975,12 +975,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_DYNAMIC_RANGE_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_DYNAMIC_RANGE_0200
-     * @tc.desc      : Test the IMAGE_PACKER_DYNAMIC_RANGE_SDR in the enumeration IMAGE_PACKER_DYNAMIC_RANGE.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_DYNAMIC_RANGE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_DYNAMIC_RANGE_0200
+     * @tc.desc   Test the IMAGE_PACKER_DYNAMIC_RANGE_SDR in the enumeration IMAGE_PACKER_DYNAMIC_RANGE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_DYNAMIC_RANGE_0200', Level.LEVEL3, async (done: Function) => {
       let result: number = ndkTest.jSImagePackerDynamicRangeSdr();
@@ -990,12 +990,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_OHPACKINGOPTIONSCREATE_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_OHPACKINGOPTIONSCREATE_0100
-     * @tc.desc      : OH_PackingOptions_Create return IMAGE_SUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_OHPACKINGOPTIONSCREATE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_OHPACKINGOPTIONSCREATE_0100
+     * @tc.desc   OH_PackingOptions_Create return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_OHPACKINGOPTIONSCREATE_0100', Level.LEVEL3, async (done: Function) => {
       let result: number = ndkTest.jsIOHPackingOptionsCreate();
@@ -1005,12 +1005,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETMIMETYPE_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETMIMETYPE_ERROR_0100
-     * @tc.desc     : OH_PackingOptions_SetMimeType return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETMIMETYPE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETMIMETYPE_ERROR_0100
+     * @tc.desc   OH_PackingOptions_SetMimeType return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETMIMETYPE_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let mimeType = "IMAGE/jpeg";
@@ -1021,12 +1021,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETMIMETYPE_ERROR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETMIMETYPE_ERROR_0200
-     * @tc.desc     : OH_PackingOptions_SetMimeType return IMAGE_ALLOC_FAILED
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETMIMETYPE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETMIMETYPE_ERROR_0200
+     * @tc.desc   OH_PackingOptions_SetMimeType return IMAGE_ALLOC_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETMIMETYPE_ERROR_0200", Level.LEVEL3, async (done: Function) => {
       let mimeType = "IMAGE/jpeg";
@@ -1037,12 +1037,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETMIMETYPE_ERROR_0300
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETMIMETYPE_ERROR_0300
-     * @tc.desc     : OH_PackingOptions_SetMimeType return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETMIMETYPE_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETMIMETYPE_ERROR_0300
+     * @tc.desc   OH_PackingOptions_SetMimeType return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETMIMETYPE_ERROR_0300", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsSetMimeTypeImageBadParameter();
@@ -1052,12 +1052,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPE_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPE_ERROR_0100
-     * @tc.desc     : OH_PackingOptions_GetMimeType return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPE_ERROR_0100
+     * @tc.desc   OH_PackingOptions_GetMimeType return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPE_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let mimeType = "IMAGE/jpeg";
@@ -1069,12 +1069,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPE_ERROR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPE_ERROR_0200
-     * @tc.desc     : OH_PackingOptions_GetMimeType return IMAGE_ALLOC_FAILED
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPE_ERROR_0200
+     * @tc.desc   OH_PackingOptions_GetMimeType return IMAGE_ALLOC_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPE_ERROR_0200", Level.LEVEL3, async (done: Function) => {
       let mimeType = "IMAGE/jpeg";
@@ -1086,12 +1086,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPE_ERROR_0300
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPE_ERROR_0300
-     * @tc.desc     : OH_PackingOptions_GetMimeType return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPE_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPE_ERROR_0300
+     * @tc.desc   OH_PackingOptions_GetMimeType return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPE_ERROR_0300", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsGetMimeTypeImageBadParameter();
@@ -1101,12 +1101,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPEWITHNULL_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPEWITHNULL_ERROR_0100
-     * @tc.desc     : OH_PackingOptions_GetMimeTypeWithNull return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPEWITHNULL_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPEWITHNULL_ERROR_0100
+     * @tc.desc   OH_PackingOptions_GetMimeTypeWithNull return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPEWITHNULL_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let mimeType = "IMAGE/jpeg";
@@ -1118,12 +1118,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPEWITHNULL_ERROR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPEWITHNULL_ERROR_0200
-     * @tc.desc     : OH_PackingOptions_GetMimeTypeWithNull return IMAGE_PACKER_INVALID_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPEWITHNULL_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPEWITHNULL_ERROR_0200
+     * @tc.desc   OH_PackingOptions_GetMimeTypeWithNull return IMAGE_PACKER_INVALID_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETMIMETYPEWITHNULL_ERROR_0200", Level.LEVEL3, async (done: Function) => {
       let res: number  = ndkTest.jsPackingOptionsGetMimeTypeNullInvalidParameter();
@@ -1132,12 +1132,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETQUALITY_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETQUALITY_ERROR_0100
-     * @tc.desc     : OH_PackingOptions_SetQuality return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETQUALITY_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETQUALITY_ERROR_0100
+     * @tc.desc   OH_PackingOptions_SetQuality return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETQUALITY_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let packingOps: image.PackingOption = ndkTest.createPackingOptions();
@@ -1148,12 +1148,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETQUALITY_ERROR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETQUALITY_ERROR_0200
-     * @tc.desc     : OH_PackingOptions_SetQuality return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETQUALITY_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETQUALITY_ERROR_0200
+     * @tc.desc   OH_PackingOptions_SetQuality return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETQUALITY_ERROR_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsSetQualityBadParameter();
@@ -1162,12 +1162,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETQUALITY_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETQUALITY_ERROR_0100
-     * @tc.desc     : OH_PackingOptions_GetQuality return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETQUALITY_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETQUALITY_ERROR_0100
+     * @tc.desc   OH_PackingOptions_GetQuality return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETQUALITY_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let packingOps: image.PackingOption = ndkTest.createPackingOptions();
@@ -1179,12 +1179,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETQUALITY_ERROR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETQUALITY_ERROR_0200
-     * @tc.desc     : OH_PackingOptions_GetQuality return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETQUALITY_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETQUALITY_ERROR_0200
+     * @tc.desc   OH_PackingOptions_GetQuality return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETQUALITY_ERROR_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsGetQualityBadParameter();
@@ -1194,12 +1194,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETNEEDSPACKPROPERTIES_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETNEEDSPACKPROPERTIES_ERROR_0100
-     * @tc.desc     : OH_PackingOptions_GetNeedsPackProperties return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETNEEDSPACKPROPERTIES_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETNEEDSPACKPROPERTIES_ERROR_0100
+     * @tc.desc   OH_PackingOptions_GetNeedsPackProperties return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETNEEDSPACKPROPERTIES_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let packingOps: image.PackingOption = ndkTest.createPackingOptions();
@@ -1211,12 +1211,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETNEEDSPACKPROPERTIES_ERROR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETNEEDSPACKPROPERTIES_ERROR_0200
-     * @tc.desc     : OH_PackingOptions_GetNeedsPackProperties return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETNEEDSPACKPROPERTIES_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETNEEDSPACKPROPERTIES_ERROR_0200
+     * @tc.desc   OH_PackingOptions_GetNeedsPackProperties return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETNEEDSPACKPROPERTIES_ERROR_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsGetNeedsPackPropertiesBadParameter();
@@ -1226,12 +1226,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETNEEDSPACKPROPERTIES_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETNEEDSPACKPROPERTIES_ERROR_0100
-     * @tc.desc     : OH_PackingOptions_SetNeedsPackProperties return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETNEEDSPACKPROPERTIES_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETNEEDSPACKPROPERTIES_ERROR_0100
+     * @tc.desc   OH_PackingOptions_SetNeedsPackProperties return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETNEEDSPACKPROPERTIES_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let packingOps: image.PackingOption = ndkTest.createPackingOptions();
@@ -1242,12 +1242,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETNEEDSPACKPROPERTIES_ERROR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETNEEDSPACKPROPERTIES_ERROR_0200
-     * @tc.desc     : OH_PackingOptions_SetNeedsPackProperties return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETNEEDSPACKPROPERTIES_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETNEEDSPACKPROPERTIES_ERROR_0200
+     * @tc.desc   OH_PackingOptions_SetNeedsPackProperties return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETNEEDSPACKPROPERTIES_ERROR_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsSetDesiredDynamicRangeBadParameter();
@@ -1256,12 +1256,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDESIREDDYNAMICRANGE_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDESIREDDYNAMICRANGE_ERROR_0100
-     * @tc.desc     : OH_PackingOptions_GetDesiredDynamicRange return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDESIREDDYNAMICRANGE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDESIREDDYNAMICRANGE_ERROR_0100
+     * @tc.desc   OH_PackingOptions_GetDesiredDynamicRange return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDESIREDDYNAMICRANGE_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let packingOps: image.PackingOption = ndkTest.createPackingOptions();
@@ -1273,12 +1273,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDESIREDDYNAMICRANGE_ERROR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDESIREDDYNAMICRANGE_ERROR_0200
-     * @tc.desc     : OH_PackingOptions_GetDesiredDynamicRange return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDESIREDDYNAMICRANGE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDESIREDDYNAMICRANGE_ERROR_0200
+     * @tc.desc   OH_PackingOptions_GetDesiredDynamicRange return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDESIREDDYNAMICRANGE_ERROR_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsGetQualityBadParameter();
@@ -1287,12 +1287,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDESIREDDYNAMICRANGE_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDESIREDDYNAMICRANGE_ERROR_0100
-     * @tc.desc     : OH_PackingOptions_SetDesiredDynamicRange return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDESIREDDYNAMICRANGE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDESIREDDYNAMICRANGE_ERROR_0100
+     * @tc.desc   OH_PackingOptions_SetDesiredDynamicRange return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDESIREDDYNAMICRANGE_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let packingOps: image.PackingOption = ndkTest.createPackingOptions();
@@ -1303,12 +1303,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDESIREDDYNAMICRANGE_ERROR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDESIREDDYNAMICRANGE_ERROR_0200
-     * @tc.desc     : OH_PackingOptions_SetDesiredDynamicRange return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDESIREDDYNAMICRANGE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDESIREDDYNAMICRANGE_ERROR_0200
+     * @tc.desc   OH_PackingOptions_SetDesiredDynamicRange return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDESIREDDYNAMICRANGE_ERROR_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsSetDesiredDynamicRangeBadParameter();
@@ -1317,12 +1317,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSRELEASE_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSRELEASE_ERROR_0100
-     * @tc.desc     : OH_PackingOptions_Release return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSRELEASE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSRELEASE_ERROR_0100
+     * @tc.desc   OH_PackingOptions_Release return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSRELEASE_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let packingOps: image.PackingOption = ndkTest.createPackingOptions();
@@ -1333,12 +1333,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSRELEASE_ERROR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSRELEASE_ERROR_0200
-     * @tc.desc     : OH_PackingOptions_Release return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSRELEASE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSRELEASE_ERROR_0200
+     * @tc.desc   OH_PackingOptions_Release return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSRELEASE_ERROR_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsReleaseBadParameter();
@@ -1347,12 +1347,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSFORSEQUENCECREATE_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSFORSEQUENCECREATE_ERROR_0100
-     * @tc.desc     : OH_PackingOptionsForSequence_Create return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSFORSEQUENCECREATE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSFORSEQUENCECREATE_ERROR_0100
+     * @tc.desc   OH_PackingOptionsForSequence_Create return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSFORSEQUENCECREATE_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsForSequenceCreate();
@@ -1361,12 +1361,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSFORSEQUENSETFRAMECOUNT_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSFORSEQUENSETFRAMECOUNT_ERROR_0100
-     * @tc.desc     : OH_PackingOptionsForSequence_SetFrameCount return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSFORSEQUENSETFRAMECOUNT_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSFORSEQUENSETFRAMECOUNT_ERROR_0100
+     * @tc.desc   OH_PackingOptionsForSequence_SetFrameCount return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSFORSEQUENSETFRAMECOUNT_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsForSequenceSetFrameCount();
@@ -1376,12 +1376,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSFORSEQUENSETFRAMECOUNT_ERROR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSFORSEQUENSETFRAMECOUNT_ERROR_0200
-     * @tc.desc     : OH_PackingOptionsForSequence_SetFrameCount return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSFORSEQUENSETFRAMECOUNT_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSFORSEQUENSETFRAMECOUNT_ERROR_0200
+     * @tc.desc   OH_PackingOptionsForSequence_SetFrameCount return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_PACKINGOPTIONSFORSEQUENSETFRAMECOUNT_ERROR_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsForSequenceSetFrameCountBadParameter();
@@ -1390,12 +1390,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDELAYTIMELIST_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDELAYTIMELIST_ERROR_0100
-     * @tc.desc     : OH_PackingOptionsForSequence_SetDelayTimeList return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDELAYTIMELIST_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDELAYTIMELIST_ERROR_0100
+     * @tc.desc   OH_PackingOptionsForSequence_SetDelayTimeList return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDELAYTIMELIST_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsForSequenceSetDelayTimeList();
@@ -1404,12 +1404,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDELAYTIMELIST_ERROR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDELAYTIMELIST_ERROR_0200
-     * @tc.desc     : OH_PackingOptionsForSequence_SetDelayTimeList return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDELAYTIMELIST_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDELAYTIMELIST_ERROR_0200
+     * @tc.desc   OH_PackingOptionsForSequence_SetDelayTimeList return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDELAYTIMELIST_ERROR_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsForSequenceSetDelayTimeListBadParameter();
@@ -1418,12 +1418,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDELAYTIMELIST_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDELAYTIMELIST_ERROR_0100
-     * @tc.desc     : OH_PackingOptionsForSequence_GetDelayTimeList return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDELAYTIMELIST_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDELAYTIMELIST_ERROR_0100
+     * @tc.desc   OH_PackingOptionsForSequence_GetDelayTimeList return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDELAYTIMELIST_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsForSequenceGetDelayTimeList();
@@ -1432,12 +1432,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDELAYTIMELIST_ERROR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDELAYTIMELIST_ERROR_0200
-     * @tc.desc     : OH_PackingOptionsForSequence_GetDelayTimeList return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDELAYTIMELIST_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDELAYTIMELIST_ERROR_0200
+     * @tc.desc   OH_PackingOptionsForSequence_GetDelayTimeList return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDELAYTIMELIST_ERROR_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsForSequenceGetDelayTimeListBadParameter();
@@ -1446,12 +1446,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDISPOSALTYPES_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDISPOSALTYPES_ERROR_0100
-     * @tc.desc     : OH_PackingOptionsForSequence_SetDisposalTypes return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDISPOSALTYPES_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDISPOSALTYPES_ERROR_0100
+     * @tc.desc   OH_PackingOptionsForSequence_SetDisposalTypes return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDISPOSALTYPES_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsForSequenceSetDisposalTypes();
@@ -1460,12 +1460,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDISPOSALTYPES_ERROR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDISPOSALTYPES_ERROR_0200
-     * @tc.desc     : OH_PackingOptionsForSequence_SetDisposalTypes return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDISPOSALTYPES_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDISPOSALTYPES_ERROR_0200
+     * @tc.desc   OH_PackingOptionsForSequence_SetDisposalTypes return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETDISPOSALTYPES_ERROR_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsForSequenceSetDisposalTypesBadParameter();
@@ -1474,12 +1474,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDISPOSALTYPES_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDISPOSALTYPES_ERROR_0100
-     * @tc.desc     : OH_PackingOptionsForSequence_GetDisposalTypes return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDISPOSALTYPES_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDISPOSALTYPES_ERROR_0100
+     * @tc.desc   OH_PackingOptionsForSequence_GetDisposalTypes return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDISPOSALTYPES_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsForSequenceGetDisposalTypes();
@@ -1488,12 +1488,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDISPOSALTYPES_ERROR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDISPOSALTYPES_ERROR_0200
-     * @tc.desc     : OH_PackingOptionsForSequence_GetDisposalTypes return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDISPOSALTYPES_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDISPOSALTYPES_ERROR_0200
+     * @tc.desc   OH_PackingOptionsForSequence_GetDisposalTypes return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDISPOSALTYPES_ERROR_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsForSequenceGetDisposalTypesBadParameter();
@@ -1503,12 +1503,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETLOOPCOUNT_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETLOOPCOUNT_ERROR_0100
-     * @tc.desc     : OH_PackingOptionsForSequence_SetLoopCount return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETLOOPCOUNT_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETLOOPCOUNT_ERROR_0100
+     * @tc.desc   OH_PackingOptionsForSequence_SetLoopCount return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETLOOPCOUNT_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsForSequenceSetLoopCount();
@@ -1517,12 +1517,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETLOOPCOUNT_ERROR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETLOOPCOUNT_ERROR_0200
-     * @tc.desc     : OH_PackingOptionsForSequence_SetLoopCount return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETLOOPCOUNT_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETLOOPCOUNT_ERROR_0200
+     * @tc.desc   OH_PackingOptionsForSequence_SetLoopCount return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETLOOPCOUNT_ERROR_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsForSequenceSetLoopCountBadParameter();
@@ -1531,12 +1531,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETLOOPCOUNT_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETLOOPCOUNT_ERROR_0100
-     * @tc.desc     : OH_PackingOptionsForSequence_GetLoopCount return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETLOOPCOUNT_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETLOOPCOUNT_ERROR_0100
+     * @tc.desc   OH_PackingOptionsForSequence_GetLoopCount return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETLOOPCOUNT_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsForSequenceGetLoopCount();
@@ -1545,12 +1545,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETLOOPCOUNT_ERROR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETLOOPCOUNT_ERROR_0200
-     * @tc.desc     : OH_PackingOptionsForSequence_GetLoopCount return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETLOOPCOUNT_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETLOOPCOUNT_ERROR_0200
+     * @tc.desc   OH_PackingOptionsForSequence_GetLoopCount return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETLOOPCOUNT_ERROR_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsForSequenceGetLoopCountBadParameter();
@@ -1560,12 +1560,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONSFORSEQUENCE_RELEASE_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONSFORSEQUENCE_RELEASE_ERROR_0100
-     * @tc.desc     : OH_PackingOptionsForSequence_Release return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONSFORSEQUENCE_RELEASE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONSFORSEQUENCE_RELEASE_ERROR_0100
+     * @tc.desc   OH_PackingOptionsForSequence_Release return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONSFORSEQUENCE_RELEASE_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsForSequenceRelease();
@@ -1574,12 +1574,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONSFORSEQUENCE_RELEASE_ERROR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONSFORSEQUENCE_RELEASE_ERROR_0200
-     * @tc.desc     : OH_PackingOptionsForSequence_Release return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONSFORSEQUENCE_RELEASE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONSFORSEQUENCE_RELEASE_ERROR_0200
+     * @tc.desc   OH_PackingOptionsForSequence_Release return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONSFORSEQUENCE_RELEASE_ERROR_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsPackingOptionsForSequenceReleaseBadParameter();
@@ -1588,12 +1588,12 @@ export default function ImagePackerNativeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_CREATE_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_CREATE_ERROR_0100
-     * @tc.desc     : OH_ImagePackerNative_Create return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_CREATE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_CREATE_ERROR_0100
+     * @tc.desc   OH_ImagePackerNative_Create return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_CREATE_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImagePackerNativeCreate();
@@ -1603,12 +1603,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_RECEIVER_NATIVE_REASLATESTIMAGE_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_RECEIVER_NATIVE_REASLATESTIMAGE_ERROR_0100
-     * @tc.desc     : OH_ImageReceiverNative_ReadLatestImage return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_NATIVE_REASLATESTIMAGE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_NATIVE_REASLATESTIMAGE_ERROR_0100
+     * @tc.desc   OH_ImageReceiverNative_ReadLatestImage return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_RECEIVER_NATIVE_REASLATESTIMAGE_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       if (!isSupportedCamerasResult) {
@@ -1670,12 +1670,12 @@ export default function ImagePackerNativeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_RECEIVER_NATIVE_REASNEXTIMAGE_ERROR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_RECEIVER_NATIVE_REASNEXTIMAGE_ERROR_0100
-     * @tc.desc     : OH_ImageReceiverNative_ReadNextImage return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_NATIVE_REASNEXTIMAGE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_NATIVE_REASNEXTIMAGE_ERROR_0100
+     * @tc.desc   OH_ImageReceiverNative_ReadNextImage return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_RECEIVER_NATIVE_REASNEXTIMAGE_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       if (!isSupportedCamerasResult) {

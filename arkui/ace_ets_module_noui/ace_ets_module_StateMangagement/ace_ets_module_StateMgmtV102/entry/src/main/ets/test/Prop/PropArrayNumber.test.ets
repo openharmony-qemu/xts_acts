@@ -54,14 +54,14 @@ export default function PropArrayNumber() {
       }
       done();
     });
-    /* *
-    * @tc.number: PropArrayNumber_0100
-    * @tc.name  : PropArrayNumber_0100
-    * @tc.desc  : Test if the state decorator supports PropArrayNumber types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   PropArrayNumber_0100
+     * @tc.number PropArrayNumber_0100
+     * @tc.desc   Test if the state decorator supports PropArrayNumber types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropArrayNumber_0100', Level.LEVEL0, async (done: Function) => {
       console.info('PropArrayNumber_0100 START');
       let driver: Driver = await Driver.create()
@@ -79,14 +79,14 @@ export default function PropArrayNumber() {
       console.info('[PropArrayNumber_0100] END');
       done();
     });
-    /* *
-    * @tc.number: PropArrayNumber_0200
-    * @tc.name  : PropArrayNumber_0200
-    * @tc.desc  : Test if the state decorator supports PropArrayNumber types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   PropArrayNumber_0200
+     * @tc.number PropArrayNumber_0200
+     * @tc.desc   Test if the state decorator supports PropArrayNumber types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropArrayNumber_0200', Level.LEVEL0, async (done: Function) => {
       console.info('PropArrayNumber_0200 START');
       let driver: Driver = await Driver.create()
@@ -104,14 +104,14 @@ export default function PropArrayNumber() {
       console.info('[PropArrayNumber_0200] END');
       done();
     });
-    /* *
-    * @tc.number: PropArrayNumber_0300
-    * @tc.name  : PropArrayNumber_0300
-    * @tc.desc  : Test if the state decorator supports PropArrayNumber types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   PropArrayNumber_0300
+     * @tc.number PropArrayNumber_0300
+     * @tc.desc   Test if the state decorator supports PropArrayNumber types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropArrayNumber_0300', Level.LEVEL0, async (done: Function) => {
       console.info('PropArrayNumber_0300 START');
       let driver: Driver = await Driver.create()

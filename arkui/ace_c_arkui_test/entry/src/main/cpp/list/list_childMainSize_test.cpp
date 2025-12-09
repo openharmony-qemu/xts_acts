@@ -78,6 +78,14 @@ static napi_value TestListChildMainSize006(napi_env env, napi_callback_info info
     NAPI_END;
 }
 
+static napi_value TestListChildMainSize007(napi_env env, napi_callback_info info)
+{
+    auto ret = OH_ArkUI_ListChildrenMainSizeOption_Create();
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "list", "childrenMainSize: %{public}o",  ret);
+    ASSERT_NOTNULL(ret);
+    NAPI_END;
+}
+
 static napi_value TestListSwipeOption007(napi_env env, napi_callback_info info)
 {
     auto listItemSwipeActionOption = OH_ArkUI_ListItemSwipeActionOption_Create();

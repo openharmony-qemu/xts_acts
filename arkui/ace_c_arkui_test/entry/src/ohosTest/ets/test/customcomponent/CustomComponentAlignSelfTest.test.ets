@@ -26,78 +26,78 @@ export default function customComponentAlignSelfTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGNSELF_0100
-     * @tc.name: testCustomComponentAlignSelf001
-     * @tc.desc: testing alignSelf for row with auto value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCustomComponentAlignSelf001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGNSELF_0100
+     * @tc.desc   testing alignSelf for row with auto value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAlignSelf001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAlignSelf001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGNSELF_0200
-     * @tc.name: testCustomComponentAlignSelf002
-     * @tc.desc: testing alignSelf for row with start value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCustomComponentAlignSelf002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGNSELF_0200
+     * @tc.desc   testing alignSelf for row with start value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAlignSelf002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAlignSelf002()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGNSELF_0300
-     * @tc.name: testCustomComponentAlignSelf003
-     * @tc.desc: testing alignSelf for row with center value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCustomComponentAlignSelf003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGNSELF_0300
+     * @tc.desc   testing alignSelf for row with center value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAlignSelf003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAlignSelf003()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGNSELF_0400
-     * @tc.name: testCustomComponentAlignSelf004
-     * @tc.desc: testing alignSelf for row with end value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCustomComponentAlignSelf004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGNSELF_0400
+     * @tc.desc   testing alignSelf for row with end value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAlignSelf004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAlignSelf004()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGNSELF_0500
-     * @tc.name: testCustomComponentAlignSelf005
-     * @tc.desc: testing alignSelf for row with end value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCustomComponentAlignSelf005
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGNSELF_0500
+     * @tc.desc   testing alignSelf for row with end value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAlignSelf005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAlignSelf005()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGNSELF_0600
-     * @tc.name: testCustomComponentAlignSelf006
-     * @tc.desc: testing alignSelf for row with baseline value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCustomComponentAlignSelf006
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ALIGNSELF_0600
+     * @tc.desc   testing alignSelf for row with baseline value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAlignSelf006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAlignSelf006()).assertEqual(0)

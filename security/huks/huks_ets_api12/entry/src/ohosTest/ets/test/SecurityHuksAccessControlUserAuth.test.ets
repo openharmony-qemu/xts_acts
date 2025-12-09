@@ -14,11 +14,11 @@
  */
 import { beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import { CheckSoftware, MergeOptions } from './utils/huks/HuksOptionsUtils';
-import { GetAesGenerateOptions } from './utils/huks/GenerateKeyUtils';
-import { GetAlwaysValidOptions, GetChallengeNormalOptions, GetTuiPinOptions } from './utils/huks/AccessControlUtils';
-import { GetAesImportData } from './utils/huks/ImportKeyUtils';
-import { Logger } from './utils/common/Logger';
+import { CheckSoftware, MergeOptions } from './utils/huks/HuksOptionsUtils.ets';
+import { GetAesGenerateOptions } from './utils/huks/GenerateKeyUtils.ets';
+import { GetAlwaysValidOptions, GetChallengeNormalOptions, GetTuiPinOptions } from './utils/huks/AccessControlUtils.ets';
+import { GetAesImportData } from './utils/huks/ImportKeyUtils.ets';
+import { Logger } from './utils/common/Logger.ets';
 
 export default function SecurityHuksAccessControlUserAuthTest() {
   let useSoftware: boolean = true;
@@ -30,12 +30,12 @@ export default function SecurityHuksAccessControlUserAuthTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_AccessControl_UserAuth_API20_Func_0100
-     * @tc.name   : SUB_Security_HUKS_AccessControl_UserAuth_API20_Func_0100
-     * @tc.desc   : generate key with tui pin, error code 12000001
-     * @tc.size   : Small
-     * @tc.type   : Func
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_AccessControl_UserAuth_API20_Func_0100
+     * @tc.number SUB_Security_HUKS_AccessControl_UserAuth_API20_Func_0100
+     * @tc.desc   generate key with tui pin, error code 12000001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_AccessControl_UserAuth_API20_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_AccessControl_UserAuth_API20_Func_0100";
@@ -51,12 +51,12 @@ export default function SecurityHuksAccessControlUserAuthTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_AccessControl_UserAuth_Api20_Func_0200
-     * @tc.name   : SUB_Security_HUKS_AccessControl_UserAuth_Api20_Func_0200
-     * @tc.desc   : import key with tui pin, error code 12000001
-     * @tc.size   : Small
-     * @tc.type   : Func
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_AccessControl_UserAuth_Api20_Func_0200
+     * @tc.number SUB_Security_HUKS_AccessControl_UserAuth_Api20_Func_0200
+     * @tc.desc   import key with tui pin, error code 12000001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_AccessControl_UserAuth_Api20_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_AccessControl_UserAuth_Api20_Func_0200";

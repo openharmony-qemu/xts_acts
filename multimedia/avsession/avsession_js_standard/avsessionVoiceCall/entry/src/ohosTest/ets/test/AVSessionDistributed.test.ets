@@ -89,13 +89,13 @@ export default function abilityTest() {
       console.info(`${TAG}: afterAll in`)
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0100
-     * @tc.name      : GETEXTRASWITHEVENT__0100
-     * @tc.desc      : Testing getExtrasWithEvent
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0100
+     * @tc.desc   Testing getExtrasWithEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG}: before SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0100 ${controller}`);
@@ -110,13 +110,13 @@ export default function abilityTest() {
         done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0200
-     * @tc.name      : GETEXTRASWITHEVENT__0200
-     * @tc.desc      : Testing getExtrasWithEvent
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0200
+     * @tc.desc   Testing getExtrasWithEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         const COMMON_COMMAND_STRING = "AUDIO_GET_XXX";
@@ -134,13 +134,13 @@ export default function abilityTest() {
         done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0300
-     * @tc.name      : GETEXTRASWITHEVENT__0300
-     * @tc.desc      : Testing getExtrasWithEvent
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0300
+     * @tc.desc   Testing getExtrasWithEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         const COMMON_COMMAND_STRING = "AUDIO_GET_VOLUME";
@@ -155,13 +155,13 @@ export default function abilityTest() {
         done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0400
-     * @tc.name      : GETEXTRASWITHEVENT__0400
-     * @tc.desc      : Testing getExtrasWithEvent
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0400
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0400
+     * @tc.desc   Testing getExtrasWithEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         const COMMON_COMMAND_STRING = "AUDIO_GET_AVAILABLE_DEVICES";
@@ -175,13 +175,13 @@ export default function abilityTest() {
         done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0500
-     * @tc.name      : GETEXTRASWITHEVENT__0500
-     * @tc.desc      : Testing getExtrasWithEvent
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0500
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0500
+     * @tc.desc   Testing getExtrasWithEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         const COMMON_COMMAND_STRING = "AUDIO_GET_PREFERRED_OUTPUT_DEVICE_FOR_RENDERER_INFO";

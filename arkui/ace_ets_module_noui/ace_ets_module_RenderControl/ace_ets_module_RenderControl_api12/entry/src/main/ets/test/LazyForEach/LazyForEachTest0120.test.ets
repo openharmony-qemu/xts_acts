@@ -42,12 +42,12 @@ export default function LazyForEachTest0120() {
       done();
     });
     /**
+     * @tc.name   LazyForEachTest0120_0100
      * @tc.number LazyForEachTest0120_0100
-     * @tc.name LazyForEachTest0120_0100
-     * @tc.desc aceEtsTest_ref
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   aceEtsTest_ref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('LazyForEachTest0120_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info('LazyForEachTest0120001 START');

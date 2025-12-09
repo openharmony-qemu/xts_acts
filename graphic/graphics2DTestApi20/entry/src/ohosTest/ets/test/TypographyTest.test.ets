@@ -19,12 +19,12 @@ import libGraphics2DApi20 from 'libgraphicsApiNdk.so'
 export default function TypographyTest() {
   describe('TypographyTest', () => {
     /**
-     * @tc.number  : SUB_OH_Drawing_FontFeature0100
-     * @tc.name    : SUB_OH_Drawing_FontFeature0100
-     * @tc.desc    : test OH_Drawing_FontFeature
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontFeature0100
+     * @tc.number SUB_OH_Drawing_FontFeature0100
+     * @tc.desc   test OH_Drawing_FontFeature
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontFeature0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -41,12 +41,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontFeature0101
-     * @tc.name    : SUB_OH_Drawing_FontFeature0101
-     * @tc.desc    : test OH_Drawing_FontFeature
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontFeature0101
+     * @tc.number SUB_OH_Drawing_FontFeature0101
+     * @tc.desc   test OH_Drawing_FontFeature
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontFeature0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -63,12 +63,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_LineMetrics_0100
-     * @tc.name    : SUB_OH_Drawing_LineMetrics_0100
-     * @tc.desc    : test OH_Drawing_LineMetrics
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_LineMetrics_0100
+     * @tc.number SUB_OH_Drawing_LineMetrics_0100
+     * @tc.desc   test OH_Drawing_LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_LineMetrics_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -85,12 +85,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_LineMetrics_0101
-     * @tc.name    : SUB_OH_Drawing_LineMetrics_0101
-     * @tc.desc    : test OH_Drawing_LineMetrics
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_LineMetrics_0101
+     * @tc.number SUB_OH_Drawing_LineMetrics_0101
+     * @tc.desc   test OH_Drawing_LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_LineMetrics_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -107,12 +107,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_LineMetrics_0102
-     * @tc.name    : SUB_OH_Drawing_LineMetrics_0102
-     * @tc.desc    : test OH_Drawing_LineMetrics
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_LineMetrics_0102
+     * @tc.number SUB_OH_Drawing_LineMetrics_0102
+     * @tc.desc   test OH_Drawing_LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_LineMetrics_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -129,12 +129,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_LineMetrics_0103
-     * @tc.name    : SUB_OH_Drawing_LineMetrics_0103
-     * @tc.desc    : test OH_Drawing_LineMetrics
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_LineMetrics_0103
+     * @tc.number SUB_OH_Drawing_LineMetrics_0103
+     * @tc.desc   test OH_Drawing_LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_LineMetrics_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -151,12 +151,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_LineMetrics_0104
-     * @tc.name    : SUB_OH_Drawing_LineMetrics_0104
-     * @tc.desc    : test OH_Drawing_LineMetrics
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_LineMetrics_0104
+     * @tc.number SUB_OH_Drawing_LineMetrics_0104
+     * @tc.desc   test OH_Drawing_LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_LineMetrics_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -173,12 +173,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_LineMetrics_0105
-     * @tc.name    : SUB_OH_Drawing_LineMetrics_0105
-     * @tc.desc    : test OH_Drawing_LineMetrics
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_LineMetrics_0105
+     * @tc.number SUB_OH_Drawing_LineMetrics_0105
+     * @tc.desc   test OH_Drawing_LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_LineMetrics_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -195,12 +195,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_LineMetrics_0106
-     * @tc.name    : SUB_OH_Drawing_LineMetrics_0106
-     * @tc.desc    : test OH_Drawing_LineMetrics
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_LineMetrics_0106
+     * @tc.number SUB_OH_Drawing_LineMetrics_0106
+     * @tc.desc   test OH_Drawing_LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_LineMetrics_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -217,12 +217,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_LineMetrics_0107
-     * @tc.name    : SUB_OH_Drawing_LineMetrics_0107
-     * @tc.desc    : test OH_Drawing_LineMetrics
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_LineMetrics_0107
+     * @tc.number SUB_OH_Drawing_LineMetrics_0107
+     * @tc.desc   test OH_Drawing_LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_LineMetrics_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -239,12 +239,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_LineMetrics_0108
-     * @tc.name    : SUB_OH_Drawing_LineMetrics_0108
-     * @tc.desc    : test OH_Drawing_LineMetrics
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_LineMetrics_0108
+     * @tc.number SUB_OH_Drawing_LineMetrics_0108
+     * @tc.desc   test OH_Drawing_LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_LineMetrics_0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -261,12 +261,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_LineMetrics_0109
-     * @tc.name    : SUB_OH_Drawing_LineMetrics_0109
-     * @tc.desc    : test OH_Drawing_LineMetrics
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_LineMetrics_0109
+     * @tc.number SUB_OH_Drawing_LineMetrics_0109
+     * @tc.desc   test OH_Drawing_LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_LineMetrics_0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -283,12 +283,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_LineMetrics_0110
-     * @tc.name    : SUB_OH_Drawing_LineMetrics_0110
-     * @tc.desc    : test OH_Drawing_LineMetrics
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_LineMetrics_0110
+     * @tc.number SUB_OH_Drawing_LineMetrics_0110
+     * @tc.desc   test OH_Drawing_LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_LineMetrics_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -305,12 +305,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontDescriptor_0100
-     * @tc.name    : SUB_OH_Drawing_FontDescriptor_0100
-     * @tc.desc    : test OH_Drawing_FontDescriptor
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontDescriptor_0100
+     * @tc.number SUB_OH_Drawing_FontDescriptor_0100
+     * @tc.desc   test OH_Drawing_FontDescriptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontDescriptor_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -327,12 +327,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontDescriptor_0101
-     * @tc.name    : SUB_OH_Drawing_FontDescriptor_0101
-     * @tc.desc    : test OH_Drawing_FontDescriptor
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontDescriptor_0101
+     * @tc.number SUB_OH_Drawing_FontDescriptor_0101
+     * @tc.desc   test OH_Drawing_FontDescriptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontDescriptor_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -349,12 +349,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontDescriptor_0102
-     * @tc.name    : SUB_OH_Drawing_FontDescriptor_0102
-     * @tc.desc    : test OH_Drawing_FontDescriptor
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontDescriptor_0102
+     * @tc.number SUB_OH_Drawing_FontDescriptor_0102
+     * @tc.desc   test OH_Drawing_FontDescriptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontDescriptor_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -371,12 +371,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontDescriptor_0103
-     * @tc.name    : SUB_OH_Drawing_FontDescriptor_0103
-     * @tc.desc    : test OH_Drawing_FontDescriptor
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontDescriptor_0103
+     * @tc.number SUB_OH_Drawing_FontDescriptor_0103
+     * @tc.desc   test OH_Drawing_FontDescriptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontDescriptor_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -393,12 +393,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontDescriptor_0104
-     * @tc.name    : SUB_OH_Drawing_FontDescriptor_0104
-     * @tc.desc    : test OH_Drawing_FontDescriptor
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontDescriptor_0104
+     * @tc.number SUB_OH_Drawing_FontDescriptor_0104
+     * @tc.desc   test OH_Drawing_FontDescriptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontDescriptor_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -415,12 +415,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontDescriptor_0105
-     * @tc.name    : SUB_OH_Drawing_FontDescriptor_0105
-     * @tc.desc    : test OH_Drawing_FontDescriptor
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontDescriptor_0105
+     * @tc.number SUB_OH_Drawing_FontDescriptor_0105
+     * @tc.desc   test OH_Drawing_FontDescriptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontDescriptor_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -437,12 +437,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontDescriptor_0106
-     * @tc.name    : SUB_OH_Drawing_FontDescriptor_0106
-     * @tc.desc    : test OH_Drawing_FontDescriptor
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontDescriptor_0106
+     * @tc.number SUB_OH_Drawing_FontDescriptor_0106
+     * @tc.desc   test OH_Drawing_FontDescriptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontDescriptor_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -459,12 +459,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontConfigInfo_0100
-     * @tc.name    : SUB_OH_Drawing_FontConfigInfo_0100
-     * @tc.desc    : test OH_Drawing_FontConfigInfo
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontConfigInfo_0100
+     * @tc.number SUB_OH_Drawing_FontConfigInfo_0100
+     * @tc.desc   test OH_Drawing_FontConfigInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontConfigInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -481,12 +481,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontConfigInfo_0101
-     * @tc.name    : SUB_OH_Drawing_FontConfigInfo_0101
-     * @tc.desc    : test OH_Drawing_FontConfigInfo
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontConfigInfo_0101
+     * @tc.number SUB_OH_Drawing_FontConfigInfo_0101
+     * @tc.desc   test OH_Drawing_FontConfigInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontConfigInfo_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -503,12 +503,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontConfigInfo_0102
-     * @tc.name    : SUB_OH_Drawing_FontConfigInfo_0102
-     * @tc.desc    : test OH_Drawing_FontConfigInfo
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontConfigInfo_0102
+     * @tc.number SUB_OH_Drawing_FontConfigInfo_0102
+     * @tc.desc   test OH_Drawing_FontConfigInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontConfigInfo_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -525,12 +525,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontConfigInfo_0103
-     * @tc.name    : SUB_OH_Drawing_FontConfigInfo_0103
-     * @tc.desc    : test OH_Drawing_FontConfigInfo
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontConfigInfo_0103
+     * @tc.number SUB_OH_Drawing_FontConfigInfo_0103
+     * @tc.desc   test OH_Drawing_FontConfigInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontConfigInfo_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -547,12 +547,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontConfigInfo_0104
-     * @tc.name    : SUB_OH_Drawing_FontConfigInfo_0104
-     * @tc.desc    : test OH_Drawing_FontConfigInfo
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontConfigInfo_0104
+     * @tc.number SUB_OH_Drawing_FontConfigInfo_0104
+     * @tc.desc   test OH_Drawing_FontConfigInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontConfigInfo_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -569,12 +569,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontConfigInfo_0105
-     * @tc.name    : SUB_OH_Drawing_FontConfigInfo_0105
-     * @tc.desc    : test OH_Drawing_FontConfigInfo
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontConfigInfo_0105
+     * @tc.number SUB_OH_Drawing_FontConfigInfo_0105
+     * @tc.desc   test OH_Drawing_FontConfigInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontConfigInfo_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -591,12 +591,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontGenericInfo_0100
-     * @tc.name    : SUB_OH_Drawing_FontGenericInfo_0100
-     * @tc.desc    : test OH_Drawing_FontGenericInfo
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontGenericInfo_0100
+     * @tc.number SUB_OH_Drawing_FontGenericInfo_0100
+     * @tc.desc   test OH_Drawing_FontGenericInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontGenericInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -613,12 +613,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontGenericInfo_0101
-     * @tc.name    : SUB_OH_Drawing_FontGenericInfo_0101
-     * @tc.desc    : test OH_Drawing_FontGenericInfo
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontGenericInfo_0101
+     * @tc.number SUB_OH_Drawing_FontGenericInfo_0101
+     * @tc.desc   test OH_Drawing_FontGenericInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontGenericInfo_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -635,12 +635,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontGenericInfo_0102
-     * @tc.name    : SUB_OH_Drawing_FontGenericInfo_0102
-     * @tc.desc    : test OH_Drawing_FontGenericInfo
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontGenericInfo_0102
+     * @tc.number SUB_OH_Drawing_FontGenericInfo_0102
+     * @tc.desc   test OH_Drawing_FontGenericInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontGenericInfo_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -657,12 +657,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontGenericInfo_0103
-     * @tc.name    : SUB_OH_Drawing_FontGenericInfo_0103
-     * @tc.desc    : test OH_Drawing_FontGenericInfo
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontGenericInfo_0103
+     * @tc.number SUB_OH_Drawing_FontGenericInfo_0103
+     * @tc.desc   test OH_Drawing_FontGenericInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontGenericInfo_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -679,12 +679,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontGenericInfo_0104
-     * @tc.name    : SUB_OH_Drawing_FontGenericInfo_0104
-     * @tc.desc    : test OH_Drawing_FontGenericInfo
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontGenericInfo_0104
+     * @tc.number SUB_OH_Drawing_FontGenericInfo_0104
+     * @tc.desc   test OH_Drawing_FontGenericInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontGenericInfo_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -701,12 +701,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontAliasInfo_0100
-     * @tc.name    : SUB_OH_Drawing_FontAliasInfo_0100
-     * @tc.desc    : test OH_Drawing_FontAliasInfo
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontAliasInfo_0100
+     * @tc.number SUB_OH_Drawing_FontAliasInfo_0100
+     * @tc.desc   test OH_Drawing_FontAliasInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontAliasInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -723,12 +723,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontAliasInfo_0101
-     * @tc.name    : SUB_OH_Drawing_FontAliasInfo_0101
-     * @tc.desc    : test OH_Drawing_FontAliasInfo
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontAliasInfo_0101
+     * @tc.number SUB_OH_Drawing_FontAliasInfo_0101
+     * @tc.desc   test OH_Drawing_FontAliasInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontAliasInfo_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -745,12 +745,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontAdjustInfo_0100
-     * @tc.name    : SUB_OH_Drawing_FontAdjustInfo_0100
-     * @tc.desc    : test OH_Drawing_FontAdjustInfo
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontAdjustInfo_0100
+     * @tc.number SUB_OH_Drawing_FontAdjustInfo_0100
+     * @tc.desc   test OH_Drawing_FontAdjustInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontAdjustInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -767,12 +767,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontAdjustInfo_0101
-     * @tc.name    : SUB_OH_Drawing_FontAdjustInfo_0101
-     * @tc.desc    : test OH_Drawing_FontAdjustInfo
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontAdjustInfo_0101
+     * @tc.number SUB_OH_Drawing_FontAdjustInfo_0101
+     * @tc.desc   test OH_Drawing_FontAdjustInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontAdjustInfo_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -789,12 +789,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontFallbackGroup_0100
-     * @tc.name    : SUB_OH_Drawing_FontFallbackGroup_0100
-     * @tc.desc    : test OH_Drawing_FontFallbackGroup
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontFallbackGroup_0100
+     * @tc.number SUB_OH_Drawing_FontFallbackGroup_0100
+     * @tc.desc   test OH_Drawing_FontFallbackGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontFallbackGroup_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -811,12 +811,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontFallbackGroup_0101
-     * @tc.name    : SUB_OH_Drawing_FontFallbackGroup_0101
-     * @tc.desc    : test OH_Drawing_FontFallbackGroup
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontFallbackGroup_0101
+     * @tc.number SUB_OH_Drawing_FontFallbackGroup_0101
+     * @tc.desc   test OH_Drawing_FontFallbackGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontFallbackGroup_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -833,12 +833,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontFallbackGroup_0102
-     * @tc.name    : SUB_OH_Drawing_FontFallbackGroup_0102
-     * @tc.desc    : test OH_Drawing_FontFallbackGroup
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontFallbackGroup_0102
+     * @tc.number SUB_OH_Drawing_FontFallbackGroup_0102
+     * @tc.desc   test OH_Drawing_FontFallbackGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontFallbackGroup_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -855,12 +855,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontFallbackInfo_0100
-     * @tc.name    : SUB_OH_Drawing_FontFallbackInfo_0100
-     * @tc.desc    : test OH_Drawing_FontFallbackInfo
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontFallbackInfo_0100
+     * @tc.number SUB_OH_Drawing_FontFallbackInfo_0100
+     * @tc.desc   test OH_Drawing_FontFallbackInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontFallbackInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -877,12 +877,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontFallbackInfo_0101
-     * @tc.name    : SUB_OH_Drawing_FontFallbackInfo_0101
-     * @tc.desc    : test OH_Drawing_FontFallbackInfo
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontFallbackInfo_0101
+     * @tc.number SUB_OH_Drawing_FontFallbackInfo_0101
+     * @tc.desc   test OH_Drawing_FontFallbackInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontFallbackInfo_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -899,12 +899,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontConfigInfoErrorCode_0100
-     * @tc.name    : SUB_OH_Drawing_FontConfigInfoErrorCode_0100
-     * @tc.desc    : test OH_Drawing_FontConfigInfoErrorCode
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontConfigInfoErrorCode_0100
+     * @tc.number SUB_OH_Drawing_FontConfigInfoErrorCode_0100
+     * @tc.desc   test OH_Drawing_FontConfigInfoErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontConfigInfoErrorCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -921,12 +921,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontConfigInfoErrorCode_0101
-     * @tc.name    : SUB_OH_Drawing_FontConfigInfoErrorCode_0101
-     * @tc.desc    : test OH_Drawing_FontConfigInfoErrorCode
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontConfigInfoErrorCode_0101
+     * @tc.number SUB_OH_Drawing_FontConfigInfoErrorCode_0101
+     * @tc.desc   test OH_Drawing_FontConfigInfoErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontConfigInfoErrorCode_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -943,12 +943,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_FontConfigInfoErrorCode_0102
-     * @tc.name    : SUB_OH_Drawing_FontConfigInfoErrorCode_0102
-     * @tc.desc    : test OH_Drawing_FontConfigInfoErrorCode
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_FontConfigInfoErrorCode_0102
+     * @tc.number SUB_OH_Drawing_FontConfigInfoErrorCode_0102
+     * @tc.desc   test OH_Drawing_FontConfigInfoErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_FontConfigInfoErrorCode_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -965,12 +965,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_RectStyle_0100
-     * @tc.name    : SUB_OH_Drawing_RectStyle_0100
-     * @tc.desc    : test OH_Drawing_RectStyle
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_RectStyle_0100
+     * @tc.number SUB_OH_Drawing_RectStyle_0100
+     * @tc.desc   test OH_Drawing_RectStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_RectStyle_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -987,12 +987,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_RectStyle_0101
-     * @tc.name    : SUB_OH_Drawing_RectStyle_0101
-     * @tc.desc    : test OH_Drawing_RectStyle
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_RectStyle_0101
+     * @tc.number SUB_OH_Drawing_RectStyle_0101
+     * @tc.desc   test OH_Drawing_RectStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_RectStyle_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1009,12 +1009,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_RectStyle_0102
-     * @tc.name    : SUB_OH_Drawing_RectStyle_0102
-     * @tc.desc    : test OH_Drawing_RectStyle
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_RectStyle_0102
+     * @tc.number SUB_OH_Drawing_RectStyle_0102
+     * @tc.desc   test OH_Drawing_RectStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_RectStyle_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1031,12 +1031,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_RectStyle_0103
-     * @tc.name    : SUB_OH_Drawing_RectStyle_0103
-     * @tc.desc    : test OH_Drawing_RectStyle
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_RectStyle_0103
+     * @tc.number SUB_OH_Drawing_RectStyle_0103
+     * @tc.desc   test OH_Drawing_RectStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_RectStyle_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1053,12 +1053,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_RectStyle_0104
-     * @tc.name    : SUB_OH_Drawing_RectStyle_0104
-     * @tc.desc    : test OH_Drawing_RectStyle
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_RectStyle_0104
+     * @tc.number SUB_OH_Drawing_RectStyle_0104
+     * @tc.desc   test OH_Drawing_RectStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_RectStyle_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1075,12 +1075,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_RectStyle_0105
-     * @tc.name    : SUB_OH_Drawing_RectStyle_0105
-     * @tc.desc    : test OH_Drawing_RectStyle
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_RectStyle_0105
+     * @tc.number SUB_OH_Drawing_RectStyle_0105
+     * @tc.desc   test OH_Drawing_RectStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_RectStyle_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1097,12 +1097,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_PlaceholderVerticalAlignment_0100
-     * @tc.name    : SUB_OH_Drawing_PlaceholderVerticalAlignment_0100
-     * @tc.desc    : test OH_Drawing_PlaceholderVerticalAlignment
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_PlaceholderVerticalAlignment_0100
+     * @tc.number SUB_OH_Drawing_PlaceholderVerticalAlignment_0100
+     * @tc.desc   test OH_Drawing_PlaceholderVerticalAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_PlaceholderVerticalAlignment_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1119,12 +1119,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_PlaceholderVerticalAlignment_0101
-     * @tc.name    : SUB_OH_Drawing_PlaceholderVerticalAlignment_0101
-     * @tc.desc    : test OH_Drawing_PlaceholderVerticalAlignment
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_PlaceholderVerticalAlignment_0101
+     * @tc.number SUB_OH_Drawing_PlaceholderVerticalAlignment_0101
+     * @tc.desc   test OH_Drawing_PlaceholderVerticalAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_PlaceholderVerticalAlignment_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1141,12 +1141,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_PlaceholderVerticalAlignment_0102
-     * @tc.name    : SUB_OH_Drawing_PlaceholderVerticalAlignment_0102
-     * @tc.desc    : test OH_Drawing_PlaceholderVerticalAlignment
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_PlaceholderVerticalAlignment_0102
+     * @tc.number SUB_OH_Drawing_PlaceholderVerticalAlignment_0102
+     * @tc.desc   test OH_Drawing_PlaceholderVerticalAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_PlaceholderVerticalAlignment_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1163,12 +1163,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_PlaceholderVerticalAlignment_0103
-     * @tc.name    : SUB_OH_Drawing_PlaceholderVerticalAlignment_0103
-     * @tc.desc    : test OH_Drawing_PlaceholderVerticalAlignment
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_PlaceholderVerticalAlignment_0103
+     * @tc.number SUB_OH_Drawing_PlaceholderVerticalAlignment_0103
+     * @tc.desc   test OH_Drawing_PlaceholderVerticalAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_PlaceholderVerticalAlignment_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1185,12 +1185,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_PlaceholderVerticalAlignment_0104
-     * @tc.name    : SUB_OH_Drawing_PlaceholderVerticalAlignment_0104
-     * @tc.desc    : test OH_Drawing_PlaceholderVerticalAlignment
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_PlaceholderVerticalAlignment_0104
+     * @tc.number SUB_OH_Drawing_PlaceholderVerticalAlignment_0104
+     * @tc.desc   test OH_Drawing_PlaceholderVerticalAlignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_PlaceholderVerticalAlignment_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1207,12 +1207,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_WordBreakType_0100
-     * @tc.name    : SUB_OH_Drawing_WordBreakType_0100
-     * @tc.desc    : test OH_Drawing_WordBreakType
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_WordBreakType_0100
+     * @tc.number SUB_OH_Drawing_WordBreakType_0100
+     * @tc.desc   test OH_Drawing_WordBreakType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_WordBreakType_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1229,12 +1229,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_TextStyleType_0100
-     * @tc.name    : SUB_OH_Drawing_TextStyleType_0100
-     * @tc.desc    : test OH_Drawing_TextStyleType
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_TextStyleType_0100
+     * @tc.number SUB_OH_Drawing_TextStyleType_0100
+     * @tc.desc   test OH_Drawing_TextStyleType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_TextStyleType_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1251,12 +1251,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_TextStyleType_0101
-     * @tc.name    : SUB_OH_Drawing_TextStyleType_0101
-     * @tc.desc    : test OH_Drawing_TextStyleType
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_TextStyleType_0101
+     * @tc.number SUB_OH_Drawing_TextStyleType_0101
+     * @tc.desc   test OH_Drawing_TextStyleType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_TextStyleType_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1273,12 +1273,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_TextStyleType_0102
-     * @tc.name    : SUB_OH_Drawing_TextStyleType_0102
-     * @tc.desc    : test OH_Drawing_TextStyleType
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_TextStyleType_0102
+     * @tc.number SUB_OH_Drawing_TextStyleType_0102
+     * @tc.desc   test OH_Drawing_TextStyleType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_TextStyleType_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1295,12 +1295,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_TextStyleType_0103
-     * @tc.name    : SUB_OH_Drawing_TextStyleType_0103
-     * @tc.desc    : test OH_Drawing_TextStyleType
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_TextStyleType_0103
+     * @tc.number SUB_OH_Drawing_TextStyleType_0103
+     * @tc.desc   test OH_Drawing_TextStyleType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_TextStyleType_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1317,12 +1317,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_TextStyleType_0104
-     * @tc.name    : SUB_OH_Drawing_TextStyleType_0104
-     * @tc.desc    : test OH_Drawing_TextStyleType
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_TextStyleType_0104
+     * @tc.number SUB_OH_Drawing_TextStyleType_0104
+     * @tc.desc   test OH_Drawing_TextStyleType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_TextStyleType_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1339,12 +1339,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_TextStyleType_0105
-     * @tc.name    : SUB_OH_Drawing_TextStyleType_0105
-     * @tc.desc    : test OH_Drawing_TextStyleType
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_TextStyleType_0105
+     * @tc.number SUB_OH_Drawing_TextStyleType_0105
+     * @tc.desc   test OH_Drawing_TextStyleType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_TextStyleType_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1361,12 +1361,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_TextStyleType_0106
-     * @tc.name    : SUB_OH_Drawing_TextStyleType_0106
-     * @tc.desc    : test OH_Drawing_TextStyleType
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_TextStyleType_0106
+     * @tc.number SUB_OH_Drawing_TextStyleType_0106
+     * @tc.desc   test OH_Drawing_TextStyleType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_TextStyleType_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1383,12 +1383,12 @@ export default function TypographyTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_TextStyleType_0107
-     * @tc.name    : SUB_OH_Drawing_TextStyleType_0107
-     * @tc.desc    : test OH_Drawing_TextStyleType
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_TextStyleType_0107
+     * @tc.number SUB_OH_Drawing_TextStyleType_0107
+     * @tc.desc   test OH_Drawing_TextStyleType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Drawing_TextStyleType_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

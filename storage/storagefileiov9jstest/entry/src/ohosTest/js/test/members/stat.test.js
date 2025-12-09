@@ -28,14 +28,12 @@ export default function fileIOStat() {
 describe('fileIO_fs_stat', function () {
 
   /**
+   * @tc.name   fileIO_stat_sync_000
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_0000
-   * @tc.name fileIO_stat_sync_000
-   * @tc.desc Test statSync() interfaces.
-   * Enter the path or fd parameter to get the file stat.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test statSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_000');
@@ -57,14 +55,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_001
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_0100
-   * @tc.name fileIO_stat_sync_001
-   * @tc.desc Test statSync() interfaces.
-   * The path point to nothing, no such file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test statSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_001');
@@ -78,15 +74,14 @@ describe('fileIO_fs_stat', function () {
     }
   });
 
-  /**
-   * @tc.number SUB_DF_FILEIO_STAT_SYNC_0200
-   * @tc.name fileIO_stat_sync_002
-   * @tc.desc Test statSync() interfaces. Missing parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-   */
+   /**
+    * @tc.name   fileIO_stat_sync_002
+    * @tc.number SUB_DF_FILEIO_STAT_SYNC_0200
+    * @tc.desc   Test statSync() interfaces. Missing parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileIO_stat_sync_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
 
     try {
@@ -99,14 +94,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_003
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_0300
-   * @tc.name fileIO_stat_sync_003
-   * @tc.desc Test statSync() interfaces.
-   * Bad file descriptor.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test statSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_003');
@@ -125,14 +118,12 @@ describe('fileIO_fs_stat', function () {
 
 
   /**
+   * @tc.name   fileIO_stat_sync_ino_000
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_INO_0000
-   * @tc.name fileIO_stat_sync_ino_000
-   * @tc.desc Test the ino member of class Stat.
-   * Enter the path or fd parameter to get stat.ino of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the ino member of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_ino_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_ino_000');
@@ -154,14 +145,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_mode_000
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_MODE_0000
-   * @tc.name fileIO_stat_sync_mode_000
-   * @tc.desc Test the mode member of class Stat.
-   * Enter the path or fd parameter to get stat.mode of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the mode member of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_mode_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_mode_000');
@@ -183,14 +172,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_uid_000
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_UID_0000
-   * @tc.name fileIO_stat_sync_uid_000
-   * @tc.desc Test the uid member of class Stat.
-   * Enter the path or fd parameter to get stat.uid of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the uid member of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_uid_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_uid_000');
@@ -212,14 +199,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_gid_000
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_GID_0000
-   * @tc.name fileIO_stat_sync_gid_000
-   * @tc.desc Test the gid member of class Stat.
-   * Enter the path or fd parameter to get stat.gid of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the gid member of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_gid_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_gid_000');
@@ -241,14 +226,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_size_000
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_SIZE_0000
-   * @tc.name fileIO_stat_sync_size_000
-   * @tc.desc Test the size member of class Stat.
-   * Enter the path or fd parameter to get stat.size of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the size member of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_size_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_size_000');
@@ -270,14 +253,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_atime_000
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ATIME_0000
-   * @tc.name fileIO_stat_sync_atime_000
-   * @tc.desc Test the atime member of class Stat.
-   * Enter the path or fd parameter to get stat.atime of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the atime member of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_atime_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_atime_000');
@@ -299,14 +280,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_mtime_000
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_MTIME_0000
-   * @tc.name fileIO_stat_sync_mtime_000
-   * @tc.desc Test the mtime member of class Stat.
-   * Enter the path or fd parameter to get stat.mtime of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the mtime member of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_mtime_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_mtime_000');
@@ -328,14 +307,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_ctime_000
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_CTIME_0000
-   * @tc.name fileIO_stat_sync_ctime_000
-   * @tc.desc Test the ctime member of class Stat.
-   * Enter the path or fd parameter to get stat.ctime of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the ctime member of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_ctime_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_ctime_000');
@@ -357,14 +334,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_block_device_000
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISBLOCKDEVICE_0000
-   * @tc.name fileIO_stat_sync_is_block_device_000
-   * @tc.desc Test the isBlockDevice() method of class Stat.
-   * This interface shall not treat a normal file as a block special device.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isBlockDevice() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_block_device_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_is_block_device_000');
@@ -386,14 +361,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_block_device_001
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISBLOCKDEVICE_0100
-   * @tc.name fileIO_stat_sync_is_block_device_001
-   * @tc.desc Test the isBlockDevice() method of class Stat.
-   * This interface does not require parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isBlockDevice() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_block_device_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_is_block_device_001');
@@ -410,14 +383,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_block_device_002
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISBLOCKDEVICE_0200
-   * @tc.name fileIO_stat_sync_is_block_device_002
-   * @tc.desc Test the isBlockDevice() method of class Stat.
-   * This interface does not require parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isBlockDevice() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_block_device_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_is_block_device_002');
@@ -437,14 +408,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_character_device_000
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISCHARACTER_DEVICE_0000
-   * @tc.name fileIO_stat_sync_is_character_device_000
-   * @tc.desc Test the isCharacterDevice() method of class Stat.
-   * This interface shall not treat a normal file as a character special device.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isCharacterDevice() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_character_device_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_is_character_device_000');
@@ -466,14 +435,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_character_device_001
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISCHARACTER_DEVICE_0100
-   * @tc.name fileIO_stat_sync_is_character_device_001
-   * @tc.desc Test the isCharacterDevice() method of class Stat.
-   * This interface does not require parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isCharacterDevice() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_character_device_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_is_character_device_001');
@@ -490,14 +457,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_character_device_002
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISCHARACTER_DEVICE_0200
-   * @tc.name fileIO_stat_sync_is_character_device_002
-   * @tc.desc Test the isCharacterDevice() method of class Stat.
-   * This interface does not require parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isCharacterDevice() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_character_device_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_is_character_device_002');
@@ -516,14 +481,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_directory_000
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISDIRECTORY_0000
-   * @tc.name fileIO_stat_sync_is_directory_000
-   * @tc.desc Test the isDirectory() method of class Stat.
-   * This interface shall not treat a normal file as a directory.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isDirectory() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_directory_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_is_directory_000');
@@ -545,14 +508,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_directory_001
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISDIRECTORY_0100
-   * @tc.name fileIO_stat_sync_is_directory_001
-   * @tc.desc Test the isDirectory() method of class Stat.
-   * This interface shall treat a directory as a directory.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isDirectory() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_directory_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_stat_sync_is_directory_001');
@@ -574,14 +535,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_directory_002
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISDIRECTORY_0200
-   * @tc.name fileIO_stat_sync_is_directory_002
-   * @tc.desc Test the isDirectory() method of class Stat.
-   * This interface does not require parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isDirectory() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_directory_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_stat_sync_is_directory_002') + 'd';
@@ -598,14 +557,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_directory_003
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISDIRECTORY_0300
-   * @tc.name fileIO_stat_sync_is_directory_003
-   * @tc.desc Test the isDirectory() method of class Stat.
-   * This interface does not require parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isDirectory() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_directory_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_stat_sync_is_directory_003') + 'd';
@@ -624,14 +581,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_fifo_000
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISFIFO_0000
-   * @tc.name fileIO_stat_sync_is_fifo_000
-   * @tc.desc Test the isFIFO() method of class Stat.
-   * This interface shall not treat a normal file as a FIFO.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isFIFO() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_fifo_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_is_fifo_000');
@@ -653,14 +608,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_fifo_001
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISFIFO_0100
-   * @tc.name fileIO_stat_sync_is_fifo_001
-   * @tc.desc Test the isFIFO() method of class Stat.
-   * This interface does not require parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isFIFO() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_fifo_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_is_fifo_001');
@@ -677,14 +630,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_fifo_002
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISFIFO_0200
-   * @tc.name fileIO_stat_sync_is_fifo_002
-   * @tc.desc Test the isFIFO() method of class Stat.
-   * This interface does not require parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isFIFO() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_fifo_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_is_fifo_002');
@@ -702,14 +653,12 @@ describe('fileIO_fs_stat', function () {
     }
   });
   /**
+   * @tc.name   fileIO_stat_sync_is_file_000
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISFILE_0000
-   * @tc.name fileIO_stat_sync_is_file_000
-   * @tc.desc Test the isFile() method of class Stat.
-   * This interface shall treat a normal file as a normal file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isFile() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_file_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_is_file_000');
@@ -731,14 +680,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_file_001
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISFILE_0100
-   * @tc.name fileIO_stat_sync_is_file_002
-   * @tc.desc Test the isFile() method of class Stat.
-   * This interface shall not treat a directory as a normal file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isFile() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_file_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_stat_sync_is_file_001');
@@ -760,14 +707,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_file_002
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISFILE_0200
-   * @tc.name fileIO_stat_sync_is_file_002
-   * @tc.desc Test the isFile() method of class Stat.
-   * This interface does not require parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isFile() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_file_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_stat_sync_is_file_002');
@@ -784,14 +729,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_file_003
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISFILE_0300
-   * @tc.name fileIO_stat_sync_is_file_003
-   * @tc.desc Test the isFile() method of class Stat.
-   * This interface does not require parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isFile() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_file_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileIO_stat_sync_is_file_003');
@@ -810,14 +753,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_socket_000
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISSOCKET_0000
-   * @tc.name fileIO_stat_sync_is_socket_000
-   * @tc.desc Test the isSocket() method of class Stat.
-   * This interface shall not treat a file as a socket.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isSocket() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_socket_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_is_socket_000');
@@ -839,14 +780,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_socket_001
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISSOCKET_0100
-   * @tc.name fileIO_stat_sync_is_socket_001
-   * @tc.desc Test the isSocket() method of class Stat.
-   * This interface does not require parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isSocket() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_socket_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_is_socket_001');
@@ -863,14 +802,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_socket_002
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISSOCKET_0200
-   * @tc.name fileIO_stat_sync_is_socket_002
-   * @tc.desc Test the isSocket() method of class Stat.
-   * This interface does not require parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isSocket() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_socket_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_is_socket_002');
@@ -888,14 +825,12 @@ describe('fileIO_fs_stat', function () {
     }
   });
   /**
+   * @tc.name   fileIO_stat_sync_is_symbolic_link_000
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISSYMBOLICLINK_0000
-   * @tc.name fileIO_stat_sync_is_symbolic_link_000
-   * @tc.desc Test the isSymbolicLink() method of class Stat.
-   * This interface shall not treat a normal file as a symbolic link.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isSymbolicLink() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_symbolic_link_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_is_symbolic_link_000');
@@ -917,14 +852,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_symbolic_link_001
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISSYMBOLICLINK_0100
-   * @tc.name fileIO_stat_sync_is_symbolic_link_001
-   * @tc.desc Test the isSymbolicLink() method of class Stat.
-   * This interface does not require parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isSymbolicLink() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_symbolic_link_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_is_symbolic_link_001');
@@ -941,14 +874,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_is_symbolic_link_002
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ISSYMBOLICLINK_0200
-   * @tc.name fileIO_stat_sync_is_symbolic_link_002
-   * @tc.desc Test the isSymbolicLink() method of class Stat.
-   * This interface does not require parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isSymbolicLink() method of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_is_symbolic_link_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_is_symbolic_link_002');
@@ -967,14 +898,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_000
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_0000
-   * @tc.name fileIO_stat_async_000
-   * @tc.desc Test stat() interface. Promise.then().catch()
-   * Enter the path or fd parameter to get the file stat.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test stat() interface. Promise.then().catch()
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_000');
@@ -996,14 +925,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_0100
-   * @tc.name fileIO_stat_async_001
-   * @tc.desc Test stat() interface. Promise.
-   * Enter the path or fd parameter to get the file stat.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test stat() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_001');
@@ -1026,14 +953,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_002
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_0200
-   * @tc.name fileIO_stat_async_002
-   * @tc.desc Test stat() interface. Callback.
-   * Enter the path or fd parameter to get the file stat.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test stat() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_002');
@@ -1066,14 +991,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_003
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_0300
-   * @tc.name fileIO_stat_async_003
-   * @tc.desc Test stat() interface. Promise.
-   * The path point to nothing, no such file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test stat() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_003');
@@ -1088,16 +1011,14 @@ describe('fileIO_fs_stat', function () {
     }
   });
 
-  /**
-   * @tc.number SUB_DF_FILEIO_STAT_ASYNC_0400
-   * @tc.name fileIO_stat_async_004
-   * @tc.desc Test stat() interface. Callback.
-   * The path point to nothing, no such file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-   */
+   /**
+    * @tc.name   fileIO_stat_async_004
+    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_0400
+    * @tc.desc   Test stat() interface. Callback.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileIO_stat_async_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_004');
 
@@ -1116,14 +1037,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_005
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_0500
-   * @tc.name fileIO_stat_async_005
-   * @tc.desc Test stat() interface. Promise.
-   * Invalid path or fd parameter.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test stat() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 
@@ -1137,14 +1056,12 @@ describe('fileIO_fs_stat', function () {
     }
   });
   /**
+   * @tc.name   fileIO_stat_async_006
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_0600
-   * @tc.name fileIO_stat_async_006
-   * @tc.desc Test stat() interface. Callback.
-   * Invalid path or fd parameter.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test stat() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 
@@ -1160,14 +1077,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_007
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_0700
-   * @tc.name fileIO_stat_async_007
-   * @tc.desc Test stat() interface. Promise.then().catch()
-   * Bad file descriptor.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test stat() interface. Promise.then().catch()
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_007');
@@ -1188,14 +1103,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_008
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_0800
-   * @tc.name fileIO_stat_async_008
-   * @tc.desc Test stat() interface. Callback.
-   * Bad file descriptor.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test stat() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_008');
@@ -1218,14 +1131,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_ino_000
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_INO_0000
-   * @tc.name fileIO_stat_async_ino_000
-   * @tc.desc Test the ino member of class Stat. Promise.
-   * Enter the path or fd parameter to get stat.ino of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the ino member of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_ino_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_ino_000');
@@ -1248,14 +1159,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_ino_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_INO_0100
-   * @tc.name fileIO_stat_async_ino_001
-   * @tc.desc Test the ino member of class Stat. Callback.
-   * Enter the path or fd parameter to get stat.atime of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the ino member of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_ino_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_ino_001');
@@ -1288,14 +1197,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_mode_000
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_MODE_0000
-   * @tc.name fileIO_stat_async_mode_000
-   * @tc.desc Test the mode member of class Stat. Promise.
-   * Enter the path or fd parameter to get stat.mode of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the mode member of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_mode_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_mode_000');
@@ -1318,14 +1225,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_mode_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_MODE_0100
-   * @tc.name fileIO_stat_async_mode_001
-   * @tc.desc Test the mode member of class Stat. Callback.
-   * Enter the path or fd parameter to get stat.mode of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the mode member of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_mode_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_mode_001');
@@ -1358,14 +1263,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_uid_000
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_UID_0000
-   * @tc.name fileIO_stat_async_uid_000
-   * @tc.desc Test the uid member of class Stat. Promise.
-   * Enter the path or fd parameter to get stat.uid of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the uid member of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_uid_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_uid_000');
@@ -1388,14 +1291,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_uid_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_UID_0100
-   * @tc.name fileIO_stat_async_uid_001
-   * @tc.desc Test the uid member of class Stat. Callback.
-   * Enter the path or fd parameter to get stat.uid of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the uid member of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_uid_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_uid_001');
@@ -1429,14 +1330,12 @@ describe('fileIO_fs_stat', function () {
 
 
   /**
+   * @tc.name   fileIO_stat_async_gid_000
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_GID_0000
-   * @tc.name fileIO_stat_async_gid_000
-   * @tc.desc Test the gid member of class Stat. Promise.
-   * Enter the path or fd parameter to get stat.gid of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the gid member of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_gid_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_gid_000');
@@ -1459,14 +1358,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_gid_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_GID_0100
-   * @tc.name fileIO_stat_async_gid_001
-   * @tc.desc Test the gid member of class Stat. Callback.
-   * Enter the path or fd parameter to get stat.gid of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the gid member of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_gid_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_gid_001');
@@ -1499,14 +1396,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_size_000
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_SIZE_0000
-   * @tc.name fileIO_stat_async_size_000
-   * @tc.desc Test the size member of class Stat. Promise.
-   * Enter the path or fd parameter to get stat.size of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the size member of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_size_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_size_000');
@@ -1529,14 +1424,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_size_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_SIZE_0100
-   * @tc.name fileIO_stat_async_size_001
-   * @tc.desc Test the size member of class Stat. Callback.
-   * Enter the path or fd parameter to get stat.size of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the size member of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_size_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_size_001');
@@ -1569,14 +1462,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_atime_000
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ATIME_0000
-   * @tc.name fileIO_stat_async_atime_000
-   * @tc.desc Test the atime member of class Stat. Promise.
-   * Enter the path or fd parameter to get stat.atime of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the atime member of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_atime_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_atime_000');
@@ -1599,14 +1490,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_atime_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ATIME_0100
-   * @tc.name fileIO_stat_async_atime_001
-   * @tc.desc Test the atime member of class Stat. Callback.
-   * Enter the path or fd parameter to get stat.atime of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the atime member of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_atime_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_atime_001');
@@ -1639,14 +1528,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_mtime_000
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_MTIME_0000
-   * @tc.name fileIO_stat_async_mtime_000
-   * @tc.desc Test the mtime member of class Stat. Promise.
-   * Enter the path or fd parameter to get stat.mtime of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the mtime member of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_mtime_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_mtime_000');
@@ -1669,14 +1556,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_mtime_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_MTIME_0100
-   * @tc.name fileIO_stat_async_mtime_001
-   * @tc.desc Test the mtime member of class Stat. Callback.
-   * Enter the path or fd parameter to get stat.mtime of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the mtime member of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_mtime_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_mtime_001');
@@ -1709,14 +1594,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_ctime_000
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_CTIME_0000
-   * @tc.name fileIO_stat_async_ctime_000
-   * @tc.desc Test the ctime member of class Stat. Promise.
-   * Enter the path or fd parameter to get stat.ctime of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the ctime member of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_ctime_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_ctime_000');
@@ -1739,14 +1622,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_ctime_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_CTIME_0100
-   * @tc.name fileIO_stat_async_ctime_001
-   * @tc.desc Test the ctime member of class Stat. Callback.
-   * Enter the path or fd parameter to get stat.ctime of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the ctime member of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_ctime_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_ctime_001');
@@ -1779,14 +1660,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_is_block_device_000
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISBLOCKDEVICE_0000
-   * @tc.name fileIO_stat_async_is_block_device_000
-   * @tc.desc Test the isBlockDevice() method of class Stat. Promise.
-   * This interface shall not treat a normal file as a block special device.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isBlockDevice() method of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_is_block_device_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_is_block_device_000');
@@ -1809,14 +1688,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_is_block_device_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISBLOCKDEVICE_0100
-   * @tc.name fileIO_stat_async_is_block_device_001
-   * @tc.desc Test the isBlockDevice() method of class Stat. Callback.
-   * This interface shall not treat a normal file as a block special device.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isBlockDevice() method of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_is_block_device_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_is_block_device_001');
@@ -1849,14 +1726,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_is_character_device_000
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISCHARACTERDEVICE_0000
-   * @tc.name fileIO_stat_async_is_character_device_000
-   * @tc.desc Test the isCharacterDevice() method of class Stat. Promise.
-   * This interface shall not treat a normal file as a character special device.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isCharacterDevice() method of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_is_character_device_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_is_character_device_000');
@@ -1879,14 +1754,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_is_character_device_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISCHARACTERDEVICE_0100
-   * @tc.name fileIO_stat_async_is_character_device_001
-   * @tc.desc Test the isCharacterDevice() method of class Stat. Callback.
-   * This interface shall not treat a normal file as a character special device.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isCharacterDevice() method of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_is_character_device_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_is_character_device_001');
@@ -1919,14 +1792,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_is_directory_000
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISDIRECTORY_0000
-   * @tc.name fileIO_stat_async_is_directory_000
-   * @tc.desc Test the isDirectory() method of class Stat. Promise.
-   * This interface shall not treat a normal file as a directory.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isDirectory() method of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_is_directory_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_is_directory_000');
@@ -1949,14 +1820,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_is_directory_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISDIRECTORY_0100
-   * @tc.name fileIO_stat_async_is_directory_001
-   * @tc.desc Test the isDirectory() method of class Stat. Promise.
-   * This interface shall not treat a directory as a directory.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isDirectory() method of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_is_directory_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_stat_async_is_directory_001') + 'd';
@@ -1979,14 +1848,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_is_directory_002
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISDIRECTORY_0200
-   * @tc.name fileIO_stat_async_is_directory_002
-   * @tc.desc Test the isDirectory() method of class Stat. Callback.
-   * This interface shall not treat a directory as a directory.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isDirectory() method of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_is_directory_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_stat_async_is_directory_002') + 'd';
@@ -2019,14 +1886,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_is_fifo_000
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISFIFO_0000
-   * @tc.name fileIO_stat_async_is_fifo_000
-   * @tc.desc Test the isFIFO() method of class Stat. Promise.
-   * This interface shall not treat a normal file as a FIFO.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isFIFO() method of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_is_fifo_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_is_fifo_000');
@@ -2049,14 +1914,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_is_fifo_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISFIFO_0100
-   * @tc.name fileIO_stat_async_is_fifo_001
-   * @tc.desc Test the isFIFO() method of class Stat. Callback.
-   * This interface shall not treat a normal file as a FIFO.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isFIFO() method of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_is_fifo_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_is_fifo_001');
@@ -2089,14 +1952,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_is_file_000
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISFILE_0000
-   * @tc.name fileIO_stat_async_is_file_000
-   * @tc.desc Test the isFile() method of class Stat. Promise.
-   * This interface shall treat a normal file as a normal file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isFile() method of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_is_file_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_is_file_000');
@@ -2119,14 +1980,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_is_file_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISFILE_0100
-   * @tc.name fileIO_stat_async_is_file_001
-   * @tc.desc Test the isFile() method of class Stat. Callback.
-   * This interface shall treat a normal file as a normal file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isFile() method of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_is_file_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_is_file_001');
@@ -2159,14 +2018,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_is_file_002
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISFILE_0200
-   * @tc.name fileIO_stat_async_is_file_002
-   * @tc.desc Test the isFile() method of class Stat. Promise.
-   * This interface shall not treat a directory as a normal file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isFile() method of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_is_file_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileIO_stat_async_is_file_002');
@@ -2189,14 +2046,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_is_socket_000
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISSOCKET_0000
-   * @tc.name fileIO_stat_async_is_socket_000
-   * @tc.desc Test the isSocket() method of class Stat. Promise.
-   * This interface shall not treat a file as a socket.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isSocket() method of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_is_socket_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_is_socket_000');
@@ -2218,14 +2073,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_is_socket_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISSOCKET_0100
-   * @tc.name fileIO_stat_async_is_socket_001
-   * @tc.desc Test the isSocket() method of class Stat. Callback.
-   * This interface shall not treat a file as a socket.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isSocket() method of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_is_socket_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_is_socket_001');
@@ -2258,14 +2111,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_is_symbolic_link_000
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISSYMBOLICLINK_0000
-   * @tc.name fileIO_stat_async_is_symbolic_link_000
-   * @tc.desc Test the isSymbolicLink() method of class Stat. Promise.
-   * This interface shall not treat a normal file as a symbolic link.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isSymbolicLink() method of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_is_symbolic_link_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_is_symbolic_link_000');
@@ -2288,14 +2139,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_is_symbolic_link_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ISSYMBOLICLINK_0100
-   * @tc.name fileIO_stat_async_is_symbolic_link_001
-   * @tc.desc Test the isSymbolicLink() method of class Stat. Callback.
-   * This interface shall not treat a normal file as a symbolic link.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the isSymbolicLink() method of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_is_symbolic_link_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_is_symbolic_link_001');
@@ -2328,14 +2177,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_append_file_sync_000
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_APPEND_FILE_SYNC_0000
-   * @tc.name fileIO_stat_sync_append_file_sync_000
-   * @tc.desc Test statSync() interface.
-   * Modify the file, view the file status changes by path.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test statSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_append_file_sync_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_append_file_sync_000');
@@ -2361,14 +2208,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_append_file_sync_001
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_APPEND_FILE_SYNC_0100
-   * @tc.name fileIO_stat_sync_append_file_sync_001
-   * @tc.desc Test statSync() interface.
-   * Modify the file, view the file status changes by fd.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test statSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_append_file_sync_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_append_file_sync_001');
@@ -2395,14 +2240,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_location_000
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_LOCATION_0000
-   * @tc.name fileIO_stat_async_location_000
-   * @tc.desc Test the location member of class Stat. Promise.
-   * Enter the path or fd parameter to get stat.location is LOCAl.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the location member of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_location_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_location_000');
@@ -2426,14 +2269,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_location_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_LOCATION_0100
-   * @tc.name fileIO_stat_async_location_001
-   * @tc.desc Test the location member of class Stat. Callback.
-   * Enter the path or fd parameter to get stat.location is LOCAl.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the location member of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_location_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_location_001');
@@ -2466,14 +2307,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_location_002
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_LOCATION_0200
-   * @tc.name fileIO_stat_async_location_002
-   * @tc.desc Test the location member of class Stat. Promise.
-   * Enter the path or fd parameter to get stat.location is CLOUD.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the location member of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_location_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_location_002');
@@ -2495,14 +2334,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_atimeNs_001
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_ATIMENS_0100
-   * @tc.name fileIO_stat_sync_atimeNs_001
-   * @tc.desc Test the atimeNs of class Stat.
-   * Enter the path or fd parameter to get stat.atimeNs of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the atimeNs of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_atimeNs_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_atimeNs_001');
@@ -2524,14 +2361,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_atimeNs_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ATIMENS_0100
-   * @tc.name fileIO_stat_async_atimeNs_001
-   * @tc.desc Test the atimeNs member of class Stat. Promise.
-   * Enter the path or fd parameter to get stat.atimeNs of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the atimeNs member of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_atimeNs_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_atimeNs_001');
@@ -2554,14 +2389,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_atimeNs_002
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_ATIMENS_0200
-   * @tc.name fileIO_stat_async_atimeNs_002
-   * @tc.desc Test the atimeNs member of class Stat. Callback.
-   * Enter the path or fd parameter to get stat.atimeNs of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the atimeNs member of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_atimeNs_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_atimeNs_002');
@@ -2594,14 +2427,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_mtimeNs_001
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_MTIMENS_0100
-   * @tc.name fileIO_stat_sync_mtimeNs_001
-   * @tc.desc Test the mtimeNs of class Stat.
-   * Enter the path or fd parameter to get stat.mtimeNs of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the mtimeNs of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_mtimeNs_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_mtimeNs_001');
@@ -2623,14 +2454,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_mtimeNs_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_MTIMENS_0100
-   * @tc.name fileIO_stat_async_mtimeNs_001
-   * @tc.desc Test the mtimeNs member of class Stat. Promise.
-   * Enter the path or fd parameter to get stat.mtimeNs of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the mtimeNs member of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_mtimeNs_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_mtimeNs_001');
@@ -2653,14 +2482,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_mtimeNs_002
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_MTIMENS_0200
-   * @tc.name fileIO_stat_async_mtimeNs_002
-   * @tc.desc Test the mtimeNs member of class Stat. Callback.
-   * Enter the path or fd parameter to get stat.mtimeNs of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the mtimeNs member of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_mtimeNs_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_mtimeNs_002');
@@ -2693,14 +2520,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_sync_ctimeNs_001
    * @tc.number SUB_DF_FILEIO_STAT_SYNC_CTIMENS_0100
-   * @tc.name fileIO_stat_sync_ctimeNs_001
-   * @tc.desc Test the ctimeNs of class Stat.
-   * Enter the path or fd parameter to get stat.ctimeNs of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the ctimeNs of class Stat.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_sync_ctimeNs_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_stat_sync_ctimeNs_001');
@@ -2722,14 +2547,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_ctimeNs_001
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_CTIMENS_0100
-   * @tc.name fileIO_stat_async_ctimeNs_001
-   * @tc.desc Test the ctimeNs member of class Stat. Promise.
-   * Enter the path or fd parameter to get stat.ctimeNs of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the ctimeNs member of class Stat. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_ctimeNs_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_ctimeNs_001');
@@ -2752,14 +2575,12 @@ describe('fileIO_fs_stat', function () {
   });
 
   /**
+   * @tc.name   fileIO_stat_async_ctimeNs_002
    * @tc.number SUB_DF_FILEIO_STAT_ASYNC_CTIMENS_0200
-   * @tc.name fileIO_stat_async_ctimeNs_002
-   * @tc.desc Test the ctimeNs member of class Stat. Callback.
-   * Enter the path or fd parameter to get stat.ctimeNs of the file.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the ctimeNs member of class Stat. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_stat_async_ctimeNs_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_stat_async_ctimeNs_002');

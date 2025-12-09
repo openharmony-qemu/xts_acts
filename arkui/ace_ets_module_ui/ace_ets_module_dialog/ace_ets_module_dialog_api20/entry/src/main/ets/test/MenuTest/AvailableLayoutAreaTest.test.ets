@@ -40,12 +40,12 @@ export default function AvailableLayoutAreaTest() {
     });
 
     /**
-     * @tc.number    AvailableLayoutAreaTest_0010
-     * @tc.name      AvailableLayoutAreaTest_0010
-     * @tc.desc      createMenuToWindow
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   AvailableLayoutAreaTest_0010
+     * @tc.number AvailableLayoutAreaTest_0010
+     * @tc.desc   createMenuToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AvailableLayoutAreaTest_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('AvailableLayoutAreaTest_0010 START');

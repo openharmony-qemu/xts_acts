@@ -84,9 +84,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateIdProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'IdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'IdProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'IdProp START');
@@ -102,9 +105,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateAttributeNameProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'AttributeNameProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'AttributeNameProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'AttributeNameProp START');
@@ -122,9 +128,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateAttributeNamePropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'AttributeNamePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'AttributeNamePropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'AttributeNamePropNone START');
@@ -142,9 +151,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateBeginProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'BeginProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'BeginProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'BeginProp START');
@@ -162,9 +174,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateBeginPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'BeginPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'BeginPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'BeginPropNone START');
@@ -182,9 +197,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateDurProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'DurProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'DurProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'DurProp START');
@@ -202,9 +220,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateDurPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'DurPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'DurPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'DurPropNone START');
@@ -222,9 +243,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateEndProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'EndProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'EndProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'EndProp START');
@@ -242,9 +266,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateEndPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'EndPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'EndPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'EndPropNone START');
@@ -262,9 +289,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateRepeatCountProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'RepeatCountProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'RepeatCountProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'RepeatCountProp START');
@@ -282,9 +312,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateRepeatCountPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'RepeatCountPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'RepeatCountPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'RepeatCountPropNone START');
@@ -302,9 +335,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateFillPropFreeze
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'FillPropFreeze
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'FillPropFreeze', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FillPropFreeze START');
@@ -322,9 +358,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateFillPropRemove
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'FillPropRemove
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'FillPropRemove', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FillPropRemove START');
@@ -342,9 +381,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateCalcModePropDiscrete
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'CalcModePropDiscrete
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'CalcModePropDiscrete', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'CalcModePropDiscrete START');
@@ -362,9 +404,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateCalcModePropLinear
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'CalcModePropLinear
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'CalcModePropLinear', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'CalcModePropLinear START');
@@ -382,9 +427,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateCalcModePropPaced
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'CalcModePropPaced
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'CalcModePropPaced', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'CalcModePropPaced START');
@@ -402,9 +450,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateCalcModePropSpline
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'CalcModePropSpline
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'CalcModePropSpline', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'CalcModePropSpline START');
@@ -422,9 +473,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateKeyTimesProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'KeyTimesProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'KeyTimesProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'KeyTimesProp START');
@@ -442,9 +496,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateKeyTimesPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'KeyTimesPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'KeyTimesPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'KeyTimesPropNone START');
@@ -462,9 +519,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateKeySplinesProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'KeySplinesProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'KeySplinesProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'KeySplinesProp START');
@@ -482,9 +542,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateKeySplinesPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'KeySplinesPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'KeySplinesPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'KeySplinesPropNone START');
@@ -502,9 +565,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateByProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'ByProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'ByProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'ByProp START');
@@ -522,9 +588,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateByPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'ByPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'ByPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'ByPropNone START');
@@ -542,9 +611,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateFromProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'FromProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'FromProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FromProp START');
@@ -562,9 +634,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateFromPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'FromPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'FromPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FromPropNone START');
@@ -582,9 +657,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateToProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'ToProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'ToProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'ToProp START');
@@ -602,9 +680,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateToPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'ToPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'ToPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'ToPropNone START');
@@ -622,9 +703,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateValuesProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'ValuesProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'ValuesProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'ValuesProp START');
@@ -642,9 +726,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testAnimateValuesPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'ValuesPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'ValuesPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'ValuesPropNone START');

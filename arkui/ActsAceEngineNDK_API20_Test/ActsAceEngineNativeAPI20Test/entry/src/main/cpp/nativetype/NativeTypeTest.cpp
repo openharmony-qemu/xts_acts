@@ -1055,3 +1055,33 @@ napi_value ErrorCodePostCloned(napi_env env, napi_callback_info info)
     napi_create_int32(env, errcode, &result);
     return result;
 }
+
+napi_value GetRouterStateOnShow(napi_env env, napi_callback_info info) {
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetRouterPageStateOnShow",
+     "ARKUI_ROUTER_PAGE_STATE_ON_SHOW");
+    ArkUI_RouterPageState state;
+    OH_ArkUI_GetRouterPageState(g_pageNode, &state);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state router onshow is ", "%{public}d", state);
+    ASSERT_EQ(state, ARKUI_ROUTER_PAGE_STATE_ON_SHOW);
+    return nullptr;
+}
+
+napi_value GetRouterStateOnHide(napi_env env, napi_callback_info info) {
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetRouterStateOnHide",
+     "ARKUI_ROUTER_PAGE_STATE_ON_HIDE");
+    ArkUI_RouterPageState state;
+    OH_ArkUI_GetRouterPageState(g_pageNode, &state);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "gget state router onhide is ", "%{public}d", state);
+    ASSERT_EQ(state, ARKUI_ROUTER_PAGE_STATE_ON_HIDE);
+    return nullptr;
+}
+
+napi_value GetRouterStateOnBackPressed(napi_env env, napi_callback_info info) {
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetRouterStateOnBackPressed",
+     "ARKUI_ROUTER_PAGE_STATE_ON_BACK_PRESS");
+    ArkUI_RouterPageState state;
+    OH_ArkUI_GetRouterPageState(g_pageNode, &state);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state router onBackPress is ", "%{public}d", state);
+    ASSERT_EQ(state, ARKUI_ROUTER_PAGE_STATE_ON_BACK_PRESS);
+    return nullptr;
+}

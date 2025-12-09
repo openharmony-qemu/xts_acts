@@ -34,12 +34,12 @@ export default function EmptyTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
-     * @tc.number : SUB_Network_Connection_EmptyTest_0100
-     * @tc.name   : testNetworkConnectionEmptyTest0100
-     * @tc.desc   : EmptyTest
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkConnectionEmptyTest0100
+     * @tc.number SUB_Network_Connection_EmptyTest_0100
+     * @tc.desc   EmptyTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkConnectionEmptyTest0100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const caseName: string = 'testNetworkConnectionEmptyTest0100';

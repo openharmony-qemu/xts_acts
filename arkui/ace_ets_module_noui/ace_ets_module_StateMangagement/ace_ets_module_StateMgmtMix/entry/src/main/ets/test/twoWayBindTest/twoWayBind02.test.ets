@@ -41,12 +41,12 @@ export default function twoWayBindTest02() {
       done();
     });
     /**
-     * @tc.number    twoWayBind
-     * @tc.name      twoWayBindTest_0110
-     * @tc.desc      api
-     * @tc.level:    Level 0
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.name   twoWayBindTest_0110
+     * @tc.number twoWayBind
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('twoWayBindTest_0110', Level.LEVEL0, async (done: Function) => {
       console.info('twoWayBindTest_0110 START');

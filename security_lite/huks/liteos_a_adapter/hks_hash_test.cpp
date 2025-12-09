@@ -69,9 +69,12 @@ const struct HksTestHashParams g_testHashParams[] = {
 };
 
 /**
- * @tc.name: HksHashTest.HksHashTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksHashTest001
+ * @tc.number HksHashTest001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksHashTest, HksHashTest001, TestSize.Level1)
 {

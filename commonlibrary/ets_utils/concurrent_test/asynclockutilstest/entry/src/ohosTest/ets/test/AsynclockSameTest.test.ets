@@ -61,12 +61,12 @@ export default function AsynclockSameTest() {
     })
 
     /**
+     * @tc.name   AsynclockSameTest0100
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_0100
-     * @tc.name AsynclockSameTest0100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done:Function) => {
@@ -97,12 +97,12 @@ export default function AsynclockSameTest() {
 
 
     /**
+     * @tc.name   AsynclockSameTest0200
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_0200
-     * @tc.name AsynclockSameTest0200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -125,12 +125,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest0300
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_0300
-     * @tc.name AsynclockSameTest0300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -160,12 +160,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest0400
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_0400
-     * @tc.name AsynclockSameTest0400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -188,12 +188,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest0500
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_0500
-     * @tc.name AsynclockSameTest0500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -227,12 +227,12 @@ export default function AsynclockSameTest() {
 
 
     /**
+     * @tc.name   AsynclockSameTest0600
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_0600
-     * @tc.name AsynclockSameTest0600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -255,12 +255,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest0700
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_0700
-     * @tc.name AsynclockSameTest0700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -290,12 +290,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest0800
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_0800
-     * @tc.name AsynclockSameTest0800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -338,12 +338,12 @@ export default function AsynclockSameTest() {
         Done();
       });
     /**
+     * @tc.name   AsynclockSameTest0900
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_0900
-     * @tc.name AsynclockSameTest0900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -366,12 +366,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest1000
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_1000
-     * @tc.name AsynclockSameTest1000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -428,12 +428,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest1100
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_1100
-     * @tc.name AsynclockSameTest1100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -482,12 +482,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest1200
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_1200
-     * @tc.name AsynclockSameTest1200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -510,12 +510,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest1300
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_1300
-     * @tc.name AsynclockSameTest1300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -544,12 +544,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest1400
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_1400
-     * @tc.name AsynclockSameTest1400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -589,12 +589,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest1500
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_1500
-     * @tc.name AsynclockSameTest1500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -617,12 +617,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest1600
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_1600
-     * @tc.name AsynclockSameTest1600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -671,12 +671,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest1700
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_1700
-     * @tc.name AsynclockSameTest1700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -716,12 +716,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest1800
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_1800
-     * @tc.name AsynclockSameTest1800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -745,12 +745,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest1900
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_1900
-     * @tc.name AsynclockSameTest1900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -781,12 +781,12 @@ export default function AsynclockSameTest() {
 
 
     /**
+     * @tc.name   AsynclockSameTest2000
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_2000
-     * @tc.name AsynclockSameTest2000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -829,12 +829,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest2100
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_2100
-     * @tc.name AsynclockSameTest2100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -857,12 +857,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest2200
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_2200
-     * @tc.name AsynclockSameTest2200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -910,12 +910,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest2300
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_2300
-     * @tc.name AsynclockSameTest2300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -950,12 +950,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest2400
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_2400
-     * @tc.name AsynclockSameTest2400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -978,12 +978,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest2500
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_2500
-     * @tc.name AsynclockSameTest2500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1023,12 +1023,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest2600
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_2600
-     * @tc.name AsynclockSameTest2600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1063,12 +1063,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest2700
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_2700
-     * @tc.name AsynclockSameTest2700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1091,12 +1091,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest2800
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_2800
-     * @tc.name AsynclockSameTest2800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1123,12 +1123,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest2900
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_2900
-     * @tc.name AsynclockSameTest2900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1164,12 +1164,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest3000
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_3000
-     * @tc.name AsynclockSameTest3000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1193,12 +1193,12 @@ export default function AsynclockSameTest() {
 
 
     /**
+     * @tc.name   AsynclockSameTest3100
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_3100
-     * @tc.name AsynclockSameTest3100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1227,12 +1227,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest3200
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_3200
-     * @tc.name AsynclockSameTest3200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1271,12 +1271,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest3300
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_3300
-     * @tc.name AsynclockSameTest3300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1299,12 +1299,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest3400
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_3400
-     * @tc.name AsynclockSameTest3400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1340,12 +1340,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest3500
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_3500
-     * @tc.name AsynclockSameTest3500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1392,12 +1392,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest3600
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_3600
-     * @tc.name AsynclockSameTest3600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1421,12 +1421,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest3700
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_3700
-     * @tc.name AsynclockSameTest3700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1476,12 +1476,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest3800
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_3800
-     * @tc.name AsynclockSameTest3800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1537,12 +1537,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest3900
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_3900
-     * @tc.name AsynclockSameTest3900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1566,12 +1566,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest4000
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_4000
-     * @tc.name AsynclockSameTest4000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1590,12 +1590,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest4100
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_4100
-     * @tc.name AsynclockSameTest4100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1637,12 +1637,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest4200
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_4200
-     * @tc.name AsynclockSameTest4200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1666,12 +1666,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest4300
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_4300
-     * @tc.name AsynclockSameTest4300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1700,12 +1700,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest4400
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_4400
-     * @tc.name AsynclockSameTest4400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1747,12 +1747,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest4500
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_4500
-     * @tc.name AsynclockSameTest4500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1776,12 +1776,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest4600
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_4600
-     * @tc.name AsynclockSameTest4600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1823,12 +1823,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest4700
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_4700
-     * @tc.name AsynclockSameTest4700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1852,12 +1852,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest4800
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_4800
-     * @tc.name AsynclockSameTest4800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1914,12 +1914,12 @@ export default function AsynclockSameTest() {
       });
 
     /**
+     * @tc.name   AsynclockSameTest4900
      * @tc.number SUB_ASYNCLOCK_SAME_TEST_4900
-     * @tc.name AsynclockSameTest4900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsynclockSameTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {

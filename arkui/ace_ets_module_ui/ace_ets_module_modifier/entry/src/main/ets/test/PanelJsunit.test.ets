@@ -41,12 +41,12 @@ export default function panelJsunit() {
     });
 
     /**
+     * @tc.name   test_panel_001
      * @tc.number test_panel_001
-     * @tc.name Test the properties of components
-     * @tc.desc Set type values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set type values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_panel_001', Level.LEVEL0, async (done: Function) => {
       console.info('[test_panel_001] START');
@@ -61,12 +61,12 @@ export default function panelJsunit() {
     });
 
     /**
+     * @tc.name   test_panel_002
      * @tc.number test_panel_002
-     * @tc.name Test the properties of components
-     * @tc.desc Set showCloseIcon values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set showCloseIcon values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_panel_002', Level.LEVEL0, async (done: Function) => {
       console.info('[test_panel_002] START');
@@ -81,12 +81,12 @@ export default function panelJsunit() {
     });
 
     /**
+     * @tc.name   test_panel_003
      * @tc.number test_panel_003
-     * @tc.name Test the properties of components
-     * @tc.desc Set show values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set show values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_panel_003', Level.LEVEL0, async (done: Function) => {
       console.info('[test_panel_003] START');
@@ -101,12 +101,12 @@ export default function panelJsunit() {
     });
 
     /**
+     * @tc.name   test_panel_004
      * @tc.number test_panel_004
-     * @tc.name Test the properties of components
-     * @tc.desc Set mode values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set mode values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_panel_004', Level.LEVEL0, async (done: Function) => {
       console.info('[test_panel_004] START');
@@ -121,12 +121,12 @@ export default function panelJsunit() {
     });
 
     /**
+     * @tc.name   test_panel_005
      * @tc.number test_panel_005
-     * @tc.name Test the properties of components
-     * @tc.desc Set dragBar values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set dragBar values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_panel_005', Level.LEVEL0, async (done: Function) => {
       console.info('[test_panel_005] START');
@@ -141,12 +141,12 @@ export default function panelJsunit() {
     });
 
     /**
+     * @tc.name   test_panel_006
      * @tc.number test_panel_006
-     * @tc.name Test the properties of components
-     * @tc.desc Set miniHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set miniHeight values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_panel_006', Level.LEVEL0, async (done: Function) => {
       console.info('[test_panel_006] START');
@@ -161,12 +161,12 @@ export default function panelJsunit() {
     });
 
     /**
+     * @tc.name   test_panel_007
      * @tc.number test_panel_007
-     * @tc.name Test the properties of components
-     * @tc.desc Set halfHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set halfHeight values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_panel_007', Level.LEVEL0, async (done: Function) => {
       console.info('[test_panel_007] START');
@@ -181,12 +181,12 @@ export default function panelJsunit() {
     });
 
     /**
+     * @tc.name   test_panel_008
      * @tc.number test_panel_008
-     * @tc.name Test the properties of components
-     * @tc.desc Set fullHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fullHeight values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_panel_008', Level.LEVEL0, async (done: Function) => {
       console.info('[test_panel_008] START');
@@ -201,12 +201,12 @@ export default function panelJsunit() {
     });
 
     /**
+     * @tc.name   test_panel_009
      * @tc.number test_panel_009
-     * @tc.name Test the properties of components
-     * @tc.desc Set customHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set customHeight values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_panel_009', Level.LEVEL0, async (done: Function) => {
       console.info('[test_panel_009] START');
@@ -219,12 +219,12 @@ export default function panelJsunit() {
     });
 
     /**
+     * @tc.name   test_panel_0010
      * @tc.number test_panel_0010
-     * @tc.name Test the properties of components
-     * @tc.desc Set backgroundMask values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set backgroundMask values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_panel_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[test_panel_0010] START');
@@ -243,12 +243,12 @@ export default function panelJsunit() {
     });
 
     /**
+     * @tc.name   test_panel_0011
      * @tc.number test_panel_0011
-     * @tc.name Test the properties of components
-     * @tc.desc Change backgroundMask values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change backgroundMask values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_panel_0011', Level.LEVEL0, async (done: Function) => {
 

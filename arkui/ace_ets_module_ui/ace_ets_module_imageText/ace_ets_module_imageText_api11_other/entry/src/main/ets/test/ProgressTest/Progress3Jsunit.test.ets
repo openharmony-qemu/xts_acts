@@ -44,6 +44,14 @@ export default function progressJsunit() {
       console.info("progress after each called");
     });
 
+    /**
+     * @tc.name   testProgress_100
+     * @tc.number testProgress_100
+     * @tc.desc   testProgress_100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testProgress_100', Level.LEVEL1, async (done: Function) => {
       console.info('testProgress_100 START');
       await CommonFunc.sleep(1000);
@@ -74,6 +82,14 @@ export default function progressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testProgress_200
+     * @tc.number testProgress_200
+     * @tc.desc   testProgress_200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testProgress_200', Level.LEVEL1, async (done: Function) => {
       console.info('[testProgress_200] START');
       await CommonFunc.sleep(1000);
@@ -84,6 +100,14 @@ export default function progressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testProgress_300
+     * @tc.number testProgress_300
+     * @tc.desc   testProgress_300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testProgress_300', Level.LEVEL1, async (done: Function) => {
       console.info('testProgress_300 START');
       let strJson1 = getInspectorByKey('EPValue');
@@ -113,6 +137,14 @@ export default function progressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testProgress_400
+     * @tc.number testProgress_400
+     * @tc.desc   testProgress_400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testProgress_400', Level.LEVEL1, async (done: Function) => {
       console.info('[testProgress_400] START');
       await CommonFunc.sleep(1000);
@@ -123,6 +155,14 @@ export default function progressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testProgress_500
+     * @tc.number testProgress_500
+     * @tc.desc   testProgress_500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testProgress_500', Level.LEVEL1, async (done: Function) => {
       console.info('testProgress_500 START');
       let strJson1 = getInspectorByKey('CPValue');
@@ -152,6 +192,14 @@ export default function progressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testProgress_600
+     * @tc.number testProgress_600
+     * @tc.desc   testProgress_600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testProgress_600', Level.LEVEL1, async (done: Function) => {
       console.info('[testProgress_600] START');
       await CommonFunc.sleep(1000);
@@ -162,6 +210,14 @@ export default function progressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testProgress_700
+     * @tc.number testProgress_700
+     * @tc.desc   testProgress_700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testProgress_700', Level.LEVEL1, async (done: Function) => {
       console.info('testProgress_700 START');
       let strJson1 = getInspectorByKey('LPValue');
@@ -191,6 +247,14 @@ export default function progressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testProgress_800
+     * @tc.number testProgress_800
+     * @tc.desc   testProgress_800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testProgress_800', Level.LEVEL1, async (done: Function) => {
       console.info('testProgress_800 START');
       let strJson1 = getInspectorByKey('EPValue');
@@ -220,6 +284,14 @@ export default function progressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testProgress_900
+     * @tc.number testProgress_900
+     * @tc.desc   testProgress_900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testProgress_900', Level.LEVEL1, async (done: Function) => {
       console.info('testProgress_900 START');
       let strJson1 = getInspectorByKey('CPValue');
@@ -249,6 +321,14 @@ export default function progressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testProgress_1000
+     * @tc.number testProgress_1000
+     * @tc.desc   testProgress_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testProgress_1000', Level.LEVEL1, async (done: Function) => {
       console.info('testProgress_1000 START');
       let strJson1 = getInspectorByKey('LPValue');
@@ -279,6 +359,14 @@ export default function progressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testProgress_1100
+     * @tc.number testProgress_1100
+     * @tc.desc   testProgress_1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testProgress_1100', Level.LEVEL1, async (done: Function) => {
       console.info('testProgress_1100 START');
       let strJson1 = getInspectorByKey('LPValue');

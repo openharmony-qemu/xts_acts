@@ -58,14 +58,14 @@ export default function customizeSchemes() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCUSTOMIZESCHEMES_0100
-    * @tc.name       : customizeSchemes0100
-    * @tc.desc       : test WebcustomizeSchemes
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   customizeSchemes0100
+     * @tc.number SUB_WEB_WEBCUSTOMIZESCHEMES_0100
+     * @tc.desc   test WebcustomizeSchemes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('customizeSchemes0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("customizeSchemes0100", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -77,14 +77,14 @@ export default function customizeSchemes() {
         done();
       }
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBCUSTOMIZESCHEMES_0200
-    * @tc.name       : customizeSchemes0200
-    * @tc.desc       : test WebcustomizeSchemes
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   customizeSchemes0200
+     * @tc.number SUB_WEB_WEBCUSTOMIZESCHEMES_0200
+     * @tc.desc   test WebcustomizeSchemes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('customizeSchemes0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("customizeSchemes0200", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;

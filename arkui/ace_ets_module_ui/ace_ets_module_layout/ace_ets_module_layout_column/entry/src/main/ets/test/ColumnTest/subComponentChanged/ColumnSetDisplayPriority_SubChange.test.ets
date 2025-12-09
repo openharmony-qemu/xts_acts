@@ -47,9 +47,12 @@ export default function ColumnSetDisplayPriority_SubChange() {
     });
 
     /**
+     * @tc.name   testColumnSetDisplayPriorityWithRateOneTwoThree
      * @tc.number SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_1400
-     * @tc.name testColumnSetDisplayPriorityWithRateOneTwoThree
-     * @tc.desc Subcomponents set display priority(1-2-3) attribute.
+     * @tc.desc   Subcomponents set display priority(1-2-3) attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSetDisplayPriorityWithRateOneTwoThree',  Level.LEVEL0, async () => {
       console.info('new testColumnSetDisplayPriorityWithRateOneTwoThree START');
@@ -82,9 +85,12 @@ export default function ColumnSetDisplayPriority_SubChange() {
     });
 
     /**
+     * @tc.name   testColumnSetDisplayPriorityWithRateTwoOneTwo
      * @tc.number SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_1500
-     * @tc.name testColumnSetDisplayPriorityWithRateTwoOneTwo
-     * @tc.desc Subcomponents set display priority(1-0.5-1) attribute.
+     * @tc.desc   Subcomponents set display priority(1-0.5-1) attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSetDisplayPriorityWithRateTwoOneTwo',  Level.LEVEL0, async () => {
       console.info('new testColumnSetDisplayPriorityWithRateTwoOneTwo START');

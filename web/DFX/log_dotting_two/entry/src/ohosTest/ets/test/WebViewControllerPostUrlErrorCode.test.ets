@@ -59,13 +59,13 @@ export default function webViewControllerPostUrlErrorCode() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_WEB_ERRORCODE_WEBVIEWCONTROLLER_POSTURL_0100
-     * @tc.name       : testWebViewControllerPostUrl001
-     * @tc.desc       : test postUrl error
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testWebViewControllerPostUrl001
+     * @tc.number SUB_WEB_ERRORCODE_WEBVIEWCONTROLLER_POSTURL_0100
+     * @tc.desc   test postUrl error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebViewControllerPostUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testWebViewControllerPostUrl001", EVENT_ID_SET_EMIT_KEY);
@@ -73,13 +73,13 @@ export default function webViewControllerPostUrlErrorCode() {
       await Utils.waitAndClickComponent(driver, "PostUrlErrorCodeButton");
     })
 
-    /*
-     * @tc.number     : SUB_WEB_ERRORCODE_WEBVIEWCONTROLLER_POSTURL_0200
-     * @tc.name       : testWebViewControllerPostUrl002
-     * @tc.desc       : test postUrl error
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testWebViewControllerPostUrl002
+     * @tc.number SUB_WEB_ERRORCODE_WEBVIEWCONTROLLER_POSTURL_0200
+     * @tc.desc   test postUrl error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebViewControllerPostUrl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testWebViewControllerPostUrl002", EVENT_ID_SET_EMIT_KEY);

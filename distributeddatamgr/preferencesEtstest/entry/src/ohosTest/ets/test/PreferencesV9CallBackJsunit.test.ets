@@ -37,12 +37,7 @@ export default function preferencesV9CallbackTest(){
         beforeEach(async function () {
             console.info('beforeEach')
             mPreference = await data_preferences.getPreferences(context, NAME)
-            mPreference.put(KEY_TEST_STRING_ELEMENT, 'abc', function (err, ret) {
-                if (err) {
-                    console.log("put err =" + err + ", code =" + err.code + ", message =" + err.message)
-                    expect(false).assertTrue()
-                }
-            })
+            mPreference.putSync(KEY_TEST_STRING_ELEMENT, 'abc');
         })
 
         afterEach(async function () {
@@ -51,7 +46,6 @@ export default function preferencesV9CallbackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   SUB_DDM_JSPREFERENCEV9_CALLBACK_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9EtsApiCallbackTest_0200
          * @tc.desc   flush String callback interface test
@@ -109,7 +103,6 @@ export default function preferencesV9CallbackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   SUB_DDM_JSPREFERENCEV9_CALLBACK_0200
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9EtsApiCallbackTest_0900
          * @tc.desc   mPreference.get()
@@ -136,7 +129,6 @@ export default function preferencesV9CallbackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   SUB_DDM_JSPREFERENCEV9_CALLBACK_0300
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9EtsApiCallbackTest_0800
          * @tc.desc   mPreference.get()
@@ -163,7 +155,6 @@ export default function preferencesV9CallbackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   SUB_DDM_JSPREFERENCEV9_CALLBACK_0400
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9EtsApiCallbackTest_0700
          * @tc.desc   mPreference.getAll()
@@ -191,7 +182,6 @@ export default function preferencesV9CallbackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   SUB_DDM_JSPREFERENCEV9_CALLBACK_0500
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9EtsApiCallbackTest_1100
          * @tc.desc   mPreference.has()
@@ -214,7 +204,6 @@ export default function preferencesV9CallbackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   SUB_DDM_JSPREFERENCEV9_CALLBACK_0600
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9EtsApiCallbackTest_1000
          * @tc.desc   mPreference.has()
@@ -241,7 +230,6 @@ export default function preferencesV9CallbackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   SUB_DDM_JSPREFERENCEV9_CALLBACK_0700
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9EtsApiCallbackTest_1700
          * @tc.desc   mPreference.put()
@@ -264,7 +252,6 @@ export default function preferencesV9CallbackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   SUB_DDM_JSPREFERENCEV9_CALLBACK_0800
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9EtsApiCallbackTest_1500
          * @tc.desc   mPreference.put()
@@ -290,7 +277,6 @@ export default function preferencesV9CallbackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   SUB_DDM_JSPREFERENCEV9_CALLBACK_0900
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9EtsApiCallbackTest_0500
          * @tc.desc   mPreference.delete()
@@ -317,7 +303,6 @@ export default function preferencesV9CallbackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   SUB_DDM_JSPREFERENCEV9_CALLBACK_1000
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9EtsApiCallbackTest_0400
          * @tc.desc   mPreference.delete()
@@ -343,7 +328,6 @@ export default function preferencesV9CallbackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   SUB_DDM_JSPREFERENCEV9_CALLBACK_1100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9EtsApiCallbackTest_0300
          * @tc.desc   mPreference.clear()
@@ -369,7 +353,6 @@ export default function preferencesV9CallbackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   SUB_DDM_JSPREFERENCEV9_CALLBACK_1200
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9EtsApiCallbackTest_0600
          * @tc.desc   mPreference.flush()
@@ -395,7 +378,6 @@ export default function preferencesV9CallbackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   SUB_DDM_JSPREFERENCEV9_CALLBACK_1300
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9EtsApiCallbackTest_0100
          * @tc.desc   mPreference.on()
@@ -424,7 +406,6 @@ export default function preferencesV9CallbackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   SUB_DDM_JSPREFERENCEV9_CALLBACK_1400
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9EtsApiCallbackTest_1600
          * @tc.desc   mPreference.on()
@@ -451,7 +432,6 @@ export default function preferencesV9CallbackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   SUB_DDM_JSPREFERENCEV9_CALLBACK_1500
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9EtsApiCallbackTest_1400
          * @tc.desc   mPreference.off()
@@ -476,7 +456,6 @@ export default function preferencesV9CallbackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   SUB_DDM_JSPREFERENCEV9_CALLBACK_1600
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9EtsApiCallbackTest_1200
          * @tc.desc   mPreference.off()
@@ -503,7 +482,6 @@ export default function preferencesV9CallbackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   SUB_DDM_JSPREFERENCEV9_CALLBACK_1700
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9EtsApiCallbackTest_1300
          * @tc.desc   mPreference.off()

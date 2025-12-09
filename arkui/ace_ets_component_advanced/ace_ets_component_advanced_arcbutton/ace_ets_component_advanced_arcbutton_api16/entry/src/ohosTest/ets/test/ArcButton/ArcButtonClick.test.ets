@@ -56,12 +56,12 @@ export default function ChipOnClose() {
     });
 
     /**
-     * @tc.number: ArkUX_Stage_ArcButton_ComponentTest_0100
-     * @tc.name  : testArcButtonComponent
-     * @tc.desc  : verifyBaseFunction
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 0
+     * @tc.name   ArkUX_Stage_ArcButton_ComponentTest_0100
+     * @tc.number ArkUX_Stage_ArcButton_ComponentTest_0100
+     * @tc.desc   verifyBaseFunction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_ArcButton_ComponentTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_ArcButton_ComponentTest_0100 START');
@@ -88,12 +88,12 @@ export default function ChipOnClose() {
     });
 
     /**
-     * @tc.number: ArkUX_Stage_ArcButton_ComponentTest_0200
-     * @tc.name  : testArcButtonComponent
-     * @tc.desc  : verifyBaseFunction
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 0
+     * @tc.name   ArkUX_Stage_ArcButton_ComponentTest_0200
+     * @tc.number ArkUX_Stage_ArcButton_ComponentTest_0200
+     * @tc.desc   verifyBaseFunction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_ArcButton_ComponentTest_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_ArcButton_ComponentTest_0200 START');
@@ -119,12 +119,12 @@ export default function ChipOnClose() {
     });
 
     /**
-     * @tc.number: ArkUX_Stage_ArcButton_ComponentTest_0300
-     * @tc.name  : testArcButtonComponent
-     * @tc.desc  : verifyBaseFunction
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 0
+     * @tc.name   ArkUX_Stage_ArcButton_ComponentTest_0300
+     * @tc.number ArkUX_Stage_ArcButton_ComponentTest_0300
+     * @tc.desc   verifyBaseFunction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_ArcButton_ComponentTest_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_ArcButton_ComponentTest_0300 START');
@@ -150,12 +150,12 @@ export default function ChipOnClose() {
     });
 
     /**
-     * @tc.number: ArkUX_Stage_ArcButton_ComponentTest_0400
-     * @tc.name  : testArcButtonComponent
-     * @tc.desc  : verifyBaseFunction
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 0
+     * @tc.name   ArkUX_Stage_ArcButton_ComponentTest_0400
+     * @tc.number ArkUX_Stage_ArcButton_ComponentTest_0400
+     * @tc.desc   verifyBaseFunction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_ArcButton_ComponentTest_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_ArcButton_ComponentTest_0400 START');

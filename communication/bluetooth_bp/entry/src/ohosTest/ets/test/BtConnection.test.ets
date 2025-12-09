@@ -173,7 +173,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0100
      * @tc.desc   Test pinRequired off api10
@@ -211,7 +210,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0200
      * @tc.desc   Test getPairedDevices api10
@@ -237,7 +235,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0300
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0300
       * @tc.desc   Test get RemoteDeviceName api 10
@@ -262,7 +259,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1900
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1900
       * @tc.desc   Test get RemoteDeviceName api 16
@@ -287,7 +283,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2000
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2000
       * @tc.desc   Test get RemoteDeviceName api 16
@@ -312,7 +307,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2100
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2100
       * @tc.desc   Test get RemoteDeviceName api 16
@@ -333,7 +327,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0400
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0400
      * @tc.desc   Test pairDevice callback api10
@@ -365,7 +358,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0500
      * @tc.desc   Test setDevicePairingConfirmation api10
@@ -392,7 +384,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2400
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2400
      * @tc.desc   Test setDevicePairingConfirmation api10
@@ -412,7 +403,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2500
      * @tc.desc   Test setDevicePairingConfirmation api10
@@ -432,7 +422,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0600
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0600
       * @tc.desc   Test get RemoteDeviceClass api10
@@ -459,7 +448,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2200
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2200
       * @tc.desc   Test get RemoteDeviceClass api10
@@ -479,7 +467,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0700
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0700
       * @tc.desc   Test setDevicePinCode api10
@@ -505,7 +492,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2700
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2700
       * @tc.desc   Test setDevicePinCode api10
@@ -527,7 +513,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0800
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0800
      * @tc.desc   Test setDevicePinCode api10
@@ -555,7 +540,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2600
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2600
      * @tc.desc   Test setDevicePinCode api10
@@ -580,7 +564,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0900
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0900
       * @tc.desc   Test pairDevice promise api10
@@ -614,7 +597,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0100
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0100
       * @tc.desc   TEST scanmode api10 by promise.
@@ -649,7 +631,6 @@ describe('btConnectionTest', () => {
      })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0200
      * @tc.desc   TEST scanmode api by promise.
@@ -682,7 +663,6 @@ describe('btConnectionTest', () => {
        }
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0300
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0300
      * @tc.desc   TEST scanmode api by promise.
@@ -716,7 +696,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0400
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0400
      * @tc.desc   TEST scanmode api by promise.
@@ -750,7 +729,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0500
      * @tc.desc   TEST scanmode api by promise.
@@ -784,7 +762,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0600
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0600
      * @tc.desc   TEST scanmode api by promise.
@@ -818,7 +795,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0700
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0700
      * @tc.desc   TEST scanmode api by promise.
@@ -852,7 +828,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0800
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0800
      * @tc.desc   TEST scanmode api by promise.
@@ -886,7 +861,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0900
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0900
      * @tc.desc   TEST scanmode api by promise.
@@ -920,7 +894,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_1000
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_1000
      * @tc.desc   TEST scanmode api by promise.
@@ -960,7 +933,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_2800
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_2800
      * @tc.desc   TEST scanmode api by promise.
@@ -980,7 +952,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0100
      * @tc.desc   TEST bluetoothDeviceFind api10
@@ -1009,7 +980,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0100
      * @tc.desc   Test setLocalName api10
@@ -1032,7 +1002,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0200
      * @tc.desc   Test setLocalName api10
@@ -1055,7 +1024,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0300
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0300
      * @tc.desc   Test setLocalName number
@@ -1078,7 +1046,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0400
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0400
      * @tc.desc   Test setLocalName api by SYMBOL.
@@ -1101,7 +1068,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0500
      * @tc.desc   Test setLocalName api by promise.
@@ -1125,7 +1091,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0600
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0600
      * @tc.desc   Test setLocalName api by promise.
@@ -1149,7 +1114,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0700
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0700
      * @tc.desc   TEST setLocalName api by promise.
@@ -1173,7 +1137,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0800
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0800
       * @tc.desc   TEST setLocalName api by promise.
@@ -1196,7 +1159,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0900
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0900
      * @tc.desc   TEST setLocalName api by promise.
@@ -1219,7 +1181,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1000
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1000
      * @tc.desc   TEST setLocalName api by promise.
@@ -1242,7 +1203,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1100
      * @tc.desc   TEST setLocalName api by promise.
@@ -1266,7 +1226,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1200
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1200
      * @tc.desc   TEST setLocalName api by promise.
@@ -1290,7 +1249,6 @@ describe('btConnectionTest', () => {
     })
 
       /**
-       * @generated.time 2025-11-09 20:49:46
        * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1300
        * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1300
        * @tc.desc   TEST setLocalName api by promise.
@@ -1313,7 +1271,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1400
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1400
      * @tc.desc   TEST setLocalName api by promise.
@@ -1336,7 +1293,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1500
      * @tc.desc   TEST setLocalName api by promise.
@@ -1359,7 +1315,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1600
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1600
      * @tc.desc   TEST setLocalName api by promise.
@@ -1382,7 +1337,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1700
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1700
      * @tc.desc   TEST setLocalName api by promise.
@@ -1405,7 +1359,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1800
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1800
      * @tc.desc   TEST setLocalName api by promise.
@@ -1429,7 +1382,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1900
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1900
      * @tc.desc   Test setLocalName api by promise.
@@ -1461,7 +1413,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0100
      * @tc.desc   Test getBtConnectionState api10
@@ -1486,7 +1437,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0200
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0200
       * @tc.desc   Test getProfileConnectionState api10
@@ -1506,7 +1456,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0100
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0100
       * @tc.desc   Test BluetoothTransport api10
@@ -1534,7 +1483,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0200
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0200
       * @tc.desc   Test DeviceChargeState api12
@@ -1560,7 +1508,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0300
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0300
       * @tc.desc   Test UnbondCause api12
@@ -1588,7 +1535,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1000
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1000
       * @tc.desc   Test getPairState api11
@@ -1614,7 +1560,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2300
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2300
       * @tc.desc   Test getPairState api11
@@ -1633,7 +1578,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1100
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1100
       * @tc.desc   Test isBluetoothDiscovering api11
@@ -1659,7 +1603,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1200
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1200
       * @tc.desc   Test setRemoteDeviceName api12
@@ -1680,7 +1623,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1300
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1300
       * @tc.desc   Test getRemoteDeviceBatteryInfo api12
@@ -1708,7 +1650,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3000
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3000
       * @tc.desc   Test getRemoteDeviceBatteryInfo api12
@@ -1730,7 +1671,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1400
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1400
      * @tc.desc   Test getRemoteProfileUuids callback.
@@ -1775,7 +1715,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2800
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2800
      * @tc.desc   Test getRemoteProfileUuids callback.
@@ -1816,7 +1755,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1500
      * @tc.desc   Test getRemoteProfileUuids promise.
@@ -1842,7 +1780,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2900
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2900
      * @tc.desc   Test getRemoteProfileUuids promise.
@@ -1863,7 +1800,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GETLASTCONNECTIONTIME_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_GETLASTCONNECTIONTIME_0100
      * @tc.desc   Test getLastConnectionTime promise.
@@ -1890,7 +1826,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GETLASTCONNECTIONTIME_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_GETLASTCONNECTIONTIME_0200
      * @tc.desc   Test getLastConnectionTime promise.
@@ -1912,7 +1847,6 @@ describe('btConnectionTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0400
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0400
       * @tc.desc   Test ScanMode enum.
@@ -1953,7 +1887,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1600
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1600
      * @tc.desc   Test onDiscoveryResult offDiscoveryResult
@@ -1993,7 +1926,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0100
      * @tc.desc   Test connectAllowedProfiles callback.
@@ -2042,7 +1974,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0200
      * @tc.desc   Test connectAllowedProfiles promise.
@@ -2069,7 +2000,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0300
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0300
      * @tc.desc   Test connectAllowedProfiles callback.
@@ -2107,7 +2037,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0400
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0400
      * @tc.desc   Test connectAllowedProfiles promise.
@@ -2129,7 +2058,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1700
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1700
      * @tc.desc   Test pairDevice callback api10
@@ -2160,7 +2088,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1800
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1800
      * @tc.desc   Test pairDevice promise api10
@@ -2182,7 +2109,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3600
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3600
      * @tc.desc   Test batteryChange off api10
@@ -2223,7 +2149,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_GETREMOTEDEVICETRANSPORT_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_GETREMOTEDEVICETRANSPORT_0100
      * @tc.desc   Test getRemoteDeviceTransport
@@ -2249,7 +2174,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0100
      * @tc.desc   Test pairDevice with common api21
@@ -2280,7 +2204,6 @@ describe('btConnectionTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCOMMON_BLUETOOTHADDRESSTYPE_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCOMMON_BLUETOOTHADDRESSTYPE_0100
      * @tc.desc   Test common BluetoothAddressType api21

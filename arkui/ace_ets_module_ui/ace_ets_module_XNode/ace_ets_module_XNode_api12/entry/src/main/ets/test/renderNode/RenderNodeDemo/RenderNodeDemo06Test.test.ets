@@ -40,12 +40,12 @@ export default function RenderNodeDemo06Test() {
       done();
     });
     /**
-     * @tc.number    api
-     * @tc.name      RenderNodeDemo06Test_0100
-     * @tc.desc      borderWidth_left
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeDemo06Test_0100
+     * @tc.number api
+     * @tc.desc   borderWidth_left
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeDemo06Test_0100', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeDemo06Test_0100 START');

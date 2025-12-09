@@ -52,8 +52,13 @@
 #define NUMBER_F_200 (-200)
 #define PARAM_999999 99999
 #define PARAM_VALUE "M0 100 A30 20 20 0 0 200 100 Z"
-
-
+#define NUMBER_106204 106204
+#define NUMBER_106106 106106
+#define NUMBER_500 500
+#define NUMBER_1 1
+#define NUMBER_2 2
+#define NUMBER_3 3
+#define NUMBER_4 4
 namespace ArkUICapiTest {
 
 static napi_value RenderNodeUtils_001(napi_env env, napi_callback_info info)
@@ -86,6 +91,9 @@ static napi_value RenderNodeUtils_001(napi_env env, napi_callback_info info)
     OH_ArkUI_RenderNodeUtils_DisposeRenderNodeMaskOption(rectMask);
     
     ASSERT_EQ(result1_2, ARKUI_ERROR_CODE_NO_ERROR);
+    
+    auto resNullptr = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromRectShape(nullptr);
+    ASSERT_OBJ(resNullptr, nullptr);
     NAPI_END;
 }
 
@@ -203,14 +211,19 @@ static napi_value RenderNodeUtils_005(napi_env env, napi_callback_info info)
     ASSERT_EQ(result5_1, ARKUI_ERROR_CODE_NO_ERROR);
     
     auto radiusOption = OH_ArkUI_RenderNodeUtils_CreateNodeBorderRadiusOption();
-//    OH_ArkUI_RenderNodeUtils_SetNodeBorderRadiusOptionCornerRadius(radiusOption, NUMBER_32,
-//        ArkUI_CornerDirection::ARKUI_CORNER_DIRECTION_TOP_LEFT);
-//    OH_ArkUI_RenderNodeUtils_SetNodeBorderRadiusOptionCornerRadius(radiusOption, NUMBER_32,
-//        ArkUI_CornerDirection::ARKUI_CORNER_DIRECTION_TOP_RIGHT);
-//    OH_ArkUI_RenderNodeUtils_SetNodeBorderRadiusOptionCornerRadius(radiusOption, NUMBER_32,
-//        ArkUI_CornerDirection::ARKUI_CORNER_DIRECTION_BOTTOM_LEFT);
-//    OH_ArkUI_RenderNodeUtils_SetNodeBorderRadiusOptionCornerRadius(radiusOption, NUMBER_64,
-//        ArkUI_CornerDirection::ARKUI_CORNER_DIRECTION_BOTTOM_RIGHT);
+    OH_ArkUI_RenderNodeUtils_SetNodeBorderRadiusOptionCornerRadius(radiusOption, NUMBER_32,
+        ArkUI_CornerDirection::ARKUI_CORNER_DIRECTION_TOP_LEFT);
+    OH_ArkUI_RenderNodeUtils_SetNodeBorderRadiusOptionCornerRadius(radiusOption, NUMBER_32,
+        ArkUI_CornerDirection::ARKUI_CORNER_DIRECTION_TOP_RIGHT);
+    OH_ArkUI_RenderNodeUtils_SetNodeBorderRadiusOptionCornerRadius(radiusOption, NUMBER_32,
+        ArkUI_CornerDirection::ARKUI_CORNER_DIRECTION_BOTTOM_LEFT);
+    OH_ArkUI_RenderNodeUtils_SetNodeBorderRadiusOptionCornerRadius(radiusOption, NUMBER_64,
+        ArkUI_CornerDirection::ARKUI_CORNER_DIRECTION_BOTTOM_RIGHT);
+
+    ASSERT_EQ(ARKUI_CORNER_DIRECTION_TOP_LEFT, NUMBER_1);
+    ASSERT_EQ(ARKUI_CORNER_DIRECTION_TOP_RIGHT, NUMBER_2);
+    ASSERT_EQ(ARKUI_CORNER_DIRECTION_BOTTOM_LEFT, NUMBER_3);
+    ASSERT_EQ(ARKUI_CORNER_DIRECTION_BOTTOM_RIGHT, NUMBER_4);
 
     auto result5_2 = OH_ArkUI_RenderNodeUtils_SetBorderRadius(rsNodeRoot, radiusOption);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
@@ -244,6 +257,9 @@ static napi_value RenderNodeUtils_006(napi_env env, napi_callback_info info)
     auto result6_2 = OH_ArkUI_RenderNodeUtils_SetMask(rsNodeRoot, rectMask);
     OH_ArkUI_RenderNodeUtils_DisposeCircleShapeOption(circleShape);
     ASSERT_EQ(result6_2, ARKUI_ERROR_CODE_NO_ERROR);
+    
+    auto resNullptr = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCircleShape(nullptr);
+    ASSERT_OBJ(resNullptr, nullptr);
     NAPI_END;
 }
 
@@ -272,6 +288,9 @@ static napi_value RenderNodeUtils_007(napi_env env, napi_callback_info info)
     auto result7_2 = OH_ArkUI_RenderNodeUtils_SetMask(rsNodeRoot, rectMask);
     OH_ArkUI_RenderNodeUtils_DisposeRoundRectShapeOption(roundShape);
     ASSERT_EQ(result7_2, ARKUI_ERROR_CODE_NO_ERROR);
+    
+    auto resNullptr = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromRoundRectShape(nullptr);
+    ASSERT_OBJ(resNullptr, nullptr);
     NAPI_END;
 }
 
@@ -290,6 +309,9 @@ static napi_value RenderNodeUtils_008(napi_env env, napi_callback_info info)
     auto result8_2 = OH_ArkUI_RenderNodeUtils_SetMask(rsNodeRoot, rectMask);
     OH_ArkUI_RenderNodeUtils_DisposeCommandPathOption(commandPath);
     ASSERT_EQ(result8_2, ARKUI_ERROR_CODE_NO_ERROR);
+    
+    auto resNullptr = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCommandPath(nullptr);
+    ASSERT_OBJ(resNullptr, nullptr);
     NAPI_END;
 }
 
@@ -308,6 +330,9 @@ static napi_value RenderNodeUtils_009(napi_env env, napi_callback_info info)
     auto rectMask = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromOvalShape(rectShape);
     auto result9_2 = OH_ArkUI_RenderNodeUtils_SetMask(rsNodeRoot, rectMask);
     ASSERT_EQ(result9_2, ARKUI_ERROR_CODE_NO_ERROR);
+    
+    auto resNullptr = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromOvalShape(nullptr);
+    ASSERT_OBJ(resNullptr, nullptr);
     NAPI_END;
 }
 
@@ -325,6 +350,9 @@ static napi_value RenderNodeUtils_010(napi_env env, napi_callback_info info)
     auto rectClip = OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromCommandPath(commandPath);
     auto result10_2 = OH_ArkUI_RenderNodeUtils_SetClip(rsNodeRoot, rectClip);
     ASSERT_EQ(result10_2, ARKUI_ERROR_CODE_NO_ERROR);
+    
+    auto resNullptr = OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromCommandPath(nullptr);
+    ASSERT_OBJ(resNullptr, nullptr);
     NAPI_END;
 }
 
@@ -344,6 +372,9 @@ static napi_value RenderNodeUtils_011(napi_env env, napi_callback_info info)
     auto result11_2 = OH_ArkUI_RenderNodeUtils_SetClip(rsNodeRoot, rectClip);
     OH_ArkUI_RenderNodeUtils_DisposeRenderNodeClipOption(rectClip);
     ASSERT_EQ(result11_2, ARKUI_ERROR_CODE_NO_ERROR);
+    
+    auto resNullptr = OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromRectShape(nullptr);
+    ASSERT_OBJ(resNullptr, nullptr);
     NAPI_END;
 }
 
@@ -371,6 +402,9 @@ static napi_value RenderNodeUtils_012(napi_env env, napi_callback_info info)
     auto rectClip = OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromRoundRectShape(roundShape);
     auto result12_2 = OH_ArkUI_RenderNodeUtils_SetClip(rsNodeRoot, rectClip);
     ASSERT_EQ(result12_2, ARKUI_ERROR_CODE_NO_ERROR);
+    
+    auto resNullptr = OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromRoundRectShape(nullptr);
+    ASSERT_OBJ(resNullptr, nullptr);
     NAPI_END;
 }
 
@@ -391,6 +425,8 @@ static napi_value RenderNodeUtils_013(napi_env env, napi_callback_info info)
     auto rectClip = OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromCircleShape(circleShape);
     auto result13_2 = OH_ArkUI_RenderNodeUtils_SetClip(rsNodeRoot, rectClip);
     ASSERT_EQ(result13_2, ARKUI_ERROR_CODE_NO_ERROR);
+    auto resNullptr = OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromCircleShape(nullptr);
+    ASSERT_OBJ(resNullptr, nullptr);
     NAPI_END;
 }
 
@@ -409,6 +445,8 @@ static napi_value RenderNodeUtils_014(napi_env env, napi_callback_info info)
     auto rectClip = OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromOvalShape(rectShape);
     auto result14_2 = OH_ArkUI_RenderNodeUtils_SetClip(rsNodeRoot, rectClip);
     ASSERT_EQ(result14_2, ARKUI_ERROR_CODE_NO_ERROR);
+    auto resNullptr = OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromOvalShape(nullptr);
+    ASSERT_OBJ(resNullptr, nullptr);
     NAPI_END;
 }
 
@@ -431,6 +469,11 @@ static napi_value RenderNodeUtils_016(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "OH_ArkUI_RenderNodeUtils_SetClip RenderNodeUtils_016 result=%{public}d", ret);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(ARKUI_ERROR_CODE_NODE_ON_INVALID_THREAD, NUMBER_106204);
+    ASSERT_EQ(ARKUI_ERROR_CODE_CHILD_NODE_EXIST, NUMBER_106106);
+    ASSERT_EQ(ARKUI_ERROR_CODE_CAPI_INIT_ERROR, NUMBER_500);
+    
     NAPI_END;
 }
+
 }

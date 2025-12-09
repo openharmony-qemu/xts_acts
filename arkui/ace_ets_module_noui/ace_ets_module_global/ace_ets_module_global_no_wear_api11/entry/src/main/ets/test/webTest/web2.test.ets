@@ -45,16 +45,16 @@ export default function webGetTitleJsunit() {
       console.info("webGetTitle after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testwebGetTitle0001
-     * @tc.desic         acewebGetTitleEtsTest0001
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+
+
+    /**
+     * @tc.name   testwebGetTitle0001
+     * @tc.number testwebGetTitle0001
+     * @tc.desc   testwebGetTitle0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('testwebGetTitle0001', Level.LEVEL0, async  () => {
       console.info('webGetTitle testwebGetTitle0001 START');
       let driver: Driver = Driver.create();
@@ -72,16 +72,16 @@ export default function webGetTitleJsunit() {
       }
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testwebGetTitle0002
-     * @tc.desic         acewebGetTitleEtsTest0002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+
+
+    /**
+     * @tc.name   testwebGetTitle0002
+     * @tc.number testwebGetTitle0002
+     * @tc.desc   testwebGetTitle0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('testwebGetTitle0002', Level.LEVEL0, async  () => {
       console.info('webGetTitle testwebGetTitle0002 START');
       let driver: Driver = Driver.create();
@@ -99,16 +99,16 @@ export default function webGetTitleJsunit() {
       }
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         testwebGetTitle0003
-     * @tc.desic         acewebGetTitleEtsTest0003
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+
+
+    /**
+     * @tc.name   testwebGetTitle0003
+     * @tc.number testwebGetTitle0003
+     * @tc.desc   testwebGetTitle0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('testwebGetTitle0003', Level.LEVEL0, async  () => {
       console.info('webGetTitle testwebGetTitle0003 START');
       await Utils.sleep(2000);
@@ -121,16 +121,16 @@ export default function webGetTitleJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         testwebGetTitle0004
-     * @tc.desic         acewebGetTitleEtsTest0004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+
+
+    /**
+     * @tc.name   testwebGetTitle0004
+     * @tc.number testwebGetTitle0004
+     * @tc.desc   testwebGetTitle0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('testwebGetTitle0004', Level.LEVEL0, async  () => {
       console.info('webGetTitle testwebGetTitle0004 START');
       let driver: Driver = Driver.create();
@@ -148,16 +148,16 @@ export default function webGetTitleJsunit() {
       }
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         testwebGetTitle0005
-     * @tc.desic         acewebGetTitleEtsTest0005
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+
+
+    /**
+     * @tc.name   testwebGetTitle0005
+     * @tc.number testwebGetTitle0005
+     * @tc.desc   testwebGetTitle0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('testwebGetTitle0005', Level.LEVEL0, async  () => {
       console.info('webGetTitle testwebGetTitle0005 START');
       let driver: Driver = Driver.create();
@@ -176,15 +176,15 @@ export default function webGetTitleJsunit() {
     });
 
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-     * @tc.name         testwebGetTitle0006
-     * @tc.desic         acewebGetTitleEtsTest0006
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
 
+    /**
+     * @tc.name   testwebGetTitle0006
+     * @tc.number testwebGetTitle0006
+     * @tc.desc   testwebGetTitle0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testwebGetTitle0006', Level.LEVEL0, async  () => {
       console.info('webGetTitle testwebGetTitle0006 START');
       let driver: Driver = Driver.create();
@@ -202,16 +202,16 @@ export default function webGetTitleJsunit() {
       }
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0007
-     * @tc.name         testwebGetTitle0007
-     * @tc.desic         acewebGetTitleEtsTest0007
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+
+
+    /**
+     * @tc.name   testwebGetTitle0007
+     * @tc.number testwebGetTitle0007
+     * @tc.desc   testwebGetTitle0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('testwebGetTitle0007', Level.LEVEL0, async  () => {
       console.info('webGetTitle testwebGetTitle0007 START');
       let driver: Driver = Driver.create();
@@ -229,16 +229,16 @@ export default function webGetTitleJsunit() {
       }
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0008
-     * @tc.name         testwebGetTitle0008
-     * @tc.desic         acewebGetTitleEtsTest0008
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+
+
+    /**
+     * @tc.name   testwebGetTitle0008
+     * @tc.number testwebGetTitle0008
+     * @tc.desc   testwebGetTitle0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('testwebGetTitle0008', Level.LEVEL0, async  () => {
       console.info('webGetTitle testwebGetTitle0008 START');
       let driver: Driver = Driver.create();
@@ -256,16 +256,16 @@ export default function webGetTitleJsunit() {
       }
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0009
-     * @tc.name         testwebGetTitle0009
-     * @tc.desic         acewebGetTitleEtsTest0009
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+
+
+    /**
+     * @tc.name   testwebGetTitle0009
+     * @tc.number testwebGetTitle0009
+     * @tc.desc   testwebGetTitle0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('testwebGetTitle0009', Level.LEVEL0, async  () => {
       console.info('webGetTitle testwebGetTitle0009 START');
       let driver: Driver = Driver.create();

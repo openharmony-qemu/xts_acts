@@ -46,12 +46,12 @@ export default function getIndicator() {
     });
 
     /**
-     * @tc.number    getIndicator_001
-     * @tc.name      getIndicator_0100
-     * @tc.desc      Independent navigation point indicator component.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   getIndicator_0100
+     * @tc.number getIndicator_001
+     * @tc.desc   Independent navigation point indicator component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getIndicator_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[getIndicator_0100] START');

@@ -55,14 +55,14 @@ export default function LocalStorage39Jsunit() {
       done();
     });
     
-		/**
-		 * @tc.number    LocalStorage39Jsunit_0200
-		 * @tc.name      LocalStorage39Jsunit_0200
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   LocalStorage39Jsunit_0200
+     * @tc.number LocalStorage39Jsunit_0200
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LocalStorage39Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       //Size获取AppStorage中存在键值对的个数
       console.info('[LocalStorage39Jsunit_0200] START');
@@ -81,14 +81,14 @@ export default function LocalStorage39Jsunit() {
       done();
     });
     
-		/**
-		 * @tc.number    LocalStorage39Jsunit_0400
-		 * @tc.name      LocalStorage39Jsunit_0400
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   LocalStorage39Jsunit_0400
+     * @tc.number LocalStorage39Jsunit_0400
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LocalStorage39Jsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorage39Jsunit_0400] START');
       let driver = await UiDriver.create()
@@ -104,14 +104,14 @@ export default function LocalStorage39Jsunit() {
       done();
     });
     
-		/**
-		 * @tc.number    LocalStorage39Jsunit_0600
-		 * @tc.name      LocalStorage39Jsunit_0600
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   LocalStorage39Jsunit_0600
+     * @tc.number LocalStorage39Jsunit_0600
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LocalStorage39Jsunit_0600', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorage39Jsunit_0600] START');
       let driver = await UiDriver.create()
@@ -128,14 +128,14 @@ export default function LocalStorage39Jsunit() {
       done();
     });
     
-		/**
-		 * @tc.number    LocalStorage39Jsunit_0800
-		 * @tc.name      LocalStorage39Jsunit_0800
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   LocalStorage39Jsunit_0800
+     * @tc.number LocalStorage39Jsunit_0800
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LocalStorage39Jsunit_0800', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorage39Jsunit_0800] START');
       let driver = await UiDriver.create()

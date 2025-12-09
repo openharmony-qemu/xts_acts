@@ -46,15 +46,15 @@ export default function searchTest() {
       await Utils.sleep(1000);
       console.info("search after each called");
     })
-    /**
-     * @tc.number testSearchSelectionMenuHidden01
-     * @tc.name   Test the Search property of the SelectionMenuHidden component
-     * @tc.desc   set the SelectionMenuHidden property value is boolean
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
-     */
     /** .key()取不到属性值 */ 
+    /**
+     * @tc.name   testSelectionMenuHidden01
+     * @tc.number testSelectionMenuHidden01
+     * @tc.desc   testSelectionMenuHidden01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     // it('testSelectionMenuHidden01', Level.LEVEL0, async (done: Function) => {
     //   let tagName = 'testSearchSelectionMenuHidden01';
     //   console.info('[' + tagName + '] START============================');
@@ -92,12 +92,12 @@ export default function searchTest() {
     // });
 
     /**
+     * @tc.name   testSearchCaretStyle02
      * @tc.number testSearchCaretStyle02
-     * @tc.name   Test the Search property of the CaretStyle component
      * @tc.desc   set the CaretStyle property value is object
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearchCaretStyle02', Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSearchCaretStyle02';
@@ -127,15 +127,15 @@ export default function searchTest() {
       console.info('[' + tagName + '] END ===========================');
       done();
     });
-    /**
-     * @tc.number testSearchEnableKeyboardOnFocus03
-     * @tc.name   Test the Search property of the EnableKeyboardOnFocus component
-     * @tc.desc   set the EnableKeyboardOnFocus property value is boolean
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
-     */
     /** .key()取不到属性值 */ 
+    /**
+     * @tc.name   testSearchEnableKeyboardOnFocus03
+     * @tc.number testSearchEnableKeyboardOnFocus03
+     * @tc.desc   testSearchEnableKeyboardOnFocus03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     // it('testSearchEnableKeyboardOnFocus03', Level.LEVEL0, async (done: Function) => {
     //   let tagName = 'testSearchEnableKeyboardOnFocus03';
     //   console.info('[' + tagName + '] START============================');
@@ -172,13 +172,13 @@ export default function searchTest() {
     //   done();
     //   });
 
-     /**
+    /**
+     * @tc.name   testSearchPlaceholderFont04
      * @tc.number testSearchPlaceholderFont04
-     * @tc.name   Test the Search property of the PlaceholderFont component
      * @tc.desc   set the PlaceholderFont property value is object
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearchPlaceholderFont04', Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSearchPlaceholderFont04';
@@ -219,12 +219,12 @@ export default function searchTest() {
       done();
     });
     /**
+     * @tc.name   testSearchSearchIcon05
      * @tc.number testSearchSearchIcon05
-     * @tc.name   Test the Search property of the SearchIcon component
      * @tc.desc   set the SearchIcon property value is object
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearchSearchIcon05', Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSearchSearchIcon05';
@@ -255,12 +255,12 @@ export default function searchTest() {
       done();
     });
     /**
+     * @tc.name   testSearchSearchButton06
      * @tc.number testSearchSearchButton06
-     * @tc.name   Test the Search property of the SearchButton component
      * @tc.desc   set the SearchButton property value is object
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearchSearchButton06', Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSearchSearchButton06';
@@ -298,12 +298,12 @@ export default function searchTest() {
       done();
     });
     /**
+     * @tc.name   testSearchFontColor07
      * @tc.number testSearchFontColor07
-     * @tc.name   Test the Search property of the FontColor component
      * @tc.desc   set the FontColor property value is number
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearchFontColor07', Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSearchFontColor07';
@@ -334,12 +334,12 @@ export default function searchTest() {
       done();
     });
     /**
+     * @tc.name   testSearchCopyOption08
      * @tc.number testSearchCopyOption08
-     * @tc.name   Test the Search property of the CopyOption component
      * @tc.desc   set the CopyOption property value is number
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearchCopyOption08', Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSearchCopyOption08';
@@ -377,12 +377,12 @@ export default function searchTest() {
       done();
     });
     /**
+     * @tc.name   testSearchTextFont09
      * @tc.number testSearchTextFont09
-     * @tc.name   Test the Search property of the TextFont component
      * @tc.desc   set the TextFont property value is object
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearchTextFont09', Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSearchTextFont09';
@@ -424,12 +424,12 @@ export default function searchTest() {
       done();
     });
     /**
+     * @tc.name   testSearchPlaceholderColor10
      * @tc.number testSearchPlaceholderColor10
-     * @tc.name   Test the Search property of the PlaceholderColor component
      * @tc.desc   set the PlaceholderColor property value is number
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearchPlaceholderColor10', Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSearchPlaceholderColor10';
@@ -460,12 +460,12 @@ export default function searchTest() {
       done();
     });
     /**
+     * @tc.name   testSearchCancelButton11
      * @tc.number testSearchCancelButton11
-     * @tc.name   Test the Search property of the CancelButton component
      * @tc.desc   set the CancelButton property value is object
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearchCancelButton11', Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSearchCancelButton11';
@@ -496,12 +496,12 @@ export default function searchTest() {
       done();
     });
     /**
+     * @tc.name   testSearchTextAlign12
      * @tc.number testSearchTextAlign12
-     * @tc.name   Test the Search property of the TextAlign component
      * @tc.desc   set the TextAlign property value is number
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearchTextAlign12', Level.LEVEL0, async (done: Function) => {
       let tagName = 'testSearchTextAlign12';

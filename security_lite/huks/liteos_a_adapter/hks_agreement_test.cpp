@@ -94,9 +94,12 @@ static int32_t AgreeKey(const struct HksTestAgreeParamSet *agreeParamSetParams, 
 }
 
 /**
- * @tc.name: HksDeleteTest.HksDeleteTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksAgreementTest001
+ * @tc.number HksAgreementTest001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksAgreementTest, HksAgreementTest001, TestSize.Level1)
 {
@@ -143,9 +146,12 @@ HWTEST_F(HksAgreementTest, HksAgreementTest001, TestSize.Level1)
 }
 
 /**
- * @tc.name: HksDeleteTest.HksDeleteTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksAgreementTest002
+ * @tc.number HksAgreementTest002
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksAgreementTest, HksAgreementTest002, TestSize.Level1)
 {

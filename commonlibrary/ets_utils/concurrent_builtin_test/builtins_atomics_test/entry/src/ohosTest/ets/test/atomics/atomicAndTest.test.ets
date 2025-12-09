@@ -10,12 +10,12 @@ export default function atomicsAndTest() {
     })
 
     /**
+     * @tc.name   atomicsAndTest001
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_001
-     * @tc.name atomicsAndTest001
-     * @tc.desc 测试Atomics.and()基本功能：对Uint8Array执行AND操作
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   测试Atomics.and()基本功能：对Uint8Array执行AND操作
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsAndTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(1);
@@ -30,12 +30,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest002
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_002
-     * @tc.name atomicsAndTest002
-     * @tc.desc 测试Atomics.and()边界条件：值为0的情况
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   测试Atomics.and()边界条件：值为0的情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsAndTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -50,12 +50,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest003
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_003
-     * @tc.name atomicsAndTest003
-     * @tc.desc 测试Atomics.and()边界条件：值为最大值的情况
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   测试Atomics.and()边界条件：值为最大值的情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsAndTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -70,12 +70,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest004
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_004
-     * @tc.name atomicsAndTest004
-     * @tc.desc 测试Atomics.and()错误处理：非整数类型的TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   测试Atomics.and()错误处理：非整数类型的TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsAndTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -85,12 +85,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest005
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_005
-     * @tc.name atomicsAndTest005
-     * @tc.desc 测试Atomics.and()错误处理：索引越界
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   测试Atomics.and()错误处理：索引越界
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsAndTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -104,12 +104,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest006
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_006
-     * @tc.name atomicsAndTest006
-     * @tc.desc 测试Atomics.and()对不同类型的TypedArray的支持
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   测试Atomics.and()对不同类型的TypedArray的支持
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsAndTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       // 测试Int8Array
@@ -135,12 +135,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest007
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_007
-     * @tc.name atomicsAndTest007
-     * @tc.desc 测试Atomics.and()返回值：验证返回的是操作前的旧值
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   测试Atomics.and()返回值：验证返回的是操作前的旧值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsAndTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -156,12 +156,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest008
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_008
-     * @tc.name atomicsAndTest008
-     * @tc.desc 测试Atomics.and()对BigInt64Array的支持
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   测试Atomics.and()对BigInt64Array的支持
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsAndTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -176,12 +176,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest009
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_009
-     * @tc.name atomicsAndTest009
-     * @tc.desc 测试Atomics.and()对负数值的处理
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   测试Atomics.and()对负数值的处理
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsAndTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -196,12 +196,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest010
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_010
-     * @tc.name atomicsAndTest010
-     * @tc.desc 测试Atomics.and()原子性：多线程环境下的操作
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   测试Atomics.and()原子性：多线程环境下的操作
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -246,12 +246,12 @@ export default function atomicsAndTest() {
       expect(Atomics.load(view, 0)).assertEqual(0b11100000);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0011
-     @tc.name atomicsAndTest011
-     @tc.desc Test bitwise AND operation of Atomics.and on Int32Array with non-zero values
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 1
+     * @tc.name   atomicsAndTest011
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0011
+     * @tc.desc   Test bitwise AND operation of Atomics.and on Int32Array with non-zero values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsAndTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -262,12 +262,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(8);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0012
-     @tc.name atomicsAndTest012
-     @tc.desc Test bitwise AND operation of Atomics.and on Int32Array with value 0
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 1
+     * @tc.name   atomicsAndTest012
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0012
+     * @tc.desc   Test bitwise AND operation of Atomics.and on Int32Array with value 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsAndTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -278,12 +278,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(0);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0013
-     @tc.name atomicsAndTest013
-     @tc.desc Test bitwise AND operation of Atomics.and on Int32Array with all-1 value
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 1
+     * @tc.name   atomicsAndTest013
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0013
+     * @tc.desc   Test bitwise AND operation of Atomics.and on Int32Array with all-1 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsAndTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -294,12 +294,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(15);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0014
-     @tc.name atomicsAndTest014
-     @tc.desc Test bitwise AND operation of Atomics.and on Int32Array with negative values
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest014
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0014
+     * @tc.desc   Test bitwise AND operation of Atomics.and on Int32Array with negative values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -310,12 +310,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(-7);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0015
-     @tc.name atomicsAndTest015
-     @tc.desc Test Atomics.and operation on different indices of Int32Array
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 1
+     * @tc.name   atomicsAndTest015
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0015
+     * @tc.desc   Test Atomics.and operation on different indices of Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsAndTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(12);
@@ -329,12 +329,12 @@ export default function atomicsAndTest() {
       expect(ia[2]).assertEqual(30);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0016
-     @tc.name atomicsAndTest016
-     @tc.desc Test Atomics.and returns original value before operation
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 1
+     * @tc.name   atomicsAndTest016
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0016
+     * @tc.desc   Test Atomics.and returns original value before operation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsAndTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -346,12 +346,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(4);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0017
-     @tc.name atomicsAndTest017
-     @tc.desc Test Atomics.and operation on Int32Array with zero mask
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 1
+     * @tc.name   atomicsAndTest017
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0017
+     * @tc.desc   Test Atomics.and operation on Int32Array with zero mask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsAndTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -362,12 +362,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(0);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0018
-     @tc.name atomicsAndTest018
-     @tc.desc Test Atomics.and operation on Int32Array with max Int32 value
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest018
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0018
+     * @tc.desc   Test Atomics.and operation on Int32Array with max Int32 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -379,12 +379,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(maxInt32);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0019
-     @tc.name atomicsAndTest019
-     @tc.desc Test Atomics.and operation on Int32Array with min Int32 value
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest019
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0019
+     * @tc.desc   Test Atomics.and operation on Int32Array with min Int32 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -396,12 +396,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(minInt32);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0020
-     @tc.name atomicsAndTest020
-     @tc.desc Test Atomics.and operation on Int32Array with mixed bits
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 1
+     * @tc.name   atomicsAndTest020
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0020
+     * @tc.desc   Test Atomics.and operation on Int32Array with mixed bits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsAndTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -412,12 +412,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(33);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0021
-     @tc.name atomicsAndTest021
-     @tc.desc Test bitwise AND operation of Atomics.and on Uint32Array
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest021
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0021
+     * @tc.desc   Test bitwise AND operation of Atomics.and on Uint32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -428,12 +428,12 @@ export default function atomicsAndTest() {
       expect(ua[0]).assertEqual(0);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0022
-     @tc.name atomicsAndTest022
-     @tc.desc Test Atomics.and operation on Uint32Array with max Uint32 value
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest022
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0022
+     * @tc.desc   Test Atomics.and operation on Uint32Array with max Uint32 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -445,12 +445,12 @@ export default function atomicsAndTest() {
       expect(ua[0]).assertEqual(2863311530);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0023
-     @tc.name atomicsAndTest023
-     @tc.desc Test two consecutive Atomics.and operations on Int32Array
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 1
+     * @tc.name   atomicsAndTest023
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0023
+     * @tc.desc   Test two consecutive Atomics.and operations on Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsAndTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -462,12 +462,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(3);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0024
-     @tc.name atomicsAndTest024
-     @tc.desc Test error capture for out-of-bounds index in Atomics.and
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 3
+     * @tc.name   atomicsAndTest024
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0024
+     * @tc.desc   Test error capture for out-of-bounds index in Atomics.and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -480,12 +480,12 @@ export default function atomicsAndTest() {
       }
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0025
-     @tc.name atomicsAndTest025
-     @tc.desc Test error capture for non-SharedArrayBuffer array in Atomics.and
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 3
+     * @tc.name   atomicsAndTest025
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0025
+     * @tc.desc   Test error capture for non-SharedArrayBuffer array in Atomics.and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const ia = new Int32Array([10, 20, 30]);
@@ -496,12 +496,12 @@ export default function atomicsAndTest() {
       }
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0026
-     @tc.name atomicsAndTest026
-     @tc.desc Test Atomics.and operation on Int32Array with non-integer mask (auto-conversion)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest026
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0026
+     * @tc.desc   Test Atomics.and operation on Int32Array with non-integer mask (auto-conversion)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -512,12 +512,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(5);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0027
-     @tc.name atomicsAndTest027
-     @tc.desc Test Atomics.and operation on Int32Array with boolean mask (auto-conversion)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest027
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0027
+     * @tc.desc   Test Atomics.and operation on Int32Array with boolean mask (auto-conversion)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -532,12 +532,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(0);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0028
-     @tc.name atomicsAndTest028
-     @tc.desc Test Atomics.and operation on Int32Array with mask as string (auto-conversion)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest028
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0028
+     * @tc.desc   Test Atomics.and operation on Int32Array with mask as string (auto-conversion)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -549,12 +549,12 @@ export default function atomicsAndTest() {
     });
 
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0029
-     @tc.name atomicsAndTest029
-     @tc.desc Test Atomics.and on Uint32Array with negative mask (auto-conversion to unsigned 32-bit)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest029
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0029
+     * @tc.desc   Test Atomics.and on Uint32Array with negative mask (auto-conversion to unsigned 32-bit)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -565,12 +565,12 @@ export default function atomicsAndTest() {
       expect(ua[0]).assertEqual(16); // 0x00000014 & 0xFFFFFFFB = 0x00000010
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0030
-     @tc.name atomicsAndTest030
-     @tc.desc Test Atomics.and on Int32Array with NaN mask (auto-conversion to 0)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest030
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0030
+     * @tc.desc   Test Atomics.and on Int32Array with NaN mask (auto-conversion to 0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -581,12 +581,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(0); // 25 & 0 = 0
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0031
-     @tc.name atomicsAndTest031
-     @tc.desc Test Atomics.and on Int32Array with Infinity mask (auto-conversion to 0)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest031
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0031
+     * @tc.desc   Test Atomics.and on Int32Array with Infinity mask (auto-conversion to 0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -597,12 +597,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(0); // 18 & 0 = 0
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0032
-     @tc.name atomicsAndTest032
-     @tc.desc Test Atomics.and on Int32Array with -Infinity mask (auto-conversion to 0)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest032
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0032
+     * @tc.desc   Test Atomics.and on Int32Array with -Infinity mask (auto-conversion to 0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -613,12 +613,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(0); // 33 & 0 = 0
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0033
-     @tc.name atomicsAndTest033
-     @tc.desc Test Atomics.and on Uint32Array with zero initial value
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 1
+     * @tc.name   atomicsAndTest033
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0033
+     * @tc.desc   Test Atomics.and on Uint32Array with zero initial value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsAndTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -629,12 +629,12 @@ export default function atomicsAndTest() {
       expect(ua[0]).assertEqual(0); // 0 & 255 = 0
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0034
-     @tc.name atomicsAndTest034
-     @tc.desc Test Atomics.and on Int32Array with empty string mask (auto-conversion to 0)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest034
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0034
+     * @tc.desc   Test Atomics.and on Int32Array with empty string mask (auto-conversion to 0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -647,12 +647,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(0);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0035
-     @tc.name atomicsAndTest035
-     @tc.desc Test Atomics.and on Int32Array with non-numeric string mask (auto-conversion to 0)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest035
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0035
+     * @tc.desc   Test Atomics.and on Int32Array with non-numeric string mask (auto-conversion to 0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -665,12 +665,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(0);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0036
-     @tc.name atomicsAndTest036
-     @tc.desc Test Atomics.and on Uint32Array with hex string mask (valid conversion)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest036
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0036
+     * @tc.desc   Test Atomics.and on Uint32Array with hex string mask (valid conversion)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -683,12 +683,12 @@ export default function atomicsAndTest() {
       expect(ua[0]).assertEqual(0x12340000);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0037
-     @tc.name atomicsAndTest037
-     @tc.desc Test Atomics.and on Int32Array with octal string mask (valid conversion)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest037
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0037
+     * @tc.desc   Test Atomics.and on Int32Array with octal string mask (valid conversion)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -701,12 +701,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(0);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0038
-     @tc.name atomicsAndTest038
-     @tc.desc Test Atomics.and on Int32Array with binary string mask (valid conversion)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest038
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0038
+     * @tc.desc   Test Atomics.and on Int32Array with binary string mask (valid conversion)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -719,12 +719,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(0);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0039
-     @tc.name atomicsAndTest039
-     @tc.desc Test Atomics.and on Uint32Array with 64-bit mask (auto-truncation to 32-bit)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest039
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0039
+     * @tc.desc   Test Atomics.and on Uint32Array with 64-bit mask (auto-truncation to 32-bit)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -737,12 +737,12 @@ export default function atomicsAndTest() {
       expect(ua[0]).assertEqual(4294967295);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0040
-     @tc.name atomicsAndTest040
-     @tc.desc Test Atomics.and on Int32Array with 64-bit negative mask (truncation to 32-bit)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest040
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0040
+     * @tc.desc   Test Atomics.and on Int32Array with 64-bit negative mask (truncation to 32-bit)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -755,12 +755,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(-1);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0041
-     @tc.name atomicsAndTest041
-     @tc.desc Test Atomics.and on Int32Array with null mask (auto-conversion to 0)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest041
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0041
+     * @tc.desc   Test Atomics.and on Int32Array with null mask (auto-conversion to 0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -773,12 +773,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(0);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0042
-     @tc.name atomicsAndTest042
-     @tc.desc Test Atomics.and on Int32Array with undefined mask (auto-conversion to 0)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest042
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0042
+     * @tc.desc   Test Atomics.and on Int32Array with undefined mask (auto-conversion to 0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -791,12 +791,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(0);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0043
-     @tc.name atomicsAndTest043
-     @tc.desc Test Atomics.and on Uint32Array with object mask (invalid conversion to 0)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest043
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0043
+     * @tc.desc   Test Atomics.and on Uint32Array with object mask (invalid conversion to 0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -809,12 +809,12 @@ export default function atomicsAndTest() {
       expect(ua[0]).assertEqual(0);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0044
-     @tc.name atomicsAndTest044
-     @tc.desc Test Atomics.and on Int32Array with array mask (invalid conversion to 0)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest044
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0044
+     * @tc.desc   Test Atomics.and on Int32Array with array mask (invalid conversion to 0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -827,12 +827,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(0);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0045
-     @tc.name atomicsAndTest045
-     @tc.desc Test Atomics.and on Int32Array with function mask (invalid conversion to 0)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest045
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0045
+     * @tc.desc   Test Atomics.and on Int32Array with function mask (invalid conversion to 0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -846,12 +846,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(0);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0046
-     @tc.name atomicsAndTest046
-     @tc.desc Test Atomics.and on Int16Array (valid 16-bit integer type)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest046
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0046
+     * @tc.desc   Test Atomics.and on Int16Array (valid 16-bit integer type)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(2); // Int16Array uses 2 bytes per element
@@ -863,12 +863,12 @@ export default function atomicsAndTest() {
       expect(ia16[0]).assertEqual(255);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0047
-     @tc.name atomicsAndTest047
-     @tc.desc Test Atomics.and on Uint16Array (valid 16-bit unsigned type)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest047
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0047
+     * @tc.desc   Test Atomics.and on Uint16Array (valid 16-bit unsigned type)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(2);
@@ -880,12 +880,12 @@ export default function atomicsAndTest() {
       expect(ua16[0]).assertEqual(3855);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0048
-     @tc.name atomicsAndTest048
-     @tc.desc Test Atomics.and on Int8Array (valid 8-bit integer type)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest048
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0048
+     * @tc.desc   Test Atomics.and on Int8Array (valid 8-bit integer type)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(1); // Int8Array uses 1 byte per element
@@ -897,12 +897,12 @@ export default function atomicsAndTest() {
       expect(ia8[0]).assertEqual(15);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0049
-     @tc.name atomicsAndTest049
-     @tc.desc Test Atomics.and on Uint8Array (valid 8-bit unsigned type)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest049
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0049
+     * @tc.desc   Test Atomics.and on Uint8Array (valid 8-bit unsigned type)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(1);
@@ -914,12 +914,12 @@ export default function atomicsAndTest() {
       expect(ua8[0]).assertEqual(170);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0050
-     @tc.name atomicsAndTest050
-     @tc.desc Test Atomics.and on BigInt64Array (valid 64-bit bigint type)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 3
+     * @tc.name   atomicsAndTest050
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0050
+     * @tc.desc   Test Atomics.and on BigInt64Array (valid 64-bit bigint type)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8); // BigInt64Array uses 8 bytes per element
@@ -931,12 +931,12 @@ export default function atomicsAndTest() {
       expect(bia64[0]).assertEqual(81909220532486144n);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0051
-     @tc.name atomicsAndTest051
-     @tc.desc Test Atomics.and in async function with Promise.resolve wrapper
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest051
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0051
+     * @tc.desc   Test Atomics.and in async function with Promise.resolve wrapper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -952,12 +952,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(20); // 30 & 21 = 26
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0052
-     @tc.name atomicsAndTest052
-     @tc.desc Test nested Atomics.and calls in Promise chain
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest052
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0052
+     * @tc.desc   Test nested Atomics.and calls in Promise chain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -974,12 +974,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(0);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0053
-     @tc.name atomicsAndTest053
-     @tc.desc Test Atomics.and with async timeout before operation
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest053
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0053
+     * @tc.desc   Test Atomics.and with async timeout before operation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -994,12 +994,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(34); // 50 & 35 = 18
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0054
-     @tc.name atomicsAndTest054
-     @tc.desc Test parallel Atomics.and calls with Promise.all
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest054
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0054
+     * @tc.desc   Test parallel Atomics.and calls with Promise.all
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(8); // 2 Int32 elements
@@ -1016,12 +1016,12 @@ export default function atomicsAndTest() {
       expect(ia[1]).assertEqual(8);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0055
-     @tc.name atomicsAndTest055
-     @tc.desc Test nested async functions with Atomics.and
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest055
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0055
+     * @tc.desc   Test nested async functions with Atomics.and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1039,12 +1039,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(12);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0056
-     @tc.name atomicsAndTest056
-     @tc.desc Test Atomics.and in Promise.race with timeout fallback
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 3
+     * @tc.name   atomicsAndTest056
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0056
+     * @tc.desc   Test Atomics.and in Promise.race with timeout fallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1057,12 +1057,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(32);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0057
-     @tc.name atomicsAndTest057
-     @tc.desc Test async error handling for invalid Atomics.and index
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 3
+     * @tc.name   atomicsAndTest057
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0057
+     * @tc.desc   Test async error handling for invalid Atomics.and index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1079,12 +1079,12 @@ export default function atomicsAndTest() {
       await asyncAndWithError();
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0058
-     @tc.name atomicsAndTest058
-     @tc.desc Test nested Promise.all with multiple Atomics.and calls
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 3
+     * @tc.name   atomicsAndTest058
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0058
+     * @tc.desc   Test nested Promise.all with multiple Atomics.and calls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(12); // 3 Int32 elements
@@ -1105,12 +1105,12 @@ export default function atomicsAndTest() {
       expect(ia[2]).assertEqual(4);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0059
-     @tc.name atomicsAndTest059
-     @tc.desc Test Atomics.and in async IIFE (Immediately Invoked Function Expression)
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest059
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0059
+     * @tc.desc   Test Atomics.and in async IIFE (Immediately Invoked Function Expression)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1124,12 +1124,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(42);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0060
-     @tc.name atomicsAndTest060
-     @tc.desc Test Promise chaining with async Atomics.and pre-processing
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 2
+     * @tc.name   atomicsAndTest060
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0060
+     * @tc.desc   Test Promise chaining with async Atomics.and pre-processing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1146,12 +1146,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(16);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0061
-     @tc.name atomicsAndTest061
-     @tc.desc Test Atomics.and with BigInt64Array in async function
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 3
+     * @tc.name   atomicsAndTest061
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0061
+     * @tc.desc   Test Atomics.and with BigInt64Array in async function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1168,12 +1168,12 @@ export default function atomicsAndTest() {
         .assertEqual(81909218222853615n); // 0x123456789ABCDEF & 0xFFFF00000000FFFF = 0x123400000000CDEF
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0062
-     @tc.name atomicsAndTest062
-     @tc.desc Test nested async error handling for non-SharedArrayBuffer
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 3
+     * @tc.name   atomicsAndTest062
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0062
+     * @tc.desc   Test nested async error handling for non-SharedArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1186,12 +1186,12 @@ export default function atomicsAndTest() {
       expect(Atomics.load(ia, 0)).assertEqual(0b1011);
     });
     /**
-     @tc.number SUB_BUILTINS_Atomics_and_TEST_0063
-     @tc.name atomicsAndTest063
-     @tc.desc Test Atomics.and in Promise.allSettled with mixed success/failure
-     @tc.size MediumTest
-     @tc.type Function
-     @tc.level Level 3
+     * @tc.name   atomicsAndTest063
+     * @tc.number SUB_BUILTINS_Atomics_and_TEST_0063
+     * @tc.desc   Test Atomics.and in Promise.allSettled with mixed success/failure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1211,12 +1211,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest064
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0064
-     * @tc.name atomicsAndTest064
-     * @tc.desc Test async sequential Atomics.and with dynamic mask
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test async sequential Atomics.and with dynamic mask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1243,12 +1243,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest065
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0065
-     * @tc.name atomicsAndTest065
-     * @tc.desc Test Atomics.and with async mask from external Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.and with async mask from external Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1269,12 +1269,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest066
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0066
-     * @tc.name atomicsAndTest066
-     * @tc.desc Test nested Promise chain with Atomics.and and async validation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested Promise chain with Atomics.and and async validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1302,12 +1302,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest067
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0067
-     * @tc.name atomicsAndTest067
-     * @tc.desc Test Atomics.and in async loop with delay
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.and in async loop with delay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1333,12 +1333,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest068
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0068
-     * @tc.name atomicsAndTest068
-     * @tc.desc Test Atomics.and with Uint8Array in async Promise wrapper
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.and with Uint8Array in async Promise wrapper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(1); // Uint8Array uses 1 byte per element
@@ -1362,12 +1362,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest069
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0069
-     * @tc.name atomicsAndTest069
-     * @tc.desc Test Promise.race with two Atomics.and calls (different indices)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Promise.race with two Atomics.and calls (different indices)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8); // 2 Int32 elements (4 bytes each)
@@ -1402,12 +1402,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest070
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0070
-     * @tc.name atomicsAndTest070
-     * @tc.desc Test nested async functions with BigUint64Array Atomics.and
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested async functions with BigUint64Array Atomics.and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8); // BigUint64Array uses 8 bytes per element
@@ -1431,12 +1431,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest071
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0071
-     * @tc.name atomicsAndTest071
-     * @tc.desc Test Atomics.and with async error recovery (retry on invalid mask)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.and with async error recovery (retry on invalid mask)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1472,12 +1472,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest072
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0072
-     * @tc.name atomicsAndTest072
-     * @tc.desc Test Promise.all with mixed Atomics.and (Int32Array + Uint32Array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Promise.all with mixed Atomics.and (Int32Array + Uint32Array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       // Int32Array setup (signed)
@@ -1504,12 +1504,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest073
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0073
-     * @tc.name atomicsAndTest073
-     * @tc.desc Test Atomics.and in async function with multiple return values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.and in async function with multiple return values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1536,12 +1536,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest074
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0074
-     * @tc.name atomicsAndTest074
-     * @tc.desc Test nested Promise with Atomics.and and post-processing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test nested Promise with Atomics.and and post-processing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1561,12 +1561,12 @@ export default function atomicsAndTest() {
       expect(ia[0]).assertEqual(2); // 18 & 15 = 2
     });
     /**
+     * @tc.name   atomicsAndTest075
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0075
-     * @tc.name atomicsAndTest075
-     * @tc.desc Test Atomics.and with Int16Array in async retry loop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.and with Int16Array in async retry loop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(2); // Int16Array uses 2 bytes per element
@@ -1600,12 +1600,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest076
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0076
-     * @tc.name atomicsAndTest076
-     * @tc.desc Test Promise.allSettled with Atomics.and (valid + invalid array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Promise.allSettled with Atomics.and (valid + invalid array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       // Valid SharedArrayBuffer-backed array
@@ -1633,12 +1633,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest077
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0077
-     * @tc.name atomicsAndTest077
-     * @tc.desc Test Atomics.and in async function with BigInt mask (BigInt64Array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.and in async function with BigInt mask (BigInt64Array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1658,12 +1658,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest078
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0078
-     * @tc.name atomicsAndTest078
-     * @tc.desc Test nested async closure with Atomics.and
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test nested async closure with Atomics.and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1689,12 +1689,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest079
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0079
-     * @tc.name atomicsAndTest079
-     * @tc.desc Test Atomics.and with Uint16Array and async mask calculation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.and with Uint16Array and async mask calculation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(2);
@@ -1715,12 +1715,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest080
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0080
-     * @tc.name atomicsAndTest080
-     * @tc.desc Test Promise.race with Atomics.and and error promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Promise.race with Atomics.and and error promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1742,12 +1742,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest081
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0081
-     * @tc.name atomicsAndTest081
-     * @tc.desc Test Atomics.and in async forEach loop (multiple indices)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.and in async forEach loop (multiple indices)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(12); // 3 Int32 elements
@@ -1780,12 +1780,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest082
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0082
-     * @tc.name atomicsAndTest082
-     * @tc.desc Test nested Promise with Atomics.and and async validation retry
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested Promise with Atomics.and and async validation retry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1819,12 +1819,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest083
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0083
-     * @tc.name atomicsAndTest083
-     * @tc.desc Test Atomics.and with Int8Array in async IIFE
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.and with Int8Array in async IIFE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(1); // Int8Array uses 1 byte per element
@@ -1842,12 +1842,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest084
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0084
-     * @tc.name atomicsAndTest084
-     * @tc.desc Test Promise.all with Atomics.and (same array, different indices)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.all with Atomics.and (same array, different indices)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(8); // 2 Int32 elements
@@ -1868,12 +1868,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest085
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0085
-     * @tc.name atomicsAndTest085
-     * @tc.desc Test Atomics.and with async mask from Promise chain
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.and with async mask from Promise chain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1892,12 +1892,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest086
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0086
-     * @tc.name atomicsAndTest086
-     * @tc.desc Test async error handling for Atomics.and with invalid mask type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test async error handling for Atomics.and with invalid mask type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1919,12 +1919,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest087
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0087
-     * @tc.name atomicsAndTest087
-     * @tc.desc Test Atomics.and with BigUint64Array in Promise.all
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.and with BigUint64Array in Promise.all
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(16); // 2 BigUint64Array elements (8 bytes each)
@@ -1945,12 +1945,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest088
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0088
-     * @tc.name atomicsAndTest088
-     * @tc.desc Test Atomics.and in async function with conditional mask (Uint32Array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.and in async function with conditional mask (Uint32Array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1970,12 +1970,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest089
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0089
-     * @tc.name atomicsAndTest089
-     * @tc.desc Test nested Promise with Atomics.and and async cleanup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested Promise with Atomics.and and async cleanup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2004,12 +2004,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest090
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0090
-     * @tc.name atomicsAndTest090
-     * @tc.desc Test Atomics.and with Int32Array in async generator function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.and with Int32Array in async generator function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const results: type90[] = await atomicsAndTest090();
@@ -2022,12 +2022,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest091
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0091
-     * @tc.name atomicsAndTest091
-     * @tc.desc Test Promise.race with multiple Atomics.and (same index, different masks)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Promise.race with multiple Atomics.and (same index, different masks)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2050,12 +2050,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest092
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0092
-     * @tc.name atomicsAndTest092
-     * @tc.desc Test Atomics.and with Uint8Array and async mask validation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.and with Uint8Array and async mask validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(1);
@@ -2079,12 +2079,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest093
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0093
-     * @tc.name atomicsAndTest093
-     * @tc.desc Test nested async functions with Atomics.and (Int16Array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test nested async functions with Atomics.and (Int16Array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(2);
@@ -2107,12 +2107,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest094
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0094
-     * @tc.name atomicsAndTest094
-     * @tc.desc Test Promise.allSettled with Atomics.and (valid mask + invalid index)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Promise.allSettled with Atomics.and (valid mask + invalid index)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2135,12 +2135,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest095
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0095
-     * @tc.name atomicsAndTest095
-     * @tc.desc Test Atomics.and in async function with dynamic index (Uint32Array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.and in async function with dynamic index (Uint32Array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(8); // 2 Uint32Array elements
@@ -2163,12 +2163,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest096
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0096
-     * @tc.name atomicsAndTest096
-     * @tc.desc Test nested Promise chain with Atomics.and and async value transform
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test nested Promise chain with Atomics.and and async value transform
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2191,12 +2191,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest097
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0097
-     * @tc.name atomicsAndTest097
-     * @tc.desc Test Atomics.and with BigInt64Array in async error recovery
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Atomics.and with BigInt64Array in async error recovery
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2224,12 +2224,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest098
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0098
-     * @tc.name atomicsAndTest098
-     * @tc.desc Test Atomics.and in async for loop (multiple arrays)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Atomics.and in async for loop (multiple arrays)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsAndTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       // Create 3 independent SharedArrayBuffer-backed Int32Arrays
@@ -2261,12 +2261,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest099
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0099
-     * @tc.name atomicsAndTest099
-     * @tc.desc Test Promise.race with Atomics.and (BigInt64Array + timeout)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test Promise.race with Atomics.and (BigInt64Array + timeout)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2294,12 +2294,12 @@ export default function atomicsAndTest() {
     });
 
     /**
+     * @tc.name   atomicsAndTest100
      * @tc.number SUB_BUILTINS_Atomics_and_TEST_0100
-     * @tc.name atomicsAndTest100
-     * @tc.desc Test nested Promise with Atomics.and (mixed types + final validation)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test nested Promise with Atomics.and (mixed types + final validation)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsAndTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       // Initialize mixed-type arrays

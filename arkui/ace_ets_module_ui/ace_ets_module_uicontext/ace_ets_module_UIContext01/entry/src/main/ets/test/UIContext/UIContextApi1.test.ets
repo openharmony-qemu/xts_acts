@@ -42,15 +42,15 @@ export default function UIContextApi1() {
     afterEach(async () => {
     });
 
-    /**
-     * @tc.number UIContextApi1_0100
-     * @tc.name testButton
-     * @tc.desc testButton
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
 
+    /**
+     * @tc.name   UIContextApi1_0100
+     * @tc.number UIContextApi1_0100
+     * @tc.desc   UIContextApi1_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('UIContextApi1_0100', Level.LEVEL0, async (done: Function) => {
       console.info('UIContextApi1_0100 START');
       await CommonFunc.sleep(1000);

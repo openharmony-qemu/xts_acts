@@ -50,12 +50,12 @@ export default function abilityTest() {
     let success_number = 11111111;
 
     /**
-     * @tc.number  NETWORKMANAGER_CONNECTION_OHNetConnGetDefaultHttpProxy_0100
-     * @tc.name    test_OHNetConnGetDefaultHttpProxy401
-     * @tc.desc    check netConnection result
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   Test_OHNetConnGetDefaultHttpProxy_0100
+     * @tc.number NETWORKMANAGER_CONNECTION_OHNetConnGetDefaultHttpProxy_0100
+     * @tc.desc   check netConnection result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Test_OHNetConnGetDefaultHttpProxy_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "Test_OHNetConnGetDefaultHttpProxy_0100";
@@ -72,12 +72,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number  NETWORKMANAGER_CONNECTION_OHNetConnGetDefaultHttpProxy_0200
-     * @tc.name    test_OHNetConnGetDefaultHttpProxy0
-     * @tc.desc    check netConnection result
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   test_OHNetConnGetDefaultHttpProxy_0200
+     * @tc.number NETWORKMANAGER_CONNECTION_OHNetConnGetDefaultHttpProxy_0200
+     * @tc.desc   check netConnection result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_OHNetConnGetDefaultHttpProxy_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_OHNetConnGetDefaultHttpProxy_0200";

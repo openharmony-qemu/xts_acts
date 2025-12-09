@@ -49,14 +49,14 @@ export default function timePickerEnableCascadeTest() {
       console.info('timePickerEnableCascadeTest beforeEach end');
       done();
     });
-    /* *
-    * @tc.number: timePickerEnableCascadeTest_001
-    * @tc.name  : timePickerEnableCascadeTest_001
-    * @tc.desc  : To test the enableCascade interface true
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   timePickerEnableCascadeTest_001
+     * @tc.number timePickerEnableCascadeTest_001
+     * @tc.desc   To test the enableCascade interface true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('timePickerEnableCascadeTest_001', Level.LEVEL1, async (done: Function) => {
       console.info('[timePickerEnableCascadeTest_001] START');
       let driver: Driver = Driver.create();
@@ -79,14 +79,14 @@ export default function timePickerEnableCascadeTest() {
       console.info('[timePickerEnableCascadeTest_001] END');
       done();
     });
-    /* *
-    * @tc.number: timePickerEnableCascadeTest_002
-    * @tc.name  : timePickerEnableCascadeTest_002
-    * @tc.desc  : To test the enableCascade interface false
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   timePickerEnableCascadeTest_002
+     * @tc.number timePickerEnableCascadeTest_002
+     * @tc.desc   To test the enableCascade interface false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('timePickerEnableCascadeTest_002', Level.LEVEL1, async (done: Function) => {
       console.info('[timePickerEnableCascadeTest_002] START');
       let driver: Driver = Driver.create();
@@ -109,14 +109,14 @@ export default function timePickerEnableCascadeTest() {
       console.info('[timePickerEnableCascadeTest_002] END');
       done();
     });
-    /* *
-    * @tc.number: timePickerEnableCascadeTest_003
-    * @tc.name  : timePickerEnableCascadeTest_003
-    * @tc.desc  : To test the enableCascade interface null
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   timePickerEnableCascadeTest_003
+     * @tc.number timePickerEnableCascadeTest_003
+     * @tc.desc   To test the enableCascade interface null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('timePickerEnableCascadeTest_003', Level.LEVEL1, async (done: Function) => {
       console.info('[timePickerEnableCascadeTest_003] START');
       let driver: Driver = Driver.create();
@@ -139,14 +139,14 @@ export default function timePickerEnableCascadeTest() {
       done();
     });
 
-    /* *
-    * @tc.number: timePickerEnableCascadeTest_004
-    * @tc.name  : timePickerEnableCascadeTest_004
-    * @tc.desc  : To test the enableCascade interface undefined
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   timePickerEnableCascadeTest_004
+     * @tc.number timePickerEnableCascadeTest_004
+     * @tc.desc   To test the enableCascade interface undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('timePickerEnableCascadeTest_004', Level.LEVEL1, async (done: Function) => {
       console.info('[timePickerEnableCascadeTest_004] START');
       let driver: Driver = Driver.create();

@@ -44,10 +44,13 @@ export default function commonBackgroundBlurStyleJsunit() {
       console.info('commonBackgroundBlurStyle after each called');
     });
 
-    /*
-     * @tc.number       testcommonBackgroundBlurStyle001
-     * @tc.name         testcommonBackgroundBlurStyle001
-     * @tc.desc        acecommonBackgroundBlurStyleEtsTest001
+    /**
+     * @tc.name   testcommonBackgroundBlurStyle001
+     * @tc.number testcommonBackgroundBlurStyle001
+     * @tc.desc   acecommonBackgroundBlurStyleEtsTest001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testcommonBackgroundBlurStyle001', Level.LEVEL2, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle001 START');
@@ -61,10 +64,13 @@ export default function commonBackgroundBlurStyleJsunit() {
 
     });
 
-    /*
-     * @tc.number       testcommonBackgroundBlurStyle002
-     * @tc.name         testcommonBackgroundBlurStyle002
-     * @tc.desc        acecommonBackgroundBlurStyleEtsTest002
+    /**
+     * @tc.name   testcommonBackgroundBlurStyle002
+     * @tc.number testcommonBackgroundBlurStyle002
+     * @tc.desc   acecommonBackgroundBlurStyleEtsTest002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testcommonBackgroundBlurStyle002', Level.LEVEL2, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle002 START');
@@ -78,10 +84,13 @@ export default function commonBackgroundBlurStyleJsunit() {
 
     });
 
-    /*
-     * @tc.number       testcommonBackgroundBlurStyle003
-     * @tc.name         testcommonBackgroundBlurStyle003
-     * @tc.desc        acecommonBackgroundBlurStyleEtsTest003
+    /**
+     * @tc.name   testcommonBackgroundBlurStyle003
+     * @tc.number testcommonBackgroundBlurStyle003
+     * @tc.desc   acecommonBackgroundBlurStyleEtsTest003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testcommonBackgroundBlurStyle003', Level.LEVEL2, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle003 START');
@@ -95,10 +104,13 @@ export default function commonBackgroundBlurStyleJsunit() {
 
     });
 
-    /*
-     * @tc.number       testcommonBackgroundBlurStyle004
-     * @tc.name         testcommonBackgroundBlurStyle004
-     * @tc.desc        acecommonBackgroundBlurStyleEtsTest004
+    /**
+     * @tc.name   testcommonBackgroundBlurStyle004
+     * @tc.number testcommonBackgroundBlurStyle004
+     * @tc.desc   acecommonBackgroundBlurStyleEtsTest004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testcommonBackgroundBlurStyle004', Level.LEVEL2, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle004 START');
@@ -114,10 +126,13 @@ export default function commonBackgroundBlurStyleJsunit() {
 
     });
 
-    /*
-     * @tc.number       testcommonBackgroundBlurStyle005
-     * @tc.name         testcommonBackgroundBlurStyle005
-     * @tc.desc        acecommonBackgroundBlurStyleEtsTest005
+    /**
+     * @tc.name   testcommonBackgroundBlurStyle005
+     * @tc.number testcommonBackgroundBlurStyle005
+     * @tc.desc   acecommonBackgroundBlurStyleEtsTest005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testcommonBackgroundBlurStyle005', Level.LEVEL2, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle005 START');
@@ -133,10 +148,13 @@ export default function commonBackgroundBlurStyleJsunit() {
 
     });
 
-    /*
-     * @tc.number       testcommonBackgroundBlurStyle006
-     * @tc.name         testcommonBackgroundBlurStyle006
-     * @tc.desc        acecommonBackgroundBlurStyleEtsTest006
+    /**
+     * @tc.name   testcommonBackgroundBlurStyle006
+     * @tc.number testcommonBackgroundBlurStyle006
+     * @tc.desc   acecommonBackgroundBlurStyleEtsTest006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testcommonBackgroundBlurStyle006', Level.LEVEL2, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle006 START');
@@ -144,10 +162,13 @@ export default function commonBackgroundBlurStyleJsunit() {
 
     });
 
-    /*
-     * @tc.number       testcommonHoverEffectHighlight0001
-     * @tc.name         testcommonHoverEffectHighlight0006
-     * @tc.desc        acecommonHoverEffectHighlightEtsTest0006
+    /**
+     * @tc.name   testcommonHoverEffectHighlight0001
+     * @tc.number testcommonHoverEffectHighlight0001
+     * @tc.desc   acecommonHoverEffectHighlightEtsTest0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testcommonHoverEffectHighlight0001', Level.LEVEL2, async () => {
       console.info('commonHoverEffectHighlight testcommonHoverEffectHighlight0001 START');
@@ -160,10 +181,13 @@ export default function commonBackgroundBlurStyleJsunit() {
 
     });
 
-    /*
-     * @tc.number       testcommonHoverEffectScale0001
-     * @tc.name         testcommonHoverEffectScale0007
-     * @tc.desc        acecommonHoverEffectScaleEtsTest0007
+    /**
+     * @tc.name   testcommonHoverEffectScale0001
+     * @tc.number testcommonHoverEffectScale0001
+     * @tc.desc   acecommonHoverEffectScaleEtsTest0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testcommonHoverEffectScale0001', Level.LEVEL2, async () => {
       console.info('commonHoverEffectScale testcommonHoverEffectScale0001 START');

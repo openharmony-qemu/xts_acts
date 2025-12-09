@@ -26,39 +26,39 @@ export default function commonAttrsWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_WIDTH_0100
-     * @tc.name       : testCommonAttrsWidth001
-     * @tc.desc       : testing width for commonAttrs with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsWidth001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_WIDTH_0100
+     * @tc.desc   testing width for commonAttrs with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_WIDTH_0200
-     * @tc.name       : testCommonAttrsWidth002
-     * @tc.desc       : testing width for commonAttrs with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsWidth002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_WIDTH_0200
+     * @tc.desc   testing width for commonAttrs with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_WIDTH_0300
-     * @tc.name       : testCommonAttrsWidth003
-     * @tc.desc       : testing width for commonAttrs with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level2
+    /**
+     * @tc.name   testCommonAttrsWidth003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_WIDTH_0300
+     * @tc.desc   testing width for commonAttrs with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsWidth003()).assertEqual(0)

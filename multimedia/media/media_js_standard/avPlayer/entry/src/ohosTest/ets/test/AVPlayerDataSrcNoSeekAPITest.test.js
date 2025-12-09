@@ -718,14 +718,14 @@ export default function AVPlayerDataSrcNoSeekAPITest() {
             })
         });
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_STATE_PREPARED
-            * @tc.name      : 001.test prepared stateChange
-            * @tc.desc      : Local Video playback control test
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_STATE_PREPARED
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_STATE_PREPARED
+         * @tc.desc   Local Video playback control test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_STATE_PREPARED', Level.LEVEL0,async function (done) {
             testTag = 'test_prepared';
             myStepsNameList.push("prepared -> release (released)");

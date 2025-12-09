@@ -21,7 +21,6 @@ import { BusinessError } from '@ohos.base';
 export default function UtdfMimeTypeTest() {
   describe('UtdfMimeTypeTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0010
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0010
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/msword"
@@ -37,7 +36,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0020
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0020
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.ms-execl"
@@ -53,7 +51,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0030
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0030
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.ms-powerpoint"
@@ -68,7 +65,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.PPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0040
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0040
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/wav"
@@ -83,7 +79,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.WAVEFORM_AUDIO);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0050
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0050
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/wave"
@@ -98,7 +93,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.WAVEFORM_AUDIO);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0060
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0060
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/x-ms-wm"
@@ -114,7 +108,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0070
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0070
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/x-ms-wmv"
@@ -130,7 +123,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0080
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0080
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/x-ms-wmp"
@@ -146,7 +138,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0090
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0090
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/x-ms-wma"
@@ -162,7 +153,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0100
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0100
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/x-ms-wmx"
@@ -178,7 +168,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0110
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0110
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/x-ms-wvx"
@@ -194,7 +183,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0120
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0120
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/x-ms-wax"
@@ -210,7 +198,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0130
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0130
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/pdf"
@@ -226,7 +213,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0140
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0140
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/postscript"
@@ -241,7 +227,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.POSTSCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0150
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0150
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-photoshop"
@@ -257,7 +242,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0160
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0160
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/photoshop"
@@ -273,7 +257,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0170
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0170
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/psd"
@@ -289,7 +272,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0180
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0180
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/photoshop"
@@ -305,7 +287,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0190
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0190
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.microsoft.portable-executable"
@@ -321,7 +302,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0200
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0200
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/java-archive"
@@ -337,7 +317,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0210
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0210
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-gtar"
@@ -353,7 +332,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0220
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0220
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-gzip"
@@ -368,7 +346,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.GNU_ZIP_ARCHIVE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0230
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0230
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/gzip"
@@ -384,7 +361,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0240
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0240
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-mobipocket-ebook"
@@ -399,7 +375,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.MOBI);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0250
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0250
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.amazon.ebook"
@@ -414,7 +389,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.AZW);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0260
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0260
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.amazon.mobi8-ebook"
@@ -430,7 +404,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0270
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0270
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-mobi8-ebook"
@@ -445,7 +418,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.AZW3);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0280
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0280
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/targa"
@@ -460,7 +432,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.TGA_IMAGE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0290
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0290
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/tga"
@@ -475,7 +446,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.TGA_IMAGE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0300
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0300
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/tga"
@@ -490,7 +460,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.TGA_IMAGE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0310
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0310
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/sgi"
@@ -505,7 +474,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.SGI_IMAGE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0320
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0320
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/fpx"
@@ -520,7 +488,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.FLASHPIX_IMAGE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0330
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0330
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.fpx"
@@ -535,7 +502,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.FLASHPIX_IMAGE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0340
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0340
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/efax"
@@ -550,7 +516,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.EFX_FAX);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0350
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0350
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/vnd.rn-realaudio"
@@ -565,7 +530,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.REALAUDIO);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0360
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0360
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/x-pn-realaudio"
@@ -580,7 +544,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.REALAUDIO);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0370
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0370
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/smil"
@@ -595,7 +558,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.SMIL);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0380
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0380
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-stuffit"
@@ -610,7 +572,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.STUFFIT_ARCHIVE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0390
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0390
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-sit"
@@ -625,7 +586,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.STUFFIT_ARCHIVE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0400
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0400
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/stuffit"
@@ -640,7 +600,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.STUFFIT_ARCHIVE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0410
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0410
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
@@ -657,7 +616,6 @@ export default function UtdfMimeTypeTest() {
 
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0420
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0420
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
@@ -672,7 +630,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.SPREADSHEETML_SHEET);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0430
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0430
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.openxmlformats-officedocument.presentationmal.presentation"
@@ -687,7 +644,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.PRESENTATIONML_PRESENTATION);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0440
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0440
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.text"
@@ -701,7 +657,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.OPENDOCUMENT_TEXT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0450
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0450
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.spreadsheet"
@@ -715,7 +670,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.OPENDOCUMENT_SPREADSHEET);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0460
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0460
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.presentation"
@@ -730,7 +684,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.OPENDOCUMENT_PRESENTATION);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0470
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0470
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.graphics"
@@ -746,7 +699,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0480
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0480
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.formula"
@@ -762,7 +714,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0490
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0490
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/png"
@@ -777,7 +728,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.PNG);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0500
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0500
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/jpeg"
@@ -792,7 +742,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.JPEG);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0510
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0510
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/tiff"
@@ -808,7 +757,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0960
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0960
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-quicktime"
@@ -823,7 +771,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.XBITMAP_IMAGE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0520
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0520
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/avi"
@@ -838,7 +785,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.AVI);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0530
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0530
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/msvideo"
@@ -853,7 +799,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.AVI);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0540
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0540
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/x-msvideo"
@@ -868,7 +813,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.AVI);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0550
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0550
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/mpg"
@@ -883,7 +827,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.MPEG);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0560
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0560
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/mpeg"
@@ -898,7 +841,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.MPEG);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0570
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0570
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/x-mpeg"
@@ -913,7 +855,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.MPEG);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0580
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0580
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/x-mpg"
@@ -928,7 +869,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.MPEG);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0590
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0590
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/mp4"
@@ -943,7 +883,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.MPEG4);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0600
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0600
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/mp4v"
@@ -958,7 +897,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.MPEG4);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0720
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0720
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/3gpp"
@@ -973,7 +911,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.VIDEO_3GPP);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0610
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0610
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/3gpp2"
@@ -988,7 +925,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.VIDEO_3GPP2);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0620
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0620
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/ogg"
@@ -1003,7 +939,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.OGG);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0630
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0630
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/aiff"
@@ -1018,7 +953,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.AIFF);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0640
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0640
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/pcm"
@@ -1033,7 +967,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.PCM);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0650
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0650
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/flac"
@@ -1048,7 +981,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.FLAC);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0660
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0660
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/alac"
@@ -1063,7 +995,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.ALAC);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0670
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0670
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/mp3"
@@ -1078,7 +1009,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.MP3);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0680
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0680
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/aac"
@@ -1093,7 +1023,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.AAC);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0690
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0690
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/basic"
@@ -1108,7 +1037,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.AU_AUDIO);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0700
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0700
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/au"
@@ -1123,7 +1051,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.AU_AUDIO);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0710
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0710
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/snd"
@@ -1138,7 +1065,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.AU_AUDIO);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0730
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_073TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,audio/x-aiff
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/x-aiff"
@@ -1153,7 +1079,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.AIFC_AUDIO);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0740
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0740
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-tar"
@@ -1168,7 +1093,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.TAR_ARCHIVE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0750
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0750
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/tar"
@@ -1183,7 +1107,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.TAR_ARCHIVE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0760
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0760
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/zip"
@@ -1199,7 +1122,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0770
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0770
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-bzip2"
@@ -1214,7 +1136,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.BZ2_ARCHIVE);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0780
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0780
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/plain"
@@ -1230,7 +1151,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0790
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0790
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/html"
@@ -1245,7 +1165,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.HTML);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0800
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0800
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/xml"
@@ -1260,7 +1179,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.XML);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0950
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0950
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/markdown"
@@ -1275,7 +1193,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.MARKDOWN);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0810
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0810
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-perl-script"
@@ -1290,7 +1207,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.PERL_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0820
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0820
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-python-script"
@@ -1305,7 +1221,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.PYTHON_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0830
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0830
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/ruby-script"
@@ -1320,7 +1235,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.RUBY_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0840
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0840
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-php-script"
@@ -1335,7 +1249,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.PHP_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0850
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0850
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/php"
@@ -1350,7 +1263,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.PHP_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0860
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0860
      * @tc.desc   getUniformDataTypeByMIMEType paramter is"application/php"
@@ -1365,7 +1277,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.PHP_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0870
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0870
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/javascript"
@@ -1380,7 +1291,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.JAVA_SCRIPT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0880
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0880
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/calendar"
@@ -1395,7 +1305,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.CALENDAR);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0890
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0890
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/calendar"
@@ -1411,7 +1320,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0900
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0900
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/epub+zip"
@@ -1426,7 +1334,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.EPUB);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0910
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0910
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "font/ttf"
@@ -1441,7 +1348,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.TRUETYPE_FONT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0920
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0920
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "font/collection"
@@ -1464,7 +1370,6 @@ export default function UtdfMimeTypeTest() {
      * @tc.level     : Level 2
      */
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0930
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0930
      * @tc.desc   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0930
@@ -1479,7 +1384,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.OPENTYPE_FONT);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0940
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0940
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/calendar"
@@ -1494,7 +1398,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.CALENDAR);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0970
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0970
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-apple-diskimage"
@@ -1509,7 +1412,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("macos.dmg");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0980
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0980
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-debian-package"
@@ -1524,7 +1426,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("debian.deb");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0990
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0990
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.debian.binary-package"
@@ -1539,7 +1440,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("debian.deb");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1000
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1000
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/css"
@@ -1554,7 +1454,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.CSS);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1010
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1010
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-ms-bmp"
@@ -1569,7 +1468,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.microsoft.bmp");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1020
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1020
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/x-ms-vob"
@@ -1584,7 +1482,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.vob");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1030
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1030
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/dv"
@@ -1599,7 +1496,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.dif-video");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1050
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1050
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/fli"
@@ -1614,7 +1510,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.flc-animation");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1060
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1060
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/flc"
@@ -1630,7 +1525,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1070
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1070
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/x-mng"
@@ -1645,7 +1539,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.mng");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1080
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1080
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/vnd.mpegurl"
@@ -1660,7 +1553,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.mpegurl-video");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1090
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1090
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/mp2ts"
@@ -1675,7 +1567,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.TS);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1100
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1100
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/mp2t"
@@ -1690,7 +1581,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual(UTD.UniformDataType.TS);
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1110
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1110
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/amr"
@@ -1705,7 +1595,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.amr");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1120
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1120
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/amr-wb"
@@ -1720,7 +1609,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.amr-wb");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1130
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1130
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/x-gsm"
@@ -1735,7 +1623,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.gsm");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1140
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1140
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/GSM"
@@ -1750,7 +1637,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.gsm");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1150
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1150
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/imelody"
@@ -1765,7 +1651,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.imy");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1160
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1160
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/midi"
@@ -1780,7 +1665,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.kar");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1170
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1170
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/mpegurl"
@@ -1795,7 +1679,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.mpegurl-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1180
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1180
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/x-mpegurl"
@@ -1810,7 +1693,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.mpegurl-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1190
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1190
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/mpeg"
@@ -1825,7 +1707,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.mpeg-4-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1230
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1230
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/mobile-xmf"
@@ -1840,7 +1721,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.mxmf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1250
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1250
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/x-scpls"
@@ -1855,7 +1735,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.pls");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1270
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1270
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/prs.sid"
@@ -1870,7 +1749,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.psid");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1280
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1280
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-icon"
@@ -1885,7 +1763,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.microsoft.ico");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1290
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1290
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-adobe-dng"
@@ -1900,7 +1777,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.adobe.dng-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1300
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1300
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.ms-excel.template.macroEnabled.12"
@@ -1915,7 +1791,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openxmlformats.spreadsheetml.template.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1320
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1320
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/gif"
@@ -1930,7 +1805,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.gif");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1330
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1330
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/vnd.djvu"
@@ -1945,7 +1819,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.djvu-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1340
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1340
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-jng"
@@ -1960,7 +1833,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.jng-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1350
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1350
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/vnd.zbrush.pcx"
@@ -1975,7 +1847,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.pcx-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1360
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1360
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-portable-bitmap"
@@ -1990,7 +1861,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.pbm-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1370
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1370
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-portable-graymap"
@@ -2005,7 +1875,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.pgm-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1380
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1380
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-portable-anymap"
@@ -2020,7 +1889,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.pnm-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1390
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1390
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-portable-pixmap"
@@ -2035,7 +1903,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.ppm-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1400
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1400
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-rgb"
@@ -2050,7 +1917,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.rgb-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1420
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1420
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/svg+xml"
@@ -2065,7 +1931,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.svg-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1430
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1430
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/vnd.wap.wbmp"
@@ -2080,7 +1945,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.wbmp-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1440
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1440
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-xpixmap"
@@ -2095,7 +1959,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.xpixmap-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1450
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1450
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-xwindowdump"
@@ -2110,7 +1973,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.xwindowdump-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1460
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1460
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/heif"
@@ -2125,7 +1987,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.heif");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1470
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1470
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/heic"
@@ -2140,7 +2001,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.heic");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1480
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1480
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-cdlink"
@@ -2155,7 +2015,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.virtual-cd");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1490
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1490
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-haskell"
@@ -2170,7 +2029,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.haskell-script");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1500
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1500
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-literate-haskell"
@@ -2185,7 +2043,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.literate-haskell-script");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1510
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1510
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-tcl"
@@ -2200,7 +2057,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.tcl-script");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1520
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1520
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.rar"
@@ -2215,7 +2071,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.rarlab.rar-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1540
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1540
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/rtf"
@@ -2230,7 +2085,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.rich-text");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1550
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1550
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/richtext"
@@ -2245,7 +2099,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.rich-text");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1570
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1570
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/csv"
@@ -2260,7 +2113,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.comma-separated-values-text");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1590
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1590
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-setext"
@@ -2275,7 +2127,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.setext");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1600
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1600
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-pcs-gcd"
@@ -2290,7 +2141,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.gcd");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1610
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1610
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/tab-separated-values"
@@ -2305,7 +2155,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.tab-separated-values-text");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1620
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1620
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-pkcs7-certreqresp"
@@ -2320,7 +2169,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.p7r");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1630
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1630
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-pem-file"
@@ -2335,7 +2183,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.pem");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1640
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1640
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-chess-pgn"
@@ -2350,7 +2197,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.chess-pgn");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1650
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1650
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.chess-pgn"
@@ -2365,7 +2211,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.chess-pgn");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1660
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1660
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-lha"
@@ -2380,7 +2225,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.lha-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1670
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1670
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-lzh"
@@ -2395,7 +2239,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.lzh-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1680
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1680
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-lzx"
@@ -2410,7 +2253,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.lzx-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1690
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1690
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/rar"
@@ -2425,7 +2267,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.rarlab.rar-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1700
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1700
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-shar"
@@ -2440,7 +2281,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.shar-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1710
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1710
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-cpio"
@@ -2455,7 +2295,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.cpio-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1720
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1720
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-mimearchive"
@@ -2470,7 +2309,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.web-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1730
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1730
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-ustar"
@@ -2485,7 +2323,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.ustar");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1740
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1740
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/mathml"
@@ -2500,7 +2337,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.mathml");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1750
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1750
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/mathml+xml"
@@ -2515,7 +2351,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.mathml");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1760
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1760
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/xhtml+xml"
@@ -2530,7 +2365,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.xhtml");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1770
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1770
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/rss+xml"
@@ -2545,7 +2379,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.rss");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1780
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1780
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/rdf+xml"
@@ -2560,7 +2393,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.rdf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1790
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1790
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "model/iges"
@@ -2575,7 +2407,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.iges");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1800
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1800
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/octet-stream"
@@ -2590,7 +2421,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.octet-stream");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1810
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1810
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-iso9660-image"
@@ -2605,7 +2435,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.iso");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1820
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1820
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "model/mesh"
@@ -2620,7 +2449,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.mesh-model");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1830
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1830
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-object"
@@ -2635,7 +2463,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.c-object");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1840
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1840
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/pkix-cert"
@@ -2650,7 +2477,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.cer-certificate");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1850
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1850
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-x509-ca-cert"
@@ -2665,7 +2491,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.crt-certificate");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1860
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1860
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-x509-server-cert"
@@ -2680,7 +2505,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.crt-certificate");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1870
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1870
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-x509-user-cert"
@@ -2695,7 +2519,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.crt-certificate");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1880
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1880
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-pkix-crl"
@@ -2710,7 +2533,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.crl-certificate");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1890
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1890
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.chart"
@@ -2725,7 +2547,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.chart");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1900
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1900
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.text-master"
@@ -2740,7 +2561,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.text-master");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1910
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1910
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.text-web"
@@ -2755,7 +2575,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.text-web");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1920
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1920
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.database"
@@ -2770,7 +2589,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.database");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1930
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1930
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.image"
@@ -2785,7 +2603,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1940
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1940
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.formula-template"
@@ -2800,7 +2617,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.formula-template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1950
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1950
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.chart-template"
@@ -2815,7 +2631,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.chart-template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1960
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1960
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.presentation-template"
@@ -2830,7 +2645,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.presentation-template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1970
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1970
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.image-template"
@@ -2845,7 +2659,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.image-template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1980
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1980
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.graphics-template"
@@ -2860,7 +2673,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.graphics-template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1990
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1980
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.spreadsheet-template"
@@ -2875,7 +2687,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.spreadsheet-template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2000
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2000
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.text-template"
@@ -2890,7 +2701,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.oasis-open.opendocument.text-template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2010
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2010
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/x-sd2"
@@ -2906,7 +2716,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2020
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2020
      * @tc.desc   getUniformDataTypeByMIMEType paramter is  "application/vnd.rn-realmedia"
@@ -2921,7 +2730,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.real.realmedia");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2040
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2040
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.cinderella"
@@ -2936,7 +2744,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("de.cinderella.cdy");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2050
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2050
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.visio"
@@ -2951,7 +2758,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.microsoft.visio.vsd");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2060
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2060
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.openxmlformats-officedocument.drawingml.drawing"
@@ -2966,7 +2772,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openxmlformats.drawingml.visio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2070
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2070
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.openxmlformats-officedocument.wordprocessingml.template"
@@ -2982,7 +2787,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openxmlformats.wordprocessingml.template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2080
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2080
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.openxmlformats-officedocument.presentationml.template"
@@ -2998,7 +2802,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openxmlformats.presentationml.template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2090
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2090
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.openxmlformats-officedocument.presentationml.slideshow"
@@ -3014,7 +2817,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openxmlformats.presentationml.slideshow");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2100
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2100
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.openxmlformats-officedocument.spreadsheetml.template"
@@ -3030,7 +2832,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openxmlformats.spreadsheetml.template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2110
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2110
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.sun.xml.calc"
@@ -3045,7 +2846,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openoffice.calc");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2120
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2120
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.sun.xml.draw"
@@ -3060,7 +2860,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openoffice.draw");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2130
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2130
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.sun.xml.writer.global"
@@ -3075,7 +2874,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openoffice.writer-global");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2140
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2140
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.sun.xml.math"
@@ -3090,7 +2888,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openoffice.math");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2150
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2150
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.sun.xml.writer"
@@ -3105,7 +2902,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openoffice.writer");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2160
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2160
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.sun.xml.calc.template"
@@ -3120,7 +2916,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openoffice.calc.template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2170
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2170
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.sun.xml.draw.template"
@@ -3135,7 +2930,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openoffice.draw.template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2180
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2180
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.sun.xml.impress.template"
@@ -3150,7 +2944,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openoffice.impress.template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2190
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2190
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.ms-excel.addin.macroEnabled.12"
@@ -3165,7 +2958,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openxmlformats.spreadsheetml.addin.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2200
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2200
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.sun.xml.writer.template"
@@ -3180,7 +2972,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openoffice.writer.template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2210
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2210
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.stardivision.draw"
@@ -3195,7 +2986,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.staroffice.draw");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2220
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2220
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.stardivision.calc"
@@ -3210,7 +3000,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.staroffice.calc");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2230
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2230
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.stardivision.impress"
@@ -3225,7 +3014,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.staroffice.impress");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2240
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2240
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.stardivision.writer"
@@ -3240,7 +3028,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.staroffice.writer");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2250
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2250
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.stardivision.chart"
@@ -3255,7 +3042,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.staroffice.chart");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2260
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2260
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.stardivision.mail"
@@ -3270,7 +3056,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.staroffice.mail");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2270
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2270
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.stardivision.writer-global"
@@ -3285,7 +3070,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.staroffice.writer-global");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2280
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2280
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.stardivision.math"
@@ -3300,7 +3084,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.staroffice.math");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2290
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2290
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.stardivision.template"
@@ -3315,7 +3098,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.staroffice.template");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2300
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2300
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-bibtex"
@@ -3330,7 +3112,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.tug.bib");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2310
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2310
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-tex"
@@ -3345,7 +3126,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.tug.cls");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2320
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2320
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-coreldraw"
@@ -3360,7 +3140,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.coreldraw.cdr");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2340
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2340
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-latex"
@@ -3375,7 +3154,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.latex-project.latex");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2350
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2350
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/x-ms-asf"
@@ -3390,7 +3168,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.microsoft.advanced-systems-format");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2360
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2360
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.ms-asf"
@@ -3405,7 +3182,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.microsoft.advanced-systems-format");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2380
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2380
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/x-matroska"
@@ -3420,7 +3196,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.matroska.mkv");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2400
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2400
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/x-sgi-movie"
@@ -3435,7 +3210,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.sgi.movie");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2410
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2410
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/m4v"
@@ -3450,7 +3224,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.apple.m4v");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2420
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2420
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/webm"
@@ -3465,7 +3238,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.webmproject.webm");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2430
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2430
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/quicktime"
@@ -3480,7 +3252,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.apple.quicktime-movie");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2460
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2460
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-coreldrawtemplate"
@@ -3495,7 +3266,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.coreldraw.cdt");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2470
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2470
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-corelphotopaint"
@@ -3510,7 +3280,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.coreldraw.cpt");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2480
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2480
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-coreldrawpattern"
@@ -3525,7 +3294,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.coreldraw.pat");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2490
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2490
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/ico"
@@ -3540,7 +3308,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.microsoft.ico");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2500
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2500
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-cmu-raster"
@@ -3555,7 +3322,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.sun.raster");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2510
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2510
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/webp"
@@ -3570,7 +3336,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.google.webp");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2520
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2520
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-koan"
@@ -3585,7 +3350,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.sseyo.koan-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2530
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2530
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-moc"
@@ -3600,7 +3364,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("io.qt.moc");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2540
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2540
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-font"
@@ -3615,7 +3378,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.ghostscript.font");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2560
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2560
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-font-pcf"
@@ -3630,7 +3392,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.x.pcf-font");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2570
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2570
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-ms-wmd"
@@ -3645,7 +3406,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.microsoft.windows-media-wmd");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2580
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2580
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-ms-wmz"
@@ -3660,7 +3420,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.microsoft.windows-media-wmz");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2590
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2590
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-msi"
@@ -3675,7 +3434,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.microsoft.windows-installer");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2600
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2600
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-mspublisher"
@@ -3690,7 +3448,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.microsoft.publisher.pub");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2610
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2610
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.ms-wpl"
@@ -3705,7 +3462,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.microsoft.windows-media-playlist");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2620
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2620
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/msaccess"
@@ -3720,7 +3476,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.microsoft.access.mdb");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2630
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2630
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.ms-pki.stl"
@@ -3735,7 +3490,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.3dsystems.stereolithography");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2640
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2640
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.apple.mpegurl"
@@ -3750,7 +3504,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.apple.media.playlist");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2650
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2650
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-abiword"
@@ -3765,7 +3518,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.abisource.word");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2660
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2660
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-maker"
@@ -3780,7 +3532,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.adobe.framemaker");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2670
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2670
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-cdf"
@@ -3795,7 +3546,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.wolfram.cdf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2690
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2690
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-director"
@@ -3810,7 +3560,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.adobe.dcr");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2710
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2710
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-gnumeric"
@@ -3825,7 +3574,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.gnumeric.spreadsheet");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2720
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2720
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-hdf"
@@ -3840,7 +3588,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.hdfgroup.hdf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2730
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2730
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/mac-binhex40"
@@ -3855,7 +3602,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.apple.binhex-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2740
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2740
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/hta"
@@ -3870,7 +3616,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.microsoft.hta");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2750
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2750
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-internet-signup"
@@ -3885,7 +3630,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.microsoft.internet.ins");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2770
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2770
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/troff"
@@ -3900,7 +3644,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.troff");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2780
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2780
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.mif"
@@ -3915,7 +3658,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.adobe.framemaker.mif");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2790
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2790
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-freemind"
@@ -3930,7 +3672,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("io.sourceforge.freemind");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2810
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2810
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.smaf"
@@ -3945,7 +3686,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.yamaha.smaf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2820
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2820
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/mathematica"
@@ -3960,7 +3700,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.wolfram.mathematica.notebook");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2830
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2830
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/ogg"
@@ -3975,7 +3714,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.xiph.ogg");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2840
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2840
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-ns-proxy-autoconfig"
@@ -3990,7 +3728,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.netscape.proxy-autoconfig");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2850
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2850
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-pkcs12"
@@ -4005,7 +3742,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.rsa.pkcs-12");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2860
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2860
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/pgp-signature"
@@ -4020,7 +3756,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openpgp.signature");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2870
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2870
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-quicktimeplayer"
@@ -4035,7 +3770,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.apple.quicktime-link");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2890
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2890
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.rar"
@@ -4050,7 +3784,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.rarlab.rar-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2900
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2900
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-7z-compressed"
@@ -4065,7 +3798,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.7-zip.7-zip-archive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2910
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2910
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-go-sgf"
@@ -4080,7 +3812,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.red-bean.sgf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2920
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2920
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/x-wav"
@@ -4095,7 +3826,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.microsoft.waveform-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2930
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2930
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/futuresplash"
@@ -4110,7 +3840,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.adobe.futuresplash");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2940
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2940
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-futuresplash"
@@ -4125,7 +3854,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.adobe.futuresplash");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2950
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2950
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-shockwave-flash"
@@ -4140,7 +3868,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.adobe.flash");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2960
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2960
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-texinfo"
@@ -4155,7 +3882,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.gnu.texinfo");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2970
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2970
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-bittorrent"
@@ -4170,7 +3896,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.bittorrent.torrent");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2980
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2980
      * @tc.desc   getUniformDataTypeByMIMEType paramter is"application/x-doom"
@@ -4185,7 +3910,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.idsoftware.doom");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2990
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2990
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-webarchive"
@@ -4200,7 +3924,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.apple.webarchive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3000
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3000
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-webarchive-xml"
@@ -4215,7 +3938,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.android.webarchive");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3010
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3010
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-xcf"
@@ -4230,7 +3952,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.gimp.xcf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3020
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3020
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-xcf"
@@ -4245,7 +3966,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.gimp.xcf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3030
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3030
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-eddx"
@@ -4260,7 +3980,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.edrawsoft.edrawmax");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3040
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3040
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-emmx"
@@ -4275,7 +3994,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.edrawsoft.edrawmind");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3050
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3050
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/caj"
@@ -4290,7 +4008,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("net.cnki.caj");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3060
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3060
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/dbf"
@@ -4305,7 +4022,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.dbase.dbf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3070
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3070
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/dbase"
@@ -4320,7 +4036,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.dbase.dbf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3080
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3080
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/vnd.dwg"
@@ -4335,7 +4050,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.autodesk.dwg");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3090
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3090
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/vnd.dxf"
@@ -4350,7 +4064,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.autodesk.dxf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3100
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3100
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "model/vnd.dwf"
@@ -4365,7 +4078,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.autodesk.dwf");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3110
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3110
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.hp-hpgl"
@@ -4380,7 +4092,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.hp.graphics-language");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3120
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3120
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/avif"
@@ -4395,7 +4106,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.aomedia.avif-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3130
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3130
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/vnd-ms.dds"
@@ -4410,7 +4120,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.microsoft.dds");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3140
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3140
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-ilbm"
@@ -4425,7 +4134,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.ea.iff-ilbm");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3150
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3150
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-canon-cr2"
@@ -4440,7 +4148,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.canon.cr2-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3160
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3160
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-canon-cr3"
@@ -4455,7 +4162,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.canon.cr3-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3170
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3170
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-canon-crw"
@@ -4470,7 +4176,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.canon.crw-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3180
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3180
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-nikon-nef"
@@ -4485,7 +4190,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.nikon.nef-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3190
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3190
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "message/rfc822"
@@ -4501,7 +4205,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3200
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3200
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/x-dvi"
@@ -4516,7 +4219,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.dvi");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3220
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3220
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-sony-arw"
@@ -4531,7 +4233,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.sony.arw-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3240
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3240
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.ms-word.document.macroEnabled.12"
@@ -4546,7 +4247,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openxmlformats.wordprocessingml.document.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3250
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3250
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.ms-word.template.macroEnabled.12"
@@ -4561,7 +4261,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openxmlformats.wordprocessingml.template.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3270
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3270
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.ms-excel.sheet.binary.macroEnabled.12"
@@ -4576,7 +4275,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openxmlformats.spreadsheetml.binary.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3280
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3280
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.ms-excel.sheet.macroEnabled.12"
@@ -4591,7 +4289,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openxmlformats.spreadsheetml.sheet.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3290
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3290
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.ms-powerpoint.addin.macroEnabled.12"
@@ -4606,7 +4303,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openxmlformats.presentationml.addin.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3300
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3300
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.ms-powerpoint.presentation.macroEnabled.12"
@@ -4621,7 +4317,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openxmlformats.presentationml.presentation.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3310
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3310
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.ms-powerpoint.slideshow.macroEnabled.12"
@@ -4636,7 +4331,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openxmlformats.presentationml.slideshow.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3320
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3320
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.ms-powerpoint.template.macroEnabled.12"
@@ -4651,7 +4345,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.openxmlformats.presentationml.template.macroenabled");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3330
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3330
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-boo"
@@ -4666,7 +4359,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.boo-source");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3340
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3340
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-dsrc"
@@ -4681,7 +4373,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.d-source");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3350
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3350
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-component"
@@ -4696,7 +4387,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.html-component");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3360
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3360
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-pascal"
@@ -4711,7 +4401,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.pascal-source");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3370
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3370
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-xbm"
@@ -4726,7 +4415,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.xbitmap-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3380
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3380
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-csh"
@@ -4741,7 +4429,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.csh-script");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3390
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3390
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-csrc"
@@ -4756,7 +4443,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.c-source");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3400
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3400
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-shellscript"
@@ -4771,7 +4457,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.shell-script");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3410
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3410
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-c++src"
@@ -4786,7 +4471,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.c-plus-plus-source");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3420
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3420
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-c++hdr"
@@ -4801,7 +4485,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.c-plus-plus-header");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3430
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3430
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/x-chdr"
@@ -4816,7 +4499,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.c-header");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3440
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3440
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "text/vcard"
@@ -4831,7 +4513,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.vcard");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3450
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3450
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/bmp"
@@ -4848,7 +4529,6 @@ export default function UtdfMimeTypeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3460
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3460
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/x-flv"
@@ -4863,7 +4543,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.adobe.flash");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3470
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3470
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/mp4"
@@ -4878,7 +4557,6 @@ export default function UtdfMimeTypeTest() {
       expect(result.toString()).assertEqual("general.mpeg-4,com.adobe.f4v");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3480
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3480
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/mp2t"
@@ -4893,7 +4571,6 @@ export default function UtdfMimeTypeTest() {
       expect(result.toString()).assertEqual("general.ts,general.mp2t");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3490
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3490
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/vnd.youtube.yt"
@@ -4909,7 +4586,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3500
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3500
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/x-webex"
@@ -4925,7 +4601,6 @@ export default function UtdfMimeTypeTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3510
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3510
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/mpeg"
@@ -4940,7 +4615,6 @@ export default function UtdfMimeTypeTest() {
       expect(result.toString()).assertEqual("general.mpeg,general.vob,general.mpeg-2,general.mpeg-1");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3520
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3520
      * @tc.desc   getUniformDataTypeByMIMEType parameter is "application/vnd.rn-realmedia-vbr"
@@ -4955,7 +4629,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.real.realmedia-vbr");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3530
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3530
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/x-pn-realvideo"
@@ -4970,7 +4643,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.real.realvideo");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3540
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3540
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/divx"
@@ -4985,7 +4657,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.divx-video");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3550
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3550
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/annodex"
@@ -5000,7 +4671,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("org.csiro.annodex");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3560
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3560
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/ogg"
@@ -5015,7 +4685,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.ogv");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3570
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3570
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "video/x-la-asf"
@@ -5030,7 +4699,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.microsoft.lsf-video");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3580
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3580
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/jp2"
@@ -5045,7 +4713,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.jpeg-2000");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3590
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3590
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/jpx"
@@ -5060,7 +4727,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.jpeg-2000");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3600
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3600
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/jpm"
@@ -5075,7 +4741,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.jpeg-2000");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3610
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3610
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-fuji-raf"
@@ -5090,7 +4755,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.fujifilm.raf-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3620
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3620
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-nikon-nrw"
@@ -5105,7 +4769,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.nikon.nrw-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3630
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3630
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-panasonic-raw"
@@ -5120,7 +4783,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.panasonic.rw2-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3640
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3640
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-pentax-pef"
@@ -5135,7 +4797,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.pentax.pef-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3650
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3650
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-samsung-srw"
@@ -5150,7 +4811,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.sumsung.srw-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3660
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3660
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-epson-erf"
@@ -5165,7 +4825,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.epson.erf-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3670
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3670
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-olympus-orf"
@@ -5180,7 +4839,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.olympus.orf-raw-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3680
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3680
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/ief"
@@ -5195,7 +4853,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("general.ief-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3690
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3690
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "image/x-jg"
@@ -5210,7 +4867,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.aol.art-image");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3700
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3700
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/mp4"
@@ -5225,7 +4881,6 @@ export default function UtdfMimeTypeTest() {
       expect(result).assertEqual("com.apple.m4p-audio");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3710
      * @tc.number SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3710
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/ac3"

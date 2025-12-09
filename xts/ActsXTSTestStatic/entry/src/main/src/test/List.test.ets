@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import ActsShortTimeTaskManagerStaticTest from './ActsShortTimeTaskManagerStaticTest.test'
+import ActsShortTimeTaskManagerStaticTest from './ActsShortTimeTaskManagerStaticTestXian.test'
 export default function testsuite() {
   ActsShortTimeTaskManagerStaticTest();
 }

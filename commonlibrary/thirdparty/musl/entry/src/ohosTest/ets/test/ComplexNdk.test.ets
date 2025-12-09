@@ -25,12 +25,12 @@ export default function complexNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CREAL_0100
-     * @tc.name       : testMuslComplexCReal001
-     * @tc.desc       : test creal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCReal001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CREAL_0100
+     * @tc.desc   test creal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCReal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -42,12 +42,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CREALF_0100
-     * @tc.name       : testMuslComplexCRealF001
-     * @tc.desc       : test crealf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCRealF001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CREALF_0100
+     * @tc.desc   test crealf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCRealF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -59,12 +59,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CREALL_0100
-     * @tc.name       : testMuslComplexCRealL001
-     * @tc.desc       : test creall
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCRealL001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CREALL_0100
+     * @tc.desc   test creall
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCRealL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -76,12 +76,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CONJ_0100
-     * @tc.name       : testMuslComplexConj001
-     * @tc.desc       : test conj
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexConj001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CONJ_0100
+     * @tc.desc   test conj
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexConj001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -93,12 +93,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CONJF_0100
-     * @tc.name       : testMuslComplexConjF001
-     * @tc.desc       : test conjf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexConjF001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CONJF_0100
+     * @tc.desc   test conjf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexConjF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -110,12 +110,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CONJL_0100
-     * @tc.name       : testMuslComplexConjL001
-     * @tc.desc       : test conjl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexConjL001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CONJL_0100
+     * @tc.desc   test conjl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexConjL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -127,12 +127,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CPOW_0100
-     * @tc.name       : testMuslComplexCPow001
-     * @tc.desc       : test cpow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCPow001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CPOW_0100
+     * @tc.desc   test cpow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCPow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -146,12 +146,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CPOWF_0100
-     * @tc.name       : testMuslComplexCPowF001
-     * @tc.desc       : test cpowf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCPowF001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CPOWF_0100
+     * @tc.desc   test cpowf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCPowF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -165,12 +165,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CPOWL_0100
-     * @tc.name       : testMuslComplexCPowL001
-     * @tc.desc       : test cpowl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCPowL001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CPOWL_0100
+     * @tc.desc   test cpowl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCPowL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -184,12 +184,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CPROJ_0100
-     * @tc.name       : testMuslComplexCProj001
-     * @tc.desc       : test cproj
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCProj001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CPROJ_0100
+     * @tc.desc   test cproj
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCProj001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -201,12 +201,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CPROJF_0100
-     * @tc.name       : testMuslComplexCProjF001
-     * @tc.desc       : test cprojf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCProjF001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CPROJF_0100
+     * @tc.desc   test cprojf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCProjF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -218,12 +218,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CPROJL_0100
-     * @tc.name       : testMuslComplexCProjL001
-     * @tc.desc       : test cprojl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCProjL001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CPROJL_0100
+     * @tc.desc   test cprojl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCProjL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -235,12 +235,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CSIN_0100
-     * @tc.name       : testMuslComplexCSin001
-     * @tc.desc       : test csin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCSin001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CSIN_0100
+     * @tc.desc   test csin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCSin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -252,12 +252,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CSINF_0100
-     * @tc.name       : testMuslComplexCSinF001
-     * @tc.desc       : test csinf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCSinF001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CSINF_0100
+     * @tc.desc   test csinf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCSinF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -269,12 +269,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CSINL_0100
-     * @tc.name       : testMuslComplexCSinL001
-     * @tc.desc       : test csinl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCSinL001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CSINL_0100
+     * @tc.desc   test csinl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCSinL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -286,12 +286,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CSINH_0100
-     * @tc.name       : testMuslComplexCSinH001
-     * @tc.desc       : test csinh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCSinH001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CSINH_0100
+     * @tc.desc   test csinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCSinH001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -303,12 +303,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CSINHF_0100
-     * @tc.name       : testMuslComplexCSinHf001
-     * @tc.desc       : test csinhf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCSinHf001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CSINHF_0100
+     * @tc.desc   test csinhf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCSinHf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -320,12 +320,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CSINHL_0100
-     * @tc.name       : testMuslComplexCSinHl001
-     * @tc.desc       : test csinhl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCSinHl001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CSINHL_0100
+     * @tc.desc   test csinhl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCSinHl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -337,12 +337,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CSQRT_0100
-     * @tc.name       : testMuslComplexCSqrt001
-     * @tc.desc       : test csqrt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCSqrt001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CSQRT_0100
+     * @tc.desc   test csqrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCSqrt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -354,12 +354,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CSQRTF_0100
-     * @tc.name       : testMuslComplexCSqrtF001
-     * @tc.desc       : test csqrtf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCSqrtF001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CSQRTF_0100
+     * @tc.desc   test csqrtf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCSqrtF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -371,12 +371,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CSQRTL_0100
-     * @tc.name       : testMuslComplexCSqrtL001
-     * @tc.desc       : test csqrtl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCSqrtL001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CSQRTL_0100
+     * @tc.desc   test csqrtl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCSqrtL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -388,12 +388,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CTAN_0100
-     * @tc.name       : testMuslComplexCTan001
-     * @tc.desc       : test ctan
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCTan001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CTAN_0100
+     * @tc.desc   test ctan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCTan001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -405,12 +405,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CTANF_0100
-     * @tc.name       : testMuslComplexCTanF001
-     * @tc.desc       : test ctanf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCTanF001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CTANF_0100
+     * @tc.desc   test ctanf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCTanF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -422,12 +422,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CTANL_0100
-     * @tc.name       : testMuslComplexCTanL001
-     * @tc.desc       : test ctanl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCTanL001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CTANL_0100
+     * @tc.desc   test ctanl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCTanL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -439,12 +439,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CTANH_0100
-     * @tc.name       : testMuslComplexCTanH001
-     * @tc.desc       : test ctanh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCTanH001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CTANH_0100
+     * @tc.desc   test ctanh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCTanH001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -456,12 +456,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CTANHF_0100
-     * @tc.name       : testMuslComplexCTanHf001
-     * @tc.desc       : test ctanhf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCTanHf001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CTANHF_0100
+     * @tc.desc   test ctanhf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCTanHf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -473,12 +473,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CTANHL_0100
-     * @tc.name       : testMuslComplexCTanHl001
-     * @tc.desc       : test ctanhl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslComplexCTanHl001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CTANHL_0100
+     * @tc.desc   test ctanhl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCTanHl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let firstParam = 2;
@@ -490,13 +490,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CABS_0100
-     * @tc.name       : testMuslComplexCabs001
-     * @tc.desc       : test cabs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     * @
+     * @tc.name   testMuslComplexCabs001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CABS_0100
+     * @tc.desc   test cabs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCabs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 3;
@@ -508,13 +507,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CABS_0200
-     * @tc.name       : testMuslComplexCabs002
-     * @tc.desc       : test cabs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     * @
+     * @tc.name   testMuslComplexCabs002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CABS_0200
+     * @tc.desc   test cabs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCabs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 3;
@@ -526,13 +524,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CABS_0300
-     * @tc.name       : testMuslComplexCabs003
-     * @tc.desc       : test cabs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     * @
+     * @tc.name   testMuslComplexCabs003
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CABS_0300
+     * @tc.desc   test cabs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCabs003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = -3;
@@ -544,13 +541,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CABS_0400
-     * @tc.name       : testMuslComplexCabs004
-     * @tc.desc       : test cabs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     * @
+     * @tc.name   testMuslComplexCabs004
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CABS_0400
+     * @tc.desc   test cabs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCabs004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = -3;
@@ -562,13 +558,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CABSF_0100
-     * @tc.name       : testMuslComplexCabsf001
-     * @tc.desc       : test cabsf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     * @
+     * @tc.name   testMuslComplexCabsf001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CABSF_0100
+     * @tc.desc   test cabsf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCabsf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 3;
@@ -580,13 +575,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CABSF_0200
-     * @tc.name       : testMuslComplexCabsf002
-     * @tc.desc       : test cabsf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     * @
+     * @tc.name   testMuslComplexCabsf002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CABSF_0200
+     * @tc.desc   test cabsf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCabsf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 3;
@@ -598,13 +592,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CABSF_0300
-     * @tc.name       : testMuslComplexCabsf003
-     * @tc.desc       : test cabsf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     * @
+     * @tc.name   testMuslComplexCabsf003
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CABSF_0300
+     * @tc.desc   test cabsf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCabsf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = -3;
@@ -616,13 +609,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CABSF_0400
-     * @tc.name       : testMuslComplexCabsf004
-     * @tc.desc       : test cabsf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     * @
+     * @tc.name   testMuslComplexCabsf004
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CABSF_0400
+     * @tc.desc   test cabsf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCabsf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = -3;
@@ -634,13 +626,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CABSL_0100
-     * @tc.name       : testMuslComplexCabsl001
-     * @tc.desc       : test cabsl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     * @
+     * @tc.name   testMuslComplexCabsl001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CABSL_0100
+     * @tc.desc   test cabsl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCabsl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 3;
@@ -652,13 +643,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CABSL_0200
-     * @tc.name       : testMuslComplexCabsl002
-     * @tc.desc       : test cabsl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     * @
+     * @tc.name   testMuslComplexCabsl002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CABSL_0200
+     * @tc.desc   test cabsl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCabsl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 3;
@@ -670,13 +660,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CABSL_0300
-     * @tc.name       : testMuslComplexCabsl003
-     * @tc.desc       : test cabsl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     * @
+     * @tc.name   testMuslComplexCabsl003
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CABSL_0300
+     * @tc.desc   test cabsl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCabsl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = -3;
@@ -688,13 +677,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CABSL_0400
-     * @tc.name       : testMuslComplexCabsl004
-     * @tc.desc       : test cabsl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     * @
+     * @tc.name   testMuslComplexCabsl004
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CABSL_0400
+     * @tc.desc   test cabsl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCabsl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = -3;
@@ -706,13 +694,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CACOS_0100
-     * @tc.name       : testMuslComplexCacos001
-     * @tc.desc       : test cacos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCacos001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CACOS_0100
+     * @tc.desc   test cacos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCacos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -724,13 +711,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CACOS_0200
-     * @tc.name       : testMuslComplexCacos002
-     * @tc.desc       : test cacos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCacos002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CACOS_0200
+     * @tc.desc   test cacos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCacos002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -742,13 +728,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CACOSF_0100
-     * @tc.name       : testMuslComplexCacosf001
-     * @tc.desc       : test cacosf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCacosf001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CACOSF_0100
+     * @tc.desc   test cacosf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCacosf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -760,13 +745,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CACOSF_0200
-     * @tc.name       : testMuslComplexCacosf002
-     * @tc.desc       : test cacosf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCacosf002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CACOSF_0200
+     * @tc.desc   test cacosf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCacosf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -778,13 +762,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CACOSL_0100
-     * @tc.name       : testMuslComplexCacosl001
-     * @tc.desc       : test cacosl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCacosl001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CACOSL_0100
+     * @tc.desc   test cacosl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCacosl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -796,13 +779,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CACOSL_0200
-     * @tc.name       : testMuslComplexCacosl002
-     * @tc.desc       : test cacosl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCacosl002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CACOSL_0200
+     * @tc.desc   test cacosl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCacosl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -815,13 +797,12 @@ export default function complexNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CACOSH_0100
-     * @tc.name       : testMuslComplexCacosh001
-     * @tc.desc       : test cacosh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCacosh001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CACOSH_0100
+     * @tc.desc   test cacosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCacosh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -833,13 +814,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CACOSH_0200
-     * @tc.name       : testMuslComplexCacosh002
-     * @tc.desc       : test cacosh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCacosh002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CACOSH_0200
+     * @tc.desc   test cacosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCacosh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -851,13 +831,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CACOSHF_0100
-     * @tc.name       : testMuslComplexCacoshf001
-     * @tc.desc       : test cacoshf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCacoshf001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CACOSHF_0100
+     * @tc.desc   test cacoshf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCacoshf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -869,13 +848,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CACOSHF_0200
-     * @tc.name       : testMuslComplexCacoshf002
-     * @tc.desc       : test cacoshf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCacoshf002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CACOSHF_0200
+     * @tc.desc   test cacoshf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCacoshf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -887,13 +865,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CACOSHL_0100
-     * @tc.name       : testMuslComplexCacoshl001
-     * @tc.desc       : test cacoshl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCacoshl001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CACOSHL_0100
+     * @tc.desc   test cacoshl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCacoshl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -905,13 +882,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CACOSHL_0200
-     * @tc.name       : testMuslComplexCacoshl002
-     * @tc.desc       : test cacoshl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCacoshl002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CACOSHL_0200
+     * @tc.desc   test cacoshl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCacoshl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -923,13 +899,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CARG_0100
-     * @tc.name       : testMuslComplexCarg001
-     * @tc.desc       : test carg
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCarg001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CARG_0100
+     * @tc.desc   test carg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCarg001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 1;
@@ -941,13 +916,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CARG_0200
-     * @tc.name       : testMuslComplexCarg002
-     * @tc.desc       : test carg
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCarg002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CARG_0200
+     * @tc.desc   test carg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCarg002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = -2;
@@ -959,13 +933,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CARGL_0100
-     * @tc.name       : testMuslComplexCargl001
-     * @tc.desc       : test cargl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCargl001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CARGL_0100
+     * @tc.desc   test cargl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCargl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 1;
@@ -977,13 +950,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CARGL_0200
-     * @tc.name       : testMuslComplexCargl002
-     * @tc.desc       : test cargl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCargl002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CARGL_0200
+     * @tc.desc   test cargl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCargl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = -2;
@@ -995,13 +967,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CARGF_0100
-     * @tc.name       : testMuslComplexCargf001
-     * @tc.desc       : test cargf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCargf001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CARGF_0100
+     * @tc.desc   test cargf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCargf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 1;
@@ -1013,13 +984,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CARGF_0200
-     * @tc.name       : testMuslComplexCargf002
-     * @tc.desc       : test cargf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCargf002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CARGF_0200
+     * @tc.desc   test cargf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCargf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = -2;
@@ -1031,13 +1001,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CASIN_0100
-     * @tc.name       : testMuslComplexCasin001
-     * @tc.desc       : test casin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCasin001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CASIN_0100
+     * @tc.desc   test casin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCasin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1049,13 +1018,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CASIN_0200
-     * @tc.name       : testMuslComplexCasin002
-     * @tc.desc       : test casin
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCasin002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CASIN_0200
+     * @tc.desc   test casin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCasin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1067,13 +1035,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CASINF_0100
-     * @tc.name       : testMuslComplexCasinf001
-     * @tc.desc       : test casinf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCasinf001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CASINF_0100
+     * @tc.desc   test casinf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCasinf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1085,13 +1052,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CASINF_0200
-     * @tc.name       : testMuslComplexCasinf002
-     * @tc.desc       : test casinf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCasinf002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CASINF_0200
+     * @tc.desc   test casinf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCasinf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1103,13 +1069,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CASINL_0100
-     * @tc.name       : testMuslComplexCasinl001
-     * @tc.desc       : test casinl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCasinl001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CASINL_0100
+     * @tc.desc   test casinl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCasinl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1121,13 +1086,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CASINL_0200
-     * @tc.name       : testMuslComplexCasinl002
-     * @tc.desc       : test casinl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCasinl002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CASINL_0200
+     * @tc.desc   test casinl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCasinl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1140,13 +1104,12 @@ export default function complexNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CASINH_0100
-     * @tc.name       : testMuslComplexCasinh001
-     * @tc.desc       : test casinh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCasinh001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CASINH_0100
+     * @tc.desc   test casinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCasinh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1158,13 +1121,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CASINH_0200
-     * @tc.name       : testMuslComplexCasinh002
-     * @tc.desc       : test casinh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCasinh002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CASINH_0200
+     * @tc.desc   test casinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCasinh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1176,13 +1138,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CASINHF_0100
-     * @tc.name       : testMuslComplexCasinhf001
-     * @tc.desc       : test casinhf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCasinhf001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CASINHF_0100
+     * @tc.desc   test casinhf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCasinhf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1194,13 +1155,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CASINHF_0200
-     * @tc.name       : testMuslComplexCasinhf002
-     * @tc.desc       : test casinhf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCasinhf002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CASINHF_0200
+     * @tc.desc   test casinhf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCasinhf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1212,13 +1172,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CASINHL_0100
-     * @tc.name       : testMuslComplexCasinhl001
-     * @tc.desc       : test casinhl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCasinhl001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CASINHL_0100
+     * @tc.desc   test casinhl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCasinhl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1230,13 +1189,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CASINHL_0200
-     * @tc.name       : testMuslComplexCasinhl002
-     * @tc.desc       : test casinhl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCasinhl002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CASINHL_0200
+     * @tc.desc   test casinhl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCasinhl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1248,13 +1206,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CATAN_0100
-     * @tc.name       : testMuslComplexCatan001
-     * @tc.desc       : test catan
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCatan001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CATAN_0100
+     * @tc.desc   test catan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCatan001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1266,13 +1223,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CATAN_0200
-     * @tc.name       : testMuslComplexCatan002
-     * @tc.desc       : test catan
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCatan002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CATAN_0200
+     * @tc.desc   test catan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCatan002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1284,13 +1240,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CATANF_0100
-     * @tc.name       : testMuslComplexCatanf001
-     * @tc.desc       : test catanf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCatanf001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CATANF_0100
+     * @tc.desc   test catanf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCatanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1302,13 +1257,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CATANF_0200
-     * @tc.name       : testMuslComplexCatanf002
-     * @tc.desc       : test catanf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCatanf002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CATANF_0200
+     * @tc.desc   test catanf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCatanf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1320,13 +1274,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CATANL_0100
-     * @tc.name       : testMuslComplexCatanl001
-     * @tc.desc       : test catanl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCatanl001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CATANL_0100
+     * @tc.desc   test catanl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCatanl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1338,13 +1291,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CATANL_0200
-     * @tc.name       : testMuslComplexCatanl002
-     * @tc.desc       : test catanl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCatanl002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CATANL_0200
+     * @tc.desc   test catanl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCatanl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1357,13 +1309,12 @@ export default function complexNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CATANH_0100
-     * @tc.name       : testMuslComplexCatanh001
-     * @tc.desc       : test catanh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCatanh001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CATANH_0100
+     * @tc.desc   test catanh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCatanh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1375,13 +1326,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CATANH_0200
-     * @tc.name       : testMuslComplexCatanh002
-     * @tc.desc       : test catanh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCatanh002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CATANH_0200
+     * @tc.desc   test catanh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCatanh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1393,13 +1343,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CATANHF_0100
-     * @tc.name       : testMuslComplexCatanhf001
-     * @tc.desc       : test catanhf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCatanhf001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CATANHF_0100
+     * @tc.desc   test catanhf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCatanhf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1411,13 +1360,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CATANHF_0200
-     * @tc.name       : testMuslComplexCatanhf002
-     * @tc.desc       : test catanhf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCatanhf002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CATANHF_0200
+     * @tc.desc   test catanhf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCatanhf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1429,13 +1377,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CATANHL_0100
-     * @tc.name       : testMuslComplexCatanhl001
-     * @tc.desc       : test catanhl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCatanhl001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CATANHL_0100
+     * @tc.desc   test catanhl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCatanhl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1447,13 +1394,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CATANHL_0200
-     * @tc.name       : testMuslComplexCatanhl002
-     * @tc.desc       : test catanhl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCatanhl002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CATANHL_0200
+     * @tc.desc   test catanhl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCatanhl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1465,13 +1411,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CCOS_0100
-     * @tc.name       : testMuslComplexCcos001
-     * @tc.desc       : test ccos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCcos001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CCOS_0100
+     * @tc.desc   test ccos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCcos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1483,13 +1428,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CCOS_0200
-     * @tc.name       : testMuslComplexCcos002
-     * @tc.desc       : test ccos
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCcos002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CCOS_0200
+     * @tc.desc   test ccos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCcos002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1501,13 +1445,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CCOSF_0100
-     * @tc.name       : testMuslComplexCcosf001
-     * @tc.desc       : test ccosf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCcosf001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CCOSF_0100
+     * @tc.desc   test ccosf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCcosf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1519,13 +1462,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CCOSF_0200
-     * @tc.name       : testMuslComplexCcosf002
-     * @tc.desc       : test ccosf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCcosf002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CCOSF_0200
+     * @tc.desc   test ccosf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCcosf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1537,13 +1479,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CCOSL_0100
-     * @tc.name       : testMuslComplexCcosl001
-     * @tc.desc       : test ccosl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCcosl001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CCOSL_0100
+     * @tc.desc   test ccosl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCcosl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1555,13 +1496,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CCOSL_0200
-     * @tc.name       : testMuslComplexCcosl002
-     * @tc.desc       : test ccosl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCcosl002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CCOSL_0200
+     * @tc.desc   test ccosl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCcosl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1574,13 +1514,12 @@ export default function complexNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CCOSH_0100
-     * @tc.name       : testMuslComplexCcosh001
-     * @tc.desc       : test ccosh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCcosh001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CCOSH_0100
+     * @tc.desc   test ccosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCcosh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1592,13 +1531,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CCOSH_0200
-     * @tc.name       : testMuslComplexCcosh002
-     * @tc.desc       : test ccosh
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCcosh002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CCOSH_0200
+     * @tc.desc   test ccosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCcosh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1610,13 +1548,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CCOSHF_0100
-     * @tc.name       : testMuslComplexCcoshf001
-     * @tc.desc       : test ccoshf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCcoshf001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CCOSHF_0100
+     * @tc.desc   test ccoshf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCcoshf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1628,13 +1565,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CCOSHF_0200
-     * @tc.name       : testMuslComplexCcoshf002
-     * @tc.desc       : test ccoshf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCcoshf002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CCOSHF_0200
+     * @tc.desc   test ccoshf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCcoshf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1646,13 +1582,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CCOSHL_0100
-     * @tc.name       : testMuslComplexCcoshl001
-     * @tc.desc       : test ccoshl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCcoshl001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CCOSHL_0100
+     * @tc.desc   test ccoshl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCcoshl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1664,13 +1599,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CCOSHL_0200
-     * @tc.name       : testMuslComplexCcoshl002
-     * @tc.desc       : test ccoshl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCcoshl002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CCOSHL_0200
+     * @tc.desc   test ccoshl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCcoshl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1682,13 +1616,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CEXP_0100
-     * @tc.name       : testMuslComplexCexp001
-     * @tc.desc       : test cexp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCexp001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CEXP_0100
+     * @tc.desc   test cexp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCexp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1700,13 +1633,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CEXP_0200
-     * @tc.name       : testMuslComplexCexp002
-     * @tc.desc       : test cexp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCexp002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CEXP_0200
+     * @tc.desc   test cexp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCexp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1718,13 +1650,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CEXPF_0100
-     * @tc.name       : testMuslComplexCexpf001
-     * @tc.desc       : test cexpf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCexpf001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CEXPF_0100
+     * @tc.desc   test cexpf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCexpf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1736,13 +1667,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CEXPF_0200
-     * @tc.name       : testMuslComplexCexpf002
-     * @tc.desc       : test cexpf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCexpf002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CEXPF_0200
+     * @tc.desc   test cexpf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCexpf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1754,13 +1684,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CEXPL_0100
-     * @tc.name       : testMuslComplexCexpl001
-     * @tc.desc       : test cexpl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCexpl001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CEXPL_0100
+     * @tc.desc   test cexpl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCexpl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1772,13 +1701,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CEXPL_0200
-     * @tc.name       : testMuslComplexCexpl002
-     * @tc.desc       : test cexpl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCexpl002
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CEXPL_0200
+     * @tc.desc   test cexpl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCexpl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 0;
@@ -1790,13 +1718,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CLOG_0100
-     * @tc.name       : testMuslComplexClog001
-     * @tc.desc       : test clog
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexClog001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CLOG_0100
+     * @tc.desc   test clog
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexClog001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1808,13 +1735,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CLOGL_0100
-     * @tc.name       : testMuslComplexClogl001
-     * @tc.desc       : test clogl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexClogl001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CLOGL_0100
+     * @tc.desc   test clogl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexClogl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1826,13 +1752,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CLOGF_0100
-     * @tc.name       : testMuslComplexClogf001
-     * @tc.desc       : test clogf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexClogf001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CLOGF_0100
+     * @tc.desc   test clogf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexClogf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1844,13 +1769,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CIMAG_0100
-     * @tc.name       : testMuslComplexCimag001
-     * @tc.desc       : test cimag
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCimag001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CIMAG_0100
+     * @tc.desc   test cimag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCimag001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1862,13 +1786,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CIMAGL_0100
-     * @tc.name       : testMuslComplexCimagl001
-     * @tc.desc       : test cimagl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCimagl001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CIMAGL_0100
+     * @tc.desc   test cimagl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCimagl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;
@@ -1880,13 +1803,12 @@ export default function complexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_COMPLEX_CIMAGF_0100
-     * @tc.name       : testMuslComplexCimagf001
-     * @tc.desc       : test cimagf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslComplexCimagf001
+     * @tc.number SUB_THIRDPARTY_MUSL_COMPLEX_CIMAGF_0100
+     * @tc.desc   test cimagf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslComplexCimagf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param_real = 2;

@@ -25,7 +25,6 @@ export default function wallpaperNoPermissionJSUnit() {
     describe('wallpaperNoPermissionTest', () => {
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testResetCallbackSystemNoPermission101
          * @tc.number testResetCallbackSystemNoPermission101
          * @tc.desc   Function test
@@ -55,7 +54,6 @@ export default function wallpaperNoPermissionJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testResetPromiseSystemNoPermission101
          * @tc.number testResetPromiseSystemNoPermission101
          * @tc.desc   Function test
@@ -80,7 +78,6 @@ export default function wallpaperNoPermissionJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testResetCallbackLockNoPermission102
          * @tc.number testResetCallbackLockNoPermission102
          * @tc.desc   Function test
@@ -110,7 +107,6 @@ export default function wallpaperNoPermissionJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testResetPromiseLockNoPermission102
          * @tc.number testResetPromiseLockNoPermission102
          * @tc.desc   Function test
@@ -135,7 +131,6 @@ export default function wallpaperNoPermissionJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testSetWallpaperURLPromiseLockNoPermission104
          * @tc.number testSetWallpaperURLPromiseLockNoPermission104
          * @tc.desc   Function test
@@ -160,7 +155,6 @@ export default function wallpaperNoPermissionJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testSetWallpaperURLCallbackSystemNoPermission103
          * @tc.number testSetWallpaperURLCallbackSystemNoPermission103
          * @tc.desc   Function test
@@ -190,7 +184,6 @@ export default function wallpaperNoPermissionJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testSetWallpaperURLPromiseSystemNoPermission103
          * @tc.number testSetWallpaperURLPromiseSystemNoPermission103
          * @tc.desc   Function test
@@ -215,7 +208,6 @@ export default function wallpaperNoPermissionJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testSetWallpaperURLCallbackLockNoPermission104
          * @tc.number testSetWallpaperURLCallbackLockNoPermission104
          * @tc.desc   Function test
@@ -245,7 +237,6 @@ export default function wallpaperNoPermissionJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testGetFileCallbackNoPermission101
          * @tc.number testGetFileCallbackNoPermission101
          * @tc.desc   Function test
@@ -275,7 +266,6 @@ export default function wallpaperNoPermissionJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testGetFilePromiseNoPermission101
          * @tc.number testGetFilePromiseNoPermission101
          * @tc.desc   Function test
@@ -300,7 +290,6 @@ export default function wallpaperNoPermissionJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testGetFileCallbackNoPermission102
          * @tc.number testGetFileCallbackNoPermission102
          * @tc.desc   Function test
@@ -330,7 +319,6 @@ export default function wallpaperNoPermissionJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testGetFilePromiseNoPermission102
          * @tc.number testGetFilePromiseNoPermission102
          * @tc.desc   Function test

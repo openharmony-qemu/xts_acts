@@ -42,12 +42,12 @@ export default function SectionsFalse() {
     });
 
     /**
-     * @tc.number    SectionsFalse_001
-     * @tc.name      SectionsFalse_0100
-     * @tc.desc      Waterfall grouping returns false.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   SectionsFalse_0100
+     * @tc.number SectionsFalse_001
+     * @tc.desc   Waterfall grouping returns false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SectionsFalse_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[SectionsFalse_0100] START');

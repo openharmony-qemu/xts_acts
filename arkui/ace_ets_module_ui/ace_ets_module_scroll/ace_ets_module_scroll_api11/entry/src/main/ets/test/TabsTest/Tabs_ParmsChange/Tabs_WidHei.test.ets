@@ -71,9 +71,12 @@ export default function tabs_WidHeiTest() {
       console.info("tabs_WidHeiTest after each called")
     });
     /**
+     * @tc.name   testTabsWidHei01
      * @tc.number SUB_ACE_TABS_WIDHEI_TEST_0100
-     * @tc.name testTabsWidHei01
-     * @tc.desc set width of tabs to 330,height of tabs to 350
+     * @tc.desc   set width of tabs to 330,height of tabs to 350
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsWidHei01', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsWidHei01] START');
@@ -185,9 +188,12 @@ export default function tabs_WidHeiTest() {
       done();
     });
     /**
+     * @tc.name   testTabsWidHei02
      * @tc.number SUB_ACE_TABS_WIDHEI_TEST_0200
-     * @tc.name testTabsWidHei02
-     * @tc.desc set width of tabs to 300,height of tabs to 400
+     * @tc.desc   set width of tabs to 300,height of tabs to 400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsWidHei02', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsWidHei02] START');

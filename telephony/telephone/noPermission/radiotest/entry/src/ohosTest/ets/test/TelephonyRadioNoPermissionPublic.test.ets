@@ -74,13 +74,13 @@ export default function telephonyRadioNoPermissionPublicTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Telephony_Radio_GetRadioTech_0150
-     * @tc.name  : testTelephonyRadioGetRadioTech0150
-     * @tc.desc  : Obtain the wireless access technologies for the CS and PS domains currently accessed. Using callback for asynchronous callback
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 3
+    /**
+     * @tc.name   testTelephonyRadioGetRadioTech0150
+     * @tc.number SUB_Telephony_Radio_GetRadioTech_0150
+     * @tc.desc   Obtain the wireless access technologies for the CS and PS domains currently accessed. Using callback for asynchronous callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelephonyRadioGetRadioTech0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyRadioGetRadioTech0150';
@@ -114,13 +114,13 @@ export default function telephonyRadioNoPermissionPublicTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Telephony_Radio_GetRadioTech_0250
-     * @tc.name  : testTelephonyRadioGetRadioTech0250
-     * @tc.desc  : Obtain the wireless access technologies for the CS and PS domains currently accessed. Use Promise asynchronous callback.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 3
+    /**
+     * @tc.name   testTelephonyRadioGetRadioTech0250
+     * @tc.number SUB_Telephony_Radio_GetRadioTech_0250
+     * @tc.desc   Obtain the wireless access technologies for the CS and PS domains currently accessed. Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyRadioGetRadioTech0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonyRadioGetRadioTech0250';
@@ -153,13 +153,13 @@ export default function telephonyRadioNoPermissionPublicTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Telephony_Radio_GetNetworkState_1400
-     * @tc.name  : testTelephonyRadioGetNetworkState1400
-     * @tc.desc  : No permission to obtain network status.
-     * @tc.size  : SmallTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+    /**
+     * @tc.name   testTelephonyRadioGetNetworkState0140
+     * @tc.number SUB_Telephony_Radio_GetNetworkState_1400
+     * @tc.desc   No permission to obtain network status.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyRadioGetNetworkState0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testTelephonyRadioGetNetworkState0140';
@@ -199,13 +199,13 @@ export default function telephonyRadioNoPermissionPublicTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Telephony_Radio_GetNetworkState_1500
-     * @tc.name  : testTelephonyRadioGetNetworkState1500
-     * @tc.desc  : No permission to obtain network status.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+    /**
+     * @tc.name   testTelephonyRadioGetNetworkState1500
+     * @tc.number SUB_Telephony_Radio_GetNetworkState_1500
+     * @tc.desc   No permission to obtain network status.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyRadioGetNetworkState1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyRadioGetNetworkState1500';
@@ -245,13 +245,13 @@ export default function telephonyRadioNoPermissionPublicTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Telephony_Radio_GetNetworkState_1600
-     * @tc.name  : testTelephonyRadioGetNetworkState1600
-     * @tc.desc  : No permission to obtain network status.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 3
+    /**
+     * @tc.name   testTelephonyRadioGetNetworkState1600
+     * @tc.number SUB_Telephony_Radio_GetNetworkState_1600
+     * @tc.desc   No permission to obtain network status.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyRadioGetNetworkState1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyRadioGetNetworkState1600';
@@ -289,13 +289,13 @@ export default function telephonyRadioNoPermissionPublicTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Telephony_Radio_IsRadioOn_0150
-     * @tc.name  : testTelephonyRadioIsRadioOn0150
-     * @tc.desc  : Check if the main card's Radio is turned on. Use callback for asynchronous callback.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+    /**
+     * @tc.name   testTelephonyRadioIsRadioOn0150
+     * @tc.number SUB_Telephony_Radio_IsRadioOn_0150
+     * @tc.desc   Check if the main card's Radio is turned on. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyRadioIsRadioOn0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyRadioIsRadioOn0150';
@@ -329,13 +329,13 @@ export default function telephonyRadioNoPermissionPublicTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Telephony_Radio_IsRadioOn_0250
-     * @tc.name  : testTelephonyRadioIsRadioOn0250
-     * @tc.desc  : Check if the Radio is turned on. Use Promise asynchronous callback.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+    /**
+     * @tc.name   testTelephonyRadioIsRadioOn0250
+     * @tc.number SUB_Telephony_Radio_IsRadioOn_0250
+     * @tc.desc   Check if the Radio is turned on. Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyRadioIsRadioOn0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyRadioIsRadioOn0250';

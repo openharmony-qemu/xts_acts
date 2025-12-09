@@ -90,12 +90,12 @@ export default function textPickerThemeTest() {
     })
 
     /**
-     * @tc.number    : ActsTextPickerThemeColors_0100
-     * @tc.name      : ActsTextPickerThemeColors_0100
-     * @tc.desc      : Check system colors values of the TextPicker component
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsTextPickerThemeColors_0100
+     * @tc.number ActsTextPickerThemeColors_0100
+     * @tc.desc   Check system colors values of the TextPicker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsTextPickerThemeColors_0100`, Level.LEVEL0, async () => {
       const CASE: string = `ActsTextPickerThemeColors_0100`;
@@ -109,12 +109,12 @@ export default function textPickerThemeTest() {
     });
 
     /**
-     * @tc.number    : ActsTextPickerThemeColors_0200
-     * @tc.name      : ActsTextPickerThemeColors_0200
-     * @tc.desc      : Check custom colors values of the TextPicker component
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsTextPickerThemeColors_0200
+     * @tc.number ActsTextPickerThemeColors_0200
+     * @tc.desc   Check custom colors values of the TextPicker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsTextPickerThemeColors_0200`, Level.LEVEL0, async () => {
       const CASE: string = `ActsTextPickerThemeColors_0200`
@@ -128,13 +128,12 @@ export default function textPickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     });
     /**
-     * @tc.number    : ActsTextPickerThemeColors_0300
-     * @tc.name      : ActsTextPickerThemeColors_0300
-     * @tc.desc      : Check custom colors values of the TextPicker component
-     *                 after change theme
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsTextPickerThemeColors_0300
+     * @tc.number ActsTextPickerThemeColors_0300
+     * @tc.desc   Check custom colors values of the TextPicker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsTextPickerThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsTextPickerThemeColors_0300`;
@@ -148,13 +147,12 @@ export default function textPickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     })
     /**
-     * @tc.number    : ActsTextPickerThemeColors_0400
-     * @tc.name      : ActsTextPickerThemeColors_0400
-     * @tc.desc      : Check custom colors values of the TextPicker component
-     *                 after change theme
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsTextPickerThemeColors_0400
+     * @tc.number ActsTextPickerThemeColors_0400
+     * @tc.desc   Check custom colors values of the TextPicker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsTextPickerThemeColors_0400`, Level.LEVEL0, async () => {
       const CASE: string = `ActsTextPickerThemeColors_0400`;

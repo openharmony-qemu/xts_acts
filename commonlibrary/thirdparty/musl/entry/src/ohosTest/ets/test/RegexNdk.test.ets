@@ -25,12 +25,12 @@ export default function regexNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_REGEX_REGCOMP_0100
-     * @tc.name       : testMuslRegexRegcomp001
-     * @tc.desc       : test regcomp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslRegexRegcomp001
+     * @tc.number SUB_THIRDPARTY_MUSL_REGEX_REGCOMP_0100
+     * @tc.desc   test regcomp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslRegexRegcomp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = regex.regcomp();
@@ -40,12 +40,12 @@ export default function regexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_REGEX_REGERROR_0100
-     * @tc.name       : testMuslRegexRegerror001
-     * @tc.desc       : test regexec
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslRegexRegerror001
+     * @tc.number SUB_THIRDPARTY_MUSL_REGEX_REGERROR_0100
+     * @tc.desc   test regexec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslRegexRegerror001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = regex.regerror();
@@ -55,12 +55,12 @@ export default function regexNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_REGEX_REGFREE_0100
-     * @tc.name       : testMuslRegexRegfree001
-     * @tc.desc       : test regfree
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslRegexRegfree001
+     * @tc.number SUB_THIRDPARTY_MUSL_REGEX_REGFREE_0100
+     * @tc.desc   test regfree
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslRegexRegfree001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = regex.regfree();

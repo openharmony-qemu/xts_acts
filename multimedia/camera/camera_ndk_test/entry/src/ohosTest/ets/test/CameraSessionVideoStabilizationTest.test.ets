@@ -257,12 +257,12 @@ export default function cameraSessionVideoStabilizationTest() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_001
-     * @tc.name      : Check capture session support video stabilization off mode with promise or not
-     * @tc.desc      : Check capture session support video stabilization off mode with promise or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_001
+     * @tc.desc   Check capture session support video stabilization off mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_001', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_001--------------");
@@ -278,12 +278,12 @@ export default function cameraSessionVideoStabilizationTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_001 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_002
-     * @tc.name      : Check capture session set video stabilization off mode with promise
-     * @tc.desc      : Check capture session set video stabilization off mode with promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_002
+     * @tc.desc   Check capture session set video stabilization off mode with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_002', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_002--------------");
@@ -302,12 +302,12 @@ export default function cameraSessionVideoStabilizationTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_002 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_003
-     * @tc.name      : Check capture session support video stabilization low mode with promise or not
-     * @tc.desc      : Check capture session support video stabilization low mode with promise or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_003
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_003
+     * @tc.desc   Check capture session support video stabilization low mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_003', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_003--------------");
@@ -323,12 +323,12 @@ export default function cameraSessionVideoStabilizationTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_003 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_004
-     * @tc.name      : Check capture session set video stabilization low mode with promise
-     * @tc.desc      : Check capture session set video stabilization low mode with promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_004
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_004
+     * @tc.desc   Check capture session set video stabilization low mode with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_004', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_004--------------");
@@ -351,12 +351,12 @@ export default function cameraSessionVideoStabilizationTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_004 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_005
-     * @tc.name      : Check capture session support video stabilization middle mode with promise or not
-     * @tc.desc      : Check capture session support video stabilization middle mode with promise or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_005
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_005
+     * @tc.desc   Check capture session support video stabilization middle mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_005', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_005--------------");
@@ -372,12 +372,12 @@ export default function cameraSessionVideoStabilizationTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_005 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_006
-     * @tc.name      : Check capture session set video stabilization middle mode with promise
-     * @tc.desc      : Check capture session set video stabilization middle mode with promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_006
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_006
+     * @tc.desc   Check capture session set video stabilization middle mode with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_006', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_006--------------");
@@ -401,12 +401,12 @@ export default function cameraSessionVideoStabilizationTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_006 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_007
-     * @tc.name      : Check capture session support video stabilization high mode with promise or not
-     * @tc.desc      : Check capture session support video stabilization high mode with promise or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_007
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_007
+     * @tc.desc   Check capture session support video stabilization high mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_007', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_007--------------");
@@ -422,12 +422,12 @@ export default function cameraSessionVideoStabilizationTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_007 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_008
-     * @tc.name      : Check capture session set video stabilization high mode with promise
-     * @tc.desc      : Check capture session set video stabilization high mode with promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_008
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_008
+     * @tc.desc   Check capture session set video stabilization high mode with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_008', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_008--------------");
@@ -451,12 +451,12 @@ export default function cameraSessionVideoStabilizationTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_008 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_009
-     * @tc.name      : Check capture session support video stabilization auto mode with promise or not
-     * @tc.desc      : Check capture session support video stabilization auto mode with promise or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_009
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_009
+     * @tc.desc   Check capture session support video stabilization auto mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_009', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_009--------------");
@@ -472,12 +472,12 @@ export default function cameraSessionVideoStabilizationTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_009 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_010
-     * @tc.name      : Check capture session set video stabilization auto mode with promise
-     * @tc.desc      : Check capture session set video stabilization auto mode with promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_010
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_010
+     * @tc.desc   Check capture session set video stabilization auto mode with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_010', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_010--------------");

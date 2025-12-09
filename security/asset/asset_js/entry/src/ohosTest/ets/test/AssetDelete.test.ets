@@ -41,12 +41,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : Security_DataSecurity_Asset_Remove_Func_1000
-     * @tc.name       : testDelete1000
-     * @tc.desc       : 删除接口传入异常数据
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   Security_DataSecurity_Asset_Remove_Func_1000
+     * @tc.number Security_DataSecurity_Asset_Remove_Func_1000
+     * @tc.desc   删除接口传入异常数据
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_Remove_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -71,12 +71,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_Security_DataSecurity_Asset_Remove_Func_1300
-     * @tc.name       : testDelete1300
-     * @tc.desc       :申请权限后，增删改查卸载后不删除的数据
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_Security_DataSecurity_Asset_Remove_Func_1300
+     * @tc.number SUB_Security_DataSecurity_Asset_Remove_Func_1300
+     * @tc.desc   申请权限后，增删改查卸载后不删除的数据
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_Remove_Func_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -87,12 +87,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_Security_DataSecurity_Asset_Remove_Func_1400
-     * @tc.name       : testDelete1400
-     * @tc.desc       : 批量查询卸载后不删除的数据
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_Security_DataSecurity_Asset_Remove_Func_1400
+     * @tc.number SUB_Security_DataSecurity_Asset_Remove_Func_1400
+     * @tc.desc   批量查询卸载后不删除的数据
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_Remove_Func_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -112,12 +112,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_Security_DataSecurity_Asset_Remove_Func_1500
-     * @tc.name       : testDelete1500
-     * @tc.desc       : 通过更新接口修改卸载后不删除的参数
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_Security_DataSecurity_Asset_Remove_Func_1500
+     * @tc.number SUB_Security_DataSecurity_Asset_Remove_Func_1500
+     * @tc.desc   通过更新接口修改卸载后不删除的参数
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_Remove_Func_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();

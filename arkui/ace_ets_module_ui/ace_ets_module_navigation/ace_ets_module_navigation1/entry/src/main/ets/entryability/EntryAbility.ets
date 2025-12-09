@@ -18,7 +18,9 @@ import { window } from '@kit.ArkUI';
 import { BusinessError } from '@ohos.base';
 
 export default class EntryAbility extends UIAbility {
+  private storage: LocalStorage = new LocalStorage();
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam){
+    this.storage.setOrCreate('eee',333);
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     globalThis.abilityWant = want;
   }
@@ -26,14 +28,14 @@ export default class EntryAbility extends UIAbility {
   onDestroy(){
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
-  
+
   onWindowStageCreate(windowStage: window.WindowStage):void{
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
     globalThis.windowStage = windowStage
     globalThis.abilityContext = this.context
-    windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError, data) => {
+    windowStage.loadContent('MainAbility/pages/index/index', this.storage, (err: BusinessError, data) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;

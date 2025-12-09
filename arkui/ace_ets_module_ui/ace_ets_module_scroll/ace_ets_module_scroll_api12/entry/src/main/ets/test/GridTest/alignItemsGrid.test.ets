@@ -46,12 +46,12 @@ export default function alignItemsGrid() {
     });
 
     /**
-     * @tc.number    alignItemsGrid_001
-     * @tc.name      alignItemsGrid_0100
-     * @tc.desc      Set the grid to alignItems and set them to DEFAULT.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   alignItemsGrid_0100
+     * @tc.number alignItemsGrid_001
+     * @tc.desc   Set the grid to alignItems and set them to DEFAULT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('alignItemsGrid_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[alignItemsGrid_0100] START');
@@ -74,12 +74,12 @@ export default function alignItemsGrid() {
     });
 
     /**
-     * @tc.number    alignItemsGrid_002
-     * @tc.name      alignItemsGrid_0200
-     * @tc.desc      Set the grid to alignItems and set them to STRETCH.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   alignItemsGrid_0200
+     * @tc.number alignItemsGrid_002
+     * @tc.desc   Set the grid to alignItems and set them to STRETCH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('alignItemsGrid_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[alignItemsGrid_0200] START');

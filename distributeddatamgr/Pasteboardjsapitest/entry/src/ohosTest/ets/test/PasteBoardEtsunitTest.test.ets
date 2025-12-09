@@ -86,7 +86,6 @@ export default function pasteBoardJEtsunitTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test1
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1500
      * @tc.desc   Test pasteBoard API functionality.
@@ -131,7 +130,6 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test2
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1400
      * @tc.desc   Test pasteBoard API functionality.
@@ -166,7 +164,6 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test3
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1300
      * @tc.desc   Test pasteBoard API functionality.
@@ -204,7 +201,6 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test4
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1600
      * @tc.desc   Test pasteBoard API functionality.
@@ -246,7 +242,6 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test5
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1700
      * @tc.desc   Test pasteBoard API functionality.
@@ -286,7 +281,6 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test6
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0700
      * @tc.desc   Test pasteBoard API functionality.
@@ -325,7 +319,6 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test7
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0600
      * @tc.desc   Test pasteBoard API functionality.
@@ -360,7 +353,6 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test8
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1100
      * @tc.desc   Test pasteBoard API functionality.
@@ -396,7 +388,6 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test9
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0900
      * @tc.desc   Test pasteBoard API functionality.
@@ -434,7 +425,6 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test10
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0800
      * @tc.desc   Test pasteBoard API functionality.
@@ -469,7 +459,6 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test11
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1200
      * @tc.desc   Test pasteBoard API functionality.
@@ -505,7 +494,6 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test12
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1000
      * @tc.desc   Test pasteBoard API functionality.
@@ -547,7 +535,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test13
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0200
      * @tc.desc   Test pasteBoard API functionality.
@@ -584,7 +571,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test14
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0300
      * @tc.desc   Test pasteBoard API functionality.
@@ -619,7 +605,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test15
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0100
      * @tc.desc   Test pasteBoard API functionality.
@@ -659,7 +644,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test16
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0400
      * @tc.desc   Test pasteBoard API functionality.
@@ -698,7 +682,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test17
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0500
      * @tc.desc   Test pasteBoard API functionality.
@@ -739,7 +722,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test18
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1800
      * @tc.desc   Test pasteBoard API functionality.
@@ -785,7 +767,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test19
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1200
      * @tc.desc   Test pasteBoard API functionality.
@@ -835,7 +816,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test20
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0800
      * @tc.desc   Test pasteBoard API functionality.
@@ -884,7 +864,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test21
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0900
      * @tc.desc   Test pasteBoard API functionality.
@@ -933,7 +912,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test22
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1000
      * @tc.desc   Test pasteBoard API functionality.
@@ -985,7 +963,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test23
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0700
      * @tc.desc   Test pasteBoard API functionality.
@@ -1037,7 +1014,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test24
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_2100
      * @tc.desc   Test pasteBoard API functionality.
@@ -1095,7 +1071,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test25
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1100
      * @tc.desc   Test pasteBoard API functionality.
@@ -1150,7 +1125,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test26
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_2200
      * @tc.desc   Test pasteBoard API functionality.
@@ -1210,7 +1184,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test27
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1800
      * @tc.desc   Test pasteBoard API functionality.
@@ -1255,7 +1228,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test28
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1500
      * @tc.desc   Test pasteBoard API functionality.
@@ -1296,7 +1268,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test29
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1600
      * @tc.desc   Test pasteBoard API functionality.
@@ -1337,7 +1308,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test30
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1700
      * @tc.desc   Test pasteBoard API functionality.
@@ -1384,7 +1354,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test31
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1400
      * @tc.desc   Test pasteBoard API functionality.
@@ -1428,7 +1397,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test32
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0200
      * @tc.desc   Test pasteBoard API functionality.
@@ -1462,7 +1430,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test33
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0300
      * @tc.desc   Test pasteBoard API functionality.
@@ -1504,7 +1471,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test34
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0100
      * @tc.desc   Test pasteBoard API functionality.
@@ -1546,7 +1512,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test35
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0400
      * @tc.desc   Test pasteBoard API functionality.
@@ -1588,7 +1553,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test36
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0700
      * @tc.desc   Test pasteBoard API functionality.
@@ -1631,7 +1595,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test37
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0500
      * @tc.desc   Test pasteBoard API functionality.
@@ -1678,7 +1641,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test38
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0600
      * @tc.desc   Test pasteBoard API functionality.
@@ -1706,7 +1668,7 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test38: Clears the pasteBoard')
-              systemPasteboard.clear();
+              systemPasteboard.clearDataSync();
 
               console.info('f_test38: Checks the number of records');
               systemPasteboard.getPasteData().then((data) => {
@@ -1724,7 +1686,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test39
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0200
      * @tc.desc   Test pasteBoard API functionality.
@@ -1783,7 +1744,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test40
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0300
      * @tc.desc   Test pasteBoard API functionality.
@@ -1841,7 +1801,6 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test41
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0500
      * @tc.desc   Test pasteBoard API functionality.
@@ -1868,7 +1827,7 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test41: Clears the pasteBoard');
-              systemPasteboard.clear();
+              systemPasteboard.clearDataSync();
 
               console.info('f_test41: Checks the Property');
               let pasteDataProperty1 = pasteData1.getProperty();
@@ -1885,7 +1844,6 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test42
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0900
      * @tc.desc   Test pasteBoard API functionality.
@@ -1927,7 +1885,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test43
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0600
      * @tc.desc   Test pasteBoard API functionality.
@@ -1971,7 +1928,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test44
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0700
      * @tc.desc   Test pasteBoard API functionality.
@@ -2014,7 +1970,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test45
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0800
      * @tc.desc   Test pasteBoard API functionality.
@@ -2060,7 +2015,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test46
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_1000
      * @tc.desc   Test pasteBoard API functionality.
@@ -2102,7 +2056,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test47
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0400
      * @tc.desc   Test pasteBoard API functionality.
@@ -2145,7 +2098,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test48
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0100
      * @tc.desc   Test pasteBoard API functionality.
@@ -2188,7 +2140,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test49
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0200
      * @tc.desc   Test pasteBoard API functionality.
@@ -2231,7 +2182,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test50
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0300
      * @tc.desc   Test pasteBoard API functionality.
@@ -2277,7 +2227,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test51
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0500
      * @tc.desc   Test pasteBoard API functionality.
@@ -2319,7 +2268,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test52
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2400
      * @tc.desc   Test pasteBoard API functionality.
@@ -2352,7 +2300,7 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test52: Clears the pasteBoard')
-              systemPasteboard.clear()
+              systemPasteboard.clearDataSync();
 
               console.info('f_test52: Checks the number of records');
               systemPasteboard.getPasteData().then((data) => {
@@ -2370,7 +2318,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test53
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2200
      * @tc.desc   Test pasteBoard API functionality.
@@ -2398,7 +2345,7 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test53: Clears the pasteBoard')
-              systemPasteboard.clear()
+              systemPasteboard.clearDataSync();
 
               console.info('f_test53: Checks the number of records');
               systemPasteboard.getPasteData().then((data) => {
@@ -2415,7 +2362,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test54
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2100
      * @tc.desc   Test pasteBoard API functionality.
@@ -2444,7 +2390,7 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test54: Clears the pasteBoard')
-              systemPasteboard.clear()
+              systemPasteboard.clearDataSync();
 
               console.info('f_test54: Checks the number of records');
               systemPasteboard.getPasteData().then((data) => {
@@ -2461,7 +2407,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test55
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2300
      * @tc.desc   Test pasteBoard API functionality.
@@ -2491,7 +2436,7 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test55: Clears the pasteBoard')
-              systemPasteboard.clear()
+              systemPasteboard.clearDataSync();
 
               console.info('f_test55: Checks the number of records');
               systemPasteboard.getPasteData().then((data) => {
@@ -2508,7 +2453,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test56
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0200
      * @tc.desc   Test pasteBoard API functionality.
@@ -2543,7 +2487,7 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 30).assertTrue();
 
               console.info('f_test56: Clears the pasteBoard')
-              systemPasteboard.clear()
+              systemPasteboard.clearDataSync();
 
               console.info('f_test56: Checks the number of records');
               systemPasteboard.getPasteData().then((data) => {
@@ -2560,7 +2504,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test57
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0300
      * @tc.desc   Test pasteBoard API functionality.
@@ -2604,7 +2547,7 @@ export default function pasteBoardJEtsunitTest() {
             systemPasteboard.getPasteData().then((data) => {
               let pasteData1 = data;
               expect(pasteData1.getRecordCount() == 15).assertTrue();
-              systemPasteboard.clear()
+              systemPasteboard.clearDataSync()
               systemPasteboard.getPasteData().then((data) => {
                 let pasteData2 = data;
                 let recordCount = pasteData2.getRecordCount();
@@ -2619,7 +2562,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test58
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0900
      * @tc.desc   Test pasteBoard API functionality.
@@ -2647,7 +2589,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test59
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0600
      * @tc.desc   Test pasteBoard API functionality.
@@ -2676,7 +2617,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test60
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0500
      * @tc.desc   Test pasteBoard API functionality.
@@ -2705,7 +2645,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test61
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0700
      * @tc.desc   Test pasteBoard API functionality.
@@ -2736,7 +2675,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test62
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0400
      * @tc.desc   Test pasteBoard API functionality.
@@ -2786,7 +2724,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test63
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1200
      * @tc.desc   Test pasteBoard API functionality.
@@ -2830,7 +2767,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test64
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0100
      * @tc.desc   Test pasteBoard API functionality.
@@ -2870,7 +2806,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test65
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2500
      * @tc.desc   Test pasteBoard API functionality.
@@ -2898,7 +2833,7 @@ export default function pasteBoardJEtsunitTest() {
               expect(pasteData1.getRecordCount() == 1).assertTrue();
 
               console.info('f_test65 Clears the pasteBoard')
-              systemPasteboard.clear();
+              systemPasteboard.clearDataSync();
               console.info('f_test65 Writes PasteData to the pasteboard');
               systemPasteboard.setPasteData(pasteData1).then(() => {
                 console.info('f_test65 Checks there is no content in the pasteboard')
@@ -2915,7 +2850,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test66
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0800
      * @tc.desc   Test pasteBoard API functionality.
@@ -2956,7 +2890,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test67
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0600
      * @tc.desc   Test pasteBoard API functionality.
@@ -2997,7 +2930,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test68
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0700
      * @tc.desc   Test pasteBoard API functionality.
@@ -3041,7 +2973,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test69
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0400
      * @tc.desc   Test pasteBoard API functionality.
@@ -3080,7 +3011,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test70
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0800
      * @tc.desc   Test pasteBoard API functionality.
@@ -3114,7 +3044,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test71
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_onRemoteUpdate_0100
      * @tc.desc   Test pasteBoard API functionality.
@@ -3155,7 +3084,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test72
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_onRemoteUpdate_0200
      * @tc.desc   Test pasteBoard API functionality.
@@ -3178,7 +3106,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test73
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_offRemoteUpdate_0100
      * @tc.desc   Test pasteBoard API functionality.
@@ -3221,7 +3148,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test74
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_offRemoteUpdate_0200
      * @tc.desc   Test pasteBoard API functionality.
@@ -3264,7 +3190,6 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   pasteboard_function_test75
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_offRemoteUpdate_0300
      * @tc.desc   Test pasteBoard API functionality.

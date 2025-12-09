@@ -52,6 +52,14 @@ done();
       done()
     });
 
+    /**
+     * @tc.name   commonTest_0100
+     * @tc.number commonTest_0100
+     * @tc.desc   commonTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('commonTest_0100', Level.LEVEL0, async (done: Function) => {
 
       display.getDefaultDisplay().then(dsp => {
@@ -75,6 +83,14 @@ done();
       done();
     });
 
+    /**
+     * @tc.name   commonTest_0200
+     * @tc.number commonTest_0200
+     * @tc.desc   commonTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('commonTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('commonTest_0200 START' + dpiValue);
       let a = -90;
@@ -87,6 +103,14 @@ done();
       done();
     });
 
+    /**
+     * @tc.name   commonTest_0300
+     * @tc.number commonTest_0300
+     * @tc.desc   commonTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('commonTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('commonTest_0300 START');
       let a = '30';
@@ -97,6 +121,14 @@ done();
       done();
     });
 
+    /**
+     * @tc.name   commonTest_0400
+     * @tc.number commonTest_0400
+     * @tc.desc   commonTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('commonTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('commonTest_0400 START');
       let a = 80;
@@ -108,6 +140,14 @@ done();
       done();
     });
 
+    /**
+     * @tc.name   commonTest_0500
+     * @tc.number commonTest_0500
+     * @tc.desc   commonTest_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('commonTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('commonTest_0500 START');
       let a = -100000000;
@@ -119,6 +159,14 @@ done();
       done();
     });
 
+    /**
+     * @tc.name   commonTest_0600
+     * @tc.number commonTest_0600
+     * @tc.desc   commonTest_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('commonTest_0600', Level.LEVEL0, async (done: Function) => {
       console.info('commonTest_0600 START');
       let a = '80';
@@ -129,6 +177,14 @@ done();
       done();
     });
 
+    /**
+     * @tc.name   commonTest_0700
+     * @tc.number commonTest_0700
+     * @tc.desc   commonTest_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('commonTest_0700', Level.LEVEL0, async (done: Function) => {
       console.info('commonTest_0700 START');
       let a = 70;
@@ -140,6 +196,14 @@ done();
       done();
     });
 
+    /**
+     * @tc.name   commonTest_0800
+     * @tc.number commonTest_0800
+     * @tc.desc   commonTest_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('commonTest_0800', Level.LEVEL0, async (done: Function) => {
       console.info('commonTest_0800 START');
       let a = -70;
@@ -151,6 +215,14 @@ done();
       done();
     });
 
+    /**
+     * @tc.name   commonTest_0900
+     * @tc.number commonTest_0900
+     * @tc.desc   commonTest_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('commonTest_0900', Level.LEVEL0, async (done: Function) => {
       console.info('commonTest_0900 START');
       let a = '70';
@@ -161,6 +233,14 @@ done();
       done();
     });
 
+    /**
+     * @tc.name   commonTest_1000
+     * @tc.number commonTest_1000
+     * @tc.desc   commonTest_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('commonTest_1000', Level.LEVEL0, async (done: Function) => {
       console.info('commonTest_1000 START');
       let a = 60;
@@ -172,6 +252,14 @@ done();
       done();
     });
 
+    /**
+     * @tc.name   commonTest_1100
+     * @tc.number commonTest_1100
+     * @tc.desc   commonTest_1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('commonTest_1100', Level.LEVEL0, async (done: Function) => {
       console.info('commonTest_1100 START');
       let a = -60;
@@ -183,6 +271,14 @@ done();
       done();
     });
 
+    /**
+     * @tc.name   commonTest_1200
+     * @tc.number commonTest_1200
+     * @tc.desc   commonTest_1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('commonTest_1200', Level.LEVEL0, async (done: Function) => {
       console.info('commonTest_1200 START');
       let a = '60';
@@ -194,6 +290,14 @@ done();
     });
 
 
+    /**
+     * @tc.name   commonTest_1500
+     * @tc.number commonTest_1500
+     * @tc.desc   commonTest_1500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('commonTest_1500', Level.LEVEL0, async (done: Function) => {
       console.info('commonTest_1500 START');
       let a = '50';
@@ -204,6 +308,14 @@ done();
       done();
     });
 
+    /**
+     * @tc.name   commonTest_1800
+     * @tc.number commonTest_1800
+     * @tc.desc   commonTest_1800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('commonTest_1800', Level.LEVEL0, async (done: Function) => {
       console.info('commonTest_1800 START');
       let a = '40';

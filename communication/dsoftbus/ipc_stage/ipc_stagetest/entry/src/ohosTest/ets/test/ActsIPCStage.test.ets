@@ -188,7 +188,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0010
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0010
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -214,7 +213,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0020
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0020
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -243,7 +241,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0030
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0030
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -271,7 +268,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0040
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0040
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -301,7 +297,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0050
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0050
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -330,7 +325,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0060
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0060
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -363,7 +357,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0070
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0070
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -399,7 +392,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0080
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0080
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -431,7 +423,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0090
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0090
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -459,7 +450,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0100
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0100
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -487,7 +477,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0110
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0110
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -516,7 +505,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0120
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0120
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -552,7 +540,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0130
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0130
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -588,7 +575,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0140
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0140
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -621,7 +607,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0150
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0150
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -660,7 +645,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0160
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0160
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -689,7 +673,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0170
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0170
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -719,7 +702,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0180
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0180
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -755,7 +737,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0190
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0190
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -791,7 +772,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0200
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0200
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -824,7 +804,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0210
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0210
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -863,7 +842,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0220
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0220
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -894,7 +872,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0230
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0230
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -927,7 +904,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0240
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0200
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -959,7 +935,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0250
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0250
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -990,7 +965,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0260
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0260
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1021,7 +995,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0270
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0270
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1049,7 +1022,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0280
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0280
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1081,7 +1053,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0290
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0290
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1116,7 +1087,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0300
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0300
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1154,7 +1124,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0310
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0310
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1192,7 +1161,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0320
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0320
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1228,7 +1196,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0330
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0330
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1268,7 +1235,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0340
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0340
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1306,7 +1272,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0350
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0350
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1338,7 +1303,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0360
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0360
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1372,7 +1336,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0370
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0370
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1434,7 +1397,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0380
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0380
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1459,7 +1421,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0390
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0390
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1493,7 +1454,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0400
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0400
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1527,7 +1487,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0410
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0410
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1555,7 +1514,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0420
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0420
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1591,7 +1549,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0430
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0430
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1626,7 +1583,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0440
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0440
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1664,7 +1620,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0450
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0450
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1700,7 +1655,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0460
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0460
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1733,7 +1687,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0470
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0470
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1767,7 +1720,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0480
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0480
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1795,7 +1747,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0490
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0490
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1828,7 +1779,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0500
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0500
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1868,7 +1818,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0510
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0510
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1900,7 +1849,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0520
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0520
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1932,7 +1880,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0530
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0530
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1960,7 +1907,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0540
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0540
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1988,7 +1934,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0550
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0550
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2021,7 +1966,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0560
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0560
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2061,7 +2005,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0570
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0570
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2093,7 +2036,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0580
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0580
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2125,7 +2067,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0590
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0590
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2153,7 +2094,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0600
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0600
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2182,7 +2122,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0610
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0610
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2215,7 +2154,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0620
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0620
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2255,7 +2193,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0630
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0630
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2287,7 +2224,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0640
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0640
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2319,7 +2255,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0650
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0650
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2347,7 +2282,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0660
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0660
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2376,7 +2310,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0670
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0670
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2409,7 +2342,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0680
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0680
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2442,7 +2374,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0690
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0690
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2475,7 +2406,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0700
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0700
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2509,7 +2439,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0710
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0710
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2537,7 +2466,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0720
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0720
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2566,7 +2494,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0730
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0730
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2599,7 +2526,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0740
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0740
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2632,7 +2558,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0750
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0750
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2665,7 +2590,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0760
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0760
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2698,7 +2622,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0770
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0770
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2731,7 +2654,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0780
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0780
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2759,7 +2681,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0790
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0790
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2788,7 +2709,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0800
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0800
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2821,7 +2741,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0810
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0810
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2854,7 +2773,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0820
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0820
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2887,7 +2805,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0830
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0830
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2915,7 +2832,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0840
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0840
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2944,7 +2860,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0850
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0850
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2977,7 +2892,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0860
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0860
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3010,7 +2924,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0870
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0870
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3038,7 +2951,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0880
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0880
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3067,7 +2979,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0890
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0890
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3100,7 +3011,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0900
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0900
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3133,7 +3043,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0910
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0910
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3166,7 +3075,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0920
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0920
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3199,7 +3107,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0930
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0930
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3227,7 +3134,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0940
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0940
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3256,7 +3162,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0950
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0950
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3292,7 +3197,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0960
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0960
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3323,7 +3227,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0970
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0970
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3351,7 +3254,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0980
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0980
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3380,7 +3282,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_0990
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_0990
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3409,7 +3310,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1000
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1000
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3438,7 +3338,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1010
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1010
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3474,7 +3373,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1020
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1020
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3510,7 +3408,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1030
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1030
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3539,7 +3436,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1040
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1040
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3570,7 +3466,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1050
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1050
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3605,7 +3500,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1060
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1060
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3638,7 +3532,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1070
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1070
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3673,7 +3566,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1080
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1080
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3712,7 +3604,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1090
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1090
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3750,7 +3641,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1100
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1100
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3783,7 +3673,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1110
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1110
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3812,7 +3701,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1120
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1120
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3842,7 +3730,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1130
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1130
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3875,7 +3762,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1140
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1140
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3914,7 +3800,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1150
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1150
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3947,7 +3832,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1160
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1160
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3981,7 +3865,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1170
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1170
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4014,7 +3897,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1180
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1180
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4043,7 +3925,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1190
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1190
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4073,7 +3954,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1200
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1200
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4106,7 +3986,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1210
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1210
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4145,7 +4024,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1220
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1220
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4178,7 +4056,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1230
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1230
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4216,7 +4093,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1240
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1240
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4248,7 +4124,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1250
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1250
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4277,7 +4152,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1260
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1260
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4307,7 +4181,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1270
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1270
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4342,7 +4215,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1280
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1280
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4381,7 +4253,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1290
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1290
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4417,7 +4288,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1300
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1300
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4449,7 +4319,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1310
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1310
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4478,7 +4347,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1320
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1320
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4508,7 +4376,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1330
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1330
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4543,7 +4410,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1340
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1340
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4579,7 +4445,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1350
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1350
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4618,7 +4483,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1360
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1360
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4650,7 +4514,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1370
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1370
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4679,7 +4542,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1380
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1380
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4709,7 +4571,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1390
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1390
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4742,7 +4603,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1400
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1400
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4781,7 +4641,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1410
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1410
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4816,7 +4675,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1420
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1420
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4848,7 +4706,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1430
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1430
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4877,7 +4734,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1440
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1440
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4907,7 +4763,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1450
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1450
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4940,7 +4795,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1460
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1460
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4983,7 +4837,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1470
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1470
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5019,7 +4872,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1480
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1480
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5048,7 +4900,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1490
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1490
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5078,7 +4929,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1500
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1500
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5111,7 +4961,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1510
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1510
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5150,7 +4999,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1520
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1520
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5182,7 +5030,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1530
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1530
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5211,7 +5058,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1540
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1540
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5241,7 +5087,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1550
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1550
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5274,7 +5119,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1560
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1560
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5313,7 +5157,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1570
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1570
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5345,7 +5188,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1580
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1580
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5374,7 +5216,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1590
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1590
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5404,7 +5245,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1600
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1600
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5438,7 +5278,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1610
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1610
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5472,7 +5311,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1620
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1620
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5500,7 +5338,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1630
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1630
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5528,7 +5365,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1640
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1640
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5568,7 +5404,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1650
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1650
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5608,7 +5443,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1660
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1660
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5638,7 +5472,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1670
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1670
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5670,7 +5503,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1680
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1680
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5722,7 +5554,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1700
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1700
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5779,7 +5610,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1710
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1710
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5854,7 +5684,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1720
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1720
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5892,7 +5721,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1730
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1730
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5930,7 +5758,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1740
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1740
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5966,7 +5793,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1750
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1750
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -5995,7 +5821,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1760
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1760
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6025,7 +5850,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1770
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1770
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6055,7 +5879,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1780
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1780
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6087,7 +5910,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1790
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1790
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6117,7 +5939,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1800
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1800
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6149,7 +5970,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1810
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1810
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6181,7 +6001,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1820
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1820
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6215,7 +6034,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1830
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1830
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6243,7 +6061,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1840
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1840
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6281,7 +6098,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1850
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1850
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6312,7 +6128,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1860
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1860
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6346,7 +6161,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1870
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1870
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6383,7 +6197,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1880
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1880
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6410,7 +6223,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1890
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1890
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6439,7 +6251,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1900
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1900
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6467,7 +6278,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1910
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1910
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6496,7 +6306,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1920
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1920
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6526,7 +6335,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1930
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1930
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
@@ -6562,7 +6370,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1940
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1940
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6591,7 +6398,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1950
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1950
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6620,7 +6426,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1960
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1960
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6652,7 +6457,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1970
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1970
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6684,7 +6488,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1980
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1980
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6716,7 +6519,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_1990
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_1990
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6749,7 +6551,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2000
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2000
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6782,7 +6583,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2010
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2010
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6815,7 +6615,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2020
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2020
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6847,7 +6646,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2030
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2030
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6879,7 +6677,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2040
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2040
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6914,7 +6711,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2050
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2050
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6948,7 +6744,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2060
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2060
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -6981,7 +6776,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2070
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2070
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7014,7 +6808,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2080
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2080
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7047,7 +6840,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2090
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2090
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7080,7 +6872,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2100
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2100
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7113,7 +6904,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2110
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2110
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7146,7 +6936,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2120
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2120
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7179,7 +6968,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2130
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2130
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7213,7 +7001,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2140
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2140
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7247,7 +7034,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2150
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2150
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7279,7 +7065,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2160
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2160
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7311,7 +7096,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2170
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2170
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7344,7 +7128,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2180
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2180
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7377,7 +7160,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2190
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2190
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7409,7 +7191,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2200
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2200
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7447,7 +7228,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2210
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2210
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7496,7 +7276,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2220
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2220
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7517,7 +7296,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2230
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2230
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7538,7 +7316,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0010
      * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0010
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
@@ -7562,7 +7339,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0020
      * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0020
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
@@ -7584,7 +7360,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0030
      * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0030
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
@@ -7615,7 +7390,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0040
      * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0040
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
@@ -7642,7 +7416,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0050
      * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0050
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
@@ -7666,7 +7439,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0060
      * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0060
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
@@ -7690,7 +7462,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0070
      * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0070
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
@@ -7714,7 +7485,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0080
      * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0080
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
@@ -7738,7 +7508,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0090
      * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0090
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
@@ -7759,7 +7528,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0010
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0010
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7785,7 +7553,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0020
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0020
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7814,7 +7581,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0030
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0030
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7841,7 +7607,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0040
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0040
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7867,7 +7632,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0050
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0050
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7894,7 +7658,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0060
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0060
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7924,7 +7687,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0070
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0070
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7950,7 +7712,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0080
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0080
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7976,7 +7737,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0090
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0090
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -7999,7 +7759,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0100
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0100
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8037,7 +7796,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0110
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0110
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8072,7 +7830,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0120
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0120
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8107,7 +7864,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0130
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0130
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8142,7 +7898,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0140
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0140
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8179,7 +7934,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0150
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0150
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8216,7 +7970,6 @@ export default function ActsRpcClientEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0160
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0160
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8252,7 +8005,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0010
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0010
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8277,7 +8029,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0020
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0020
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8301,7 +8052,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0030
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0030
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8326,7 +8076,6 @@ export default function ActsRpcClientEtsTest() {
     })    
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0040
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0040
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8350,7 +8099,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0050
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0050
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8375,7 +8123,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0060
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0060
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8400,7 +8147,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0070
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0070
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8424,7 +8170,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0080
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0080
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8452,7 +8197,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0090
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0090
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8476,7 +8220,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0100
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0100
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8508,7 +8251,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0110
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0110
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8532,7 +8274,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0120
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0120
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8556,7 +8297,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0130
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0130
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8585,7 +8325,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0140
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0140
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8610,7 +8349,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0150
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0150
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8637,7 +8375,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0160
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0160
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8662,7 +8399,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0170
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0170
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8687,7 +8423,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0180
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0180
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8713,7 +8448,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0190
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0190
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8742,7 +8476,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0200
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0200
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8769,7 +8502,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0210
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0210
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8795,7 +8527,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0220
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0220
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8821,7 +8552,6 @@ export default function ActsRpcClientEtsTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0230
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0230
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8854,7 +8584,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0240
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0240
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8886,7 +8615,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0250
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0250
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8919,7 +8647,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0260
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0260
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8952,7 +8679,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0270
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0270
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -8984,7 +8710,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0280
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0280
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -9016,7 +8741,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0290
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0290
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -9048,7 +8772,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0300
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0300
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -9080,7 +8803,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0310
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0310
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -9118,7 +8840,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0320
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0320
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -9155,7 +8876,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0330
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0330
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -9189,7 +8909,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0340
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0340
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -9223,7 +8942,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0350
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0350
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -9257,7 +8975,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0360
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0360
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -9291,7 +9008,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0370
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0370
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -9325,7 +9041,6 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:44
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_Ashmem_0380
      * @tc.number SUB_DSoftbus_IPC_API_Stage_Ashmem_0380
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现

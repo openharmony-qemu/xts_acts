@@ -156,7 +156,6 @@ export default function UsbApiIsochronousTransferTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer001
      * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_Func_0200
      * @tc.desc   isochronous transfer read successfully.
@@ -209,7 +208,6 @@ export default function UsbApiIsochronousTransferTest() {
     });
 
      /**
-      * @generated.time 2025-11-09 20:57:56
       * @tc.name   testUsbSubmitTransfer801Err001
       * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_FuncErr_0200
       * @tc.desc   isochronous transfer read
@@ -260,7 +258,6 @@ export default function UsbApiIsochronousTransferTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer002
      * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_Func_0100
      * @tc.desc   isochronous transfer write successfully.
@@ -312,7 +309,6 @@ export default function UsbApiIsochronousTransferTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer003
      * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_ErrCode_0100
      * @tc.desc   isochronous transfer error endpoint.
@@ -347,7 +343,6 @@ export default function UsbApiIsochronousTransferTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer801Err003
      * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_ErrCode801_0100
      * @tc.desc   isochronous transfer error endpoint.
@@ -385,7 +380,6 @@ export default function UsbApiIsochronousTransferTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer004
      * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_ErrCode_0200
      * @tc.desc   isochronous transfer claimInterface no call. IO error.
@@ -426,7 +420,6 @@ export default function UsbApiIsochronousTransferTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer005
      * @tc.number SUB_USB_Host_JS_usbSubmitTransfer_ErrCode_0300
      * @tc.desc   iso transfer No permission.
@@ -461,7 +454,6 @@ export default function UsbApiIsochronousTransferTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbCancelTransfer001
      * @tc.number SUB_USB_Host_JS_usbCancelTransfer_ErrCode_0100
      * @tc.desc   isochronous transfer cancel failed.
@@ -494,7 +486,6 @@ export default function UsbApiIsochronousTransferTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbCancelTransfer002
      * @tc.number SUB_USB_Host_JS_UsbCancelTransfer_ErrCode_0200
      * @tc.desc   isochronous transfer No permission.

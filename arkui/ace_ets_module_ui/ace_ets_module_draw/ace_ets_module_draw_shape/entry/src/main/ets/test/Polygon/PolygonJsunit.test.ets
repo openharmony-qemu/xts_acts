@@ -46,12 +46,12 @@ export default function polygonJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testPolygon001
-     * @tc.name: testPolygon001
-     * @tc.desc: PolygonAPI 
-     * @tc.level: Level 0
-     * @tc.type : Polygon
-     * @tc.size : PolygonTest
+     * @tc.name   testPolygon001
+     * @tc.number SUB_ARKUI_API_testPolygon001
+     * @tc.desc   PolygonAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPolygon001', Level.LEVEL0, async (done: Function) => {
       console.info('[testPolygon001] START');

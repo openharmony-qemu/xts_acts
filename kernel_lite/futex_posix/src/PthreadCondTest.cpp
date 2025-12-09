@@ -26,9 +26,12 @@
 using namespace testing::ext;
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_COND_INIT_0100
- * @tc.name     pthread_cond_init initializes condition variables
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadCondInit
+ * @tc.number SUB_KERNEL_PTHREAD_COND_INIT_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FutexTest, testPthreadCondInit, Function | MediumTest | Level2)
 {
@@ -42,9 +45,12 @@ HWTEST_F(FutexTest, testPthreadCondInit, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_COND_DESTROY_0100
- * @tc.name     pthread_cond_destroy destroy condition variables
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadCondDestroy
+ * @tc.number SUB_KERNEL_PTHREAD_COND_DESTROY_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadCondDestroy, Function | MediumTest | Level3)
 {
@@ -63,9 +69,12 @@ HWTEST_F(FutexTest, testPthreadCondDestroy, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_CONDATTR_INIT_0100
- * @tc.name     Init and destroy operations
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadCondattrInit
+ * @tc.number SUB_KERNEL_PTHREAD_CONDATTR_INIT_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FutexTest, testPthreadCondattrInit, Function | MediumTest | Level2)
 {
@@ -77,9 +86,12 @@ HWTEST_F(FutexTest, testPthreadCondattrInit, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_CONDATTR_SETCLOCK_0100
- * @tc.name     Set and get the clock selection variable properties of the condition variable properties
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadCondattrSetclock
+ * @tc.number SUB_KERNEL_PTHREAD_CONDATTR_SETCLOCK_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadCondattrSetclock, Function | MediumTest | Level3)
 {
@@ -131,9 +143,12 @@ void *ThreadPthreadCondSignalBefore2(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_COND_SIGNAL_0100
- * @tc.name     Use pthread_cond_signal to release the conditional semaphore, pthread_cond_signal front
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadCondSignalBefore
+ * @tc.number SUB_KERNEL_PTHREAD_COND_SIGNAL_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadCondSignalBefore, Function | MediumTest | Level3)
 {
@@ -176,9 +191,12 @@ void *ThreadTestCondSignalWaitAfter2(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_COND_SIGNAL_0200
- * @tc.name     Use pthread_cond_signal to release the conditional semaphore, pthread_cond_signal in the back
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadCondSignalAfter
+ * @tc.number SUB_KERNEL_PTHREAD_COND_SIGNAL_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadCondSignalAfter, Function | MediumTest | Level3)
 {
@@ -223,9 +241,12 @@ void *ThreadPthreadCondBroadcast2(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_COND_BROADCAST_0100
- * @tc.name     Use pthread_cond_broadcast to release conditional semaphore
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadCondBroadcast
+ * @tc.number SUB_KERNEL_PTHREAD_COND_BROADCAST_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadCondBroadcast, Function | MediumTest | Level3)
 {
@@ -278,9 +299,12 @@ void *ThreadPthreadCondTimedwait2(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_COND_TIMEDWAIT_0100
- * @tc.name     Use pthread_cond_timedwait to get conditional semaphore
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadCondTimedwait
+ * @tc.number SUB_KERNEL_PTHREAD_COND_TIMEDWAIT_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadCondTimedwait, Function | MediumTest | Level3)
 {
@@ -323,9 +347,12 @@ void *ThreadPthreadCondTimedwaitOut(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_COND_TIMEDWAIT_0200
- * @tc.name     Use pthread_cond_timedwait to time out time measurement
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadCondTimedwaitOut
+ * @tc.number SUB_KERNEL_PTHREAD_COND_TIMEDWAIT_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadCondTimedwaitOut, Function | MediumTest | Level3)
 {
@@ -361,9 +388,12 @@ void *ThreadPthreadCondTimedwaitEinval(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_COND_TIMEDWAIT_0300
- * @tc.name     test pthread_cond_timedwait EINVAL
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadCondTimedwaitEinval
+ * @tc.number SUB_KERNEL_PTHREAD_COND_TIMEDWAIT_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadCondTimedwaitEinval, Function | MediumTest | Level3)
 {

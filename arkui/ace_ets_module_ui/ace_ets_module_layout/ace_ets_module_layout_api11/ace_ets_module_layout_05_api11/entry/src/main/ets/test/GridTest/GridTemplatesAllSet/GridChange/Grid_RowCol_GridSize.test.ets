@@ -46,9 +46,12 @@ export default function Grid_RowCol_GridSize() {
       console.info("Grid_RowCol_GridSize after each called")
     });
     /**
+     * @tc.name   testGridRowColGridSize01
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDCHANGE_0100
-     * @tc.name testGridRowColGridSize01
-     * @tc.desc The Width 200 height 200,Grid is divided into 4 equal parts, 4 components
+     * @tc.desc   The Width 200 height 200,Grid is divided into 4 equal parts, 4 components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColGridSize01',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColGridSize01] START');
@@ -93,9 +96,12 @@ export default function Grid_RowCol_GridSize() {
       done();
     });
     /**
+     * @tc.name   testGridRowColGridSize02
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDCHANGE_0200
-     * @tc.name testGridRowColGridSize02
-     * @tc.desc The Width 200 height 300,Grid is divided into 4 equal parts, 4 components
+     * @tc.desc   The Width 200 height 300,Grid is divided into 4 equal parts, 4 components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColGridSize02',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColGridSize02] START');

@@ -87,13 +87,12 @@ export default function datePickerThemeTest() {
     });
 
     /**
-     * @tc.number    : ActsDatePickerThemeColors_0100
-     * @tc.name      : ActsDatePickerThemeColors_0100
-     * @tc.desc      : check system colors values of the DatePicker component
-     *                 isLunar = false
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsDatePickerThemeColors_0100
+     * @tc.number ActsDatePickerThemeColors_0100
+     * @tc.desc   check system colors values of the DatePicker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it(`ActsDatePickerThemeColors_0100`, Level.LEVEL2, () => {
       const CASE: string = `ActsDatePickerThemeColors_0100`;
@@ -105,13 +104,12 @@ export default function datePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.number    : ActsDatePickerThemeColors_0200
-     * @tc.name      : ActsDatePickerThemeColors_0200
-     * @tc.desc      : check custom colors values of the DatePicker component
-     *                 isLunar = false
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsDatePickerThemeColors_0200
+     * @tc.number ActsDatePickerThemeColors_0200
+     * @tc.desc   check custom colors values of the DatePicker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it(`ActsDatePickerThemeColors_0200`, Level.LEVEL2, () => {
       const CASE: string = `ActsDatePickerThemeColors_0200`;
@@ -124,13 +122,12 @@ export default function datePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.number    : ActsDatePickerThemeColors_0300
-     * @tc.name      : ActsDatePickerThemeColors_0300
-     * @tc.desc      : check custom colors values of the DatePicker component after change
-     *                 isLunar = false
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsDatePickerThemeColors_0300
+     * @tc.number ActsDatePickerThemeColors_0300
+     * @tc.desc   check custom colors values of the DatePicker component after change
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsDatePickerThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsDatePickerThemeColors_0300`;
@@ -144,13 +141,12 @@ export default function datePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.number    : ActsDatePickerThemeColors_0400
-     * @tc.name      : ActsDatePickerThemeColors_0400
-     * @tc.desc      : check system colors values of the DatePicker component after reset
-     *                 isLunar = false
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsDatePickerThemeColors_0400
+     * @tc.number ActsDatePickerThemeColors_0400
+     * @tc.desc   check system colors values of the DatePicker component after reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsDatePickerThemeColors_0400`, Level.LEVEL0, async () => {
       const CASE: string = `ActsDatePickerThemeColors_0400`;
@@ -164,13 +160,12 @@ export default function datePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.number    : ActsDatePickerThemeColors_0500
-     * @tc.name      : ActsDatePickerThemeColors_0500
-     * @tc.desc      : check system colors values of the DatePicker component
-     *                 isLunar = true
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsDatePickerThemeColors_0500
+     * @tc.number ActsDatePickerThemeColors_0500
+     * @tc.desc   check system colors values of the DatePicker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsDatePickerThemeColors_0500`, Level.LEVEL0, async () => {
       const CASE: string = `ActsDatePickerThemeColors_0500`;
@@ -183,13 +178,12 @@ export default function datePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.number    : ActsDatePickerThemeColors_0600
-     * @tc.name      : ActsDatePickerThemeColors_0600
-     * @tc.desc      : check custom colors values of the DatePicker component
-     *                 isLunar = true
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsDatePickerThemeColors_0600
+     * @tc.number ActsDatePickerThemeColors_0600
+     * @tc.desc   check custom colors values of the DatePicker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsDatePickerThemeColors_0600`, Level.LEVEL0, async () => {
       const CASE: string = `ActsDatePickerThemeColors_0600`;
@@ -203,14 +197,12 @@ export default function datePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.number    : ActsDatePickerThemeColors_0700
-     * @tc.name      : ActsDatePickerThemeColors_0700
-     * @tc.desc      : check custom colors values of the DatePicker component
-     *                 after change theme
-     *                 isLunar = true
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsDatePickerThemeColors_0700
+     * @tc.number ActsDatePickerThemeColors_0700
+     * @tc.desc   check custom colors values of the DatePicker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsDatePickerThemeColors_0700`, Level.LEVEL0, async () => {
       const CASE: string = `ActsDatePickerThemeColors_0700`;
@@ -224,14 +216,12 @@ export default function datePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.number    : ActsDatePickerThemeColors_0800
-     * @tc.name      : ActsDatePickerThemeColors_0800
-     * @tc.desc      : check system colors values of the DatePicker component
-     *                 after reset theme
-     *                 isLunar = true
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsDatePickerThemeColors_0800
+     * @tc.number ActsDatePickerThemeColors_0800
+     * @tc.desc   check system colors values of the DatePicker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsDatePickerThemeColors_0800`, Level.LEVEL0, async () => {
       const CASE: string = `ActsDatePickerThemeColors_0800`;

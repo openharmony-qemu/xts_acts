@@ -140,13 +140,13 @@ function expectFail(params: boolean) {
 export default function TlsSkipRemoteValidationTest() {
   describe('TlsSkipRemoteValidationTest', () => {
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TlsSkipRemoteValidationTest0100
-     * @tc.name  :  testNetworkMgrSocketGetLocalAddressTest0100
-     * @tc.desc  :  test Tls with right CA.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrTlsSkipRemoteValidation0100
+     * @tc.number SUB_NetworkMgr_Socket_TlsSkipRemoteValidationTest0100
+     * @tc.desc   test Tls with right CA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrTlsSkipRemoteValidation0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrTlsSkipRemoteValidation0100';
@@ -237,13 +237,13 @@ export default function TlsSkipRemoteValidationTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TlsSkipRemoteValidationTest0200
-     * @tc.name  :  testNetworkMgrSocketGetLocalAddressTest0200
-     * @tc.desc  :  test Tls with wrong CA.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrTlsSkipRemoteValidation0200
+     * @tc.number SUB_NetworkMgr_Socket_TlsSkipRemoteValidationTest0200
+     * @tc.desc   test Tls with wrong CA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrTlsSkipRemoteValidation0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrTlsSkipRemoteValidation0200';
@@ -330,13 +330,13 @@ export default function TlsSkipRemoteValidationTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TlsSkipRemoteValidationTest0300
-     * @tc.name  :  testNetworkMgrSocketGetLocalAddressTest0300
-     * @tc.desc  :  test Tls with wrong CA and no skip.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrTlsSkipRemoteValidation0300
+     * @tc.number SUB_NetworkMgr_Socket_TlsSkipRemoteValidationTest0300
+     * @tc.desc   test Tls with wrong CA and no skip.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrTlsSkipRemoteValidation0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrTlsSkipRemoteValidation0300';
@@ -424,13 +424,13 @@ export default function TlsSkipRemoteValidationTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TlsSkipRemoteValidationTest0400
-     * @tc.name  :  testNetworkMgrSocketGetLocalAddressTest0400
-     * @tc.desc  :  test Tls with right CA and no skip.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrTlsSkipRemoteValidation0400
+     * @tc.number SUB_NetworkMgr_Socket_TlsSkipRemoteValidationTest0400
+     * @tc.desc   test Tls with right CA and no skip.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrTlsSkipRemoteValidation0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrTlsSkipRemoteValidation0400';
@@ -517,13 +517,13 @@ export default function TlsSkipRemoteValidationTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TlsSkipRemoteValidationTest0500
-     * @tc.name  :  testNetworkMgrSocketGetLocalAddressTest0500
-     * @tc.desc  :  test Tls with wrong CA and skip.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrTlsSkipRemoteValidation0500
+     * @tc.number SUB_NetworkMgr_Socket_TlsSkipRemoteValidationTest0500
+     * @tc.desc   test Tls with wrong CA and skip.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrTlsSkipRemoteValidation0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrTlsSkipRemoteValidation0500';
@@ -610,13 +610,13 @@ export default function TlsSkipRemoteValidationTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TlsSkipRemoteValidationTest0600
-     * @tc.name  :  testNetworkMgrSocketGetLocalAddressTest0600
-     * @tc.desc  :  test Tls with wrong CA and skip TLS13.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrTlsSkipRemoteValidation0600
+     * @tc.number SUB_NetworkMgr_Socket_TlsSkipRemoteValidationTest0600
+     * @tc.desc   test Tls with wrong CA and skip TLS13.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrTlsSkipRemoteValidation0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrTlsSkipRemoteValidation0600';
@@ -704,13 +704,13 @@ export default function TlsSkipRemoteValidationTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TlsSkipRemoteValidationTest0700
-     * @tc.name  :  testNetworkMgrSocketGetLocalAddressTest0700
-     * @tc.desc  :  test Tls with right CA and skip.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrTlsSkipRemoteValidation0700
+     * @tc.number SUB_NetworkMgr_Socket_TlsSkipRemoteValidationTest0700
+     * @tc.desc   test Tls with right CA and skip.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrTlsSkipRemoteValidation0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrTlsSkipRemoteValidation0700';

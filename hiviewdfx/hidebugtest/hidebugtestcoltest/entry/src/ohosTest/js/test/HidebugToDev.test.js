@@ -20,12 +20,12 @@ export default function HidebugToDevJsTest() {
 describe('HidebugToDevJsTest', function () {
 
     /**
+     * @tc.name   testHiDebugJs01
      * @tc.number SUB_DFX_DFT_HiDebug_Mem_Js_0100
-     * @tc.name testHiDebugJs01
-     * @tc.desc 验证获取系统内存MemTotal、MemFree、MemAvaiable内存大小能力-ts接口-getSystemMemInfo
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证获取系统内存MemTotal、MemFree、MemAvaiable内存大小能力-ts接口-getSystemMemInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiDebugJs01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -46,12 +46,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs02
      * @tc.number SUB_DFX_DFT_HiDebug_Mem_Js_0200
-     * @tc.name testHiDebugJs02
-     * @tc.desc 验证获取应用的RSS、PSS、VSS内存、共享脏内存、私有脏内存的能力-ts接口-getAppNativeMemInfo
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证获取应用的RSS、PSS、VSS内存、共享脏内存、私有脏内存的能力-ts接口-getAppNativeMemInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -72,12 +72,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs03
      * @tc.number SUB_DFX_DFT_HiDebug_Mem_Js_0300
-     * @tc.name testHiDebugJs03
-     * @tc.desc 验证获取应用的virtual memory、resident set size限制阈值的能力-ts接口-getAppMemoryLimit
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证获取应用的virtual memory、resident set size限制阈值的能力-ts接口-getAppMemoryLimit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -95,12 +95,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs04
      * @tc.number SUB_DFX_DFT_HiDebug_Mem_Js_0400
-     * @tc.name testHiDebugJs04
-     * @tc.desc 验证获取应用的获取应用的JS VM的Heap Size、Heap Used Size、Heap Size大小的限制阈值的能力-ts接口-getAppVMMemoryInfo
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证获取应用的获取应用的JS VM的Heap Size、Heap Used Size、Heap Size大小的限制阈值的能力-ts接口-getAppVMMemoryInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -118,12 +118,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs05
      * @tc.number SUB_DFX_DFT_HiDebug_Mem_Js_0500
-     * @tc.name testHiDebugJs05
-     * @tc.desc 验证获取应用的Shared Clean、Private Clean的能力-ts接口-getAppNativeMemInfo
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证获取应用的Shared Clean、Private Clean的能力-ts接口-getAppNativeMemInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -140,12 +140,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs06
      * @tc.number SUB_DFX_DFT_HiDebug_CPU_Js_0100
-     * @tc.name testHiDebugJs06
-     * @tc.desc 验证获取系统CPU使用率的能力-ts接口-getSystemCpuUsage
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证获取系统CPU使用率的能力-ts接口-getSystemCpuUsage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -161,12 +161,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs07
      * @tc.number SUB_DFX_DFT_HiDebug_CPU_Js_0200
-     * @tc.name testHiDebugJs07
-     * @tc.desc 验证提供应用线程CPU使用率的能力-ts接口-getAppThreadCpuUsage
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证提供应用线程CPU使用率的能力-ts接口-getAppThreadCpuUsage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -187,12 +187,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs08
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_0100
-     * @tc.name testHiDebugJs08
-     * @tc.desc 验证应用内动态启停采集应用trace-ts接口-startAppTraceCapture、stopAppTraceCapture-MAIN_THREAD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内动态启停采集应用trace-ts接口-startAppTraceCapture、stopAppTraceCapture-MAIN_THREAD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -225,12 +225,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs09
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_0200
-     * @tc.name testHiDebugJs09
-     * @tc.desc 验证应用内动态启停采集应用trace-ts接口-startAppTraceCapture、stopAppTraceCapture-ALL_THREADS
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内动态启停采集应用trace-ts接口-startAppTraceCapture、stopAppTraceCapture-ALL_THREADS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -259,12 +259,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs10
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_0300
-     * @tc.name testHiDebugJs10
-     * @tc.desc 验证应用内动态启停采集应用trace-tag无效，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内动态启停采集应用trace-tag无效，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -283,12 +283,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs11
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_0400
-     * @tc.name testHiDebugJs11
-     * @tc.desc 验证应用内动态启停采集应用trace-limitSize小于1bytes，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内动态启停采集应用trace-limitSize小于1bytes，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -307,12 +307,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs12
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_0500
-     * @tc.name testHiDebugJs12
-     * @tc.desc 验证应用内动态启停采集应用trace-flag无效，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内动态启停采集应用trace-flag无效，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -331,12 +331,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs13
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_0600
-     * @tc.name testHiDebugJs13
-     * @tc.desc 验证应用内动态启停采集应用trace-tag为undefined，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内动态启停采集应用trace-tag为undefined，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -355,12 +355,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs14
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_0700
-     * @tc.name testHiDebugJs14
-     * @tc.desc 验证应用内动态启停采集应用trace-limitSize为undefined，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内动态启停采集应用trace-limitSize为undefined，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -379,12 +379,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs15
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_0800
-     * @tc.name testHiDebugJs15
-     * @tc.desc 验证应用内动态启停采集应用trace-flag为undefined，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内动态启停采集应用trace-flag为undefined，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -403,12 +403,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs16
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_0900
-     * @tc.name testHiDebugJs16
-     * @tc.desc 验证应用内重复开始采集应用trace，返回错误码11400102
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内重复开始采集应用trace，返回错误码11400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -430,12 +430,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs17
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_0900
-     * @tc.name testHiDebugJs17
-     * @tc.desc 验证应用在没有采集任务的情况下停止采集应用trace，返回错误码11400105
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用在没有采集任务的情况下停止采集应用trace，返回错误码11400105
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -451,12 +451,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs18
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_1100
-     * @tc.name testHiDebugJs18
-     * @tc.desc getVMRuntimeStat正常测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   getVMRuntimeStat正常测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         console.info('testHiDebugJs18 start');
@@ -477,12 +477,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs19
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_1200
-     * @tc.name testHiDebugJs19
-     * @tc.desc getVMRuntimeStats正常测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   getVMRuntimeStats正常测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         console.info('testHiDebugJs19 start');
@@ -506,12 +506,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs20
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_1300
-     * @tc.name testHiDebugJs20
-     * @tc.desc getVMRuntimeStat参数异常测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   getVMRuntimeStat参数异常测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         console.info('testHiDebugJs20 start');
@@ -527,14 +527,14 @@ describe('HidebugToDevJsTest', function () {
         done();
     })
 
-    /*
-    * @tc.number SUB_DFX_DFT_Trace_Collect_Js_1400
-    * @tc.name testHiDebugJs21
-    * @tc.desc getAppMemoryLimit
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level3
-    */
+    /**
+     * @tc.name   testHiDebugJs21
+     * @tc.number SUB_DFX_DFT_Trace_Collect_Js_1400
+     * @tc.desc   getAppMemoryLimit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testHiDebugJs21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         console.info('testHiDebugJs21 start');
         try {
@@ -551,12 +551,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs22
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_1500
-     * @tc.name testHiDebugJs22
-     * @tc.desc 验证应用内设置资源限制值setAppResourceLimit
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内设置资源限制值setAppResourceLimit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         console.info('testHiDebugJs22 start');
@@ -587,12 +587,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs23
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_1600
-     * @tc.name testHiDebugJs23
-     * @tc.desc 验证应用内设置资源限制值, type无效
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内设置资源限制值, type无效
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         console.info('testHiDebugJs23 start');
@@ -611,12 +611,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs24
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_1700
-     * @tc.name testHiDebugJs24
-     * @tc.desc 验证应用内设置资源限制值, value为undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内设置资源限制值, value为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         console.info('testHiDebugJs24 start');
@@ -635,12 +635,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs25
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_1800
-     * @tc.name testHiDebugJs25
-     * @tc.desc 验证应用内设置资源限制值, enabledDebugLog为undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内设置资源限制值, enabledDebugLog为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         console.info('testHiDebugJs25 start');
@@ -659,12 +659,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs26
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_1900
-     * @tc.name testHiDebugJs26
-     * @tc.desc 验证应用内设置资源限制值, value不在范围内
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内设置资源限制值, value不在范围内
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs26', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         console.info('testHiDebugJs26 start');
@@ -683,12 +683,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs27
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_2000
-     * @tc.name testHiDebugJs27
-     * @tc.desc 验证isDebugState,未连接调试状态下
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证isDebugState,未连接调试状态下
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs27', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         console.info('testHiDebugJs27 start');
@@ -703,12 +703,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs28
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_2100
-     * @tc.name testHiDebugJs28
-     * @tc.desc getGraphicsMemory正常测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   getGraphicsMemory正常测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         console.info('testHiDebugJs28 start');
@@ -723,12 +723,12 @@ describe('HidebugToDevJsTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugJs29
      * @tc.number SUB_DFX_DFT_Trace_Collect_Js_2200
-     * @tc.name testHiDebugJs29
-     * @tc.desc getGraphicsMemorySync正常测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   getGraphicsMemorySync正常测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugJs29', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         console.info('testHiDebugJs29 start');

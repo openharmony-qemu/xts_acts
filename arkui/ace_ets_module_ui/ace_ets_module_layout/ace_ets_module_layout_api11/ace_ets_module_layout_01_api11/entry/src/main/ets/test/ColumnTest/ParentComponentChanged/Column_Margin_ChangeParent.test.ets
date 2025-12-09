@@ -50,9 +50,12 @@ export default function column_Margin_ChangeParent() {
     });
 
     /**
+     * @tc.name   testColumnMarginChangeParent
      * @tc.number SUB_ACE_COLUMN_MARGIN_CHANGEPARENT_TEST_0100
-     * @tc.name testColumnMarginChangeParent
-     * @tc.desc The parent component is bound with the margin attributes. Other parameters are default
+     * @tc.desc   The parent component is bound with the margin attributes. Other parameters are default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnMarginChangeParent',  Level.LEVEL0, async () => {
       console.info('new testColumnMarginChangeParent START');

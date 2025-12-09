@@ -59,12 +59,12 @@ export default function sendableGetImageInfoSyncTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_GET_IMAGE_INFO_SYNC_001
-     * @tc.name      : getImageInfoSync_sendable_promise_001
-     * @tc.desc      : getImageInfoSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getImageInfoSync_sendable_promise_001
+     * @tc.number PIXEL_MAP_GET_IMAGE_INFO_SYNC_001
+     * @tc.desc   getImageInfoSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getImageInfoSync_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getImageInfoSync_sendable_promise_001';
@@ -74,12 +74,12 @@ export default function sendableGetImageInfoSyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_GET_IMAGE_INFO_SYNC_002
-     * @tc.name      : getImageInfoSync_sendable_promise_002
-     * @tc.desc      : getImageInfoSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getImageInfoSync_sendable_promise_002
+     * @tc.number PIXEL_MAP_GET_IMAGE_INFO_SYNC_002
+     * @tc.desc   getImageInfoSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getImageInfoSync_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getImageInfoSync_sendable_promise_002';

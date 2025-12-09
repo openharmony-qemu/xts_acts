@@ -53,9 +53,12 @@ export default function ColumnWidthHeight_SubChange() {
     });
 
     /**
+     * @tc.name   testColumnSubcomponentModifyHeight
      * @tc.number SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_0100
-     * @tc.name testColumnSubcomponentModifyHeight
-     * @tc.desc Modify the first subcomponent's height.
+     * @tc.desc   Modify the first subcomponent's height.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSubcomponentModifyHeight',  Level.LEVEL0, async () => {
       console.info('new testColumnSubcomponentModifyHeight START');
@@ -78,9 +81,12 @@ export default function ColumnWidthHeight_SubChange() {
     });
 
     /**
+     * @tc.name   testColumnSubcomponentModifyWidth
      * @tc.number SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_0200
-     * @tc.name testColumnSubcomponentModifyWidth
-     * @tc.desc Modify the first subcomponent's width.
+     * @tc.desc   Modify the first subcomponent's width.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSubcomponentModifyWidth',  Level.LEVEL0, async () => {
       console.info('new testColumnSubcomponentModifyWidth START');

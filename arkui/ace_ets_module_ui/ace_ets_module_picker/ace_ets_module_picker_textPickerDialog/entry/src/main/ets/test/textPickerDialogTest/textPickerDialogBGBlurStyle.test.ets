@@ -43,10 +43,12 @@ export default function TextPickerDialogBGBlurStyleTest() {
       console.info('textPickerDialogBGBlurStyle after each called');
     });
     /**
-     * @tc.number    TextPickerDialogBGBlurStyleTest_001
-     * @tc.name      TextPickerDialogBGBlurStyleTest_001
-     * @tc.desc      To test the TextPickerDialog backgroundBlurStyle BlurStyle.Thin
-     * @tc.level:    Level 0
+     * @tc.name   TextPickerDialogBGBlurStyleTest_001
+     * @tc.number TextPickerDialogBGBlurStyleTest_001
+     * @tc.desc   To test the TextPickerDialog backgroundBlurStyle BlurStyle.Thin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogBGBlurStyleTest_001',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -68,10 +70,12 @@ export default function TextPickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TextPickerDialogBGBlurStyleTest_002
-     * @tc.name      TextPickerDialogBGBlurStyleTest_002
-     * @tc.desc      To test the TextPickerDialog backgroundBlurStyle BlurStyle.Regular
-     * @tc.level:    Level 0
+     * @tc.name   TextPickerDialogBGBlurStyleTest_002
+     * @tc.number TextPickerDialogBGBlurStyleTest_002
+     * @tc.desc   To test the TextPickerDialog backgroundBlurStyle BlurStyle.Regular
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogBGBlurStyleTest_002',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -93,10 +97,12 @@ export default function TextPickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TextPickerDialogBGBlurStyleTest_003
-     * @tc.name      TextPickerDialogBGBlurStyleTest_003
-     * @tc.desc      To test the TextPickerDialog backgroundBlurStyle BlurStyle.Thick
-     * @tc.level:    Level 0
+     * @tc.name   TextPickerDialogBGBlurStyleTest_003
+     * @tc.number TextPickerDialogBGBlurStyleTest_003
+     * @tc.desc   To test the TextPickerDialog backgroundBlurStyle BlurStyle.Thick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogBGBlurStyleTest_003',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -118,10 +124,12 @@ export default function TextPickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TextPickerDialogBGBlurStyleTest_004
-     * @tc.name      TextPickerDialogBGBlurStyleTest_004
-     * @tc.desc      To test the TextPickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_THIN
-     * @tc.level:    Level 0
+     * @tc.name   TextPickerDialogBGBlurStyleTest_004
+     * @tc.number TextPickerDialogBGBlurStyleTest_004
+     * @tc.desc   To test the TextPickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_THIN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogBGBlurStyleTest_004',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -143,10 +151,12 @@ export default function TextPickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TextPickerDialogBGBlurStyleTest_005
-     * @tc.name      TextPickerDialogBGBlurStyleTest_005
-     * @tc.desc      To test the TextPickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_REGULAR
-     * @tc.level:    Level 0
+     * @tc.name   TextPickerDialogBGBlurStyleTest_005
+     * @tc.number TextPickerDialogBGBlurStyleTest_005
+     * @tc.desc   To test the TextPickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_REGULAR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogBGBlurStyleTest_005',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -168,10 +178,12 @@ export default function TextPickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TextPickerDialogBGBlurStyleTest_006
-     * @tc.name      TextPickerDialogBGBlurStyleTest_006
-     * @tc.desc      To test the TextPickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_THICK
-     * @tc.level:    Level 0
+     * @tc.name   TextPickerDialogBGBlurStyleTest_006
+     * @tc.number TextPickerDialogBGBlurStyleTest_006
+     * @tc.desc   To test the TextPickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_THICK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogBGBlurStyleTest_006',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -193,10 +205,12 @@ export default function TextPickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TextPickerDialogBGBlurStyleTest_007
-     * @tc.name      TextPickerDialogBGBlurStyleTest_007
-     * @tc.desc      To test the TextPickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_ULTRA_THICK
-     * @tc.level:    Level 0
+     * @tc.name   TextPickerDialogBGBlurStyleTest_007
+     * @tc.number TextPickerDialogBGBlurStyleTest_007
+     * @tc.desc   To test the TextPickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_ULTRA_THICK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogBGBlurStyleTest_007',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -218,10 +232,12 @@ export default function TextPickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TextPickerDialogBGBlurStyleTest_008
-     * @tc.name      TextPickerDialogBGBlurStyleTest_008
-     * @tc.desc      To test the TextPickerDialog backgroundBlurStyle BlurStyle.NONE
-     * @tc.level:    Level 0
+     * @tc.name   TextPickerDialogBGBlurStyleTest_008
+     * @tc.number TextPickerDialogBGBlurStyleTest_008
+     * @tc.desc   To test the TextPickerDialog backgroundBlurStyle BlurStyle.NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogBGBlurStyleTest_008',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -238,10 +254,12 @@ export default function TextPickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TextPickerDialogBGBlurStyleTest_009
-     * @tc.name      TextPickerDialogBGBlurStyleTest_009
-     * @tc.desc      To test the TextPickerDialog backgroundBlurStyle BlurStyle.COMPONENT_ULTRA_THIN
-     * @tc.level:    Level 0
+     * @tc.name   TextPickerDialogBGBlurStyleTest_009
+     * @tc.number TextPickerDialogBGBlurStyleTest_009
+     * @tc.desc   To test the TextPickerDialog backgroundBlurStyle BlurStyle.COMPONENT_ULTRA_THIN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogBGBlurStyleTest_009',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -263,10 +281,12 @@ export default function TextPickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TextPickerDialogBGBlurStyleTest_0010
-     * @tc.name      TextPickerDialogBGBlurStyleTest_0010
-     * @tc.desc      To test the TextPickerDialog backgroundBlurStyle BlurStyle.COMPONENT_THIN
-     * @tc.level:    Level 0
+     * @tc.name   TextPickerDialogBGBlurStyleTest_0010
+     * @tc.number TextPickerDialogBGBlurStyleTest_0010
+     * @tc.desc   To test the TextPickerDialog backgroundBlurStyle BlurStyle.COMPONENT_THIN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogBGBlurStyleTest_0010',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -288,10 +308,12 @@ export default function TextPickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TextPickerDialogBGBlurStyleTest_0011
-     * @tc.name      TextPickerDialogBGBlurStyleTest_0011
-     * @tc.desc      To test the TextPickerDialog backgroundBlurStyle BlurStyle.COMPONENT_REGULAR
-     * @tc.level:    Level 0
+     * @tc.name   TextPickerDialogBGBlurStyleTest_0011
+     * @tc.number TextPickerDialogBGBlurStyleTest_0011
+     * @tc.desc   To test the TextPickerDialog backgroundBlurStyle BlurStyle.COMPONENT_REGULAR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogBGBlurStyleTest_0011',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -313,10 +335,12 @@ export default function TextPickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TextPickerDialogBGBlurStyleTest_0012
-     * @tc.name      TextPickerDialogBGBlurStyleTest_0012
-     * @tc.desc      To test the TextPickerDialog backgroundBlurStyle BlurStyle.COMPONENT_THICK
-     * @tc.level:    Level 0
+     * @tc.name   TextPickerDialogBGBlurStyleTest_0012
+     * @tc.number TextPickerDialogBGBlurStyleTest_0012
+     * @tc.desc   To test the TextPickerDialog backgroundBlurStyle BlurStyle.COMPONENT_THICK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogBGBlurStyleTest_0012',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -338,10 +362,12 @@ export default function TextPickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TextPickerDialogBGBlurStyleTest_0013
-     * @tc.name      TextPickerDialogBGBlurStyleTest_0013
-     * @tc.desc      To test the TextPickerDialog backgroundBlurStyle BlurStyle.COMPONENT_ULTRA_THICK
-     * @tc.level:    Level 0
+     * @tc.name   TextPickerDialogBGBlurStyleTest_0013
+     * @tc.number TextPickerDialogBGBlurStyleTest_0013
+     * @tc.desc   To test the TextPickerDialog backgroundBlurStyle BlurStyle.COMPONENT_ULTRA_THICK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogBGBlurStyleTest_0013',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -363,10 +389,12 @@ export default function TextPickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TextPickerDialogBGBlurStyleTest_0014
-     * @tc.name      TextPickerDialogBGBlurStyleTest_0014
-     * @tc.desc      To test the TextPickerDialog backgroundBlurStyle null
-     * @tc.level:    Level 0
+     * @tc.name   TextPickerDialogBGBlurStyleTest_0014
+     * @tc.number TextPickerDialogBGBlurStyleTest_0014
+     * @tc.desc   To test the TextPickerDialog backgroundBlurStyle null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogBGBlurStyleTest_0014',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -388,10 +416,12 @@ export default function TextPickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TextPickerDialogBGBlurStyleTest_0015
-     * @tc.name      TextPickerDialogBGBlurStyleTest_0015
-     * @tc.desc      To test the TextPickerDialog backgroundBlurStyle undefined
-     * @tc.level:    Level 0
+     * @tc.name   TextPickerDialogBGBlurStyleTest_0015
+     * @tc.number TextPickerDialogBGBlurStyleTest_0015
+     * @tc.desc   To test the TextPickerDialog backgroundBlurStyle undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogBGBlurStyleTest_0015',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -413,10 +443,12 @@ export default function TextPickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TextPickerDialogBGBlurStyleTest_0016
-     * @tc.name      TextPickerDialogBGBlurStyleTest_0016
-     * @tc.desc      To test the TextPickerDialog backgroundBlurStyle 100
-     * @tc.level:    Level 0
+     * @tc.name   TextPickerDialogBGBlurStyleTest_0016
+     * @tc.number TextPickerDialogBGBlurStyleTest_0016
+     * @tc.desc   To test the TextPickerDialog backgroundBlurStyle 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogBGBlurStyleTest_0016',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -438,10 +470,12 @@ export default function TextPickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TextPickerDialogBGBlurStyleTest_0017
-     * @tc.name      TextPickerDialogBGBlurStyleTest_0017
-     * @tc.desc      To test the TextPickerDialog backgroundBlurStyle -100
-     * @tc.level:    Level 0
+     * @tc.name   TextPickerDialogBGBlurStyleTest_0017
+     * @tc.number TextPickerDialogBGBlurStyleTest_0017
+     * @tc.desc   To test the TextPickerDialog backgroundBlurStyle -100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogBGBlurStyleTest_0017',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();

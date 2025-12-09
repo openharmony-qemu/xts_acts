@@ -84,12 +84,12 @@ export default function StreamTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0100
-     * @tc.name       : testStreamWritable0001
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testStreamWritable0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0100
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testStreamWritable0001';
@@ -103,12 +103,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0200
-     * @tc.name       : testStreamWritable0002
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testStreamWritable0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0200
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testStreamWritable0002';
@@ -122,12 +122,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0300
-     * @tc.name       : testStreamWritable0003
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testStreamWritable0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0300
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testStreamWritable0003';
@@ -141,12 +141,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0400
-     * @tc.name       : testStreamWritable0004
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testStreamWritable0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0400
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testStreamWritable0004';
@@ -160,12 +160,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0500
-     * @tc.name       : testStreamWritable0005
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testStreamWritable0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0500
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testStreamWritable0005';
@@ -179,12 +179,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0600
-     * @tc.name       : testStreamWritable0006
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testStreamWritable0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0600
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testStreamWritable0006';
@@ -202,12 +202,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0700
-     * @tc.name       : testStreamWritable0007
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testStreamWritable0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0700
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testStreamWritable0007';
@@ -221,12 +221,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0800
-     * @tc.name       : testStreamWritable0008
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testStreamWritable0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0800
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testStreamWritable0008';
@@ -240,12 +240,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0900
-     * @tc.name       : testStreamWritable0009
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testStreamWritable0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0900
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testStreamWritable0009';
@@ -259,12 +259,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1000
-     * @tc.name       : testStreamWritable0010
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testStreamWritable0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1000
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testStreamWritable0010';
@@ -278,12 +278,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1100
-     * @tc.name       : testStreamWritable0011
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testStreamWritable0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1100
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testStreamWritable0011';
@@ -297,12 +297,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1200
-     * @tc.name       : testStreamWritable0012
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testStreamWritable0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1200
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testStreamWritable0012';
@@ -316,12 +316,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1300
-     * @tc.name       : testStreamWritable0013
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testStreamWritable0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1300
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testStreamWritable0013';
@@ -335,12 +335,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1400
-     * @tc.name       : testStreamWritable0014
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritable0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1400
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritable0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritable0014';
@@ -354,12 +354,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1500
-     * @tc.name       : testStreamWritable0015
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritable0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1500
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritable0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritable0015';
@@ -373,12 +373,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1600
-     * @tc.name       : testStreamWritable0016
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritable0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1600
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritable0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritable0016';
@@ -392,12 +392,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1700
-     * @tc.name       : testStreamWritable0017
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritable0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1700
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritable0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritable0017';
@@ -413,12 +413,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1800
-     * @tc.name       : testStreamWritable0018
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritable0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1800
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritable0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritable0018';
@@ -434,12 +434,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1900
-     * @tc.name       : testStreamWritable0019
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritable0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1900
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritable0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritable0019';
@@ -455,12 +455,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2000
-     * @tc.name       : testStreamWritable0020
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritable0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2000
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritable0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritable0020';
@@ -476,12 +476,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2100
-     * @tc.name       : testStreamWritable0021
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritable0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2100
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritable0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritable0021';
@@ -495,12 +495,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2200
-     * @tc.name       : testStreamWritable0022
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritable0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2200
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritable0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritable0022';
@@ -514,12 +514,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2300
-     * @tc.name       : testStreamWritable0023
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritable0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2300
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritable0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritable0023';
@@ -533,12 +533,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2400
-     * @tc.name       : testStreamWritable0024
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritable0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2400
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritable0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritable0024';
@@ -552,12 +552,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2500
-     * @tc.name       : testStreamWritable0025
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritable0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2500
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritable0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritable0025';
@@ -571,12 +571,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2600
-     * @tc.name       : testStreamWritable0026
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritable0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2600
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritable0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritable0026';
@@ -590,12 +590,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2700
-     * @tc.name       : testStreamWritable0027
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritable0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2700
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritable0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritable0027';
@@ -609,12 +609,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2800
-     * @tc.name       : testStreamWritable0028
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritable0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2800
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritable0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritable0028';
@@ -628,12 +628,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2900
-     * @tc.name       : testStreamWritable0029
-     * @tc.desc       : Test the function of the interface In the Stream_Writable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritable0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2900
+     * @tc.desc   Test the function of the interface In the Stream_Writable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritable0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritable0029';
@@ -648,12 +648,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3000
-     * @tc.name       : testStreamWritableEnd0001
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3000
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0001';
@@ -668,12 +668,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3100
-     * @tc.name       : testStreamWritableEnd0002
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3100
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0002';
@@ -688,12 +688,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3200
-     * @tc.name       : testStreamWritableEnd0003
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3200
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0003';
@@ -708,12 +708,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3300
-     * @tc.name       : testStreamWritableEnd0004
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3300
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0004';
@@ -728,12 +728,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3400
-     * @tc.name       : testStreamWritableEnd0005
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3400
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0005';
@@ -748,12 +748,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3500
-     * @tc.name       : testStreamWritableEnd0006
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3500
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0006';
@@ -768,12 +768,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3600
-     * @tc.name       : testStreamWritableEnd0007
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3600
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0007';
@@ -788,12 +788,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3700
-     * @tc.name       : testStreamWritableEnd0008
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3700
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0008';
@@ -808,12 +808,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3800
-     * @tc.name       : testStreamWritableEnd0009
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3800
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0009';
@@ -832,12 +832,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3900
-     * @tc.name       : testStreamWritableEnd0010
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3900
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0010';
@@ -852,12 +852,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4000
-     * @tc.name       : testStreamWritableEnd0011
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End 'utf-8'
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4000
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End 'utf-8'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0011';
@@ -872,12 +872,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4100
-     * @tc.name       : testStreamWritableEnd0012
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End 'gb18030'
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4100
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End 'gb18030'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0012';
@@ -892,12 +892,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4200
-     * @tc.name       : testStreamWritableEnd0013
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End 'gbk'
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4200
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End 'gbk'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0013';
@@ -912,12 +912,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4300
-     * @tc.name       : testStreamWritableEnd0014
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End 'gb2312'
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4300
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End 'gb2312'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0014';
@@ -932,12 +932,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4400
-     * @tc.name       : testStreamWritableEnd0015
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4400
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0015';
@@ -952,12 +952,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4500
-     * @tc.name       : testStreamWritableEnd0016
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4500
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0016';
@@ -972,12 +972,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4600
-     * @tc.name       : testStreamWritableEnd0017
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4600
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0017';
@@ -992,12 +992,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4700
-     * @tc.name       : testStreamWritableEnd0018
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4700
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0018';
@@ -1012,12 +1012,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4800
-     * @tc.name       : testStreamWritableEnd0019
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4800
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0019';
@@ -1034,12 +1034,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4900
-     * @tc.name       : testStreamWritableEnd0020
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4900
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0020';
@@ -1056,12 +1056,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5000
-     * @tc.name       : testStreamWritableEnd0021
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5000
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0021';
@@ -1078,12 +1078,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5100
-     * @tc.name       : testStreamWritableEnd0022
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5100
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0022';
@@ -1100,12 +1100,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5200
-     * @tc.name       : testStreamWritableEnd0023
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5200
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0023';
@@ -1120,12 +1120,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5300
-     * @tc.name       : testStreamWritableEnd0024
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5300
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0024';
@@ -1140,12 +1140,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5400
-     * @tc.name       : testStreamWritableEnd0025
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5400
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0025';
@@ -1160,12 +1160,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5500
-     * @tc.name       : testStreamWritableEnd0026
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5500
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0026';
@@ -1180,12 +1180,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5600
-     * @tc.name       : testStreamWritableEnd0027
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5600
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0027';
@@ -1200,12 +1200,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5700
-     * @tc.name       : testStreamWritableEnd0028
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5700
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0028';
@@ -1220,12 +1220,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5800
-     * @tc.name       : testStreamWritableEnd0029
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5800
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0029';
@@ -1240,12 +1240,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5900
-     * @tc.name       : testStreamWritableEnd0030
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5900
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0030';
@@ -1260,12 +1260,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6000
-     * @tc.name       : testStreamWritableEnd0031
-     * @tc.desc       : Test the function of the interface In the Stream_Writable_End
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testStreamWritableEnd0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6000
+     * @tc.desc   Test the function of the interface In the Stream_Writable_End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEnd0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testStreamWritableEnd0031';
@@ -1281,12 +1281,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6100
-     * @tc.name       : testSetDefaultEncoding0001
-     * @tc.desc       : Test the function of the interface testSetDefaultEncoding.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetDefaultEncoding0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6100
+     * @tc.desc   Test the function of the interface testSetDefaultEncoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDefaultEncoding0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetDefaultEncoding0001";
@@ -1299,12 +1299,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6200
-     * @tc.name       : testSetDefaultEncoding0002
-     * @tc.desc       : Test the function of the interface testSetDefaultEncoding.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetDefaultEncoding0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6200
+     * @tc.desc   Test the function of the interface testSetDefaultEncoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDefaultEncoding0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetDefaultEncoding0002";
@@ -1317,12 +1317,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6300
-     * @tc.name       : testSetDefaultEncoding0003
-     * @tc.desc       : Test the function of the interface testSetDefaultEncoding.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetDefaultEncoding0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6300
+     * @tc.desc   Test the function of the interface testSetDefaultEncoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDefaultEncoding0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetDefaultEncoding0003";
@@ -1336,12 +1336,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6400
-     * @tc.name       : testSetDefaultEncoding0004
-     * @tc.desc       : Test the function of the interface testSetDefaultEncoding.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetDefaultEncoding0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6400
+     * @tc.desc   Test the function of the interface testSetDefaultEncoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDefaultEncoding0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetDefaultEncoding0004";
@@ -1356,12 +1356,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6500
-     * @tc.name       : testSetDefaultEncoding0005
-     * @tc.desc       : Test the function of the interface testSetDefaultEncoding.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetDefaultEncoding0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6500
+     * @tc.desc   Test the function of the interface testSetDefaultEncoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetDefaultEncoding0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetDefaultEncoding0005";
@@ -1377,12 +1377,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6600
-     * @tc.name       : testCork0001
-     * @tc.desc       : Test the function of the interface testCork.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCork0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6600
+     * @tc.desc   Test the function of the interface testCork.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCork0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testCork0001";
@@ -1395,12 +1395,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6700
-     * @tc.name       : testUnCork0001
-     * @tc.desc       : Test the function of the interface test UnCork.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUnCork0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6700
+     * @tc.desc   Test the function of the interface test UnCork.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnCork0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUnCork0001";
@@ -1413,12 +1413,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6800
-     * @tc.name       : testOn0001
-     * @tc.desc       : Test the function of the interface testOn.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOn0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6800
+     * @tc.desc   Test the function of the interface testOn.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOn0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testOn0001";
@@ -1448,12 +1448,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6900
-     * @tc.name       : testOn0002
-     * @tc.desc       : Test the function of the interface testOn.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOn0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6900
+     * @tc.desc   Test the function of the interface testOn.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOn0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = "testOn0002";
@@ -1477,12 +1477,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7000
-     * @tc.name       : testOn0003
-     * @tc.desc       : Test the function of the interface testOn.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOn0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7000
+     * @tc.desc   Test the function of the interface testOn.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOn0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = "testOn0003";
@@ -1506,12 +1506,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7100
-     * @tc.name       : testOn0004
-     * @tc.desc       : Test the function of the interface testOn drain.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOn0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7100
+     * @tc.desc   Test the function of the interface testOn drain.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOn0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testOn0004";
@@ -1526,12 +1526,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7200
-     * @tc.name       : testWritableDoInitialize0001
-     * @tc.desc       : Test the function of the interface testDoInitialize.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWritableDoInitialize0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7200
+     * @tc.desc   Test the function of the interface testDoInitialize.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWritableDoInitialize0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWritableDoInitialize0001";
@@ -1559,12 +1559,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7300
-     * @tc.name       : testDoWrite0001
-     * @tc.desc       : Test the function of the interface testDoWrite.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDoWrite0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7300
+     * @tc.desc   Test the function of the interface testDoWrite.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDoWrite0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDoWrite0001";
@@ -1578,12 +1578,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7400
-     * @tc.name       : testDoWritev0001
-     * @tc.desc       : Test the function of the interface testDoWritev.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDoWritev0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7400
+     * @tc.desc   Test the function of the interface testDoWritev.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDoWritev0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDoWritev0001";
@@ -1600,12 +1600,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7500
-     * @tc.name       : testReadableOptions0001
-     * @tc.desc       : Test the function of the interface ReadableOptions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testReadableOptions0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7500
+     * @tc.desc   Test the function of the interface ReadableOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testReadableOptions0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testReadableOptions0001';
@@ -1619,12 +1619,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7600
-     * @tc.name       : testAttribute0001
-     * @tc.desc       : Test the function of the interface Attribute.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAttribute0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7600
+     * @tc.desc   Test the function of the interface Attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAttribute0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testAttribute0001';
@@ -1638,12 +1638,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7700
-     * @tc.name       : testAttribute0002
-     * @tc.desc       : Test the function of the interface Attribute.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAttribute0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7700
+     * @tc.desc   Test the function of the interface Attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAttribute0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testAttribute0002';
@@ -1657,12 +1657,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7800
-     * @tc.name       : testAttribute0003
-     * @tc.desc       : Test the function of the interface Attribute.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAttribute0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7800
+     * @tc.desc   Test the function of the interface Attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAttribute0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testAttribute0003';
@@ -1676,12 +1676,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7900
-     * @tc.name       : testAttribute0004
-     * @tc.desc       : Test the function of the interface Attribute.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAttribute0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7900
+     * @tc.desc   Test the function of the interface Attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAttribute0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testAttribute0004';
@@ -1695,12 +1695,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8000
-     * @tc.name       : testAttribute0005
-     * @tc.desc       : Test the function of the interface Attribute.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAttribute0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8000
+     * @tc.desc   Test the function of the interface Attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAttribute0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testAttribute0005';
@@ -1714,12 +1714,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8100
-     * @tc.name       : testAttribute0006
-     * @tc.desc       : Test the function of the interface Attribute.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAttribute0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8100
+     * @tc.desc   Test the function of the interface Attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAttribute0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testAttribute0006';
@@ -1733,12 +1733,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8200
-     * @tc.name       : testAttribute0007
-     * @tc.desc       : Test the function of the interface Attribute.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAttribute0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8200
+     * @tc.desc   Test the function of the interface Attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAttribute0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testAttribute0007';
@@ -1752,12 +1752,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8300
-     * @tc.name       : testConstructor0001
-     * @tc.desc       : Test the function of the interface Constructor.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConstructor0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8300
+     * @tc.desc   Test the function of the interface Constructor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testConstructor0001';
@@ -1770,12 +1770,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8400
-     * @tc.name       : testConstructor0002
-     * @tc.desc       : Test the function of the interface Constructor.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConstructor0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8400
+     * @tc.desc   Test the function of the interface Constructor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testConstructor0002';
@@ -1790,12 +1790,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8500
-     * @tc.name       : testRead0001
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8500
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0001';
@@ -1809,12 +1809,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8600
-     * @tc.name       : testRead0002
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8600
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0002';
@@ -1828,12 +1828,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8700
-     * @tc.name       : testRead0003
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8700
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0003';
@@ -1847,12 +1847,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8800
-     * @tc.name       : testRead0004
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8800
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0004';
@@ -1866,12 +1866,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8900
-     * @tc.name       : testRead0005
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8900
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0005';
@@ -1885,12 +1885,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9000
-     * @tc.name       : testRead0006
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9000
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0006';
@@ -1904,12 +1904,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9100
-     * @tc.name       : testRead0007
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9100
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0007';
@@ -1923,12 +1923,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9200
-     * @tc.name       : testRead0008
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9200
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0008';
@@ -1942,12 +1942,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9300
-     * @tc.name       : testRead0009
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9300
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0009';
@@ -1961,12 +1961,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9400
-     * @tc.name       : testRead0010
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9400
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0010';
@@ -1982,12 +1982,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9500
-     * @tc.name       : testRead0011
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9500
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0011';
@@ -2003,12 +2003,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9600
-     * @tc.name       : testRead0012
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9600
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0012';
@@ -2024,12 +2024,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9700
-     * @tc.name       : testRead0013
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9700
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0013';
@@ -2045,12 +2045,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9800
-     * @tc.name       : testRead0014
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9800
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0014';
@@ -2066,12 +2066,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9900
-     * @tc.name       : testRead0015
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9900
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0015';
@@ -2087,12 +2087,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10000
-     * @tc.name       : testRead0016
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10000
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0016';
@@ -2108,12 +2108,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10100
-     * @tc.name       : testRead0017
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10100
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0017';
@@ -2129,12 +2129,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10200
-     * @tc.name       : testRead0018
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10200
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0018';
@@ -2150,12 +2150,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10300
-     * @tc.name       : testRead0019
-     * @tc.desc       : Test the function of the interface Read.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testRead0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10300
+     * @tc.desc   Test the function of the interface Read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRead0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testRead0019';
@@ -2171,12 +2171,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10400
-     * @tc.name       : testResume0001
-     * @tc.desc       : Switch the read mode of the stream from pause to flow mode.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testResume0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10400
+     * @tc.desc   Switch the read mode of the stream from pause to flow mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testResume0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testResume0001';
@@ -2190,12 +2190,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10500
-     * @tc.name       : testPause0001
-     * @tc.desc       : Switch the read mode of the stream from flow to pause mode.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPause0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10500
+     * @tc.desc   Switch the read mode of the stream from flow to pause mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPause0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPause0001';
@@ -2209,12 +2209,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10600
-     * @tc.name       : testSetEncoding0001
-     * @tc.desc       : Sets the character encoding for the readable stream.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetEncoding0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10600
+     * @tc.desc   Sets the character encoding for the readable stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetEncoding0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSetEncoding0001';
@@ -2228,12 +2228,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10700
-     * @tc.name       : testSetEncoding0002
-     * @tc.desc       : Sets the character encoding for the readable stream.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetEncoding0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10700
+     * @tc.desc   Sets the character encoding for the readable stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetEncoding0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSetEncoding0002';
@@ -2247,12 +2247,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10800
-     * @tc.name       : testSetEncoding0003
-     * @tc.desc       : Sets the character encoding for the readable stream.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetEncoding0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10800
+     * @tc.desc   Sets the character encoding for the readable stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetEncoding0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSetEncoding0003';
@@ -2266,12 +2266,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10900
-     * @tc.name       : testSetEncoding0004
-     * @tc.desc       : Sets the character encoding for the readable stream.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetEncoding0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10900
+     * @tc.desc   Sets the character encoding for the readable stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetEncoding0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSetEncoding0004';
@@ -2285,12 +2285,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11000
-     * @tc.name       : testSetEncoding0005
-     * @tc.desc       : Sets the character encoding for the readable stream.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetEncoding0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11000
+     * @tc.desc   Sets the character encoding for the readable stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetEncoding0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSetEncoding0005';
@@ -2310,12 +2310,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11100
-     * @tc.name       : testIsPaused0001
-     * @tc.desc       : Check if the stream is in pause mode, true when calling pause () and false when calling resume ().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsPaused0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11100
+     * @tc.desc   Check if the stream is in pause mode, true when calling pause () and false when calling resume ().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsPaused0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testIsPaused0001';
@@ -2332,12 +2332,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11200
-     * @tc.name       : testPipe0001
-     * @tc.desc       : Connect a readable stream with a writable stream to achieve automatic data transmission.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPipe0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11200
+     * @tc.desc   Connect a readable stream with a writable stream to achieve automatic data transmission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPipe0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPipe0001';
@@ -2374,12 +2374,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11300
-     * @tc.name       : testUnpipe0001
-     * @tc.desc       : Removes all or specified connected readable streams from the writable stream.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUnpipe0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11300
+     * @tc.desc   Removes all or specified connected readable streams from the writable stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnpipe0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testUnpipe0001';
@@ -2427,12 +2427,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11400
-     * @tc.name       : testOnClose0001
-     * @tc.desc       : Register event handling functions to listen for different events on readable streams.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOnClose0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11400
+     * @tc.desc   Register event handling functions to listen for different events on readable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOnClose0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testOnClose0001';
@@ -2463,12 +2463,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11500
-     * @tc.name       : testOnData0001
-     * @tc.desc       : Register event handling functions to listen for different events on readable streams.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOnData0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11500
+     * @tc.desc   Register event handling functions to listen for different events on readable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOnData0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testOnData0001';
@@ -2499,12 +2499,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11600
-     * @tc.name       : testOnEnd0001
-     * @tc.desc       : Register event handling functions to listen for different events on readable streams.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOnEnd0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11600
+     * @tc.desc   Register event handling functions to listen for different events on readable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOnEnd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testOnEnd0001';
@@ -2535,12 +2535,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11700
-     * @tc.name       : testOnError0001
-     * @tc.desc       : Register event handling functions to listen for different events on readable streams.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOnError0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11700
+     * @tc.desc   Register event handling functions to listen for different events on readable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOnError0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testOnError0001';
@@ -2572,12 +2572,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11800
-     * @tc.name       : testOnReadable0001
-     * @tc.desc       : Register event handling functions to listen for different events on readable streams.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOnReadable0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11800
+     * @tc.desc   Register event handling functions to listen for different events on readable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOnReadable0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testOnReadable0001';
@@ -2599,12 +2599,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11900
-     * @tc.name       : testOffClose0001
-     * @tc.desc       : Register event handling functions to listen for different events on readable streams.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOffClose0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11900
+     * @tc.desc   Register event handling functions to listen for different events on readable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOffClose0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testOffClose0001';
@@ -2636,12 +2636,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12000
-     * @tc.name       : testOffData0001
-     * @tc.desc       : Cancels event handlers registered with on.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOffData0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12000
+     * @tc.desc   Cancels event handlers registered with on.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOffData0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testOffData0001';
@@ -2673,12 +2673,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12100
-     * @tc.name       : testOffEnd0001
-     * @tc.desc       : Cancels event handlers registered with on.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOffEnd0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12100
+     * @tc.desc   Cancels event handlers registered with on.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOffEnd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testOffEnd0001';
@@ -2710,12 +2710,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12200
-     * @tc.name       : testOffError0001
-     * @tc.desc       : Cancels event handlers registered with on.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOffError0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12200
+     * @tc.desc   Cancels event handlers registered with on.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOffError0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testOffError0001';
@@ -2747,12 +2747,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12300
-     * @tc.name       : testOffReadable0001
-     * @tc.desc       : Cancels event handlers registered with on.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOffReadable0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12300
+     * @tc.desc   Cancels event handlers registered with on.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOffReadable0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testOffReadable0001';
@@ -2784,13 +2784,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12400
-     * @tc.name       : testReadableDoInitialize0001
-     * @tc.desc       : The consumer implements this function, which is writeSuccess the first time the on listener is used on
-     *                 the readable stream. Use callback asynchronous callback.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testReadableDoInitialize0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12400
+     * @tc.desc   The consumer implements this function, which is writeSuccess the first time the on listener is used on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testReadableDoInitialize0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testReadableDoInitialize0001';
@@ -2819,12 +2818,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12500
-     * @tc.name       : testDoRead0001
-     * @tc.desc       : The data reading interface needs to be implemented in a subclass.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDoRead0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12500
+     * @tc.desc   The data reading interface needs to be implemented in a subclass.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDoRead0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testDoRead0001';
@@ -2854,12 +2853,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12600
-     * @tc.name       : testPush0001
-     * @tc.desc       : Push data into the readable stream buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPush0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12600
+     * @tc.desc   Push data into the readable stream buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPush0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPush0001';
@@ -2874,12 +2873,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12700
-     * @tc.name       : testPush0002
-     * @tc.desc       : Push data into the readable stream buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPush0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12700
+     * @tc.desc   Push data into the readable stream buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPush0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPush0002';
@@ -2894,12 +2893,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12800
-     * @tc.name       : testPush0003
-     * @tc.desc       : Push data into the readable stream buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPush0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12800
+     * @tc.desc   Push data into the readable stream buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPush0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPush0003';
@@ -2914,12 +2913,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12900
-     * @tc.name       : testPush0004
-     * @tc.desc       : Push data into the readable stream buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPush0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12900
+     * @tc.desc   Push data into the readable stream buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPush0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPush0004';
@@ -2934,12 +2933,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13000
-     * @tc.name       : testPush0005
-     * @tc.desc       : Push data into the readable stream buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPush0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13000
+     * @tc.desc   Push data into the readable stream buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPush0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPush0005';
@@ -2954,12 +2953,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13100
-     * @tc.name       : testPush0006
-     * @tc.desc       : Push data into the readable stream buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPush0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13100
+     * @tc.desc   Push data into the readable stream buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPush0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPush0006';
@@ -2978,12 +2977,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13200
-     * @tc.name       : testPush0007
-     * @tc.desc       : Push data into the readable stream buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPush0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13200
+     * @tc.desc   Push data into the readable stream buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPush0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPush0007';
@@ -2998,12 +2997,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13300
-     * @tc.name       : testPush0008
-     * @tc.desc       : Push data into the readable stream buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPush0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13300
+     * @tc.desc   Push data into the readable stream buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPush0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPush0008';
@@ -3018,12 +3017,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13400
-     * @tc.name       : testPush0009
-     * @tc.desc       : Push data into the readable stream buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPush0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13400
+     * @tc.desc   Push data into the readable stream buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPush0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPush0009';
@@ -3037,12 +3036,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13500
-     * @tc.name       : testPush0010
-     * @tc.desc       : Push data into the readable stream buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPush0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13500
+     * @tc.desc   Push data into the readable stream buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPush0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPush0010';
@@ -3056,12 +3055,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13600
-     * @tc.name       : testPush0011
-     * @tc.desc       : Push data into the readable stream buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPush0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13600
+     * @tc.desc   Push data into the readable stream buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPush0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPush0011';
@@ -3075,12 +3074,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13700
-     * @tc.name       : testPush0012
-     * @tc.desc       : Push data into the readable stream buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPush0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13700
+     * @tc.desc   Push data into the readable stream buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPush0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPush0012';
@@ -3094,12 +3093,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13800
-     * @tc.name       : testPush0013
-     * @tc.desc       : Push data into the readable stream buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPush0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13800
+     * @tc.desc   Push data into the readable stream buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPush0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPush0013';
@@ -3113,12 +3112,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13900
-     * @tc.name       : testPush0014
-     * @tc.desc       : Push data into the readable stream buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPush0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13900
+     * @tc.desc   Push data into the readable stream buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPush0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPush0014';
@@ -3132,12 +3131,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14000
-     * @tc.name       : testPush0015
-     * @tc.desc       : Push data into the readable stream buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPush0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14000
+     * @tc.desc   Push data into the readable stream buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPush0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPush0015';
@@ -3151,12 +3150,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14100
-     * @tc.name       : testPush0016
-     * @tc.desc       : Push data into the readable stream buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPush0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14100
+     * @tc.desc   Push data into the readable stream buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPush0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPush0016';
@@ -3170,12 +3169,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14200
-     * @tc.name       : testPush0017
-     * @tc.desc       : Push data into the readable stream buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPush0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14200
+     * @tc.desc   Push data into the readable stream buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPush0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testPush0017';
@@ -3190,12 +3189,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14300
-     * @tc.name       : testDuplexConstructor0001
-     * @tc.desc       : The constructor of Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplexConstructor0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14300
+     * @tc.desc   The constructor of Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplexConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplexConstructor0001';
@@ -3209,12 +3208,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14400
-     * @tc.name       : testDuplexConstructor0002
-     * @tc.desc       : The constructor of Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplexConstructor0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14400
+     * @tc.desc   The constructor of Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplexConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplexConstructor0002';
@@ -3228,12 +3227,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14500
-     * @tc.name       : testDuplexConstructor0003
-     * @tc.desc       : The constructor of Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplexConstructor0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14500
+     * @tc.desc   The constructor of Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplexConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplexConstructor0003';
@@ -3247,12 +3246,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14600
-     * @tc.name       : testDuplexConstructor0004
-     * @tc.desc       : The constructor of Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplexConstructor0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14600
+     * @tc.desc   The constructor of Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplexConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplexConstructor0004';
@@ -3266,12 +3265,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14700
-     * @tc.name       : testDuplexConstructor0005
-     * @tc.desc       : The constructor of Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplexConstructor0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14700
+     * @tc.desc   The constructor of Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplexConstructor0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplexConstructor0005';
@@ -3285,12 +3284,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14800
-     * @tc.name       : testDuplexConstructor0006
-     * @tc.desc       : The constructor of Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplexConstructor0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14800
+     * @tc.desc   The constructor of Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplexConstructor0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplexConstructor0006';
@@ -3304,12 +3303,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14900
-     * @tc.name       : testDuplexConstructor0007
-     * @tc.desc       : The constructor of Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplexConstructor0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14900
+     * @tc.desc   The constructor of Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplexConstructor0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplexConstructor0007';
@@ -3323,12 +3322,12 @@ export default function StreamTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15000
-     * @tc.name       : testDuplex0001
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15000
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0001';
@@ -3345,12 +3344,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15100
-     * @tc.name       : testDuplex0002
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15100
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0002';
@@ -3367,12 +3366,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15200
-     * @tc.name       : testDuplex0003
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15200
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0003';
@@ -3389,12 +3388,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15300
-     * @tc.name       : testDuplex0004
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15300
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0004';
@@ -3411,12 +3410,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15400
-     * @tc.name       : testDuplex0005
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15400
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0005';
@@ -3433,12 +3432,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15500
-     * @tc.name       : testDuplex0006
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15500
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0006';
@@ -3455,12 +3454,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15600
-     * @tc.name       : testDuplex0007
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15600
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0007';
@@ -3480,12 +3479,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15700
-     * @tc.name       : testDuplex0008
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15700
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0008';
@@ -3502,12 +3501,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15800
-     * @tc.name       : testDuplex0009
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15800
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0009';
@@ -3524,12 +3523,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15900
-     * @tc.name       : testDuplex0010
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15900
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0010';
@@ -3551,12 +3550,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16000
-     * @tc.name       : testDuplex0011
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16000
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0011';
@@ -3572,12 +3571,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16100
-     * @tc.name       : testDuplex0012
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16100
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0012';
@@ -3593,12 +3592,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16200
-     * @tc.name       : testDuplex0013
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16200
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0013';
@@ -3614,12 +3613,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16300
-     * @tc.name       : testDuplex0014
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16300
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0014';
@@ -3635,12 +3634,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16400
-     * @tc.name       : testDuplex0015
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16400
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0015';
@@ -3670,12 +3669,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16500
-     * @tc.name       : testDuplex0016
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16500
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0016';
@@ -3697,12 +3696,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16600
-     * @tc.name       : testDuplex0017
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16600
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0017';
@@ -3724,12 +3723,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16700
-     * @tc.name       : testDuplex0018
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16700
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0018';
@@ -3746,12 +3745,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16800
-     * @tc.name       : testDuplex0019
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16800
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0019';
@@ -3766,12 +3765,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16900
-     * @tc.name       : testDuplex0020
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16900
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0020';
@@ -3786,12 +3785,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17000
-     * @tc.name       : testDuplex0021
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17000
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0021';
@@ -3806,12 +3805,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17100
-     * @tc.name       : testDuplex0022
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17100
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0022';
@@ -3826,12 +3825,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17200
-     * @tc.name       : testDuplex0023
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17200
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0023';
@@ -3846,12 +3845,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17300
-     * @tc.name       : testDuplex0024
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17300
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0024';
@@ -3866,12 +3865,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17400
-     * @tc.name       : testDuplex0025
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17400
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0025';
@@ -3886,12 +3885,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17500
-     * @tc.name       : testDuplex0026
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17500
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0026';
@@ -3910,12 +3909,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17600
-     * @tc.name       : testDuplex0027
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17600
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0027';
@@ -3930,12 +3929,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17700
-     * @tc.name       : testDuplex0028
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17700
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0028';
@@ -3950,12 +3949,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17800
-     * @tc.name       : testDuplex0029
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17800
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0029';
@@ -3970,12 +3969,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17900
-     * @tc.name       : testDuplex0030
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17900
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0030';
@@ -3990,12 +3989,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18000
-     * @tc.name       : testDuplex0031
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18000
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0031';
@@ -4010,12 +4009,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18100
-     * @tc.name       : testDuplex0032
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18100
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0032';
@@ -4030,12 +4029,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18200
-     * @tc.name       : testDuplex0033
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18200
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0033';
@@ -4050,12 +4049,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18300
-     * @tc.name       : testDuplex0034
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18300
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0034';
@@ -4070,12 +4069,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18400
-     * @tc.name       : testDuplex0035
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18400
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0035';
@@ -4090,12 +4089,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18500
-     * @tc.name       : testDuplex0036
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18500
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0036';
@@ -4112,12 +4111,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18600
-     * @tc.name       : testDuplex0037
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18600
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0037';
@@ -4134,12 +4133,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18700
-     * @tc.name       : testDuplex0038
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18700
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0038';
@@ -4156,12 +4155,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18800
-     * @tc.name       : testDuplex0039
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18800
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0039';
@@ -4178,12 +4177,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18900
-     * @tc.name       : testDuplex0040
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18900
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0040';
@@ -4198,12 +4197,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19000
-     * @tc.name       : testDuplex0041
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19000
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0041';
@@ -4218,12 +4217,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19100
-     * @tc.name       : testDuplex0042
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19100
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0042';
@@ -4238,12 +4237,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19200
-     * @tc.name       : testDuplex0043
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19200
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0043';
@@ -4258,12 +4257,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19300
-     * @tc.name       : testDuplex0044
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19300
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0044';
@@ -4278,12 +4277,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19400
-     * @tc.name       : testDuplex0045
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19400
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0045';
@@ -4298,12 +4297,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19500
-     * @tc.name       : testDuplex0046
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19500
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0046';
@@ -4318,12 +4317,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19600
-     * @tc.name       : testDuplex0047
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19600
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0047';
@@ -4338,12 +4337,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19700
-     * @tc.name       : testDuplex0048
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19700
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0048';
@@ -4359,12 +4358,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19800
-     * @tc.name       : testDuplex0049
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19800
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0049';
@@ -4379,12 +4378,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19900
-     * @tc.name       : testDuplex0050
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19900
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0050';
@@ -4399,12 +4398,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20000
-     * @tc.name       : testDuplex0051
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20000
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0051';
@@ -4419,12 +4418,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20100
-     * @tc.name       : testDuplex0052
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20100
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0052';
@@ -4439,12 +4438,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20200
-     * @tc.name       : testDuplex0053
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20200
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0053';
@@ -4459,12 +4458,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20300
-     * @tc.name       : testDuplex0054
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20300
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0054';
@@ -4479,12 +4478,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20400
-     * @tc.name       : testDuplex0055
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20400
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0055';
@@ -4499,12 +4498,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20500
-     * @tc.name       : testDuplex0056
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20500
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0056';
@@ -4519,12 +4518,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20600
-     * @tc.name       : testDuplex0057
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20600
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0057';
@@ -4539,12 +4538,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20700
-     * @tc.name       : testDuplex0058
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20700
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0058';
@@ -4577,12 +4576,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20800
-     * @tc.name       : testDuplex0059
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20800
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testDuplex0059';
@@ -4600,12 +4599,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20900
-     * @tc.name       : testDuplex0060
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20900
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testDuplex0060';
@@ -4647,12 +4646,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_21000
-     * @tc.name       : testDuplex0061
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_21000
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0061';
@@ -4681,12 +4680,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_21100
-     * @tc.name       : testDuplex0062
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDuplex0062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_21100
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDuplex0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDuplex0062';
@@ -4717,12 +4716,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_21200
-     * @tc.name       : testWrite0063
-     * @tc.desc       : Test the function of the interface Duplex.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWrite0063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_21200
+     * @tc.desc   Test the function of the interface Duplex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWrite0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = 'testWrite0063';
@@ -4756,12 +4755,12 @@ export default function StreamTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STREAM_21300
-     * @tc.name       : testUnpipe0002
-     * @tc.desc       : Removes all or specified connected readable streams from the writable stream.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUnpipe0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_21300
+     * @tc.desc   Removes all or specified connected readable streams from the writable stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnpipe0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testUnpipe0002';

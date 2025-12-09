@@ -46,6 +46,14 @@ export default function overLayJsunit() {
       console.info("overlay after each called");
     });
 
+    /**
+     * @tc.name   testOverlay01
+     * @tc.number testOverlay01
+     * @tc.desc   testOverlay01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOverlay01', Level.LEVEL0, async (done: Function) => {
       console.info('[testOverlay01] START');
       await CommonFunc.sleep(1000);
@@ -60,6 +68,14 @@ export default function overLayJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testOverlay02
+     * @tc.number testOverlay02
+     * @tc.desc   testOverlay02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOverlay02', Level.LEVEL0, async (done: Function) => {
       console.info('[testOverlay02] START');
       try {
@@ -86,6 +102,14 @@ export default function overLayJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testOverlay03
+     * @tc.number testOverlay03
+     * @tc.desc   testOverlay03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOverlay03', Level.LEVEL0, async (done: Function) => {
       console.info('[testOverlay03] START');
       try {
@@ -117,6 +141,14 @@ export default function overLayJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testOverlay04
+     * @tc.number testOverlay04
+     * @tc.desc   testOverlay04
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOverlay04', Level.LEVEL0, async (done: Function) => {
       console.info('[testOverlay04] START');
       await CommonFunc.sleep(1000);
@@ -144,6 +176,14 @@ export default function overLayJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testOverlay05
+     * @tc.number testOverlay05
+     * @tc.desc   testOverlay05
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOverlay05', Level.LEVEL0, async (done: Function) => {
       console.info('[testOverlay05] START');
       try {
@@ -170,6 +210,14 @@ export default function overLayJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testOverlay06
+     * @tc.number testOverlay06
+     * @tc.desc   testOverlay06
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOverlay06', Level.LEVEL0, async (done: Function) => {
       console.info('[testOverlay06] START');
       try {
@@ -198,6 +246,14 @@ export default function overLayJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testOverlay07
+     * @tc.number testOverlay07
+     * @tc.desc   testOverlay07
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOverlay07', Level.LEVEL0, async (done: Function) => {
       console.info('[testOverlay07] START');
       try {
@@ -224,6 +280,14 @@ export default function overLayJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testOverlay08
+     * @tc.number testOverlay08
+     * @tc.desc   testOverlay08
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOverlay08', Level.LEVEL0, async (done: Function) => {
       console.info('[testOverlay08] START');
       try {

@@ -46,7 +46,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetPreferencesPromise001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_0500
      * @tc.desc   GetPreferences promise interface test
@@ -70,7 +69,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetPreferencesPromise002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_0100
      * @tc.desc   GetPreferences promise interface test
@@ -98,7 +96,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetPreferencesPromise003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_0200
      * @tc.desc   GetPreferences promise interface test
@@ -124,7 +121,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetPreferencesPromise004
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_0300
      * @tc.desc   GetPreferences promise interface test
@@ -153,7 +149,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeletePreferencesPromise001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1100
      * @tc.desc   DeletePreferences promise interface test
@@ -181,7 +176,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeletePreferencesPromise002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1000
      * @tc.desc   DeletePreferences promise interface test
@@ -216,7 +210,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetDefValuePromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_0200
      * @tc.desc   Get defaultValue promise interface test
@@ -238,7 +231,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetFloatPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_0500
      * @tc.desc   Get float promise interface test
@@ -261,7 +253,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetIntPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_0600
      * @tc.desc   Get int promise interface test
@@ -284,7 +275,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetLongPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_0700
      * @tc.desc   Get long promise interface test
@@ -307,7 +297,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetStringPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_1000
      * @tc.desc   Get string promise interface test
@@ -331,7 +320,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetBooleanPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_0400
      * @tc.desc   Get boolean promise interface test
@@ -354,7 +342,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetStringArrayPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_0800
      * @tc.desc   Get StringArray promise interface test
@@ -380,7 +367,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetNumArrayPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_0900
      * @tc.desc   Get NumArray promise interface test
@@ -406,7 +392,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetBoolArrayPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_0300
      * @tc.desc   Get BoolArray promise interface test
@@ -432,7 +417,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetSyncDefaultValue0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_2000
      * @tc.desc   GetSync defaultValue interface test
@@ -448,7 +432,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetSyncFloat0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_2300
      * @tc.desc   GetSync float interface test
@@ -465,7 +448,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetSyncInt0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_2400
      * @tc.desc   GetSync int interface test
@@ -482,7 +464,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetSyncLong0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_2500
      * @tc.desc   GetSync long interface test
@@ -499,7 +480,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetSyncString0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_2800
      * @tc.desc   GetSync string interface test
@@ -516,7 +496,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetSyncBoolean0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_2200
      * @tc.desc   GetSync string interface test
@@ -533,7 +512,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetSyncStringArray0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_2700
      * @tc.desc   GetSync stringArray interface test
@@ -553,7 +531,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetSyncNumArray0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_2600
      * @tc.desc   GetSync numArray interface test
@@ -573,7 +550,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetSyncBoolArray0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_2100
      * @tc.desc   GetSync boolArray interface test
@@ -593,7 +569,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetAllPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_1400
      * @tc.desc   GetAll promise interface test
@@ -644,7 +619,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetAllSync0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_1500
      * @tc.desc   GetAllSync interface test
@@ -688,7 +662,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutFloatPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_0800
      * @tc.desc   Put float promise interface test
@@ -708,7 +681,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutIntPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_0900
      * @tc.desc   Put int promise interface test
@@ -728,7 +700,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutLongPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_1000
      * @tc.desc   Put long promise interface test
@@ -747,7 +718,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutStringPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_1300
      * @tc.desc   Put string promise interface test
@@ -766,7 +736,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutBooleanPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_0700
      * @tc.desc   Put boolean promise interface test
@@ -786,7 +755,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutStringArrayPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_1200
      * @tc.desc   Put StringArray promise interface test
@@ -812,7 +780,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutNumArrayPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_1100
      * @tc.desc   Put NumberArray promise interface test
@@ -838,7 +805,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutBoolArrayPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_0600
      * @tc.desc   Put BoolArray promise interface test
@@ -864,7 +830,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutSyncFloat0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_2100
      * @tc.desc   PutSync float interface test
@@ -884,7 +849,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutSyncInt0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_2200
      * @tc.desc   PutSync int interface test
@@ -904,7 +868,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutSyncLong0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_2300
      * @tc.desc   PutSync long interface test
@@ -923,7 +886,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutSyncString0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_2600
      * @tc.desc   PutSync string interface test
@@ -942,7 +904,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutSyncBoolean0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_2000
      * @tc.desc   PutSync boolean interface test
@@ -962,7 +923,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutSyncStringArray0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_2500
      * @tc.desc   PutSync StringArray interface test
@@ -989,7 +949,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutSyncNumArray0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_2400
      * @tc.desc   PutSync NumberArray interface test
@@ -1016,7 +975,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutSyncBoolArray0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_1900
      * @tc.desc   PutSync BoolArray interface test
@@ -1043,7 +1001,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesHasKeyPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_0200
      * @tc.desc   Has float promise interface test
@@ -1065,7 +1022,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesHasKeyPromise0002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_0300
      * @tc.desc   Has int promise interface test
@@ -1087,7 +1043,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesHasKeyPromise0003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_0400
      * @tc.desc   Has long promise interface test
@@ -1109,7 +1064,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesHasKeyPromise0004
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_0500
      * @tc.desc   Has string promise interface test
@@ -1131,7 +1085,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesHasKeyPromise0005
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_0100
      * @tc.desc   Has boolean promise interface test
@@ -1153,7 +1106,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesHasSync0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_0900
      * @tc.desc   HasSync float interface test
@@ -1169,7 +1121,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesHasSync0002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_1000
      * @tc.desc   HasSync int interface test
@@ -1185,7 +1136,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesHasSync0003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_1100
      * @tc.desc   HasSync long interface test
@@ -1201,7 +1151,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesHasSync0004
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_1200
      * @tc.desc   HasSync string interface test
@@ -1217,7 +1166,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesHasSync0005
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_0800
      * @tc.desc   HasSync boolean interface test
@@ -1233,7 +1181,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesClearPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_ClearJSAPITest_0200
      * @tc.desc   Clear promise interface test
@@ -1293,7 +1240,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesClearSync0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_ClearJSAPITest_0300
      * @tc.desc   ClearSync interface test
@@ -1347,7 +1293,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeletePromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_0300
      * @tc.desc   Delete promise interface test
@@ -1373,7 +1318,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeleteSync0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1900
      * @tc.desc   DeleteSync interface test
@@ -1393,7 +1337,6 @@ export default function preferencesPromiseTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesFlushPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_FlushJSAPITest_0200
      * @tc.desc   Flush promise interface test

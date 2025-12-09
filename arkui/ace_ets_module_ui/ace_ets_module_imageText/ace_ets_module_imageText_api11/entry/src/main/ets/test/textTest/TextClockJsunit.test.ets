@@ -45,6 +45,14 @@ export default function textClockJsunit() {
       console.info("text after each called");
     });
 
+    /**
+     * @tc.name   textClockTest01
+     * @tc.number textClockTest01
+     * @tc.desc   textClockTest01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textClockTest01', Level.LEVEL2, async (done: Function) => {
       console.info('textClockTest01 START');
       await CommonFunc.sleep(1000);
@@ -55,6 +63,14 @@ export default function textClockJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textClockTest02
+     * @tc.number textClockTest02
+     * @tc.desc   textClockTest02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textClockTest02', Level.LEVEL2, async (done: Function) => {
       console.info('[textClockTest02] START');
       await CommonFunc.sleep(1000);
@@ -80,6 +96,14 @@ export default function textClockJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textClockTest03
+     * @tc.number textClockTest03
+     * @tc.desc   textClockTest03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textClockTest03', Level.LEVEL2, async (done: Function) => {
       console.info('[textClockTest03] START');
       await CommonFunc.sleep(2000);
@@ -91,6 +115,14 @@ export default function textClockJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textClockTest04
+     * @tc.number textClockTest04
+     * @tc.desc   textClockTest04
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textClockTest04', Level.LEVEL2, async (done: Function) => {
       console.info('[textClockTest04] START');
       try {
@@ -117,6 +149,14 @@ export default function textClockJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textClockTest05
+     * @tc.number textClockTest05
+     * @tc.desc   textClockTest05
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textClockTest05', Level.LEVEL2, async (done: Function) => {
       console.info('[textClockTest05] START');
       await CommonFunc.sleep(1000);
@@ -128,6 +168,14 @@ export default function textClockJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textClockTest06
+     * @tc.number textClockTest06
+     * @tc.desc   textClockTest06
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textClockTest06', Level.LEVEL2, async (done: Function) => {
       console.info('[textClockTest06] START');
       try {

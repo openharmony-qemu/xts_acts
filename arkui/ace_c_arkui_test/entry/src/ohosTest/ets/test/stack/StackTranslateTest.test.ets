@@ -26,26 +26,26 @@ export default function stackTranslateTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_TRANSLATE_0100
-     * @tc.name       : testStackTranslate001
-     * @tc.desc       : testing translate for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackTranslate001
+     * @tc.number SUB_ARKUI_CAPI_STACK_TRANSLATE_0100
+     * @tc.desc   testing translate for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackTranslate001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackTranslate001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_TRANSLATE_0200
-     * @tc.name       : testStackTranslate002
-     * @tc.desc       : testing translate for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackTranslate002
+     * @tc.number SUB_ARKUI_CAPI_STACK_TRANSLATE_0200
+     * @tc.desc   testing translate for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackTranslate002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackTranslate002()).assertEqual(0)

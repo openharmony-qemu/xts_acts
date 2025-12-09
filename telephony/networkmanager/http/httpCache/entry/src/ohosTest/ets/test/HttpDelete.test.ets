@@ -38,14 +38,14 @@ export default function HttpDeleteTest() {
   describe('HttpDeleteTest', () => {
     let XTS_TEST_HTTP_URL: string = 'http://www.baidu.com/';
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Delete_0100
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheDelete0100
-     * @tc.desc   : Disable cache and delete data within it.Use callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     */
+     /**
+      * @tc.name   testNetworkMgrHttpHttpResponseCacheDelete0100
+      * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Delete_0100
+      * @tc.desc   Disable cache and delete data within it.Use callback as an asynchronous method.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('testNetworkMgrHttpHttpResponseCacheDelete0100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
        const caseName: string = 'testNetworkMgrHttpHttpResponseCacheDelete0100';
        console.info(`${caseName}---Start`);
@@ -80,12 +80,12 @@ export default function HttpDeleteTest() {
      });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Delete_0200
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheDelete0200
-     * @tc.desc   : Disable cache and delete data within it.Use Promise as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheDelete0200
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Delete_0200
+     * @tc.desc   Disable cache and delete data within it.Use Promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheDelete0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheDelete0200';
@@ -119,12 +119,12 @@ export default function HttpDeleteTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Delete_0300
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheDelete0300
-     * @tc.desc   : Disable cache and delete data within it.Use callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheDelete0300
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Delete_0300
+     * @tc.desc   Disable cache and delete data within it.Use callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheDelete0300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheDelete0300';
@@ -188,12 +188,12 @@ export default function HttpDeleteTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpResponseCache_Delete_0400
-     * @tc.name   : testNetworkMgrHttpHttpResponseCacheDelete0400
-     * @tc.desc   : Disable cache and delete data within it.Use callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheDelete0400
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Delete_0400
+     * @tc.desc   Disable cache and delete data within it.Use callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpResponseCacheDelete0400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpResponseCacheDelete0400';

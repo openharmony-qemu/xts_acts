@@ -40,12 +40,12 @@ export default function imageSpanJsunit() {
     });
 
     /**
+     * @tc.name   imageSpanTest_0001
      * @tc.number imageSpanTest_0001
-     * @tc.name Test the properties of components
-     * @tc.desc set verticalAlign values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set verticalAlign values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSpanTest_0001', Level.LEVEL0, async (done: Function) => {
       console.info('imageSpanTest_0001 START');
@@ -59,12 +59,12 @@ export default function imageSpanJsunit() {
     });
 
     /**
+     * @tc.name   imageSpanTest_0002
      * @tc.number imageSpanTest_0002
-     * @tc.name Test the properties of components
-     * @tc.desc Change objectFit values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change objectFit values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSpanTest_0002', Level.LEVEL0, async (done: Function) => {
 
@@ -79,12 +79,12 @@ export default function imageSpanJsunit() {
     });
 
     /**
+     * @tc.name   imageSpanTest_0003
      * @tc.number imageSpanTest_0003
-     * @tc.name Test the properties of components
-     * @tc.desc Change objectFit values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change objectFit values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSpanTest_0003', Level.LEVEL0, async (done: Function) => {
 

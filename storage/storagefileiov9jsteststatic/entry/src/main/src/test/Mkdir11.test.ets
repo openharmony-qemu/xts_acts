@@ -29,14 +29,12 @@ export default function fileIOMkdir11() {
   describe('fileIO_fs_mkdir11', (): void => {
 
     /**
+     * @tc.name   fileIO_test_mkdir_sync_new_static_001
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIRSYNC_NEW_0100
-     * @tc.name fileIO_test_mkdir_sync_new_static_001
-     * @tc.desc Test mkdirSync() interfaces.
-     * Create a single level directory, verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test mkdirSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_mkdir_sync_new_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_mkdir_sync_new_static_001');
@@ -55,14 +53,12 @@ export default function fileIOMkdir11() {
     });
 
     /**
+     * @tc.name   fileIO_test_mkdir_sync_new_static_002
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIRSYNC_NEW_0200
-     * @tc.name fileIO_test_mkdir_sync_new_static_002
-     * @tc.desc Test mkdirSync() interfaces.
-     * Create a multi-level directory, verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test mkdirSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_mkdir_sync_new_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_mkdir_sync_new_static_002');
@@ -81,14 +77,12 @@ export default function fileIOMkdir11() {
     });
 
     /**
+     * @tc.name   fileIO_test_mkdir_sync_new_static_003
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIRSYNC_NEW_0300
-     * @tc.name fileIO_test_mkdir_sync_new_static_003
-     * @tc.desc Test mkdirSync() interfaces.
-     * missing recursion parameter,use default recursion = false.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test mkdirSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_mkdir_sync_new_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_mkdir_sync_new_static_003');
@@ -107,14 +101,12 @@ export default function fileIOMkdir11() {
     });
 
     /**
+     * @tc.name   fileIO_test_mkdir_sync_new_static_005
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIRSYNC_NEW_0500
-     * @tc.name fileIO_test_mkdir_sync_new_static_005
-     * @tc.desc Test mkdirSync() interfaces.
-     * The path has pointed to a file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test mkdirSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_mkdir_sync_new_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_mkdir_sync_new_static_005');
@@ -131,14 +123,12 @@ export default function fileIOMkdir11() {
     });
 
     /**
+     * @tc.name   fileIO_test_mkdir_sync_new_static_006
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIRSYNC_NEW_0600
-     * @tc.name fileIO_test_mkdir_sync_new_static_006
-     * @tc.desc Test mkdirSync() interfaces.
-     * The directory has been existed.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test mkdirSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_mkdir_sync_new_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       try {
@@ -151,14 +141,12 @@ export default function fileIOMkdir11() {
     });
 
     /**
+     * @tc.name   fileIO_test_mkdir_sync_new_static_007
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIRSYNC_NEW_0700
-     * @tc.name fileIO_test_mkdir_sync_new_static_007
-     * @tc.desc Test mkdirSync() interfaces.
-     * The path is empty.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test mkdirSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_mkdir_sync_new_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       try {
@@ -171,14 +159,12 @@ export default function fileIOMkdir11() {
     });
 
     /**
+     * @tc.name   fileIO_test_mkdir_async_new_static_001
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIR_ASYNC_NEW_0100
-     * @tc.name fileIO_test_mkdir_async_new_static_001
-     * @tc.desc Test mkdir() interfaces. Promise.
-     * Create a single level directory, verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test mkdir() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_mkdir_async_new_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_mkdir_async_new_static_001');
@@ -198,14 +184,12 @@ export default function fileIOMkdir11() {
     });
 
     /**
+     * @tc.name   fileIO_test_mkdir_async_new_static_002
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIR_ASYNC_NEW_0200
-     * @tc.name fileIO_test_mkdir_async_new_static_002
-     * @tc.desc Test mkdir() interfaces. Promise.
-     * Create a multi-level directory, verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test mkdir() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_mkdir_async_new_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_mkdir_async_new_static_002');
@@ -225,14 +209,12 @@ export default function fileIOMkdir11() {
     });
 
     /**
+     * @tc.name   fileIO_test_mkdir_async_new_static_003
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIR_ASYNC_NEW_0300
-     * @tc.name fileIO_test_mkdir_async_new_static_003
-     * @tc.desc Test mkdir() interfaces. Promise.
-     * missing recursion parameter,use default recursion = false.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test mkdir() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_mkdir_async_new_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_mkdir_async_new_static_003');
@@ -252,14 +234,12 @@ export default function fileIOMkdir11() {
     });
 
     /**
+     * @tc.name   fileIO_test_mkdir_async_new_static_005
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIR_ASYNC_NEW_0500
-     * @tc.name fileIO_test_mkdir_async_new_static_005
-     * @tc.desc Test mkdir() interfaces. Promise.
-     * The path has pointed to a file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test mkdir() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_mkdir_async_new_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_mkdir_async_new_static_005');
@@ -277,14 +257,12 @@ export default function fileIOMkdir11() {
     });
 
     /**
+     * @tc.name   fileIO_test_mkdir_async_new_static_006
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIR_ASYNC_NEW_0600
-     * @tc.name fileIO_test_mkdir_async_new_static_006
-     * @tc.desc Test mkdir() interfaces. Promise.
-     * The directory has been existed.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test mkdir() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_mkdir_async_new_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       try {
@@ -298,14 +276,12 @@ export default function fileIOMkdir11() {
     });
 
     /**
+     * @tc.name   fileIO_test_mkdir_async_new_static_007
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIR_ASYNC_NEW_0700
-     * @tc.name fileIO_test_mkdir_async_new_static_007
-     * @tc.desc Test mkdir() interfaces. Promise.
-     * The path is empty.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test mkdir() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_mkdir_async_new_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       try {
@@ -319,14 +295,12 @@ export default function fileIOMkdir11() {
     });
 
     /**
+     * @tc.name   fileIO_test_mkdir_async_new_static_008
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIR_ASYNC_NEW_0800
-     * @tc.name fileIO_test_mkdir_async_new_static_008
-     * @tc.desc Test mkdir() interfaces. Callback.
-     * Create a single level directory, verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test mkdir() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_mkdir_async_new_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_mkdir_async_new_static_008');
@@ -355,14 +329,12 @@ export default function fileIOMkdir11() {
     });
 
     /**
+     * @tc.name   fileIO_test_mkdir_async_new_static_009
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIR_ASYNC_NEW_0900
-     * @tc.name fileIO_test_mkdir_async_new_static_009
-     * @tc.desc Test mkdir() interfaces. Callback.
-     * Create a multi-level directory, verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test mkdir() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_mkdir_async_new_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_mkdir_async_new_static_009');
@@ -392,14 +364,12 @@ export default function fileIOMkdir11() {
     });
 
     /**
+     * @tc.name   fileIO_test_mkdir_async_new_static_010
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIR_ASYNC_NEW_1000
-     * @tc.name fileIO_test_mkdir_async_new_static_010
-     * @tc.desc Test mkdir() interfaces. Callback.
-     * missing recursion parameter,use default recursion = false.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test mkdir() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_mkdir_async_new_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let dpath = await Utils.nextFileName('fileIO_test_mkdir_async_new_static_010');
@@ -428,14 +398,12 @@ export default function fileIOMkdir11() {
     });
 
     /**
+     * @tc.name   fileIO_test_mkdir_async_new_static_012
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIR_ASYNC_NEW_1200
-     * @tc.name fileIO_test_mkdir_async_new_static_012
-     * @tc.desc Test mkdir() interfaces. Callback.
-     * The path has pointed to a file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test mkdir() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_mkdir_async_new_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_mkdir_async_new_static_012');
@@ -457,14 +425,12 @@ export default function fileIOMkdir11() {
     });
 
     /**
+     * @tc.name   fileIO_test_mkdir_async_new_static_013
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIR_ASYNC_NEW_1300
-     * @tc.name fileIO_test_mkdir_async_new_static_013
-     * @tc.desc Test mkdir() interfaces. Callback.
-     * The directory has been existed.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test mkdir() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_mkdir_async_new_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       try {
@@ -482,14 +448,12 @@ export default function fileIOMkdir11() {
     });
 
     /**
+     * @tc.name   fileIO_test_mkdir_async_new_static_014
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_MKDIR_ASYNC_NEW_1400
-     * @tc.name fileIO_test_mkdir_async_new_static_014
-     * @tc.desc Test mkdir() interfaces. Callback.
-     * The path is empty.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test mkdir() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_mkdir_async_new_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       try {

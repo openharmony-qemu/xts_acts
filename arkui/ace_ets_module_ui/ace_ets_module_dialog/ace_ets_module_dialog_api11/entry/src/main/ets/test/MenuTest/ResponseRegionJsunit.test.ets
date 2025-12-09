@@ -48,6 +48,14 @@ export default function ResponseRegionJsunit() {
       console.info("ResponseRegion after each called");
     });
 
+    /**
+     * @tc.name   testResponseRegion01
+     * @tc.number testResponseRegion01
+     * @tc.desc   testResponseRegion01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testResponseRegion01', Level.LEVEL2, async (done: Function) => {
       console.info('[testResponseRegion01] START');
       try {
@@ -70,6 +78,14 @@ export default function ResponseRegionJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testResponseRegion02
+     * @tc.number testResponseRegion02
+     * @tc.desc   testResponseRegion02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testResponseRegion02', Level.LEVEL2, async (done: Function) => {
       let rect = Utils.getComponentRect('region')
       console.info("[testResponseRegion02] rectInfo is " + JSON.stringify(rect));

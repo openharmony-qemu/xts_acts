@@ -46,12 +46,12 @@ export default function WrapBuilder0020Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_WRAPI_0020
-     * @tc.name      WrapBuilder0020Test_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   WrapBuilder0020Test_001
+     * @tc.number SUB_ACE_STATUSMANAGER_WRAPI_0020
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WrapBuilder0020Test_001', Level.LEVEL0, async (done: Function) => {
       console.info('[WrapBuilder0020Test_001] START');

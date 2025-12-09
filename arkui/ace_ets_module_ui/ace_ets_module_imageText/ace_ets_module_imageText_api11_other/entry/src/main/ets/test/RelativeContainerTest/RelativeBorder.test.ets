@@ -42,14 +42,15 @@ export default function RelativeBorder() {
       console.info("RelativeBorder after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0670
-     * @tc.desc      add BorderWidth
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeBorder_001
+     * @tc.number RelativeBorder_001
+     * @tc.desc   RelativeBorder_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeBorder_001', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeBorder_001] START');
 

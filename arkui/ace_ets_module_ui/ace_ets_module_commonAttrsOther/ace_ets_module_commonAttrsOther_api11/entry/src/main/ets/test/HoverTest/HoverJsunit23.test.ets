@@ -45,6 +45,14 @@ export default function HoverJsunit23() {
 
 
 
+    /**
+     * @tc.name   HoverJsunit_0100
+     * @tc.number HoverJsunit_0100
+     * @tc.desc   HoverJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('HoverJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('HoverJsunit_0200 START');
       let driver = await Driver.create()
@@ -65,6 +73,14 @@ export default function HoverJsunit23() {
       done();
     });
 
+    /**
+     * @tc.name   HoverJsunit_0200
+     * @tc.number HoverJsunit_0200
+     * @tc.desc   HoverJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('HoverJsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('HoverJsunit_0200 START');
       let driver = await Driver.create()
@@ -88,6 +104,14 @@ export default function HoverJsunit23() {
       done();
     });
 
+    /**
+     * @tc.name   HoverJsunit_0300
+     * @tc.number HoverJsunit_0300
+     * @tc.desc   HoverJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('HoverJsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('HoverJsunit_0300 START');
       let driver = await Driver.create()

@@ -44,13 +44,13 @@ const TIMEOUT = 100;
 export default function ConnectionBasicTest() {
  describe('ConnectionBasicTest', () => {
  
-     /**
-     * @tc.number: SUB_NetManager_Connection_NetBearType_0100
-     * @tc.name:  testNetManagerConnectionNetBearType0100
-     * @tc.desc: GetNetCapabilities  detection
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetManagerConnectionNetBearType0100
+     * @tc.number SUB_NetManager_Connection_NetBearType_0100
+     * @tc.desc   GetNetCapabilities  detection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testNetManagerConnectionNetBearType0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName: string = "testNetManagerConnectionNetBearType0100";
@@ -70,13 +70,13 @@ export default function ConnectionBasicTest() {
       }
     })
     
-     /**
-     * @tc.number: SUB_NetManager_Connection_IsExcludedRoute_0100
-     * @tc.name:  testNetManagerConnectionIsExcludedRoute0100
-     * @tc.desc: getConnectionProperties  detection
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetManagerConnectionIsExcludedRoute0100
+     * @tc.number SUB_NetManager_Connection_IsExcludedRoute_0100
+     * @tc.desc   getConnectionProperties  detection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetManagerConnectionIsExcludedRoute0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = "testNetManagerConnectionIsExcludedRoute0100";
@@ -105,12 +105,12 @@ export default function ConnectionBasicTest() {
     });
 
     /**
-     * @tc.number: SUB_NetManager_Connection_GetConnectionProperties_CallBack_0100
-     * @tc.name:  testNetManagerConnectionGetConnectionPropertiesCallBack0100
-     * @tc.desc: getConnectionProperties  detection
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   testNetManagerConnectionGetConnectionPropertiesCallBack0100
+     * @tc.number SUB_NetManager_Connection_GetConnectionProperties_CallBack_0100
+     * @tc.desc   getConnectionProperties  detection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetManagerConnectionGetConnectionPropertiesCallBack0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName: string = "testNetManagerConnectionGetConnectionPropertiesCallBack0100";
@@ -149,13 +149,13 @@ export default function ConnectionBasicTest() {
       }
     });
 
-   /*
-    * @tc.number:SUB_NetManager_Connection_CreateNetConnection_0100
-    * @tc.name: testNetManagerConnectionCreateNetConnection0100
-    * @tc.desc:Create a network connection with optional netSpefifier and timeout.
-    * @tc.level:Level 0
-    * @tc.type:Function
-    * @tc.size:MediumTest
+   /**
+    * @tc.name   testNetManagerConnectionCreateNetConnection0100
+    * @tc.number SUB_NetManager_Connection_CreateNetConnection_0100
+    * @tc.desc   Create a network connection with optional netSpefifier and timeout.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
     */
    it('testNetManagerConnectionCreateNetConnection0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
      let caseName: string = "testNetManagerConnectionCreateNetConnection0100";
@@ -172,13 +172,13 @@ export default function ConnectionBasicTest() {
      }
    });
 
-   /*
-    * @tc.number:SUB_NetManager_Connection_CreateNetConnection_0200
-    * @tc.name: testNetManagerConnectionCreateNetConnection0200
-    * @tc.desc: Create a network connection with optional netSpefifier and timeout.
-    * @tc.level:Level 0
-    * @tc.type:Function
-    * @tc.size:MediumTest
+   /**
+    * @tc.name   testNetManagerConnectionCreateNetConnection0200
+    * @tc.number SUB_NetManager_Connection_CreateNetConnection_0200
+    * @tc.desc   Create a network connection with optional netSpefifier and timeout.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
     */
    it('testNetManagerConnectionCreateNetConnection0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
      let caseName: string = "testNetManagerConnectionCreateNetConnection0200";
@@ -203,13 +203,13 @@ export default function ConnectionBasicTest() {
      }
    });
 
-   /*
-    * @tc.number:SUB_NetManager_Connection_CreateNetConnection_0300
-    * @tc.name: testNetManagerConnectionCreateNetConnection0300
-    * @tc.desc: Create a network connection with optional netSpefifier and timeout.
-    * @tc.level:Level 0
-    * @tc.type:Function
-    * @tc.size:MediumTest
+   /**
+    * @tc.name   testNetManagerConnectionCreateNetConnection0300
+    * @tc.number SUB_NetManager_Connection_CreateNetConnection_0300
+    * @tc.desc   Create a network connection with optional netSpefifier and timeout.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('testNetManagerConnectionCreateNetConnection0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
      let caseName: string = "testNetManagerConnectionCreateNetConnection0300";
@@ -235,13 +235,13 @@ export default function ConnectionBasicTest() {
      }
    });
 
-   /*
-    * @tc.number:SUB_NetManager_Connection_CreateNetConnection_0400
-    * @tc.name: testNetManagerConnectionCreateNetConnection0400
-    * @tc.desc: Create a network connection with optional netSpefifier and timeout.
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
+   /**
+    * @tc.name   testNetManagerConnectionCreateNetConnection0400
+    * @tc.number SUB_NetManager_Connection_CreateNetConnection_0400
+    * @tc.desc   Create a network connection with optional netSpefifier and timeout.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('testNetManagerConnectionCreateNetConnection0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
      let caseName: string = "testNetManagerConnectionCreateNetConnection0400";
@@ -267,13 +267,13 @@ export default function ConnectionBasicTest() {
      }
    });
 
-   /*
-    * @tc.number:SUB_NetManager_Connection_CreateNetConnection_0500
-    * @tc.name: testNetManagerConnectionCreateNetConnection0500
-    * @tc.desc: Create a network connection with optional netSpefifier and timeout.
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
+   /**
+    * @tc.name   testNetManagerConnectionCreateNetConnection0500
+    * @tc.number SUB_NetManager_Connection_CreateNetConnection_0500
+    * @tc.desc   Create a network connection with optional netSpefifier and timeout.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('testNetManagerConnectionCreateNetConnection0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
      let caseName: string = "testNetManagerConnectionCreateNetConnection0500";
@@ -299,13 +299,13 @@ export default function ConnectionBasicTest() {
      }
    });
 
-   /*
-    * @tc.number:SUB_NetManager_Connection_CreateNetConnection_0600
-    * @tc.name: testNetManagerConnectionCreateNetConnection0600
-    * @tc.desc linkUpBandwidthKbps test
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
+   /**
+    * @tc.name   testNetManagerConnectionCreateNetConnection0600
+    * @tc.number SUB_NetManager_Connection_CreateNetConnection_0600
+    * @tc.desc   linkUpBandwidthKbps test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('testNetManagerConnectionCreateNetConnection0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
      let caseName: string = "testNetManagerConnectionCreateNetConnection0600";
@@ -331,13 +331,13 @@ export default function ConnectionBasicTest() {
      }
    });
 
-   /*
-    * @tc.number:SUB_NetManager_Connection_CreateNetConnection_0700
-    * @tc.name: testNetManagerConnectionCreateNetConnection0700
-    * @tc.desc nlinkDownBandwidthKbps test
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
+   /**
+    * @tc.name   testNetManagerConnectionCreateNetConnection0700
+    * @tc.number SUB_NetManager_Connection_CreateNetConnection_0700
+    * @tc.desc   nlinkDownBandwidthKbps test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('testNetManagerConnectionCreateNetConnection0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
      let caseName: string = "testNetManagerConnectionCreateNetConnection0700";
@@ -362,13 +362,13 @@ export default function ConnectionBasicTest() {
        done();
      }
    });
-   /*
-    * @tc.number:SUB_NetManager_Connection_CreateNetConnection_0800
-    * @tc.name: testNetManagerConnectionCreateNetConnection0800
-    * @tc.desc nlinkDownBandwidthKbps test
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
+   /**
+    * @tc.name   testNetManagerConnectionCreateNetConnection0800
+    * @tc.number SUB_NetManager_Connection_CreateNetConnection_0800
+    * @tc.desc   nlinkDownBandwidthKbps test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('testNetManagerConnectionCreateNetConnection0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
      let caseName: string = "testNetManagerConnectionCreateNetConnection0800";
@@ -393,13 +393,13 @@ export default function ConnectionBasicTest() {
        done();
      }
    });
-   /*
-    * @tc.number:SUB_NetManager_Connection_CreateNetConnection_0900
-    * @tc.name: testNetManagerConnectionCreateNetConnection0900
-    * @tc.desc bearerTypes test
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
+   /**
+    * @tc.name   testNetManagerConnectionCreateNetConnection0900
+    * @tc.number SUB_NetManager_Connection_CreateNetConnection_0900
+    * @tc.desc   bearerTypes test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('testNetManagerConnectionCreateNetConnection0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
      let caseName: string = "testNetManagerConnectionCreateNetConnection0900";
@@ -425,12 +425,12 @@ export default function ConnectionBasicTest() {
      }
    });
    /**
+    * @tc.name   testNetManagerConnectionRegisterAndUnregister0100
     * @tc.number SUB_NetManager_Connection_RegisterAndUnregister_0100
-    * @tc.name testNetManagerConnectionRegisterAndUnregister0100
-    * @tc.desc Receives status change notifications of a specified network.
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
+    * @tc.desc   Receives status change notifications of a specified network.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('testNetManagerConnectionRegisterAndUnregister0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetManagerConnectionRegisterAndUnregister0100";
@@ -471,12 +471,12 @@ export default function ConnectionBasicTest() {
    });
 
    /**
+    * @tc.name   testNetManagerConnectionNetAvailable0100
     * @tc.number SUB_NetManager_Connection_NetAvailable_0100
-    * @tc.name testNetManagerConnectionNetAvailable0100
-    * @tc.desc Function test
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
+    * @tc.desc   Function test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('testNetManagerConnectionNetAvailable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetManagerConnectionNetAvailable0100";
@@ -502,12 +502,12 @@ export default function ConnectionBasicTest() {
    });
 
    /**
+    * @tc.name   testNetManagerConnectionNetBlockStatusChange0100
     * @tc.number SUB_NetManager_Connection_NetBlockStatusChange_0100
-    * @tc.name testNetManagerConnectionNetBlockStatusChange0100
-    * @tc.desc Function test
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
+    * @tc.desc   Function test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('testNetManagerConnectionNetBlockStatusChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetManagerConnectionNetBlockStatusChange0100";
@@ -533,12 +533,12 @@ export default function ConnectionBasicTest() {
    });
 
    /**
+    * @tc.name   testNetManagerConnectionNetCapabilitiesChange0100
     * @tc.number SUB_NetManager_Connection_NetCapabilitiesChange_0100
-    * @tc.name testNetManagerConnectionNetCapabilitiesChange0100
-    * @tc.desc Function test
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
+    * @tc.desc   Function test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('testNetManagerConnectionNetCapabilitiesChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetManagerConnectionNetCapabilitiesChange0100";
@@ -564,12 +564,12 @@ export default function ConnectionBasicTest() {
    });
 
    /**
+    * @tc.name   testNetManagerConnectionNetConnectionPropertiesChange0100
     * @tc.number SUB_NetManager_Connection_NetConnectionPropertiesChange_0100
-    * @tc.name testNetManagerConnectionNetConnectionPropertiesChange0100
-    * @tc.desc Function test
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
+    * @tc.desc   Function test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('testNetManagerConnectionNetConnectionPropertiesChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async  (done: Function) => {
      let caseName: string = "testNetManagerConnectionNetConnectionPropertiesChange0100";
@@ -595,12 +595,12 @@ export default function ConnectionBasicTest() {
    });
 
    /**
+    * @tc.name   testNetManagerConnectionNetLost0100
     * @tc.number SUB_NetManager_Connection_NetLost_0100
-    * @tc.name testNetManagerConnectionNetLost0100
-    * @tc.desc Function test
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
+    * @tc.desc   Function test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('testNetManagerConnectionNetLost0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async  (done: Function) => {
      let caseName: string = "testNetManagerConnectionNetLost0100";
@@ -625,12 +625,12 @@ export default function ConnectionBasicTest() {
      }
    });
    /**
-    * @tc.number: SUB_NetManager_Connection_NetUnavailable_0100
-    * @tc.name: testNetManagerConnectionNetUnavailable0100
-    * @tc.desc: Function test
-    * @tc.level: Level 3
-    * @tc.type: Function
-    * @tc.size: MediumTest
+    * @tc.name   testNetManagerConnectionNetUnavailable0100
+    * @tc.number SUB_NetManager_Connection_NetUnavailable_0100
+    * @tc.desc   Function test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('testNetManagerConnectionNetUnavailable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async  (done: Function) => {
      let caseName: string = "testNetManagerConnectionNetUnavailable0100";
@@ -654,13 +654,13 @@ export default function ConnectionBasicTest() {
      }
    });
 
-   /*
-    * @tc.number: SUB_NetManager_Connection_SetAppNet_Callback_0100
-    * @tc.name:  testNetManagerConnectionSetAppNetCallback0100
-    * @tc.desc: Function test
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
+   /**
+    * @tc.name   testNetManagerConnectionSetAppNetCallback0100
+    * @tc.number SUB_NetManager_Connection_SetAppNet_Callback_0100
+    * @tc.desc   Function test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('testNetManagerConnectionSetAppNetCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
      let caseName: string = "testNetManagerConnectionSetAppNetCallback0100";
@@ -699,13 +699,13 @@ export default function ConnectionBasicTest() {
        done();
      }
    });
-   /*
-    * @tc.number: SUB_NetManager_Connection_SetAppNet_Promise_0100
-    * @tc.name:  testNetManagerConnectionSetAppNetPromise0100
-    * @tc.desc: Function test
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
+   /**
+    * @tc.name   testNetManagerConnectionSetAppNetPromise0100
+    * @tc.number SUB_NetManager_Connection_SetAppNet_Promise_0100
+    * @tc.desc   Function test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('testNetManagerConnectionSetAppNetPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
      let caseName: string = "testNetManagerConnectionSetAppNetPromise0100";

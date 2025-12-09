@@ -41,13 +41,13 @@ export default function buttonMinFontScaleTest() {
       done()
     });
 
-    /**
-    * @tc.number    buttonMinFontScaleTest_0100
-    * @tc.name      buttonMinFontScaleTest_0100
-    * @tc.desc      set button minFontScale:0.5
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
+   /**
+    * @tc.name   buttonMinFontScaleTest_0100
+    * @tc.number buttonMinFontScaleTest_0100
+    * @tc.desc   set button minFontScale:0.5
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
     */
    it('buttonMinFontScaleTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('buttonMinFontScaleTest_0100 START');
@@ -62,13 +62,13 @@ export default function buttonMinFontScaleTest() {
 
 
     /**
-    * @tc.number    buttonMinFontScaleTest_0200
-    * @tc.name      buttonMinFontScaleTest_0200
-    * @tc.desc      set button minFontScale:0.7,return value: 0.700000
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   buttonMinFontScaleTest_0200
+     * @tc.number buttonMinFontScaleTest_0200
+     * @tc.desc   set button minFontScale:0.7,return value: 0.700000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonMinFontScaleTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('buttonMinFontScaleTest_0200 START');
       await CommonFunc.sleep(SLEEP_TIME);
@@ -81,13 +81,13 @@ export default function buttonMinFontScaleTest() {
     });
 
     /**
-    * @tc.number    buttonMinFontScaleTest_0300
-    * @tc.name      buttonMinFontScaleTest_0300
-    * @tc.desc      set button minFontScale:0,return value: 0.000000
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   buttonMinFontScaleTest_0300
+     * @tc.number buttonMinFontScaleTest_0300
+     * @tc.desc   set button minFontScale:0,return value: 0.000000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonMinFontScaleTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('buttonMinFontScaleTest_0300 START');
       await CommonFunc.sleep(SLEEP_TIME);
@@ -100,13 +100,13 @@ export default function buttonMinFontScaleTest() {
     });
 
     /**
-    * @tc.number    buttonMinFontScaleTest_0400
-    * @tc.name      buttonMinFontScaleTest_0400
-    * @tc.desc      set button minFontScale:1,return value: 1.000000
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   buttonMinFontScaleTest_0400
+     * @tc.number buttonMinFontScaleTest_0400
+     * @tc.desc   set button minFontScale:1,return value: 1.000000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonMinFontScaleTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('buttonMinFontScaleTest_0400 START');
       await CommonFunc.sleep(SLEEP_TIME);
@@ -119,13 +119,13 @@ export default function buttonMinFontScaleTest() {
     });
 
     /**
-    * @tc.number    buttonMinFontScaleTest_0500
-    * @tc.name      buttonMinFontScaleTest_0500
-    * @tc.desc      set button minFontScale:undefined,return value: 0.850000
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   buttonMinFontScaleTest_0500
+     * @tc.number buttonMinFontScaleTest_0500
+     * @tc.desc   set button minFontScale:undefined,return value: 0.850000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonMinFontScaleTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('buttonMinFontScaleTest_0500 START');
       await CommonFunc.sleep(SLEEP_TIME);
@@ -138,13 +138,13 @@ export default function buttonMinFontScaleTest() {
     });
 
     /**
-    * @tc.number    buttonMinFontScaleTest_0600
-    * @tc.name      buttonMinFontScaleTest_0600
-    * @tc.desc      set button minFontScale:null,return value: 0.850000
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   buttonMinFontScaleTest_0600
+     * @tc.number buttonMinFontScaleTest_0600
+     * @tc.desc   set button minFontScale:null,return value: 0.850000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonMinFontScaleTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('buttonMinFontScaleTest_0600 START');
       await CommonFunc.sleep(SLEEP_TIME);
@@ -157,13 +157,13 @@ export default function buttonMinFontScaleTest() {
     });
 
     /**
-    * @tc.number    buttonMinFontScaleTest_0700
-    * @tc.name      buttonMinFontScaleTest_0700
-    * @tc.desc      set button minFontScale:-1
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   buttonMinFontScaleTest_0700
+     * @tc.number buttonMinFontScaleTest_0700
+     * @tc.desc   set button minFontScale:-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('buttonMinFontScaleTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('buttonMinFontScaleTest_0700 START');
       await CommonFunc.sleep(SLEEP_TIME);

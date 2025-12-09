@@ -19,12 +19,12 @@ import entry from 'libentry.so'
 export default function oHScannerServicesInterfaceTest() {
   describe('oHScannerServicesInterfaceTest', () => {
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_SCAN_TEST_0100
-     * @tc.name       : testOHScan001
-     * @tc.desc       : test oHScanInit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHScan001
+     * @tc.number SUB_PRINT_FWK_OH_SCAN_TEST_0100
+     * @tc.desc   test oHScanInit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHScan001', Level.LEVEL1, async () => {
       let result: number = await entry.oHScanInit();
@@ -32,12 +32,12 @@ export default function oHScannerServicesInterfaceTest() {
     });
 
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_SCAN_TEST_0200
-     * @tc.name       : testOHScan002
-     * @tc.desc       : test oHScanStartScannerDiscovery
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHScan002
+     * @tc.number SUB_PRINT_FWK_OH_SCAN_TEST_0200
+     * @tc.desc   test oHScanStartScannerDiscovery
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHScan002', Level.LEVEL1, async () => {
       let result: number = await entry.oHScanStartScannerDiscovery();
@@ -45,12 +45,12 @@ export default function oHScannerServicesInterfaceTest() {
     });
 
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_SCAN_TEST_0300
-     * @tc.name       : testOHScan003
-     * @tc.desc       : test oHScanOpenScanner
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHScan003
+     * @tc.number SUB_PRINT_FWK_OH_SCAN_TEST_0300
+     * @tc.desc   test oHScanOpenScanner
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHScan003', Level.LEVEL1, async () => {
       let result: number = await entry.oHScanOpenScanner();
@@ -58,12 +58,12 @@ export default function oHScannerServicesInterfaceTest() {
     });
 
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_SCAN_TEST_0400
-     * @tc.name       : testOHScan004
-     * @tc.desc       : test oHScanCloseScanner
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHScan004
+     * @tc.number SUB_PRINT_FWK_OH_SCAN_TEST_0400
+     * @tc.desc   test oHScanCloseScanner
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHScan004', Level.LEVEL1, async () => {
       let result: number = await entry.oHScanCloseScanner();
@@ -71,12 +71,12 @@ export default function oHScannerServicesInterfaceTest() {
     });
 
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_SCAN_TEST_0500
-     * @tc.name       : testOHScan005
-     * @tc.desc       : test oHScanGetScannerParameter
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHScan005
+     * @tc.number SUB_PRINT_FWK_OH_SCAN_TEST_0500
+     * @tc.desc   test oHScanGetScannerParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHScan005', Level.LEVEL1, async () => {
       let result: number = await entry.oHScanGetScannerParameter();
@@ -84,12 +84,12 @@ export default function oHScannerServicesInterfaceTest() {
     });
 
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_SCAN_TEST_0600
-     * @tc.name       : testOHScan006
-     * @tc.desc       : test oHScanSetScannerParameter
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHScan006
+     * @tc.number SUB_PRINT_FWK_OH_SCAN_TEST_0600
+     * @tc.desc   test oHScanSetScannerParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHScan006', Level.LEVEL1, async () => {
       let result: number = await entry.oHScanSetScannerParameter();
@@ -97,12 +97,12 @@ export default function oHScannerServicesInterfaceTest() {
     });
 
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_SCAN_TEST_0700
-     * @tc.name       : testOHScan007
-     * @tc.desc       : test oHScanStartScan
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHScan007
+     * @tc.number SUB_PRINT_FWK_OH_SCAN_TEST_0700
+     * @tc.desc   test oHScanStartScan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHScan007', Level.LEVEL1, async () => {
       let result: number = await entry.oHScanStartScan();
@@ -110,12 +110,12 @@ export default function oHScannerServicesInterfaceTest() {
     });
 
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_SCAN_TEST_0800
-     * @tc.name       : testOHScan008
-     * @tc.desc       : test oHScanCancelScan
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHScan008
+     * @tc.number SUB_PRINT_FWK_OH_SCAN_TEST_0800
+     * @tc.desc   test oHScanCancelScan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHScan008', Level.LEVEL1, async () => {
       let result: number = await entry.oHScanCancelScan();
@@ -123,12 +123,12 @@ export default function oHScannerServicesInterfaceTest() {
     });
 
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_SCAN_TEST_0900
-     * @tc.name       : testOHScan009
-     * @tc.desc       : test oHScanGetPictureScanProgress
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHScan009
+     * @tc.number SUB_PRINT_FWK_OH_SCAN_TEST_0900
+     * @tc.desc   test oHScanGetPictureScanProgress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHScan009', Level.LEVEL1, async () => {
       let result: number = await entry.oHScanGetPictureScanProgress();
@@ -136,12 +136,12 @@ export default function oHScannerServicesInterfaceTest() {
     });
 
     /**
-     * @tc.number     : SUB_PRINT_FWK_OH_SCAN_TEST_1000
-     * @tc.name       : testOHScan010
-     * @tc.desc       : test oHScanExit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHScan010
+     * @tc.number SUB_PRINT_FWK_OH_SCAN_TEST_1000
+     * @tc.desc   test oHScanExit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHScan010', Level.LEVEL1, async () => {
       let result: number = await entry.oHScanExit();

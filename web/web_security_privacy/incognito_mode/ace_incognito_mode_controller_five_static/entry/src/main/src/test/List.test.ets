@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import webViewIncognitoMode from './webViewIncognitoMode.test'
+import webViewIncognitoMode from './WebViewIncognitoMode.test'
 
 export default function testsuite() {
     webViewIncognitoMode();

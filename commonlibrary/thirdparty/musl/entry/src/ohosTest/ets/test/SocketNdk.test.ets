@@ -25,12 +25,12 @@ export default function SocketNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SOCKET_SOCKET_0100
-     * @tc.name       : testMuslSocketSocket001
-     * @tc.desc       : test socket
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSocketSocket001
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_SOCKET_0100
+     * @tc.desc   test socket
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketSocket001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let c: number = socket.socket();
@@ -39,12 +39,12 @@ export default function SocketNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SOCKET_SOCKETPAIR_0100
-     * @tc.name       : testMuslSocketSocketpair001
-     * @tc.desc       : test socketpair
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSocketSocketpair001
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_SOCKETPAIR_0100
+     * @tc.desc   test socketpair
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketSocketpair001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let c: number = socket.socketpair();
@@ -52,12 +52,12 @@ export default function SocketNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SOCKET_SENDMSG_0100
-     * @tc.name       : testMuslSocketSendmsg001
-     * @tc.desc       : test sendmsg
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSocketSendmsg001
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_SENDMSG_0100
+     * @tc.desc   test sendmsg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketSendmsg001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = socket.sendmsg();
@@ -66,12 +66,12 @@ export default function SocketNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SOCKET_SEND_0100
-     * @tc.name       : testMuslSocketSend001
-     * @tc.desc       : test send
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSocketSend001
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_SEND_0100
+     * @tc.desc   test send
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketSend001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = socket.send();
@@ -80,12 +80,12 @@ export default function SocketNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SOCKET_SENDTO_0100
-     * @tc.name       : testMuslSocketSendto001
-     * @tc.desc       : test sendto
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSocketSendto001
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_SENDTO_0100
+     * @tc.desc   test sendto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketSendto001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = socket.sendto();
@@ -94,12 +94,12 @@ export default function SocketNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SOCKET_SENDMMSG_0100
-     * @tc.name       : testMuslSocketSendmmsg001
-     * @tc.desc       : test sendmmsg
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSocketSendmmsg001
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_SENDMMSG_0100
+     * @tc.desc   test sendmmsg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketSendmmsg001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = socket.sendmmsg();
@@ -108,12 +108,12 @@ export default function SocketNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SOCKET_SETSOCKOPT_0100
-     * @tc.name       : testMuslSocketSetsockopt001
-     * @tc.desc       : test setsockopt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSocketSetsockopt001
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_SETSOCKOPT_0100
+     * @tc.desc   test setsockopt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketSetsockopt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = socket.setsockopt();
@@ -122,12 +122,12 @@ export default function SocketNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SOCKET_SHUTDOWN_0100
-     * @tc.name       : testMuslSocketShutdown001
-     * @tc.desc       : test shutdown
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSocketShutdown001
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_SHUTDOWN_0100
+     * @tc.desc   test shutdown
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketShutdown001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = socket.shutdown();
@@ -136,12 +136,12 @@ export default function SocketNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SOCKET_RECV_0100
-     * @tc.name       : testMuslSocketRecv001
-     * @tc.desc       : test recv
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSocketRecv001
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_RECV_0100
+     * @tc.desc   test recv
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketRecv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -1;
@@ -152,12 +152,12 @@ export default function SocketNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SOCKET_RECV_0200
-     * @tc.name       : testMuslSocketRecv002
-     * @tc.desc       : test recv
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSocketRecv002
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_RECV_0200
+     * @tc.desc   test recv
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketRecv002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -168,12 +168,12 @@ export default function SocketNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SOCKET_CONNECT_0100
-     * @tc.name       : testMuslSocketConnect001
-     * @tc.desc       : test connect
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSocketConnect001
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_CONNECT_0100
+     * @tc.desc   test connect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketConnect001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(socket.connect()).assertEqual(0);
@@ -181,12 +181,12 @@ export default function SocketNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SOCKET_BIND_0100
-     * @tc.name       : testMuslSocketBind001
-     * @tc.desc       : test bind
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSocketBind001
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_BIND_0100
+     * @tc.desc   test bind
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketBind001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 0;
@@ -195,12 +195,12 @@ export default function SocketNdkTest() {
       done()
     });
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SOCKET_LISTEN_0100
-     * @tc.name     : testMuslSocketListen001
-     * @tc.desc     : test listen
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSocketListen001
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_LISTEN_0100
+     * @tc.desc   test listen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketListen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = socket.listen();
@@ -208,12 +208,12 @@ export default function SocketNdkTest() {
       done()
     });
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SOCKET_GETPEERNAME_0100
-     * @tc.name     : testMuslSocketGetpeername001
-     * @tc.desc     : test getpeername
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSocketGetpeername001
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_GETPEERNAME_0100
+     * @tc.desc   test getpeername
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketGetpeername001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = socket.getpeername();
@@ -222,12 +222,12 @@ export default function SocketNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SOCKET_GETSOCKNAME_0100
-     * @tc.name     : testMuslSocketGetsockname001
-     * @tc.desc     : test getsockname
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSocketGetsockname001
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_GETSOCKNAME_0100
+     * @tc.desc   test getsockname
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketGetsockname001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = socket.getsockname();
@@ -236,12 +236,12 @@ export default function SocketNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_SOCKET_GETSOCKOPT_0100
-     * @tc.name     : testMuslSocketGetsockopt001
-     * @tc.desc     : test getsockopt
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslSocketGetsockopt001
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_GETSOCKOPT_0100
+     * @tc.desc   test getsockopt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketGetsockopt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = socket.getsockopt();
@@ -250,12 +250,12 @@ export default function SocketNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SOCKET_RECVFROM_0100
-     * @tc.name       : testMuslSocketRecvfrom001
-     * @tc.desc       : test recvfrom
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSocketRecvfrom001
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_RECVFROM_0100
+     * @tc.desc   test recvfrom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketRecvfrom001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -1;
@@ -266,12 +266,12 @@ export default function SocketNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SOCKET_RECVMSG_0100
-     * @tc.name       : testMuslSocketRecvmsg001
-     * @tc.desc       : test recvmsg
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSocketRecvmsg001
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_RECVMSG_0100
+     * @tc.desc   test recvmsg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketRecvmsg001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -1;
@@ -282,12 +282,12 @@ export default function SocketNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SOCKET_RECVMMSG_0100
-     * @tc.name       : testMuslSocketRecvmmsg001
-     * @tc.desc       : test recvmmsg
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSocketRecvmmsg001
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_RECVMMSG_0100
+     * @tc.desc   test recvmmsg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSocketRecvmmsg001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -1;

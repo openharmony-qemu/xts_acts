@@ -26,26 +26,26 @@ export default function progressAccessibilityDescriptionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_ACCESSIBILITYDESCRIPTION_0100
-     * @tc.name       : testProgressAccessibilityDescription001
-     * @tc.desc       : testing accessibilityDescription for Progress with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressAccessibilityDescription001
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_ACCESSIBILITYDESCRIPTION_0100
+     * @tc.desc   testing accessibilityDescription for Progress with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressAccessibilityDescription001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressAccessibilityDescription001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_ACCESSIBILITYDESCRIPTION_0200
-     * @tc.name       : testProgressAccessibilityDescription002
-     * @tc.desc       : testing accessibilityDescription for Progress with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressAccessibilityDescription002
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_ACCESSIBILITYDESCRIPTION_0200
+     * @tc.desc   testing accessibilityDescription for Progress with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressAccessibilityDescription002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressAccessibilityDescription002()).assertEqual(0)

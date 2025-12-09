@@ -68,7 +68,6 @@ export default function HidCanIUseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testHIDCanIUse0100
      * @tc.number SUB_Driver_Ext_HIDCanIUse_0100
      * @tc.desc   OH_Hid_CanIUse testing

@@ -54,13 +54,15 @@ export default function GridRows2() {
       console.info("GridRows2 after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_LISTANDGRID_GRID_CAPABILITY_0180
-     * @tc.desc      set rowsTemplate to '-1fr'
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   GridRows2_001
+     * @tc.number GridRows2_001
+     * @tc.desc   GridRows2_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRows2_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[GridRows2_001] START');
 
@@ -84,13 +86,15 @@ export default function GridRows2() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_LISTANDGRID_GRID_CAPABILITY_0170
-     * @tc.desc      set rowsTemplate to '0fr'
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   GridRows2_002
+     * @tc.number GridRows2_002
+     * @tc.desc   GridRows2_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRows2_002',  Level.LEVEL0, async (done: Function) => {
       console.info('[GridRows2_001] START');
 

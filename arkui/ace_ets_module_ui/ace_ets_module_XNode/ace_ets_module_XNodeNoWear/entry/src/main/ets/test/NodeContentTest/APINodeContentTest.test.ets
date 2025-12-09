@@ -42,12 +42,12 @@ export default function APINodeContentTest() {
     });
 
     /**
-     * @tc.number    APINodeContentTest_0100
-     * @tc.name      APINodeContentTest_0100
-     * @tc.desc      frameNode: APINodeContent
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APINodeContentTest_0100
+     * @tc.number APINodeContentTest_0100
+     * @tc.desc   frameNode: APINodeContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('APINodeContentTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('APINodeContentTest_0100 START');
@@ -68,12 +68,12 @@ export default function APINodeContentTest() {
     });
 
     /**
-     * @tc.number    APINodeContentTest_0200
-     * @tc.name      APINodeContentTest_0200
-     * @tc.desc      frameNode: APINodeContent
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APINodeContentTest_0200
+     * @tc.number APINodeContentTest_0200
+     * @tc.desc   frameNode: APINodeContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('APINodeContentTest_0200', Level.LEVEL2, async (done: Function) => {
       console.info('APINodeContentTest_0200 START');

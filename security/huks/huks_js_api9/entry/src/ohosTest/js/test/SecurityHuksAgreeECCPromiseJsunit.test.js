@@ -52,6 +52,14 @@ export default function SecurityHuksAgreeECCPromiseJsunit() {
             console.info('test beforeEach called');
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API9_ECDH_101
+         * @tc.number Security_HUKS_Agree_API9_ECDH_101
+         * @tc.desc   Security_HUKS_Agree_API9_ECDH_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API9_ECDH_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testAgreeECDHSize256Finish63KBAgreeKeyAlias_01_101';
             const srcKeyAliesSecond = 'testAgreeECDHSize256Finish63KBAgreeKeyAlias_02_101';
@@ -80,6 +88,14 @@ export default function SecurityHuksAgreeECCPromiseJsunit() {
         });
 
         // abort
+        /**
+         * @tc.name   Security_HUKS_Agree_API9_ECDH_102
+         * @tc.number Security_HUKS_Agree_API9_ECDH_102
+         * @tc.desc   Security_HUKS_Agree_API9_ECDH_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API9_ECDH_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testAgreeECDHSize256Abort63KBAgreeKeyAlias_01_101';
             const srcKeyAliesSecond = 'testAgreeECDHSize256Abort63KBAgreeKeyAlias_02_101';

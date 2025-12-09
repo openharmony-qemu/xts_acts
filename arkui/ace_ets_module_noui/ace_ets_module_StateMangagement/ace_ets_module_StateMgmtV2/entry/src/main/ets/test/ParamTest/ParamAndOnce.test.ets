@@ -41,12 +41,12 @@ export default function ParamAndOnceTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_ONCE_0010
-     * @tc.name      ParamAndOnceTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 0
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.name   ParamAndOnceTest_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_ONCE_0010
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParamAndOnceTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ParamAndOnceTest_0100 START');

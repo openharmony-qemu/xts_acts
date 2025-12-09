@@ -26,14 +26,14 @@ export default function stackHitTestBehaviorTest() {
       await Utils.pushPage(`stack/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_STACK_HITTESTBEHAVIOR_0100
-    * @tc.name       : testStackHitTestBehavior001
-    * @tc.desc       : testing HitTestBehavior for stack with normal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testStackHitTestBehavior001
+     * @tc.number SUB_ARKUI_CAPI_STACK_HITTESTBEHAVIOR_0100
+     * @tc.desc   testing HitTestBehavior for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStackHitTestBehavior001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnTouchTestStackBrotherDefault')
       await Utils.sleep(1000)
@@ -43,14 +43,14 @@ export default function stackHitTestBehaviorTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_STACK_HITTESTBEHAVIOR_0200
-    * @tc.name       : testStackHitTestBehavior002
-    * @tc.desc       : testing HitTestBehavior for stack with normal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testStackHitTestBehavior002
+     * @tc.number SUB_ARKUI_CAPI_STACK_HITTESTBEHAVIOR_0200
+     * @tc.desc   testing HitTestBehavior for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStackHitTestBehavior002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnTouchTestStackBrotherBlock')
       await Utils.sleep(1000)
@@ -60,14 +60,14 @@ export default function stackHitTestBehaviorTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_STACK_HITTESTBEHAVIOR_0300
-    * @tc.name       : testStackHitTestBehavior003
-    * @tc.desc       : testing HitTestBehavior for stack with normal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testStackHitTestBehavior003
+     * @tc.number SUB_ARKUI_CAPI_STACK_HITTESTBEHAVIOR_0300
+     * @tc.desc   testing HitTestBehavior for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStackHitTestBehavior003', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnTouchTestStackBrotherTransparent')
       await Utils.sleep(1000)
@@ -78,14 +78,14 @@ export default function stackHitTestBehaviorTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_STACK_HITTESTBEHAVIOR_0400
-    * @tc.name       : testStackHitTestBehavior004
-    * @tc.desc       : testing HitTestBehavior for stack with normal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testStackHitTestBehavior004
+     * @tc.number SUB_ARKUI_CAPI_STACK_HITTESTBEHAVIOR_0400
+     * @tc.desc   testing HitTestBehavior for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStackHitTestBehavior004', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnTouchTestStackBrotherNone')
       await Utils.sleep(1000)
@@ -96,14 +96,14 @@ export default function stackHitTestBehaviorTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_STACK_HITTESTBEHAVIOR_0500
-    * @tc.name       : testStackHitTestBehavior005
-    * @tc.desc       : testing HitTestBehavior for stack with abnormal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testStackHitTestBehavior005
+     * @tc.number SUB_ARKUI_CAPI_STACK_HITTESTBEHAVIOR_0500
+     * @tc.desc   testing HitTestBehavior for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStackHitTestBehavior005', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnTouchTestStackBrotherExceptBelow')
       await Utils.sleep(1000)
@@ -114,14 +114,14 @@ export default function stackHitTestBehaviorTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_STACK_HITTESTBEHAVIOR_0600
-    * @tc.name       : testStackHitTestBehavior006
-    * @tc.desc       : testing HitTestBehavior for stack with abnormal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testStackHitTestBehavior006
+     * @tc.number SUB_ARKUI_CAPI_STACK_HITTESTBEHAVIOR_0600
+     * @tc.desc   testing HitTestBehavior for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStackHitTestBehavior006', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnTouchTestStackBrotherExceptAbove')
       await Utils.sleep(1000)

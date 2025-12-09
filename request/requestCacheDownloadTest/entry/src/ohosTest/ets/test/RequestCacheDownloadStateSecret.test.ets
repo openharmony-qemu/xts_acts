@@ -32,12 +32,12 @@ export default function requestCacheDownloadStateSecretUnitTest() {
 
     console.info('====>requestCacheDownloadJSTest Test start');
     /**
+     * @tc.name   SUB_Request_cacheDownload_stateSecret_0100
      * @tc.number SUB_Request_cacheDownload_stateSecret_0100
-     * @tc.name SUB_Request_cacheDownload_stateSecret_0100
-     * @tc.desc sslType value is TLS and url support it.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   sslType value is TLS and url support it.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_stateSecret_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_stateSecret_0100 is starting-----------------------");
@@ -73,12 +73,12 @@ export default function requestCacheDownloadStateSecretUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_stateSecret_0200
      * @tc.number SUB_Request_cacheDownload_stateSecret_0200
-     * @tc.name SUB_Request_cacheDownload_stateSecret_0200
-     * @tc.desc sslType value is TLS and url not support it.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   sslType value is TLS and url not support it.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_stateSecret_0200', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_stateSecret_0200 is starting-----------------------");
@@ -114,12 +114,12 @@ export default function requestCacheDownloadStateSecretUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_stateSecret_0300
      * @tc.number SUB_Request_cacheDownload_stateSecret_0300
-     * @tc.name SUB_Request_cacheDownload_stateSecret_0300
-     * @tc.desc sslType value is TLCP and url support it.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   sslType value is TLCP and url support it.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_stateSecret_0300', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_stateSecret_0300 is starting-----------------------");
@@ -157,12 +157,12 @@ export default function requestCacheDownloadStateSecretUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_stateSecret_0400
      * @tc.number SUB_Request_cacheDownload_stateSecret_0400
-     * @tc.name SUB_Request_cacheDownload_stateSecret_0400
-     * @tc.desc sslType value is TLCP and url is not support it.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   sslType value is TLCP and url is not support it.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_stateSecret_0400', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_stateSecret_0400 is starting-----------------------");
@@ -199,12 +199,12 @@ export default function requestCacheDownloadStateSecretUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_stateSecret_0500
      * @tc.number SUB_Request_cacheDownload_stateSecret_0500
-     * @tc.name SUB_Request_cacheDownload_stateSecret_0500
-     * @tc.desc sslType value is TLCP and caPath is error.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   sslType value is TLCP and caPath is error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_stateSecret_0500', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_stateSecret_0500 is starting-----------------------");
@@ -241,12 +241,12 @@ export default function requestCacheDownloadStateSecretUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_stateSecret_0600
      * @tc.number SUB_Request_cacheDownload_stateSecret_0600
-     * @tc.name SUB_Request_cacheDownload_stateSecret_0600
-     * @tc.desc sslType value is undefined and url support it.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   sslType value is undefined and url support it.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_stateSecret_0600', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_stateSecret_0600 is starting-----------------------");

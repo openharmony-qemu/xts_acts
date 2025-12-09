@@ -42,14 +42,15 @@ export default function RelativeChain7() {
       console.info("RelativeChain7 after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0510
-     * @tc.desc      chainMode test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeChain7_001
+     * @tc.number RelativeChain7_001
+     * @tc.desc   RelativeChain7_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeChain7_001', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeChain7_001] START');
 

@@ -57,14 +57,14 @@ export default function WebViewOverviewModeAccess() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_OVERVIEWMODEACCESS_0200
-    * @tc.name       : testOverviewModeAccess002
-    * @tc.desc       : test OverviewModeAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOverviewModeAccess002
+     * @tc.number SUB_WEB_OVERVIEWMODEACCESS_0200
+     * @tc.desc   test OverviewModeAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOverviewModeAccess002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOverviewModeAccessFalse", 153300)
       Utils.registerEvent("testOverviewModeAccess002", '1', 153310, done);

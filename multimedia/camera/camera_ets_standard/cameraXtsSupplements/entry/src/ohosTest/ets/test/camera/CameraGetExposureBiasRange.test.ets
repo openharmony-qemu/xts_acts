@@ -297,12 +297,12 @@ export default function CameraGetExposureBiasRange() {
     });
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_GET_EXPOSURE_BIAS_RANGE_001
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_GET_EXPOSURE_BIAS_RANGE_001
-     * @tc.desc      Create Photo session getExposureBiasRange
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_GET_EXPOSURE_BIAS_RANGE_001
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_GET_EXPOSURE_BIAS_RANGE_001
+     * @tc.desc   Create Photo session getExposureBiasRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_GET_EXPOSURE_BIAS_RANGE_001', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_SESSION_GET_EXPOSURE_BIAS_RANGE_001--------------");
@@ -327,12 +327,12 @@ export default function CameraGetExposureBiasRange() {
       done();
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_GET_EXPOSURE_BIAS_RANGE_002
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_GET_EXPOSURE_BIAS_RANGE_002
-     * @tc.desc      Create Video session getExposureBiasRange
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_GET_EXPOSURE_BIAS_RANGE_002
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_GET_EXPOSURE_BIAS_RANGE_002
+     * @tc.desc   Create Video session getExposureBiasRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_GET_EXPOSURE_BIAS_RANGE_002', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_SESSION_GET_EXPOSURE_BIAS_RANGE_002--------------");

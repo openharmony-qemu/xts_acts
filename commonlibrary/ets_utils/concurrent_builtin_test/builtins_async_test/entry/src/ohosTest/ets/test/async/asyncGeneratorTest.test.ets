@@ -107,12 +107,12 @@ export default function asyncGeneratorTest() {
       await sleep(10)
     })
     /**
+     * @tc.name   AsyncGeneratorTest001
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_001
-     * @tc.name AsyncGeneratorTest001
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest001();
@@ -120,12 +120,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest002
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_002
-     * @tc.name AsyncGeneratorTest002
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest002();
@@ -133,12 +133,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest003
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_003
-     * @tc.name AsyncGeneratorTest003
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest003();
@@ -146,12 +146,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest004
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_004
-     * @tc.name AsyncGeneratorTest004
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest004();
@@ -159,12 +159,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest005
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_005
-     * @tc.name AsyncGeneratorTest005
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest005();
@@ -172,12 +172,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest006
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_006
-     * @tc.name AsyncGeneratorTest006
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest006();
@@ -185,12 +185,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest007
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_007
-     * @tc.name AsyncGeneratorTest007
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest007();
@@ -198,12 +198,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest008
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_008
-     * @tc.name AsyncGeneratorTest008
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest008();
@@ -211,12 +211,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest009
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_009
-     * @tc.name AsyncGeneratorTest009
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest009();
@@ -224,12 +224,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest010
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_010
-     * @tc.name AsyncGeneratorTest010
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest010();
@@ -237,12 +237,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest011
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_011
-     * @tc.name AsyncGeneratorTest011
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest011();
@@ -250,12 +250,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest012
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_012
-     * @tc.name AsyncGeneratorTest012
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest012();
@@ -263,12 +263,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest013
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_013
-     * @tc.name AsyncGeneratorTest013
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest013();
@@ -276,12 +276,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest014
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_014
-     * @tc.name AsyncGeneratorTest014
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest014();
@@ -289,12 +289,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest015
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_015
-     * @tc.name AsyncGeneratorTest015
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest015();
@@ -302,12 +302,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest016
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_016
-     * @tc.name AsyncGeneratorTest016
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest016();
@@ -315,12 +315,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest017
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_017
-     * @tc.name AsyncGeneratorTest017
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest017();
@@ -328,12 +328,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest018
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_018
-     * @tc.name AsyncGeneratorTest018
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest018();
@@ -341,12 +341,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest019
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_019
-     * @tc.name AsyncGeneratorTest019
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest019();
@@ -354,12 +354,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest020
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_020
-     * @tc.name AsyncGeneratorTest020
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest020();
@@ -367,12 +367,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest021
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_021
-     * @tc.name AsyncGeneratorTest021
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest021();
@@ -380,12 +380,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest022
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_022
-     * @tc.name AsyncGeneratorTest022
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest022();
@@ -393,12 +393,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest023
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_023
-     * @tc.name AsyncGeneratorTest023
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest023();
@@ -406,12 +406,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest024
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_024
-     * @tc.name AsyncGeneratorTest024
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest024();
@@ -419,12 +419,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest025
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_025
-     * @tc.name AsyncGeneratorTest025
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest025();
@@ -432,12 +432,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest026
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_026
-     * @tc.name AsyncGeneratorTest026
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest026();
@@ -445,12 +445,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest027
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_027
-     * @tc.name AsyncGeneratorTest027
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest027();
@@ -458,12 +458,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest028
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_028
-     * @tc.name AsyncGeneratorTest028
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest028();
@@ -471,12 +471,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest029
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_029
-     * @tc.name AsyncGeneratorTest029
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest029();
@@ -484,12 +484,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest030
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_030
-     * @tc.name AsyncGeneratorTest030
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest030();
@@ -497,12 +497,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest031
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_031
-     * @tc.name AsyncGeneratorTest031
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest031();
@@ -510,12 +510,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest032
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_032
-     * @tc.name AsyncGeneratorTest032
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest032();
@@ -523,12 +523,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest033
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_033
-     * @tc.name AsyncGeneratorTest033
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest033();
@@ -536,12 +536,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest034
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_034
-     * @tc.name AsyncGeneratorTest034
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest034();
@@ -549,12 +549,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest035
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_035
-     * @tc.name AsyncGeneratorTest035
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest035();
@@ -562,12 +562,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest036
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_036
-     * @tc.name AsyncGeneratorTest036
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest036();
@@ -575,12 +575,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest037
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_037
-     * @tc.name AsyncGeneratorTest037
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest037();
@@ -588,12 +588,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest038
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_038
-     * @tc.name AsyncGeneratorTest038
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest038();
@@ -601,12 +601,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest039
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_039
-     * @tc.name AsyncGeneratorTest039
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest039();
@@ -614,12 +614,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest040
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_040
-     * @tc.name AsyncGeneratorTest040
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest040();
@@ -627,12 +627,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest041
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_041
-     * @tc.name AsyncGeneratorTest041
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest041();
@@ -640,12 +640,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest042
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_042
-     * @tc.name AsyncGeneratorTest042
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest042();
@@ -653,12 +653,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest043
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_043
-     * @tc.name AsyncGeneratorTest043
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest043();
@@ -666,12 +666,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest044
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_044
-     * @tc.name AsyncGeneratorTest044
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest044();
@@ -679,12 +679,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest045
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_045
-     * @tc.name AsyncGeneratorTest045
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest045();
@@ -692,12 +692,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest046
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_046
-     * @tc.name AsyncGeneratorTest046
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest046();
@@ -705,12 +705,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest047
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_047
-     * @tc.name AsyncGeneratorTest047
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest047();
@@ -718,12 +718,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest048
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_048
-     * @tc.name AsyncGeneratorTest048
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest048();
@@ -731,12 +731,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest049
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_049
-     * @tc.name AsyncGeneratorTest049
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest049();
@@ -744,12 +744,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest050
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_050
-     * @tc.name AsyncGeneratorTest050
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest050();
@@ -757,12 +757,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest051
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_051
-     * @tc.name AsyncGeneratorTest051
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest051();
@@ -770,12 +770,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest052
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_052
-     * @tc.name AsyncGeneratorTest052
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest052();
@@ -783,12 +783,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest053
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_053
-     * @tc.name AsyncGeneratorTest053
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest053();
@@ -796,12 +796,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest054
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_054
-     * @tc.name AsyncGeneratorTest054
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest054();
@@ -809,12 +809,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest055
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_055
-     * @tc.name AsyncGeneratorTest055
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest055();
@@ -822,12 +822,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest056
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_056
-     * @tc.name AsyncGeneratorTest056
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest056();
@@ -835,12 +835,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest057
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_057
-     * @tc.name AsyncGeneratorTest057
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest057();
@@ -848,12 +848,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest058
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_058
-     * @tc.name AsyncGeneratorTest058
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest058();
@@ -861,12 +861,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest059
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_059
-     * @tc.name AsyncGeneratorTest059
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest059();
@@ -874,12 +874,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest060
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_060
-     * @tc.name AsyncGeneratorTest060
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest060();
@@ -887,12 +887,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest061
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_061
-     * @tc.name AsyncGeneratorTest061
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest061();
@@ -900,12 +900,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest062
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_062
-     * @tc.name AsyncGeneratorTest062
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest062();
@@ -913,12 +913,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest063
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_063
-     * @tc.name AsyncGeneratorTest063
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest063();
@@ -926,12 +926,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest064
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_064
-     * @tc.name AsyncGeneratorTest064
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest064();
@@ -939,12 +939,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest065
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_065
-     * @tc.name AsyncGeneratorTest065
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest065();
@@ -952,12 +952,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest066
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_066
-     * @tc.name AsyncGeneratorTest066
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest066();
@@ -965,12 +965,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest067
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_067
-     * @tc.name AsyncGeneratorTest067
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest067();
@@ -978,12 +978,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest068
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_068
-     * @tc.name AsyncGeneratorTest068
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest068();
@@ -991,12 +991,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest069
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_069
-     * @tc.name AsyncGeneratorTest069
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest069();
@@ -1004,12 +1004,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest070
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_070
-     * @tc.name AsyncGeneratorTest070
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest070();
@@ -1017,12 +1017,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest071
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_071
-     * @tc.name AsyncGeneratorTest071
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest071();
@@ -1030,12 +1030,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest072
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_072
-     * @tc.name AsyncGeneratorTest072
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest072();
@@ -1043,12 +1043,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest073
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_073
-     * @tc.name AsyncGeneratorTest073
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest073();
@@ -1056,12 +1056,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest074
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_074
-     * @tc.name AsyncGeneratorTest074
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest074();
@@ -1069,12 +1069,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest075
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_075
-     * @tc.name AsyncGeneratorTest075
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest075();
@@ -1082,12 +1082,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest076
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_076
-     * @tc.name AsyncGeneratorTest076
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest076();
@@ -1095,12 +1095,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest077
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_077
-     * @tc.name AsyncGeneratorTest077
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest077();
@@ -1108,12 +1108,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest078
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_078
-     * @tc.name AsyncGeneratorTest078
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest078();
@@ -1121,12 +1121,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest079
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_079
-     * @tc.name AsyncGeneratorTest079
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest079();
@@ -1134,12 +1134,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest080
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_080
-     * @tc.name AsyncGeneratorTest080
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest080();
@@ -1147,12 +1147,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest081
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_081
-     * @tc.name AsyncGeneratorTest081
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest081();
@@ -1160,12 +1160,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest082
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_082
-     * @tc.name AsyncGeneratorTest082
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest082();
@@ -1173,12 +1173,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest083
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_083
-     * @tc.name AsyncGeneratorTest083
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest083();
@@ -1186,12 +1186,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest084
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_084
-     * @tc.name AsyncGeneratorTest084
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest084();
@@ -1199,12 +1199,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest085
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_085
-     * @tc.name AsyncGeneratorTest085
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest085();
@@ -1212,12 +1212,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest086
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_086
-     * @tc.name AsyncGeneratorTest086
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest086();
@@ -1225,12 +1225,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest087
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_087
-     * @tc.name AsyncGeneratorTest087
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest087();
@@ -1238,12 +1238,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest088
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_088
-     * @tc.name AsyncGeneratorTest088
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest088();
@@ -1251,12 +1251,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest089
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_089
-     * @tc.name AsyncGeneratorTest089
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest089();
@@ -1264,12 +1264,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest090
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_090
-     * @tc.name AsyncGeneratorTest090
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest090();
@@ -1277,12 +1277,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest091
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_091
-     * @tc.name AsyncGeneratorTest091
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest091();
@@ -1290,12 +1290,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest092
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_092
-     * @tc.name AsyncGeneratorTest092
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest092();
@@ -1303,12 +1303,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest093
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_093
-     * @tc.name AsyncGeneratorTest093
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest093();
@@ -1316,12 +1316,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest094
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_094
-     * @tc.name AsyncGeneratorTest094
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest094();
@@ -1329,12 +1329,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest095
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_095
-     * @tc.name AsyncGeneratorTest095
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest095();
@@ -1342,12 +1342,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest096
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_096
-     * @tc.name AsyncGeneratorTest096
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest096();
@@ -1355,12 +1355,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest097
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_097
-     * @tc.name AsyncGeneratorTest097
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest097();
@@ -1368,12 +1368,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest098
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_098
-     * @tc.name AsyncGeneratorTest098
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest098();
@@ -1381,12 +1381,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest099
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_099
-     * @tc.name AsyncGeneratorTest099
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest099();
@@ -1394,12 +1394,12 @@ export default function asyncGeneratorTest() {
     });
 
     /**
+     * @tc.name   AsyncGeneratorTest100
      * @tc.number SUB_BUILTINS_AsyncGenerator_TEST_100
-     * @tc.name AsyncGeneratorTest100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncGeneratorTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await AsyncGeneratorTest100();

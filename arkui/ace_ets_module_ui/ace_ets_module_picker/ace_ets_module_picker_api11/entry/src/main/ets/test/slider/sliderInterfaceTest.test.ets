@@ -59,11 +59,13 @@ export default function SliderInterfaceTest() {
       console.info("SliderInterfaceTest after each called");
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0180
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0180
-     * @tc.desc        direction Axis.Vertical ,reverse true
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0180
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0180
+     * @tc.desc   direction Axis.Vertical ,reverse true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0180', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider01")
@@ -80,11 +82,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0200
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0200
-     * @tc.desc        direction Axis.Vertical
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0200
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0200
+     * @tc.desc   direction Axis.Vertical
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0200', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider02")
@@ -100,11 +104,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0210
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0210
-     * @tc.desc        max < 0
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0210
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0210
+     * @tc.desc   max < 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0210', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider03")
@@ -120,11 +126,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0250
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0250
-     * @tc.desc        min = decimal number greater than 0
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0250
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0250
+     * @tc.desc   min = decimal number greater than 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0250', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider04")
@@ -140,11 +148,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0380
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0380
-     * @tc.desc        Do not set showTips, the default value of showTips is false
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0380
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0380
+     * @tc.desc   Do not set showTips, the default value of showTips is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0380', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider05")
@@ -160,11 +170,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0390
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0390
-     * @tc.desc        Repeated setting of showTips
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0390
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0390
+     * @tc.desc   Repeated setting of showTips
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0390', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider06")
@@ -180,11 +192,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0420
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0420
-     * @tc.desc        showTips = false
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0420
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0420
+     * @tc.desc   showTips = false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0420', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider07")
@@ -200,11 +214,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0430
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0430
-     * @tc.desc        showTips = true
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0430
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0430
+     * @tc.desc   showTips = true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0430', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider08")
@@ -220,11 +236,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0440
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0440
-     * @tc.desc        Do not set the width
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0440
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0440
+     * @tc.desc   Do not set the width
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0440', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider09")
@@ -242,10 +260,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0450
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0450
-     * @tc.desc        drag and look onChange
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0450
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0450
+     * @tc.desc   drag and look onChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0450', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider10")
@@ -269,11 +290,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0480
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0480
-     * @tc.desc        Set step to an integer greater than 0
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0480
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0480
+     * @tc.desc   Set step to an integer greater than 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0480', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider11")
@@ -298,11 +321,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0640
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0640
-     * @tc.desc        Set value to a negative number
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0640
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0640
+     * @tc.desc   Set value to a negative number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0640', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider12")
@@ -319,11 +344,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0650
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0650
-     * @tc.desc        Set value to exceed the default maximum value
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0650
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0650
+     * @tc.desc   Set value to exceed the default maximum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0650', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider13")
@@ -340,11 +367,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0660
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0660
-     * @tc.desc        click and drag, Begin 0 -> Moving 1 -> End 2
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0660
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0660
+     * @tc.desc   click and drag, Begin 0 -> Moving 1 -> End 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0660', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider14")
@@ -368,11 +397,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0670
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0670
-     * @tc.desc        click block and drag, Begin 0 -> Moving 1 -> End 2
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0670
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0670
+     * @tc.desc   click block and drag, Begin 0 -> Moving 1 -> End 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0670', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider15")
@@ -398,11 +429,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0680
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0680
-     * @tc.desc        click block and drag, Begin 0 -> End 2 ,without Moving as steps
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0680
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0680
+     * @tc.desc   click block and drag, Begin 0 -> End 2 ,without Moving as steps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0680', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider16")
@@ -427,11 +460,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0690
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0690
-     * @tc.desc        click , Begin 0 -> Click 3 -> End 2
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0690
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0690
+     * @tc.desc   click , Begin 0 -> Click 3 -> End 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0690', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider17")
@@ -454,11 +489,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0700
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0700
-     * @tc.desc        click block ， Begin 0
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0700
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0700
+     * @tc.desc   click block ， Begin 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0700', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider18")
@@ -479,11 +516,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0710
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0710
-     * @tc.desc        click block，End 2
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0710
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0710
+     * @tc.desc   click block，End 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0710', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider19")
@@ -504,11 +543,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0720
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0720
-     * @tc.desc        drag block, Moving 1
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0720
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0720
+     * @tc.desc   drag block, Moving 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0720', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider20")
@@ -533,11 +574,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0730
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0730
-     * @tc.desc        click, Click 3
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0730
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0730
+     * @tc.desc   click, Click 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_0730', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider20")
@@ -561,11 +604,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_1080
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_1080
-     * @tc.desc        set blockStyle img , drag block
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_1080
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_1080
+     * @tc.desc   set blockStyle img , drag block
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_1080', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider21")
@@ -590,11 +635,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_0010
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_0010
-     * @tc.desc        width 300 height 300
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_0010
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_0010
+     * @tc.desc   width 300 height 300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_0010', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider22")
@@ -613,11 +660,13 @@ export default function SliderInterfaceTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_0020
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_0020
-     * @tc.desc        trackThickness = 60
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_0020
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_0020
+     * @tc.desc   trackThickness = 60
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_0020', Level.LEVEL3, async (done: Function) => {
       await routerPush("slider23")

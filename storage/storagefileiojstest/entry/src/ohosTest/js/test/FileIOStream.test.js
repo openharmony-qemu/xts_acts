@@ -30,9 +30,12 @@ export default function fileIOTestStream() {
 describe('fileIOTestStream', function () {
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_000
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_0000
-   * @tc.name fileio_test_stream_create_stream_sync_000
-   * @tc.desc Function of API, mode = r. The test file is exist.
+   * @tc.desc   Function of API, mode = r. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_000', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_000');
@@ -52,9 +55,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_001
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_0100
-   * @tc.name fileio_test_stream_create_stream_sync_001
-   * @tc.desc Function of API, mode = r. The test file is not exist.
+   * @tc.desc   Function of API, mode = r. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_001', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_001');
@@ -68,9 +74,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_002
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_0200
-   * @tc.name fileio_test_stream_create_stream_sync_002
-   * @tc.desc Function of API, mode = w. The test file is exist.
+   * @tc.desc   Function of API, mode = w. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_002', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_002');
@@ -97,9 +106,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_003
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_0300
-   * @tc.name fileio_test_stream_create_stream_sync_003
-   * @tc.desc Function of API, mode = w. The test file is not exist.
+   * @tc.desc   Function of API, mode = w. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_003', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_003');
@@ -116,9 +128,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_004
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_0400
-   * @tc.name fileio_test_stream_create_stream_sync_004
-   * @tc.desc Function of API, mode = a. The test file is exist.
+   * @tc.desc   Function of API, mode = a. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_004', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_004');
@@ -145,9 +160,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_005
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_0500
-   * @tc.name fileio_test_stream_create_stream_sync_005
-   * @tc.desc Function of API, mode = a. The test file is not exist.
+   * @tc.desc   Function of API, mode = a. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_005', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_005');
@@ -164,9 +182,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_006
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_0600
-   * @tc.name fileio_test_stream_create_stream_sync_006
-   * @tc.desc Function of API, mode = r+. The test file is exist.
+   * @tc.desc   Function of API, mode = r+. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_006', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_006');
@@ -184,9 +205,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_007
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_0700
-   * @tc.name fileio_test_stream_create_stream_sync_007
-   * @tc.desc Function of API, mode = r+. The test file is not exist.
+   * @tc.desc   Function of API, mode = r+. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_007', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_007');
@@ -201,9 +225,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_008
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_0800
-   * @tc.name fileio_test_stream_create_stream_sync_008
-   * @tc.desc Function of API, mode = w+. The test file is exist.
+   * @tc.desc   Function of API, mode = w+. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_008', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_008');
@@ -229,9 +256,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_009
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_0900
-   * @tc.name fileio_test_stream_create_stream_sync_009
-   * @tc.desc Function of API, mode = w+. The test file is not exist.
+   * @tc.desc   Function of API, mode = w+. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_009', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_009');
@@ -248,9 +278,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_010
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_1000
-   * @tc.name fileio_test_stream_create_stream_sync_010
-   * @tc.desc Function of API, mode = a+. The test file is exist.
+   * @tc.desc   Function of API, mode = a+. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_010', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_010');
@@ -276,9 +309,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_011
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_1100
-   * @tc.name fileio_test_stream_create_stream_sync_011
-   * @tc.desc Function of API, mode = a+. The test file is not exist.
+   * @tc.desc   Function of API, mode = a+. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_011', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_011');
@@ -295,9 +331,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_012
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_1200
-   * @tc.name fileio_test_stream_create_stream_sync_012
-   * @tc.desc Function of API, mode = rb. The test file is exist.
+   * @tc.desc   Function of API, mode = rb. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_012', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_012');
@@ -316,9 +355,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_013
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_1300
-   * @tc.name fileio_test_stream_create_stream_sync_013
-   * @tc.desc Function of API, mode = ab. The test file is not exist.
+   * @tc.desc   Function of API, mode = ab. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_013', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_013');
@@ -333,9 +375,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_014
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_1400
-   * @tc.name fileio_test_stream_create_stream_sync_014
-   * @tc.desc Function of API, mode = wb. The test file is exist.
+   * @tc.desc   Function of API, mode = wb. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_014', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_014');
@@ -362,9 +407,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_015
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_1500
-   * @tc.name fileio_test_stream_create_stream_sync_015
-   * @tc.desc Function of API, mode = wb. The test file is not exist.
+   * @tc.desc   Function of API, mode = wb. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_015', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_015');
@@ -381,9 +429,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_016
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_1600
-   * @tc.name fileio_test_stream_create_stream_sync_016
-   * @tc.desc Function of API, mode = ab. The test file is exist.
+   * @tc.desc   Function of API, mode = ab. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_016', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_016');
@@ -411,9 +462,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_017
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_1700
-   * @tc.name fileio_test_stream_create_stream_sync_017
-   * @tc.desc Function of API, mode = ab. The test file is not exist.
+   * @tc.desc   Function of API, mode = ab. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_017', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_017');
@@ -430,9 +484,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_018
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_1800
-   * @tc.name fileio_test_stream_create_stream_sync_018
-   * @tc.desc Function of API, mode = rb+. The test file is exist.
+   * @tc.desc   Function of API, mode = rb+. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_018', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_018');
@@ -450,9 +507,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_019
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_1900
-   * @tc.name fileio_test_stream_create_stream_sync_019
-   * @tc.desc Function of API, mode = rb+. The test file is not exist.
+   * @tc.desc   Function of API, mode = rb+. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_019', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_019');
@@ -467,9 +527,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_020
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_2000
-   * @tc.name fileio_test_stream_create_stream_sync_020
-   * @tc.desc Function of API, mode = wb+. The test file is exist.
+   * @tc.desc   Function of API, mode = wb+. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_020', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_020');
@@ -495,9 +558,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_021
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_2100
-   * @tc.name fileio_test_stream_create_stream_sync_021
-   * @tc.desc Function of API, mode = wb+. The test file is not exist.
+   * @tc.desc   Function of API, mode = wb+. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_021', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_021');
@@ -514,9 +580,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_022
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_2200
-   * @tc.name fileio_test_stream_create_stream_sync_022
-   * @tc.desc Function of API, mode = ab+. The test file is exist.
+   * @tc.desc   Function of API, mode = ab+. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_022', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_022');
@@ -542,9 +611,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_023
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_2300
-   * @tc.name fileio_test_stream_create_stream_sync_023
-   * @tc.desc Function of API, mode = ab+. The test file is not exist.
+   * @tc.desc   Function of API, mode = ab+. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_023', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_023');
@@ -561,9 +633,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_024
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_2400
-   * @tc.name fileio_test_stream_create_stream_sync_024
-   * @tc.desc Function of API, invalid fpath.
+   * @tc.desc   Function of API, invalid fpath.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_create_stream_sync_024', Level.LEVEL0, function () {
     try {
@@ -577,9 +652,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_025
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_2500
-   * @tc.name fileio_test_stream_create_stream_sync_025
-   * @tc.desc Function of API, invalid mode.
+   * @tc.desc   Function of API, invalid mode.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_025', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_025');
@@ -595,9 +673,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_026
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_2600
-   * @tc.name fileio_test_stream_create_stream_sync_026
-   * @tc.desc Function of API, fpath too long.
+   * @tc.desc   Function of API, fpath too long.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_026', Level.LEVEL3, async function () {
     let dpath = await nextFileName('fileio_test_stream_create_stream_sync_026');
@@ -622,9 +703,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_027
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_2700
-   * @tc.name fileio_test_stream_create_stream_sync_027
-   * @tc.desc Function of API, filename too long.
+   * @tc.desc   Function of API, filename too long.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_027', Level.LEVEL3, async function () {
     let fpath = await nextFileName(randomString(256));
@@ -638,9 +722,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_028
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_2800
-   * @tc.name fileio_test_stream_create_stream_sync_028
-   * @tc.desc Function of API, path too deep.
+   * @tc.desc   Function of API, path too deep.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_028', Level.LEVEL3, async function () {
     let dpath = await nextFileName('fileio_test_stream_create_stream_sync_028');
@@ -665,9 +752,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_029
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_2900
-   * @tc.name fileio_test_stream_create_stream_sync_029
-   * @tc.desc Function of API, special character.
+   * @tc.desc   Function of API, special character.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_029', Level.LEVEL3, async function () {
     let fpath = await nextFileName('?*:<>/|');
@@ -682,9 +772,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_030
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_3000
-   * @tc.name fileio_test_stream_create_stream_sync_030
-   * @tc.desc Function of API, mode = w+. Test file length is cleared to 0.
+   * @tc.desc   Function of API, mode = w+. Test file length is cleared to 0.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_030', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_030');
@@ -707,9 +800,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_create_stream_sync_031
    * @tc.number SUB_STORAGE_FileIO_stream_CreateStreamSync_3100
-   * @tc.name fileio_test_stream_create_stream_sync_031
-   * @tc.desc Function of API, mode = w. Test file length is cleared to 0.
+   * @tc.desc   Function of API, mode = w. Test file length is cleared to 0.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_create_stream_sync_031', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_create_stream_sync_031');
@@ -732,9 +828,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_000
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_0000
-   * @tc.name fileio_test_stream_fdopen_stream_sync_000
-   * @tc.desc Function of API, mode=r. The test file is exist.
+   * @tc.desc   Function of API, mode=r. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_000', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_000');
@@ -754,9 +853,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_001
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_0100
-   * @tc.name fileio_test_stream_fdopen_stream_sync_001
-   * @tc.desc Function of API, mode=r. The test file is not exist.
+   * @tc.desc   Function of API, mode=r. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_001', Level.LEVEL3, function () {
     try {
@@ -771,9 +873,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_002
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_0200
-   * @tc.name fileio_test_stream_fdopen_stream_sync_002
-   * @tc.desc Function of API, mode=w. The test file is exist.
+   * @tc.desc   Function of API, mode=w. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_002', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_002');
@@ -803,9 +908,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_003
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_0300
-   * @tc.name fileio_test_stream_fdopen_stream_sync_003
-   * @tc.desc Function of API, mode=w. The test file is not exist.
+   * @tc.desc   Function of API, mode=w. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_003', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_003');
@@ -823,9 +931,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_004
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_0400
-   * @tc.name fileio_test_stream_fdopen_stream_sync_004
-   * @tc.desc Function of API, mode=a. The test file is exist.
+   * @tc.desc   Function of API, mode=a. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_004', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_004');
@@ -854,9 +965,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_005
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_0500
-   * @tc.name fileio_test_stream_fdopen_stream_sync_005
-   * @tc.desc Function of API, mode=a. The test file is not exist.
+   * @tc.desc   Function of API, mode=a. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_005', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_005');
@@ -874,9 +988,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_006
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_0600
-   * @tc.name fileio_test_stream_fdopen_stream_sync_006
-   * @tc.desc Function of API, mode=r+. The test file is exist.
+   * @tc.desc   Function of API, mode=r+. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_006', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_006');
@@ -895,9 +1012,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_007
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_0700
-   * @tc.name fileio_test_stream_fdopen_stream_sync_007
-   * @tc.desc Function of API, mode=r+. The test file is not exist.
+   * @tc.desc   Function of API, mode=r+. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_007', Level.LEVEL3, async function () {
     try {
@@ -910,9 +1030,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_008
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_0800
-   * @tc.name fileio_test_stream_fdopen_stream_sync_008
-   * @tc.desc Function of API, mode=w+. The test file is exist.
+   * @tc.desc   Function of API, mode=w+. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_008', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_008');
@@ -940,9 +1063,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_009
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_0900
-   * @tc.name fileio_test_stream_fdopen_stream_sync_009
-   * @tc.desc Function of API, mode=w+. The test file is not exist.
+   * @tc.desc   Function of API, mode=w+. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_009', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_009');
@@ -960,9 +1086,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_010
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_1000
-   * @tc.name fileio_test_stream_fdopen_stream_sync_010
-   * @tc.desc Function of API, mode=a+. The test file is exist.
+   * @tc.desc   Function of API, mode=a+. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_010', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_010');
@@ -990,9 +1119,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_011
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_1100
-   * @tc.name fileio_test_stream_fdopen_stream_sync_011
-   * @tc.desc Function of API, mode=a+. The test file is not exist.
+   * @tc.desc   Function of API, mode=a+. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_011', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_011');
@@ -1010,9 +1142,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_012
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_1200
-   * @tc.name fileio_test_stream_fdopen_stream_sync_012
-   * @tc.desc Function of API, mode=rb. The test file is exist.
+   * @tc.desc   Function of API, mode=rb. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_012', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_012');
@@ -1032,9 +1167,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_013
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_1300
-   * @tc.name fileio_test_stream_fdopen_stream_sync_013
-   * @tc.desc Function of API, mode=rb. The test file is not exist.
+   * @tc.desc   Function of API, mode=rb. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_013', Level.LEVEL3, async function () {
     try {
@@ -1047,9 +1185,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_014
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_1400
-   * @tc.name fileio_test_stream_fdopen_stream_sync_014
-   * @tc.desc Function of API, mode=wb. The test file is exist.
+   * @tc.desc   Function of API, mode=wb. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_014', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_014');
@@ -1078,9 +1219,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_015
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_1500
-   * @tc.name fileio_test_stream_fdopen_stream_sync_015
-   * @tc.desc Function of API, mode=wb. The test file is not exist.
+   * @tc.desc   Function of API, mode=wb. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_015', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_015');
@@ -1098,9 +1242,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_016
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_1600
-   * @tc.name fileio_test_stream_fdopen_stream_sync_016
-   * @tc.desc Function of API, mode=ab. The test file is exist.
+   * @tc.desc   Function of API, mode=ab. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_016', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_016');
@@ -1129,9 +1276,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_017
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_1700
-   * @tc.name fileio_test_stream_fdopen_stream_sync_017
-   * @tc.desc Function of API, mode=ab. The test file is not exist.
+   * @tc.desc   Function of API, mode=ab. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_017', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_017');
@@ -1149,9 +1299,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_018
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_1800
-   * @tc.name fileio_test_stream_fdopen_stream_sync_018
-   * @tc.desc Function of API, mode=rb+. The test file is exist.
+   * @tc.desc   Function of API, mode=rb+. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_018', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_018');
@@ -1170,9 +1323,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_019
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_1900
-   * @tc.name fileio_test_stream_fdopen_stream_sync_019
-   * @tc.desc Function of API, mode=rb+. The test file is not exist.
+   * @tc.desc   Function of API, mode=rb+. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_019', Level.LEVEL3, async function () {
     try {
@@ -1185,9 +1341,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_020
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_2000
-   * @tc.name fileio_test_stream_fdopen_stream_sync_020
-   * @tc.desc Function of API, mode=wb+. The test file is exist.
+   * @tc.desc   Function of API, mode=wb+. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_020', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_020');
@@ -1215,9 +1374,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_021
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_2100
-   * @tc.name fileio_test_stream_fdopen_stream_sync_021
-   * @tc.desc Function of API, mode=wb+. The test file is not exist.
+   * @tc.desc   Function of API, mode=wb+. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_021', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_021');
@@ -1235,9 +1397,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_022
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_2200
-   * @tc.name fileio_test_stream_fdopen_stream_sync_022
-   * @tc.desc Function of API, mode=ab+. The test file is exist.
+   * @tc.desc   Function of API, mode=ab+. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_022', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_022');
@@ -1265,9 +1430,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_023
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_2300
-   * @tc.name fileio_test_stream_fdopen_stream_sync_023
-   * @tc.desc Function of API, mode=ab+. The test file is not exist.
+   * @tc.desc   Function of API, mode=ab+. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_023', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_023');
@@ -1285,9 +1453,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_024
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_2400
-   * @tc.name fileio_test_stream_fdopen_stream_sync_024
-   * @tc.desc Function of API, invalid fields. The test file is not exist.
+   * @tc.desc   Function of API, invalid fields. The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_024', Level.LEVEL3, async function () {
     try {
@@ -1301,9 +1472,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_fdopen_stream_sync_025
    * @tc.number SUB_STORAGE_FileIO_stream_FdopenStreamSync_2400
-   * @tc.name fileio_test_stream_fdopen_stream_sync_025
-   * @tc.desc Function of API, invalid mode. The test file is exist.
+   * @tc.desc   Function of API, invalid mode. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_fdopen_stream_sync_025', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_fdopen_stream_sync_025');
@@ -1320,9 +1494,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_sync_000
    * @tc.number SUB_STORAGE_FileIO_stream_ReadSync_0000
-   * @tc.name fileio_test_stream_read_sync_000
-   * @tc.desc Function of API, not set options.
+   * @tc.desc   Function of API, not set options.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_read_sync_000', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_read_sync_000');
@@ -1343,9 +1520,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_sync_001
    * @tc.number SUB_STORAGE_FileIO_stream_ReadSync_0100
-   * @tc.name fileio_test_stream_read_sync_001
-   * @tc.desc Function of API, position.
+   * @tc.desc   Function of API, position.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_read_sync_001', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_read_sync_001');
@@ -1368,9 +1548,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_sync_002
    * @tc.number SUB_STORAGE_FileIO_stream_ReadSync_0200
-   * @tc.name fileio_test_stream_read_sync_002
-   * @tc.desc Function of API, offset.
+   * @tc.desc   Function of API, offset.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_read_sync_002', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_read_sync_002');
@@ -1393,9 +1576,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_sync_003
    * @tc.number SUB_STORAGE_FileIO_stream_ReadSync_0300
-   * @tc.name fileio_test_stream_read_sync_003
-   * @tc.desc Function of API, length.
+   * @tc.desc   Function of API, length.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_read_sync_003', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_read_sync_003');
@@ -1417,9 +1603,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_sync_004
    * @tc.number SUB_STORAGE_FileIO_stream_ReadSync_0400
-   * @tc.name fileio_test_stream_read_sync_004
-   * @tc.desc Function of API, readBuf.
+   * @tc.desc   Function of API, readBuf.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_read_sync_004', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_read_sync_004');
@@ -1440,9 +1629,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_sync_005
    * @tc.number SUB_STORAGE_FileIO_stream_ReadSync_0500
-   * @tc.name fileio_test_stream_read_sync_005
-   * @tc.desc Function of API, position = -1.
+   * @tc.desc   Function of API, position = -1.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_read_sync_005', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_read_sync_005');
@@ -1464,9 +1656,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_sync_006
    * @tc.number SUB_STORAGE_FileIO_stream_ReadSync_0600
-   * @tc.name fileio_test_stream_read_sync_006
-   * @tc.desc Function of API, offset.
+   * @tc.desc   Function of API, offset.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_read_sync_006', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_read_sync_006');
@@ -1489,9 +1684,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_write_sync_000
    * @tc.number SUB_STORAGE_FileIO_stream_WriteSync_0000
-   * @tc.name fileio_test_stream_write_sync_000
-   * @tc.desc Function of API, not set options.
+   * @tc.desc   Function of API, not set options.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_write_sync_000', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_write_sync_000');
@@ -1512,9 +1710,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_write_sync_001
    * @tc.number SUB_STORAGE_FileIO_stream_WriteSync_0100
-   * @tc.name fileio_test_stream_write_sync_001
-   * @tc.desc Function of API, invalid encoding.
+   * @tc.desc   Function of API, invalid encoding.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_write_sync_001', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_write_sync_001');
@@ -1537,9 +1738,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_write_sync_002
    * @tc.number SUB_STORAGE_FileIO_stream_WriteSync_0200
-   * @tc.name fileio_test_stream_write_sync_002
-   * @tc.desc Function of API, position.
+   * @tc.desc   Function of API, position.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_write_sync_002', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_write_sync_002');
@@ -1566,9 +1770,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_write_sync_003
    * @tc.number SUB_STORAGE_FileIO_stream_WriteSync_0300
-   * @tc.name fileio_test_stream_write_sync_003
-   * @tc.desc Function of API, offset.
+   * @tc.desc   Function of API, offset.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_write_sync_003', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_write_sync_003');
@@ -1595,9 +1802,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_write_sync_004
    * @tc.number SUB_STORAGE_FileIO_stream_WriteSync_0400
-   * @tc.name fileio_test_stream_write_sync_004
-   * @tc.desc Function of API, length.
+   * @tc.desc   Function of API, length.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_write_sync_004', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_write_sync_004');
@@ -1622,9 +1832,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_write_sync_005
    * @tc.number SUB_STORAGE_FileIO_stream_WriteSync_0500
-   * @tc.name fileio_test_stream_write_sync_005
-   * @tc.desc Function of API, encoding.
+   * @tc.desc   Function of API, encoding.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_write_sync_005', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_write_sync_005');
@@ -1653,9 +1866,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_write_sync_006
    * @tc.number SUB_STORAGE_FileIO_stream_WriteSync_0600
-   * @tc.name fileio_test_stream_write_sync_006
-   * @tc.desc Function of API, position.
+   * @tc.desc   Function of API, position.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_write_sync_006', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_write_sync_006');
@@ -1684,9 +1900,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_write_sync_007
    * @tc.number SUB_STORAGE_FileIO_stream_WriteSync_0700
-   * @tc.name fileio_test_stream_write_sync_007
-   * @tc.desc Function of API, offset.
+   * @tc.desc   Function of API, offset.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_write_sync_007', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_write_sync_007');
@@ -1715,9 +1934,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_write_sync_008
    * @tc.number SUB_STORAGE_FileIO_stream_WriteSync_0800
-   * @tc.name fileio_test_stream_write_sync_008
-   * @tc.desc Function of API, length.
+   * @tc.desc   Function of API, length.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_write_sync_008', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_write_sync_008');
@@ -1744,9 +1966,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_write_sync_009
    * @tc.number SUB_STORAGE_FileIO_stream_WriteSync_0900
-   * @tc.name fileio_test_stream_write_sync_009
-   * @tc.desc Function of API, invalid fcontent.
+   * @tc.desc   Function of API, invalid fcontent.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_write_sync_009', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_write_sync_009');
@@ -1765,9 +1990,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_write_sync_010
    * @tc.number SUB_STORAGE_FileIO_stream_WriteSync_1000
-   * @tc.name fileio_test_stream_write_sync_010
-   * @tc.desc Function of API, invalid encoding.
+   * @tc.desc   Function of API, invalid encoding.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_write_sync_010', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_write_sync_010');
@@ -1789,9 +2017,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_write_sync_011
    * @tc.number SUB_STORAGE_FileIO_stream_WriteSync_1100
-   * @tc.name fileio_test_stream_write_sync_011
-   * @tc.desc Function of API, invalid position.
+   * @tc.desc   Function of API, invalid position.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_write_sync_011', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_write_sync_011');
@@ -1813,9 +2044,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_write_sync_012
    * @tc.number SUB_STORAGE_FileIO_stream_WriteSync_1200
-   * @tc.name fileio_test_stream_write_sync_012
-   * @tc.desc Function of API, invalid offset.
+   * @tc.desc   Function of API, invalid offset.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_write_sync_012', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_write_sync_012');
@@ -1837,9 +2071,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_write_sync_013
    * @tc.number SUB_STORAGE_FileIO_stream_WriteSync_1300
-   * @tc.name fileio_test_stream_write_sync_013
-   * @tc.desc Function of API, Set all parameters.
+   * @tc.desc   Function of API, Set all parameters.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_write_sync_013', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_write_sync_013');
@@ -1865,9 +2102,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_write_sync_014
    * @tc.number SUB_STORAGE_FileIO_stream_WriteSync_1400
-   * @tc.name fileio_test_stream_write_sync_014
-   * @tc.desc Function of API, Set all parameters.
+   * @tc.desc   Function of API, Set all parameters.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_write_sync_014', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_write_sync_014');
@@ -1891,9 +2131,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_write_read_4k_sync
    * @tc.number SUB_STORAGE_FileIO_stream_write_read_4k_sync
-   * @tc.name fileio_test_stream_write_read_4k_sync
-   * @tc.desc Function of API, read 4k file.
+   * @tc.desc   Function of API, read 4k file.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_write_read_4k_sync', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_write_read_4k_sync');
@@ -1919,9 +2162,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_flush_sync_000
    * @tc.number SUB_STORAGE_FileIO_stream_FlushSync_0000
-   * @tc.name fileio_test_stream_flush_sync_000
-   * @tc.desc Function of API, flushSync.
+   * @tc.desc   Function of API, flushSync.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_flush_sync_000', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_flush_sync_000');
@@ -1942,9 +2188,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_flush_sync_001
    * @tc.number SUB_STORAGE_FileIO_stream_FlushSync_0100
-   * @tc.name fileio_test_stream_flush_sync_001
-   * @tc.desc Function of API, error.
+   * @tc.desc   Function of API, error.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_flush_sync_001', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_flush_sync_001');
@@ -1964,9 +2213,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_close_sync_000
    * @tc.number SUB_STORAGE_FileIO_stream_CloseSync_0000
-   * @tc.name fileio_test_stream_close_sync_000
-   * @tc.desc Function of API, closeSync.
+   * @tc.desc   Function of API, closeSync.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_close_sync_000', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_close_sync_000');
@@ -1983,9 +2235,12 @@ describe('fileIOTestStream', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_close_sync_001
    * @tc.number SUB_STORAGE_FileIO_stream_CloseSync_0100
-   * @tc.name fileio_test_stream_close_sync_001
-   * @tc.desc Function of API, error.
+   * @tc.desc   Function of API, error.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_close_sync_001', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_close_sync_001');

@@ -49,12 +49,12 @@ export default function SecurityCryptoFwVectorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_VectorTest_Func_0100
      * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0100
-     * @tc.name Test digest algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is digest
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_VectorTest_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -80,12 +80,12 @@ export default function SecurityCryptoFwVectorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_VectorTest_Func_0200
      * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0200
-     * @tc.name Test Hmac algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is Hmac
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is Hmac
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_VectorTest_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -113,12 +113,12 @@ export default function SecurityCryptoFwVectorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_VectorTest_Func_0300
      * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0300
-     * @tc.name Test pbkdf2 algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is pbkdf2
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is pbkdf2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_VectorTest_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -148,12 +148,12 @@ export default function SecurityCryptoFwVectorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_VectorTest_Func_0400
      * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0400
-     * @tc.name Test hkdf algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is hkdf
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is hkdf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_VectorTest_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -183,12 +183,12 @@ export default function SecurityCryptoFwVectorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_VectorTest_Func_0500
      * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0500
-     * @tc.name Test aes algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is aes
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is aes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_VectorTest_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let g_index: number = 0;
@@ -225,12 +225,12 @@ export default function SecurityCryptoFwVectorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_VectorTest_Func_0600
      * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0600
-     * @tc.name Test aes algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is aes
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is aes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_VectorTest_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let g_index: number = 0;
@@ -282,12 +282,12 @@ export default function SecurityCryptoFwVectorTestUnit() {
     });
     
     /**
+     * @tc.name   SUB_Security_CryptoFramework_VectorTest_Func_0700
      * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0700
-     * @tc.name Test X25519 algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is X25519
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is X25519
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_VectorTest_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let g_index: number = 0;
@@ -339,12 +339,12 @@ export default function SecurityCryptoFwVectorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_VectorTest_Func_0800
      * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0800
-     * @tc.name SUB_Security_CryptoFramework_VectorTest_Func_0800
-     * @tc.desc algorithm is digest sha3
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is digest sha3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_VectorTest_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -372,12 +372,12 @@ export default function SecurityCryptoFwVectorTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_VectorTest_Func_0900
      * @tc.number SUB_Security_CryptoFramework_VectorTest_Func_0900
-     * @tc.name SUB_Security_CryptoFramework_VectorTest_Func_0900
-     * @tc.desc algorithm is hkdf
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   algorithm is hkdf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_VectorTest_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

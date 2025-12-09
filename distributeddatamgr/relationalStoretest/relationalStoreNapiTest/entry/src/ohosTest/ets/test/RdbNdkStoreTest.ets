@@ -45,7 +45,6 @@ export default function RdbNdkStoreTest() {
         afterAll(() => {})
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_0100
          * @tc.desc   Normal testCase of NDK store for Insert、Update、Query.
@@ -62,7 +61,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_0200
          * @tc.desc   Normal testCase of NDK store for Insert with wrong table name or table is NULL.
@@ -79,7 +77,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_0300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_0300
          * @tc.desc   Normal testCase of NDK store for Update with wrong table or table is NULL.
@@ -96,7 +93,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_0400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_0400
          * @tc.desc   Normal testCase of NDK store for Update with valueBucket is NULL.
@@ -113,7 +109,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_0500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_0500
          * @tc.desc   Normal testCase of NDK store for Update with wrong predicates.
@@ -130,7 +125,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_0600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_0600
          * @tc.desc   Normal testCase of NDK store for Query with wrong table or table is NULL.
@@ -147,7 +141,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_0700
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_0700
          * @tc.desc   Normal testCase of NDK store for Query with wrong columnNames.
@@ -164,7 +157,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_0800
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_0800
          * @tc.desc   Normal testCase of NDK store for Query with wrong length.
@@ -181,7 +173,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_0900
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_0900
          * @tc.desc   Normal testCase of NDK store for Delete、ExecuteQuery.
@@ -198,7 +189,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_1000
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_1000
          * @tc.desc   Normal testCase of NDK store for querysql is NULL.
@@ -215,7 +205,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_1100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_1100
          * @tc.desc   Normal testCase of NDK store for Delete with wrong table or table is NULL.
@@ -232,7 +221,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_1200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_1200
          * @tc.desc   Normal testCase of NDK store for Delete with wrong predicates.
@@ -249,7 +237,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_1300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_1300
          * @tc.desc   Normal testCase of NDK store for Delete multiple.
@@ -266,7 +253,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_1400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_1400
          * @tc.desc   Normal testCase of NDK store for Transaction、Commit.
@@ -283,7 +269,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_1500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_1500
          * @tc.desc   Normal testCase of NDK store for Transaction、RollBack.
@@ -300,7 +285,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_1600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_1600
          * @tc.desc   Normal testCase of NDK store for Transaction、Commit.
@@ -317,7 +301,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_1700
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_1700
          * @tc.desc   Normal testCase of NDK store for Transaction、Commit.
@@ -334,7 +317,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_1800
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_1800
          * @tc.desc   Normal testCase of NDK store for GetVersion、SetVersion.
@@ -351,7 +333,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_1900
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_1900
          * @tc.desc   Normal testCase of NDK store for Query with wrong columnNames.
@@ -368,7 +349,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_2000
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_2000
          * @tc.desc   Normal testCase of NDK store for Update with wrong columnNames.
@@ -385,7 +365,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_2100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_2100
          * @tc.desc   Normal testCase of NDK store for Delete with wrong columnNames.
@@ -402,7 +381,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_2200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_2200
          * @tc.desc   Normal testCase of NDK store for Query with wrong length.
@@ -419,7 +397,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_2300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_2300
          * @tc.desc   Normal testCase of NDK store for Query with wrong length.
@@ -436,7 +413,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_2400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_2400
          * @tc.desc   Normal testCase of NDK store for Query with wrong length.
@@ -453,7 +429,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_2500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_2500
          * @tc.desc   Normal testCase of NDK store for Query with wrong length.
@@ -470,7 +445,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_2600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_2600
          * @tc.desc   Normal testCase of NDK store for Query with wrong length.
@@ -487,7 +461,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_2700
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_2700
          * @tc.desc   Normal testCase of NDK store for Query with wrong length.
@@ -504,7 +477,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_2800
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_2800
          * @tc.desc   Normal testCase of NDK store for Query with wrong length.
@@ -521,7 +493,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_2900
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_2900
          * @tc.desc   Normal testCase of NDK store for Query with wrong length.
@@ -538,7 +509,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_3000
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_3000
          * @tc.desc   Normal testCase of NDK store for Query with wrong length.
@@ -555,7 +525,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_3100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_3100
          * @tc.desc   Normal testCase of NDK store for Query with wrong length.
@@ -572,7 +541,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_3200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_3200
          * @tc.desc   Normal testCase of NDK store for dataBaseDir wrong
@@ -589,7 +557,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_3300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_3300
          * @tc.desc   Normal testCase of NDK store for dataBaseDir wrong.
@@ -606,7 +573,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_3400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_3400
          * @tc.desc   Normal testCase of NDK store
@@ -623,7 +589,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_3500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_3500
          * @tc.desc   Normal testCase of NDK store
@@ -640,7 +605,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_3600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_3600
          * @tc.desc   Normal testCase of NDK store
@@ -657,7 +621,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_3700
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_3700
          * @tc.desc   Normal testCase of NDK store
@@ -674,7 +637,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_3800
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_3800
          * @tc.desc   Normal testCase of NDK store
@@ -691,7 +653,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_3900
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_3900
          * @tc.desc   Normal testCase of NDK store
@@ -708,7 +669,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_4000
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_4000
          * @tc.desc   Normal testCase of NDK store
@@ -725,7 +685,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_4100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_4100
          * @tc.desc   Normal testCase of NDK store
@@ -742,7 +701,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_4200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_4200
          * @tc.desc   Normal testCase of NDK store
@@ -759,7 +717,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_4300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_4300
          * @tc.desc   Normal testCase of NDK store
@@ -776,7 +733,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_4400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_4400
          * @tc.desc   Normal testCase of NDK store
@@ -793,7 +749,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_4500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_4500
          * @tc.desc   Normal testCase of NDK store
@@ -810,7 +765,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_4600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_4600
          * @tc.desc   Normal testCase of NDK store for Update with wrong table or table is NULL.
@@ -827,7 +781,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_4700
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_4700
          * @tc.desc   Normal testCase of NDK store for Update with wrong table or table is NULL.
@@ -844,7 +797,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_4800
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_4800
          * @tc.desc   Normal testCase of NDK store for Update with wrong table or table is NULL.
@@ -861,7 +813,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_4900
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_4900
          * @tc.desc   Normal testCase of NDK store for Update with wrong table or table is NULL.
@@ -878,7 +829,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_5000
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_5000
          * @tc.desc   Normal testCase of NDK store for Update with wrong table or table is NULL.
@@ -895,7 +845,6 @@ export default function RdbNdkStoreTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:52
          * @tc.name   SUB_DDM_RDB_5100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CrudNdkAPITest_5100
          * @tc.desc   Normal testCase of NDK store for Update with wrong table or table is NULL.

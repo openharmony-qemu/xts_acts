@@ -42,12 +42,12 @@ export default function SnapshotOptions_region() {
     });
 
     /**
-     * @tc.number SnapshotOptions_region_0100
      * @tc.name   SnapshotOptions_region_0100
-     * @tc.desc   test the region_SnapshotRegion api15 CallBack  child & parent component response when child component return false and  child component return false when trigger 'TAB' key 
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.number SnapshotOptions_region_0100
+     * @tc.desc   test the region_SnapshotRegion api15 CallBack  child & parent component response when child component return false and  child component return false when trigger 'TAB' key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SnapshotOptions_region_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[SnapshotOptions_region_0100] START');
@@ -71,12 +71,12 @@ export default function SnapshotOptions_region() {
     });
 
      /**
-      * @tc.number SnapshotOptions_region_0200
       * @tc.name   SnapshotOptions_region_0200
-      * @tc.desc   test the region_LocalizedSnapshotRegion api15 CallBack  child & parent component response when child component return false and  child component return false when trigger 'TAB' key 
-      * @tc.size   MediumTest
-      * @tc.type   Function
-      * @tc.level  0
+      * @tc.number SnapshotOptions_region_0200
+      * @tc.desc   test the region_LocalizedSnapshotRegion api15 CallBack  child & parent component response when child component return false and  child component return false when trigger 'TAB' key
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
       */
      it('SnapshotOptions_region_0200', Level.LEVEL0, async (done: Function) => {
        console.info('[SnapshotOptions_region_0200] START');
@@ -101,12 +101,12 @@ export default function SnapshotOptions_region() {
      });
     
      /**
-      * @tc.number SnapshotOptions_region_0300
       * @tc.name   SnapshotOptions_region_0300
-      * @tc.desc   test the region_SnapshotRegion api15 CallBack  child & parent component response when child component return false and  child component return false when trigger 'TAB' key 
-      * @tc.size   MediumTest
-      * @tc.type   Function
-      * @tc.level  0
+      * @tc.number SnapshotOptions_region_0300
+      * @tc.desc   test the region_SnapshotRegion api15 CallBack  child & parent component response when child component return false and  child component return false when trigger 'TAB' key
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
       */
      it('SnapshotOptions_region_0300', Level.LEVEL0, async (done: Function) => {
        console.info('[SnapshotOptions_region_0300] START');
@@ -131,12 +131,12 @@ export default function SnapshotOptions_region() {
 
     
      /**
-      * @tc.number SnapshotOptions_region_0400
       * @tc.name   SnapshotOptions_region_0400
-      * @tc.desc   test the region_LocalizedSnapshotRegion api15 CallBack  child & parent component response when child component return false and  child component return false when trigger 'TAB' key 
-      * @tc.size   MediumTest
-      * @tc.type   Function
-      * @tc.level  0
+      * @tc.number SnapshotOptions_region_0400
+      * @tc.desc   test the region_LocalizedSnapshotRegion api15 CallBack  child & parent component response when child component return false and  child component return false when trigger 'TAB' key
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
       */
      it('SnapshotOptions_region_0400', Level.LEVEL0, async (done: Function) => {
        console.info('[SnapshotOptions_region_0400] START');

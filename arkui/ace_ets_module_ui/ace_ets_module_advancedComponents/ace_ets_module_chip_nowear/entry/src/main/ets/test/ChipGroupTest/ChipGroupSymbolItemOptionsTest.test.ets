@@ -47,12 +47,12 @@ export default function ChipGroupSymbolItemOptionsTest() {
     });
 
     /**
-     * @tc.number    ChipGroupSymbolItemOptionsTest_001
-     * @tc.name      ChipGroupSymbolItemOptionsTest_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ChipGroupSymbolItemOptionsTest_001
+     * @tc.number ChipGroupSymbolItemOptionsTest_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ChipGroupSymbolItemOptionsTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ChipGroupSymbolItemOptionsTest_001] START');

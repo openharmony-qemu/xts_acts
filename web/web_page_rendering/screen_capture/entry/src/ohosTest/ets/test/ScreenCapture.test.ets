@@ -38,14 +38,14 @@ export default function screenCapture() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SCREENCAPTURECONFIGGETORIGIN_0100
-    * @tc.name       : testScreenCaptureConfigGetOrigin001
-    * @tc.desc       : test ScreenCaptureConfigGetOrigin
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testScreenCaptureConfigGetOrigin001
+     * @tc.number SUB_WEB_SCREENCAPTURECONFIGGETORIGIN_0100
+     * @tc.desc   test ScreenCaptureConfigGetOrigin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testScreenCaptureConfigGetOrigin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = 'emitScreenCaptureConfigGetOrigin001';
       tcName = 'testScreenCaptureConfigGetOrigin001'
@@ -57,14 +57,14 @@ export default function screenCapture() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SCREENCAPTURECONFIGGRANT_0100
-    * @tc.name       : testScreenCaptureConfigGrant001
-    * @tc.desc       : test ScreenCaptureConfigGrant
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScreenCaptureConfigGrant001
+     * @tc.number SUB_WEB_SCREENCAPTURECONFIGGRANT_0100
+     * @tc.desc   test ScreenCaptureConfigGrant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScreenCaptureConfigGrant001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitScreenCaptureConfigGrant001';
       tcName = 'testScreenCaptureConfigGrant001'
@@ -76,14 +76,14 @@ export default function screenCapture() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SCREENCAPTURECONFIGDENY_0100
-    * @tc.name       : testScreenCaptureConfigDeny001
-    * @tc.desc       : test ScreenCaptureConfigDeny
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScreenCaptureConfigDeny001
+     * @tc.number SUB_WEB_SCREENCAPTURECONFIGDENY_0100
+     * @tc.desc   test ScreenCaptureConfigDeny
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScreenCaptureConfigDeny001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitScreenCaptureConfigDeny001';
       tcName = 'testScreenCaptureConfigDeny001'

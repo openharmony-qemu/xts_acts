@@ -31,14 +31,12 @@ export default function fileIOHash() {
     hilog.info(domain, tag, '%{public}s', 'fileIO_fs_hash start');
 
     /**
+     * @tc.name   fileIO_test_hash_async_static_000
      * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0000
-     * @tc.name fileIO_test_hash_async_static_000
-     * @tc.desc Test hash() interface. Promise.
-     * Encrypt files using the MD5 hashing algorithm
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test hash() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_hash_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_000 start');
@@ -57,14 +55,12 @@ export default function fileIOHash() {
     });
 
     /**
+     * @tc.name   fileIO_test_hash_async_static_001
      * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0100
-     * @tc.name fileIO_test_hash_async_static_001
-     * @tc.desc Test hash() interface. Callback.
-     * Encrypt files using the MD5 hashing algorithm.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test hash() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_hash_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_001 start');
@@ -88,14 +84,12 @@ export default function fileIOHash() {
     });
 
     /**
+     * @tc.name   fileIO_test_hash_async_static_002
      * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0200
-     * @tc.name fileIO_test_hash_async_static_002
-     * @tc.desc Test hash() interface. Promise.
-     * Encrypt files using the sha1 hashing algorithm.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test hash() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_hash_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_002 start');
@@ -114,14 +108,12 @@ export default function fileIOHash() {
     });
 
     /**
+     * @tc.name   fileIO_test_hash_async_static_003
      * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0300
-     * @tc.name fileIO_test_hash_async_static_003
-     * @tc.desc Test hash() interface. Callback.
-     * Encrypt files using the sha1 hashing algorithm.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test hash() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_hash_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_003 start');
@@ -145,14 +137,12 @@ export default function fileIOHash() {
     });
 
     /**
+     * @tc.name   fileIO_test_hash_async_static_004
      * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0400
-     * @tc.name fileIO_test_hash_async_static_004
-     * @tc.desc Test hash() interface. Promise.
-     * Encrypt files using the sha256 hashing algorithm.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test hash() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_hash_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_004 start');
@@ -171,14 +161,12 @@ export default function fileIOHash() {
     });
 
     /**
+     * @tc.name   fileIO_test_hash_async_static_005
      * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0500
-     * @tc.name fileIO_test_hash_async_static_005
-     * @tc.desc Test hash() interface. Callback.
-     * Encrypt files using the sha256 hashing algorithm.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test hash() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_hash_async_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_005 start');
@@ -202,14 +190,12 @@ export default function fileIOHash() {
     });
 
     /**
+     * @tc.name   fileIO_test_hash_async_static_006
      * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0600
-     * @tc.name fileIO_test_hash_async_static_006
-     * @tc.desc Test hash() interface. Promise.
-     * Invalid mode.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test hash() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_hash_async_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_006 start');
@@ -227,14 +213,12 @@ export default function fileIOHash() {
     });
 
     /**
+     * @tc.name   fileIO_test_hash_async_static_007
      * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0700
-     * @tc.name fileIO_test_hash_async_static_007
-     * @tc.desc Test hash() interface. Promise.
-     * Missing parameter.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test hash() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_hash_async_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_007 start');
@@ -256,14 +240,12 @@ export default function fileIOHash() {
     });
 
     /**
+     * @tc.name   fileIO_test_hash_createHash_static_008
      * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0800
-     * @tc.name fileIO_test_hash_createHash_static_008
-     * @tc.desc Test createHash() interface.
-     * Calculate file summary using HashStream (MD5)
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createHash() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_hash_createHash_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_008 start');
@@ -300,14 +282,12 @@ export default function fileIOHash() {
     });
 
     /**
+     * @tc.name   fileIO_test_hash_createHash_static_009
      * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0900
-     * @tc.name fileIO_test_hash_createHash_static_009
-     * @tc.desc Test createHash() interface.
-     * Calculate file summary using HashStream (SHA1)
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createHash() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_hash_createHash_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_009 start');
@@ -344,14 +324,12 @@ export default function fileIOHash() {
     });
 
     /**
+     * @tc.name   fileIO_test_hash_createHash_static_010
      * @tc.number SUB_DF_FILEIO_HASH_ASYNC_1000
-     * @tc.name fileIO_test_hash_createHash_static_010
-     * @tc.desc Test createHash() interface.
-     * Calculate file summary using HashStream (SHA256)
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createHash() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_hash_createHash_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_010 start');
@@ -388,14 +366,12 @@ export default function fileIOHash() {
     });
 
     /**
+     * @tc.name   fileIO_test_hash_createHash_static_011
      * @tc.number SUB_DF_FILEIO_HASH_ASYNC_1100
-     * @tc.name fileIO_test_hash_createHash_static_011
-     * @tc.desc Test createHash() interface.
-     * Invalid mode.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test createHash() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_hash_createHash_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_011 start');

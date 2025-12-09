@@ -85,7 +85,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0021
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0021
          * @tc.desc   Test getSignalLevel API functionality..
@@ -147,7 +146,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0017
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0017
          * @tc.desc   Test getCountryCode API function.
@@ -194,7 +192,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0020
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0020
          * @tc.desc   Test FeatureSupported API function.
@@ -250,7 +247,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0004
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0004
          * @tc.desc   Test Test getLinkedInfo and getIpInfo  information.
@@ -371,7 +367,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0034
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0034
          * @tc.desc   Test getScanResults Sync API functionality.
@@ -420,7 +415,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0035
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0035
          * @tc.desc   Test isBandTypeSupported API functionality.
@@ -457,7 +451,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0036
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0036
          * @tc.desc   Test getScanResults promise and callback API functionality.
@@ -509,7 +502,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
          /**
-          * @generated.time 2025-11-09 20:49:44
           * @tc.name   Communication_WiFi_XTS_Sta_0037
           * @tc.number Communication_WiFi_XTS_Sta_0037
           * @tc.desc   Test getIpv6Info API functionality.
@@ -540,7 +532,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   Communication_WiFi_XTS_Sta_0099
          * @tc.number Communication_WiFi_XTS_Sta_0099
          * @tc.desc   Test enum WifiCategory API12.

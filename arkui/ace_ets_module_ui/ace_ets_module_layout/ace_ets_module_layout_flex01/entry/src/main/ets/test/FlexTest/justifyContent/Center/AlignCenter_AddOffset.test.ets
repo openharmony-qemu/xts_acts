@@ -47,9 +47,12 @@ export default function AlignCenter_AddOffset() {
     });
 
     /**
+     * @tc.name   testFlexAlignCenterTextOffset
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_CENTER_TEST_0900
-     * @tc.name testFlexAlignCenterTextOffset
-     * @tc.desc the offset of fist subcomponent set to "{ x: 10, y: 15 }"
+     * @tc.desc   the offset of fist subcomponent set to "{ x: 10, y: 15 }"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignCenterTextOffset',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignCenterTextOffset] START');

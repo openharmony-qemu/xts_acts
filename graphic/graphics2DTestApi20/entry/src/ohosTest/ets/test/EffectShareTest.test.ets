@@ -19,12 +19,12 @@ export default function EffectShareTest() {
   describe('EffectShareTest', () => {
 
     /**
-     * @tc.number  : SUB_OH_Drawing_ShaderEffectCreatePixelMapShader_0100
-     * @tc.name    : SUB_OH_Drawing_ShaderEffectCreatePixelMapShader_0100
-     * @tc.desc    : test SUB_OH_Drawing_ShaderEffectCreatePixelMapShader success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_ShaderEffectCreatePixelMapShader_0100
+     * @tc.number SUB_OH_Drawing_ShaderEffectCreatePixelMapShader_0100
+     * @tc.desc   test SUB_OH_Drawing_ShaderEffectCreatePixelMapShader success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_ShaderEffectCreatePixelMapShader_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -41,12 +41,12 @@ export default function EffectShareTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_ShaderEffectCreatePixelMapShader_0200
-     * @tc.name    : SUB_OH_Drawing_ShaderEffectCreatePixelMapShader_0200
-     * @tc.desc    : test SUB_OH_Drawing_ShaderEffectCreatePixelMapShader fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_ShaderEffectCreatePixelMapShader_0200
+     * @tc.number SUB_OH_Drawing_ShaderEffectCreatePixelMapShader_0200
+     * @tc.desc   test SUB_OH_Drawing_ShaderEffectCreatePixelMapShader fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_ShaderEffectCreatePixelMapShader_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -63,12 +63,12 @@ export default function EffectShareTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Drawing_ImageFilterCreateBlurWithCrop_0100
-     * @tc.name    : SUB_OH_Drawing_ImageFilterCreateBlurWithCrop_0100
-     * @tc.desc    : test SUB_OH_Drawing_ImageFilterCreateBlurWithCrop success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_Drawing_ImageFilterCreateBlurWithCrop_0100
+     * @tc.number SUB_OH_Drawing_ImageFilterCreateBlurWithCrop_0100
+     * @tc.desc   test SUB_OH_Drawing_ImageFilterCreateBlurWithCrop success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_Drawing_ImageFilterCreateBlurWithCrop_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {

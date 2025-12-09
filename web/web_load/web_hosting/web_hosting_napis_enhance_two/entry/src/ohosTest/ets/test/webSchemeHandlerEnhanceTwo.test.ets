@@ -36,14 +36,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0001
-    * @tc.name       : testWeb_ResourceType_MAIN_FRAME
-    * @tc.desc       : testWeb_ResourceType_MAIN_FRAME
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_MAIN_FRAME
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0001
+     * @tc.desc   testWeb_ResourceType_MAIN_FRAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWeb_ResourceType_MAIN_FRAME', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_MAIN_FRAME PASS');
@@ -56,14 +56,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0002
-    * @tc.name       : testWeb_ResourceType_SUB_FRAME
-    * @tc.desc       : testWeb_ResourceType_SUB_FRAME
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_SUB_FRAME
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0002
+     * @tc.desc   testWeb_ResourceType_SUB_FRAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_SUB_FRAME', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_SUB_FRAME PASS');
@@ -76,14 +76,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0003
-    * @tc.name       : testWeb_ResourceType_STYLE_SHEET
-    * @tc.desc       : testWeb_ResourceType_STYLE_SHEET
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_STYLE_SHEET
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0003
+     * @tc.desc   testWeb_ResourceType_STYLE_SHEET
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_STYLE_SHEET', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_STYLE_SHEET PASS');
@@ -96,14 +96,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0004
-    * @tc.name       : testWeb_ResourceType_SCRIPT
-    * @tc.desc       : testWeb_ResourceType_SCRIPT
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_SCRIPT
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0004
+     * @tc.desc   testWeb_ResourceType_SCRIPT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_SCRIPT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_SCRIPT PASS');
@@ -116,14 +116,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0005
-    * @tc.name       : testWeb_ResourceType_IMAGE
-    * @tc.desc       : testWeb_ResourceType_IMAGE
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_IMAGE
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0005
+     * @tc.desc   testWeb_ResourceType_IMAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_IMAGE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_IMAGE PASS');
@@ -136,14 +136,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0006
-    * @tc.name       : testWeb_ResourceType_FONT_RESOURCE
-    * @tc.desc       : testWeb_ResourceType_FONT_RESOURCE
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_FONT_RESOURCE
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0006
+     * @tc.desc   testWeb_ResourceType_FONT_RESOURCE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_FONT_RESOURCE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_FONT_RESOURCE PASS');
@@ -156,14 +156,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0007
-    * @tc.name       : testWeb_ResourceType_SUB_RESOURCE
-    * @tc.desc       : testWeb_ResourceType_SUB_RESOURCE
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_SUB_RESOURCE
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0007
+     * @tc.desc   testWeb_ResourceType_SUB_RESOURCE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_SUB_RESOURCE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_SUB_RESOURCE PASS');
@@ -176,14 +176,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0008
-    * @tc.name       : testWeb_ResourceType_OBJECT
-    * @tc.desc       : testWeb_ResourceType_OBJECT
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_OBJECT
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0008
+     * @tc.desc   testWeb_ResourceType_OBJECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_OBJECT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_OBJECT PASS');
@@ -196,14 +196,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0009
-    * @tc.name       : testWeb_ResourceType_MEDIA
-    * @tc.desc       : testWeb_ResourceType_MEDIA
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_MEDIA
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0009
+     * @tc.desc   testWeb_ResourceType_MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_MEDIA', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_MEDIA PASS');
@@ -216,14 +216,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0010
-    * @tc.name       : testWeb_ResourceType_WORKER
-    * @tc.desc       : testWeb_ResourceType_WORKER
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_WORKER
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0010
+     * @tc.desc   testWeb_ResourceType_WORKER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_WORKER', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_WORKER PASS');
@@ -236,14 +236,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0011
-    * @tc.name       : testWeb_ResourceType_SHARED_WORKER
-    * @tc.desc       : testWeb_ResourceType_SHARED_WORKER
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_SHARED_WORKER
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0011
+     * @tc.desc   testWeb_ResourceType_SHARED_WORKER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_SHARED_WORKER', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_SHARED_WORKER PASS');
@@ -256,14 +256,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0012
-    * @tc.name       : testWeb_ResourceType_PREFETCH
-    * @tc.desc       : testWeb_ResourceType_PREFETCH
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_PREFETCH
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0012
+     * @tc.desc   testWeb_ResourceType_PREFETCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_PREFETCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_PREFETCH PASS');
@@ -276,14 +276,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0013
-    * @tc.name       : testWeb_ResourceType_FAVICON
-    * @tc.desc       : testWeb_ResourceType_FAVICON
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_FAVICON
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0013
+     * @tc.desc   testWeb_ResourceType_FAVICON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_FAVICON', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_FAVICON PASS');
@@ -296,14 +296,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0014
-    * @tc.name       : testWeb_ResourceType_XHR
-    * @tc.desc       : testWeb_ResourceType_XHR
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_XHR
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0014
+     * @tc.desc   testWeb_ResourceType_XHR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_XHR', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_XHR PASS');
@@ -316,14 +316,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0015
-    * @tc.name       : testWeb_ResourceType_PING
-    * @tc.desc       : testWeb_ResourceType_PING
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_PING
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0015
+     * @tc.desc   testWeb_ResourceType_PING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_PING', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_PING PASS');
@@ -336,14 +336,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0016
-    * @tc.name       : testWeb_ResourceType_SERVICE_WORKER
-    * @tc.desc       : testWeb_ResourceType_SERVICE_WORKER
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_SERVICE_WORKER
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0016
+     * @tc.desc   testWeb_ResourceType_SERVICE_WORKER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_SERVICE_WORKER', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_SERVICE_WORKER PASS');
@@ -356,14 +356,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0017
-    * @tc.name       : testWeb_ResourceType_CSP_REPORT
-    * @tc.desc       : testWeb_ResourceType_CSP_REPORT
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_CSP_REPORT
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0017
+     * @tc.desc   testWeb_ResourceType_CSP_REPORT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_CSP_REPORT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_CSP_REPORT PASS');
@@ -376,14 +376,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0018
-    * @tc.name       : testWeb_ResourceType_PLUGIN_RESOURCE
-    * @tc.desc       : testWeb_ResourceType_PLUGIN_RESOURCE
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_PLUGIN_RESOURCE
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0018
+     * @tc.desc   testWeb_ResourceType_PLUGIN_RESOURCE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_PLUGIN_RESOURCE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_PLUGIN_RESOURCE PASS');
@@ -396,14 +396,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0019
-    * @tc.name       : testWeb_ResourceType_PRELOAD_MAIN
-    * @tc.desc       : testWeb_ResourceType_PRELOAD_MAIN
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_PRELOAD_MAIN
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0019
+     * @tc.desc   testWeb_ResourceType_PRELOAD_MAIN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_PRELOAD_MAIN', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_PRELOAD_MAIN PASS');
@@ -416,14 +416,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0020
-    * @tc.name       : testWeb_ResourceType_PRELOAD_SUB
-    * @tc.desc       : testWeb_ResourceType_PRELOAD_SUB
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWeb_ResourceType_PRELOAD_SUB
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0020
+     * @tc.desc   testWeb_ResourceType_PRELOAD_SUB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWeb_ResourceType_PRELOAD_SUB', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWeb_ResourceType_PRELOAD_SUB PASS');
@@ -436,14 +436,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0021
-    * @tc.name       : testWebViewFrameUrl
-    * @tc.desc       : testWebViewFrameUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewFrameUrl
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0021
+     * @tc.desc   testWebViewFrameUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewFrameUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebViewFrameUrl PASS');
@@ -456,14 +456,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0022
-    * @tc.name       : testWebViewServiceWorkerFrameUrl
-    * @tc.desc       : testWebViewServiceWorkerFrameUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewServiceWorkerFrameUrl
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0022
+     * @tc.desc   testWebViewServiceWorkerFrameUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewServiceWorkerFrameUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebViewServiceWorkerFrameUrl PASS');
@@ -476,14 +476,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0023
-    * @tc.name       : testWebViewLoadUrlFrameUrl
-    * @tc.desc       : testWebViewLoadUrlFrameUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewLoadUrlFrameUrl
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0023
+     * @tc.desc   testWebViewLoadUrlFrameUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewLoadUrlFrameUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebViewLoadUrlFrameUrl PASS');
@@ -496,14 +496,14 @@ export default function webviewApi() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0024
-    * @tc.name       : testWebViewSubFrameUrl
-    * @tc.desc       : testWebViewSubFrameUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewSubFrameUrl
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_ENHANCE_TWO_0024
+     * @tc.desc   testWebViewSubFrameUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewSubFrameUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebViewSubFrameUrl PASS');

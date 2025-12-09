@@ -107,6 +107,18 @@
     {
       "name": "lineHeight",
       "value": "20vp"
+    },
+    {
+      "name": "maxFontScale",
+      "value": "3"
+    },
+    {
+      "name": "minFontScale",
+      "value": "0.5"
+    },
+    {
+      "name": "reason",
+      "value": "AI"
     }
   ]
 }

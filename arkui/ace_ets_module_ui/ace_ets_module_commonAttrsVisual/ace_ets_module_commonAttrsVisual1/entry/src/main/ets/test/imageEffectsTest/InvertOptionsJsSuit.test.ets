@@ -59,15 +59,15 @@ export default function InvertOptionsJsSuit() {
       console.info('overlay after each called');
     });
 
-    /**
-     * @tc.number InvertOptionsJsSuit_0100
-     * @tc.name InvertOptionsJsSuit_0100
-     * @tc.desc Confirm if there is a callback
-     * @tc.level Level 2
-     * @tc.type :
-     * @tc.size :
-     */
 
+    /**
+     * @tc.name   InvertOptionsJsSuit_0100
+     * @tc.number InvertOptionsJsSuit_0100
+     * @tc.desc   InvertOptionsJsSuit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('InvertOptionsJsSuit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[InvertOptionsJsSuit_0100] START');
       let driver = await Driver.create()

@@ -55,14 +55,14 @@ export default function PropClassObjectJsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    PropClassObjectJsunit_0100
-		 * @tc.name      PropClassObjectJsunit_0100
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   PropClassObjectJsunit_0100
+     * @tc.number PropClassObjectJsunit_0100
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropClassObjectJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropClassObjectJsunit_0100 START');
@@ -75,14 +75,14 @@ export default function PropClassObjectJsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    PropClassObjectJsunit_0200
-		 * @tc.name      PropClassObjectJsunit_0200
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   PropClassObjectJsunit_0200
+     * @tc.number PropClassObjectJsunit_0200
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropClassObjectJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropClassObjectJsunit_0200 START');
@@ -99,14 +99,14 @@ export default function PropClassObjectJsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    PropClassObjectJsunit_0300
-		 * @tc.name      PropClassObjectJsunit_0300
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   PropClassObjectJsunit_0300
+     * @tc.number PropClassObjectJsunit_0300
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropClassObjectJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropClassObjectJsunit_0300 START');
@@ -119,14 +119,14 @@ export default function PropClassObjectJsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    PropClassObjectJsunit_0400
-		 * @tc.name      PropClassObjectJsunit_0400
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   PropClassObjectJsunit_0400
+     * @tc.number PropClassObjectJsunit_0400
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropClassObjectJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropClassObjectJsunit_0400 START');

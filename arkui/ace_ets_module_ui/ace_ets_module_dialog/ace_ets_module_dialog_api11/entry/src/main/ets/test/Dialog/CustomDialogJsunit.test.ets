@@ -43,6 +43,14 @@ export default function CustomDialogAJsunit() {
     });
 
 
+    /**
+     * @tc.name   CustomDialogAJsunit_0100
+     * @tc.number CustomDialogAJsunit_0100
+     * @tc.desc   CustomDialogAJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     // it('CustomDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
     //
     //   console.info('CustomDialogAJsunit_0100 START');
@@ -58,6 +66,14 @@ export default function CustomDialogAJsunit() {
     //   await driver.pressBack();
     //   done();
     // });
+    /**
+     * @tc.name   CustomDialogAJsunit_0100
+     * @tc.number CustomDialogAJsunit_0100
+     * @tc.desc   CustomDialogAJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('CustomDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
 
       console.info('CustomDialogAJsunit_0200 START');

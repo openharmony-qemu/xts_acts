@@ -73,6 +73,7 @@ struct ImageAttachmentSizeTest {
           Button('设置图片size： 50vp x 50vp')
             .id('button50vp')
             .width('100%')
+            .height('5%')
             .backgroundColor('#df57b0fd')
             .onClick(() => {
               if (this.imagePixelMap !== undefined) {
@@ -90,6 +91,7 @@ struct ImageAttachmentSizeTest {
           Button('设置图片size： 50px x 50px' + '(' + this.getUIContext().px2vp(50) + 'vp)')
             .id('button50px')
             .width('100%')
+            .height('5%')
             .backgroundColor('#dfa6d46c')
             .onClick(() => {
               if (this.imagePixelMap !== undefined) {
@@ -107,6 +109,7 @@ struct ImageAttachmentSizeTest {
           Button('设置图片size：0')
             .id('button0')
             .width('100%')
+            .height('5%')
             .backgroundColor('#dff8af7f')
             .onClick(() => {
               if (this.imagePixelMap !== undefined) {
@@ -124,6 +127,7 @@ struct ImageAttachmentSizeTest {
           Button('设置图片size：-50')
             .id('button50')
             .width('100%')
+            .height('5%')
             .backgroundColor('#c9ff73d6')
             .onClick(() => {
               if (this.imagePixelMap !== undefined) {
@@ -141,6 +145,7 @@ struct ImageAttachmentSizeTest {
           Button('设置图片size：undefined')
             .id('buttonUndefined')
             .width('100%')
+            .height('5%')
             .backgroundColor('#d5646569')
             .onClick(() => {
               if (this.imagePixelMap !== undefined) {
@@ -158,6 +163,7 @@ struct ImageAttachmentSizeTest {
           Button('设置图片size：null')
             .id('buttonNull')
             .width('100%')
+            .height('5%')
             .backgroundColor('#dfffabd9')
             .onClick(() => {
               if (this.imagePixelMap !== undefined) {

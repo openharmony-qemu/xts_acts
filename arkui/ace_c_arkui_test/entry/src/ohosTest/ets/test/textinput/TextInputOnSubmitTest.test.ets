@@ -26,14 +26,14 @@ export default function textInputOnSubmitTest() {
       await Utils.pushPage(`textinput/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_ONSUBMIT_0100
-    * @tc.name       : testTextInputOnSubmit001
-    * @tc.desc       : test onSubmit event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextInputOnSubmit001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ONSUBMIT_0100
+     * @tc.desc   test onSubmit event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextInputOnSubmit001', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnSubmitTestTextInput')
       await Utils.sleep(2000)

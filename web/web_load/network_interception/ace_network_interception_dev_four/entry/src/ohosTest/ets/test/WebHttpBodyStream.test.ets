@@ -58,14 +58,14 @@ export default function WebHttpBodyStream() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBHTTPBODYSTREAM_100
-    * @tc.name       : WebHttpBodyStream0100
-    * @tc.desc       : test WebHttpBodyStream
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   WebHttpBodyStream0100
+     * @tc.number SUB_WEB_WEBHTTPBODYSTREAM_100
+     * @tc.desc   test WebHttpBodyStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('WebHttpBodyStream0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebHttpBodyStream0100", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;

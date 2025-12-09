@@ -101,9 +101,12 @@ export default function webgl2_buffer() {
             gl.flush();
         }
         /**
+         * @tc.name   webgl2_test_copyBufferSubData
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0001
-         * @tc.name webgl2_test_copyBufferSubData
-         * @tc.desc Test copyBufferSubData.
+         * @tc.desc   Test copyBufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_copyBufferSubData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_copyBufferSubData] copyBufferSubData");
@@ -165,9 +168,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_copyBufferSubData_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0002
-         * @tc.name webgl2_test_copyBufferSubData_1
-         * @tc.desc Test copyBufferSubData.
+         * @tc.desc   Test copyBufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_copyBufferSubData_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -186,9 +192,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_copyBufferSubData_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0003
-         * @tc.name webgl2_test_copyBufferSubData_2
-         * @tc.desc Test copyBufferSubData.
+         * @tc.desc   Test copyBufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_copyBufferSubData_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -207,9 +216,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_copyBufferSubData_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0004
-         * @tc.name webgl2_test_copyBufferSubData_3
-         * @tc.desc Test copyBufferSubData.
+         * @tc.desc   Test copyBufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_copyBufferSubData_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -228,9 +240,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_copyBufferSubData_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0005
-         * @tc.name webgl2_test_copyBufferSubData_4
-         * @tc.desc Test copyBufferSubData.
+         * @tc.desc   Test copyBufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_copyBufferSubData_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -249,9 +264,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_copyBufferSubData_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0006
-         * @tc.name webgl2_test_copyBufferSubData_5
-         * @tc.desc Test copyBufferSubData.
+         * @tc.desc   Test copyBufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_copyBufferSubData_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -319,9 +337,12 @@ export default function webgl2_buffer() {
             gl.flush();
         }
         /**
+         * @tc.name   webgl2_test_getBufferSubData_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0007
-         * @tc.name webgl2_test_getBufferSubData_1
-         * @tc.desc Test getBufferSubData.
+         * @tc.desc   Test getBufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getBufferSubData_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -333,9 +354,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getBufferSubData_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0008
-         * @tc.name webgl2_test_getBufferSubData_2
-         * @tc.desc Test getBufferSubData.
+         * @tc.desc   Test getBufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getBufferSubData_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -347,9 +371,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getBufferSubData_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0009
-         * @tc.name webgl2_test_getBufferSubData_3
-         * @tc.desc Test getBufferSubData.
+         * @tc.desc   Test getBufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getBufferSubData_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -361,9 +388,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getBufferSubData_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0010
-         * @tc.name webgl2_test_getBufferSubData_4
-         * @tc.desc Test getBufferSubData.
+         * @tc.desc   Test getBufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getBufferSubData_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -375,9 +405,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getBufferSubData_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0011
-         * @tc.name webgl2_test_getBufferSubData_5
-         * @tc.desc Test getBufferSubData.
+         * @tc.desc   Test getBufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getBufferSubData_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -389,9 +422,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getBufferSubData
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0012
-         * @tc.name webgl2_test_getBufferSubData
-         * @tc.desc Test getBufferSubData.
+         * @tc.desc   Test getBufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getBufferSubData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_getBufferSubData] getBufferSubData");
@@ -505,9 +541,12 @@ export default function webgl2_buffer() {
             gl.flush();
         }
         /**
+         * @tc.name   webgl2_test_blitFramebuffer
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0013
-         * @tc.name webgl2_test_blitFramebuffer
-         * @tc.desc Test blitFramebuffer.
+         * @tc.desc   Test blitFramebuffer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_blitFramebuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_blitFramebuffer] blitFramebuffer");
@@ -524,9 +563,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_blitFramebuffer_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0014
-         * @tc.name webgl2_test_blitFramebuffer_1
-         * @tc.desc Test blitFramebuffer.
+         * @tc.desc   Test blitFramebuffer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_blitFramebuffer_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_blitFramebuffer_1] blitFramebuffer");
@@ -538,9 +580,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_blitFramebuffer_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0015
-         * @tc.name webgl2_test_blitFramebuffer_2
-         * @tc.desc Test blitFramebuffer.
+         * @tc.desc   Test blitFramebuffer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_blitFramebuffer_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_blitFramebuffer_2] blitFramebuffer");
@@ -552,9 +597,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_blitFramebuffer_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0016
-         * @tc.name webgl2_test_blitFramebuffer_3
-         * @tc.desc Test blitFramebuffer.
+         * @tc.desc   Test blitFramebuffer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_blitFramebuffer_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_blitFramebuffer_3] blitFramebuffer");
@@ -566,9 +614,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_blitFramebuffer_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0017
-         * @tc.name webgl2_test_blitFramebuffer_4
-         * @tc.desc Test blitFramebuffer.
+         * @tc.desc   Test blitFramebuffer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_blitFramebuffer_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_blitFramebuffer_4] blitFramebuffer");
@@ -685,9 +736,12 @@ export default function webgl2_buffer() {
             gl.flush();
         }
         /**
+         * @tc.name   webgl2_test_framebufferTextureLayer
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0018
-         * @tc.name webgl2_test_framebufferTextureLayer
-         * @tc.desc Test framebufferTextureLayer.
+         * @tc.desc   Test framebufferTextureLayer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_framebufferTextureLayer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -706,9 +760,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_framebufferTextureLayer_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0019
-         * @tc.name webgl2_test_framebufferTextureLayer_1
-         * @tc.desc Test framebufferTextureLayer.
+         * @tc.desc   Test framebufferTextureLayer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_framebufferTextureLayer_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -723,9 +780,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_framebufferTextureLayer_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0020
-         * @tc.name webgl2_test_framebufferTextureLayer_2
-         * @tc.desc Test framebufferTextureLayer.
+         * @tc.desc   Test framebufferTextureLayer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_framebufferTextureLayer_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -740,9 +800,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_framebufferTextureLayer_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0021
-         * @tc.name webgl2_test_framebufferTextureLayer_3
-         * @tc.desc Test framebufferTextureLayer.
+         * @tc.desc   Test framebufferTextureLayer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_framebufferTextureLayer_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -757,9 +820,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_framebufferTextureLayer_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0022
-         * @tc.name webgl2_test_framebufferTextureLayer_4
-         * @tc.desc Test framebufferTextureLayer.
+         * @tc.desc   Test framebufferTextureLayer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_framebufferTextureLayer_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -774,9 +840,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_framebufferTextureLayer_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0023
-         * @tc.name webgl2_test_framebufferTextureLayer_5
-         * @tc.desc Test framebufferTextureLayer.
+         * @tc.desc   Test framebufferTextureLayer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_framebufferTextureLayer_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -791,9 +860,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_invalidateFramebuffer
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0024
-         * @tc.name webgl2_test_invalidateFramebuffer
-         * @tc.desc Test invalidateFramebuffer.
+         * @tc.desc   Test invalidateFramebuffer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_invalidateFramebuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -806,9 +878,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_invalidateFramebuffer_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0025
-         * @tc.name webgl2_test_invalidateFramebuffer_1
-         * @tc.desc Test invalidateFramebuffer.
+         * @tc.desc   Test invalidateFramebuffer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_invalidateFramebuffer_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -821,9 +896,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_invalidateFramebuffer_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0026
-         * @tc.name webgl2_test_invalidateFramebuffer_2
-         * @tc.desc Test invalidateFramebuffer.
+         * @tc.desc   Test invalidateFramebuffer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_invalidateFramebuffer_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -836,9 +914,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_invalidateFramebuffer_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0027
-         * @tc.name webgl2_test_invalidateFramebuffer_3
-         * @tc.desc Test invalidateFramebuffer.
+         * @tc.desc   Test invalidateFramebuffer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_invalidateFramebuffer_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -851,9 +932,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_invalidateFramebuffer_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0028
-         * @tc.name webgl2_test_invalidateFramebuffer_4
-         * @tc.desc Test invalidateFramebuffer.
+         * @tc.desc   Test invalidateFramebuffer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_invalidateFramebuffer_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -882,9 +966,12 @@ export default function webgl2_buffer() {
             gl.flush();
         }
         /**
+         * @tc.name   webgl2_test_readBuffer
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0029
-         * @tc.name webgl2_test_readBuffer
-         * @tc.desc Test readBuffer.
+         * @tc.desc   Test readBuffer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_readBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             //Method selects a color buffer as the pixel's source for subsequent calls to copyTexImage2D, copyTexSubImage2D, copyTexSubImage3D, or readPixels.
@@ -901,9 +988,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_readBuffer_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0030
-         * @tc.name webgl2_test_readBuffer_1
-         * @tc.desc Test readBuffer.
+         * @tc.desc   Test readBuffer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_readBuffer_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_readBuffer] readBuffer");
@@ -916,9 +1006,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_readBuffer_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0031
-         * @tc.name webgl2_test_readBuffer_2
-         * @tc.desc Test readBuffer.
+         * @tc.desc   Test readBuffer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_readBuffer_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_readBuffer] readBuffer");
@@ -931,9 +1024,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_readBuffer_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0032
-         * @tc.name webgl2_test_readBuffer_3
-         * @tc.desc Test readBuffer.
+         * @tc.desc   Test readBuffer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_readBuffer_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_readBuffer] readBuffer");
@@ -946,9 +1042,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_readBuffer_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0033
-         * @tc.name webgl2_test_readBuffer_4
-         * @tc.desc Test readBuffer.
+         * @tc.desc   Test readBuffer.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_readBuffer_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_readBuffer] readBuffer");
@@ -969,9 +1068,12 @@ export default function webgl2_buffer() {
             gl.deleteRenderbuffer(renderbuffer);
         }
         /**
+         * @tc.name   webgl2_test_getInternalformatParameter
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0034
-         * @tc.name webgl2_test_getInternalformatParameter
-         * @tc.desc Test getInternalformatParameter.
+         * @tc.desc   Test getInternalformatParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getInternalformatParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -988,9 +1090,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getInternalformatParameter_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0035
-         * @tc.name webgl2_test_getInternalformatParameter_1
-         * @tc.desc Test getInternalformatParameter.
+         * @tc.desc   Test getInternalformatParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getInternalformatParameter_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1004,9 +1109,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getInternalformatParameter_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0036
-         * @tc.name webgl2_test_getInternalformatParameter_2
-         * @tc.desc Test getInternalformatParameter.
+         * @tc.desc   Test getInternalformatParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getInternalformatParameter_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1020,9 +1128,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getInternalformatParameter_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0037
-         * @tc.name webgl2_test_getInternalformatParameter_3
-         * @tc.desc Test getInternalformatParameter.
+         * @tc.desc   Test getInternalformatParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getInternalformatParameter_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1051,9 +1162,12 @@ export default function webgl2_buffer() {
             gl.deleteRenderbuffer(renderbuffer);
         }
         /**
+         * @tc.name   webgl2_test_renderbufferStorageMultisample
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0038
-         * @tc.name webgl2_test_renderbufferStorageMultisample
-         * @tc.desc Test renderbufferStorageMultisample.
+         * @tc.desc   Test renderbufferStorageMultisample.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_renderbufferStorageMultisample', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1077,9 +1191,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_renderbufferStorageMultisample_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0039
-         * @tc.name webgl2_test_renderbufferStorageMultisample_1
-         * @tc.desc Test renderbufferStorageMultisample.
+         * @tc.desc   Test renderbufferStorageMultisample.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_renderbufferStorageMultisample_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1092,9 +1209,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_renderbufferStorageMultisample_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0040
-         * @tc.name webgl2_test_renderbufferStorageMultisample_2
-         * @tc.desc Test renderbufferStorageMultisample.
+         * @tc.desc   Test renderbufferStorageMultisample.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_renderbufferStorageMultisample_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1106,9 +1226,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_renderbufferStorageMultisample_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0041
-         * @tc.name webgl2_test_renderbufferStorageMultisample_3
-         * @tc.desc Test renderbufferStorageMultisample.
+         * @tc.desc   Test renderbufferStorageMultisample.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_renderbufferStorageMultisample_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1120,9 +1243,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_renderbufferStorageMultisample_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0042
-         * @tc.name webgl2_test_renderbufferStorageMultisample_4
-         * @tc.desc Test renderbufferStorageMultisample.
+         * @tc.desc   Test renderbufferStorageMultisample.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_renderbufferStorageMultisample_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1187,9 +1313,12 @@ export default function webgl2_buffer() {
             gl.flush();
         }
         /**
+         * @tc.name   webgl2_test_vertexAttribDivisor
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0043
-         * @tc.name webgl2_test_vertexAttribDivisor
-         * @tc.desc Test vertexAttribDivisor.
+         * @tc.desc   Test vertexAttribDivisor.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribDivisor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1208,9 +1337,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribDivisor_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0044
-         * @tc.name webgl2_test_vertexAttribDivisor_1
-         * @tc.desc Test vertexAttribDivisor.
+         * @tc.desc   Test vertexAttribDivisor.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribDivisor_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1226,9 +1358,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribDivisor_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0045
-         * @tc.name webgl2_test_vertexAttribDivisor_2
-         * @tc.desc Test vertexAttribDivisor.
+         * @tc.desc   Test vertexAttribDivisor.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribDivisor_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1244,9 +1379,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribDivisor_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0046
-         * @tc.name webgl2_test_vertexAttribDivisor_3
-         * @tc.desc Test vertexAttribDivisor.
+         * @tc.desc   Test vertexAttribDivisor.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribDivisor_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1262,9 +1400,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_vertexAttribDivisor_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0047
-         * @tc.name webgl2_test_vertexAttribDivisor_4
-         * @tc.desc Test vertexAttribDivisor.
+         * @tc.desc   Test vertexAttribDivisor.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_vertexAttribDivisor_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1334,9 +1475,12 @@ export default function webgl2_buffer() {
             gl.flush();
         }
         /**
+         * @tc.name   webgl2_test_drawArraysInstanced
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0048
-         * @tc.name webgl2_test_drawArraysInstanced
-         * @tc.desc Test drawArraysInstanced.
+         * @tc.desc   Test drawArraysInstanced.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawArraysInstanced', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1355,9 +1499,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawArraysInstanced_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0049
-         * @tc.name webgl2_test_drawArraysInstanced_1
-         * @tc.desc Test drawArraysInstanced.
+         * @tc.desc   Test drawArraysInstanced.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawArraysInstanced_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1372,9 +1519,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawArraysInstanced_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0050
-         * @tc.name webgl2_test_drawArraysInstanced_2
-         * @tc.desc Test drawArraysInstanced.
+         * @tc.desc   Test drawArraysInstanced.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawArraysInstanced_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1389,9 +1539,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawArraysInstanced_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0051
-         * @tc.name webgl2_test_drawArraysInstanced_3
-         * @tc.desc Test drawArraysInstanced.
+         * @tc.desc   Test drawArraysInstanced.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawArraysInstanced_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1406,9 +1559,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawArraysInstanced_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0052
-         * @tc.name webgl2_test_drawArraysInstanced_4
-         * @tc.desc Test drawArraysInstanced.
+         * @tc.desc   Test drawArraysInstanced.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawArraysInstanced_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1482,9 +1638,12 @@ export default function webgl2_buffer() {
             gl.flush();
         }
         /**
+         * @tc.name   webgl2_test_drawElementsInstanced
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0053
-         * @tc.name webgl2_test_drawElementsInstanced
-         * @tc.desc Test drawElementsInstanced.
+         * @tc.desc   Test drawElementsInstanced.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawElementsInstanced', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1503,9 +1662,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawElementsInstanced_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0054
-         * @tc.name webgl2_test_drawElementsInstanced_1
-         * @tc.desc Test drawElementsInstanced.
+         * @tc.desc   Test drawElementsInstanced.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawElementsInstanced_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1520,9 +1682,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawElementsInstanced_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0055
-         * @tc.name webgl2_test_drawElementsInstanced_3
-         * @tc.desc Test drawElementsInstanced.
+         * @tc.desc   Test drawElementsInstanced.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawElementsInstanced_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1537,9 +1702,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawElementsInstanced_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0056
-         * @tc.name webgl2_test_drawElementsInstanced_4
-         * @tc.desc Test drawElementsInstanced.
+         * @tc.desc   Test drawElementsInstanced.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawElementsInstanced_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1554,9 +1722,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawElementsInstanced_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0057
-         * @tc.name webgl2_test_drawElementsInstanced_5
-         * @tc.desc Test drawElementsInstanced.
+         * @tc.desc   Test drawElementsInstanced.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawElementsInstanced_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1621,9 +1792,12 @@ export default function webgl2_buffer() {
             gl.flush();
         }
         /**
+         * @tc.name   webgl2_test_drawRangeElements
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0058
-         * @tc.name webgl2_test_drawRangeElements
-         * @tc.desc Test drawRangeElements.
+         * @tc.desc   Test drawRangeElements.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawRangeElements', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_drawRangeElements] drawRangeElements");
@@ -1640,9 +1814,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawRangeElements_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0059
-         * @tc.name webgl2_test_drawRangeElements_1
-         * @tc.desc Test drawRangeElements.
+         * @tc.desc   Test drawRangeElements.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawRangeElements_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1656,9 +1833,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawRangeElements_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0060
-         * @tc.name webgl2_test_drawRangeElements_2
-         * @tc.desc Test drawRangeElements.
+         * @tc.desc   Test drawRangeElements.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawRangeElements_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1672,9 +1852,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawRangeElements_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0061
-         * @tc.name webgl2_test_drawRangeElements_3
-         * @tc.desc Test drawRangeElements.
+         * @tc.desc   Test drawRangeElements.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawRangeElements_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1688,9 +1871,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawRangeElements_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0062
-         * @tc.name webgl2_test_drawRangeElements_4
-         * @tc.desc Test drawRangeElements.
+         * @tc.desc   Test drawRangeElements.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawRangeElements_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1704,9 +1890,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawRangeElements_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0063
-         * @tc.name webgl2_test_drawRangeElements_5
-         * @tc.desc Test drawRangeElements.
+         * @tc.desc   Test drawRangeElements.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawRangeElements_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1720,9 +1909,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawRangeElements_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0064
-         * @tc.name webgl2_test_drawRangeElements_6
-         * @tc.desc Test drawRangeElements.
+         * @tc.desc   Test drawRangeElements.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawRangeElements_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1780,9 +1972,12 @@ export default function webgl2_buffer() {
             gl.flush();
         }
         /**
+         * @tc.name   webgl2_test_drawBuffers
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0065
-         * @tc.name webgl2_test_drawBuffers
-         * @tc.desc Test drawBuffers.
+         * @tc.desc   Test drawBuffers.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawBuffers', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_drawBuffers] drawBuffers");
@@ -1800,9 +1995,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawBuffers_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0066
-         * @tc.name webgl2_test_drawBuffers_1
-         * @tc.desc Test drawBuffers.
+         * @tc.desc   Test drawBuffers.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawBuffers_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_drawBuffers_1] drawBuffers");
@@ -1816,9 +2014,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawBuffers_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0067
-         * @tc.name webgl2_test_drawBuffers_2
-         * @tc.desc Test drawBuffers.
+         * @tc.desc   Test drawBuffers.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawBuffers_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_drawBuffers_2] drawBuffers");
@@ -1831,9 +2032,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawBuffers_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0068
-         * @tc.name webgl2_test_drawBuffers_3
-         * @tc.desc Test drawBuffers.
+         * @tc.desc   Test drawBuffers.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawBuffers_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_drawBuffers_3] drawBuffers");
@@ -1846,9 +2050,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawBuffers_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0069
-         * @tc.name webgl2_test_drawBuffers_4
-         * @tc.desc Test drawBuffers.
+         * @tc.desc   Test drawBuffers.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawBuffers_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_drawBuffers_4] drawBuffers");
@@ -1861,9 +2068,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_drawBuffers_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0070
-         * @tc.name webgl2_test_drawBuffers_5
-         * @tc.desc Test drawBuffers.
+         * @tc.desc   Test drawBuffers.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_drawBuffers_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_drawBuffers_5] drawBuffers");
@@ -1900,9 +2110,12 @@ export default function webgl2_buffer() {
             gl.flush();
         }
         /**
+         * @tc.name   webgl2_test_clearBufferfv
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0071
-         * @tc.name webgl2_test_clearBufferfv
-         * @tc.desc Test clearBufferfv.
+         * @tc.desc   Test clearBufferfv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clearBufferfv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clearBufferfv] clearBufferfv");
@@ -1918,9 +2131,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clearBufferfv_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0072
-         * @tc.name webgl2_test_clearBufferfv_1
-         * @tc.desc Test clearBufferfv.
+         * @tc.desc   Test clearBufferfv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clearBufferfv_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clearBufferfv_1] clearBufferfv");
@@ -1932,9 +2148,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clearBufferfv_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0073
-         * @tc.name webgl2_test_clearBufferfv_2
-         * @tc.desc Test clearBufferfv.
+         * @tc.desc   Test clearBufferfv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clearBufferfv_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clearBufferfv_2] clearBufferfv");
@@ -1946,9 +2165,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clearBufferfv_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0074
-         * @tc.name webgl2_test_clearBufferfv_3
-         * @tc.desc Test clearBufferfv.
+         * @tc.desc   Test clearBufferfv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clearBufferfv_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clearBufferfv_3] clearBufferfv");
@@ -1994,9 +2216,12 @@ export default function webgl2_buffer() {
             gl.flush();
         }
         /**
+         * @tc.name   webgl2_test_clearBufferiv
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0075
-         * @tc.name webgl2_test_clearBufferiv
-         * @tc.desc Test clearBufferiv.
+         * @tc.desc   Test clearBufferiv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clearBufferiv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clearBufferiv] clearBufferiv");
@@ -2013,9 +2238,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clearBufferiv_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0076
-         * @tc.name webgl2_test_clearBufferiv_1
-         * @tc.desc Test clearBufferiv.
+         * @tc.desc   Test clearBufferiv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clearBufferiv_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clearBufferiv_1] clearBufferiv");
@@ -2027,9 +2255,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clearBufferiv_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0077
-         * @tc.name webgl2_test_clearBufferiv_2
-         * @tc.desc Test clearBufferiv.
+         * @tc.desc   Test clearBufferiv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clearBufferiv_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clearBufferiv_2] clearBufferiv");
@@ -2074,9 +2305,12 @@ export default function webgl2_buffer() {
             gl.deleteProgram(p.program);
         }
         /**
+         * @tc.name   webgl2_test_clearBufferuiv
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0078
-         * @tc.name webgl2_test_clearBufferuiv
-         * @tc.desc Test clearBufferuiv.
+         * @tc.desc   Test clearBufferuiv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clearBufferuiv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clearBufferuiv] clearBufferuiv");
@@ -2092,9 +2326,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clearBufferuiv_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0079
-         * @tc.name webgl2_test_clearBufferuiv_1
-         * @tc.desc Test clearBufferuiv.
+         * @tc.desc   Test clearBufferuiv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clearBufferuiv_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clearBufferuiv_1] clearBufferuiv");
@@ -2106,9 +2343,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clearBufferuiv_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0080
-         * @tc.name webgl2_test_clearBufferuiv_2
-         * @tc.desc Test clearBufferuiv.
+         * @tc.desc   Test clearBufferuiv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clearBufferuiv_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clearBufferuiv_2] clearBufferuiv");
@@ -2120,9 +2360,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clearBufferuiv_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0081
-         * @tc.name webgl2_test_clearBufferuiv_3
-         * @tc.desc Test clearBufferuiv.
+         * @tc.desc   Test clearBufferuiv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clearBufferuiv_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clearBufferuiv_3] clearBufferuiv");
@@ -2184,9 +2427,12 @@ export default function webgl2_buffer() {
             gl.flush();
         }
         /**
+         * @tc.name   webgl2_test_clearBufferfi
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0082
-         * @tc.name webgl2_test_clearBufferfi
-         * @tc.desc Test clearBufferfi.
+         * @tc.desc   Test clearBufferfi.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clearBufferfi', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clearBufferfi] clearBufferfi");
@@ -2198,9 +2444,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clearBufferfi_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0083
-         * @tc.name webgl2_test_clearBufferfi_1
-         * @tc.desc Test clearBufferfi.
+         * @tc.desc   Test clearBufferfi.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clearBufferfi_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clearBufferfi_1] clearBufferfi");
@@ -2212,9 +2461,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clearBufferfi_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0084
-         * @tc.name webgl2_test_clearBufferfi_2
-         * @tc.desc Test clearBufferfi.
+         * @tc.desc   Test clearBufferfi.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clearBufferfi_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clearBufferfi_2] clearBufferfi");
@@ -2226,9 +2478,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_clearBufferfi_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0085
-         * @tc.name webgl2_test_clearBufferfi_3
-         * @tc.desc Test clearBufferfi.
+         * @tc.desc   Test clearBufferfi.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_clearBufferfi_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_clearBufferfi_2] clearBufferfi");
@@ -2250,9 +2505,12 @@ export default function webgl2_buffer() {
             gl.deleteBuffer(uniformBuffer);
         }
         /**
+         * @tc.name   webgl2_test_bindBufferBase
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0086
-         * @tc.name webgl2_test_bindBufferBase
-         * @tc.desc Test bindBufferBase.
+         * @tc.desc   Test bindBufferBase.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindBufferBase', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindBufferBase] bindBufferBase");
@@ -2267,9 +2525,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindBufferBase_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0087
-         * @tc.name webgl2_test_bindBufferBase_1
-         * @tc.desc Test bindBufferBase.
+         * @tc.desc   Test bindBufferBase.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindBufferBase_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindBufferBase_1] bindBufferBase");
@@ -2281,9 +2542,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindBufferBase_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0088
-         * @tc.name webgl2_test_bindBufferBase_2
-         * @tc.desc Test bindBufferBase.
+         * @tc.desc   Test bindBufferBase.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindBufferBase_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindBufferBase_2] bindBufferBase");
@@ -2310,9 +2574,12 @@ export default function webgl2_buffer() {
             gl.deleteBuffer(uniformBuffer);
         }
         /**
+         * @tc.name   webgl2_test_bindBufferRange
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0089
-         * @tc.name webgl2_test_bindBufferRange
-         * @tc.desc Test bindBufferRange.
+         * @tc.desc   Test bindBufferRange.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindBufferRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindBufferRange] bindBufferRange");
@@ -2333,9 +2600,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindBufferRange_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0090
-         * @tc.name webgl2_test_bindBufferRange_1
-         * @tc.desc Test bindBufferRange.
+         * @tc.desc   Test bindBufferRange.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindBufferRange_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             bindBufferRange((uniformBuffer, offset, float32Array) => {
@@ -2347,9 +2617,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindBufferRange_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0091
-         * @tc.name webgl2_test_bindBufferRange_2
-         * @tc.desc Test bindBufferRange.
+         * @tc.desc   Test bindBufferRange.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindBufferRange_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             bindBufferRange((uniformBuffer, offset, float32Array) => {
@@ -2361,9 +2634,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getIndexedParameter
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0092
-         * @tc.name webgl2_test_getIndexedParameter
-         * @tc.desc Test getIndexedParameter.
+         * @tc.desc   Test getIndexedParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getIndexedParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -2385,9 +2661,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getUniformIndices
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0093
-         * @tc.name webgl2_test_getUniformIndices
-         * @tc.desc Test getUniformIndices.
+         * @tc.desc   Test getUniformIndices.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getUniformIndices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_getUniformIndices] getUniformIndices");
@@ -2416,9 +2695,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getActiveUniforms
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0094
-         * @tc.name webgl2_test_getActiveUniforms
-         * @tc.desc Test getActiveUniforms.
+         * @tc.desc   Test getActiveUniforms.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getActiveUniforms', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_getActiveUniforms] getActiveUniforms");
@@ -2451,9 +2733,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getUniformBlockIndex
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0095
-         * @tc.name webgl2_test_getUniformBlockIndex
-         * @tc.desc Test getUniformBlockIndex.
+         * @tc.desc   Test getUniformBlockIndex.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getUniformBlockIndex', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -2490,9 +2775,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getActiveUniformBlockParameter
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0096
-         * @tc.name webgl2_test_getActiveUniformBlockParameter
-         * @tc.desc Test getActiveUniformBlockParameter.
+         * @tc.desc   Test getActiveUniformBlockParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getActiveUniformBlockParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -2531,9 +2819,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getActiveUniformBlockName
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0097
-         * @tc.name webgl2_test_getActiveUniformBlockName
-         * @tc.desc Test getActiveUniformBlockName.
+         * @tc.desc   Test getActiveUniformBlockName.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getActiveUniformBlockName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -2603,9 +2894,12 @@ export default function webgl2_buffer() {
             gl.deleteProgram(p.program);
         }
         /**
+         * @tc.name   webgl2_test_uniformBlockBinding
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0098
-         * @tc.name webgl2_test_uniformBlockBinding
-         * @tc.desc Test uniformBlockBinding.
+         * @tc.desc   Test uniformBlockBinding.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_uniformBlockBinding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -2622,9 +2916,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_uniformBlockBinding_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0099
-         * @tc.name webgl2_test_uniformBlockBinding_1
-         * @tc.desc Test uniformBlockBinding.
+         * @tc.desc   Test uniformBlockBinding.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_uniformBlockBinding_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -2638,9 +2935,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_uniformBlockBinding_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0100
-         * @tc.name webgl2_test_uniformBlockBinding_2
-         * @tc.desc Test uniformBlockBinding.
+         * @tc.desc   Test uniformBlockBinding.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_uniformBlockBinding_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -2654,9 +2954,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_uniformBlockBinding_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0101
-         * @tc.name webgl2_test_uniformBlockBinding_3
-         * @tc.desc Test uniformBlockBinding.
+         * @tc.desc   Test uniformBlockBinding.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_uniformBlockBinding_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -2670,9 +2973,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_uniformBlockBinding_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0102
-         * @tc.name webgl2_test_uniformBlockBinding_4
-         * @tc.desc Test uniformBlockBinding.
+         * @tc.desc   Test uniformBlockBinding.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_uniformBlockBinding_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -2738,9 +3044,12 @@ export default function webgl2_buffer() {
             checkError(gl);
         }
         /**
+         * @tc.name   webgl2_test_bufferData
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0103
-         * @tc.name webgl2_test_bufferData
-         * @tc.desc Test bufferData.
+         * @tc.desc   Test bufferData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bufferData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bufferData] bufferData");
@@ -2756,9 +3065,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bufferData_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0104
-         * @tc.name webgl2_test_bufferData_1
-         * @tc.desc Test bufferData.
+         * @tc.desc   Test bufferData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bufferData_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bufferData_1] bufferData");
@@ -2770,9 +3082,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bufferData_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0105
-         * @tc.name webgl2_test_bufferData_2
-         * @tc.desc Test bufferData.
+         * @tc.desc   Test bufferData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bufferData_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bufferData_2] bufferData");
@@ -2784,9 +3099,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bufferData_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0106
-         * @tc.name webgl2_test_bufferData_3
-         * @tc.desc Test bufferData.
+         * @tc.desc   Test bufferData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bufferData_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bufferData_3] bufferData");
@@ -2798,9 +3116,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bufferData_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0107
-         * @tc.name webgl2_test_bufferData_4
-         * @tc.desc Test bufferData.
+         * @tc.desc   Test bufferData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bufferData_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bufferData_4] bufferData");
@@ -2812,9 +3133,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bufferData_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0108
-         * @tc.name webgl2_test_bufferData_5
-         * @tc.desc Test bufferData.
+         * @tc.desc   Test bufferData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bufferData_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bufferData_5] bufferData");
@@ -2826,9 +3150,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bufferData_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0109
-         * @tc.name webgl2_test_bufferData_6
-         * @tc.desc Test bufferData.
+         * @tc.desc   Test bufferData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bufferData_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bufferData_6] bufferData");
@@ -2881,9 +3208,12 @@ export default function webgl2_buffer() {
             gl.flush();
         }
         /**
+         * @tc.name   webgl2_test_bufferSubData
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0110
-         * @tc.name webgl2_test_bufferSubData
-         * @tc.desc Test bufferSubData.
+         * @tc.desc   Test bufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bufferSubData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bufferSubData] bufferSubData");
@@ -2903,9 +3233,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bufferSubData_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0111
-         * @tc.name webgl2_test_bufferSubData_1
-         * @tc.desc Test bufferSubData.
+         * @tc.desc   Test bufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bufferSubData_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bufferSubData_1] bufferSubData");
@@ -2921,9 +3254,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bufferSubData_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0112
-         * @tc.name webgl2_test_bufferSubData_2
-         * @tc.desc Test bufferSubData.
+         * @tc.desc   Test bufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bufferSubData_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bufferSubData_2] bufferSubData");
@@ -2939,9 +3275,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bufferSubData_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0113
-         * @tc.name webgl2_test_bufferSubData_3
-         * @tc.desc Test bufferSubData.
+         * @tc.desc   Test bufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bufferSubData_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bufferSubData_3] bufferSubData");
@@ -2957,9 +3296,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bufferSubData_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0114
-         * @tc.name webgl2_test_bufferSubData_4
-         * @tc.desc Test bufferSubData.
+         * @tc.desc   Test bufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bufferSubData_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bufferSubData_4] bufferSubData");
@@ -2975,9 +3317,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bufferSubData_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0115
-         * @tc.name webgl2_test_bufferSubData_5
-         * @tc.desc Test bufferSubData.
+         * @tc.desc   Test bufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bufferSubData_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bufferSubData_5] bufferSubData");
@@ -2993,9 +3338,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bufferSubData_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0116
-         * @tc.name webgl2_test_bufferSubData_6
-         * @tc.desc Test bufferSubData.
+         * @tc.desc   Test bufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bufferSubData_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bufferSubData_6] bufferSubData");
@@ -3011,9 +3359,12 @@ export default function webgl2_buffer() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bufferSubData_7
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_BUFFER_0117
-         * @tc.name webgl2_test_bufferSubData_7
-         * @tc.desc Test bufferSubData.
+         * @tc.desc   Test bufferSubData.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bufferSubData_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bufferSubData_7] bufferSubData");

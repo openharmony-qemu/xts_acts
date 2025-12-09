@@ -57,10 +57,13 @@ export default function webDefaultFontSizeNoAll() {
       done();
     })
     
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBPATR6_API_0600
-     *tc.name testNoDefaultFontSizeAndNoMinFontSizeWebC
-     *tc.desc test with no set defaultfontsize or minfontsize
+    /**
+     * @tc.name   testNoDefaultFontSizeAndNoMinFontSizeWebC
+     * @tc.number SUB_ACE_BASIC_ETS_WEBPATR6_API_0600
+     * @tc.desc   test with no set defaultfontsize or minfontsize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNoDefaultFontSizeAndNoMinFontSizeWebC', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitdefaultFontSizeAndminFontSizeNoAllWebC";

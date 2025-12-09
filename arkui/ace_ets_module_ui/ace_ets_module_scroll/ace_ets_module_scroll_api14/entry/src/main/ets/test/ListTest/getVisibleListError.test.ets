@@ -43,12 +43,12 @@ export default function getVisibleListError() {
     });
 
     /**
-     * @tc.number    getVisibleListError_001
-     * @tc.name      getVisibleListError_0100
-     * @tc.desc      401 error code for getVisibleListContentInfo.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   getVisibleListError_0100
+     * @tc.number getVisibleListError_001
+     * @tc.desc   401 error code for getVisibleListContentInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getVisibleListError_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[getVisibleListError_0100] START');
@@ -65,12 +65,12 @@ export default function getVisibleListError() {
     });
 
     /**
-     * @tc.number    getVisibleListError_002
-     * @tc.name      getVisibleListError_0200
-     * @tc.desc      100004 error code for getVisibleListContentInfo.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   getVisibleListError_0200
+     * @tc.number getVisibleListError_002
+     * @tc.desc   100004 error code for getVisibleListContentInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getVisibleListError_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[getVisibleListError_0200] START');
@@ -87,12 +87,12 @@ export default function getVisibleListError() {
     });
 
     /**
-     * @tc.number    getVisibleListError_003
-     * @tc.name      getVisibleListError_0300
-     * @tc.desc      401 error code for closeAllSwipeActions.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   getVisibleListError_0300
+     * @tc.number getVisibleListError_003
+     * @tc.desc   401 error code for closeAllSwipeActions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getVisibleListError_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[getVisibleListError_0300] START');
@@ -109,12 +109,12 @@ export default function getVisibleListError() {
     });
 
     /**
-     * @tc.number    getVisibleListError_004
-     * @tc.name      getVisibleListError_0400
-     * @tc.desc      100004 error code for closeAllSwipeActions.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   getVisibleListError_0400
+     * @tc.number getVisibleListError_004
+     * @tc.desc   100004 error code for closeAllSwipeActions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getVisibleListError_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[getVisibleListError_0400] START');

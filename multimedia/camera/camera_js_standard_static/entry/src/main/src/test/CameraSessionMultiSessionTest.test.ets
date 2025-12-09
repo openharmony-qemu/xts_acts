@@ -81,12 +81,12 @@ export default function cameraSessionMultiSessionTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_STATIC_0100
-      * @tc.desc   Check capture create multi session
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_STATIC_0100
+     * @tc.desc   Check capture create multi session
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_STATIC_0100--------------");
@@ -134,12 +134,12 @@ export default function cameraSessionMultiSessionTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_CAMERA_STATUS_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_CAMERA_STATUS_STATIC_0100
-      * @tc.desc   Check on cameraStatus callback register
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_CAMERA_STATUS_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_CAMERA_STATUS_STATIC_0100
+     * @tc.desc   Check on cameraStatus callback register
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_CAMERA_STATUS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_CAMERA_STATUS_STATIC_0100--------------");
@@ -164,12 +164,12 @@ export default function cameraSessionMultiSessionTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_TORCH_STATUS_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_TORCH_STATUS_STATIC_0100
-      * @tc.desc   Check on torchStatusChange callback register
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_TORCH_STATUS_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_TORCH_STATUS_STATIC_0100
+     * @tc.desc   Check on torchStatusChange callback register
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_TORCH_STATUS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_TORCH_STATUS_STATIC_0100--------------");

@@ -35,12 +35,12 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     
     /**
+     * @tc.name   SUB_Security_CryptoFramework_pbKdf2_Func_0100
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0100
-     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0100
-     * @tc.desc algorithm is PBKDF2
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is PBKDF2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_pbKdf2_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let password: string = "hello world";
@@ -64,12 +64,12 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_pbKdf2_Func_0200
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0200
-     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0200
-     * @tc.desc algorithm is PBKDF2
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is PBKDF2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_pbKdf2_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let password: string = "hello world";
@@ -93,12 +93,12 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_pbKdf2_Func_0201
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0201
-     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0201
-     * @tc.desc algorithm is PBKDF2
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is PBKDF2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_pbKdf2_Func_0201", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let password: string = "hello world";
@@ -122,12 +122,12 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_pbKdf2_Func_0300
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0300
-     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0300
-     * @tc.desc algorithm is PBKDF2
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is PBKDF2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_pbKdf2_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let password: string = "hello world";
@@ -151,12 +151,12 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_pbKdf2_Func_0400
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0400
-     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0400
-     * @tc.desc algorithm is PBKDF2
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is PBKDF2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_pbKdf2_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let password: string = "";
@@ -180,12 +180,12 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_pbKdf2_Func_0500
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0500
-     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0500
-     * @tc.desc algorithm is PBKDF2
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is PBKDF2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_pbKdf2_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let password: string = "0123456789";
@@ -206,12 +206,12 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_pbKdf2_Func_0501
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0501
-     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0501
-     * @tc.desc algorithm is PBKDF2
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is PBKDF2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_pbKdf2_Func_0501", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let password: string = "0123456789";
@@ -232,12 +232,12 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_pbKdf2_Func_0502
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0502
-     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0502
-     * @tc.desc algorithm is PBKDF2
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is PBKDF2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_pbKdf2_Func_0502", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let password: string = "0123456789";
@@ -258,12 +258,12 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_pbKdf2_Func_0600
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0600
-     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0600
-     * @tc.desc algorithm is PBKDF2
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is PBKDF2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_pbKdf2_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let password: string = "0123456789";
@@ -284,12 +284,12 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_pbKdf2_Func_0700
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0700
-     * @tc.name SUB_Security_CryptoFramework_pbKdf2_Func_0700
-     * @tc.desc algorithm is PBKDF2
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is PBKDF2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_pbKdf2_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let password: string = "0123456789";

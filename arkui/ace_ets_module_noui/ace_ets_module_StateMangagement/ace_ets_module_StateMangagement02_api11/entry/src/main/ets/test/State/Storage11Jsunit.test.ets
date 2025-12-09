@@ -56,6 +56,14 @@ export default function Storage11Jsunit() {
     });
 
     //link给定的键值key存在，返回对应该键值的属性的双向绑定的数据 47
+    /**
+     * @tc.name   Storage11Jsunit_0100
+     * @tc.number Storage11Jsunit_0100
+     * @tc.desc   Storage11Jsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage11Jsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[Storage11Jsunit_0100] START');
@@ -72,6 +80,14 @@ export default function Storage11Jsunit() {
     });
 
     //link给定的键值key不存在，返回undefined
+    /**
+     * @tc.name   Storage11Jsunit_0200
+     * @tc.number Storage11Jsunit_0200
+     * @tc.desc   Storage11Jsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage11Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage11Jsunit_0200] START');
       let driver = await UiDriver.create()
@@ -87,6 +103,14 @@ export default function Storage11Jsunit() {
     });
 
     //setAndLink给定的键值key存在，返回对应该键值的属性的双向绑定的数据 47
+    /**
+     * @tc.name   Storage11Jsunit_0300
+     * @tc.number Storage11Jsunit_0300
+     * @tc.desc   Storage11Jsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage11Jsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage11Jsunit_0300] START');
       let driver = await UiDriver.create()
@@ -102,6 +126,14 @@ export default function Storage11Jsunit() {
     });
 
     //setAndLink给定的键值key不存在，初始化新的数据 5
+    /**
+     * @tc.name   Storage11Jsunit_0400
+     * @tc.number Storage11Jsunit_0400
+     * @tc.desc   Storage11Jsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage11Jsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage11Jsunit_0400] START');
       let driver = await UiDriver.create()
@@ -117,6 +149,14 @@ export default function Storage11Jsunit() {
     });
 
     //prop给定的键值key存在，返回对应该键值的属性的双向绑定的数据 47
+    /**
+     * @tc.name   Storage11Jsunit_0500
+     * @tc.number Storage11Jsunit_0500
+     * @tc.desc   Storage11Jsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage11Jsunit_0500', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage11Jsunit_0500] START');
       let driver = await UiDriver.create()
@@ -132,6 +172,14 @@ export default function Storage11Jsunit() {
     });
 
     //prop给定的键值key存在，返回undefined
+    /**
+     * @tc.name   Storage11Jsunit_0600
+     * @tc.number Storage11Jsunit_0600
+     * @tc.desc   Storage11Jsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage11Jsunit_0600', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage11Jsunit_0600] START');
       let driver = await UiDriver.create()
@@ -147,6 +195,14 @@ export default function Storage11Jsunit() {
     });
 
     //setAndProp给定的键值key存在，返回对应该键值的属性的双向绑定的数据 47
+    /**
+     * @tc.name   Storage11Jsunit_0700
+     * @tc.number Storage11Jsunit_0700
+     * @tc.desc   Storage11Jsunit_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage11Jsunit_0700', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage11Jsunit_0700] START');
       let driver = await UiDriver.create()
@@ -162,6 +218,14 @@ export default function Storage11Jsunit() {
     });
 
     //setAndProp给定的键值key存在，返回对应该键值的属性的双向绑定的数据 5
+    /**
+     * @tc.name   Storage11Jsunit_0800
+     * @tc.number Storage11Jsunit_0800
+     * @tc.desc   Storage11Jsunit_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage11Jsunit_0800', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage11Jsunit_0800] START');
       let driver = await UiDriver.create()

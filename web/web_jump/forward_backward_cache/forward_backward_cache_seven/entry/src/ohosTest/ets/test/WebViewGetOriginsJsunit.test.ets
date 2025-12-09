@@ -64,13 +64,13 @@ export default function webViewOnWindowNewJsunit() {
     })
 
     /**
-    * @tc.number    SUB_ACE_BASIC_ETS_API_WEBVIEWGETORIGINS_0100
-    * @tc.name      emitGetOrigins01
-    * @tc.desc      test api GetOrigins promise mode by load loacal html
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 0
-    */
+     * @tc.name   emitGetOrigins01
+     * @tc.number SUB_ACE_BASIC_ETS_API_WEBVIEWGETORIGINS_0100
+     * @tc.desc   test api GetOrigins promise mode by load loacal html
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitGetOrigins01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         Utils.emitEvent('emitGetOrigins01', 137851)
@@ -79,12 +79,12 @@ export default function webViewOnWindowNewJsunit() {
       })
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_API_WEBVIEWGETORIGINS_0200
-     * @tc.name      emitGetOrigins02
-     * @tc.desc      test api GetOrigins promise mode by load loacal html
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   emitGetOrigins02
+     * @tc.number SUB_ACE_BASIC_ETS_API_WEBVIEWGETORIGINS_0200
+     * @tc.desc   test api GetOrigins promise mode by load loacal html
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitGetOrigins02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

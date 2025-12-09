@@ -56,12 +56,12 @@ export default function ChipOnClick() {
         });
 
         /**
-         * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_CHIP_ONCLICK_0100
-         * @tc.name  : test chip onClicked
-         * @tc.desc  : onClicked
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : Level 0
+         * @tc.name   ChipOnClick_001
+         * @tc.number SUB_ACE_UI_COMPONENT_TEXT_CHIP_ONCLICK_0100
+         * @tc.desc   onClicked
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ChipOnClick_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             console.info('ChipOnClick_001 START');

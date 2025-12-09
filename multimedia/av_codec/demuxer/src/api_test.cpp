@@ -100,9 +100,12 @@ using namespace OHOS::Media;
 using namespace testing::ext;
 
 /**
- * @tc.number    : OH_AVSource_CreateWithDataSource_0100
- * @tc.name      : OH_AVSource_CreateWithDataSource para error
- * @tc.desc      : api test
+ * @tc.name   OH_AVSource_CreateWithDataSource_0100
+ * @tc.number OH_AVSource_CreateWithDataSource_0100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, OH_AVSource_CreateWithDataSource_0100, TestSize.Level2)
 {
@@ -111,9 +114,12 @@ HWTEST_F(DemuxerApiNdkTest, OH_AVSource_CreateWithDataSource_0100, TestSize.Leve
 }
 
 /**
- * @tc.number    : OH_AVSource_CreateWithDataSourceExt_0100
- * @tc.name      : OH_AVSource_CreateWithDataSourceExt_0100
- * @tc.desc      : api test
+ * @tc.name   OH_AVSource_CreateWithDataSourceExt_0100
+ * @tc.number OH_AVSource_CreateWithDataSourceExt_0100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, OH_AVSource_CreateWithDataSourceExt_0100, TestSize.Level2)
 {
@@ -130,9 +136,12 @@ HWTEST_F(DemuxerApiNdkTest, OH_AVSource_CreateWithDataSourceExt_0100, TestSize.L
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_0100
- * @tc.name      : OH_AVSource_CreateWithURI para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_0100
+ * @tc.number DEMUXER_ILLEGAL_PARA_0100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_0100, TestSize.Level2)
 {
@@ -141,9 +150,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_0100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_0200
- * @tc.name      : OH_AVSource_CreateWithFD para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_0200
+ * @tc.number DEMUXER_ILLEGAL_PARA_0200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_0200, TestSize.Level2)
 {
@@ -153,9 +165,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_0200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_0700
- * @tc.name      : OH_AVSource_CreateWithFD para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_0700
+ * @tc.number DEMUXER_ILLEGAL_PARA_0700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_0700, TestSize.Level2)
 {
@@ -165,9 +180,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_0700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_0800
- * @tc.name      : OH_AVSource_CreateWithFD para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_0800
+ * @tc.number DEMUXER_ILLEGAL_PARA_0800
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_0800, TestSize.Level2)
 {
@@ -177,9 +195,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_0800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_0300
- * @tc.name      : OH_AVSource_Destroy para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_0300
+ * @tc.number DEMUXER_ILLEGAL_PARA_0300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_0300, TestSize.Level2)
 {
@@ -187,9 +208,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_0300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_0400
- * @tc.name      : OH_AVSource_GetSourceFormat para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_0400
+ * @tc.number DEMUXER_ILLEGAL_PARA_0400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_0400, TestSize.Level2)
 {
@@ -198,9 +222,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_0400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_0500
- * @tc.name      : OH_AVSource_GetTrackFormat para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_0500
+ * @tc.number DEMUXER_ILLEGAL_PARA_0500
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_0500, TestSize.Level2)
 {
@@ -209,9 +236,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_0500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_0600
- * @tc.name      : OH_AVSource_GetSourceFormat para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_0600
+ * @tc.number DEMUXER_ILLEGAL_PARA_0600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_0600, TestSize.Level2)
 {
@@ -222,9 +252,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_0600, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_2300
- * @tc.name      : OH_AVSource_CreateWithFD para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_2300
+ * @tc.number DEMUXER_ILLEGAL_PARA_2300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_2300, TestSize.Level2)
 {
@@ -233,9 +266,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_2300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_0900
- * @tc.name      : OH_AVDemuxer_CreateWithSource para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_0900
+ * @tc.number DEMUXER_ILLEGAL_PARA_0900
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_0900, TestSize.Level2)
 {
@@ -244,9 +280,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_0900, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_1000
- * @tc.name      : OH_AVDemuxer_Destroy para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_1000
+ * @tc.number DEMUXER_ILLEGAL_PARA_1000
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1000, TestSize.Level2)
 {
@@ -254,9 +293,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_1100
- * @tc.name      : OH_AVDemuxer_SelectTrackByID para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_1100
+ * @tc.number DEMUXER_ILLEGAL_PARA_1100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1100, TestSize.Level2)
 {
@@ -264,9 +306,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_1200
- * @tc.name      : OH_AVDemuxer_SelectTrackByID para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_1200
+ * @tc.number DEMUXER_ILLEGAL_PARA_1200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1200, TestSize.Level2)
 {
@@ -277,9 +322,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_1300
- * @tc.name      : OH_AVDemuxer_UnselectTrackByID para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_1300
+ * @tc.number DEMUXER_ILLEGAL_PARA_1300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1300, TestSize.Level2)
 {
@@ -287,9 +335,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_1400
- * @tc.name      : OH_AVDemuxer_UnselectTrackByID para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_1400
+ * @tc.number DEMUXER_ILLEGAL_PARA_1400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1400, TestSize.Level2)
 {
@@ -301,9 +352,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_1500
- * @tc.name      : OH_AVDemuxer_ReadSample para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_1500
+ * @tc.number DEMUXER_ILLEGAL_PARA_1500
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1500, TestSize.Level2)
 {
@@ -313,9 +367,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_1600
- * @tc.name      : OH_AVDemuxer_ReadSample para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_1600
+ * @tc.number DEMUXER_ILLEGAL_PARA_1600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1600, TestSize.Level2)
 {
@@ -329,9 +386,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1600, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_1700
- * @tc.name      : OH_AVDemuxer_ReadSample para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_1700
+ * @tc.number DEMUXER_ILLEGAL_PARA_1700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1700, TestSize.Level2)
 {
@@ -350,9 +410,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_8600
- * @tc.name      : OH_AVDemuxer_ReadSample para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_2400
+ * @tc.number DEMUXER_ILLEGAL_PARA_8600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_2400, TestSize.Level2)
 {
@@ -370,9 +433,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_2400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_1700
- * @tc.name      : OH_AVDemuxer_ReadSample para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_2500
+ * @tc.number DEMUXER_ILLEGAL_PARA_1700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_2500, TestSize.Level2)
 {
@@ -386,9 +452,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_2500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_2600
- * @tc.name      : OH_AVDemuxer_ReadSampleBuffer para error, input null demuxer
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_2600
+ * @tc.number DEMUXER_ILLEGAL_PARA_2600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_2600, TestSize.Level2)
 {
@@ -397,9 +466,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_2600, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_2700
- * @tc.name      : OH_AVDemuxer_ReadSampleBuffer para error, input illegal trackIndex
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_2700
+ * @tc.number DEMUXER_ILLEGAL_PARA_2700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_2700, TestSize.Level2)
 {
@@ -412,9 +484,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_2700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_2800
- * @tc.name      : OH_AVDemuxer_ReadSampleBuffer para error, input buffer is not enough
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_2800
+ * @tc.number DEMUXER_ILLEGAL_PARA_2800
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_2800, TestSize.Level2)
 {
@@ -432,9 +507,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_2800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_2900
- * @tc.name      : OH_AVDemuxer_ReadSampleBuffer para error, read before select
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_2900
+ * @tc.number DEMUXER_ILLEGAL_PARA_2900
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_2900, TestSize.Level2)
 {
@@ -451,9 +529,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_2900, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_3000
- * @tc.name      : OH_AVDemuxer_ReadSampleBuffer para error, input null buffer
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_3000
+ * @tc.number DEMUXER_ILLEGAL_PARA_3000
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_3000, TestSize.Level2)
 {
@@ -466,9 +547,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_3000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_1800
- * @tc.name      : OH_AVDemuxer_ReadSample para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_1800
+ * @tc.number DEMUXER_ILLEGAL_PARA_1800
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1800, TestSize.Level2)
 {
@@ -481,9 +565,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_1900
- * @tc.name      : OH_AVDemuxer_SeekToTime para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_1900
+ * @tc.number DEMUXER_ILLEGAL_PARA_1900
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1900, TestSize.Level2)
 {
@@ -491,9 +578,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_1900, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_2100
- * @tc.name      : OH_AVMemory_Create para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_2100
+ * @tc.number DEMUXER_ILLEGAL_PARA_2100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_2100, TestSize.Level2)
 {
@@ -502,9 +592,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_2100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_2200
- * @tc.name      : OH_AVMemory_Destroy para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_ILLEGAL_PARA_2200
+ * @tc.number DEMUXER_ILLEGAL_PARA_2200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_2200, TestSize.Level2)
 {
@@ -512,9 +605,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_ILLEGAL_PARA_2200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_API_0200
- * @tc.name      : OH_AVSource_CreateWithFD Repeat Call
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_API_0200
+ * @tc.number DEMUXER_API_0200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_0200, TestSize.Level2)
 {
@@ -539,9 +635,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_0200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_API_0300
- * @tc.name      : OH_AVSource_Destroy Repeat Call
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_API_0300
+ * @tc.number DEMUXER_API_0300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_0300, TestSize.Level2)
 {
@@ -552,9 +651,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_0300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_API_0500
- * @tc.name      : OH_AVSource_GetSourceFormat Repeat Call
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_API_0500
+ * @tc.number DEMUXER_API_0500
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_0500, TestSize.Level2)
 {
@@ -568,9 +670,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_0500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_API_0700
- * @tc.name      : OH_AVSource_GetTrackFormat Repeat Call
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_API_0700
+ * @tc.number DEMUXER_API_0700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_0700, TestSize.Level2)
 {
@@ -585,9 +690,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_0700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_API_1000
- * @tc.name      : OH_AVDemuxer_Destroy Repeat Call
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_API_1000
+ * @tc.number DEMUXER_API_1000
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_1000, TestSize.Level2)
 {
@@ -603,9 +711,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_1000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_API_1100
- * @tc.name      : OH_AVDemuxer_SelectTrackByID Repeat Call
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_API_1100
+ * @tc.number DEMUXER_API_1100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_1100, TestSize.Level2)
 {
@@ -622,9 +733,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_1100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_API_1200
- * @tc.name      : OH_AVDemuxer_UnselectTrackByID Repeat Call
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_API_1200
+ * @tc.number DEMUXER_API_1200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_1200, TestSize.Level2)
 {
@@ -643,9 +757,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_1200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_API_1300
- * @tc.name      : OH_AVDemuxer_ReadSample Repeat Call
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_API_1300
+ * @tc.number DEMUXER_API_1300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_1300, TestSize.Level2)
 {
@@ -664,9 +781,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_1300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_API_1400
- * @tc.name      : OH_AVDemuxer_SeekToTime Repeat Call
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_API_1400
+ * @tc.number DEMUXER_API_1400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_1400, TestSize.Level2)
 {
@@ -685,9 +805,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_1400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_API_1500
- * @tc.name      : OH_AVMemory_Create Repeat Call
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_API_2300
+ * @tc.number DEMUXER_API_1500
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_2300, TestSize.Level2)
 {
@@ -698,9 +821,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_2300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_ILLEGAL_PARA_2200
- * @tc.name      : OH_AVMemory_Destroy para error
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_API_2400
+ * @tc.number DEMUXER_ILLEGAL_PARA_2200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_2400, TestSize.Level2)
 {
@@ -711,9 +837,12 @@ HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_2400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_API_2500
- * @tc.name      : OH_AVDemuxer_ReadSampleBuffer Repeat Call
- * @tc.desc      : api test
+ * @tc.name   DEMUXER_API_2500
+ * @tc.number DEMUXER_API_2500
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerApiNdkTest, DEMUXER_API_2500, TestSize.Level2)
 {

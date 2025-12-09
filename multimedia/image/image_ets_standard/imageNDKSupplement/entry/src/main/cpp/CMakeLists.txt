@@ -22,6 +22,7 @@ add_library(imageEffect SHARED
     ImageEffectSuppTest.cpp
     AccessPixelsTest.cpp
     OHImageErrorSuppTest.cpp)
+    OHEffectFilterInfoSupplementTest.cpp)
 
 find_library(
     # Sets the name of the path variable.

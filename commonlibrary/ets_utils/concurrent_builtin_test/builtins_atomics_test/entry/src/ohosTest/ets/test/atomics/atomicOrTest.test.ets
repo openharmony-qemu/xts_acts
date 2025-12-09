@@ -10,12 +10,12 @@ export default function atomicsOrTest() {
     })
 
     /**
+     * @tc.name   atomicsOrTest001
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_001
-     * @tc.name atomicsOrTest001
-     * @tc.desc Basic Int32Array OR operation, return old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Basic Int32Array OR operation, return old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsOrTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -27,12 +27,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest002
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_002
-     * @tc.name atomicsOrTest002
-     * @tc.desc BigInt64Array OR operation with negative value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   BigInt64Array OR operation with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsOrTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -44,12 +44,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest003
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_003
-     * @tc.name atomicsOrTest003
-     * @tc.desc OR with 0, keep original value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   OR with 0, keep original value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsOrTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -61,12 +61,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest004
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_004
-     * @tc.name atomicsOrTest004
-     * @tc.desc OR with all 1s (0xFFFFFFFF), result in -1 for Int32
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   OR with all 1s (0xFFFFFFFF), result in -1 for Int32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsOrTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -78,12 +78,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest005
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_005
-     * @tc.name atomicsOrTest005
-     * @tc.desc OR on Int32Array index 1 (multi-element buffer)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   OR on Int32Array index 1 (multi-element buffer)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsOrTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -97,12 +97,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest006
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_006
-     * @tc.name atomicsOrTest006
-     * @tc.desc Throw TypeError for non-shared ArrayBuffer (Int32Array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw TypeError for non-shared ArrayBuffer (Int32Array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const ab = new ArrayBuffer(4);
@@ -115,12 +115,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest007
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_007
-     * @tc.name atomicsOrTest007
-     * @tc.desc Throw TypeError for non-shared ArrayBuffer (BigInt64Array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw TypeError for non-shared ArrayBuffer (BigInt64Array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const ab = new ArrayBuffer(8);
@@ -133,12 +133,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest008
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_008
-     * @tc.name atomicsOrTest008
-     * @tc.desc Throw TypeError for Uint32Array (not allowed type)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw TypeError for Uint32Array (not allowed type)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -151,12 +151,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest009
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_009
-     * @tc.name atomicsOrTest009
-     * @tc.desc Throw TypeError for Float32Array (not allowed type)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw TypeError for Float32Array (not allowed type)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -177,12 +177,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest010
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_010
-     * @tc.name atomicsOrTest010
-     * @tc.desc Throw RangeError for index >= array length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw RangeError for index >= array length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -195,12 +195,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest011
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_011
-     * @tc.name atomicsOrTest011
-     * @tc.desc Throw RangeError for negative index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw RangeError for negative index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -213,12 +213,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest012
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_012
-     * @tc.name atomicsOrTest012
-     * @tc.desc OR with BigInt64Array and large value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   OR with BigInt64Array and large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsOrTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -230,12 +230,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest013
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_013
-     * @tc.name atomicsOrTest013
-     * @tc.desc OR twice on same index, accumulate bits
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   OR twice on same index, accumulate bits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsOrTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -252,12 +252,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest014
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_014
-     * @tc.name atomicsOrTest014
-     * @tc.desc OR with Int32Array and zero old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   OR with Int32Array and zero old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsOrTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -269,12 +269,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest015
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_015
-     * @tc.name atomicsOrTest015
-     * @tc.desc OR with BigInt64Array and zero old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   OR with BigInt64Array and zero old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsOrTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -286,12 +286,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest016
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_016
-     * @tc.name atomicsOrTest016
-     * @tc.desc OR with non-integer value (coerced to integer) for Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   OR with non-integer value (coerced to integer) for Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -303,12 +303,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest017
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_017
-     * @tc.name atomicsOrTest017
-     * @tc.desc OR with non-BigInt value (coerced to BigInt) for BigInt64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   OR with non-BigInt value (coerced to BigInt) for BigInt64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -320,12 +320,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest018
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_018
-     * @tc.name atomicsOrTest018
-     * @tc.desc OR on Int32Array with maximum value (0x7FFFFFFF)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   OR on Int32Array with maximum value (0x7FFFFFFF)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsOrTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -337,12 +337,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest019
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_019
-     * @tc.name atomicsOrTest019
-     * @tc.desc OR on BigInt64Array with maximum value (2^63 - 1n)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   OR on BigInt64Array with maximum value (2^63 - 1n)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsOrTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -354,12 +354,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest020
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_020
-     * @tc.name atomicsOrTest020
-     * @tc.desc OR with arrow function wrapper, return old value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   OR with arrow function wrapper, return old value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -372,12 +372,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest021
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_021
-     * @tc.name atomicsOrTest021
-     * @tc.desc Nested arrow functions: OR inside inner function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Nested arrow functions: OR inside inner function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -395,12 +395,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest022
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_022
-     * @tc.name atomicsOrTest022
-     * @tc.desc OR with BigInt64Array in arrow function, handle negative mask
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   OR with BigInt64Array in arrow function, handle negative mask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -413,12 +413,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest023
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_023
-     * @tc.name atomicsOrTest023
-     * @tc.desc Throw TypeError for non-typed array object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw TypeError for non-typed array object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -436,12 +436,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest024
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_024
-     * @tc.name atomicsOrTest024
-     * @tc.desc OR on Int32Array with mask having single set bit
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   OR on Int32Array with mask having single set bit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsOrTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -454,12 +454,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest025
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_025
-     * @tc.name atomicsOrTest025
-     * @tc.desc OR on BigInt64Array with mask having single set bit
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   OR on BigInt64Array with mask having single set bit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsOrTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -472,12 +472,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest026
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_026
-     * @tc.name atomicsOrTest026
-     * @tc.desc Arrow function to batch OR on multiple indexes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Arrow function to batch OR on multiple indexes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -496,12 +496,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest027
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_027
-     * @tc.name atomicsOrTest027
-     * @tc.desc OR with Int32Array and mask=0, no change to value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   OR with Int32Array and mask=0, no change to value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsOrTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -513,12 +513,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest028
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_028
-     * @tc.name atomicsOrTest028
-     * @tc.desc OR with BigInt64Array and mask=0n, no change to value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   OR with BigInt64Array and mask=0n, no change to value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsOrTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -530,12 +530,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest029
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_029
-     * @tc.name atomicsOrTest029
-     * @tc.desc Nested arrow functions: OR with dynamic mask
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Nested arrow functions: OR with dynamic mask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -554,12 +554,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest030
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_030
-     * @tc.name atomicsOrTest030
-     * @tc.desc Throw RangeError for non-integer index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw RangeError for non-integer index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -572,12 +572,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest031
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_031
-     * @tc.name atomicsOrTest031
-     * @tc.desc OR on Int32Array with mask exceeding 32 bits (truncated)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   OR on Int32Array with mask exceeding 32 bits (truncated)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -590,12 +590,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest032
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_032
-     * @tc.name atomicsOrTest032
-     * @tc.desc OR on BigInt64Array with mask exceeding 64 bits (truncated)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   OR on BigInt64Array with mask exceeding 64 bits (truncated)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -608,12 +608,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest033
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_033
-     * @tc.name atomicsOrTest033
-     * @tc.desc Arrow function wrapper for BigInt64Array OR with dynamic value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Arrow function wrapper for BigInt64Array OR with dynamic value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -632,12 +632,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest034
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_034
-     * @tc.name atomicsOrTest034
-     * @tc.desc OR on Int32Array with mask=0xFFFFFFFF (all bits set)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   OR on Int32Array with mask=0xFFFFFFFF (all bits set)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsOrTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -649,12 +649,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest035
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_035
-     * @tc.name atomicsOrTest035
-     * @tc.desc OR on BigInt64Array with mask=0xFFFFFFFFFFFFFFFFn (all bits set)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   OR on BigInt64Array with mask=0xFFFFFFFFFFFFFFFFn (all bits set)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('atomicsOrTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8);
@@ -666,12 +666,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest036
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_036
-     * @tc.name atomicsOrTest036
-     * @tc.desc Nested arrow functions: OR with bitwise shift in inner function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Nested arrow functions: OR with bitwise shift in inner function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -692,12 +692,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest037
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_037
-     * @tc.name atomicsOrTest037
-     * @tc.desc OR on Int32Array with mask from arrow function return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   OR on Int32Array with mask from arrow function return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -710,12 +710,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest038
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_038
-     * @tc.name atomicsOrTest038
-     * @tc.desc OR on BigInt64Array with mask from arrow function return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   OR on BigInt64Array with mask from arrow function return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -728,12 +728,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest039
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_039
-     * @tc.name atomicsOrTest039
-     * @tc.desc Throw TypeError for Int8Array (not allowed typed array type)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw TypeError for Int8Array (not allowed typed array type)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(1);
@@ -746,12 +746,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest040
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_040
-     * @tc.name atomicsOrTest040
-     * @tc.desc Throw TypeError for Uint16Array (not allowed typed array type)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Throw TypeError for Uint16Array (not allowed typed array type)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(2);
@@ -764,12 +764,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest041
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_041
-     * @tc.name atomicsOrTest041
-     * @tc.desc OR on Int32Array with mask=0x80000000 (sign bit), flip sign
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   OR on Int32Array with mask=0x80000000 (sign bit), flip sign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -781,12 +781,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest042
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_042
-     * @tc.name atomicsOrTest042
-     * @tc.desc OR on BigInt64Array with mask=0x8000000000000000n (sign bit), flip sign
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   OR on BigInt64Array with mask=0x8000000000000000n (sign bit), flip sign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -798,12 +798,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest043
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_043
-     * @tc.name atomicsOrTest043
-     * @tc.desc Nested arrow functions: OR with mask from outer variable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Nested arrow functions: OR with mask from outer variable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -822,12 +822,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest044
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_044
-     * @tc.name atomicsOrTest044
-     * @tc.desc Arrow function to chain OR operations on same index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Arrow function to chain OR operations on same index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -844,12 +844,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest045
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_045
-     * @tc.name atomicsOrTest045
-     * @tc.desc Arrow function to chain OR operations on BigInt64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Arrow function to chain OR operations on BigInt64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -869,12 +869,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest046
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_046
-     * @tc.name atomicsOrTest046
-     * @tc.desc OR on Int32Array with mask=NaN (coerced to 0)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   OR on Int32Array with mask=NaN (coerced to 0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -886,12 +886,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest047
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_047
-     * @tc.name atomicsOrTest047
-     * @tc.desc OR on BigInt64Array with mask=NaN (coerced to 0n)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   OR on BigInt64Array with mask=NaN (coerced to 0n)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -903,12 +903,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest048
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_048
-     * @tc.name atomicsOrTest048
-     * @tc.desc Nested arrow functions: OR with conditional mask
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Nested arrow functions: OR with conditional mask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -926,12 +926,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest049
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_049
-     * @tc.name atomicsOrTest049
-     * @tc.desc OR on Int32Array with mask=Infinity (coerced to 0)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   OR on Int32Array with mask=Infinity (coerced to 0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -943,12 +943,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest050
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_050
-     * @tc.name atomicsOrTest050
-     * @tc.desc OR on BigInt64Array with mask=Infinity (coerced to 0n)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   OR on BigInt64Array with mask=Infinity (coerced to 0n)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('atomicsOrTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);
@@ -959,12 +959,12 @@ export default function atomicsOrTest() {
       expect(ba[0]).assertEqual(9n); // No change (OR with 0n)
     });
     /**
+     * @tc.name   atomicsOrTest051
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_051
-     * @tc.name atomicsOrTest051
-     * @tc.desc Async OR with Promise wrapper, return old value in resolve
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async OR with Promise wrapper, return old value in resolve
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -986,12 +986,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest052
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_052
-     * @tc.name atomicsOrTest052
-     * @tc.desc Nested async: OR inside inner Promise, chain with outer resolve
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: OR inside inner Promise, chain with outer resolve
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1019,12 +1019,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest053
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_053
-     * @tc.name atomicsOrTest053
-     * @tc.desc Promise.all with multiple OR operations on different indexes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.all with multiple OR operations on different indexes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1053,12 +1053,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest054
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_054
-     * @tc.name atomicsOrTest054
-     * @tc.desc Async OR with arrow function closure, capture mask and index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async OR with arrow function closure, capture mask and index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1083,12 +1083,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest055
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_055
-     * @tc.name atomicsOrTest055
-     * @tc.desc Nested async: OR with retry on invalid mask (coerce and retry)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: OR with retry on invalid mask (coerce and retry)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1117,12 +1117,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest056
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_056
-     * @tc.name atomicsOrTest056
-     * @tc.desc Promise.race between two OR operations on same index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.race between two OR operations on same index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1152,12 +1152,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest057
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_057
-     * @tc.name atomicsOrTest057
-     * @tc.desc Async OR with finally block to log operation result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async OR with finally block to log operation result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1186,12 +1186,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest058
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_058
-     * @tc.name atomicsOrTest058
-     * @tc.desc Nested arrow functions: async OR with dynamic mask from API mock
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async OR with dynamic mask from API mock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1219,12 +1219,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest059
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_059
-     * @tc.name atomicsOrTest059
-     * @tc.desc Promise.allSettled with valid and invalid OR tasks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.allSettled with valid and invalid OR tasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1256,12 +1256,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest060
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_060
-     * @tc.name atomicsOrTest060
-     * @tc.desc Async OR with closure that tracks operation history
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async OR with closure that tracks operation history
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1297,12 +1297,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest061
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_061
-     * @tc.name atomicsOrTest061
-     * @tc.desc Nested async: OR with pre-validation in outer Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: OR with pre-validation in outer Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1336,12 +1336,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest062
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_062
-     * @tc.name atomicsOrTest062
-     * @tc.desc Async OR with Promise chain: validate → OR → log result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async OR with Promise chain: validate → OR → log result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1389,12 +1389,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest063
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_063
-     * @tc.name atomicsOrTest063
-     * @tc.desc Nested arrow functions: async OR with dynamic index from closure
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async OR with dynamic index from closure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1422,12 +1422,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest064
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_064
-     * @tc.name atomicsOrTest064
-     * @tc.desc Promise.race between OR and timeout, return OR result first
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.race between OR and timeout, return OR result first
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1451,12 +1451,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest065
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_065
-     * @tc.name atomicsOrTest065
-     * @tc.desc Async OR with error handling for invalid index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async OR with error handling for invalid index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1484,12 +1484,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest066
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_066
-     * @tc.name atomicsOrTest066
-     * @tc.desc Nested async: OR with batch mask application via Promise.all
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: OR with batch mask application via Promise.all
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(12);
@@ -1520,12 +1520,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest067
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_067
-     * @tc.name atomicsOrTest067
-     * @tc.desc Async OR with closure that enforces mask limit
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async OR with closure that enforces mask limit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1553,12 +1553,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest068
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_068
-     * @tc.name atomicsOrTest068
-     * @tc.desc Nested arrow functions: async OR with mask from outer Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async OR with mask from outer Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1588,12 +1588,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest069
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_069
-     * @tc.name atomicsOrTest069
-     * @tc.desc Promise.all with OR and state check tasks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.all with OR and state check tasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1622,12 +1622,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest070
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_070
-     * @tc.name atomicsOrTest070
-     * @tc.desc Async OR with retry on detached SharedArrayBuffer (fallback)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async OR with retry on detached SharedArrayBuffer (fallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1647,12 +1647,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest072
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_072
-     * @tc.name atomicsOrTest072
-     * @tc.desc Async OR with closure that logs mask usage
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async OR with closure that logs mask usage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1683,12 +1683,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest073
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_073
-     * @tc.name atomicsOrTest073
-     * @tc.desc Nested arrow functions: async OR with conditional mask selection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async OR with conditional mask selection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1723,12 +1723,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest074
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_074
-     * @tc.name atomicsOrTest074
-     * @tc.desc Promise.allSettled with OR tasks on different typed arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.allSettled with OR tasks on different typed arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1760,12 +1760,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest075
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_075
-     * @tc.name atomicsOrTest075
-     * @tc.desc Async OR with closure that enforces value range after operation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async OR with closure that enforces value range after operation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1804,12 +1804,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest076
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_076
-     * @tc.name atomicsOrTest076
-     * @tc.desc Nested async: OR with mask derived from previous OR result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: OR with mask derived from previous OR result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1842,12 +1842,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest077
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_077
-     * @tc.name atomicsOrTest077
-     * @tc.desc Promise.race between two OR tasks with different masks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.race between two OR tasks with different masks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -1877,12 +1877,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest078
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_078
-     * @tc.name atomicsOrTest078
-     * @tc.desc Async OR with error handling for non-shared buffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async OR with error handling for non-shared buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const ab = new ArrayBuffer(4); // Non-shared buffer
@@ -1909,12 +1909,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest079
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_079
-     * @tc.name atomicsOrTest079
-     * @tc.desc Nested arrow functions: async OR with batch mask validation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async OR with batch mask validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -1959,12 +1959,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest080
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_080
-     * @tc.name atomicsOrTest080
-     * @tc.desc Async OR with closure that tracks operation success rate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async OR with closure that tracks operation success rate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2002,12 +2002,12 @@ export default function atomicsOrTest() {
       expect(ia[0]).assertEqual(7); // 0 | 1 | 2 | 4 | 0 = 7
     });
     /**
+     * @tc.name   atomicsOrTest081
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_081
-     * @tc.name atomicsOrTest081
-     * @tc.desc Nested async: OR with mask from external async API
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: OR with mask from external async API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2036,12 +2036,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest082
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_082
-     * @tc.name atomicsOrTest082
-     * @tc.desc Promise.all with OR and cleanup tasks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.all with OR and cleanup tasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2071,12 +2071,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest083
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_083
-     * @tc.name atomicsOrTest083
-     * @tc.desc Async OR with closure that skips duplicate masks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async OR with closure that skips duplicate masks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2111,12 +2111,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest084
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_084
-     * @tc.name atomicsOrTest084
-     * @tc.desc Nested arrow functions: async OR with mask validation in inner function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async OR with mask validation in inner function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2148,12 +2148,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest085
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_085
-     * @tc.name atomicsOrTest085
-     * @tc.desc Promise.race between OR and value change task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.race between OR and value change task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2185,12 +2185,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest086
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_086
-     * @tc.name atomicsOrTest086
-     * @tc.desc Async OR with error handling for invalid mask type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async OR with error handling for invalid mask type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2221,12 +2221,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest087
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_087
-     * @tc.name atomicsOrTest087
-     * @tc.desc Nested async: OR with batch mask application and result aggregation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: OR with batch mask application and result aggregation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(12);
@@ -2257,12 +2257,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest088
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_088
-     * @tc.name atomicsOrTest088
-     * @tc.desc Async OR with closure that tracks cumulative mask
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async OR with closure that tracks cumulative mask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2292,12 +2292,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest089
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_089
-     * @tc.name atomicsOrTest089
-     * @tc.desc Nested arrow functions: async OR with mask from closure state
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async OR with mask from closure state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2328,12 +2328,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest090
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_090
-     * @tc.name atomicsOrTest090
-     * @tc.desc Promise.allSettled with OR tasks on same index (different masks)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.allSettled with OR tasks on same index (different masks)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2355,12 +2355,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest091
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_091
-     * @tc.name atomicsOrTest091
-     * @tc.desc Async OR with retry on mask overflow (coerce and retry)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async OR with retry on mask overflow (coerce and retry)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2389,12 +2389,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest092
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_092
-     * @tc.name atomicsOrTest092
-     * @tc.desc Nested async: OR with mask validation and fallback mask
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: OR with mask validation and fallback mask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2427,12 +2427,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest093
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_093
-     * @tc.name atomicsOrTest093
-     * @tc.desc Promise.race between OR and timeout (timeout wins)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.race between OR and timeout (timeout wins)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2459,12 +2459,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest094
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_094
-     * @tc.name atomicsOrTest094
-     * @tc.desc Async OR with closure that enforces unique mask usage
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async OR with closure that enforces unique mask usage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2503,12 +2503,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest095
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_095
-     * @tc.name atomicsOrTest095
-     * @tc.desc Nested arrow functions: async OR with mask from promise chain
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested arrow functions: async OR with mask from promise chain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2539,12 +2539,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest096
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_096
-     * @tc.name atomicsOrTest096
-     * @tc.desc Promise.all with OR and state validation tasks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.all with OR and state validation tasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2573,12 +2573,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest097
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_097
-     * @tc.name atomicsOrTest097
-     * @tc.desc Async OR with closure that logs operation timestamps
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Async OR with closure that logs operation timestamps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2610,12 +2610,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest098
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_098
-     * @tc.name atomicsOrTest098
-     * @tc.desc Nested async: OR with mask derived from array value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nested async: OR with mask derived from array value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(4);
@@ -2647,12 +2647,12 @@ export default function atomicsOrTest() {
     });
 
     /**
+     * @tc.name   atomicsOrTest099
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_099
-     * @tc.name atomicsOrTest099
-     * @tc.desc Promise.allSettled with OR tasks on detached and valid buffers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.allSettled with OR tasks on detached and valid buffers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
@@ -2668,12 +2668,12 @@ export default function atomicsOrTest() {
       expect(ba[0]).assertEqual(0b00110101n); // A(1), C(0→1), D(1), E(1)
     });
     /**
+     * @tc.name   atomicsOrTest0100
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_0100
-     * @tc.name atomicsOrTest0100
-     * @tc.desc Promise.allSettled with OR tasks on detached and valid buffers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Promise.allSettled with OR tasks on detached and valid buffers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('atomicsOrTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab32 = new SharedArrayBuffer(4);

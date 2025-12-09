@@ -20,7 +20,8 @@ import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
 import { Driver } from '@ohos.UiTest';
-import { SavePhoto, GetUri } from './ContactTestUtil.test';
+import { SavePhoto, GetUri, GetPixelMap } from './ContactTestUtil.test';
+import { image } from '@kit.ImageKit';
 
 function sleep (time:number):Promise<string>{
   return new Promise<string>((resolve)=>{
@@ -204,12 +205,12 @@ export default function UpdateContactTest() {
     };
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_0100
-     * @tc.name       : testTelephonyContactUpdateContact0100
-     * @tc.desc       : Update a contacts and useing the callback10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactUpdateContact0100
+     * @tc.number SUB_Telephony_Contact_UpdateContact_0100
+     * @tc.desc   Update a contacts and useing the callback10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactUpdateContact0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact0100";
@@ -288,12 +289,12 @@ export default function UpdateContactTest() {
 
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_0600
-     * @tc.name       : testTelephonyContactUpdateContact0600
-     * @tc.desc       : Update a contacts and useing the callback10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact0600
+     * @tc.number SUB_Telephony_Contact_UpdateContact_0600
+     * @tc.desc   Update a contacts and useing the callback10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact0600";
@@ -364,12 +365,12 @@ export default function UpdateContactTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_0700
-     * @tc.name       : testTelephonyContactUpdateContact0700
-     * @tc.desc       : Update a contacts and useing the callback10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact0700
+     * @tc.number SUB_Telephony_Contact_UpdateContact_0700
+     * @tc.desc   Update a contacts and useing the callback10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact0700";
@@ -452,12 +453,12 @@ export default function UpdateContactTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_0800
-     * @tc.name       : testTelephonyContactUpdateContact0800
-     * @tc.desc       : Update a contacts and useing the callback10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact0800
+     * @tc.number SUB_Telephony_Contact_UpdateContact_0800
+     * @tc.desc   Update a contacts and useing the callback10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact0800";
@@ -515,12 +516,12 @@ export default function UpdateContactTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_0900
-     * @tc.name       : testTelephonyContactUpdateContact0900
-     * @tc.desc       : Update a contacts and useing the callback10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact0900
+     * @tc.number SUB_Telephony_Contact_UpdateContact_0900
+     * @tc.desc   Update a contacts and useing the callback10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact0900";
@@ -585,12 +586,12 @@ export default function UpdateContactTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_1100
-     * @tc.name       : testTelephonyContactUpdateContact1100
-     * @tc.desc       : Update a contacts and useing the callback10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact1100
+     * @tc.number SUB_Telephony_Contact_UpdateContact_1100
+     * @tc.desc   Update a contacts and useing the callback10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact1100";
@@ -644,12 +645,12 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_1200
-     * @tc.name       : testTelephonyContactUpdateContact1200
-     * @tc.desc       : Update a contacts and useing the callback10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact1200
+     * @tc.number SUB_Telephony_Contact_UpdateContact_1200
+     * @tc.desc   Update a contacts and useing the callback10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact1200";
@@ -717,12 +718,12 @@ export default function UpdateContactTest() {
 
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_1300
-     * @tc.name       : testTelephonyContactUpdateContact1300
-     * @tc.desc       : Update a contacts and useing the callback10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactUpdateContact1300
+     * @tc.number SUB_Telephony_Contact_UpdateContact_1300
+     * @tc.desc   Update a contacts and useing the callback10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactUpdateContact1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact1300";
@@ -801,12 +802,12 @@ export default function UpdateContactTest() {
 
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_1800
-     * @tc.name       : testTelephonyContactUpdateContact1800
-     * @tc.desc       : Update a contacts and useing the callback10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact1800
+     * @tc.number SUB_Telephony_Contact_UpdateContact_1800
+     * @tc.desc   Update a contacts and useing the callback10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact1800";
@@ -879,12 +880,12 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_1900
-     * @tc.name       : testTelephonyContactUpdateContact1900
-     * @tc.desc       : Update a contacts and useing the callback10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact1900
+     * @tc.number SUB_Telephony_Contact_UpdateContact_1900
+     * @tc.desc   Update a contacts and useing the callback10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact1900";
@@ -967,12 +968,12 @@ export default function UpdateContactTest() {
       console.info(`${caseName} end`);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_2000
-     * @tc.name       : testTelephonyContactUpdateContact2000
-     * @tc.desc       : Update a contacts and useing the callback10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact2000
+     * @tc.number SUB_Telephony_Contact_UpdateContact_2000
+     * @tc.desc   Update a contacts and useing the callback10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact2000";
@@ -1039,12 +1040,12 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_2100
-     * @tc.name       : testTelephonyContactUpdateContact2100
-     * @tc.desc       : Update a contacts and useing the callback10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact2100
+     * @tc.number SUB_Telephony_Contact_UpdateContact_2100
+     * @tc.desc   Update a contacts and useing the callback10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact2100";
@@ -1128,12 +1129,12 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_2200
-     * @tc.name       : testTelephonyContactUpdateContact2200
-     * @tc.desc       : Update a contacts and useing the callback10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact2200
+     * @tc.number SUB_Telephony_Contact_UpdateContact_2200
+     * @tc.desc   Update a contacts and useing the callback10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact2200";
@@ -1208,12 +1209,12 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_2300
-     * @tc.name       : testTelephonyContactUpdateContact2300
-     * @tc.desc       : Update a contacts and useing the callback10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact2300
+     * @tc.number SUB_Telephony_Contact_UpdateContact_2300
+     * @tc.desc   Update a contacts and useing the callback10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact2300";
@@ -1288,12 +1289,12 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_2400
-     * @tc.name       : testTelephonyContactUpdateContact2400
-     * @tc.desc       : Update a contacts and useing the callback10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact2400
+     * @tc.number SUB_Telephony_Contact_UpdateContact_2400
+     * @tc.desc   Update a contacts and useing the callback10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact2400";
@@ -1368,12 +1369,12 @@ export default function UpdateContactTest() {
 
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_2500
-     * @tc.name       : testTelephonyContactUpdateContact2500
-     * @tc.desc       : Update a contacts and useing the promise10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactUpdateContact2500
+     * @tc.number SUB_Telephony_Contact_UpdateContact_2500
+     * @tc.desc   Update a contacts and useing the promise10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactUpdateContact2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact2500";
@@ -1449,12 +1450,12 @@ export default function UpdateContactTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_3000
-     * @tc.name       : testTelephonyContactUpdateContact3000
-     * @tc.desc       : Update a contacts and useing the promise10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact3000
+     * @tc.number SUB_Telephony_Contact_UpdateContact_3000
+     * @tc.desc   Update a contacts and useing the promise10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact3000";
@@ -1526,12 +1527,12 @@ export default function UpdateContactTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_3100
-     * @tc.name       : testTelephonyContactUpdateContact3100
-     * @tc.desc       : Update a contacts and useing the promise10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact3100
+     * @tc.number SUB_Telephony_Contact_UpdateContact_3100
+     * @tc.desc   Update a contacts and useing the promise10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact3100";
@@ -1613,12 +1614,12 @@ export default function UpdateContactTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_3200
-     * @tc.name       : testTelephonyContactUpdateContact3200
-     * @tc.desc       : Update a contacts and useing the promise10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact3200
+     * @tc.number SUB_Telephony_Contact_UpdateContact_3200
+     * @tc.desc   Update a contacts and useing the promise10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact3200";
@@ -1682,12 +1683,12 @@ export default function UpdateContactTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_3300
-     * @tc.name       : testTelephonyContactUpdateContact3300
-     * @tc.desc       : Update a contacts and useing the promise10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact3300
+     * @tc.number SUB_Telephony_Contact_UpdateContact_3300
+     * @tc.desc   Update a contacts and useing the promise10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact3300";
@@ -1770,12 +1771,12 @@ export default function UpdateContactTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_3400
-     * @tc.name       : testTelephonyContactUpdateContact3400
-     * @tc.desc       : Update a contacts and useing the promise10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact3400
+     * @tc.number SUB_Telephony_Contact_UpdateContact_3400
+     * @tc.desc   Update a contacts and useing the promise10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact3400";
@@ -1848,12 +1849,12 @@ export default function UpdateContactTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_3500
-     * @tc.name       : testTelephonyContactUpdateContact3500
-     * @tc.desc       : Update a contacts and useing the promise10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact3500
+     * @tc.number SUB_Telephony_Contact_UpdateContact_3500
+     * @tc.desc   Update a contacts and useing the promise10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact3500";
@@ -1927,12 +1928,12 @@ export default function UpdateContactTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_UpdateContact_3600
-     * @tc.name       : testTelephonyContactUpdateContact3600
-     * @tc.desc       : Update a contacts and useing the promise10 method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactUpdateContact3600
+     * @tc.number SUB_Telephony_Contact_UpdateContact_3600
+     * @tc.desc   Update a contacts and useing the promise10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactUpdateContact3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactUpdateContact3600";
@@ -2001,6 +2002,306 @@ export default function UpdateContactTest() {
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
         ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testTelephonyContactUpdateContact3700
+     * @tc.number SUB_Telephony_Contact_UpdateContact_3700
+     * @tc.desc   Update a contacts and useing the promise10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactUpdateContact3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testTelephonyContactUpdateContact3700";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let pixelMap: image.PixelMap = await GetPixelMap();
+        sleep(500);
+        contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+          if (addErr) {
+            console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`${caseName} addContact: success data->${JSON.stringify(addData)}`);
+            expect(addData > 0).assertTrue();
+            contact.queryKey(context, addData, (keyErr: BusinessError, keyData: string) => {
+              if (keyErr) {
+                console.info(`${caseName} queryKey: err->${JSON.stringify(keyErr)}`);
+                expect().assertFail();
+                done();
+              } else {
+                console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+                expect(keyData.length > 0).assertTrue();
+                sleep(500);
+                let promise = contact.updateContact(context, {
+                  id: addData,
+                  key: keyData,
+                  phoneNumbers: [{
+                    phoneNumber: "10086"
+                  }],
+                  portrait: {
+                    uri: '',
+                    photo: pixelMap
+                  },
+                }, {
+                  attributes: attr.attributes
+                });
+                promise.then((updateDate) => {
+                  console.info(`${caseName} updateContact: success data->${JSON.stringify(updateDate)}`);
+                  contact.queryContact(context, keyData, (queryErr: BusinessError, queryData: contact.Contact) => {
+                    if (queryErr) {
+                      console.info(`${caseName} queryContact: err->${JSON.stringify(queryErr)}`);
+                      expect().assertFail();
+                      done();
+                    } else {
+                      console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
+                      let resDate: contact.Contact = queryData;
+                      if (resDate.phoneNumbers !== undefined) {
+                        let phoneNumbers: contact.PhoneNumber[] = resDate.phoneNumbers
+                        if (phoneNumbers[0].phoneNumber !== undefined) {
+                          let phoneNumber = phoneNumbers[0].phoneNumber
+                          expect(phoneNumber === "10086").assertTrue();
+                          done();
+                        }
+                      } else {
+                        expect().assertFail();
+                        done();
+                      }
+                    }
+                  });
+                }).catch((err: BusinessError) => {
+                  console.info(`${caseName} updateContact: err->${JSON.stringify(err)}`);
+                  expect().assertFail();
+                  done();
+                });
+              }
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testTelephonyContactUpdateContact3800
+     * @tc.number SUB_Telephony_Contact_UpdateContact_3800
+     * @tc.desc   Update a contacts and useing the promise10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactUpdateContact3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testTelephonyContactUpdateContact3800";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
+        contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+          if (addErr) {
+            console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`${caseName} addContact: success data->${JSON.stringify(addData)}`);
+            expect(addData > 0).assertTrue();
+            contact.queryKey(context, addData, (keyErr: BusinessError, keyData: string) => {
+              if (keyErr) {
+                console.info(`${caseName} queryKey: err->${JSON.stringify(keyErr)}`);
+                expect().assertFail();
+                done();
+              } else {
+                console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+                expect(keyData.length > 0).assertTrue();
+                sleep(500);
+                let uri = GetUri(fileName);
+                let promise = contact.updateContact(context, {
+                  id: addData,
+                  key: keyData,
+                  phoneNumbers: [{
+                    phoneNumber: "10086"
+                  }],
+                  portrait: {
+                    uri: uri,
+                  },
+                }, {
+                  attributes: attr.attributes
+                });
+                promise.then((updateDate) => {
+                  console.info(`${caseName} updateContact: success data->${JSON.stringify(updateDate)}`);
+                  contact.queryContact(context, keyData, (queryErr: BusinessError, queryData: contact.Contact) => {
+                    if (queryErr) {
+                      console.info(`${caseName} queryContact: err->${JSON.stringify(queryErr)}`);
+                      expect().assertFail();
+                      done();
+                    } else {
+                      console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
+                      let resDate: contact.Contact = queryData;
+                      if (resDate.phoneNumbers !== undefined) {
+                        let phoneNumbers: contact.PhoneNumber[] = resDate.phoneNumbers
+                        if (phoneNumbers[0].phoneNumber !== undefined) {
+                          let phoneNumber = phoneNumbers[0].phoneNumber
+                          expect(phoneNumber === "10086").assertTrue();
+                          done();
+                        }
+                      } else {
+                        expect().assertFail();
+                        done();
+                      }
+                    }
+                  });
+                }).catch((err: BusinessError) => {
+                  console.info(`${caseName} updateContact: err->${JSON.stringify(err)}`);
+                  expect().assertFail();
+                  done();
+                });
+              }
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testTelephonyContactUpdateContact3900
+     * @tc.number SUB_Telephony_Contact_UpdateContact_3900
+     * @tc.desc   Update a contacts and useing the promise10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactUpdateContact3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testTelephonyContactUpdateContact3900";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
+        contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+          if (addErr) {
+            console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`${caseName} addContact: success data->${JSON.stringify(addData)}`);
+            expect(addData > 0).assertTrue();
+            contact.queryKey(context, addData, (keyErr: BusinessError, keyData: string) => {
+              if (keyErr) {
+                console.info(`${caseName} queryKey: err->${JSON.stringify(keyErr)}`);
+                expect().assertFail();
+                done();
+              } else {
+                console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+                expect(keyData.length > 0).assertTrue();
+                sleep(500);
+                let uri = 'test';
+                let promise = contact.updateContact(context, {
+                  id: addData,
+                  key: keyData,
+                  phoneNumbers: [{
+                    phoneNumber: "10086"
+                  }],
+                  portrait: {
+                    uri: uri,
+                  },
+                }, {
+                  attributes: attr.attributes
+                });
+                promise.then((updateDate) => {
+                  console.info(`${caseName} updateContact: success data->${JSON.stringify(updateDate)}`);
+                  expect().assertFail();
+                  done();
+                }).catch((err: BusinessError) => {
+                  console.info(`${caseName} updateContact: err->${JSON.stringify(err)}`);
+                  expect(err.code === 401).assertTrue();
+                  done();
+                });
+              }
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testTelephonyContactUpdateContact4000
+     * @tc.number SUB_Telephony_Contact_UpdateContact_4000
+     * @tc.desc   Update a contacts and useing the promise10 method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactUpdateContact4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testTelephonyContactUpdateContact4000";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
+        contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+          if (addErr) {
+            console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`${caseName} addContact: success data->${JSON.stringify(addData)}`);
+            expect(addData > 0).assertTrue();
+            contact.queryKey(context, addData, (keyErr: BusinessError, keyData: string) => {
+              if (keyErr) {
+                console.info(`${caseName} queryKey: err->${JSON.stringify(keyErr)}`);
+                expect().assertFail();
+                done();
+              } else {
+                console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+                expect(keyData.length > 0).assertTrue();
+                sleep(500);
+                let uri = 'test';
+                let promise = contact.updateContact(context, {
+                  id: addData,
+                  key: keyData,
+                  phoneNumbers: [{
+                    phoneNumber: "10086"
+                  }],
+                  portrait: {
+                    uri: uri,
+                    photo: undefined
+                  },
+                }, {
+                  attributes: attr.attributes
+                });
+                promise.then((updateDate) => {
+                  console.info(`${caseName} updateContact: success data->${JSON.stringify(updateDate)}`);
+                  expect().assertFail();
+                  done();
+                }).catch((err: BusinessError) => {
+                  console.info(`${caseName} updateContact: err->${JSON.stringify(err)}`);
+                  expect(err.code === 401).assertTrue();
+                  done();
+                });
+              }
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} test end `);

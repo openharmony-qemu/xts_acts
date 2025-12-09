@@ -146,7 +146,6 @@ struct fingerInfosDemo {
           Column() {
             Column() {
               Text('一只手指长按Column中的红色文本,另一只指手长按外部粉色区域:' + this.count)
-                .fontSize(30)
                 .fontColor(Color.Red)
                 .gesture(
                   LongPressGesture({ repeat: true })
@@ -167,19 +166,19 @@ struct fingerInfosDemo {
                 )
             }
             .backgroundColor(Color.White)
-            .height(300)
-            .width(300)
+            .height(150)
+            .width(150)
             .padding(20)
             .border({ width: 3 })
             .margin(73)
 
             Column() {
               Text('一只手指长按粉色区域,另外一只手指左右滑动白色column组件\n')
-                .fontSize(30)
+                .fontColor(Color.Black)
             }
             .backgroundColor(Color.White)
-            .height(300)
-            .width(300)
+            .height(150)
+            .width(150)
             .padding(20)
             .border({ width: 3 })
             .margin(73)
@@ -210,11 +209,11 @@ struct fingerInfosDemo {
 
             Column() {
               Text('一只手指长按外部粉色区域,另外两根手指在白色column组件中进行捏合操作\n')
-                .fontSize(30)
+                .fontColor(Color.Black)
             }
             .backgroundColor(Color.White)
-            .height(300)
-            .width(300)
+            .height(150)
+            .width(150)
             .padding(20)
             .border({ width: 3 })
             .margin(73)
@@ -245,11 +244,11 @@ struct fingerInfosDemo {
 
             Column() {
               Text('一只手指长按外部粉色区域,另外两根手指在白色column组件中进行旋转操作\n')
-                .fontSize(30)
+                .fontColor(Color.Black)
             }
             .backgroundColor(Color.White)
-            .height(300)
-            .width(300)
+            .height(150)
+            .width(150)
             .padding(20)
             .border({ width: 3 })
             .margin(73)
@@ -278,7 +277,6 @@ struct fingerInfosDemo {
 
             Column() {
               Text('分别用两根手指快速同时点击红色文本和外部粉色区域\n')
-                .fontSize(30)
                 .fontColor(Color.Red)
                 .gesture(
                   TapGesture({ count: 1 })
@@ -289,18 +287,18 @@ struct fingerInfosDemo {
                 )
             }
             .backgroundColor(Color.White)
-            .height(300)
-            .width(300)
+            .height(150)
+            .width(150)
             .border({ width: 3 })
             .margin(73)
 
             Column() {
               Text('一根手指长按外部粉色区域，另一根手指在白色column组件中左右滑动\n')
-                .fontSize(30)
+                .fontColor(Color.Black)
             }
             .backgroundColor(Color.White)
-            .width(300)
-            .height(300)
+            .height(150)
+            .width(150)
             .borderWidth(2)
             .margin(100)
             .onDragStart(() => {

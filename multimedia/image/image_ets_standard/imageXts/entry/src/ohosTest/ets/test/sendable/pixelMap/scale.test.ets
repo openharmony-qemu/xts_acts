@@ -85,12 +85,12 @@ export default function sendableScaleTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_SCALE_001
-     * @tc.name      : scale_sendable_promise_001
-     * @tc.desc      : scale
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   scale_sendable_promise_001
+     * @tc.number PIXEL_MAP_SCALE_001
+     * @tc.desc   scale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('scale_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'scale_sendable_promise_001';
@@ -102,12 +102,12 @@ export default function sendableScaleTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SCALE_002
-     * @tc.name      : scale_sendable_promise_002
-     * @tc.desc      : scale
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   scale_sendable_promise_002
+     * @tc.number PIXEL_MAP_SCALE_002
+     * @tc.desc   scale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('scale_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'scale_sendable_promise_002';
@@ -119,12 +119,12 @@ export default function sendableScaleTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SCALE_003
-     * @tc.name      : scale_sendable_promise_003
-     * @tc.desc      : scale
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   scale_sendable_promise_003
+     * @tc.number PIXEL_MAP_SCALE_003
+     * @tc.desc   scale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('scale_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'scale_sendable_promise_003';
@@ -136,12 +136,12 @@ export default function sendableScaleTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SCALE_004  //TODO 可以传负数??
-     * @tc.name      : scale_sendable_promise_004
-     * @tc.desc      : scale
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   scale_sendable_promise_004
+     * @tc.number PIXEL_MAP_SCALE_004  //TODO 可以传负数??
+     * @tc.desc   scale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('scale_sendable_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'scale_sendable_promise_004';
@@ -153,12 +153,12 @@ export default function sendableScaleTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SCALE_005
-     * @tc.name      : scale_abnormal_sendable_promise_001
-     * @tc.desc      : scale
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   scale_abnormal_sendable_promise_001
+     * @tc.number PIXEL_MAP_SCALE_005
+     * @tc.desc   scale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('scale_abnormal_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'scale_abnormal_sendable_promise_001';
@@ -170,12 +170,12 @@ export default function sendableScaleTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SCALE_006
-     * @tc.name      : scale_abnormal_sendable_promise_002
-     * @tc.desc      : scale
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   scale_abnormal_sendable_promise_002
+     * @tc.number PIXEL_MAP_SCALE_006
+     * @tc.desc   scale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('scale_abnormal_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'scale_abnormal_sendable_promise_002';
@@ -187,12 +187,12 @@ export default function sendableScaleTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SCALE_007
-     * @tc.name      : scale_abnormal_sendable_promise_003
-     * @tc.desc      : scale
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   scale_abnormal_sendable_promise_003
+     * @tc.number PIXEL_MAP_SCALE_007
+     * @tc.desc   scale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('scale_abnormal_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'scale_abnormal_sendable_promise_003';
@@ -204,12 +204,12 @@ export default function sendableScaleTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_SCALE_008
-     * @tc.name      : scale_abnormal_sendable_promise_004
-     * @tc.desc      : scale
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   scale_abnormal_sendable_promise_004
+     * @tc.number PIXEL_MAP_SCALE_008
+     * @tc.desc   scale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('scale_abnormal_sendable_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'scale_abnormal_sendable_promise_004';

@@ -59,17 +59,18 @@ export default function getResultTest() {
     });
 
     /**
-     * @tc.number    getResultTest_0010
-     * @tc.name      getResultTest_0010
-     * @tc.desc      getResultTest
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getResultTest_0010
+     * @tc.number getResultTest_0010
+     * @tc.desc   getResultTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getResultTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('getResultTest_0010 START');
+      await CommonFunc.sleep(1000);
       let driver = await Driver.create();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let images: Component = await driver.findComponent(ON.id('images'));
       let success: Component = await driver.findComponent(ON.id('success'));
       let failed: Component = await driver.findComponent(ON.id('failed'));
@@ -77,15 +78,19 @@ export default function getResultTest() {
       let enabled: Component = await driver.findComponent(ON.id('enabled'));
       let disabled: Component = await driver.findComponent(ON.id('disabled'));
       await images.dragTo(success);
-      await images.dragTo(failed);
-      await images.dragTo(canceled);
-      await images.dragTo(enabled);
-      await images.dragTo(disabled);
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('DRAG_SUCCESSFUL')).assertEqual(0);
+      await images.dragTo(failed);
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('DRAG_FAILED')).assertEqual(1);
+      await images.dragTo(canceled);
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('DRAG_CANCELED')).assertEqual(2);
+      await images.dragTo(enabled);
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('DROP_ENABLED')).assertEqual(3);
+      await images.dragTo(disabled);
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('DROP_DISABLED')).assertEqual(4);
       console.info('[getResultTest_0010] END');
       done();

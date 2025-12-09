@@ -21,11 +21,14 @@ const createAccountOptions = {customData:{age:'12'}}
 export default function ActsAccountRemoveAccount() {
     describe('ActsAccountRemoveAccount', function () {
 
-        /*
-        * @tc.number    : ActsAccountRemoveAccount_0100
-        * @tc.name      : Remove account callback form
-        * @tc.desc      : Remove the added account in callback form
-        */
+        /**
+         * @tc.name   ActsAccountRemoveAccount_0100
+         * @tc.number ActsAccountRemoveAccount_0100
+         * @tc.desc   Remove the added account in callback form
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsAccountRemoveAccount_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsAccountRemoveAccount_0100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -42,11 +45,14 @@ export default function ActsAccountRemoveAccount() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountRemoveAccount_0200
-        * @tc.name      : Remove account promise form
-        * @tc.desc      : Remove the added account in promise form
-        */
+        /**
+         * @tc.name   ActsAccountRemoveAccount_0200
+         * @tc.number ActsAccountRemoveAccount_0200
+         * @tc.desc   Remove the added account in promise form
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsAccountRemoveAccount_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async function (done){
             console.info("====>ActsAccountRemoveAccount_0200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -64,11 +70,14 @@ export default function ActsAccountRemoveAccount() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountRemoveAccount_0300
-        * @tc.name      : Remove account callback form
-        * @tc.desc      : Remove unadded account in callback form
-        */
+        /**
+         * @tc.name   ActsAccountRemoveAccount_0300
+         * @tc.number ActsAccountRemoveAccount_0300
+         * @tc.desc   Remove unadded account in callback form
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountRemoveAccount_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountRemoveAccount_0300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -81,11 +90,14 @@ export default function ActsAccountRemoveAccount() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountRemoveAccount_0400
-        * @tc.name      : Remove account promise form
-        * @tc.desc      : Remove unadded account in promise form
-        */
+        /**
+         * @tc.name   ActsAccountRemoveAccount_0400
+         * @tc.number ActsAccountRemoveAccount_0400
+         * @tc.desc   Remove unadded account in promise form
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountRemoveAccount_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done){
             console.info("====>ActsAccountRemoveAccount_0400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -100,11 +112,14 @@ export default function ActsAccountRemoveAccount() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountRemoveAccount_0500
-        * @tc.name      : Remove account callback form
-        * @tc.desc      : Remove the added account, the first time it can be deleted, the second time the deletion fails
-        */
+        /**
+         * @tc.name   ActsAccountRemoveAccount_0500
+         * @tc.number ActsAccountRemoveAccount_0500
+         * @tc.desc   Remove the added account, the first time it can be deleted, the second time the deletion fails
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountRemoveAccount_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountRemoveAccount_0500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -124,11 +139,14 @@ export default function ActsAccountRemoveAccount() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountRemoveAccount_0600
-        * @tc.name      : Remove account promise form
-        * @tc.desc      : Remove the added account, the first time it can be deleted, the second time the deletion fails
-        */
+        /**
+         * @tc.name   ActsAccountRemoveAccount_0600
+         * @tc.number ActsAccountRemoveAccount_0600
+         * @tc.desc   Remove the added account, the first time it can be deleted, the second time the deletion fails
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountRemoveAccount_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done){
             console.info("====>ActsAccountRemoveAccount_0600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -148,11 +166,14 @@ export default function ActsAccountRemoveAccount() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountRemoveAccount_0700
-        * @tc.name      : Remove account callback form
-        * @tc.desc      : Remove the account name exceeds the length limit of 512 characters
-        */
+        /**
+         * @tc.name   ActsAccountRemoveAccount_0700
+         * @tc.number ActsAccountRemoveAccount_0700
+         * @tc.desc   Remove the account name exceeds the length limit of 512 characters
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountRemoveAccount_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done){
             console.info("====>ActsAccountRemoveAccount_0700 start====");
             var nameLimit = '';
@@ -168,11 +189,14 @@ export default function ActsAccountRemoveAccount() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountRemoveAccount_0800
-        * @tc.name      : Remove account promise form
-        * @tc.desc      : Remove the account name exceeds the length limit of 512 characters
-        */
+        /**
+         * @tc.name   ActsAccountRemoveAccount_0800
+         * @tc.number ActsAccountRemoveAccount_0800
+         * @tc.desc   Remove the account name exceeds the length limit of 512 characters
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountRemoveAccount_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done){
             console.info("====>ActsAccountRemoveAccount_0800 start====");
             var nameLimit = '';
@@ -192,11 +216,14 @@ export default function ActsAccountRemoveAccount() {
             }
         })
 
-        /*
-        * @tc.number    : ActsAccountRemoveAccount_0900
-        * @tc.name      : Remove account callback form
-        * @tc.desc      : Remove the account name is an empty string
-        */
+        /**
+         * @tc.name   ActsAccountRemoveAccount_0900
+         * @tc.number ActsAccountRemoveAccount_0900
+         * @tc.desc   Remove the account name is an empty string
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountRemoveAccount_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done){
             console.info("====>ActsAccountRemoveAccount_0900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -208,11 +235,14 @@ export default function ActsAccountRemoveAccount() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountRemoveAccount_1000
-        * @tc.name      : Remove account promise form
-        * @tc.desc      : Remove the account name is an empty string
-        */
+        /**
+         * @tc.name   ActsAccountRemoveAccount_1000
+         * @tc.number ActsAccountRemoveAccount_1000
+         * @tc.desc   Remove the account name is an empty string
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountRemoveAccount_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done){
             console.info("====>ActsAccountRemoveAccount_1000 start====");
             var appAccountManager = account.createAppAccountManager();

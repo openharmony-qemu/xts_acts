@@ -162,7 +162,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorePutString101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1290
      * @tc.desc   Test Js Api DeviceKvStore.Put(String) testcase 101
@@ -190,7 +189,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorePutString102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1300
      * @tc.desc   Test Js Api DeviceKvStore.Put(String) testcase 102
@@ -222,7 +220,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreGetString101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0760
      * @tc.desc   Test Js Api DeviceKvStore.Get(String) testcase 101
@@ -250,7 +247,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreGetString102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0770
      * @tc.desc   Test Js Api DeviceKvStore.Get(String) testcase 102
@@ -278,7 +274,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorePutInt101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1210
      * @tc.desc   Test Js Api DeviceKvStore.Put(Int) testcase 101
@@ -306,7 +301,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorePutInt102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1220
      * @tc.desc   Test Js Api DeviceKvStore.Put(Int) testcase 102
@@ -335,7 +329,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorePutInt103
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1230
      * @tc.desc   Test Js Api DeviceKvStore.Put(Int) testcase 103
@@ -364,7 +357,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorePutInt104
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1240
      * @tc.desc   Test Js Api DeviceKvStore.Put(Int) testcase 104
@@ -393,7 +385,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreGetInt101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0560
      * @tc.desc   Test Js Api DeviceKvStore.Get(Int) testcase 101
@@ -421,7 +412,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreGetInt102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0570
      * @tc.desc   Test Js Api DeviceKvStore.Get(Int) testcase 102
@@ -449,7 +439,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorePutBool101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1110
      * @tc.desc   Test Js Api DeviceKvStore.Put(Bool) testcase 101
@@ -473,7 +462,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreGetBool101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0450
      * @tc.desc   Test Js Api DeviceKvStore.Get(Bool) testcase 101
@@ -501,7 +489,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreGetBool102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0460
      * @tc.desc   Test Js Api DeviceKvStore.Get(Bool) testcase 102
@@ -529,7 +516,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorePutFloat101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1130
      * @tc.desc   Test Js Api DeviceKvStore.Put(Float) testcase 101
@@ -553,7 +539,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorePutFloat102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1140
      * @tc.desc   Test Js Api DeviceKvStore.Put(Float) testcase 102
@@ -582,7 +567,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorePutFloat103
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1150
      * @tc.desc   Test Js Api DeviceKvStore.Put(Float) testcase 103
@@ -611,7 +595,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorePutFloat104
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1160
      * @tc.desc   Test Js Api DeviceKvStore.Put(Float) testcase 104
@@ -640,7 +623,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreGetFloat101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0540
      * @tc.desc   Test Js Api DeviceKvStore.Get(Float) testcase 101
@@ -668,7 +650,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreDeleteString101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0340
      * @tc.desc   Test Js Api DeviceKvStore.DeleteString testcase 101
@@ -696,7 +677,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreDeleteString102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0350
      * @tc.desc   Test Js Api DeviceKvStore.DeleteString testcase 102
@@ -724,7 +704,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreDeleteInt101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0290
      * @tc.desc   Test Js Api DeviceKvStore.DeleteInt testcase 101
@@ -752,7 +731,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreDeleteInt102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0300
      * @tc.desc   Test Js Api DeviceKvStore.DeleteInt testcase 102
@@ -780,7 +758,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreDeleteFloat101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0260
      * @tc.desc   Test Js Api DeviceKvStore.DeleteFloat testcase 101
@@ -808,7 +785,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreDeleteFloat102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0270
      * @tc.desc   Test Js Api DeviceKvStore.DeleteFloat testcase 102
@@ -836,7 +812,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreDeleteBool101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0230
      * @tc.desc   Test Js Api DeviceKvStore.DeleteBool testcase 101
@@ -864,7 +839,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreDeleteBool102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0240
      * @tc.desc   Test Js Api DeviceKvStore.DeleteBool testcase 102
@@ -892,7 +866,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreOnChange101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0890
      * @tc.desc   Test Js Api DeviceKvStore.OnChange testcase 101
@@ -920,7 +893,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreOnChange102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0900
      * @tc.desc   Test Js Api DeviceKvStore.OnChange testcase 102
@@ -948,7 +920,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreOnChange103
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0910
      * @tc.desc   Test Js Api DeviceKvStore.OnChange testcase 103
@@ -976,7 +947,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreOnSyncComplete101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0950
      * @tc.desc   Test Js Api DeviceKvStore.OnSyncComplete testcase 101
@@ -1012,7 +982,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreOnSyncComplete102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0960
      * @tc.desc   Test Js Api DeviceKvStore.OnSyncComplete testcase 102
@@ -1048,7 +1017,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreOnSyncComplete103
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0970
      * @tc.desc   Test Js Api DeviceKvStore.OnSyncComplete testcase 103
@@ -1084,7 +1052,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreSetSyncRange101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1480
      * @tc.desc   Test Js Api DeviceKvStore.SetSyncRange testcase 101
@@ -1110,7 +1077,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreSetSyncRange102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1490
      * @tc.desc   Test Js Api DeviceKvStore.SetSyncRange testcase 102
@@ -1136,7 +1102,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreSetSyncRange103
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1500
      * @tc.desc   Test Js Api DeviceKvStore.SetSyncRange testcase 103
@@ -1162,7 +1127,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorePutBatch101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1040
      * @tc.desc   Test Js Api DeviceKvStore.Put(Batch) testcase 101
@@ -1206,7 +1170,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorePutBatch102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1050
      * @tc.desc   Test Js Api DeviceKvStore.Put(Batch) testcase 102
@@ -1250,7 +1213,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorePutBatch103
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1060
      * @tc.desc   Test Js Api DeviceKvStore.Put(Batch) testcase 103
@@ -1294,7 +1256,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorePutBatch104
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1070
      * @tc.desc   Test Js Api DeviceKvStore.Put(Batch) testcase 104
@@ -1338,7 +1299,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorePutBatch105
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1080
      * @tc.desc   Test Js Api DeviceKvStore.Put(Batch) testcase 105
@@ -1383,7 +1343,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorePutBatch106
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1090
      * @tc.desc   Test Js Api DeviceKvStore.Put(Batch) testcase 106
@@ -1428,7 +1387,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreDeleteBatch101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0190
      * @tc.desc   Test Js Api DeviceKvStore.DeleteBatch testcase 101
@@ -1471,7 +1429,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreDeleteBatch102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0200
      * @tc.desc   Test Js Api DeviceKvStore.DeleteBatch testcase 102
@@ -1496,7 +1453,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreDeleteBatch103
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0210
      * @tc.desc   Test Js Api DeviceKvStore.DeleteBatch testcase 103
@@ -1538,7 +1494,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorestartTransaction101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1560
      * @tc.desc   Test Js Api DeviceKvStore.startTransaction testcase 101
@@ -1584,7 +1539,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorestartTransaction102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1570
      * @tc.desc   Test Js Api DeviceKvStore.startTransaction testcase 102
@@ -1630,7 +1584,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorestartTransaction103
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1580
      * @tc.desc   Test Js Api DeviceKvStore.startTransaction testcase 103
@@ -1657,7 +1610,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorestartTransaction104
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1590
      * @tc.desc   Test Js Api DeviceKvStore.startTransaction testcase 104
@@ -1684,7 +1636,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStorestartTransaction105
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1600
      * @tc.desc   Test Js Api DeviceKvStore.startTransaction testcase 105
@@ -1711,7 +1662,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreCommit101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0130
      * @tc.desc   Test Js Api DeviceKvStore.Commit testcase 101
@@ -1738,7 +1688,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreCommit102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0140
      * @tc.desc   Test Js Api DeviceKvStore.Commit testcase 102
@@ -1765,7 +1714,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreCommit103
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0150
      * @tc.desc   Test Js Api DeviceKvStore.Commit testcase 103
@@ -1792,7 +1740,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreRollback101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1420
      * @tc.desc   Test Js Api DeviceKvStore.Rollback testcase 101
@@ -1819,7 +1766,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreRollback102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1430
      * @tc.desc   Test Js Api DeviceKvStore.Rollback testcase 102
@@ -1846,7 +1792,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreRollback103
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1440
      * @tc.desc   Test Js Api DeviceKvStore.Rollback testcase 103
@@ -1873,7 +1818,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEnableSync101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0400
      * @tc.desc   Test Js Api DeviceKvStore.EnableSync testcase 101
@@ -1902,7 +1846,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEnableSync102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0410
      * @tc.desc   Test Js Api DeviceKvStore.EnableSync testcase 102
@@ -1931,7 +1874,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEnableSync103
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0420
      * @tc.desc   Test Js Api DeviceKvStore.EnableSync testcase 103
@@ -1958,7 +1900,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEnableSync104
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0430
      * @tc.desc   Test Js Api DeviceKvStore.EnableSync testcase 104
@@ -1985,7 +1926,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreRemoveDeviceData101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1350
      * @tc.desc   Test Js Api DeviceKvStore.RemoveDeviceData testcase 101
@@ -2023,7 +1963,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreRemoveDeviceData102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1360
      * @tc.desc   Test Js Api DeviceKvStore.RemoveDeviceData testcase 102
@@ -2050,7 +1989,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:49
       * @tc.name   testDeviceKvStoreRemoveDeviceData103
       * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1370
       * @tc.desc   Test Js Api DeviceKvStore.RemoveDeviceData testcase 103
@@ -2077,7 +2015,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreRemoveDeviceData104
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_1380
      * @tc.desc   Test Js Api DeviceKvStore.RemoveDeviceData testcase 104
@@ -2104,7 +2041,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreGetResultSet101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0640
      * @tc.desc   Test Js Api DeviceKvStore.GetResultSet() testcase 101
@@ -2150,7 +2086,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreGetResultSet102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0650
      * @tc.desc   Test Js Api DeviceKvStore.GetResultSet() testcase 102
@@ -2180,7 +2115,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreGetResultSet103
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0660
      * @tc.desc   Test Js Api DeviceKvStore.GetResultSet() testcase 103
@@ -2205,7 +2139,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreGetResultSet104
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0670
      * @tc.desc   Test Js Api DeviceKvStore.GetResultSet() testcase 104
@@ -2230,7 +2163,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreGetResultSet105
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0680
      * @tc.desc   Test Js Api DeviceKvStore.GetResultSet() testcase 105
@@ -2278,7 +2210,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreGetResultSet106
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0690
      * @tc.desc   Test Js Api DeviceKvStore.GetResultSet() testcase 106
@@ -2327,7 +2258,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreCloseResultSet101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0060
      * @tc.desc   Test Js Api DeviceKvStore.CloseResultSet testcase 101
@@ -2357,7 +2287,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreCloseResultSet102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0070
      * @tc.desc   Test Js Api DeviceKvStore.CloseResultSet testcase 102
@@ -2391,7 +2320,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreCloseResultSet103
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0080
      * @tc.desc   Test Js Api DeviceKvStore.CloseResultSet testcase 103
@@ -2420,7 +2348,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreCloseResultSet104
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0090
      * @tc.desc   Test Js Api DeviceKvStore.CloseResultSet testcase 104
@@ -2447,7 +2374,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreGetResultSize101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0720
      * @tc.desc   Test Js Api DeviceKvStore.Get(ResultSize) testcase 101
@@ -2490,7 +2416,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreGetResultSize102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0730
      * @tc.desc   Test Js Api DeviceKvStore.Get(ResultSize) testcase 102
@@ -2532,7 +2457,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreGetEntries101
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0490
      * @tc.desc   Test Js Api DeviceKvStore.GetEntries() testcase 101
@@ -2580,7 +2504,6 @@ describe('deviceKvStoreCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreGetEntries102
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreJsApiTest_0500
      * @tc.desc   Test Js Api DeviceKvStore.GetEntries() testcase 102

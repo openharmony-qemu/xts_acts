@@ -183,12 +183,12 @@ export default function reflect11Test() {
     })
 
     /**
+     * @tc.name   reflect11Test011
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_01100
-     * @tc.name reflect11Test011
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_11();
@@ -196,12 +196,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test012
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_01200
-     * @tc.name reflect11Test012
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_12();
@@ -209,12 +209,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test013
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_01300
-     * @tc.name reflect11Test013
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_13();
@@ -222,12 +222,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test014
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_01400
-     * @tc.name reflect11Test014
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_14();
@@ -235,12 +235,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test015
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_01500
-     * @tc.name reflect11Test015
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_15();
@@ -248,12 +248,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test016
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_01600
-     * @tc.name reflect11Test016
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_16();
@@ -261,12 +261,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test017
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_01700
-     * @tc.name reflect11Test017
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_17();
@@ -274,12 +274,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test018
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_01800
-     * @tc.name reflect11Test018
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_18();
@@ -287,12 +287,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test019
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_01900
-     * @tc.name reflect11Test019
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_19();
@@ -300,24 +300,24 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test020
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_02000
-     * @tc.name reflect11Test020
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_20();
       expect(result).assertTrue();
     });
     /**
+     * @tc.name   reflect11Test021
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_02100
-     * @tc.name reflect11Test021
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_21();
@@ -325,12 +325,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test022
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_02200
-     * @tc.name reflect11Test022
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_22();
@@ -338,12 +338,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test023
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_02300
-     * @tc.name reflect11Test023
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_23();
@@ -351,12 +351,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test024
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_02400
-     * @tc.name reflect11Test024
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_24();
@@ -364,12 +364,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test025
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_02500
-     * @tc.name reflect11Test025
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_25();
@@ -377,12 +377,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test026
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_02600
-     * @tc.name reflect11Test026
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_26();
@@ -390,12 +390,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test027
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_02700
-     * @tc.name reflect11Test027
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_27();
@@ -403,12 +403,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test028
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_02800
-     * @tc.name reflect11Test028
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_28();
@@ -416,12 +416,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test029
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_02900
-     * @tc.name reflect11Test029
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_29();
@@ -429,12 +429,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test031
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_03100
-     * @tc.name reflect11Test031
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_31();
@@ -442,12 +442,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test032
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_03200
-     * @tc.name reflect11Test032
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_32();
@@ -455,12 +455,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test033
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_03300
-     * @tc.name reflect11Test033
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_33();
@@ -468,12 +468,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test034
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_03400
-     * @tc.name reflect11Test034
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_34();
@@ -481,12 +481,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test035
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_03500
-     * @tc.name reflect11Test035
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_35();
@@ -494,12 +494,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test036
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_03600
-     * @tc.name reflect11Test036
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_36();
@@ -507,12 +507,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test037
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_03700
-     * @tc.name reflect11Test037
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_37();
@@ -520,12 +520,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test038
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_03800
-     * @tc.name reflect11Test038
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_38();
@@ -533,12 +533,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test039
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_03900
-     * @tc.name reflect11Test039
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_39();
@@ -546,24 +546,24 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test040
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_04000
-     * @tc.name reflect11Test040
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_40();
       expect(result).assertTrue();
     });
     /**
+     * @tc.name   reflect11Test041
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_04100
-     * @tc.name reflect11Test041
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_41();
@@ -571,12 +571,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test042
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_04200
-     * @tc.name reflect11Test042
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_42();
@@ -584,12 +584,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test043
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_04300
-     * @tc.name reflect11Test043
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_43();
@@ -597,12 +597,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test044
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_04400
-     * @tc.name reflect11Test044
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_44();
@@ -610,12 +610,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test045
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_04500
-     * @tc.name reflect11Test045
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_45();
@@ -623,12 +623,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test046
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_04600
-     * @tc.name reflect11Test046
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_46();
@@ -636,12 +636,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test047
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_04700
-     * @tc.name reflect11Test047
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_47();
@@ -649,12 +649,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test048
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_04800
-     * @tc.name reflect11Test048
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_48();
@@ -662,12 +662,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test049
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_04900
-     * @tc.name reflect11Test049
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_49();
@@ -675,12 +675,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test050
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_05000
-     * @tc.name reflect11Test050
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_50();
@@ -688,12 +688,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test051
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_05100
-     * @tc.name reflect11Test051
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_51();
@@ -701,12 +701,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test052
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_05200
-     * @tc.name reflect11Test052
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_52();
@@ -714,12 +714,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test053
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_05300
-     * @tc.name reflect11Test053
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_53();
@@ -727,12 +727,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test054
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_05400
-     * @tc.name reflect11Test054
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_54();
@@ -740,12 +740,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test055
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_05500
-     * @tc.name reflect11Test055
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_55();
@@ -753,12 +753,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test056
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_05600
-     * @tc.name reflect11Test056
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_56();
@@ -766,12 +766,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test057
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_05700
-     * @tc.name reflect11Test057
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_57();
@@ -779,12 +779,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test058
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_05800
-     * @tc.name reflect11Test058
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_58();
@@ -792,12 +792,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test059
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_05900
-     * @tc.name reflect11Test059
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_59();
@@ -805,24 +805,24 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test060
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_06000
-     * @tc.name reflect11Test060
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_60();
       expect(result).assertTrue();
     });
     /**
+     * @tc.name   reflect11Test061
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_06100
-     * @tc.name reflect11Test061
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_61();
@@ -830,12 +830,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test062
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_06200
-     * @tc.name reflect11Test062
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_62();
@@ -843,12 +843,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test063
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_06300
-     * @tc.name reflect11Test063
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_63();
@@ -856,12 +856,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test064
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_06400
-     * @tc.name reflect11Test064
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_64();
@@ -869,12 +869,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test065
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_06500
-     * @tc.name reflect11Test065
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_65();
@@ -882,12 +882,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test066
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_06600
-     * @tc.name reflect11Test066
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_66();
@@ -895,12 +895,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test067
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_06700
-     * @tc.name reflect11Test067
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_67();
@@ -908,12 +908,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test068
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_06800
-     * @tc.name reflect11Test068
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_68();
@@ -921,12 +921,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test069
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_06900
-     * @tc.name reflect11Test069
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_69();
@@ -934,12 +934,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test070
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_07000
-     * @tc.name reflect11Test070
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_70();
@@ -947,12 +947,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test071
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_07100
-     * @tc.name reflect11Test071
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_71();
@@ -960,12 +960,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test072
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_07200
-     * @tc.name reflect11Test072
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_72();
@@ -973,12 +973,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test073
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_07300
-     * @tc.name reflect11Test073
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_73();
@@ -986,12 +986,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test074
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_07400
-     * @tc.name reflect11Test074
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_74();
@@ -999,12 +999,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test075
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_07500
-     * @tc.name reflect11Test075
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_75();
@@ -1012,12 +1012,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test076
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_07600
-     * @tc.name reflect11Test076
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_76();
@@ -1025,12 +1025,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test077
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_07700
-     * @tc.name reflect11Test077
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_77();
@@ -1038,12 +1038,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test078
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_07800
-     * @tc.name reflect11Test078
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_78();
@@ -1051,12 +1051,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test079
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_07900
-     * @tc.name reflect11Test079
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_79();
@@ -1064,24 +1064,24 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test080
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_08000
-     * @tc.name reflect11Test080
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_80();
       expect(result).assertTrue();
     });
     /**
+     * @tc.name   reflect11Test081
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_08100
-     * @tc.name reflect11Test081
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_81();
@@ -1089,12 +1089,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test082
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_08200
-     * @tc.name reflect11Test082
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_82();
@@ -1102,12 +1102,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test083
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_08300
-     * @tc.name reflect11Test083
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_83();
@@ -1115,12 +1115,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test084
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_08400
-     * @tc.name reflect11Test084
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_84();
@@ -1128,12 +1128,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test085
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_08500
-     * @tc.name reflect11Test085
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_85();
@@ -1141,12 +1141,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test086
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_08600
-     * @tc.name reflect11Test086
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_86();
@@ -1154,12 +1154,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test087
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_08700
-     * @tc.name reflect11Test087
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_87();
@@ -1167,12 +1167,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test088
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_08800
-     * @tc.name reflect11Test088
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_88();
@@ -1180,12 +1180,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test089
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_08900
-     * @tc.name reflect11Test089
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_89();
@@ -1193,12 +1193,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test090
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_09000
-     * @tc.name reflect11Test090
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_90();
@@ -1206,12 +1206,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test091
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_09100
-     * @tc.name reflect11Test091
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_91();
@@ -1219,12 +1219,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test092
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_09200
-     * @tc.name reflect11Test092
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_92();
@@ -1232,12 +1232,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test093
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_09300
-     * @tc.name reflect11Test093
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_93();
@@ -1245,12 +1245,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test094
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_09400
-     * @tc.name reflect11Test094
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_94();
@@ -1258,12 +1258,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test095
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_09500
-     * @tc.name reflect11Test095
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_95();
@@ -1271,12 +1271,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test096
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_09600
-     * @tc.name reflect11Test096
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_96();
@@ -1284,12 +1284,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test097
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_09700
-     * @tc.name reflect11Test097
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_97();
@@ -1297,12 +1297,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test098
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_09800
-     * @tc.name reflect11Test098
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_98();
@@ -1310,12 +1310,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test099
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_09900
-     * @tc.name reflect11Test099
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_99();
@@ -1323,24 +1323,24 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test100
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_10000
-     * @tc.name reflect11Test100
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_100();
       expect(result).assertTrue();
     });
     /**
+     * @tc.name   reflect11Test101
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_10100
-     * @tc.name reflect11Test101
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_101();
@@ -1348,12 +1348,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test102
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_10200
-     * @tc.name reflect11Test102
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_102();
@@ -1361,12 +1361,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test103
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_10300
-     * @tc.name reflect11Test103
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_103();
@@ -1374,12 +1374,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test104
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_10400
-     * @tc.name reflect11Test104
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_104();
@@ -1387,12 +1387,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test105
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_10500
-     * @tc.name reflect11Test105
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_105();
@@ -1400,12 +1400,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test106
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_10600
-     * @tc.name reflect11Test106
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_106();
@@ -1413,12 +1413,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test107
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_10700
-     * @tc.name reflect11Test107
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_107();
@@ -1426,12 +1426,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test108
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_10800
-     * @tc.name reflect11Test108
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_108();
@@ -1439,12 +1439,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test109
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_10900
-     * @tc.name reflect11Test109
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_109();
@@ -1452,12 +1452,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test110
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_11000
-     * @tc.name reflect11Test110
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_110();
@@ -1465,12 +1465,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test111
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_11100
-     * @tc.name reflect11Test111
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_111();
@@ -1478,12 +1478,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test112
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_11200
-     * @tc.name reflect11Test112
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_112();
@@ -1491,12 +1491,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test113
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_11300
-     * @tc.name reflect11Test113
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_113();
@@ -1504,12 +1504,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test114
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_11400
-     * @tc.name reflect11Test114
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_114();
@@ -1517,12 +1517,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test115
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_11500
-     * @tc.name reflect11Test115
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_115();
@@ -1530,12 +1530,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test116
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_11600
-     * @tc.name reflect11Test116
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_116();
@@ -1543,12 +1543,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test117
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_11700
-     * @tc.name reflect11Test117
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_117();
@@ -1556,12 +1556,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test118
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_11800
-     * @tc.name reflect11Test118
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_118();
@@ -1569,12 +1569,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test119
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_11900
-     * @tc.name reflect11Test119
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_119();
@@ -1582,12 +1582,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test120
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_12000
-     * @tc.name reflect11Test120
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_120();
@@ -1595,12 +1595,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test121
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_12100
-     * @tc.name reflect11Test121
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_121();
@@ -1608,12 +1608,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test122
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_12200
-     * @tc.name reflect11Test122
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_122();
@@ -1621,12 +1621,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test123
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_12300
-     * @tc.name reflect11Test123
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_123();
@@ -1634,12 +1634,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test124
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_12400
-     * @tc.name reflect11Test124
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_124();
@@ -1647,24 +1647,24 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test125
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_12500
-     * @tc.name reflect11Test125
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_125();
       expect(result).assertTrue();
     });
     /**
+     * @tc.name   reflect11Test126
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_12600
-     * @tc.name reflect11Test126
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_126();
@@ -1672,12 +1672,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test128
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_12800
-     * @tc.name reflect11Test128
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_128();
@@ -1685,12 +1685,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test129
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_12900
-     * @tc.name reflect11Test129
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_129();
@@ -1698,12 +1698,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test130
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_13000
-     * @tc.name reflect11Test130
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_130();
@@ -1711,12 +1711,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test131
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_13100
-     * @tc.name reflect11Test131
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_131();
@@ -1724,12 +1724,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test132
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_13200
-     * @tc.name reflect11Test132
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_132();
@@ -1737,12 +1737,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test133
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_13300
-     * @tc.name reflect11Test133
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_133();
@@ -1750,12 +1750,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test134
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_13400
-     * @tc.name reflect11Test134
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_134();
@@ -1763,12 +1763,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test135
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_13500
-     * @tc.name reflect11Test135
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_135();
@@ -1776,12 +1776,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test136
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_13600
-     * @tc.name reflect11Test136
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_136();
@@ -1789,12 +1789,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test137
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_13700
-     * @tc.name reflect11Test137
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_137();
@@ -1802,12 +1802,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test138
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_13800
-     * @tc.name reflect11Test138
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_138();
@@ -1815,12 +1815,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test139
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_13900
-     * @tc.name reflect11Test139
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_139();
@@ -1828,12 +1828,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test140
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_14000
-     * @tc.name reflect11Test140
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_140();
@@ -1841,12 +1841,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test141
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_14100
-     * @tc.name reflect11Test141
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_141();
@@ -1854,12 +1854,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test142
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_14200
-     * @tc.name reflect11Test142
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_142();
@@ -1867,12 +1867,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test143
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_14300
-     * @tc.name reflect11Test143
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_143();
@@ -1880,12 +1880,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test144
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_14400
-     * @tc.name reflect11Test144
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_144();
@@ -1893,12 +1893,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test145
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_14500
-     * @tc.name reflect11Test145
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_145();
@@ -1906,12 +1906,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test146
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_14600
-     * @tc.name reflect11Test146
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_146();
@@ -1919,12 +1919,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test147
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_14700
-     * @tc.name reflect11Test147
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_147();
@@ -1932,12 +1932,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test149
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_14900
-     * @tc.name reflect11Test149
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_149();
@@ -1945,12 +1945,12 @@ export default function reflect11Test() {
     });
 
     /**
+     * @tc.name   reflect11Test150
      * @tc.number SUB_BUILTINS_REFLECT11_TEST_15000
-     * @tc.name reflect11Test150
-     * @tc.desc test reflect preventExtensions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect preventExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect11Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_preventExtensions_150();

@@ -49,10 +49,12 @@ export default function flexWrapReverse_notFixedParentMargin() {
     });
 
     /**
+     * @tc.name   testWrapReverseChildfixedParentMargin
      * @tc.number SUB_ACE_FLEX_WRAPREVERSE_CHILDFIXED_TEST_0600
-     * @tc.name testWrapReverseChildfixedParentMargin
-     * @tc.desc The parent component changes the location and space of the layout, affecting the layout of the
-     *               child components, parent component setting margin
+     * @tc.desc   The parent component changes the location and space of the layout, affecting the layout of the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapReverseChildfixedParentMargin',  Level.LEVEL0, async () => {
       console.info('new testWrapReverseChildfixedParentMargin START');
@@ -100,10 +102,12 @@ export default function flexWrapReverse_notFixedParentMargin() {
     });
 
     /**
+     * @tc.name   testWrapReverseChildfixedParentMarPad
      * @tc.number SUB_ACE_FLEX_WRAPREVERSE_CHILDFIXED_TEST_0700
-     * @tc.name testWrapReverseChildfixedParentMarPad
-     * @tc.desc The parent component changes the location and space of the layout, affecting the layout of the
-     *               child components, parent component setting margin and padding
+     * @tc.desc   The parent component changes the location and space of the layout, affecting the layout of the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapReverseChildfixedParentMarPad',  Level.LEVEL0, async () => {
       console.info('new testWrapReverseChildfixedParentMarPad START');

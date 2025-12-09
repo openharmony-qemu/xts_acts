@@ -44,12 +44,12 @@ export default function datapanelJsunit() {
     });
 
     /**
+     * @tc.name   testDataPanel01
      * @tc.number testDataPanel01
-     * @tc.name Test the properties of components
-     * @tc.desc Set trackShadow values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set trackShadow values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataPanel01', Level.LEVEL0, async (done: Function) => {
       console.info('testDataPanel01 START');
@@ -64,12 +64,12 @@ export default function datapanelJsunit() {
     });
 
     /**
+     * @tc.name   testDataPanel02
      * @tc.number testDataPanel02
-     * @tc.name Test the properties of components
-     * @tc.desc Set strokeWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set strokeWidth values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataPanel02', Level.LEVEL0, async (done: Function) => {
       console.info('testDataPanel02 START');
@@ -82,12 +82,12 @@ export default function datapanelJsunit() {
     });
 
     /**
+     * @tc.name   testDataPanel03
      * @tc.number testDataPanel03
-     * @tc.name Test the properties of components
-     * @tc.desc Set trackBackgroundColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set trackBackgroundColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataPanel03', Level.LEVEL0, async (done: Function) => {
       console.info('testDataPanel03 START');
@@ -100,12 +100,12 @@ export default function datapanelJsunit() {
     });
 
     /**
+     * @tc.name   testDataPanel04
      * @tc.number testDataPanel04
-     * @tc.name Test the properties of components
-     * @tc.desc Set valueColors values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set valueColors values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataPanel04', Level.LEVEL0, async (done: Function) => {
       console.info('testDataPanel04 START');
@@ -119,12 +119,12 @@ export default function datapanelJsunit() {
     });
 
     /**
+     * @tc.name   testDataPanel05
      * @tc.number testDataPanel05
-     * @tc.name Test the properties of components
-     * @tc.desc Set closeEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set closeEffect values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataPanel05', Level.LEVEL0, async (done: Function) => {
       console.info('testDataPanel05 START');
@@ -137,12 +137,12 @@ export default function datapanelJsunit() {
     });
 
     /**
+     * @tc.name   testDataPanel06
      * @tc.number testDataPanel06
-     * @tc.name Test the properties of components
-     * @tc.desc Change strokeWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change strokeWidth values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataPanel06', Level.LEVEL0, async (done: Function) => {
       console.info('testDataPanel06 START');

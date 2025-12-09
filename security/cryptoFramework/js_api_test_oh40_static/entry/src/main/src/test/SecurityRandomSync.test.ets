@@ -24,9 +24,12 @@ export default function SecurityRandomSyncJsunit() {
     beforeAll(async () => {
     });
     /**
+     * @tc.name   Security_CryptoFramework_RandomSync_Func_0100
      * @tc.number Security_CryptoFramework_RandomSync_Func_0100
-     * @tc.name Security_CryptoFramework_RandomSync_Func_0100
-     * @tc.desc the length of random is 12, use sync style of interface
+     * @tc.desc   the length of random is 12, use sync style of interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_RandomSync_Func_0100",
@@ -46,14 +49,12 @@ export default function SecurityRandomSyncJsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_RandomSync_Func_0200
      * @tc.number Security_CryptoFramework_RandomSync_Func_0200
-     * @tc.name Security_CryptoFramework_RandomSync_Func_0200
-     * expecting the result to return an exception.
-     * @tc.desc the length of random is 0, use sync style of interface
-     * the length of random is "string", use sync style of interface
-     * the length of random is -1, use sync style of interface
-     * the length of random is NULL, use sync style of interface
-     * the length of random is super large data(larger then Int32), use sync style of interface
+     * @tc.desc   the length of random is 0, use sync style of interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_RandomSync_Func_0200",
@@ -80,9 +81,12 @@ export default function SecurityRandomSyncJsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_RandomSync_Func_0300
      * @tc.number Security_CryptoFramework_RandomSync_Func_0300
-     * @tc.name Security_CryptoFramework_RandomSync_Func_0300
-     * @tc.desc no parameters,use sync style of interface
+     * @tc.desc   no parameters,use sync style of interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_RandomSync_Func_0300",
@@ -96,9 +100,12 @@ export default function SecurityRandomSyncJsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_Enum_Func_0100
      * @tc.number Security_CryptoFramework_Enum_Func_0100
-     * @tc.name Security_CryptoFramework_Enum_Func_0100
-     * @tc.desc no parameters,use sync style of interface
+     * @tc.desc   no parameters,use sync style of interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Security_CryptoFramework_Enum_Func_0100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {

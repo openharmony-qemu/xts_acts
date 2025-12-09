@@ -40,14 +40,14 @@ export default function GaugePrivacySensitiveTest() {
       console.info('GaugePrivacySensitiveTest beforeEach end');
       done();
     });
-    /* *
-    * @tc.number: GaugePrivacySensitiveTest_001
-    * @tc.name  : GaugePrivacySensitiveTest_001
-    * @tc.desc  : To test the privacySensitive true
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   GaugePrivacySensitiveTest_001
+     * @tc.number GaugePrivacySensitiveTest_001
+     * @tc.desc   To test the privacySensitive true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugePrivacySensitiveTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('GaugePrivacySensitiveTest_001 START');
       let driver: Driver = Driver.create();
@@ -64,14 +64,14 @@ export default function GaugePrivacySensitiveTest() {
       console.info('[GaugePrivacySensitiveTest_001] END');
       done();
     });
-    /* *
-    * @tc.number: GaugePrivacySensitiveTest_002
-    * @tc.name  : GaugePrivacySensitiveTest_002
-    * @tc.desc  : To test the privacySensitive false
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   GaugePrivacySensitiveTest_002
+     * @tc.number GaugePrivacySensitiveTest_002
+     * @tc.desc   To test the privacySensitive false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugePrivacySensitiveTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('GaugePrivacySensitiveTest_002 START');
       let driver: Driver = Driver.create();
@@ -88,14 +88,14 @@ export default function GaugePrivacySensitiveTest() {
       console.info('[GaugePrivacySensitiveTest_002] END');
       done();
     });
-    /* *
-    * @tc.number: GaugePrivacySensitiveTest_003
-    * @tc.name  : GaugePrivacySensitiveTest_003
-    * @tc.desc  : To test the privacySensitive undefined
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   GaugePrivacySensitiveTest_003
+     * @tc.number GaugePrivacySensitiveTest_003
+     * @tc.desc   To test the privacySensitive undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugePrivacySensitiveTest_003', Level.LEVEL0, async (done: Function) => {
       console.info('GaugePrivacySensitiveTest_003 START');
       let driver: Driver = Driver.create();
@@ -112,14 +112,14 @@ export default function GaugePrivacySensitiveTest() {
       console.info('[GaugePrivacySensitiveTest_003] END');
       done();
     });
-    /* *
-    * @tc.number: GaugePrivacySensitiveTest_004
-    * @tc.name  : GaugePrivacySensitiveTest_004
-    * @tc.desc  : To test the privacySensitive null
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   GaugePrivacySensitiveTest_004
+     * @tc.number GaugePrivacySensitiveTest_004
+     * @tc.desc   To test the privacySensitive null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugePrivacySensitiveTest_004', Level.LEVEL0, async (done: Function) => {
       console.info('GaugePrivacySensitiveTest_004 START');
       let driver: Driver = Driver.create();

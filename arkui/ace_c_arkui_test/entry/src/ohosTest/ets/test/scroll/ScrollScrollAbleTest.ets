@@ -26,55 +26,68 @@ export default function scrollScrollAbleTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SCROLLABLE_0100
-     * @tc.name       : testScrollScrollAble001
-     * @tc.desc       : testing scroll able for scroll with vertical value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollScrollable001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCROLLABLE_0100
+     * @tc.desc   testing scroll able for scroll with vertical value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollScrollable001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollScrollAble001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SCROLLABLE_0200
-     * @tc.name       : testScrollScrollAble002
-     * @tc.desc       : testing scroll able for scroll with horizontal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollScrollable002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCROLLABLE_0200
+     * @tc.desc   testing scroll able for scroll with horizontal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollScrollable002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollScrollAble002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SCROLLABLE_0300
-     * @tc.name       : testScrollScrollAble003
-     * @tc.desc       : testing scroll able for scroll with none value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testScrollScrollable003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCROLLABLE_0300
+     * @tc.desc   testing scroll able for scroll with none value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollScrollable003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollScrollAble003()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SCROLLABLE_0400
-     * @tc.name       : testScrollScrollAble004
-     * @tc.desc       : testing scroll able for scroll with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testScrollScrollable004
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCROLLABLE_0400
+     * @tc.desc   testing scroll able for scroll with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollScrollable004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollScrollAble004()).assertEqual(0)
+      done();
+    });
+
+    /**
+     * @tc.name   testScrollScrollable005
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCROLLABLE_0500
+     * @tc.desc   testing scroll able for scroll with ARKUI_SCROLL_DIRECTION_FREE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testScrollScrollable005', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testScrollScrollAble005()).assertEqual(0)
       done();
     });
   })

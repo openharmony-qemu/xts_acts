@@ -80,9 +80,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoIdProp
-         * @tc.desc      ACE
+         * @tc.name   testVideoIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoIdProp', Level.LEVEL0, async function(done) {
             console.info('testVideoIdProp START');
@@ -98,9 +101,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoClassProp
-         * @tc.desc      ACE
+         * @tc.name   testVideoClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoClassProp', Level.LEVEL0, async function(done) {
             console.info('testVideoClassProp START');
@@ -117,9 +123,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testVideoClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testVideoClassPropNone START');
@@ -137,9 +146,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoRefProp
-         * @tc.desc      ACE
+         * @tc.name   testVideoRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoRefProp', Level.LEVEL0, async function(done) {
             console.info('testVideoRefProp START');
@@ -156,9 +168,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testVideoRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testVideoRefPropNone START');
@@ -176,9 +191,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testVideoDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testVideoDisabledPropTrue START');
@@ -195,9 +213,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testVideoDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testVideoDisabledPropFalse START');
@@ -214,9 +235,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testVideoFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testVideoFocusablePropTrue START');
@@ -233,9 +257,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testVideoFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testVideoFocusablePropFalse START');
@@ -252,9 +279,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoDataProp
-         * @tc.desc      ACE
+         * @tc.name   testVideoDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoDataProp', Level.LEVEL0, async function(done) {
             console.info('testVideoDataProp START');
@@ -272,9 +302,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testVideoDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testVideoDataPropNone START');
@@ -292,9 +325,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testVideoForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoForPropNull', Level.LEVEL0, async function(done) {
             console.info('testVideoForPropNull START');
@@ -312,9 +348,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testVideoForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoForPropOne', Level.LEVEL0, async function(done) {
             console.info('testVideoForPropOne START');
@@ -332,9 +371,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testVideoForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoForPropThree', Level.LEVEL0, async function(done) {
             console.info('testVideoForPropThree START');
@@ -352,9 +394,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testVideoIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testVideoIfPropTrue START');
@@ -372,9 +417,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testVideoShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testVideoShowPropTrue START');
@@ -392,9 +440,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testVideoShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testVideoShowPropFalse START');
@@ -412,9 +463,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoMutedPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testVideoMutedPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoMutedPropFalse', Level.LEVEL0, async function(done) {
             console.info('testVideoMutedPropFalse START');
@@ -432,9 +486,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoMutedPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testVideoMutedPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoMutedPropTrue', Level.LEVEL0, async function(done) {
             console.info('testVideoMutedPropTrue START');
@@ -452,9 +509,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoSrcProp
-         * @tc.desc      ACE
+         * @tc.name   testVideoSrcProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoSrcProp', Level.LEVEL0, async function(done) {
             console.info('testVideoSrcProp START');
@@ -472,9 +532,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoSrcPropNone
-         * @tc.desc      ACE
+         * @tc.name   testVideoSrcPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoSrcPropNone', Level.LEVEL0, async function(done) {
             console.info('testVideoSrcPropNone START');
@@ -492,9 +555,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoAutoplayPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testVideoAutoplayPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoAutoplayPropFalse', Level.LEVEL0, async function(done) {
             console.info('testVideoAutoplayPropFalse START');
@@ -512,9 +578,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoAutoplayPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testVideoAutoplayPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoAutoplayPropTrue', Level.LEVEL0, async function(done) {
             console.info('testVideoAutoplayPropTrue START');
@@ -532,9 +601,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoPosterProp
-         * @tc.desc      ACE
+         * @tc.name   testVideoPosterProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoPosterProp', Level.LEVEL0, async function(done) {
             console.info('testVideoPosterProp START');
@@ -552,9 +624,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoPosterPropNone
-         * @tc.desc      ACE
+         * @tc.name   testVideoPosterPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoPosterPropNone', Level.LEVEL0, async function(done) {
             console.info('testVideoPosterPropNone START');
@@ -572,9 +647,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoControlsPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testVideoControlsPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoControlsPropFalse', Level.LEVEL0, async function(done) {
             console.info('testVideoControlsPropFalse START');
@@ -592,9 +670,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoControlsPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testVideoControlsPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoControlsPropTrue', Level.LEVEL0, async function(done) {
             console.info('testVideoControlsPropTrue START');
@@ -612,9 +693,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoLoopPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testVideoLoopPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoLoopPropFalse', Level.LEVEL0, async function(done) {
             console.info('testVideoLoopPropFalse START');
@@ -632,9 +716,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoLoopPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testVideoLoopPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoLoopPropTrue', Level.LEVEL0, async function(done) {
             console.info('testVideoLoopPropTrue START');
@@ -652,9 +739,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoLoopPropNone
-         * @tc.desc      ACE
+         * @tc.name   testVideoLoopPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoLoopPropNone', Level.LEVEL0, async function(done) {
             console.info('testVideoLoopPropNone START');
@@ -672,9 +762,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoStarttimeProp
-         * @tc.desc      ACE
+         * @tc.name   testVideoStarttimeProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoStarttimeProp', Level.LEVEL0, async function(done) {
             console.info('testVideoStarttimeProp START');
@@ -692,9 +785,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoDirectionPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testVideoDirectionPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoDirectionPropAuto', Level.LEVEL0, async function(done) {
             console.info('testVideoDirectionPropAuto START');
@@ -712,9 +808,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoDirectionPropVertical
-         * @tc.desc      ACE
+         * @tc.name   testVideoDirectionPropVertical
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoDirectionPropVertical', Level.LEVEL0, async function(done) {
             console.info('testVideoDirectionPropVertical START');
@@ -732,9 +831,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoDirectionPropHorizontal
-         * @tc.desc      ACE
+         * @tc.name   testVideoDirectionPropHorizontal
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoDirectionPropHorizontal', Level.LEVEL0, async function(done) {
             console.info('testVideoDirectionPropHorizontal START');
@@ -752,9 +854,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoDirectionPropAdapt
-         * @tc.desc      ACE
+         * @tc.name   testVideoDirectionPropAdapt
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoDirectionPropAdapt', Level.LEVEL0, async function(done) {
             console.info('testVideoDirectionPropAdapt START');
@@ -772,9 +877,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoDirectionPropNone
-         * @tc.desc      ACE
+         * @tc.name   testVideoDirectionPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoDirectionPropNone', Level.LEVEL0, async function(done) {
             console.info('testVideoDirectionPropNone START');
@@ -792,9 +900,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoSpeedProp
-         * @tc.desc      ACE
+         * @tc.name   testVideoSpeedProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoSpeedProp', Level.LEVEL0, async function(done) {
             console.info('testVideoSpeedProp START');
@@ -812,9 +923,12 @@ export default function videoPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testVideoSpeedPropNone
-         * @tc.desc      ACE
+         * @tc.name   testVideoSpeedPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testVideoSpeedPropNone', Level.LEVEL0, async function(done) {
             console.info('testVideoSpeedPropNone START');

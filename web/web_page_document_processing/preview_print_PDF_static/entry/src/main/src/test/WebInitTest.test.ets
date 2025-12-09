@@ -15,7 +15,6 @@
 
 import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
 import Utils from '../../src/test/Util.test';
-import { sendEventByKey } from '@internal.full.global';
 import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
@@ -62,14 +61,14 @@ export default function webInitTest() {
       console.info('web beforeEach start');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SETPRINRBACKGROUNDONE_STATIC
-    * @tc.name       : testSetPrintBackgroundOneStatic
-    * @tc.desc       : test deleteAllGeolocation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSetPrintBackgroundOneStatic
+     * @tc.number SUB_WEB_SETPRINRBACKGROUNDONE_STATIC
+     * @tc.desc   test deleteAllGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetPrintBackgroundOneStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
 	  await Utils.msSleep(4000);
       Utils.emitEvent('emitSetPrintBackgroundOne', 10)

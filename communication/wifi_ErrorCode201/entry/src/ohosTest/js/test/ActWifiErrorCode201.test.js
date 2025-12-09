@@ -67,7 +67,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0003
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0003
          * @tc.desc   Test scan API ErrorCode 201.
@@ -87,7 +86,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0038
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0038
          * @tc.desc   Test getScanInfoList API ErrorCode 201.
@@ -107,7 +105,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0039
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0039
          * @tc.desc   Test addCandidateConfig API ErrorCode 201.
@@ -137,7 +134,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0040
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0040
          * @tc.desc   Test addCandidateConfig API ErrorCode 201.
@@ -172,7 +168,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0041
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0041
          * @tc.desc   Test removeCandidateConfig API ErrorCode 201.
@@ -195,7 +190,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0042
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0042
          * @tc.desc   Test removeCandidateConfig API ErrorCode 201.
@@ -223,7 +217,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0043
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0043
          * @tc.desc   Test getCandidateConfigs API ErrorCode 201.
@@ -243,7 +236,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0044
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0044
          * @tc.desc   Test connectToCandidateConfig API ErrorCode 201.
@@ -263,7 +255,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0045
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0045
          * @tc.desc   Test getSignalLevel API ErrorCode 201.
@@ -283,7 +274,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0046
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0046
          * @tc.desc   Test getLinkedInfo API ErrorCode 201.
@@ -306,7 +296,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0047
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0047
          * @tc.desc   Test getLinkedInfo API ErrorCode 201.
@@ -334,7 +323,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0048
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0048
          * @tc.desc   Test isConnected API ErrorCode 201.
@@ -354,7 +342,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0049
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0049
          * @tc.desc   Test isFeatureSupported API ErrorCode 201.
@@ -374,7 +361,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0050
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0050
          * @tc.desc   Test getIpInfo API ErrorCode 201.
@@ -394,7 +380,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0051
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0051
          * @tc.desc   Test getCountryCode API ErrorCode 201.
@@ -414,7 +399,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0052
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0052
          * @tc.desc   Test getP2pLinkedInfo API ErrorCode 201.
@@ -438,7 +422,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0053
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0053
          * @tc.desc   Test getP2pLinkedInfo API ErrorCode 201.
@@ -467,7 +450,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0054
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0054
          * @tc.desc   Test getCurrentP2pGroup API ErrorCode 201.
@@ -490,7 +472,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0055
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0055
          * @tc.desc   Test getCurrentP2pGroup API ErrorCode 201.
@@ -518,7 +499,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0056
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0056
          * @tc.desc   Test getP2pPeerDevices API ErrorCode 201.
@@ -541,7 +521,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0057
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0057
          * @tc.desc   Test getP2pPeerDevices API ErrorCode 201.
@@ -569,7 +548,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0058
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0058
          * @tc.desc   Test getP2pLocalDevice API ErrorCode 201.
@@ -592,7 +570,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0059
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0059
          * @tc.desc   Test getP2pLocalDevice API ErrorCode 201.
@@ -620,7 +597,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0060
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0060
          * @tc.desc   Test getP2pLocalDevice API ErrorCode 201.
@@ -647,7 +623,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0061
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0061
          * @tc.desc   Test removeP2pGroup API ErrorCode 201.
@@ -667,7 +642,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0062
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0062
          * @tc.desc   Test p2pConnect API ErrorCode 201.
@@ -695,7 +669,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0063
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0063
          * @tc.desc   Test p2pCancelConnect API ErrorCode 201.
@@ -716,7 +689,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0064
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0064
          * @tc.desc   Test startDiscoverDevices API ErrorCode 201.
@@ -737,7 +709,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0065
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0065
          * @tc.desc   Test stopDiscoverP2pDevices API ErrorCode 201.
@@ -758,7 +729,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0066
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0066
          * @tc.desc   Test wifiStateChange API ErrorCode 201.
@@ -789,7 +759,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0067
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0067
          * @tc.desc   Test wifiConnectionChange API ErrorCode 201.
@@ -820,7 +789,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0068
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0068
          * @tc.desc   Test wifiScanStateChange API ErrorCode 201.
@@ -851,7 +819,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0069
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0069
          * @tc.desc   Test wifiRssiChange API ErrorCode 201.
@@ -882,7 +849,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0070
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0070
          * @tc.desc   Test hotspotStateChange API ErrorCode 201.
@@ -913,7 +879,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0071
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0071
          * @tc.desc   Test p2pStateChange API ErrorCode 201.
@@ -944,7 +909,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0072
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0072
          * @tc.desc   Test p2pConnectionChange API ErrorCode 201.
@@ -975,7 +939,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0073
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0073
          * @tc.desc   Test p2pDeviceChange API ErrorCode 201.
@@ -1006,7 +969,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0074
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0074
          * @tc.desc   Test p2pPeerDeviceChange API ErrorCode 201.
@@ -1037,7 +999,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0075
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0075
          * @tc.desc   Test p2pPersistentGroupChange API ErrorCode 201.
@@ -1068,7 +1029,6 @@ export default function actsWifiErrorCode201Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_XTS_ErrorCode_0076
          * @tc.number SUB_Communication_WiFi_XTS_ErrorCode_0076
          * @tc.desc   Test p2pDiscoveryChange API ErrorCode 201.

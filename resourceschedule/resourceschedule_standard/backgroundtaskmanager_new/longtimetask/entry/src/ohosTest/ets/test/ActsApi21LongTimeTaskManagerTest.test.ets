@@ -58,13 +58,13 @@ export default function ActsApi21LongTimeTaskManagerTest() {
     })
 
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_001
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_001
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_DATA_TRANSFER
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_001
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_001
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_DATA_TRANSFER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -84,13 +84,13 @@ export default function ActsApi21LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_001 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_002
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_002
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_AUDIO_PLAYBACK
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_002
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_002
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_AUDIO_PLAYBACK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -110,13 +110,13 @@ export default function ActsApi21LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_002 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_003
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_003
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_AUDIO_RECORDING
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_003
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_003
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_AUDIO_RECORDING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -136,13 +136,13 @@ export default function ActsApi21LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_003 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_004
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_004
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_LOCATION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_004
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_004
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_LOCATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -162,13 +162,13 @@ export default function ActsApi21LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_004 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_005
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_005
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_BLUETOOTH_INTERACTION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_005
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_005
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_BLUETOOTH_INTERACTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -188,13 +188,13 @@ export default function ActsApi21LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_005 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_006
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_006
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_MULTI_DEVICE_CONNECTION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_006
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_006
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_MULTI_DEVICE_CONNECTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -214,13 +214,13 @@ export default function ActsApi21LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_006 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_007
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_007
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_VOIP
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_007
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_007
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_VOIP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -240,13 +240,13 @@ export default function ActsApi21LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_007 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_008
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_008
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_TASK_KEEPING
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_008
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_008
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_TASK_KEEPING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -266,13 +266,13 @@ export default function ActsApi21LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_008 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_009
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_009
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_CAR_KEY_NORMAL_NOTIFICATION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_009
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_009
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_CAR_KEY_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -292,13 +292,13 @@ export default function ActsApi21LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_009 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_010
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_010
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_NORMAL_NOTIFICATION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_010
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_010
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -318,13 +318,13 @@ export default function ActsApi21LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_010 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_011
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_011
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_LIVE_VIEW_NOTIFICATION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_011
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_011
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_LIVE_VIEW_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -344,13 +344,13 @@ export default function ActsApi21LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_011 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_012
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_012
-     * @tc.desc:Test that the startBackgroundRunning function and stopBackgroundRunning and updateBackgroundRunning function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_012
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_012
+     * @tc.desc   Test that the startBackgroundRunning function and stopBackgroundRunning and updateBackgroundRunning function normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -439,13 +439,13 @@ export default function ActsApi21LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_012 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_013
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_013
-     * @tc.desc:Test that the backgroundTaskManager isModeSupported function res is true
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_013
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_013
+     * @tc.desc   Test that the backgroundTaskManager isModeSupported function res is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {

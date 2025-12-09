@@ -46,12 +46,12 @@ export default function tabsOpacityJsunit() {
     });
 
     /**
-     * @tc.number    tabsOpacityJsunit_001
-     * @tc.name      tabsOpacityJsunit_0100
-     * @tc.desc      Set the translation distance and transparency of TabBar.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   tabsOpacityJsunit_0100
+     * @tc.number tabsOpacityJsunit_001
+     * @tc.desc   Set the translation distance and transparency of TabBar.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabsOpacityJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[tabsOpacityJsunit_0100] START');

@@ -46,12 +46,12 @@ export default function repeatCountJsunit() {
     });
 
     /**
-     * @tc.number    repeatCountJsunit_001
-     * @tc.name      repeatCountJsunit_001
-     * @tc.desc      Current total data count
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   repeatCountJsunit_001
+     * @tc.number repeatCountJsunit_001
+     * @tc.desc   Current total data count
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('repeatCountJsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[repeatCountJsunit_001] START');

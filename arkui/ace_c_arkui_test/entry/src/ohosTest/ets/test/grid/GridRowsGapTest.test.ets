@@ -26,52 +26,52 @@ export default function gridRowsGapTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GRID_ROWSGAP_0100
-     * @tc.name       : testGridRowsGap001
-     * @tc.desc       : testing RowsGap for Grid with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGridRowsGap001
+     * @tc.number SUB_ARKUI_CAPI_GRID_ROWSGAP_0100
+     * @tc.desc   testing RowsGap for Grid with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGridRowsGap001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testGridRowsGap001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GRID_ROWSGAP_0200
-     * @tc.name       : testGridRowsGap002
-     * @tc.desc       : testing RowsGap for Grid with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGridRowsGap002
+     * @tc.number SUB_ARKUI_CAPI_GRID_ROWSGAP_0200
+     * @tc.desc   testing RowsGap for Grid with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGridRowsGap002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testGridRowsGap002()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GRID_ROWSGAP_0300
-     * @tc.name       : testGridRowsGap003
-     * @tc.desc       : testing RowsGap for Grid with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGridRowsGap003
+     * @tc.number SUB_ARKUI_CAPI_GRID_ROWSGAP_0300
+     * @tc.desc   testing RowsGap for Grid with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGridRowsGap003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testGridRowsGap003()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GRID_ROWSGAP_0400
-     * @tc.name       : testGridRowsGap004
-     * @tc.desc       : testing RowsGap for Grid with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGridRowsGap004
+     * @tc.number SUB_ARKUI_CAPI_GRID_ROWSGAP_0400
+     * @tc.desc   testing RowsGap for Grid with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGridRowsGap004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testGridRowsGap004()).assertEqual(0)

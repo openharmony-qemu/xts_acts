@@ -26,14 +26,14 @@ export default function commonEventOnAreaChangeTest() {
       await Utils.pushPage(`commonevent/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONEVENT_ONAREACHANGE_0100
-    * @tc.name       : testCommonEventOnAreaChange001
-    * @tc.desc       : test onAreaChange event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonEventOnAreaChange001
+     * @tc.number SUB_ARKUI_CAPI_COMMONEVENT_ONAREACHANGE_0100
+     * @tc.desc   test onAreaChange event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonEventOnAreaChange001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnAreaChangeTestImageSpanSize')
       await Utils.sleep(2000)
@@ -42,14 +42,14 @@ export default function commonEventOnAreaChangeTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONEVENT_ONAREACHANGE_0200
-    * @tc.name       : testCommonEventOnAreaChange002
-    * @tc.desc       : test onAreaChange event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonEventOnAreaChange002
+     * @tc.number SUB_ARKUI_CAPI_COMMONEVENT_ONAREACHANGE_0200
+     * @tc.desc   test onAreaChange event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonEventOnAreaChange002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnAreaChangeTestImageSpanMoveCompare')
       await Utils.sleep(2000)
@@ -58,14 +58,14 @@ export default function commonEventOnAreaChangeTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONEVENT_ONAREACHANGE_0300
-    * @tc.name       : testCommonEventOnAreaChange003
-    * @tc.desc       : test onAreaChange event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonEventOnAreaChange003
+     * @tc.number SUB_ARKUI_CAPI_COMMONEVENT_ONAREACHANGE_0300
+     * @tc.desc   test onAreaChange event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonEventOnAreaChange003', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnAreaChangeTestImageSpanOffset')
       await Utils.sleep(2000)

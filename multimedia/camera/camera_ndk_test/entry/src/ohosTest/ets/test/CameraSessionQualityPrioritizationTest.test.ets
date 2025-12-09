@@ -256,12 +256,12 @@ export default function CameraSessionQualityPrioritizationTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_QUALITY_PRIORITIZATION_PROMISE_001
-     * @tc.name      : Check capture session set quality prioritization HIGH_QUALITY with promise
-     * @tc.desc      : Check capture session set quality prioritization HIGH_QUALITY with promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_QUALITY_PRIORITIZATION_PROMISE_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_QUALITY_PRIORITIZATION_PROMISE_001
+     * @tc.desc   Check capture session set quality prioritization HIGH_QUALITY with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_QUALITY_PRIORITIZATION_PROMISE_001', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_QUALITY_PRIORITIZATION_PROMISE_001--------------");
@@ -277,12 +277,12 @@ export default function CameraSessionQualityPrioritizationTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_QUALITY_PRIORITIZATION_PROMISE_002
-     * @tc.name      : Check capture session set quality prioritization POWER_BALANCE with promise
-     * @tc.desc      : Check capture session set quality prioritization POWER_BALANCE with promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_QUALITY_PRIORITIZATION_PROMISE_002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_QUALITY_PRIORITIZATION_PROMISE_002
+     * @tc.desc   Check capture session set quality prioritization POWER_BALANCE with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_QUALITY_PRIORITIZATION_PROMISE_002', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_QUALITY_PRIORITIZATION_PROMISE_002--------------");

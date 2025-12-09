@@ -79,12 +79,12 @@ export default function printTest() {
 
 
     /**
+     * @tc.name   print_function_0100
      * @tc.number print_function_0100
-     * @tc.name Test print
-     * @tc.desc check the print function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the print function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('print_function_0100', Level.LEVEL2, async (done: Function) => {
       let file = ['file://data/print/a.png', 'file://data/print/b.png'];
@@ -102,12 +102,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_0200
      * @tc.number print_function_0200
-     * @tc.name Test print
-     * @tc.desc check the print function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the print function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('print_function_0200', Level.LEVEL2, (done: Function) => {
       let file = ['file://data/print/a.png', 'file://data/print/b.png'];
@@ -131,12 +131,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_0300
      * @tc.number print_function_0300
-     * @tc.name Test print
-     * @tc.desc check the print function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the print function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('print_function_0300', Level.LEVEL2, (done: Function) => {
       let file = ['file://data/print/a.png', 'file://data/print/b.png'];
@@ -161,12 +161,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_0400
      * @tc.number print_function_0400
-     * @tc.name Test print
-     * @tc.desc check the print function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the print function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0400', Level.LEVEL0, async (done: Function) => {
       let file = ['file://data/print/a.png', 'file://data/print/b.png'];
@@ -185,12 +185,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_0401
      * @tc.number print_function_0401
-     * @tc.name Test print
-     * @tc.desc check the printTask on and off
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the printTask on and off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('print_function_0401', Level.LEVEL2, async (done: Function) => {
       let file = ['file://data/print/a.png', 'file://data/print/b.png'];
@@ -208,12 +208,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_0402
      * @tc.number print_function_0402
-     * @tc.name Test print
-     * @tc.desc check the printTask off without callback
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the printTask off without callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('print_function_0402', Level.LEVEL2, async (done: Function) => {
       let file = ['file://data/print/a.png', 'file://data/print/b.png'];
@@ -276,12 +276,12 @@ export default function printTest() {
     }
 
     /**
+     * @tc.name   print_function_0500
      * @tc.number print_function_0500
-     * @tc.name Test print
-     * @tc.desc check the print function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   check the print function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('print_function_0500', Level.LEVEL1, async (done: Function) => {
       let jobName: string = 'jobName';
@@ -366,12 +366,12 @@ export default function printTest() {
     }
 
     /**
+     * @tc.name   print_function_0600
      * @tc.number print_function_0600
-     * @tc.name Test print
-     * @tc.desc check the addPrinterToDiscovery function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   check the addPrinterToDiscovery function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('print_function_0600', Level.LEVEL1, async (done: Function) => {
       let printerInformation: print.PrinterInformation = new MyPrinterInformation();
@@ -438,12 +438,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_0601
      * @tc.number print_function_0601
-     * @tc.name Test print
-     * @tc.desc check the 401 error code of addPrinterToDiscovery function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the 401 error code of addPrinterToDiscovery function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('print_function_0601', Level.LEVEL2, async (done: Function) => {
       let printerInformation: print.PrinterInformation = new MyPrinterInformation();
@@ -475,12 +475,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_0700
      * @tc.number print_function_0700
-     * @tc.name Test print
-     * @tc.desc check the updatePrinterInDiscovery function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   check the updatePrinterInDiscovery function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('print_function_0700', Level.LEVEL1, async (done: Function) => {
       let printerInformation: print.PrinterInformation = new MyPrinterInformation();
@@ -526,12 +526,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_0701
      * @tc.number print_function_0701
-     * @tc.name Test print
-     * @tc.desc check the 401 error code of updatePrinterInDiscovery function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the 401 error code of updatePrinterInDiscovery function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('print_function_0701', Level.LEVEL2, async (done: Function) => {
       let printerInformation: print.PrinterInformation = new MyPrinterInformation();
@@ -563,12 +563,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_0800
      * @tc.number print_function_0800
-     * @tc.name Test print
-     * @tc.desc check the removePrinterFromDiscovery function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   check the removePrinterFromDiscovery function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('print_function_0800', Level.LEVEL1, async (done: Function) => {
       let printerId : string = 'testPrinterId';
@@ -586,12 +586,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_0801
      * @tc.number print_function_0801
-     * @tc.name Test print
-     * @tc.desc check the 401 error code of removePrinterFromDiscovery function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the 401 error code of removePrinterFromDiscovery function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('print_function_0801', Level.LEVEL2, async (done: Function) => {
       let printerId : string = '';
@@ -611,12 +611,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_0900
      * @tc.number print_function_0900
-     * @tc.name Test print
-     * @tc.desc check the getPrinterInformationById function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   check the getPrinterInformationById function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('print_function_0900', Level.LEVEL1, async(done: Function) => {
       let printerInformation: print.PrinterInformation = new MyPrinterInformation();
@@ -663,12 +663,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_0901
      * @tc.number print_function_0901
-     * @tc.name Test print
-     * @tc.desc check the 401 error code of getPrinterInformationById function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the 401 error code of getPrinterInformationById function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('print_function_0901', Level.LEVEL2, async (done: Function) => {
       let printerId : string = '';
@@ -688,12 +688,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_1000
      * @tc.number print_function_1000
-     * @tc.name Test print
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('print_function_1000', Level.LEVEL2, () => {
       let printerStates: print.PrinterState[] = [
@@ -808,18 +808,46 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_1100
      * @tc.number print_function_1100
-     * @tc.name Test print
-     * @tc.desc check the getAddedPrinters function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   check the getAddedPrinters function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('print_function_1100', Level.LEVEL1, async (done: Function) => {
       // Permissions required: ohos.permission.PRINT
+      let testPageSize : print.PrintPageSize = {
+        id : 'ISO_A4',
+        name : 'iso_a4_210x297mm',
+        width : 8268,
+        height : 11692
+      };
+      let testCapability : print.PrinterCapabilities = {
+        supportedPageSizes : [testPageSize],
+        supportedColorModes : [print.PrintColorMode.COLOR_MODE_MONOCHROME],
+        supportedDuplexModes : [print.PrintDuplexMode.DUPLEX_MODE_NONE],
+        supportedMediaTypes : ['stationery'],
+        supportedQualities : [print.PrintQuality.QUALITY_NORMAL],
+        supportedOrientations : [print.PrintOrientationMode.ORIENTATION_MODE_PORTRAIT],
+        options : 'testOptions'
+      };
+      let printerInformation : print.PrinterInformation = {
+        printerId : 'testPrinterId',
+        printerName : 'testPrinterName',
+        printerStatus : 0,
+        description : 'testDesc',
+        capability : testCapability,
+        uri : 'file:/dev/null',
+        printerMake : 'raw',
+        options : 'testOptions'
+      };
+      await AddPrinterToDiscovery(printerInformation);
+      await UpdatePrinterInDiscovery(printerInformation);
+
       await print.getAddedPrinters().then((printers : Array<string>) => {
         console.log('getAddedPrinters expect succeed, data: ' + JSON.stringify(printers));
-        expect(printers.length).assertEqual(0);
+        expect(printers.length > 0).assertTrue();
         expect(!!printers).assertTrue();
         done();
       }).catch((error: BusinessError) => {
@@ -830,12 +858,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_1200
      * @tc.number print_function_1200
-     * @tc.name Test print
-     * @tc.desc check the printerChange event registration and unregistration functions
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   check the printerChange event registration and unregistration functions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('print_function_1200', Level.LEVEL1, async (done: Function) => {
       let callBackCount : number = 0;
@@ -892,12 +920,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_1300
      * @tc.number print_function_1300
-     * @tc.name Test print
-     * @tc.desc check success of startDiscoverPrinter function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   check success of startDiscoverPrinter function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('print_function_1300', Level.LEVEL1, async (done: Function) => {
       let extensionList: string[] = [];
@@ -919,12 +947,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_1301
      * @tc.number print_function_1301
-     * @tc.name Test print
-     * @tc.desc check success of startDiscoverPrinter function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   check success of startDiscoverPrinter function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('print_function_1301', Level.LEVEL1, async (done: Function) => {
       let extensionList: string[] = [];
@@ -940,12 +968,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_1400
      * @tc.number print_function_1400
-     * @tc.name Test print
-     * @tc.desc check success of stopDiscoverPrinter function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   check success of stopDiscoverPrinter function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('print_function_1400', Level.LEVEL1, async (done: Function) => {
       // Permissions required: ohos.permission.PRINT
@@ -966,12 +994,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_1401
      * @tc.number print_function_1401
-     * @tc.name Test print
-     * @tc.desc check success of stopDiscoverPrinter function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   check success of stopDiscoverPrinter function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('print_function_1401', Level.LEVEL1, async (done: Function) => {
       // Permissions required: ohos.permission.PRINT
@@ -986,12 +1014,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_1500
      * @tc.number print_function_1500
-     * @tc.name Test print
-     * @tc.desc check success of connectPrinter function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   check success of connectPrinter function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('print_function_1500', Level.LEVEL1, async (done: Function) => {
       let printId: string = '123';
@@ -1013,12 +1041,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_1501
      * @tc.number print_function_1501
-     * @tc.name Test print
-     * @tc.desc check success of connectPrinter function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   check success of connectPrinter function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('print_function_1501', Level.LEVEL1, async (done: Function) => {
       let printId: string = '123';

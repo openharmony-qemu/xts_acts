@@ -39,7 +39,6 @@ export default function rdbVectorNdktest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Cursor_GetFloatVectorCount0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_Cursor_GetFloatVectorCount0100
      * @tc.desc   OH_Cursor_GetFloatVectorCount0100

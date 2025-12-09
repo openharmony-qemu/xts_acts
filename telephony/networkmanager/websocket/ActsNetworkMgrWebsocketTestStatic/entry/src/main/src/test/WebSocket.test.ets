@@ -45,14 +45,14 @@ export default function WebSocketTest() {
     let availableWebSocketAddress: string = 'ws://echo.websocket.org';
 
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectCallback_0300
-    * @tc.name  : testWebSocketConnectCallback_static_0300
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectCallback_static_0300
+     * @tc.number SUB_Network_WebSocket_ConnectCallback_0300
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectCallback_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let caseName: string = 'testWebSocketConnectCallback_static_0300';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -80,14 +80,14 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectPromise_0200
-    * @tc.name  : testWebSocketConnectPromise_static_0200
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,options is {},promise)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectPromise_static_0200
+     * @tc.number SUB_Network_WebSocket_ConnectPromise_0200
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectPromise_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let caseName: string = 'testWebSocketConnectPromise_static_0200';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -113,14 +113,14 @@ export default function WebSocketTest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_Network_WebSocket_ConnectPromise_0300
-    * @tc.name  : testWebSocketConnectPromise_static_0300
-    * @tc.desc  : Establish a WebSocket connection based on the URL address and header(correct url,options Parameter rejection,promise)
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testWebSocketConnectPromise_static_0300
+     * @tc.number SUB_Network_WebSocket_ConnectPromise_0300
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options Parameter rejection,promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebSocketConnectPromise_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let caseName: string = 'testWebSocketConnectPromise_static_0300';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -146,14 +146,14 @@ export default function WebSocketTest() {
       }
     });
 
-    /*
-      * @tc.number: SUB_NetworkMgr_WebSocket_Connect_0100
-      * @tc.name  : testNetworkMgrWebSocketConnect0100
-      * @tc.desc  : Establish a WebSocket connection based on the URL address and header(connect twice)
-      * @tc.size  : MediumTest
-      * @tc.type  : Function
-      * @tc.level : level 3
-      */
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnect0100
+     * @tc.number SUB_NetworkMgr_WebSocket_Connect_0100
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(connect twice)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrWebSocketConnect0100',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetworkMgrWebSocketConnect0100';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');

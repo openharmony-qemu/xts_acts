@@ -32,12 +32,12 @@ export default function zlibNdkTest() {
   describe('zlibNdkTest', () => {
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_COMPRESS_0100
-     * @tc.name       : testCompress001
-     * @tc.desc       : test Compress
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testCompress001
+     * @tc.number SUB_THIRDPARTY_ZLIB_COMPRESS_0100
+     * @tc.desc   test Compress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCompress001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let data = zLib.compress(Z_OK);
@@ -47,12 +47,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_COMPRESS_0200
-     * @tc.name       : testCompress002
-     * @tc.desc       : test Compress
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testCompress002
+     * @tc.number SUB_THIRDPARTY_ZLIB_COMPRESS_0200
+     * @tc.desc   test Compress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCompress002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let data = zLib.compress(Z_BUF_ERROR);
@@ -62,12 +62,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_UNCOMPRESS_0100
-     * @tc.name       : testUnCompress001
-     * @tc.desc       : test unCompress
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUnCompress001
+     * @tc.number SUB_THIRDPARTY_ZLIB_UNCOMPRESS_0100
+     * @tc.desc   test unCompress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUnCompress001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let data = zLib.unCompress(Z_OK);
@@ -77,12 +77,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_UNCOMPRESS_0200
-     * @tc.name       : testUnCompress002
-     * @tc.desc       : test unCompress
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUnCompress002
+     * @tc.number SUB_THIRDPARTY_ZLIB_UNCOMPRESS_0200
+     * @tc.desc   test unCompress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUnCompress002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let data = zLib.unCompress(Z_BUF_ERROR);
@@ -92,12 +92,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_UNCOMPRESS_0300
-     * @tc.name       : testUnCompress003
-     * @tc.desc       : test unCompress
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUnCompress003
+     * @tc.number SUB_THIRDPARTY_ZLIB_UNCOMPRESS_0300
+     * @tc.desc   test unCompress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUnCompress003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let data = zLib.unCompress(Z_DATA_ERROR);
@@ -107,12 +107,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_COMPRESS2_0100
-     * @tc.name       : testCompress2001
-     * @tc.desc       : test compress2
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testCompress2001
+     * @tc.number SUB_THIRDPARTY_ZLIB_COMPRESS2_0100
+     * @tc.desc   test compress2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCompress2001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let data = zLib.compress2(Z_NO_COMPRESSION, Z_OK);
@@ -122,12 +122,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_COMPRESS2_0200
-     * @tc.name       : testCompress2002
-     * @tc.desc       : test compress2
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testCompress2002
+     * @tc.number SUB_THIRDPARTY_ZLIB_COMPRESS2_0200
+     * @tc.desc   test compress2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCompress2002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let data = zLib.compress2(Z_BEST_SPEED, Z_OK);
@@ -137,12 +137,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_COMPRESS2_0300
-     * @tc.name       : testCompress2003
-     * @tc.desc       : test compress2
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testCompress2003
+     * @tc.number SUB_THIRDPARTY_ZLIB_COMPRESS2_0300
+     * @tc.desc   test compress2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCompress2003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let data = zLib.compress2(Z_BEST_COMPRESSION, Z_OK);
@@ -152,12 +152,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_COMPRESS2_0400
-     * @tc.name       : testCompress2004
-     * @tc.desc       : test compress2
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testCompress2004
+     * @tc.number SUB_THIRDPARTY_ZLIB_COMPRESS2_0400
+     * @tc.desc   test compress2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCompress2004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let data = zLib.compress2(Z_DEFAULT_COMPRESSION, Z_OK);
@@ -167,12 +167,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_COMPRESS2_0500
-     * @tc.name       : testCompress2005
-     * @tc.desc       : test compress2
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testCompress2005
+     * @tc.number SUB_THIRDPARTY_ZLIB_COMPRESS2_0500
+     * @tc.desc   test compress2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCompress2005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let data = zLib.compress2(Z_DEFAULT_COMPRESSION, Z_BUF_ERROR);
@@ -182,12 +182,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_COMPRESS2_0600
-     * @tc.name       : testCompress2006
-     * @tc.desc       : test compress2
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testCompress2006
+     * @tc.number SUB_THIRDPARTY_ZLIB_COMPRESS2_0600
+     * @tc.desc   test compress2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCompress2006', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
       let data = zLib.compress2(Z_ERROR_COMPRESSION, Z_STREAM_ERROR);
@@ -197,12 +197,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_COMPRESSBOUND_0100
-     * @tc.name       : testCompressBound001
-     * @tc.desc       : test compressBound
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testCompressBound001
+     * @tc.number SUB_THIRDPARTY_ZLIB_COMPRESSBOUND_0100
+     * @tc.desc   test compressBound
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCompressBound001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
       let data = zLib.compressBound();
@@ -212,12 +212,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_CRC32_0100
-     * @tc.name       : testCrc32001
-     * @tc.desc       : test crc32
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testCrc32001
+     * @tc.number SUB_THIRDPARTY_ZLIB_CRC32_0100
+     * @tc.desc   test crc32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCrc32001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
       let data = zLib.crc32(Z_NULL);
@@ -227,12 +227,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_CRC32_0200
-     * @tc.name       : testCrc32002
-     * @tc.desc       : test crc32
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testCrc32002
+     * @tc.number SUB_THIRDPARTY_ZLIB_CRC32_0200
+     * @tc.desc   test crc32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCrc32002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
       let data = zLib.crc32(1);
@@ -242,12 +242,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_CRC32_Z_0100
-     * @tc.name       : testCrc32Z001
-     * @tc.desc       : test crc32_z
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testCrc32Z001
+     * @tc.number SUB_THIRDPARTY_ZLIB_CRC32_Z_0100
+     * @tc.desc   test crc32_z
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCrc32Z001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
       let data = zLib.crc32_z();
@@ -257,12 +257,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_CRC32_COMBINE_0100
-     * @tc.name       : testCrc32Combine001
-     * @tc.desc       : test crc32Combine
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testCrc32Combine001
+     * @tc.number SUB_THIRDPARTY_ZLIB_CRC32_COMBINE_0100
+     * @tc.desc   test crc32Combine
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCrc32Combine001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
       let data = zLib.crc32Combine();
@@ -272,12 +272,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_ADLER32_0100
-     * @tc.name       : testAdler32001
-     * @tc.desc       : test adler32
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testAdler32001
+     * @tc.number SUB_THIRDPARTY_ZLIB_ADLER32_0100
+     * @tc.desc   test adler32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAdler32001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
       let data = zLib.adler32(Z_NULL);
@@ -287,12 +287,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_ADLER32_0200
-     * @tc.name       : testAdler32002
-     * @tc.desc       : test adler32
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testAdler32002
+     * @tc.number SUB_THIRDPARTY_ZLIB_ADLER32_0200
+     * @tc.desc   test adler32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAdler32002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
       let data = zLib.adler32(1);
@@ -302,12 +302,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_ADLER32_Z_0100
-     * @tc.name       : testAdler32Z001
-     * @tc.desc       : test adler32_z
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testAdler32Z001
+     * @tc.number SUB_THIRDPARTY_ZLIB_ADLER32_Z_0100
+     * @tc.desc   test adler32_z
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAdler32Z001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
       let data = zLib.adler32_z();
@@ -317,12 +317,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_ADLER32_COMBINE_0100
-     * @tc.name       : testAdler32Combine001
-     * @tc.desc       : test adler32Combine
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testAdler32Combine001
+     * @tc.number SUB_THIRDPARTY_ZLIB_ADLER32_COMBINE_0100
+     * @tc.desc   test adler32Combine
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAdler32Combine001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
       let data = zLib.adler32Combine();
@@ -332,12 +332,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_DEFLATE_0100
-     * @tc.name       : testDeflate001
-     * @tc.desc       : test unCompress
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testDeflate001
+     * @tc.number SUB_THIRDPARTY_ZLIB_DEFLATE_0100
+     * @tc.desc   test unCompress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDeflate001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
       let data = zLib.deflate();
@@ -347,12 +347,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_ZLIBVERSION_0100
-     * @tc.name       : testZLibVersion001
-     * @tc.desc       : test zlibVersion
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibVersion001
+     * @tc.number SUB_THIRDPARTY_ZLIB_ZLIBVERSION_0100
+     * @tc.desc   test zlibVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testZLibVersion001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
       let data = zLib.zLibVersion();
@@ -362,12 +362,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_ZLIBCOMPILEFLAGS_0100
-     * @tc.name       : testZLibCompileFlags001
-     * @tc.desc       : test zlibCompileFlags
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibCompileFlags001
+     * @tc.number SUB_THIRDPARTY_ZLIB_ZLIBCOMPILEFLAGS_0100
+     * @tc.desc   test zlibCompileFlags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testZLibCompileFlags001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
       let data = zLib.zLibCompileFlags();
@@ -377,12 +377,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_ZERROR_0100
-     * @tc.name       : testZLibZError001
-     * @tc.desc       : test zError
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibZError001
+     * @tc.number SUB_THIRDPARTY_ZLIB_ZERROR_0100
+     * @tc.desc   test zError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testZLibZError001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
       let data = zLib.zError();
@@ -392,12 +392,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_UNCOMPRESS2_0100
-     * @tc.name       : testZLibUnCompress2001
-     * @tc.desc       : test unCompress2
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testZLibUnCompress2001
+     * @tc.number SUB_THIRDPARTY_ZLIB_UNCOMPRESS2_0100
+     * @tc.desc   test unCompress2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibUnCompress2001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.unCompress2(Z_OK);
@@ -407,12 +407,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_UNCOMPRESS2_0200
-     * @tc.name       : testZLibUnCompress2002
-     * @tc.desc       : test unCompress2
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testZLibUnCompress2002
+     * @tc.number SUB_THIRDPARTY_ZLIB_UNCOMPRESS2_0200
+     * @tc.desc   test unCompress2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibUnCompress2002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.unCompress2(Z_BUF_ERROR);
@@ -422,12 +422,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_UNCOMPRESS2_0300
-     * @tc.name       : testZLibUnCompress2003
-     * @tc.desc       : test unCompress2
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testZLibUnCompress2003
+     * @tc.number SUB_THIRDPARTY_ZLIB_UNCOMPRESS2_0300
+     * @tc.desc   test unCompress2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibUnCompress2003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.unCompress2(Z_DATA_ERROR);
@@ -437,12 +437,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATEVALIDATE_0100
-     * @tc.name       : testZLibInflateValidate001
-     * @tc.desc       : test inflateValidate
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testZLibInflateValidate001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATEVALIDATE_0100
+     * @tc.desc   test inflateValidate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflateValidate001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflateValidate();
@@ -452,12 +452,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATEUNDERMINE_0100
-     * @tc.name       : testZLibInflateUndermine001
-     * @tc.desc       : test inflateUndermine
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflateUndermine001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATEUNDERMINE_0100
+     * @tc.desc   test inflateUndermine
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflateUndermine001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflateUndermine();
@@ -467,12 +467,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATESYNCPOINT_0100
-     * @tc.name       : testZLibInflateSyncPoint001
-     * @tc.desc       : test inflateSyncPoint
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflateSyncPoint001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATESYNCPOINT_0100
+     * @tc.desc   test inflateSyncPoint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflateSyncPoint001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflateSyncPoint();
@@ -481,12 +481,12 @@ export default function zlibNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATESYNC_0100
-     * @tc.name       : testZLibInflateSync001
-     * @tc.desc       : test inflateSync
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflateSync001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATESYNC_0100
+     * @tc.desc   test inflateSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflateSync001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflateSync();
@@ -496,12 +496,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_DEFLATEBOUND_0100
-     * @tc.name       : testZLibInflateSync001
-     * @tc.desc       : test deflateBound
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDeflateBound001
+     * @tc.number SUB_THIRDPARTY_ZLIB_DEFLATEBOUND_0100
+     * @tc.desc   test deflateBound
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeflateBound001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.deflateBound();
@@ -511,12 +511,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATERESETKEEP_0100
-     * @tc.name       : testZLibInflateResetKeep001
-     * @tc.desc       : test inflateResetKeep
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflateResetKeep001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATERESETKEEP_0100
+     * @tc.desc   test inflateResetKeep
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflateResetKeep001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflateResetKeep();
@@ -526,12 +526,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATERESET_0100
-     * @tc.name       : testZLibInflateReset001
-     * @tc.desc       : test inflateReset
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflateReset001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATERESET_0100
+     * @tc.desc   test inflateReset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflateReset001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflateReset();
@@ -541,12 +541,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATERESET2_0100
-     * @tc.name       : testZLibInflateReset2001
-     * @tc.desc       : test inflateReset2
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflateReset2001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATERESET2_0100
+     * @tc.desc   test inflateReset2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflateReset2001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflateReset2();
@@ -556,12 +556,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATEMARK_0100
-     * @tc.name       : testZLibInflateMark001
-     * @tc.desc       : test inflateMark
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflateMark001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATEMARK_0100
+     * @tc.desc   test inflateMark
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflateMark001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflateMark();
@@ -571,12 +571,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATEINIT2_0100
-     * @tc.name       : testZLibInflateInit2001
-     * @tc.desc       : test inflateInit2_
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflateInit2001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATEINIT2_0100
+     * @tc.desc   test inflateInit2_
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflateInit2001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflateInit2();
@@ -586,12 +586,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATEINIT_0100
-     * @tc.name       : testZLibInflateInit001
-     * @tc.desc       : test inflateInit_
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflateInit001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATEINIT_0100
+     * @tc.desc   test inflateInit_
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflateInit001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflateInit();
@@ -601,12 +601,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATEPRIME_0100
-     * @tc.name       : testZLibInflatePrime001
-     * @tc.desc       : test inflatePrime
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflatePrime001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATEPRIME_0100
+     * @tc.desc   test inflatePrime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflatePrime001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflatePrime();
@@ -616,12 +616,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATEGETHEADER_0100
-     * @tc.name       : testZLibInflateGetHeader001
-     * @tc.desc       : test inflateGetHeader
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflateGetHeader001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATEGETHEADER_0100
+     * @tc.desc   test inflateGetHeader
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflateGetHeader001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflateGetHeader();
@@ -631,12 +631,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATEGETDICTIONARY_0100
-     * @tc.name       : testZLibInflateGetDictionary001
-     * @tc.desc       : test inflateGetDictionary
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflateGetDictionary001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATEGETDICTIONARY_0100
+     * @tc.desc   test inflateGetDictionary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflateGetDictionary001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflateGetDictionary();
@@ -646,12 +646,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATEEND_0100
-     * @tc.name       : testZLibInflateEnd001
-     * @tc.desc       : test inflateEnd
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflateEnd001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATEEND_0100
+     * @tc.desc   test inflateEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflateEnd001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflateEnd();
@@ -661,12 +661,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATECOPY_0100
-     * @tc.name       : testZLibInflateCopy001
-     * @tc.desc       : test inflateCopy
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflateCopy001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATECOPY_0100
+     * @tc.desc   test inflateCopy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflateCopy001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflateCopy();
@@ -676,12 +676,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATECODESUSED_0100
-     * @tc.name       : testZLibInflateCodesUsed001
-     * @tc.desc       : test inflateCodesUsed
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflateCodesUsed001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATECODESUSED_0100
+     * @tc.desc   test inflateCodesUsed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflateCodesUsed001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflateCodesUsed();
@@ -691,12 +691,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATEBACKINIT_0100
-     * @tc.name       : testZLibInflateBackInit001
-     * @tc.desc       : test inflateBackInit
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflateBackInit001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATEBACKINIT_0100
+     * @tc.desc   test inflateBackInit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflateBackInit001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflateBackInit();
@@ -706,12 +706,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATEBACK_0100
-     * @tc.name       : testZLibInflateBack001
-     * @tc.desc       : test inflateBack
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflateBack001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATEBACK_0100
+     * @tc.desc   test inflateBack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflateBack001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflateBack();
@@ -721,12 +721,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATEBACKEND_0100
-     * @tc.name       : testZLibInflateBackEnd001
-     * @tc.desc       : test inflateBackEnd
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflateBackEnd001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATEBACKEND_0100
+     * @tc.desc   test inflateBackEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflateBackEnd001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflateBackEnd();
@@ -736,12 +736,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_INFLATE_0100
-     * @tc.name       : testZLibInflate001
-     * @tc.desc       : test inflate
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibInflate001
+     * @tc.number SUB_THIRDPARTY_ZLIB_INFLATE_0100
+     * @tc.desc   test inflate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibInflate001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.inflate();
@@ -751,12 +751,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZWRITE_0100
-     * @tc.name       : testZLibGzWrite001
-     * @tc.desc       : test gzwrite
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzWrite001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZWRITE_0100
+     * @tc.desc   test gzwrite
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzWrite001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzWrite();
@@ -766,12 +766,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZVPRINTF_0100
-     * @tc.name       : testZLibGzvPrintf001
-     * @tc.desc       : test gzvprintf
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzvPrintf001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZVPRINTF_0100
+     * @tc.desc   test gzvprintf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzvPrintf001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzvPrintf();
@@ -781,12 +781,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZUNGETC_0100
-     * @tc.name       : testZLibGzUnGetC001
-     * @tc.desc       : test gzungetc
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzUnGetC001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZUNGETC_0100
+     * @tc.desc   test gzungetc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzUnGetC001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzUnGetC();
@@ -796,12 +796,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZTELL64_0100
-     * @tc.name       : testZLibGzTell64001
-     * @tc.desc       : test gztell64
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzTell64001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZTELL64_0100
+     * @tc.desc   test gztell64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzTell64001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzTell64();
@@ -811,12 +811,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZTELL_0100
-     * @tc.name       : testZLibGzTell001
-     * @tc.desc       : test gztell
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzTell001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZTELL_0100
+     * @tc.desc   test gztell
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzTell001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzTell();
@@ -826,12 +826,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZSETPARAMS_0100
-     * @tc.name       : testZLibGzSetParams001
-     * @tc.desc       : test gzsetparams
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzSetParams001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZSETPARAMS_0100
+     * @tc.desc   test gzsetparams
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzSetParams001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzSetParams();
@@ -841,12 +841,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZSEEK64_0100
-     * @tc.name       : testZLibGzSeek64001
-     * @tc.desc       : test gzseek64
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzSeek64001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZSEEK64_0100
+     * @tc.desc   test gzseek64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzSeek64001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzSeek64();
@@ -856,12 +856,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZSEEK_0100
-     * @tc.name       : testZLibGzSeek001
-     * @tc.desc       : test gzseek
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzSeek001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZSEEK_0100
+     * @tc.desc   test gzseek
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzSeek001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzSeek();
@@ -871,12 +871,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZREWIND_0100
-     * @tc.name       : testZLibGzRewind001
-     * @tc.desc       : test gzrewind
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzRewind001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZREWIND_0100
+     * @tc.desc   test gzrewind
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzRewind001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzRewind();
@@ -886,12 +886,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZREAD_0100
-     * @tc.name       : testZLibGzRead001
-     * @tc.desc       : test gzread
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzRead001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZREAD_0100
+     * @tc.desc   test gzread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzRead001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzRead();
@@ -901,12 +901,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZPUTS_0100
-     * @tc.name       : testZLibGzPuts001
-     * @tc.desc       : test gzputs
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzPuts001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZPUTS_0100
+     * @tc.desc   test gzputs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzPuts001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzPuts();
@@ -916,12 +916,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZPUTC_0100
-     * @tc.name       : testZLibGzPutc001
-     * @tc.desc       : test gzputc
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzPutc001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZPUTC_0100
+     * @tc.desc   test gzputc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzPutc001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzPutc();
@@ -931,12 +931,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZPRINTF_0100
-     * @tc.name       : testZLibGzPrintf001
-     * @tc.desc       : test gzprintf
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzPrintf001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZPRINTF_0100
+     * @tc.desc   test gzprintf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzPrintf001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzPrintf();
@@ -946,12 +946,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZOPEN_W_0100
-     * @tc.name       : testZLibGzOpenW001
-     * @tc.desc       : test gzopen_w
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzOpenW001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZOPEN_W_0100
+     * @tc.desc   test gzopen_w
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzOpenW001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzOpenW();
@@ -961,12 +961,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZOPEN64_0100
-     * @tc.name       : testZLibGzOpen64001
-     * @tc.desc       : test gzopen64
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzOpen64001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZOPEN64_0100
+     * @tc.desc   test gzopen64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzOpen64001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzOpen64();
@@ -976,12 +976,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZOPEN_0100
-     * @tc.name       : testZLibGzOpen001
-     * @tc.desc       : test gzopen
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzOpen001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZOPEN_0100
+     * @tc.desc   test gzopen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzOpen001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzOpen();
@@ -991,12 +991,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZOFFSET64_0100
-     * @tc.name       : testZLibGzOffset64001
-     * @tc.desc       : test gzoffset64
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzOffset64001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZOFFSET64_0100
+     * @tc.desc   test gzoffset64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzOffset64001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzOffset64();
@@ -1006,12 +1006,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZGETS_0100
-     * @tc.name       : testZLibGzGets001
-     * @tc.desc       : test gzgets
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzGets001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZGETS_0100
+     * @tc.desc   test gzgets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzGets001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzGets();
@@ -1021,12 +1021,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZGETC__0100
-     * @tc.name       : testZLibGzGetC1001
-     * @tc.desc       : test gzgetc_
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzGetC1001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZGETC__0100
+     * @tc.desc   test gzgetc_
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzGetC1001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzGetC_();
@@ -1036,12 +1036,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZGETC_0100
-     * @tc.name       : testZLibGzGetC001
-     * @tc.desc       : test gzgetc
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzGetC001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZGETC_0100
+     * @tc.desc   test gzgetc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzGetC001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzGetC();
@@ -1051,12 +1051,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZFWRITE_0100
-     * @tc.name       : testZLibGzFWrite001
-     * @tc.desc       : test gzfwrite
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzFWrite001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZFWRITE_0100
+     * @tc.desc   test gzfwrite
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzFWrite001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzFWrite();
@@ -1066,12 +1066,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZFREAD_0100
-     * @tc.name       : testZLibGzFRead001
-     * @tc.desc       : test gzfread
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzFRead001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZFREAD_0100
+     * @tc.desc   test gzfread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzFRead001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzFRead();
@@ -1081,12 +1081,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZFLUSH_0100
-     * @tc.name       : testZLibGzFlush001
-     * @tc.desc       : test gzflush
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzFlush001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZFLUSH_0100
+     * @tc.desc   test gzflush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzFlush001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzFlush();
@@ -1096,12 +1096,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZERROR_0100
-     * @tc.name       : testZLibGzError001
-     * @tc.desc       : test gzerror
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzError001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZERROR_0100
+     * @tc.desc   test gzerror
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzError001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzError();
@@ -1111,12 +1111,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZEOF_0100
-     * @tc.name       : testZLibGzEof001
-     * @tc.desc       : test gzeof
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzEof001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZEOF_0100
+     * @tc.desc   test gzeof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzEof001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzEof();
@@ -1126,12 +1126,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZDOPEN_0100
-     * @tc.name       : testZLibGzDOpen001
-     * @tc.desc       : test gzdopen
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzDOpen001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZDOPEN_0100
+     * @tc.desc   test gzdopen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzDOpen001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzDOpen();
@@ -1141,12 +1141,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZDIRECT_0100
-     * @tc.name       : testZLibGzDirect001
-     * @tc.desc       : test gzdirect
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzDirect001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZDIRECT_0100
+     * @tc.desc   test gzdirect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzDirect001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzDirect();
@@ -1156,12 +1156,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZCLOSE_W_0100
-     * @tc.name       : testZLibGzCloseW001
-     * @tc.desc       : test gzclose_w
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzCloseW001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZCLOSE_W_0100
+     * @tc.desc   test gzclose_w
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzCloseW001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzCloseW();
@@ -1171,12 +1171,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZCLOSE_R_0100
-     * @tc.name       : testZLibGzCloseR001
-     * @tc.desc       : test gzclose_r
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzCloseR001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZCLOSE_R_0100
+     * @tc.desc   test gzclose_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzCloseR001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzCloseR();
@@ -1186,12 +1186,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZCLOSE_0100
-     * @tc.name       : testZLibGzClose001
-     * @tc.desc       : test gzclose
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzClose001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZCLOSE_0100
+     * @tc.desc   test gzclose
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzClose001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzClose();
@@ -1201,12 +1201,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZCLEARERR_0100
-     * @tc.name       : testZLibGzClearErr001
-     * @tc.desc       : test gzclearerr
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzClearErr001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZCLEARERR_0100
+     * @tc.desc   test gzclearerr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzClearErr001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzClearErr();
@@ -1216,12 +1216,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GZBUFFER_0100
-     * @tc.name       : testZLibGzBuffer001
-     * @tc.desc       : test gzbuffer
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGzBuffer001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GZBUFFER_0100
+     * @tc.desc   test gzbuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGzBuffer001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.gzBuffer();
@@ -1231,12 +1231,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_GET_CRC_TABLE_0100
-     * @tc.name       : testZLibGetCrcTable001
-     * @tc.desc       : test get_crc_table
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibGetCrcTable001
+     * @tc.number SUB_THIRDPARTY_ZLIB_GET_CRC_TABLE_0100
+     * @tc.desc   test get_crc_table
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibGetCrcTable001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.getCrcTable();
@@ -1246,12 +1246,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_DEFLATETUNE_0100
-     * @tc.name       : testZLibDeflateTune001
-     * @tc.desc       : test get_crc_table
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibDeflateTune001
+     * @tc.number SUB_THIRDPARTY_ZLIB_DEFLATETUNE_0100
+     * @tc.desc   test get_crc_table
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibDeflateTune001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.deflateTune();
@@ -1261,12 +1261,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_DEFLATESETHEADER_0100
-     * @tc.name       : testZLibDeflateSetHeader001
-     * @tc.desc       : test deflateSetHeader
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibDeflateSetHeader001
+     * @tc.number SUB_THIRDPARTY_ZLIB_DEFLATESETHEADER_0100
+     * @tc.desc   test deflateSetHeader
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibDeflateSetHeader001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.deflateSetHeader();
@@ -1276,12 +1276,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_DEFLATESETDICTIONARY_0100
-     * @tc.name       : testZLibDeflateSetDictionary001
-     * @tc.desc       : test deflateSetDictionary
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibDeflateSetDictionary001
+     * @tc.number SUB_THIRDPARTY_ZLIB_DEFLATESETDICTIONARY_0100
+     * @tc.desc   test deflateSetDictionary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibDeflateSetDictionary001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.deflateSetDictionary();
@@ -1291,12 +1291,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_DEFLATERESETKEEP_0100
-     * @tc.name       : testZLibDeflateResetKeep001
-     * @tc.desc       : test deflateResetKeep
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibDeflateResetKeep001
+     * @tc.number SUB_THIRDPARTY_ZLIB_DEFLATERESETKEEP_0100
+     * @tc.desc   test deflateResetKeep
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibDeflateResetKeep001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.deflateResetKeep();
@@ -1306,12 +1306,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_DEFLATERESET_0100
-     * @tc.name       : testZLibDeflateReset001
-     * @tc.desc       : test deflateReset
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibDeflateReset001
+     * @tc.number SUB_THIRDPARTY_ZLIB_DEFLATERESET_0100
+     * @tc.desc   test deflateReset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibDeflateReset001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.deflateReset();
@@ -1321,12 +1321,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_DEFLATEPRIME_0100
-     * @tc.name       : testZLibDeflatePrime001
-     * @tc.desc       : test deflatePrime
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibDeflatePrime001
+     * @tc.number SUB_THIRDPARTY_ZLIB_DEFLATEPRIME_0100
+     * @tc.desc   test deflatePrime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibDeflatePrime001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.deflatePrime();
@@ -1336,12 +1336,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_DEFLATEPENDING_0100
-     * @tc.name       : testZLibDeflatePending001
-     * @tc.desc       : test deflatePrime
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibDeflatePending001
+     * @tc.number SUB_THIRDPARTY_ZLIB_DEFLATEPENDING_0100
+     * @tc.desc   test deflatePrime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibDeflatePending001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.deflatePending();
@@ -1351,12 +1351,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_DEFLATEPARAMS_0100
-     * @tc.name       : testZLibDeflateParams001
-     * @tc.desc       : test deflateParams
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibDeflateParams001
+     * @tc.number SUB_THIRDPARTY_ZLIB_DEFLATEPARAMS_0100
+     * @tc.desc   test deflateParams
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibDeflateParams001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.deflateParams();
@@ -1366,12 +1366,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_DEFLATEINIT_0100
-     * @tc.name       : testZLibDeflateInit001
-     * @tc.desc       : test deflateInit_
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibDeflateInit001
+     * @tc.number SUB_THIRDPARTY_ZLIB_DEFLATEINIT_0100
+     * @tc.desc   test deflateInit_
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibDeflateInit001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.deflateInit();
@@ -1381,12 +1381,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_DEFLATEINIT2_0100
-     * @tc.name       : testZLibDeflateInit2001
-     * @tc.desc       : test deflateInit2_
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibDeflateInit2001
+     * @tc.number SUB_THIRDPARTY_ZLIB_DEFLATEINIT2_0100
+     * @tc.desc   test deflateInit2_
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibDeflateInit2001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.deflateInit2();
@@ -1396,12 +1396,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_DEFLATEGETDICTIONARY_0100
-     * @tc.name       : testZLibDeflateGetDictionary001
-     * @tc.desc       : test deflateGetDictionary
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibDeflateGetDictionary001
+     * @tc.number SUB_THIRDPARTY_ZLIB_DEFLATEGETDICTIONARY_0100
+     * @tc.desc   test deflateGetDictionary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibDeflateGetDictionary001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.deflateGetDictionary();
@@ -1411,12 +1411,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_DEFLATEEND_0100
-     * @tc.name       : testZLibDeflateEnd001
-     * @tc.desc       : test deflateEnd
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibDeflateEnd001
+     * @tc.number SUB_THIRDPARTY_ZLIB_DEFLATEEND_0100
+     * @tc.desc   test deflateEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibDeflateEnd001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.deflateEnd();
@@ -1426,12 +1426,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_DEFLATECOPY_0100
-     * @tc.name       : testZLibDeflateCopy001
-     * @tc.desc       : test deflateCopy
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibDeflateCopy001
+     * @tc.number SUB_THIRDPARTY_ZLIB_DEFLATECOPY_0100
+     * @tc.desc   test deflateCopy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibDeflateCopy001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.deflateCopy();
@@ -1441,12 +1441,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_CRC32_COMBINE64_0100
-     * @tc.name       : testZLibCrc32Combine64001
-     * @tc.desc       : test crc32_combine64
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibCrc32Combine64001
+     * @tc.number SUB_THIRDPARTY_ZLIB_CRC32_COMBINE64_0100
+     * @tc.desc   test crc32_combine64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibCrc32Combine64001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.crc32Combine64();
@@ -1456,12 +1456,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_CRC32_ADLER32_COMBINE64_0100
-     * @tc.name       : testZLibAdler32Combine64001
-     * @tc.desc       : test adler32_combine64
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testZLibAdler32Combine64001
+     * @tc.number SUB_THIRDPARTY_ZLIB_CRC32_ADLER32_COMBINE64_0100
+     * @tc.desc   test adler32_combine64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibAdler32Combine64001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.adler32Combine64();
@@ -1471,12 +1471,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_DIST_CODE_0100
-     * @tc.name       : testZLibDistCode001
-     * @tc.desc       : test _dist_code
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testZLibDistCode001
+     * @tc.number SUB_THIRDPARTY_ZLIB_DIST_CODE_0100
+     * @tc.desc   test _dist_code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibDistCode001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.distCode();
@@ -1486,12 +1486,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_LENGTH_CODE_0100
-     * @tc.name       : testZLibLengthCode001
-     * @tc.desc       : test _length_code
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testZLibLengthCode001
+     * @tc.number SUB_THIRDPARTY_ZLIB_LENGTH_CODE_0100
+     * @tc.desc   test _length_code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibLengthCode001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.lengthCode();
@@ -1501,12 +1501,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_TR_ALIGN_0100
-     * @tc.name       : testZLibTrAlign001
-     * @tc.desc       : test _tr_align
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testZLibTrAlign001
+     * @tc.number SUB_THIRDPARTY_ZLIB_TR_ALIGN_0100
+     * @tc.desc   test _tr_align
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibTrAlign001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.trAlign();
@@ -1516,12 +1516,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_TR_FLUSH_BITS_0100
-     * @tc.name       : testZLibTrFlushBits001
-     * @tc.desc       : test _tr_flush_bits
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testZLibTrFlushBits001
+     * @tc.number SUB_THIRDPARTY_ZLIB_TR_FLUSH_BITS_0100
+     * @tc.desc   test _tr_flush_bits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibTrFlushBits001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.trFlushBits();
@@ -1531,12 +1531,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_TR_FLUSH_BLOCK_0100
-     * @tc.name       : testZLibTrFlushBlock001
-     * @tc.desc       : test _tr_flush_block
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testZLibTrFlushBlock001
+     * @tc.number SUB_THIRDPARTY_ZLIB_TR_FLUSH_BLOCK_0100
+     * @tc.desc   test _tr_flush_block
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibTrFlushBlock001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.trFlushBlock();
@@ -1546,12 +1546,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_TR_INIT_0100
-     * @tc.name       : testZLibTrInit001
-     * @tc.desc       : test _tr_init
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testZLibTrInit001
+     * @tc.number SUB_THIRDPARTY_ZLIB_TR_INIT_0100
+     * @tc.desc   test _tr_init
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibTrInit001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.trInit();
@@ -1561,12 +1561,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_TR_STORED_BLOCK_0100
-     * @tc.name       : testZLibTrStoredBlock001
-     * @tc.desc       : test _tr_stored_block
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testZLibTrStoredBlock001
+     * @tc.number SUB_THIRDPARTY_ZLIB_TR_STORED_BLOCK_0100
+     * @tc.desc   test _tr_stored_block
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibTrStoredBlock001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.trStoredBlock();
@@ -1576,12 +1576,12 @@ export default function zlibNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_ZLIB_TR_TALLY_0100
-     * @tc.name       : testZLibTrTally001
-     * @tc.desc       : test _tr_tally
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testZLibTrTally001
+     * @tc.number SUB_THIRDPARTY_ZLIB_TR_TALLY_0100
+     * @tc.desc   test _tr_tally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testZLibTrTally001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
       let data = zLib.trTally();

@@ -61,12 +61,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testWebView_enableBackForwardCache0005
      * @tc.number SUB_ACE_WEB_BFCACHE_SDK_0005
-     * @tc.name testWebView_enableBackForwardCache0005
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_enableBackForwardCache0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -79,12 +79,12 @@ export default function abilityTest() {
       })
 
     /**
+     * @tc.name   testWebView_enableBackForwardCache0006
      * @tc.number SUB_ACE_WEB_BFCACHE_SDK_0006
-     * @tc.name testWebView_enableBackForwardCache0006
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_enableBackForwardCache0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -97,12 +97,12 @@ export default function abilityTest() {
       })
 
     /**
+     * @tc.name   testWebView_enableBackForwardCache0007
      * @tc.number SUB_ACE_WEB_BFCACHE_SDK_0007
-     * @tc.name testWebView_enableBackForwardCache0007
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_enableBackForwardCache0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -115,12 +115,12 @@ export default function abilityTest() {
       })
 
     /**
+     * @tc.name   testWebView_enableBackForwardCache0008
      * @tc.number SUB_ACE_WEB_BFCACHE_SDK_0008
-     * @tc.name testWebView_enableBackForwardCache0008
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_enableBackForwardCache0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -133,12 +133,12 @@ export default function abilityTest() {
       })
 
     /**
+     * @tc.name   testWebView_enableBackForwardCache0009
      * @tc.number SUB_ACE_WEB_BFCACHE_SDK_0009
-     * @tc.name testWebView_enableBackForwardCache0009
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_enableBackForwardCache0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -151,12 +151,12 @@ export default function abilityTest() {
       })
 
     /**
+     * @tc.name   testWebView_enableBackForwardCache00010
      * @tc.number SUB_ACE_WEB_BFCACHE_SDK_00010
-     * @tc.name testWebView_enableBackForwardCache00010
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_enableBackForwardCache00010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -169,12 +169,12 @@ export default function abilityTest() {
       })
 
     /**
+     * @tc.name   testWebView_enableBackForwardCache00011
      * @tc.number SUB_ACE_WEB_BFCACHE_SDK_00011
-     * @tc.name testWebView_enableBackForwardCache00011
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_enableBackForwardCache00011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -187,12 +187,12 @@ export default function abilityTest() {
       })
 
     /**
+     * @tc.name   testWebView_enableBackForwardCache00012
      * @tc.number SUB_ACE_WEB_BFCACHE_SDK_00012
-     * @tc.name testWebView_enableBackForwardCache00012
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_enableBackForwardCache00012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -205,12 +205,12 @@ export default function abilityTest() {
       })
 
     /**
+     * @tc.name   testWebView_enableBackForwardCache00013
      * @tc.number SUB_ACE_WEB_BFCACHE_SDK_00013
-     * @tc.name testWebView_enableBackForwardCache00013
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_enableBackForwardCache00013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -223,12 +223,12 @@ export default function abilityTest() {
       })
 
     /**
+     * @tc.name   testWebView_enableBackForwardCache00014
      * @tc.number SUB_ACE_WEB_BFCACHE_SDK_00014
-     * @tc.name testWebView_enableBackForwardCache00014
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_enableBackForwardCache00014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -241,12 +241,12 @@ export default function abilityTest() {
       })
 
     /**
+     * @tc.name   testWebView_enableBackForwardCache00016
      * @tc.number SUB_ACE_WEB_BFCACHE_SDK_00015
-     * @tc.name testWebView_enableBackForwardCache00016
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_enableBackForwardCache00016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

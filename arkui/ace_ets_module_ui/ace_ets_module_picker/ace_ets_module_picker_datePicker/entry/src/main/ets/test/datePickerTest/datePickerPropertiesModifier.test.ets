@@ -42,12 +42,12 @@ export default function datePickerPropertiesModifierTest() {
     });
 
     /**
+     * @tc.name   datePickerPropertiesModifierTest_001
      * @tc.number datePickerPropertiesModifierTest_001
-     * @tc.name datePickerPropertiesModifierTest_001
-     * @tc.desc Test the properties of components,Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test the properties of components,Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('datePickerPropertiesModifierTest_001', Level.LEVEL1, async (done: Function) => {
       console.info('[datePickerPropertiesModifierTest_001] START');
@@ -61,12 +61,12 @@ export default function datePickerPropertiesModifierTest() {
     });
 
     /**
+     * @tc.name   datePickerPropertiesModifierTest_002
      * @tc.number datePickerPropertiesModifierTest_002
-     * @tc.name datePickerPropertiesModifierTest_002
-     * @tc.desc Test the properties of components,Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test the properties of components,Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('datePickerPropertiesModifierTest_002', Level.LEVEL1, async (done: Function) => {
       console.info('[datePickerPropertiesModifierTest_002] START');
@@ -83,12 +83,12 @@ export default function datePickerPropertiesModifierTest() {
     });
 
     /**
+     * @tc.name   datePickerPropertiesModifierTest_003
      * @tc.number datePickerPropertiesModifierTest_003
-     * @tc.name datePickerPropertiesModifierTest_003
-     * @tc.desc Test the properties of components,Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test the properties of components,Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('datePickerPropertiesModifierTest_003', Level.LEVEL1, async (done: Function) => {
       console.info('[datePickerPropertiesModifierTest_003] START');
@@ -105,12 +105,12 @@ export default function datePickerPropertiesModifierTest() {
     });
 
     /**
+     * @tc.name   datePickerPropertiesModifierTest_004
      * @tc.number datePickerPropertiesModifierTest_004
-     * @tc.name datePickerPropertiesModifierTest_004
-     * @tc.desc Test the properties of components,Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test the properties of components,Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('datePickerPropertiesModifierTest_004', Level.LEVEL1, async (done: Function) => {
       console.info('[datePickerPropertiesModifierTest_004] START');

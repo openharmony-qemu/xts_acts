@@ -59,14 +59,14 @@ export default function link1() {
       router.back()
     });
 
-		/**
-		 * @tc.number    link1_0100
-		 * @tc.name      link1_0100
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   link1_0100
+     * @tc.number link1_0100
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('link1_0100', Level.LEVEL0, async (done: Function) => {
       console.info('link1_0100 START');
       let driver = await UiDriver.create()
@@ -83,14 +83,14 @@ export default function link1() {
 
     });
 
-		/**
-		 * @tc.number    link1_0200
-		 * @tc.name      link1_0200
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   link1_0200
+     * @tc.number link1_0200
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('link1_0200', Level.LEVEL0, async (done: Function) => {
       console.info('link1_0200 START');
       let driver = await UiDriver.create()
@@ -107,14 +107,14 @@ export default function link1() {
 
     });
 
-		/**
-		 * @tc.number    link1_0300
-		 * @tc.name      link1_0300
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   link1_0300
+     * @tc.number link1_0300
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('link1_0300', Level.LEVEL0, async (done: Function) => {
       console.info('link1_0300 START');
       let driver = await UiDriver.create()
@@ -131,14 +131,14 @@ export default function link1() {
 
     });
 
-		/**
-		 * @tc.number    link1_0400
-		 * @tc.name      link1_0400
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   link1_0400
+     * @tc.number link1_0400
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('link1_0400', Level.LEVEL0, async (done: Function) => {
       console.info('link1_0400 START');
       let driver = await UiDriver.create()
@@ -155,14 +155,14 @@ export default function link1() {
 
     });
 
-		/**
-		 * @tc.number    link1_0500
-		 * @tc.name      link1_0500
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   link1_0500
+     * @tc.number link1_0500
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('link1_0500', Level.LEVEL0, async (done: Function) => {
       console.info('link1_0500 START');
       let driver = await UiDriver.create()
@@ -179,14 +179,14 @@ export default function link1() {
 
     });
 
-		/**
-		 * @tc.number    link1_0600
-		 * @tc.name      link1_0600
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   link1_0600
+     * @tc.number link1_0600
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('link1_0600', Level.LEVEL0, async (done: Function) => {
       console.info('link1_0600 START');
       let driver = await UiDriver.create()
@@ -204,14 +204,14 @@ export default function link1() {
 
     });
 
-		/**
-		 * @tc.number    link1_0700
-		 * @tc.name      link1_0700
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   link1_0700
+     * @tc.number link1_0700
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('link1_0700', Level.LEVEL0, async (done: Function) => {
       console.info('link1_0700 START');
       let driver = await UiDriver.create()
@@ -229,14 +229,14 @@ export default function link1() {
 
     });
 
-		/**
-		 * @tc.number    link1_0800
-		 * @tc.name      link1_0800
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   link1_0800
+     * @tc.number link1_0800
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('link1_0800', Level.LEVEL0, async (done: Function) => {
       console.info('link1_0800 START');
       let driver = await UiDriver.create()

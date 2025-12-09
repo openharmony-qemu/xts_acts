@@ -47,9 +47,12 @@ export default function flexGrow_Default() {
     });
 
     /**
+     * @tc.name   SUB_ACE_flexGrow_Default_TEST_0100
      * @tc.number SUB_ACE_flexGrow_Default_TEST_0100
-     * @tc.name testFlexGrow
-     * @tc.desc colum1、colum2、colum3 set flexGrow(null)
+     * @tc.desc   colum1、colum2、colum3 set flexGrow(null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexGrow_Default_TEST_0100',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_flexGrow_Default_TEST_0100] START');
@@ -99,9 +102,12 @@ export default function flexGrow_Default() {
       console.info('[SUB_ACE_flexGrow_Default_TEST_0100] END');
     });
     /**
+     * @tc.name   SUB_ACE_flexGrow_Default_TEST_0200
      * @tc.number SUB_ACE_flexGrow_Default_TEST_0200
-     * @tc.name testFlexGrow
-     * @tc.desc colum1、colum2、colum3 set flexGrow(undefined)
+     * @tc.desc   colum1、colum2、colum3 set flexGrow(undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexGrow_Default_TEST_0200',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_flexGrow_Default_TEST_0200] START');
@@ -151,9 +157,12 @@ export default function flexGrow_Default() {
       console.info('[SUB_ACE_flexGrow_Default_TEST_0200] END');
     });
     /**
+     * @tc.name   SUB_ACE_flexGrow_Default_TEST_0300
      * @tc.number SUB_ACE_flexGrow_Default_TEST_0300
-     * @tc.name testFlexGrow
-     * @tc.desc colum1、colum2、colum3 set flexGrow(-5)
+     * @tc.desc   colum1、colum2、colum3 set flexGrow(-5)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexGrow_Default_TEST_0300',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_flexGrow_Default_TEST_0300] START');
@@ -203,9 +212,12 @@ export default function flexGrow_Default() {
       console.info('[SUB_ACE_flexGrow_Default_TEST_0300] END');
     });
     /**
+     * @tc.name   SUB_ACE_flexGrow_Default_TEST_0400
      * @tc.number SUB_ACE_flexGrow_Default_TEST_0400
-     * @tc.name testFlexGrow
-     * @tc.desc colum1、colum2 and colum3 do not set flexGrow
+     * @tc.desc   colum1、colum2 and colum3 do not set flexGrow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexGrow_Default_TEST_0400',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_flexGrow_Default_TEST_0400] START');

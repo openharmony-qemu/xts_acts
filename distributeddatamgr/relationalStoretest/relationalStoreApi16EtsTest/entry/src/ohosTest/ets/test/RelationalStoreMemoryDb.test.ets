@@ -59,7 +59,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbNotSupport0100
      * @tc.number testMemoryDbNotSupport0100
      * @tc.desc   testMemoryDbNotSupport0100
@@ -84,7 +83,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbNotSupport0200
      * @tc.number testMemoryDbNotSupport0200
      * @tc.desc   testMemoryDbNotSupport0200
@@ -107,7 +105,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbNotSupport0300
      * @tc.number testMemoryDbNotSupport0300
      * @tc.desc   testMemoryDbNotSupport0300
@@ -130,7 +127,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbNotSupport0400
      * @tc.number testMemoryDbNotSupport0400
      * @tc.desc   testMemoryDbNotSupport0400
@@ -153,7 +149,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbNotSupport0500
      * @tc.number testMemoryDbNotSupport0500
      * @tc.desc   testMemoryDbNotSupport0500
@@ -177,7 +172,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbInsert0100
      * @tc.number testMemoryDbInsert0100
      * @tc.desc   testMemoryDbInsert0100
@@ -249,7 +243,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbInsert0200
      * @tc.number testMemoryDbInsert0200
      * @tc.desc   testMemoryDbInsert0200
@@ -282,7 +275,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbInsertWithConflictResolution0100
      * @tc.number testMemoryDbInsertWithConflictResolution0100
      * @tc.desc   testMemoryDbInsertWithConflictResolution0100
@@ -342,7 +334,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbBatchInsert0100
      * @tc.number testMemoryDbBatchInsert0100
      * @tc.desc   testMemoryDbBatchInsert0100
@@ -374,7 +365,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbBatchInsertWithConflictResolution0100
      * @tc.number testMemoryDbBatchInsertWithConflictResolution0100
      * @tc.desc   testMemoryDbBatchInsertWithConflictResolution0100
@@ -437,7 +427,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbExecute0100
      * @tc.number testMemoryDbExecute0100
      * @tc.desc   testMemoryDbExecute0100
@@ -463,7 +452,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbExecute0200
      * @tc.number testMemoryDbExecute0200
      * @tc.desc   testMemoryDbExecute0200
@@ -488,7 +476,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbExecute0300
      * @tc.number testMemoryDbExecute0300
      * @tc.desc   testMemoryDbExecute0300
@@ -513,7 +500,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbExecute0400
      * @tc.number testMemoryDbExecute0400
      * @tc.desc   testMemoryDbExecute0400
@@ -539,7 +525,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbExecute0500
      * @tc.number testMemoryDbExecute0500
      * @tc.desc   testMemoryDbExecute0500
@@ -568,7 +553,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbExecute0600
      * @tc.number testMemoryDbExecute0600
      * @tc.desc   testMemoryDbExecute0600
@@ -597,7 +581,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbUpdate0100
      * @tc.number testMemoryDbUpdate0100
      * @tc.desc   testMemoryDbUpdate0100
@@ -666,7 +649,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbUpdate0200
      * @tc.number testMemoryDbUpdate0200
      * @tc.desc   testMemoryDbUpdate0200
@@ -725,7 +707,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbDelete0100
      * @tc.number testMemoryDbDelete0100
      * @tc.desc   testMemoryDbDelete0100
@@ -781,7 +762,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbDelete0200
      * @tc.number testMemoryDbDelete0200
      * @tc.desc   testMemoryDbDelete0200
@@ -836,7 +816,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbPluginLibs0100
      * @tc.number testMemoryDbPluginLibs0100
      * @tc.desc   testMemoryDbPluginLibs0100
@@ -866,7 +845,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbTokenizer0100
      * @tc.number testMemoryDbTokenizer0100
      * @tc.desc   testMemoryDbTokenizer0100
@@ -896,7 +874,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbTransaction0100
      * @tc.number testMemoryDbTransaction0100
      * @tc.desc   testMemoryDbTransaction0100
@@ -953,7 +930,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbTransactionIsolation0100
      * @tc.number testMemoryDbTransactionIsolation0100
      * @tc.desc   testMemoryDbTransactionIsolation0100
@@ -1018,7 +994,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbTransactionIsolation0200
      * @tc.number testMemoryDbTransactionIsolation0200
      * @tc.desc   testMemoryDbTransactionIsolation0200
@@ -1068,7 +1043,6 @@ export default function MemoryDbEtsTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testMemoryDbTransactionIsolation0300
      * @tc.number testMemoryDbTransactionIsolation0300
      * @tc.desc   testMemoryDbTransactionIsolation0300

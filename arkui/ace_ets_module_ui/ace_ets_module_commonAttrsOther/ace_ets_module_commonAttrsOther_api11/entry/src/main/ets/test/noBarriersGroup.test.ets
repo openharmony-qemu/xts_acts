@@ -57,6 +57,14 @@ export default function noBarriersGroupTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
+    /**
+     * @tc.name   noBarriersGroup001
+     * @tc.number noBarriersGroup001
+     * @tc.desc   noBarriersGroup001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarriersGroup001', Level.LEVEL0, async (done: Function) => {
       console.info('noBarriersGroup001 START');
       setTimeout(() => {
@@ -73,6 +81,14 @@ export default function noBarriersGroupTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarriersGroup002
+     * @tc.number noBarriersGroup002
+     * @tc.desc   noBarriersGroup002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarriersGroup002', Level.LEVEL0, async (done: Function) => {
       console.info('noBarriersGroup002 START');
       setTimeout(() => {
@@ -88,6 +104,14 @@ export default function noBarriersGroupTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarriersGroup003
+     * @tc.number noBarriersGroup003
+     * @tc.desc   noBarriersGroup003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarriersGroup003', Level.LEVEL0, async (done: Function) => {
       console.info('noBarriersGroup003 START');
       setTimeout(() => {
@@ -103,6 +127,14 @@ export default function noBarriersGroupTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarriersGroup004
+     * @tc.number noBarriersGroup004
+     * @tc.desc   noBarriersGroup004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarriersGroup004', Level.LEVEL0, async (done: Function) => {
       console.info('noBarriersGroup004 START');
       setTimeout(() => {
@@ -118,6 +150,14 @@ export default function noBarriersGroupTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarriersGroup005
+     * @tc.number noBarriersGroup005
+     * @tc.desc   noBarriersGroup005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarriersGroup005', Level.LEVEL0, async (done: Function) => {
       console.info('noBarriersGroup005 START');
       setTimeout(() => {
@@ -133,6 +173,14 @@ export default function noBarriersGroupTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarriersGroup006
+     * @tc.number noBarriersGroup006
+     * @tc.desc   noBarriersGroup006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarriersGroup006', Level.LEVEL0, async (done: Function) => {
       console.info('noBarriersGroup006 START');
       setTimeout(() => {
@@ -148,6 +196,14 @@ export default function noBarriersGroupTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarriersGroup007
+     * @tc.number noBarriersGroup007
+     * @tc.desc   noBarriersGroup007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarriersGroup007', Level.LEVEL0, async (done: Function) => {
       console.info('noBarriersGroup007 START');
       setTimeout(() => {
@@ -163,6 +219,14 @@ export default function noBarriersGroupTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarriersGroup008
+     * @tc.number noBarriersGroup008
+     * @tc.desc   noBarriersGroup008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarriersGroup008', Level.LEVEL0, async (done: Function) => {
       console.info('noBarriersGroup008 START');
       setTimeout(() => {
@@ -178,6 +242,14 @@ export default function noBarriersGroupTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarriersGroup009
+     * @tc.number noBarriersGroup009
+     * @tc.desc   noBarriersGroup009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarriersGroup009', Level.LEVEL0, async (done: Function) => {
       console.info('noBarriersGroup009 START');
       setTimeout(() => {
@@ -193,6 +265,14 @@ export default function noBarriersGroupTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarriersGroup0010
+     * @tc.number noBarriersGroup0010
+     * @tc.desc   noBarriersGroup0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarriersGroup0010', Level.LEVEL0, async (done: Function) => {
       console.info('noBarriersGroup0010 START');
       setTimeout(() => {
@@ -208,6 +288,14 @@ export default function noBarriersGroupTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarriersGroup0011
+     * @tc.number noBarriersGroup0011
+     * @tc.desc   noBarriersGroup0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarriersGroup0011', Level.LEVEL0, async (done: Function) => {
       console.info('noBarriersGroup0011 START');
       setTimeout(() => {
@@ -223,6 +311,14 @@ export default function noBarriersGroupTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarriersGroup0012
+     * @tc.number noBarriersGroup0012
+     * @tc.desc   noBarriersGroup0012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarriersGroup0012', Level.LEVEL0, async (done: Function) => {
       console.info('noBarriersGroup0012 START');
       setTimeout(() => {

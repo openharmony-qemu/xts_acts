@@ -26,78 +26,78 @@ export default function commonAttrsZIndexTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ZINDEX_0100
-     * @tc.name       : testCommonAttrsZIndex001
-     * @tc.desc       : testing zindex for commonattrs with valid value 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsZIndex001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ZINDEX_0100
+     * @tc.desc   testing zindex for commonattrs with valid value 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsZIndex001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsZIndex001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ZINDEX_0200
-     * @tc.name       : testCommonAttrsZIndex002
-     * @tc.desc       : testing zindex for commonattrs with valid value 1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsZIndex002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ZINDEX_0200
+     * @tc.desc   testing zindex for commonattrs with valid value 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsZIndex002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsZIndex002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ZINDEX_0300
-     * @tc.name       : testCommonAttrsZIndex003
-     * @tc.desc       : testing zindex for commonattrs with valid value 2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsZIndex003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ZINDEX_0300
+     * @tc.desc   testing zindex for commonattrs with valid value 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsZIndex003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsZIndex003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ZINDEX_0400
-     * @tc.name       : testCommonAttrsZIndex004
-     * @tc.desc       : testing zindex for commonattrs with valid value 300
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsZIndex004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ZINDEX_0400
+     * @tc.desc   testing zindex for commonattrs with valid value 300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsZIndex004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsZIndex004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ZINDEX_0500
-     * @tc.name       : testCommonAttrsZIndex005
-     * @tc.desc       : testing zindex for commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsZIndex005
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ZINDEX_0500
+     * @tc.desc   testing zindex for commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsZIndex005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsZIndex005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_ZINDEX_0600
-     * @tc.name       : testCommonAttrsZIndex006
-     * @tc.desc       : testing resetAttribute zindex for commonattrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsZIndex006
+     * @tc.number SUB_ARKUI_CAPI_TEXT_ZINDEX_0600
+     * @tc.desc   testing resetAttribute zindex for commonattrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsZIndex006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsZIndex006()).assertEqual(0)

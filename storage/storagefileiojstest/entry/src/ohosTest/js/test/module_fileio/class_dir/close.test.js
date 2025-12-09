@@ -26,13 +26,12 @@ export default function fileioDirClose() {
 describe('fileio_dir_close', function () {
 
   /**
+   * @tc.name   fileio_test_dir_close_async_000
    * @tc.number SUB_DF_FILEIO_DIR_CLOSE_ASYNC_0000
-   * @tc.name fileio_test_dir_close_async_000
-   * @tc.desc Test Dir close() interface,return in promise mode.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir close() interface,return in promise mode.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_dir_close_async_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_test_dir_close_async_000') + 'd';
@@ -50,13 +49,12 @@ describe('fileio_dir_close', function () {
   });
 
   /**
+   * @tc.name   fileio_test_dir_close_async_001
    * @tc.number SUB_DF_FileIO_Dir_close_Async_0100
-   * @tc.name fileio_test_dir_close_async_001
-   * @tc.desc Test Dir close() interface,return in callback mode.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir close() interface,return in callback mode.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_dir_close_async_001', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_test_dir_close_async_001') + 'd';
@@ -74,15 +72,14 @@ describe('fileio_dir_close', function () {
     }
   });
 
-  /**
-   * @tc.number SUB_DF_FileIO_Dir_close_Async_0200
-   * @tc.name fileio_test_dir_close_async_002
-   * @tc.desc Test Dir  close() interface,there are multiple parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+   /**
+    * @tc.name   fileio_test_dir_close_async_002
+    * @tc.number SUB_DF_FileIO_Dir_close_Async_0200
+    * @tc.desc   Test Dir  close() interface,there are multiple parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileio_test_dir_close_async_002', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_test_dir_close_async_002') + 'd';
     try {

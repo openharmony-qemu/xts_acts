@@ -26,26 +26,26 @@ export default function  () {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_FONTCOLOR_0100
-     * @tc.name       : testTextInputFontColor001
-     * @tc.desc       : testing fontColor for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontColor001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_FONTCOLOR_0100
+     * @tc.desc   testing fontColor for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_FONTCOLOR_0200
-     * @tc.name       : testTextInputFontColor002
-     * @tc.desc       : testing fontColor for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontColor002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_FONTCOLOR_0200
+     * @tc.desc   testing fontColor for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontColor002()).assertEqual(0)

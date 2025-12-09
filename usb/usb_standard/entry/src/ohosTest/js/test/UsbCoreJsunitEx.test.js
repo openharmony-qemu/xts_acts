@@ -122,7 +122,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   }
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testConnectDevice002
    * @tc.number SUB_USB_HostManager_JS_Compatibility_0100
    * @tc.desc   Negative test: open device, error devAddress 2+10000
@@ -150,7 +149,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testConnectDevice003
    * @tc.number SUB_USB_HostManager_JS_Compatibility_0200
    * @tc.desc   Negative test: open device, error busNum 2+1000
@@ -179,7 +177,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testConnectDevice004
    * @tc.number SUB_USB_HostManager_JS_Compatibility_0300
    * @tc.desc   Negative test: open device, error serial 'asdfsd'
@@ -208,7 +205,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testConnectDevice005
    * @tc.number SUB_USB_HostManager_JS_Compatibility_0400
    * @tc.desc   Negative test: open device, error name 2+10000
@@ -236,7 +232,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testConnectDevice006
    * @tc.number SUB_USB_HostManager_JS_Compatibility_0500
    * @tc.desc   Negative test: open device, error manufacturerName 2+10000
@@ -264,7 +259,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testConnectDevice007
    * @tc.number SUB_USB_HostManager_JS_Compatibility_0600
    * @tc.desc   Negative test: open device, error productName 'sdfsdfe'
@@ -293,7 +287,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testConnectDevice008
    * @tc.number SUB_USB_HostManager_JS_Compatibility_0700
    * @tc.desc   Negative test: open device, error version 'gwefsdf'
@@ -322,7 +315,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testConnectDevice009
    * @tc.number SUB_USB_HostManager_JS_Compatibility_0800
    * @tc.desc   Negative test: open device, error vendorId 2+10000
@@ -351,7 +343,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testConnectDevice010
    * @tc.number SUB_USB_HostManager_JS_Compatibility_0900
    * @tc.desc   Negative test: open device, error productId 2+10000
@@ -380,7 +371,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testConnectDevice011
    * @tc.number SUB_USB_HostManager_JS_Compatibility_1000
    * @tc.desc   Negative test: open device, error clazz 2+10000
@@ -409,7 +399,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testConnectDevice012
    * @tc.number SUB_USB_HostManager_JS_Compatibility_1100
    * @tc.desc   Negative test: open device, error subClass 2+10000
@@ -438,7 +427,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testConnectDevice013
    * @tc.number SUB_USB_HostManager_JS_Compatibility_1200
    * @tc.desc   Negative test: open device, error protocol 2+10000
@@ -467,7 +455,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testConnectDevice014
    * @tc.number SUB_USB_HostManager_JS_ErrCode_0400
    * @tc.desc   Negative test: open device, parameter type error PARAM_INVALID
@@ -493,7 +480,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testConnectDevice015
    * @tc.number SUB_USB_HostManager_JS_ErrCode_1700
    * @tc.desc   Negative test: open device, parameter number exception, necessary parameters not input
@@ -519,7 +505,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testHasRight002
    * @tc.number SUB_USB_HostManager_JS_Compatibility_3400
    * @tc.desc   Negative test: parameters exception, error deviceName add '$#'
@@ -544,7 +529,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testHasRight003
    * @tc.number SUB_USB_HostManager_JS_Compatibility_3500
    * @tc.desc   Negative test: parameters exception, the device add 'abcdg'
@@ -569,7 +553,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testHasRight004
    * @tc.number SUB_USB_HostManager_JS_ErrCode_0200
    * @tc.desc   Negative test: Permission query, parameter type error
@@ -595,7 +578,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testHasRight005
    * @tc.number SUB_USB_HostManager_JS_ErrCode_1800
    * @tc.desc   Negative test: Permission query, parameter number exception, necessary parameters not input
@@ -621,7 +603,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testRequestRight002
    * @tc.number SUB_USB_HostManager_JS_Compatibility_3200
    * @tc.desc   Negative test: Request permission, error deviceName add '@#'
@@ -651,7 +632,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testRequestRight003
    * @tc.number SUB_USB_HostManager_JS_Compatibility_3300
    * @tc.desc   Negative test: Request permission, the device name is a number
@@ -682,7 +662,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testRequestRight004
    * @tc.number SUB_USB_HostManager_JS_ErrCode_0300
    * @tc.desc   Negative test: Request permission, parameter type error
@@ -708,7 +687,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testRequestRight005
    * @tc.number SUB_USB_HostManager_JS_ErrCode_1900
    * @tc.desc   Negative test: Request permission, parameter number exception, necessary parameters not input
@@ -734,7 +712,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testGetDevices002
    * @tc.number SUB_USB_HostManager_JS_ErrCode_0100
    * @tc.desc   Negative test: Get device list, parameters exception(parameter transfer without parameter interface)
@@ -759,7 +736,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testClosePipe005
    * @tc.number SUB_USB_HostManager_JS_ErrCode_0500
    * @tc.desc   Negative test: close device, parameter type error PARAM_INVALID
@@ -785,7 +761,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testClosePipe006
    * @tc.number SUB_USB_HostManager_JS_ErrCode_2000
    * @tc.desc   Negative test: close device, parameter number exception, necessary parameters not input
@@ -811,7 +786,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testGetRawDescriptor002
    * @tc.number SUB_USB_HostManager_JS_ErrCode_0600
    * @tc.desc   Negative test: Get the original USB descriptor, parameter type error PARAM_INVALID
@@ -837,7 +811,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testGetRawDescriptor003
    * @tc.number SUB_USB_HostManager_JS_ErrCode_2100
    * @tc.desc   Negative test: Get the original USB descriptor, parameter number exception,
@@ -863,7 +836,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testRemoveRight002
    * @tc.number SUB_USB_HostManager_JS_ErrCode_0800
    * @tc.desc   Negative test: Remove Permissions, parameter type error
@@ -889,7 +861,6 @@ describe('UsbCoreJsFunctionsTestEx', function () {
   })
 
   /**
-   * @generated.time 2025-11-09 20:57:56
    * @tc.name   testRemoveRight003
    * @tc.number SUB_USB_HostManager_JS_ErrCode_2200
    * @tc.desc   Negative test: Remove Permissions, parameter number exception, necessary parameters not input

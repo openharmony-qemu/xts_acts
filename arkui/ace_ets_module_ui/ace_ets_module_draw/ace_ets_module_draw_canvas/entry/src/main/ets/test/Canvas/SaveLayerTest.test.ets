@@ -46,12 +46,12 @@ export default function SaveLayerTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_SaveLayerTest_001
-     * @tc.name: SaveLayerTest_001
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 3
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   SaveLayerTest_001
+     * @tc.number SUB_ARKUI_API_SaveLayerTest_001
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SaveLayerTest_001', Level.LEVEL3, async (done: Function) => {
       console.info('[SaveLayerTest_001] START');

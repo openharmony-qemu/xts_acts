@@ -57,14 +57,14 @@ export default function ActsWebNapiLoadDataTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_LOAD_DATA_API_0001
-    * @tc.name       : testWebNapiLoadData001
-    * @tc.desc       : test napi loadData
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testWebNapiLoadData001
+     * @tc.number SUB_ACE_WEB_LOAD_DATA_API_0001
+     * @tc.desc   test napi loadData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebNapiLoadData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done:Function)=>{
       Utils.emitEvent("emitWebNapiLoadData001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;

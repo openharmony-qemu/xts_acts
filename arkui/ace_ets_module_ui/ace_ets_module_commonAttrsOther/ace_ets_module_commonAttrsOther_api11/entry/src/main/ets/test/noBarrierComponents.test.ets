@@ -57,6 +57,14 @@ export default function noBarrierComponentsTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
+    /**
+     * @tc.name   noBarrierComponents001
+     * @tc.number noBarrierComponents001
+     * @tc.desc   noBarrierComponents001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents001', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents001 START');
       setTimeout(() => {
@@ -72,6 +80,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents002
+     * @tc.number noBarrierComponents002
+     * @tc.desc   noBarrierComponents002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents002', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents002 START');
       setTimeout(() => {
@@ -87,6 +103,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents003
+     * @tc.number noBarrierComponents003
+     * @tc.desc   noBarrierComponents003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents003', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents003 START');
       setTimeout(() => {
@@ -102,6 +126,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents004
+     * @tc.number noBarrierComponents004
+     * @tc.desc   noBarrierComponents004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents004', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents004 START');
       setTimeout(() => {
@@ -117,6 +149,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents005
+     * @tc.number noBarrierComponents005
+     * @tc.desc   noBarrierComponents005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents005', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents005 START');
       setTimeout(() => {
@@ -132,6 +172,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents006
+     * @tc.number noBarrierComponents006
+     * @tc.desc   noBarrierComponents006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents006', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents006 START');
       setTimeout(() => {
@@ -147,6 +195,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents007
+     * @tc.number noBarrierComponents007
+     * @tc.desc   noBarrierComponents007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents007', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents006 START');
       setTimeout(() => {
@@ -162,6 +218,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents008
+     * @tc.number noBarrierComponents008
+     * @tc.desc   noBarrierComponents008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents008', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents008 START');
       setTimeout(() => {
@@ -177,6 +241,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents010
+     * @tc.number noBarrierComponents010
+     * @tc.desc   noBarrierComponents010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents010', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents010 START');
       setTimeout(() => {
@@ -193,6 +265,14 @@ export default function noBarrierComponentsTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   noBarrierComponents011
+     * @tc.number noBarrierComponents011
+     * @tc.desc   noBarrierComponents011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents011', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents011 START');
       setTimeout(() => {
@@ -208,6 +288,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents012
+     * @tc.number noBarrierComponents012
+     * @tc.desc   noBarrierComponents012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents012', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents011 START');
       setTimeout(() => {
@@ -223,6 +311,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents013
+     * @tc.number noBarrierComponents013
+     * @tc.desc   noBarrierComponents013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents013', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents013 START');
       setTimeout(() => {
@@ -238,6 +334,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents014
+     * @tc.number noBarrierComponents014
+     * @tc.desc   noBarrierComponents014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents014', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents014 START');
       setTimeout(() => {
@@ -253,6 +357,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents015
+     * @tc.number noBarrierComponents015
+     * @tc.desc   noBarrierComponents015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents015', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents015 START');
       setTimeout(() => {
@@ -268,6 +380,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents016
+     * @tc.number noBarrierComponents016
+     * @tc.desc   noBarrierComponents016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents016', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents016 START');
       setTimeout(() => {
@@ -283,6 +403,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents017
+     * @tc.number noBarrierComponents017
+     * @tc.desc   noBarrierComponents017
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents017', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents017 START');
       setTimeout(() => {
@@ -298,6 +426,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents018
+     * @tc.number noBarrierComponents018
+     * @tc.desc   noBarrierComponents018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents018', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents018 START');
       setTimeout(() => {
@@ -313,6 +449,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents019
+     * @tc.number noBarrierComponents019
+     * @tc.desc   noBarrierComponents019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents019', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents019 START');
       setTimeout(() => {
@@ -328,6 +472,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents009
+     * @tc.number noBarrierComponents009
+     * @tc.desc   noBarrierComponents009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents009', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents009 START');
       setTimeout(() => {
@@ -343,6 +495,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents020
+     * @tc.number noBarrierComponents020
+     * @tc.desc   noBarrierComponents020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents020', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents020 START');
       setTimeout(() => {
@@ -358,6 +518,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents021
+     * @tc.number noBarrierComponents021
+     * @tc.desc   noBarrierComponents021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents021', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents021 START');
       setTimeout(() => {
@@ -373,6 +541,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents022
+     * @tc.number noBarrierComponents022
+     * @tc.desc   noBarrierComponents022
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents022', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents022 START');
       setTimeout(() => {
@@ -388,6 +564,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents023
+     * @tc.number noBarrierComponents023
+     * @tc.desc   noBarrierComponents023
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents023', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents023 START');
       setTimeout(() => {
@@ -403,6 +587,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents024
+     * @tc.number noBarrierComponents024
+     * @tc.desc   noBarrierComponents024
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents024', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents024 START');
       setTimeout(() => {
@@ -419,6 +611,14 @@ export default function noBarrierComponentsTest() {
       }, 500)
     });
     
+    /**
+     * @tc.name   noBarrierComponents026
+     * @tc.number noBarrierComponents026
+     * @tc.desc   noBarrierComponents026
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents026', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents026 START');
       setTimeout(() => {
@@ -434,6 +634,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents027
+     * @tc.number noBarrierComponents027
+     * @tc.desc   noBarrierComponents027
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents027', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents027 START');
       setTimeout(() => {
@@ -449,6 +657,14 @@ export default function noBarrierComponentsTest() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   noBarrierComponents028
+     * @tc.number noBarrierComponents028
+     * @tc.desc   noBarrierComponents028
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents028', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents028 START');
       setTimeout(() => {
@@ -465,6 +681,14 @@ export default function noBarrierComponentsTest() {
       }, 500)
     });
    
+    /**
+     * @tc.name   noBarrierComponents030
+     * @tc.number noBarrierComponents030
+     * @tc.desc   noBarrierComponents030
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents030', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents030 START');
       setTimeout(() => {

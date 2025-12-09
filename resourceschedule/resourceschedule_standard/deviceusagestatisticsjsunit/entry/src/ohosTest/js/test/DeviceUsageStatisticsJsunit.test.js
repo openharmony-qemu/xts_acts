@@ -51,10 +51,13 @@ export default function DeviceUsageStatisticsJsTest() {
             console.info('afterEach caled')
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_001
-         * @tc.name: DeviceUsageStatisticsJsTest001
-         * @tc.desc:  isIdleState promise.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest001
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_001
+         * @tc.desc   isIdleState promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest001", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest001---------------------------');
@@ -68,10 +71,13 @@ export default function DeviceUsageStatisticsJsTest() {
             });
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_002
-         * @tc.name: DeviceUsageStatisticsJsTest002
-         * @tc.desc:  isIdleState callback.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest002
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_002
+         * @tc.desc   isIdleState callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest002", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest002---------------------------');
@@ -87,10 +93,13 @@ export default function DeviceUsageStatisticsJsTest() {
             });
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_003
-         * @tc.name: DeviceUsageStatisticsJsTest003
-         * @tc.desc:  queryAppUsagePriorityGroup promise.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest003
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_003
+         * @tc.desc   queryAppUsagePriorityGroup promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest003", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest003---------------------------');
@@ -103,10 +112,13 @@ export default function DeviceUsageStatisticsJsTest() {
             });
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_004
-         * @tc.name: DeviceUsageStatisticsJsTest004
-         * @tc.desc:  queryAppUsagePriorityGroup callback.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest004
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_004
+         * @tc.desc   queryAppUsagePriorityGroup callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest004", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest004---------------------------');
@@ -121,10 +133,13 @@ export default function DeviceUsageStatisticsJsTest() {
             });
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_005
-         * @tc.name: DeviceUsageStatisticsJsTest005
-         * @tc.desc:  queryCurrentBundleActiveStates promise.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest005
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_005
+         * @tc.desc   queryCurrentBundleActiveStates promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest005", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest005---------------------------');
@@ -140,10 +155,13 @@ export default function DeviceUsageStatisticsJsTest() {
             });
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_006
-         * @tc.name: DeviceUsageStatisticsJsTest006
-         * @tc.desc:  queryCurrentBundleActiveStates callback.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest006
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_006
+         * @tc.desc   queryCurrentBundleActiveStates callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest006", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest006---------------------------');
@@ -161,10 +179,13 @@ export default function DeviceUsageStatisticsJsTest() {
             });
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_007
-         * @tc.name: DeviceUsageStatisticsJsTest007
-         * @tc.desc:  intervalType BY_OPTIMIZED
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest007
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_007
+         * @tc.desc   intervalType BY_OPTIMIZED
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest007", Level.LEVEL0, function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest007---------------------------');
@@ -173,10 +194,13 @@ export default function DeviceUsageStatisticsJsTest() {
             done();
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_008
-         * @tc.name: DeviceUsageStatisticsJsTest008
-         * @tc.desc:  intervalType BY_DAILY
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest008
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_008
+         * @tc.desc   intervalType BY_DAILY
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest008", Level.LEVEL0, function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest008---------------------------');
@@ -185,10 +209,13 @@ export default function DeviceUsageStatisticsJsTest() {
             done();
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_009
-         * @tc.name: DeviceUsageStatisticsJsTest009
-         * @tc.desc:  intervalType BY_WEEKLY
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest009
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_009
+         * @tc.desc   intervalType BY_WEEKLY
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest009", Level.LEVEL0, function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest009---------------------------');
@@ -197,10 +224,13 @@ export default function DeviceUsageStatisticsJsTest() {
             done();
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0010
-         * @tc.name: DeviceUsageStatisticsJsTest0010
-         * @tc.desc:  intervalType BY_MONTHLY
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest0010
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0010
+         * @tc.desc   intervalType BY_MONTHLY
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest0010", Level.LEVEL0, function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest0010---------------------------');
@@ -209,10 +239,13 @@ export default function DeviceUsageStatisticsJsTest() {
             done();
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0011
-         * @tc.name: DeviceUsageStatisticsJsTest0011
-         * @tc.desc:  intervalType BY_ANNUALLY
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest0011
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0011
+         * @tc.desc   intervalType BY_ANNUALLY
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest0011", Level.LEVEL0, function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest0011---------------------------');
@@ -221,10 +254,13 @@ export default function DeviceUsageStatisticsJsTest() {
             done();
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0012
-         * @tc.name: DeviceUsageStatisticsJsTest0012
-         * @tc.desc:  bundleState isIdleState promise.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest0012
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0012
+         * @tc.desc   bundleState isIdleState promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest0012", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest0012---------------------------');
@@ -237,10 +273,13 @@ export default function DeviceUsageStatisticsJsTest() {
             });
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0013
-         * @tc.name: DeviceUsageStatisticsJsTest0013
-         * @tc.desc:  bundleState isIdleState promise.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest0013
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0013
+         * @tc.desc   bundleState isIdleState promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest0013", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest0013---------------------------');
@@ -253,10 +292,13 @@ export default function DeviceUsageStatisticsJsTest() {
             });
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0014
-         * @tc.name: DeviceUsageStatisticsJsTest0014
-         * @tc.desc:  bundleState isIdleState promise.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest0014
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0014
+         * @tc.desc   bundleState isIdleState promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest0014", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest0014---------------------------');
@@ -269,10 +311,13 @@ export default function DeviceUsageStatisticsJsTest() {
             });
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0015
-         * @tc.name: DeviceUsageStatisticsJsTest0015
-         * @tc.desc:  bundleState isIdleState promise.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest0015
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0015
+         * @tc.desc   bundleState isIdleState promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest0015", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest0015---------------------------');
@@ -285,10 +330,13 @@ export default function DeviceUsageStatisticsJsTest() {
             });
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0016
-         * @tc.name: DeviceUsageStatisticsJsTest0016
-         * @tc.desc:  bundleState isIdleState promise.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest0016
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0016
+         * @tc.desc   bundleState isIdleState promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest0016", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest0016---------------------------');
@@ -301,10 +349,13 @@ export default function DeviceUsageStatisticsJsTest() {
             });
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0017
-         * @tc.name: DeviceUsageStatisticsJsTest0017
-         * @tc.desc:  bundleState isIdleState callback.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest0017
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0017
+         * @tc.desc   bundleState isIdleState callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest0017", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest0017---------------------------');
@@ -319,10 +370,13 @@ export default function DeviceUsageStatisticsJsTest() {
             });
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0018
-         * @tc.name: DeviceUsageStatisticsJsTest0018
-         * @tc.desc:  bundleState isIdleState callback.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest0018
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0018
+         * @tc.desc   bundleState isIdleState callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest0018", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest0018---------------------------');
@@ -337,10 +391,13 @@ export default function DeviceUsageStatisticsJsTest() {
             });
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0019
-         * @tc.name: DeviceUsageStatisticsJsTest0019
-         * @tc.desc:  queryCurrentBundleActiveStates BundleActiveState bundleName.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest0019
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0019
+         * @tc.desc   queryCurrentBundleActiveStates BundleActiveState bundleName.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest0019", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest0019---------------------------');
@@ -362,10 +419,13 @@ export default function DeviceUsageStatisticsJsTest() {
             });
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0020
-         * @tc.name: DeviceUsageStatisticsJsTest0020
-         * @tc.desc:  queryCurrentBundleActiveStates BundleActiveState stateType.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest0020
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0020
+         * @tc.desc   queryCurrentBundleActiveStates BundleActiveState stateType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest0020", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest0020---------------------------');
@@ -387,10 +447,13 @@ export default function DeviceUsageStatisticsJsTest() {
             });
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0021
-         * @tc.name: DeviceUsageStatisticsJsTest0021
-         * @tc.desc:  queryCurrentBundleActiveStates BundleActiveState stateOccurredTime.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest0021
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0021
+         * @tc.desc   queryCurrentBundleActiveStates BundleActiveState stateOccurredTime.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest0021", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest0021---------------------------');
@@ -412,10 +475,13 @@ export default function DeviceUsageStatisticsJsTest() {
             });
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0022
-         * @tc.name: DeviceUsageStatisticsJsTest0022
-         * @tc.desc:  queryCurrentBundleActiveStates BundleActiveState appUsagePriorityGroup.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest0022
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0022
+         * @tc.desc   queryCurrentBundleActiveStates BundleActiveState appUsagePriorityGroup.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest0022", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest0022---------------------------');
@@ -437,10 +503,13 @@ export default function DeviceUsageStatisticsJsTest() {
             });
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0023
-         * @tc.name: DeviceUsageStatisticsJsTest0023
-         * @tc.desc:  queryCurrentBundleActiveStates BundleActiveState indexOfLink.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest0023
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0023
+         * @tc.desc   queryCurrentBundleActiveStates BundleActiveState indexOfLink.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest0023", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest0023---------------------------');
@@ -462,10 +531,13 @@ export default function DeviceUsageStatisticsJsTest() {
             });
         })
 
-        /*
-         * @tc.number:SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0024
-         * @tc.name: DeviceUsageStatisticsJsTest0024
-         * @tc.desc:  queryCurrentBundleActiveStates BundleActiveState nameOfClass.
+        /**
+         * @tc.name   DeviceUsageStatisticsJsTest0024
+         * @tc.number SUB_RESOURCESCHEDULE_USAGEINFO_QUERY_XTS_0024
+         * @tc.desc   queryCurrentBundleActiveStates BundleActiveState nameOfClass.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DeviceUsageStatisticsJsTest0024", Level.LEVEL0, async function (done) {
             console.info('----------------------DeviceUsageStatisticsJsTest0024---------------------------');

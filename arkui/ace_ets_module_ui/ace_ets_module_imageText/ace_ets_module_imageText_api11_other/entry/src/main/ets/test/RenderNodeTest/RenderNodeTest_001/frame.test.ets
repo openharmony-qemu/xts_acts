@@ -40,12 +40,12 @@ export default function frame() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_frame_0100
-     * @tc.name      frame_0100
-     * @tc.desc      getFrame api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frame_0100
+     * @tc.number SUB_ACE_frame_0100
+     * @tc.desc   getFrame api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('frame_0100', Level.LEVEL2, async (done: Function) => {
       console.info('frame_0100 START');
@@ -63,12 +63,12 @@ export default function frame() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_frame_0200
-     * @tc.name      frame_0200
-     * @tc.desc      setFrame api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frame_0200
+     * @tc.number SUB_ACE_frame_0200
+     * @tc.desc   setFrame api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('frame_0200', Level.LEVEL2, async (done: Function) => {
       console.info('frame_0200 START');

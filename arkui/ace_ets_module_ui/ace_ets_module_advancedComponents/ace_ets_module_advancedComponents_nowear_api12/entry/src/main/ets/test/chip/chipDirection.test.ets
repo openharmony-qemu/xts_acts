@@ -53,12 +53,12 @@ export default function chipDirectionTest() {
     });
 
     /**
+     * @tc.name   testChipDirection_0100
      * @tc.number direction
-     * @tc.name testChipDirection_0100
-     * @tc.desc Test chip page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test chip page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testChipDirection_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.log("[testChipDirection_0100] START");

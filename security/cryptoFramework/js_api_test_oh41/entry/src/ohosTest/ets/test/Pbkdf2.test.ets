@@ -42,9 +42,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     })
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_0100
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_0100
-     * @tc.name Test createKdf with normal parameter
-     * @tc.desc Input parameter is PBKDF2|SM3
+     * @tc.desc   Input parameter is PBKDF2|SM3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -61,9 +64,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_0200
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_0200
-     * @tc.name Test createKdf with abnormal parameter
-     * @tc.desc Test createKdf with abnormal parameter
+     * @tc.desc   Test createKdf with abnormal parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let strLen: number = 10000;
@@ -106,9 +112,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_0300
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_0300
-     * @tc.name Test generateSecret with PBKDF2|SHA1, generateSecret process is successful
-     * @tc.desc Use Promise Style
+     * @tc.desc   Use Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -133,9 +142,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_0400
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_0400
-     * @tc.name Test generateSecret with PBKDF2|SHA1, generateSecret process is successful
-     * @tc.desc Use AsyncCallback Style
+     * @tc.desc   Use AsyncCallback Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -160,9 +172,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_0500
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_0500
-     * @tc.name Test generateSecret with PBKDF2|SHA224, generateSecret process is successful
-     * @tc.desc Use Promise Style
+     * @tc.desc   Use Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -187,9 +202,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_0600
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_0600
-     * @tc.name Test generateSecret with PBKDF2|SHA224, generateSecret process is successful
-     * @tc.desc Use AsyncCallback Style
+     * @tc.desc   Use AsyncCallback Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -214,9 +232,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_0700
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_0700
-     * @tc.name Test generateSecret with PBKDF2|SHA256, generateSecret process is successful
-     * @tc.desc Use Promise Style
+     * @tc.desc   Use Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -241,9 +262,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_0800
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_0800
-     * @tc.name Test generateSecret with PBKDF2|SHA256, generateSecret process is successful
-     * @tc.desc Use AsyncCallback Style
+     * @tc.desc   Use AsyncCallback Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -268,9 +292,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_0900
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_0900
-     * @tc.name Test generateSecret with PBKDF2|SHA384, generateSecret process is successful
-     * @tc.desc Use Promise Style
+     * @tc.desc   Use Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -295,9 +322,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_1000
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_1000
-     * @tc.name Test generateSecret with PBKDF2|SHA384, generateSecret process is successful
-     * @tc.desc Use AsyncCallback Style
+     * @tc.desc   Use AsyncCallback Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -322,9 +352,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_1100
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_1100
-     * @tc.name Test generateSecret with PBKDF2|SHA512, generateSecret process is successful
-     * @tc.desc Use Promise Style
+     * @tc.desc   Use Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -349,9 +382,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_1200
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_1200
-     * @tc.name Test generateSecret with PBKDF2|SHA512, generateSecret process is successful
-     * @tc.desc Use AsyncCallback Style
+     * @tc.desc   Use AsyncCallback Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -376,9 +412,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_1300
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_1300
-     * @tc.name Test generateSecret with PBKDF2|SM3, generateSecret process is successful
-     * @tc.desc Use Promise Style
+     * @tc.desc   Use Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -403,9 +442,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_1400
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_1400
-     * @tc.name Test generateSecret with PBKDF2|SM3, generateSecret process is successful
-     * @tc.desc Use AsyncCallback Style
+     * @tc.desc   Use AsyncCallback Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -430,9 +472,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_1500
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_1500
-     * @tc.name Test generateSecret with PBKDF2|SM3, generateSecret process is successful two
-     * @tc.desc Use Promise Style
+     * @tc.desc   Use Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -460,9 +505,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_1600
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_1600
-     * @tc.name Test generateSecret with PBKDF2|SM3, generateSecret process is successful two
-     * @tc.desc Use AsyncCallback Style
+     * @tc.desc   Use AsyncCallback Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -490,9 +538,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_1700
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_1700
-     * @tc.name Test generateSecret with PBKDF2|SHA256, generateSecret process is successful two
-     * @tc.desc Use Promise Style
+     * @tc.desc   Use Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -520,9 +571,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_1800
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_1800
-     * @tc.name Test generateSecret with PBKDF2|SHA256, generateSecret process is successful two
-     * @tc.desc Use AsyncCallback Style
+     * @tc.desc   Use AsyncCallback Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -550,9 +604,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_1900
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_1900
-     * @tc.name Test generateSecret with PBKDF2|SHA512, generateSecret process is successful two
-     * @tc.desc Use Promise Style
+     * @tc.desc   Use Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -585,9 +642,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_2000
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_2000
-     * @tc.name Test generateSecret with PBKDF2|SHA512, generateSecret process is successful two
-     * @tc.desc Use AsyncCallback Style
+     * @tc.desc   Use AsyncCallback Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -620,9 +680,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_2100
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_2100
-     * @tc.name Test generateSecret with empty input
-     * @tc.desc Test generateSecret with empty input
+     * @tc.desc   Test generateSecret with empty input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let kdfObj: crypto.Kdf = crypto.createKdf("PBKDF2|SHA384");
@@ -648,9 +711,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_2200
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_2200
-     * @tc.name Test generateSecret with PBKDF2|SHA1, with invalid KdfSpec algName
-     * @tc.desc Use Promise Style
+     * @tc.desc   Use Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let dataSpec: crypto.PBKDF2Spec = {
@@ -685,9 +751,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_2300
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_2300
-     * @tc.name Test generateSecret with PBKDF2|SHA1, with invalid KdfSpec algName
-     * @tc.desc Use AsyncCallback Style
+     * @tc.desc   Use AsyncCallback Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let dataSpec: crypto.PBKDF2Spec = {
@@ -722,9 +791,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_2400
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_2400
-     * @tc.name Test generateSecret with PBKDF2|SHA224, with invalid KdfSpec password
-     * @tc.desc Test generateSecret with PBKDF2|SHA224, with invalid KdfSpec password
+     * @tc.desc   Test generateSecret with PBKDF2|SHA224, with invalid KdfSpec password
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let dataSpec: crypto.PBKDF2Spec = {
@@ -749,9 +821,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_2500
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_2500
-     * @tc.name Test generateSecret with PBKDF2|SHA256, with invalid KdfSpec iterations
-     * @tc.desc Use AsyncCallback Style
+     * @tc.desc   Use AsyncCallback Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let dataSpec: crypto.PBKDF2Spec = {
@@ -787,9 +862,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_2600
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_2600
-     * @tc.name Test generateSecret with PBKDF2|SHA256, with invalid KdfSpec iterations
-     * @tc.desc Use Promise Style
+     * @tc.desc   Use Promise Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let dataSpec: crypto.PBKDF2Spec = {
@@ -825,9 +903,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_2700
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_2700
-     * @tc.name Test generateSecret with PBKDF2|SHA512, with invalid KdfSpec keySize
-     * @tc.desc Use AsyncCallback Style
+     * @tc.desc   Use AsyncCallback Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let dataSpec: crypto.PBKDF2Spec = {
@@ -863,9 +944,12 @@ export default function cryptoPbkdf2JsTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_Pbkdf2_Func_2800
      * @tc.number Security_CryptoFramework_Pbkdf2_Func_2800
-     * @tc.name Test generateSecret with PBKDF2|SHA512, with invalid KdfSpec keySize
-     * @tc.desc Use AsyncCallback Style
+     * @tc.desc   Use AsyncCallback Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Pbkdf2_Func_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let dataSpec: crypto.PBKDF2Spec = {

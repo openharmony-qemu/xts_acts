@@ -63,7 +63,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest001
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0001
      * @tc.desc   To test hap is not system hap and  invoke getOnlineUpdater api(promise).
@@ -83,7 +82,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest002
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0002
      * @tc.desc   To test hap is not system hap and  invoke applyNewVersion api(promise).
@@ -103,7 +101,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest003
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0003
      * @tc.desc   To test hap is not system hap and  invoke applyNewVersion api(promise).
@@ -123,7 +120,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest004
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0004
      * @tc.desc   To test hap is not system hap and  invoke checkNewVersion api(callback).
@@ -147,7 +143,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest005
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0005
      * @tc.desc   To test hap is not system hap and  invoke checkNewVersion api(promise).
@@ -175,7 +170,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest007
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0007
      * @tc.desc   To test hap is not system hap and  invoke getNewVersionInfo api(promise).
@@ -201,7 +195,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest009
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0009
      * @tc.desc   To test hap is not system hap and  invoke getNewVersionDescription api(promise).
@@ -234,7 +227,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest006
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0006
      * @tc.desc   To test hap is not system hap and  invoke getNewVersionInfo api(callback).
@@ -258,7 +250,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest008
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0008
      * @tc.desc   To test hap is not system hap and  invoke getNewVersionDescription api(callback).
@@ -289,7 +280,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest010
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0010
      * @tc.desc   To test hap is not system hap and  invoke getCurrentVersionInfo api(callback).
@@ -313,7 +303,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest011
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0011
      * @tc.desc   To test hap is not system hap and  invoke getCurrentVersionInfo api(promise).
@@ -339,7 +328,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest012
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0012
      * @tc.desc   To test hap is not system hap and  invoke getCurrentVersionDescription api(callback).
@@ -366,7 +354,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest013
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0013
      * @tc.desc   To test hap is not system hap and  invoke getCurrentVersionDescription api(promise).
@@ -397,7 +384,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest014
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0014
      * @tc.desc   To test hap is not system hap and  invoke getTaskInfo api(callback).
@@ -420,7 +406,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest015
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0015
      * @tc.desc   To test hap is not system hap and  invoke getTaskInfo api(promise).
@@ -447,7 +432,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest016
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0016
      * @tc.desc   To test hap is not system hap and  invoke download api(callback).
@@ -477,7 +461,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest017
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0017
      * @tc.desc   To test hap is not system hap and  invoke download api(promise).
@@ -511,7 +494,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest018
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0018
      * @tc.desc   To test hap is not system hap and  invoke resumeDownload api(callback).
@@ -540,7 +522,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest019
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0019
      * @tc.desc   To test hap is not system hap and  invoke resumeDownload api(promise).
@@ -573,7 +554,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest020
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0020
      * @tc.desc   To test hap is not system hap and  invoke pauseDownload api(callback).
@@ -602,7 +582,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest021
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0021
      * @tc.desc   To test hap is not system hap and  invoke pauseDownload api(promise).
@@ -635,7 +614,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest022
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0022
      * @tc.desc   To test hap is not system hap and  invoke upgrade api(callback).
@@ -665,7 +643,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest023
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0023
      * @tc.desc   To test hap is not system hap and  invoke upgrade api(promise).
@@ -698,7 +675,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest024
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0024
      * @tc.desc   To test hap is not system hap and  invoke clearError api(callback).
@@ -728,7 +704,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest025
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0025
      * @tc.desc   To test hap is not system hap and  invoke clearError api(promise).
@@ -760,7 +735,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest026
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0026
      * @tc.desc   To test hap is not system hap and  invoke getUpgradePolicy api(callback).
@@ -783,7 +757,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest027
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0027
      * @tc.desc   To test hap is not system hap and  invoke getUpgradePolicy api(promise).
@@ -810,7 +783,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest028
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0028
      * @tc.desc   To test hap is not system hap and  invoke setUpgradePolicy api(callback).
@@ -838,7 +810,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest029
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0029
      * @tc.desc   To test hap is not system hap and  invoke setUpgradePolicy api(promise).
@@ -870,7 +841,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest030
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0030
      * @tc.desc   To test hap is not system hap and  invoke terminateUpgrade api(callback).
@@ -894,7 +864,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest031
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0031
      * @tc.desc   To test hap is not system hap and  invoke terminateUpgrade api(promise).
@@ -922,7 +891,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest032
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0032
      * @tc.desc   To test hap is not system hap and  invoke on api(callback).
@@ -949,7 +917,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest033
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0033
      * @tc.desc   To test hap is not system hap and  invoke off api(callback).
@@ -976,7 +943,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest034
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0034
      * @tc.desc   To test hap is not system hap and  invoke factoryReset api(callback).
@@ -999,7 +965,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest035
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0035
      * @tc.desc   To test hap is not system hap and  invoke factoryReset api(promise).
@@ -1028,7 +993,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest036
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0036
      * @tc.desc   To test hap is not system hap and  invoke verifyUpgradePackage api(callback).
@@ -1055,7 +1019,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest037
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0037
      * @tc.desc   To test hap is not system hap and  invoke verifyUpgradePackage api(promise).
@@ -1086,7 +1049,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest038
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0038
      * @tc.desc   To test hap is not system hap and  invoke applyNewVersion api(callback).
@@ -1113,7 +1075,6 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   updateSystemHapTest039
      * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0039
      * @tc.desc   To test hap is not system hap and  invoke applyNewVersion api(promise).

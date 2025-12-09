@@ -83,13 +83,13 @@ export default function sendableContextManagerTest() {
     afterAll(() => {
     })
 
-    /*
-     * @tc.number : SUB_ChildProcessManager_sendableContextManager_0200
-     * @tc.name   : call startChildProcess to create a child process
-     * @tc.desc   : Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_0200
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ChildProcessManager_sendableContextManager_0200', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_0200`;
@@ -103,13 +103,13 @@ export default function sendableContextManagerTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_ChildProcessManager_sendableContextManager_0300
-     * @tc.name   : getGroupDir callback
-     * @tc.desc   : Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_0300
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ChildProcessManager_sendableContextManager_0300', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_0300`;
@@ -130,13 +130,13 @@ export default function sendableContextManagerTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_ChildProcessManager_sendableContextManager_0400
-     * @tc.name   : getGroupDir promise with undefined
-     * @tc.desc   : Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_0400
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ChildProcessManager_sendableContextManager_0400', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_0400`;
@@ -156,13 +156,13 @@ export default function sendableContextManagerTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_ChildProcessManager_sendableContextManager_0500
-     * @tc.name   : createAreaModeContext with undefined
-     * @tc.desc   : Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_0500
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ChildProcessManager_sendableContextManager_0500', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_0500`;
@@ -176,13 +176,13 @@ export default function sendableContextManagerTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_ChildProcessManager_sendableContextManager_0700
-     * @tc.name   : restartApp with undefined
-     * @tc.desc   : Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_0700
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ChildProcessManager_sendableContextManager_0700', Level.LEVEL0, (done: Function) => {
       let tag:string = `SUB_ChildProcessManager_sendableContextManager_0700`;
@@ -196,13 +196,13 @@ export default function sendableContextManagerTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_ChildProcessManager_sendableContextManager_0800
-     * @tc.name   : restartApp in background
-     * @tc.desc   : Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_0800
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ChildProcessManager_sendableContextManager_0800', Level.LEVEL0, async (done:Function) => {
       let tag:string = `SUB_ChildProcessManager_sendableContextManager_0800`;
@@ -254,13 +254,13 @@ export default function sendableContextManagerTest() {
       
     })
 
-    /*
-     * @tc.number : SUB_ChildProcessManager_sendableContextManager_0900
-     * @tc.name   : restartApp with other want
-     * @tc.desc   : Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_ChildProcessManager_sendableContextManager_0900
+     * @tc.number SUB_ChildProcessManager_sendableContextManager_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ChildProcessManager_sendableContextManager_0900', Level.LEVEL0, (done: Function) => {
       let tag:string = `SUB_ChildProcessManager_sendableContextManager_0900`;

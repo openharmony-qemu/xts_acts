@@ -26,7 +26,6 @@ let resProgressInfo: unifiedDataChannel.ProgressInfo;
 export default function UDMFApiTest() {
   describe("UDMFApiTest", (): void => {
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0100
      * @tc.number UnifiedDataTest01
      * @tc.desc   predicates orderByAsc normal test
@@ -45,7 +44,6 @@ export default function UDMFApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0200
      * @tc.number UnifiedDataTest02
      * @tc.desc   predicates orderByAsc normal test
@@ -62,7 +60,6 @@ export default function UDMFApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0300
      * @tc.number UnifiedDataTest03
      * @tc.desc   predicates orderByAsc normal test
@@ -81,7 +78,6 @@ export default function UDMFApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_001
      * @tc.number UDMFApiTest01
      * @tc.desc   getUniformDataTypeByFilenameExtension JPEG test
@@ -113,7 +109,6 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_001 end');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_002
      * @tc.number UDMFApiTest02
      * @tc.desc   getUniformDataTypeByFilenameExtension HTML test
@@ -141,7 +136,6 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_002 end');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_003
      * @tc.number UDMFApiTest03
      * @tc.desc   getUniformDataTypeByFilenameExtension PLAIN_TEXT test
@@ -169,7 +163,6 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_003 end');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_004
      * @tc.number UDMFApiTest04
      * @tc.desc   getUniformDataTypeByFilenameExtension PNG test
@@ -193,7 +186,6 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_004 end');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_005
      * @tc.number UDMFApiTest05
      * @tc.desc   getUniformDataTypeByFilenameExtension MPEG4 test
@@ -225,7 +217,6 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_005 end');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_006
      * @tc.number UDMFApiTest06
      * @tc.desc   getUniformDataTypeByFilenameExtension PDF test
@@ -249,7 +240,6 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_006 end');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_007
      * @tc.number UDMFApiTest07
      * @tc.desc   getUniformDataTypeByFilenameExtension "" test
@@ -271,7 +261,6 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_007 end');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_008
      * @tc.number UDMFApiTest08
      * @tc.desc   getType test
@@ -320,7 +309,6 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_008 end');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_009
      * @tc.number UDMFApiTest09
      * @tc.desc   getRecords test
@@ -428,7 +416,6 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_009 end');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_010
      * @tc.number UDMFApiTest10
      * @tc.desc   getRecords test
@@ -511,7 +498,6 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_010 end');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_011
      * @tc.number UDMFApiTest11
      * @tc.desc   getRecords test
@@ -607,7 +593,6 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_011 end');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_012
      * @tc.number UDMFApiTest12
      * @tc.desc   getRecords test
@@ -715,7 +700,6 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_012 end');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_013
      * @tc.number UDMFApiTest13
      * @tc.desc   insertData queryData callback test
@@ -764,7 +748,6 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_014
      * @tc.number UDMFApiTest14
      * @tc.desc   insertData queryData promise test
@@ -810,7 +793,6 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_UDMF_SDK_UtdfileNameExtentionsJsAPITest_014 end');
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1600
      * @tc.number UDMFApiTest16
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -839,7 +821,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1600 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1700
      * @tc.number UDMFApiTest17
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -868,7 +849,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1700 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1800
      * @tc.number UDMFApiTest18
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -897,7 +877,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1800 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1900
      * @tc.number UDMFApiTest19
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -926,7 +905,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1900 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2000
      * @tc.number UDMFApiTest20
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -956,7 +934,6 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2100
      * @tc.number UDMFApiTest21
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -985,7 +962,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2100 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2200
      * @tc.number UDMFApiTest22
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1016,7 +992,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2200 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2300
      * @tc.number UDMFApiTest23
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1046,7 +1021,6 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2400
      * @tc.number UDMFApiTest24
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1075,7 +1049,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2400 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2500
      * @tc.number UDMFApiTest25
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1106,7 +1079,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2500 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2600
      * @tc.number UDMFApiTest26
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1135,7 +1107,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2600 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2700
      * @tc.number UDMFApiTest27
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1164,7 +1135,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2700 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2800
      * @tc.number UDMFApiTest28
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1194,7 +1164,6 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2900
      * @tc.number UDMFApiTest29
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1223,7 +1192,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2900 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3000
      * @tc.number UDMFApiTest30
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1252,7 +1220,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3000 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3100
      * @tc.number UDMFApiTest31
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1282,7 +1249,6 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3200
      * @tc.number UDMFApiTest32
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1313,7 +1279,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3200 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3300
      * @tc.number UDMFApiTest33
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1344,7 +1309,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3300 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3400
      * @tc.number UDMFApiTest34
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1375,7 +1339,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3400 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3500
      * @tc.number UDMFApiTest35
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1406,7 +1369,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3500 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3600
      * @tc.number UDMFApiTest36
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1437,7 +1399,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3600 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3700
      * @tc.number UDMFApiTest37
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1468,7 +1429,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3700 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3800
      * @tc.number UDMFApiTest38
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1499,7 +1459,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3800 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3900
      * @tc.number UDMFApiTest39
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1531,7 +1490,6 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4000
      * @tc.number UDMFApiTest40
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1561,7 +1519,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4000 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4100
      * @tc.number UDMFApiTest41
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1591,7 +1548,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4100 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4200
      * @tc.number UDMFApiTest42
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1621,7 +1577,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4200 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4300
      * @tc.number UDMFApiTest43
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1651,7 +1606,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4300 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4400
      * @tc.number UDMFApiTest44
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1681,7 +1635,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4400 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4500
      * @tc.number UDMFApiTest45
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1711,7 +1664,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4500 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4600
      * @tc.number UDMFApiTest46
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1741,7 +1693,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4600 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4700
      * @tc.number UDMFApiTest47
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1772,7 +1723,6 @@ export default function UDMFApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4800
      * @tc.number UDMFApiTest48
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1805,7 +1755,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4800 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4900
      * @tc.number UDMFApiTest49
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1838,7 +1787,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4900 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5000
      * @tc.number UDMFApiTest50
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1871,7 +1819,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5000 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5100
      * @tc.number UDMFApiTest51
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1904,7 +1851,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5100 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5200
      * @tc.number UDMFApiTest52
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1937,7 +1883,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5200 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5300
      * @tc.number UDMFApiTest53
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -1970,7 +1915,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5300 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5400
      * @tc.number UDMFApiTest54
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -2003,7 +1947,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5400 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5500
      * @tc.number UDMFApiTest55
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -2038,7 +1981,6 @@ export default function UDMFApiTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5600
      * @tc.number UDMFApiTest56
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -2071,7 +2013,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5600 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5700
      * @tc.number UDMFApiTest57
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -2104,7 +2045,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5700 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5800
      * @tc.number UDMFApiTest58
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -2137,7 +2077,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5800 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5900
      * @tc.number UDMFApiTest59
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -2170,7 +2109,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5900 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6000
      * @tc.number UDMFApiTest60
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -2203,7 +2141,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6000 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6100
      * @tc.number UDMFApiTest61
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -2236,7 +2173,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6100 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6200
      * @tc.number UDMFApiTest62
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -2269,7 +2205,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6200 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6300
      * @tc.number UDMFApiTest63
      * @tc.desc   Test UDMF creating a unifieddata with a text record.
@@ -2302,7 +2237,6 @@ export default function UDMFApiTest() {
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6300 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6400
      * @tc.number UDMFApiTest64
      * @tc.desc   Test UDMF creating a unifieddata with a text record.

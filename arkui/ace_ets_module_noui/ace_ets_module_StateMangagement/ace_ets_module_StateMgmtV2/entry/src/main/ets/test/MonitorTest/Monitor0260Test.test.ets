@@ -47,12 +47,12 @@ export default function Monitor0260Test() {
     });
 
     /**
-     * @tc.number    Monitor0260Test_001
-     * @tc.name      Monitor0260Test_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   Monitor0260Test_001
+     * @tc.number Monitor0260Test_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Monitor0260Test_001', Level.LEVEL0, async (done: Function) => {
       console.info('[Monitor0260Test_001] START');

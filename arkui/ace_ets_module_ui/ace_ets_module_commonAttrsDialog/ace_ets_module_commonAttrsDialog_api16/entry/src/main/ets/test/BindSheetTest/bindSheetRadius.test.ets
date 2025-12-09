@@ -48,12 +48,14 @@ export default function BindSheetTest() {
       console.info('bindSheetRadius after each called');
     })
 
-    /* *
-    * @tc.number: bindSheetTest_0100
-    * @tc.name  : bindSheetTest_0100
-    * @tc.desc  : Test the bindSheet component
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   bindSheetTest_0100
+     * @tc.number bindSheetTest_0100
+     * @tc.desc   Test the bindSheet component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('bindSheetTest_0100', Level.LEVEL0, async (done: Function) => {
       let tagName = 'bindSheetTest_0100';
       console.info('[' + tagName + '] START============================');
@@ -81,12 +83,14 @@ export default function BindSheetTest() {
       done();
     });
 
-    /* *
-    * @tc.number: bindSheetTest_0200
-    * @tc.name  : bindSheetTest_0200
-    * @tc.desc  : Test the bindSheet component
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   bindSheetTest_0200
+     * @tc.number bindSheetTest_0200
+     * @tc.desc   Test the bindSheet component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('bindSheetTest_0200', Level.LEVEL0, async (done: Function) => {
       let tagName = 'bindSheetTest_0200';
       console.info('[' + tagName + '] START============================');
@@ -109,12 +113,14 @@ export default function BindSheetTest() {
       done();
     });
 
-    /* *
-    * @tc.number: bindSheetTest_0300
-    * @tc.name  : bindSheetTest_0300
-    * @tc.desc  : Test the bindSheet component
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   bindSheetTest_0300
+     * @tc.number bindSheetTest_0300
+     * @tc.desc   Test the bindSheet component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('bindSheetTest_0300', Level.LEVEL0, async (done: Function) => {
       let tagName = 'bindSheetTest_0300';
       console.info('[' + tagName + '] START============================');
@@ -143,12 +149,14 @@ export default function BindSheetTest() {
       done();
     });
 
-    /* *
-    * @tc.number: bindSheetTest_0400
-    * @tc.name  : bindSheetTest_0400
-    * @tc.desc  : Test the bindSheet component
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   bindSheetTest_0400
+     * @tc.number bindSheetTest_0400
+     * @tc.desc   Test the bindSheet component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('bindSheetTest_0400', Level.LEVEL0, async (done: Function) => {
       let tagName = 'bindSheetTest_0400';
       console.info('[' + tagName + '] START============================');

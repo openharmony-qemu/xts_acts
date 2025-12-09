@@ -56,10 +56,13 @@ export default function webViewONHttpErrorReceiveNumber() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORRECV_API_0600
-     *tc.name testOnHttpErrorReceiveByNumber
-     *tc.desc test interface of onHttpErrorReceive with parameter used by number handle
+    /**
+     * @tc.name   testOnHttpErrorReceiveByNumber
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORRECV_API_0600
+     * @tc.desc   test interface of onHttpErrorReceive with parameter used by number handle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnHttpErrorReceiveByNumber',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitOnHttpErrorReceiveByNumber", EVENT_ID_SET_EMIT_KEY);

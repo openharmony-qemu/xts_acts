@@ -14,8 +14,10 @@
  */
 import ImageEffectSuppTest from './ImageEffectSupp.test';
 import ImageErrorSuppTest from './ImageErrorSupp.test';
+import ImageEffectInfoSupplementTest from './OHEffectFilterInfoSupplement.test';
 
 export default function testsuite() {
   ImageEffectSuppTest();
   ImageErrorSuppTest();
+  ImageEffectInfoSupplementTest();
 }

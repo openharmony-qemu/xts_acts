@@ -198,13 +198,12 @@ export default function getThumbnailTest() {
     });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0000
-      * @tc.name    getThumbnail_callback_static_000
-      * @tc.desc    getThumbnail(image) by no size
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
-      * @tc.level   Level 0
+     * @tc.name   getThumbnail_callback_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0000
+     * @tc.desc   getThumbnail(image) by no size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getThumbnail_callback_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -215,12 +214,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0100
-      * @tc.name    getThumbnail_callback_static_001
-      * @tc.desc    getThumbnail(image) by { width: 128, height: 128 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   getThumbnail_callback_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0100
+     * @tc.desc   getThumbnail(image) by { width: 128, height: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getThumbnail_callback_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -237,12 +236,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0200
-      * @tc.name    getThumbnail_callback_static_002
-      * @tc.desc    getThumbnail(image) by { width: 1, height: 1024 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0200
+     * @tc.desc   getThumbnail(image) by { width: 1, height: 1024 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -259,12 +258,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0300
-      * @tc.name    getThumbnail_callback_static_003
-      * @tc.desc    getThumbnail(image) by { width: 1024, height: 1 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0300
+     * @tc.desc   getThumbnail(image) by { width: 1024, height: 1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -281,12 +280,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0400
-      * @tc.name    getThumbnail_callback_static_004
-      * @tc.desc    getThumbnail(image) by { width: 1024, height: 1024 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0400
+     * @tc.desc   getThumbnail(image) by { width: 1024, height: 1024 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -303,12 +302,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0500
-      * @tc.name    getThumbnail_callback_static_005
-      * @tc.desc    getThumbnail(image) by { width: 1, height: 1 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_005
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0500
+     * @tc.desc   getThumbnail(image) by { width: 1, height: 1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -325,12 +324,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0600
-      * @tc.name    getThumbnail_callback_static_006
-      * @tc.desc    getThumbnail(image) by { height: 128 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_006
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0600
+     * @tc.desc   getThumbnail(image) by { height: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -347,12 +346,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0700
-      * @tc.name    getThumbnail_callback_static_007
-      * @tc.desc    getThumbnail(image) by { width: 128 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_007
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0700
+     * @tc.desc   getThumbnail(image) by { width: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -369,12 +368,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0800
-      * @tc.name    getThumbnail_callback_static_008
-      * @tc.desc    getThumbnail(image) by undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_008
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0800
+     * @tc.desc   getThumbnail(image) by undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -386,12 +385,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0900
-      * @tc.name    getThumbnail_callback_static_009
-      * @tc.desc    getThumbnail(image) by { width: 0, height: 0 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_009
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_0900
+     * @tc.desc   getThumbnail(image) by { width: 0, height: 0 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -405,12 +404,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1000
-      * @tc.name    getThumbnail_callback_static_010
-      * @tc.desc    getThumbnail(image) by { width: -1, height: -1 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_010
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1000
+     * @tc.desc   getThumbnail(image) by { width: -1, height: -1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -424,12 +423,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1100
-      * @tc.name    getThumbnail_callback_static_011
-      * @tc.desc    getThumbnail(image) by { width: 99999, height: 99999 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_011
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1100
+     * @tc.desc   getThumbnail(image) by { width: 99999, height: 99999 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -444,12 +443,12 @@ export default function getThumbnailTest() {
 
     //video
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1200
-      * @tc.name    getThumbnail_callback_static_012
-      * @tc.desc    getThumbnail(video) by no size
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   getThumbnail_callback_static_012
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1200
+     * @tc.desc   getThumbnail(video) by no size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getThumbnail_callback_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -460,12 +459,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1300
-      * @tc.name    getThumbnail_callback_static_013
-      * @tc.desc    getThumbnail(video) by { width: 128, height: 128 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   getThumbnail_callback_static_013
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1300
+     * @tc.desc   getThumbnail(video) by { width: 128, height: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getThumbnail_callback_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -482,12 +481,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1400
-      * @tc.name    getThumbnail_callback_static_014
-      * @tc.desc    getThumbnail(video) by { width: 1, height: 1024 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_014
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1400
+     * @tc.desc   getThumbnail(video) by { width: 1, height: 1024 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -504,12 +503,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1500
-      * @tc.name    getThumbnail_callback_static_015
-      * @tc.desc    getThumbnail(video) by { width: 1024, height: 1 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_015
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1500
+     * @tc.desc   getThumbnail(video) by { width: 1024, height: 1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -526,12 +525,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1600
-      * @tc.name    getThumbnail_callback_static_016
-      * @tc.desc    getThumbnail(video) by { width: 1024, height: 1024 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_016
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1600
+     * @tc.desc   getThumbnail(video) by { width: 1024, height: 1024 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -548,12 +547,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1700
-      * @tc.name    getThumbnail_callback_static_017
-      * @tc.desc    getThumbnail(video) by { width: 1, height: 1 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_017
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1700
+     * @tc.desc   getThumbnail(video) by { width: 1, height: 1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -570,12 +569,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1800
-      * @tc.name    getThumbnail_callback_static_018
-      * @tc.desc    getThumbnail(video) by { height: 128 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_018
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1800
+     * @tc.desc   getThumbnail(video) by { height: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -592,12 +591,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1900
-      * @tc.name    getThumbnail_callback_static_019
-      * @tc.desc    getThumbnail(video) by { width: 128 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_019
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_1900
+     * @tc.desc   getThumbnail(video) by { width: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -614,12 +613,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_2000
-      * @tc.name    getThumbnail_callback_static_020
-      * @tc.desc    getThumbnail(video) by undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_020
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_2000
+     * @tc.desc   getThumbnail(video) by undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -631,12 +630,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_2100
-      * @tc.name    getThumbnail_callback_static_021
-      * @tc.desc    getThumbnail(video) by { width: 0, height: 0 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_021
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_2100
+     * @tc.desc   getThumbnail(video) by { width: 0, height: 0 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -650,12 +649,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_2200
-      * @tc.name    getThumbnail_callback_static_022
-      * @tc.desc    getThumbnail(video) by { width: -1, height: -1 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_022
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_2200
+     * @tc.desc   getThumbnail(video) by { width: -1, height: -1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -669,12 +668,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_2300
-      * @tc.name    getThumbnail_callback_static_023
-      * @tc.desc    getThumbnail(video) by { width: 99999, height: 99999 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_callback_static_023
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_STATIC_2300
+     * @tc.desc   getThumbnail(video) by { width: 99999, height: 99999 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_static_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -690,12 +689,12 @@ export default function getThumbnailTest() {
     //promise
     //image
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0000
-      * @tc.name    getThumbnail_promise_static_000
-      * @tc.desc    getThumbnail(image) by no size
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   getThumbnail_promise_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0000
+     * @tc.desc   getThumbnail(image) by no size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getThumbnail_promise_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -706,12 +705,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0100
-      * @tc.name    getThumbnail_promise_static_001
-      * @tc.desc    getThumbnail(image) by { width: 128, height: 128 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   getThumbnail_promise_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0100
+     * @tc.desc   getThumbnail(image) by { width: 128, height: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getThumbnail_promise_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -728,12 +727,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0200
-      * @tc.name    getThumbnail_promise_static_002
-      * @tc.desc    getThumbnail(image) by { width: 1, height: 1024 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0200
+     * @tc.desc   getThumbnail(image) by { width: 1, height: 1024 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -750,12 +749,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0300
-      * @tc.name    getThumbnail_promise_static_003
-      * @tc.desc    getThumbnail(image) by { width: 1024, height: 1 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0300
+     * @tc.desc   getThumbnail(image) by { width: 1024, height: 1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -772,12 +771,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0400
-      * @tc.name    getThumbnail_promise_static_004
-      * @tc.desc    getThumbnail(image) by { width: 1024, height: 1024 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0400
+     * @tc.desc   getThumbnail(image) by { width: 1024, height: 1024 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -794,12 +793,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0500
-      * @tc.name    getThumbnail_promise_static_005
-      * @tc.desc    getThumbnail(image) by { width: 1, height: 1 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_005
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0500
+     * @tc.desc   getThumbnail(image) by { width: 1, height: 1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -816,12 +815,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0600
-      * @tc.name    getThumbnail_promise_static_006
-      * @tc.desc    getThumbnail(image) by { height: 128 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_006
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0600
+     * @tc.desc   getThumbnail(image) by { height: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -838,12 +837,12 @@ export default function getThumbnailTest() {
       });
     
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0700
-      * @tc.name    getThumbnail_promise_static_007
-      * @tc.desc    getThumbnail(image) by { width: 128 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_007
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0700
+     * @tc.desc   getThumbnail(image) by { width: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -860,12 +859,12 @@ export default function getThumbnailTest() {
       });
     
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0800
-      * @tc.name    getThumbnail_promise_static_008
-      * @tc.desc    getThumbnail(image) by undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_008
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0800
+     * @tc.desc   getThumbnail(image) by undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -880,12 +879,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0900
-      * @tc.name    getThumbnail_promise_static_009
-      * @tc.desc    getThumbnail(image) by { width: 0, height: 0 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_009
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_0900
+     * @tc.desc   getThumbnail(image) by { width: 0, height: 0 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -899,12 +898,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1000
-      * @tc.name    getThumbnail_promise_static_010
-      * @tc.desc    getThumbnail(image) by { width: -1, height: -1 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_010
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1000
+     * @tc.desc   getThumbnail(image) by { width: -1, height: -1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -918,12 +917,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1100
-      * @tc.name    getThumbnail_promise_static_011
-      * @tc.desc    getThumbnail(image) by { width: 99999, height: 99999 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_011
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1100
+     * @tc.desc   getThumbnail(image) by { width: 99999, height: 99999 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -938,12 +937,12 @@ export default function getThumbnailTest() {
 
     //video
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1200
-      * @tc.name    getThumbnail_promise_static_012
-      * @tc.desc    getThumbnail(video) by no size
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   getThumbnail_promise_static_012
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1200
+     * @tc.desc   getThumbnail(video) by no size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getThumbnail_promise_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -954,12 +953,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1300
-      * @tc.name    getThumbnail_promise_static_013
-      * @tc.desc    getThumbnail(video) by { width: 128, height: 128 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   getThumbnail_promise_static_013
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1300
+     * @tc.desc   getThumbnail(video) by { width: 128, height: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getThumbnail_promise_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -976,12 +975,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1400
-      * @tc.name    getThumbnail_promise_static_014
-      * @tc.desc    getThumbnail(video) by { width: 1, height: 1024 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_014
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1400
+     * @tc.desc   getThumbnail(video) by { width: 1, height: 1024 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -998,12 +997,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1500
-      * @tc.name    getThumbnail_promise_static_015
-      * @tc.desc    getThumbnail(video) by { width: 1024, height: 1 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_015
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1500
+     * @tc.desc   getThumbnail(video) by { width: 1024, height: 1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1020,12 +1019,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1600
-      * @tc.name    getThumbnail_promise_static_016
-      * @tc.desc    getThumbnail(video) by { width: 1024, height: 1024 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_016
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1600
+     * @tc.desc   getThumbnail(video) by { width: 1024, height: 1024 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1042,12 +1041,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1700
-      * @tc.name    getThumbnail_promise_static_017
-      * @tc.desc    getThumbnail(video) by { width: 1, height: 1 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_017
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1700
+     * @tc.desc   getThumbnail(video) by { width: 1, height: 1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1064,12 +1063,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1800
-      * @tc.name    getThumbnail_promise_static_018
-      * @tc.desc    getThumbnail(video) by { height: 128 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_018
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1800
+     * @tc.desc   getThumbnail(video) by { height: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1086,12 +1085,12 @@ export default function getThumbnailTest() {
       });
     
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1900
-      * @tc.name    getThumbnail_promise_static_019
-      * @tc.desc    getThumbnail(video) by { width: 128 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_019
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_1900
+     * @tc.desc   getThumbnail(video) by { width: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1108,12 +1107,12 @@ export default function getThumbnailTest() {
       });
     
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_2000
-      * @tc.name    getThumbnail_promise_static_020
-      * @tc.desc    getThumbnail(video) by undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_020
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_2000
+     * @tc.desc   getThumbnail(video) by undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1128,12 +1127,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_2100
-      * @tc.name    getThumbnail_promise_static_021
-      * @tc.desc    getThumbnail(video) by { width: 0, height: 0 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_021
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_2100
+     * @tc.desc   getThumbnail(video) by { width: 0, height: 0 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1147,12 +1146,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_2200
-      * @tc.name    getThumbnail_promise_static_022
-      * @tc.desc    getThumbnail(video) by { width: -1, height: -1 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_022
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_2200
+     * @tc.desc   getThumbnail(video) by { width: -1, height: -1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1166,12 +1165,12 @@ export default function getThumbnailTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_2300
-      * @tc.name    getThumbnail_promise_static_023
-      * @tc.desc    getThumbnail(video) by { width: 99999, height: 99999 }
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getThumbnail_promise_static_023
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_STATIC_2300
+     * @tc.desc   getThumbnail(video) by { width: 99999, height: 99999 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_static_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

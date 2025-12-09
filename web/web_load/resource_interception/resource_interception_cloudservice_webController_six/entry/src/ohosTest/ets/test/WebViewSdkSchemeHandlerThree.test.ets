@@ -59,12 +59,12 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
     })
 
     /**
-     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_isChunked_true_API_0001
      * @tc.name   testWebViewSdkSchemeHandler_isChunked_true
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_isChunked_true_API_0001
      * @tc.desc   test SdkSchemeHandler_isChunked_true
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandler_isChunked_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebViewSdkSchemeHandler_isChunked_true", EVENT_ID_SET_EMIT_KEY);
@@ -76,12 +76,12 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
     })
 
     /**
-     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_isEof_true_API_0001
      * @tc.name   testWebViewSdkSchemeHandler_isEof_true
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_isEof_true_API_0001
      * @tc.desc   test SdkSchemeHandler_isEof_true
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandler_isEof_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebViewSdkSchemeHandler_isEof_true", EVENT_ID_SET_EMIT_KEY);
@@ -92,12 +92,12 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
       sendEventByKey('webViewSdkSchemeHandlerThreeButton', 10, '');
     })
     /**
-     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_isMainFrame_true_API_0001
      * @tc.name   testWebViewSdkSchemeHandler_isMainFrame_true
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_isMainFrame_true_API_0001
      * @tc.desc   test SdkSchemeHandler_isMainFrame_true
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandler_isMainFrame_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebViewSdkSchemeHandler_isMainFrame_true", EVENT_ID_SET_EMIT_KEY);
@@ -108,12 +108,12 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
       sendEventByKey('webViewSdkSchemeHandlerThreeButton', 10, '');
     })
     /**
-     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_getHttpBodyStream_null_API_0001
      * @tc.name   testWebViewSdkSchemeHandler_getHttpBodyStream_null
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_getHttpBodyStream_null_API_0001
      * @tc.desc   test SdkSchemeHandler_getHttpBodyStream_null
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandler_getHttpBodyStream_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebViewSdkSchemeHandler_getHttpBodyStream_null", EVENT_ID_SET_EMIT_KEY);

@@ -51,13 +51,15 @@ export default function Row_MarginPadding() {
       console.info("Row_MarginPadding after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_ROW_PARENTCOMPONENTCHANGED_0700
-     * @tc.name testRowMarginPaddingSatisfy
-     * @tc.desc When margin and padding are set for the Row component, the width of the Row component meets the
-     *               requirements
-     */
 
+    /**
+     * @tc.name   testRowMarginPaddingSatisfy
+     * @tc.number testRowMarginPaddingSatisfy
+     * @tc.desc   testRowMarginPaddingSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRowMarginPaddingSatisfy',  Level.LEVEL0, async (done: Function) => {
       console.info('testRowMarginPaddingSatisfy START');
       globalThis.value.message.notify({
@@ -100,13 +102,15 @@ export default function Row_MarginPadding() {
       done();
     });
 
-    /**
-     * @tc.number SUB_ACE_ROW_PARENTCOMPONENTCHANGED_0800
-     * @tc.name testRowMarginPaddingNoSatisfy
-     * @tc.desc The width of the Row component does not meet the requirements when margin and padding are set for
-     *               the Row component
-     */
 
+    /**
+     * @tc.name   testRowMarginPaddingNoSatisfy
+     * @tc.number testRowMarginPaddingNoSatisfy
+     * @tc.desc   testRowMarginPaddingNoSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRowMarginPaddingNoSatisfy',  Level.LEVEL0, async (done: Function) => {
       console.info('testRowMarginPaddingNoSatisfy START');
       globalThis.value.message.notify({

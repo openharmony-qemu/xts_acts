@@ -55,12 +55,12 @@ export default function backgroundImageOption() {
     });
 
     /**
+     * @tc.name   backgroundImageOption_0100
      * @tc.number backgroundImageOption_0100
-     * @tc.name backgroundImageOption_0100
-     * @tc.desc api: backgroundImage Option
-     * @tc.level: Level 2
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
+     * @tc.desc   api: backgroundImage Option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('backgroundImageOption_0100', Level.LEVEL2, async (done: Function) => {
       console.info('backgroundImageOption_0100 START');

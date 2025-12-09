@@ -82,9 +82,12 @@ export default function dialogPropsJsTest() {
         // 通用属性
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogIdProp
-         * @tc.desc      ACE
+         * @tc.name   testdialogIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogIdProp', Level.LEVEL0, async function(done) {
             console.info('testdialogIdProp START');
@@ -100,9 +103,12 @@ export default function dialogPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogClassProp
-         * @tc.desc      ACE
+         * @tc.name   testdialogClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogClassProp', Level.LEVEL0, async function(done) {
             console.info('testdialogClassProp START');
@@ -118,9 +124,12 @@ export default function dialogPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testdialogClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testdialogClassPropNone START');
@@ -138,9 +147,12 @@ export default function dialogPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogRefProp
-         * @tc.desc      ACE
+         * @tc.name   testdialogRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogRefProp', Level.LEVEL0, async function(done) {
             console.info('testdialogRefProp START');
@@ -157,9 +169,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testdialogRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testdialogRefPropNone START');
@@ -177,9 +192,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testdialogDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testdialogDisabledPropTrue START');
@@ -196,9 +214,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testdialogDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testdialogDisabledPropFalse START');
@@ -215,9 +236,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testdialogDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testdialogDisabledPropNone START');
@@ -234,9 +258,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testdialogFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testdialogFocusablePropTrue START');
@@ -253,9 +280,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testdialogFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testdialogFocusablePropFalse START');
@@ -272,9 +302,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testdialogFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testdialogFocusablePropNone START');
@@ -291,9 +324,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogDataProp
-         * @tc.desc      ACE
+         * @tc.name   testdialogDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogDataProp', Level.LEVEL0, async function(done) {
             console.info('testdialogDataProp START');
@@ -311,9 +347,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testdialogDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testdialogDataPropNone START');
@@ -331,9 +370,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testdialogClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testdialogClickEffectPropSmall START');
@@ -350,9 +392,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testdialogClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testdialogClickEffectPropMedium START');
@@ -369,9 +414,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testdialogClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testdialogClickEffectPropLarge START');
@@ -388,9 +436,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testdialogClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testdialogClickEffectPropNone START');
@@ -408,9 +459,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testdialogDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testdialogDirPropRtl START');
@@ -427,9 +481,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testdialogDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testdialogDirPropLtr START');
@@ -446,9 +503,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testdialogDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testdialogDirPropAuto START');
@@ -465,9 +525,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testdialogDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testdialogDirPropNone START');
@@ -484,9 +547,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testdialogForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogForPropNull', Level.LEVEL0, async function(done) {
             console.info('testdialogForPropNull START');
@@ -504,9 +570,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testdialogForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogForPropOne', Level.LEVEL0, async function(done) {
             console.info('testdialogForPropOne START');
@@ -524,9 +593,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testdialogForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogForPropThree', Level.LEVEL0, async function(done) {
             console.info('testdialogForPropThree START');
@@ -544,9 +616,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testdialogIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testdialogIfPropTrue START');
@@ -564,9 +639,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testdialogShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testdialogShowPropTrue START');
@@ -584,9 +662,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testdialogShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testdialogShowPropFalse START');
@@ -604,9 +685,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testdialogShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testdialogShowPropNone START');
@@ -626,9 +710,12 @@ export default function dialogPropsJsTest() {
         // 特有属性
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogdragableNone
-         * @tc.desc      ACE
+         * @tc.name   testdialogdragableNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogdragableNone', Level.LEVEL0, async function(done) {
             console.info('testdialogdragableNone START');
@@ -646,9 +733,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogdragableTrue
-         * @tc.desc      ACE
+         * @tc.name   testdialogdragableTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogdragableTrue', Level.LEVEL0, async function(done) {
             console.info('testdialogdragableTrue START');
@@ -666,9 +756,12 @@ export default function dialogPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testdialogdragableFalse
-         * @tc.desc      ACE
+         * @tc.name   testdialogdragableFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testdialogdragableFalse', Level.LEVEL0, async function(done) {
             console.info('testdialogdragableFalse START');

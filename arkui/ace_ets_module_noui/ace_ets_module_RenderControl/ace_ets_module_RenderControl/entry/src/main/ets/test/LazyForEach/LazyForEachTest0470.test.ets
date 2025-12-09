@@ -46,12 +46,12 @@ export default function LazyForEachTest0470() {
     });
 
     /**
-     * @tc.number    LazyForEachTest0470_001
-     * @tc.name      LazyForEachTest0470_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   LazyForEachTest0470_001
+     * @tc.number LazyForEachTest0470_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LazyForEachTest0470_001', Level.LEVEL0, async (done: Function) => {
       console.info('[LazyForEachTest0470_001] START');
@@ -91,12 +91,12 @@ export default function LazyForEachTest0470() {
     });
 
     /**
-     * @tc.number    LazyForEachTest0470_002
-     * @tc.name      LazyForEachTest0470_002
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   LazyForEachTest0470_002
+     * @tc.number LazyForEachTest0470_002
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LazyForEachTest0470_002', Level.LEVEL0, async (done: Function) => {
       console.info('[LazyForEachTest0470_001] START');
@@ -136,12 +136,12 @@ export default function LazyForEachTest0470() {
     });
 
     /**
-     * @tc.number    LazyForEachTest0470_003
-     * @tc.name      LazyForEachTest0470_003
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   LazyForEachTest0470_003
+     * @tc.number LazyForEachTest0470_003
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LazyForEachTest0470_003', Level.LEVEL0, async (done: Function) => {
       console.info('[LazyForEachTest0470_001] START');

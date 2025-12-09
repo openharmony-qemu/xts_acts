@@ -50,10 +50,12 @@ export default function column_Padding_ChangeParent() {
     });
 
     /**
+     * @tc.name   testColumnPaddingChangeParentInRange
      * @tc.number SUB_ACE_COLUMN_PADDING_CHANGEPARENT_TEST_0100
-     * @tc.name testColumnPaddingChangeParentInRange
-     * @tc.desc The parent component is bound with the padding attributes. Other parameters are default,
-     *               the remaining space of the parent component meets the layout of the child components
+     * @tc.desc   The parent component is bound with the padding attributes. Other parameters are default,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnPaddingChangeParentInRange',  Level.LEVEL0, async () => {
       console.info('new testColumnPaddingChangeParentInRange START');
@@ -102,10 +104,12 @@ export default function column_Padding_ChangeParent() {
     });
 
     /**
+     * @tc.name   testColumnPaddingChangeParentOutRange
      * @tc.number SUB_ACE_COLUMN_PADDING_CHANGEPARENT_TEST_0200
-     * @tc.name testColumnPaddingChangeParentOutRange
-     * @tc.desc The parent component is bound with the padding attributes. Other parameters are default,
-     *               the remaining space of the parent component does not meet the layout of the child components
+     * @tc.desc   The parent component is bound with the padding attributes. Other parameters are default,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnPaddingChangeParentOutRange',  Level.LEVEL0, async () => {
       console.info('new testColumnPaddingChangeParentOutRange START');

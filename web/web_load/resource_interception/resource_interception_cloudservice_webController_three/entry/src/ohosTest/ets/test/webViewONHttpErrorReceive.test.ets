@@ -56,10 +56,13 @@ export default function webViewONHttpErrorReceive() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORRECV_API_0100
-     *tc.name testOnHttpErrorReceiveFixedUserAgent
-     *tc.desc test interface of onHttpErrorReceive with parameter fixed userAgent
+    /**
+     * @tc.name   testOnHttpErrorReceiveFixedUserAgent
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORRECV_API_0100
+     * @tc.desc   test interface of onHttpErrorReceive with parameter fixed userAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnHttpErrorReceiveFixedUserAgent',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitOnHttpErrorReceiveFixedUserAgent", EVENT_ID_SET_EMIT_KEY);

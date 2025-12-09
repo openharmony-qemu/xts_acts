@@ -28,12 +28,12 @@ export default function direntNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_DIRENT_OPENDIR_0100
-     * @tc.name       : testMuslDirentOpendir001
-     * @tc.desc       : test opendir
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslDirentOpendir001
+     * @tc.number SUB_THIRDPARTY_MUSL_DIRENT_OPENDIR_0100
+     * @tc.desc   test opendir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslDirentOpendir001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let dir = "./sdcard/log/hrs.log";
@@ -44,12 +44,12 @@ export default function direntNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_DIRENT_SCANDIR64_0200
-     * @tc.name       : testMuslDirentScandir64002
-     * @tc.desc       : test scandir64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslDirentScandir64002
+     * @tc.number SUB_THIRDPARTY_MUSL_DIRENT_SCANDIR64_0200
+     * @tc.desc   test scandir64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslDirentScandir64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -72,12 +72,12 @@ export default function direntNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_DIRENT_SCANDIR_0200
-     * @tc.name       : testMuslDirentScandir002
-     * @tc.desc       : test scandir
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslDirentScandir002
+     * @tc.number SUB_THIRDPARTY_MUSL_DIRENT_SCANDIR_0200
+     * @tc.desc   test scandir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslDirentScandir002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -101,12 +101,12 @@ export default function direntNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_DIRENT_SEEKDIR_0100
-     * @tc.name       : testMuslDirentSeekdir001
-     * @tc.desc       : test seekdir
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslDirentSeekdir001
+     * @tc.number SUB_THIRDPARTY_MUSL_DIRENT_SEEKDIR_0100
+     * @tc.desc   test seekdir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslDirentSeekdir001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = dirent.seekdir(0);
@@ -115,12 +115,12 @@ export default function direntNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_DIRENT_SEEKDIR_0200
-     * @tc.name       : testMuslDirentSeekdir002
-     * @tc.desc       : test seekdir
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslDirentSeekdir002
+     * @tc.number SUB_THIRDPARTY_MUSL_DIRENT_SEEKDIR_0200
+     * @tc.desc   test seekdir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslDirentSeekdir002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = dirent.seekdir(1);
@@ -129,13 +129,12 @@ export default function direntNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_DIRENT_GETDENTS_0100
-     * @tc.name       : testMuslDirentGetdents001
-     * @tc.desc       : test getdents
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslDirentGetdents001
+     * @tc.number SUB_THIRDPARTY_MUSL_DIRENT_GETDENTS_0100
+     * @tc.desc   test getdents
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslDirentGetdents001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultValue = 0;
@@ -145,13 +144,12 @@ export default function direntNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_DIRENT_GETDENTS64_0100
-     * @tc.name       : testMuslDirentGetdents64001
-     * @tc.desc       : test getdents64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     * @
+     * @tc.name   testMuslDirentGetdents64001
+     * @tc.number SUB_THIRDPARTY_MUSL_DIRENT_GETDENTS64_0100
+     * @tc.desc   test getdents64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslDirentGetdents64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultValue = 0;

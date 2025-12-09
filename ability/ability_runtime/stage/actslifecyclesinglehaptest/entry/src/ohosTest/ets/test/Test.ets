@@ -68,12 +68,14 @@ export default function lifecycleTest(abilityContext) {
       return new Promise((resolve) => setTimeout(resolve, time))
     }
 
-    /*
-   * @tc.number  Singlehap_LifeCycleTest_0700
-   * @tc.name    Multiple registration/unregistration
-   * @tc.desc    Function test
-   * @tc.level   0
-   */
+    /**
+     * @tc.name   Singlehap_LifeCycleTest_0700
+     * @tc.number Singlehap_LifeCycleTest_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("Singlehap_LifeCycleTest_0700", Level.LEVEL0, async function (done) {
       console.log("------------Singlehap_LifeCycleTest_0700 START-------------");
       TAG = "Singlehap_LifeCycleTest_0700";

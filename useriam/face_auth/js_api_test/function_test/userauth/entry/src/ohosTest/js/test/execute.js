@@ -38,7 +38,6 @@ describe('userAuthTestExecute', async function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   Security_IAM_Face_JSAPI_Function_Execute_1700
      * @tc.number Security_IAM_Face_JSAPI_Function_Execute_1700
      * @tc.desc   Security_IAM_Face_JSAPI_Function_Execute_1700
@@ -62,7 +61,6 @@ describe('userAuthTestExecute', async function () {
 
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   Security_IAM_Face_JSAPI_Function_Execute_2000
      * @tc.number Security_IAM_Face_JSAPI_Function_Execute_2000
      * @tc.desc   Security_IAM_Face_JSAPI_Function_Execute_2000
@@ -85,7 +83,6 @@ describe('userAuthTestExecute', async function () {
     })
     
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   Security_IAM_Face_JSAPI_Function_Execute_1800
      * @tc.number Security_IAM_Face_JSAPI_Function_Execute_1800
      * @tc.desc   Security_IAM_Face_JSAPI_Function_Execute_1800
@@ -109,7 +106,6 @@ describe('userAuthTestExecute', async function () {
 
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   Security_IAM_Face_JSAPI_Function_Execute_2100
      * @tc.number Security_IAM_Face_JSAPI_Function_Execute_2100
      * @tc.desc   Security_IAM_Face_JSAPI_Function_Execute_2100
@@ -132,7 +128,6 @@ describe('userAuthTestExecute', async function () {
     })
 
         /**
-         * @generated.time 2025-11-09 20:57:56
          * @tc.name   JSAPI_Function_Execute_3100
          * @tc.number JSAPI_Function_Execute_3100
          * @tc.desc   JSAPI_Function_Execute_3100
@@ -248,7 +243,6 @@ describe('userAuthTestExecute', async function () {
     
     
         /**
-         * @generated.time 2025-11-09 20:57:56
          * @tc.name   JSAPI_Function_Execute_3101
          * @tc.number JSAPI_Function_Execute_3101
          * @tc.desc   JSAPI_Function_Execute_3101

@@ -26,78 +26,78 @@ export default function refreshPullToRefreshTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REFRESH_PULL_TO_REFRESH_0100
-     * @tc.name       : testRefreshPullToRefresh001
-     * @tc.desc       : testing value for Progress with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRefreshPullToRefresh001
+     * @tc.number SUB_ARKUI_CAPI_REFRESH_PULL_TO_REFRESH_0100
+     * @tc.desc   testing value for Progress with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRefreshPullToRefresh001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRefreshPullToRefresh001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REFRESH_PULL_TO_REFRESH_0200
-     * @tc.name       : testRefreshPullToRefresh002
-     * @tc.desc       : testing value for Progress with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRefreshPullToRefresh002
+     * @tc.number SUB_ARKUI_CAPI_REFRESH_PULL_TO_REFRESH_0200
+     * @tc.desc   testing value for Progress with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRefreshPullToRefresh002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRefreshPullToRefresh002()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REFRESH_PULL_TO_REFRESH_0300
-     * @tc.name       : testRefreshPullToRefresh003
-     * @tc.desc       : testing value for Progress with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRefreshPullToRefresh003
+     * @tc.number SUB_ARKUI_CAPI_REFRESH_PULL_TO_REFRESH_0300
+     * @tc.desc   testing value for Progress with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRefreshPullToRefresh003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRefreshPullToRefresh003()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REFRESH_PULL_TO_REFRESH_0400
-     * @tc.name       : testRefreshPullToRefresh004
-     * @tc.desc       : testing value for Progress with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRefreshPullToRefresh004
+     * @tc.number SUB_ARKUI_CAPI_REFRESH_PULL_TO_REFRESH_0400
+     * @tc.desc   testing value for Progress with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRefreshPullToRefresh004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRefreshPullToRefresh004()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REFRESH_PULL_TO_REFRESH_0500
-     * @tc.name       : testRefreshPullToRefresh005
-     * @tc.desc       : testing value for Progress with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRefreshPullToRefresh005
+     * @tc.number SUB_ARKUI_CAPI_REFRESH_PULL_TO_REFRESH_0500
+     * @tc.desc   testing value for Progress with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRefreshPullToRefresh005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRefreshPullToRefresh005()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REFRESH_PULL_TO_REFRESH_0600
-     * @tc.name       : testRefreshPullToRefresh006
-     * @tc.desc       : testing value for Progress with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRefreshPullToRefresh006
+     * @tc.number SUB_ARKUI_CAPI_REFRESH_PULL_TO_REFRESH_0600
+     * @tc.desc   testing value for Progress with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRefreshPullToRefresh006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRefreshPullToRefresh006()).assertEqual(0)

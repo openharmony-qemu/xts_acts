@@ -24,12 +24,12 @@ export default function ComponentApiTest() {
       done();
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_HOVER_MODE_AREA_TYPE_BOTTOM_0100
-     * @tc.name    : testHoverModeArea0100
-     * @tc.desc    : Test ArkUI_HoverModeAreaType.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testHoverModeArea0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_HOVER_MODE_AREA_TYPE_BOTTOM_0100
+     * @tc.desc   Test ArkUI_HoverModeAreaType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHoverModeArea0100', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -42,12 +42,12 @@ export default function ComponentApiTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYBOARD_AVOID_MODE_NONE_0100
-     * @tc.name    : testKeyboardAvoidMode0100
-     * @tc.desc    : Test ArkUI_KeyboardAvoidMode.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testKeyboardAvoidMode0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYBOARD_AVOID_MODE_NONE_0100
+     * @tc.desc   Test ArkUI_KeyboardAvoidMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyboardAvoidMode0100', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -60,12 +60,12 @@ export default function ComponentApiTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_INSPECTOR_NATIVE_RESULT_SUCCESSFUL_0100
-     * @tc.name    : testInspectorErrorCode0100
-     * @tc.desc    : Test ArkUI_InspectorErrorCode.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testInspectorErrorCode0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_INSPECTOR_NATIVE_RESULT_SUCCESSFUL_0100
+     * @tc.desc   Test ArkUI_InspectorErrorCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testInspectorErrorCode0100', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -79,12 +79,12 @@ export default function ComponentApiTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_INSPECTOR_NATIVE_RESULT_BAD_PARAMETER_0100
-     * @tc.name    : testInspectorErrorCode0200
-     * @tc.desc    : Test ArkUI_InspectorErrorCode.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testInspectorErrorCode0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_INSPECTOR_NATIVE_RESULT_BAD_PARAMETER_0100
+     * @tc.desc   Test ArkUI_InspectorErrorCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testInspectorErrorCode0200', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

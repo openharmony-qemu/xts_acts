@@ -55,14 +55,14 @@ export default function PropStringJsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    PropStringJsunit_0200
-		 * @tc.name      PropStringJsunit_0200
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   PropStringJsunit_0200
+     * @tc.number PropStringJsunit_0200
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropStringJsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('PropStringJsunit_0200 START');
       let driver = await Driver.create()
@@ -78,14 +78,14 @@ export default function PropStringJsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    PropStringJsunit_0400
-		 * @tc.name      PropStringJsunit_0400
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   PropStringJsunit_0400
+     * @tc.number PropStringJsunit_0400
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropStringJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropStringJsunit_0400 START');

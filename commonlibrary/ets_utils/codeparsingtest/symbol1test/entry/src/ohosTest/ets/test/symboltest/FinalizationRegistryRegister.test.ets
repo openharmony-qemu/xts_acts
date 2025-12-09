@@ -46,12 +46,12 @@ export default function finalizationRegistryRegisterTest() {
 
 
     /**
+     * @tc.name   ValidRegisterObjectTargetTest001
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_001
-     * @tc.name ValidRegisterObjectTargetTest001
-     * @tc.desc Verify valid registration: target is object, heldValue is string (no unregisterToken)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: target is object, heldValue is string (no unregisterToken)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterObjectTargetTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test001_ValidRegisterObjectTarget();
@@ -59,12 +59,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterSymbolTargetTest002
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_002
-     * @tc.name ValidRegisterSymbolTargetTest002
-     * @tc.desc Verify valid registration: target is non-registered Symbol
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: target is non-registered Symbol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterSymbolTargetTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test002_ValidRegisterSymbolTarget();
@@ -72,12 +72,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   InvalidRegisterHeldValueEqualsTargetTest003
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_003
-     * @tc.name InvalidRegisterHeldValueEqualsTargetTest003
-     * @tc.desc Verify invalid registration: heldValue equals target (throws TypeError)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify invalid registration: heldValue equals target (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InvalidRegisterHeldValueEqualsTargetTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test003_InvalidRegisterHeldValueEqualsTarget();
@@ -85,12 +85,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterWithObjectTokenTest004
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_004
-     * @tc.name ValidRegisterWithObjectTokenTest004
-     * @tc.desc Verify valid registration: unregisterToken is object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: unregisterToken is object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterWithObjectTokenTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test004_ValidRegisterWithObjectToken();
@@ -98,12 +98,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterWithSymbolTokenTest005
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_005
-     * @tc.name ValidRegisterWithSymbolTokenTest005
-     * @tc.desc Verify valid registration: unregisterToken is non-registered Symbol
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: unregisterToken is non-registered Symbol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterWithSymbolTokenTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test005_ValidRegisterWithSymbolToken();
@@ -111,12 +111,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   InvalidRegisterPrimitiveTargetTest006
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_006
-     * @tc.name InvalidRegisterPrimitiveTargetTest006
-     * @tc.desc Verify invalid registration: target is primitive type (throws TypeError)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify invalid registration: target is primitive type (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InvalidRegisterPrimitiveTargetTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test006_InvalidRegisterPrimitiveTarget();
@@ -124,12 +124,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   InvalidRegisterPrimitiveTokenTest007
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_007
-     * @tc.name InvalidRegisterPrimitiveTokenTest007
-     * @tc.desc Verify invalid registration: unregisterToken is primitive type (throws TypeError)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify invalid registration: unregisterToken is primitive type (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InvalidRegisterPrimitiveTokenTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test007_InvalidRegisterPrimitiveToken();
@@ -137,12 +137,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterWithoutTokenTest008
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_008
-     * @tc.name ValidRegisterWithoutTokenTest008
-     * @tc.desc Verify valid registration: no unregisterToken (returns undefined)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: no unregisterToken (returns undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterWithoutTokenTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test008_ValidRegisterWithoutToken();
@@ -150,12 +150,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterHeldValueAsObjectTest009
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_009
-     * @tc.name ValidRegisterHeldValueAsObjectTest009
-     * @tc.desc Verify valid registration: heldValue is object (not target)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: heldValue is object (not target)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterHeldValueAsObjectTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test009_ValidRegisterHeldValueAsObject();
@@ -163,12 +163,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterSameTargetMultipleTimesTest010
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_010
-     * @tc.name ValidRegisterSameTargetMultipleTimesTest010
-     * @tc.desc Verify valid registration: same target registered multiple times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: same target registered multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterSameTargetMultipleTimesTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test010_ValidRegisterSameTargetMultipleTimes();
@@ -176,12 +176,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterHeldValueAsUndefinedTest011
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_011
-     * @tc.name ValidRegisterHeldValueAsUndefinedTest011
-     * @tc.desc Verify valid registration: heldValue is undefined (different from target)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: heldValue is undefined (different from target)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterHeldValueAsUndefinedTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test011_ValidRegisterHeldValueAsUndefined();
@@ -189,12 +189,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   InvalidRegisterTokenAsNullTest012
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_012
-     * @tc.name InvalidRegisterTokenAsNullTest012
-     * @tc.desc Verify invalid registration: unregisterToken is null (throws TypeError)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify invalid registration: unregisterToken is null (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InvalidRegisterTokenAsNullTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test012_InvalidRegisterTokenAsNull();
@@ -202,12 +202,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterTargetAsArrayTest013
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_013
-     * @tc.name ValidRegisterTargetAsArrayTest013
-     * @tc.desc Verify valid registration: target is Array instance (object type)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: target is Array instance (object type)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterTargetAsArrayTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test013_ValidRegisterTargetAsArray();
@@ -215,12 +215,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterSameTargetDifferentTokensTest014
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_014
-     * @tc.name ValidRegisterSameTargetDifferentTokensTest014
-     * @tc.desc Verify valid registration: same target with different tokens (last token effective)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: same target with different tokens (last token effective)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterSameTargetDifferentTokensTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test014_ValidRegisterSameTargetDifferentTokens();
@@ -228,12 +228,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterHeldValueCircularTest015
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_015
-     * @tc.name ValidRegisterHeldValueCircularTest015
-     * @tc.desc Verify valid registration: heldValue is circular object (different from target)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: heldValue is circular object (different from target)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterHeldValueCircularTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test015_ValidRegisterHeldValueCircular();
@@ -241,12 +241,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   RegisterReturnValueAlwaysUndefinedTest016
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_016
-     * @tc.name RegisterReturnValueAlwaysUndefinedTest016
-     * @tc.desc Verify register() always returns undefined regardless of parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify register() always returns undefined regardless of parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RegisterReturnValueAlwaysUndefinedTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test016_RegisterReturnValueAlwaysUndefined();
@@ -254,12 +254,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterTargetAsFrozenObjectTest017
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_017
-     * @tc.name ValidRegisterTargetAsFrozenObjectTest017
-     * @tc.desc Verify valid registration: target is frozen object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: target is frozen object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterTargetAsFrozenObjectTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test017_ValidRegisterTargetAsFrozenObject();
@@ -268,12 +268,12 @@ export default function finalizationRegistryRegisterTest() {
 
 
     /**
+     * @tc.name   ValidRegisterHeldValueAsBigIntTest019
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_019
-     * @tc.name ValidRegisterHeldValueAsBigIntTest019
-     * @tc.desc Verify valid registration: heldValue is BigInt (different from target)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: heldValue is BigInt (different from target)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterHeldValueAsBigIntTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test019_ValidRegisterHeldValueAsBigInt();
@@ -281,12 +281,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterTokenAsFrozenObjectTest020
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_020
-     * @tc.name ValidRegisterTokenAsFrozenObjectTest020
-     * @tc.desc Verify valid registration: unregisterToken is frozen object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: unregisterToken is frozen object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterTokenAsFrozenObjectTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test020_ValidRegisterTokenAsFrozenObject();
@@ -294,12 +294,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterTargetAsDateTest021
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_021
-     * @tc.name ValidRegisterTargetAsDateTest021
-     * @tc.desc Verify valid registration: target is Date instance (object type)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: target is Date instance (object type)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterTargetAsDateTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test021_ValidRegisterTargetAsDate();
@@ -307,12 +307,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   InvalidRegisterTargetAsUndefinedTest022
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_022
-     * @tc.name InvalidRegisterTargetAsUndefinedTest022
-     * @tc.desc Verify invalid registration: target is undefined (throws TypeError)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify invalid registration: target is undefined (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InvalidRegisterTargetAsUndefinedTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test022_InvalidRegisterTargetAsUndefined();
@@ -320,12 +320,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterHeldValueAsRegExpTest023
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_023
-     * @tc.name ValidRegisterHeldValueAsRegExpTest023
-     * @tc.desc Verify valid registration: heldValue is RegExp instance (different from target)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: heldValue is RegExp instance (different from target)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterHeldValueAsRegExpTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test023_ValidRegisterHeldValueAsRegExp();
@@ -333,12 +333,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterMultipleTargetsWithSameTokenTest024
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_024
-     * @tc.name ValidRegisterMultipleTargetsWithSameTokenTest024
-     * @tc.desc Verify valid registration: multiple targets with same unregisterToken
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: multiple targets with same unregisterToken
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterMultipleTargetsWithSameTokenTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test024_ValidRegisterMultipleTargetsWithSameToken();
@@ -346,12 +346,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   InvalidRegisterThisBindingTest025
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_025
-     * @tc.name InvalidRegisterThisBindingTest025
-     * @tc.desc Verify invalid registration: incorrect this binding for register method (throws TypeError)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify invalid registration: incorrect this binding for register method (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InvalidRegisterThisBindingTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test025_InvalidRegisterThisBinding();
@@ -359,12 +359,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterTargetAsClassInstanceTest026
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_026
-     * @tc.name ValidRegisterTargetAsClassInstanceTest026
-     * @tc.desc Verify valid registration: target is custom class instance (object type)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: target is custom class instance (object type)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterTargetAsClassInstanceTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test026_ValidRegisterTargetAsClassInstance();
@@ -372,12 +372,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterHeldValueAsFunctionTest027
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_027
-     * @tc.name ValidRegisterHeldValueAsFunctionTest027
-     * @tc.desc Verify valid registration: heldValue is function (different from target)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: heldValue is function (different from target)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterHeldValueAsFunctionTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test027_ValidRegisterHeldValueAsFunction();
@@ -385,12 +385,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterTokenAsFrozenSymbolTest029
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_029
-     * @tc.name ValidRegisterTokenAsFrozenSymbolTest029
-     * @tc.desc Verify valid registration: unregisterToken is frozen non-registered Symbol
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: unregisterToken is frozen non-registered Symbol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterTokenAsFrozenSymbolTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test029_ValidRegisterTokenAsFrozenSymbol();
@@ -398,12 +398,12 @@ export default function finalizationRegistryRegisterTest() {
     });
 
     /**
+     * @tc.name   ValidRegisterTargetAsRegExpTest030
      * @tc.number SUB_FINALIZATION_REGISTRY_REGISTER_TEST_030
-     * @tc.name ValidRegisterTargetAsRegExpTest030
-     * @tc.desc Verify valid registration: target is RegExp instance (object type)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify valid registration: target is RegExp instance (object type)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ValidRegisterTargetAsRegExpTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = FinalizationRegistryRegisterUtils.test030_ValidRegisterTargetAsRegExp();

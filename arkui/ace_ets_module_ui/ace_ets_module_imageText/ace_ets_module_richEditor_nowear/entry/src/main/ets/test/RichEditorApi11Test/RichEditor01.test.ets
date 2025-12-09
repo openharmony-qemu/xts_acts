@@ -43,14 +43,14 @@ export default function RichEditor01() {
       done();
     });
 
-    /*
-    * @tc.number  RichEditor01_001
-    * @tc.name    RichEditor01_001
-    * @tc.desc    test RichEditor onReady
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   0
-    */
+    /**
+     * @tc.name   RichEditor01_001
+     * @tc.number RichEditor01_001
+     * @tc.desc   test RichEditor onReady
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('RichEditor01_001', Level.LEVEL0, async (done: Function) => {
 
       await CommonFunc.sleep(1000);
@@ -67,14 +67,14 @@ export default function RichEditor01() {
       done();
     });
 
-    /*
-    * @tc.number  RichEditor01_002
-    * @tc.name    RichEditor01_002
-    * @tc.desc    test RichEditor aboutToIMEInput
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   0
-    */
+    /**
+     * @tc.name   RichEditor01_002
+     * @tc.number RichEditor01_002
+     * @tc.desc   test RichEditor aboutToIMEInput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('RichEditor01_002', Level.LEVEL0, async (done: Function) => {
 
       console.info('[RichEditor01_002] START');
@@ -96,14 +96,14 @@ export default function RichEditor01() {
       done();
     });
 
-    /*
-    * @tc.number  RichEditor01_003
-    * @tc.name    RichEditor01_003
-    * @tc.desc    test RichEditor onIMEInputComplete
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   0
-    */
+    /**
+     * @tc.name   RichEditor01_003
+     * @tc.number RichEditor01_003
+     * @tc.desc   test RichEditor onIMEInputComplete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('RichEditor01_003', Level.LEVEL0, async (done: Function) => {
 
       console.info('[RichEditor01_003] START');
@@ -122,14 +122,14 @@ export default function RichEditor01() {
       done();
     });
 
-    /*
-    * @tc.number  RichEditor01_004
-    * @tc.name    RichEditor01_004
-    * @tc.desc    test RichEditor: set setCaretOffset to 6
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   0
-    */
+    /**
+     * @tc.name   RichEditor01_004
+     * @tc.number RichEditor01_004
+     * @tc.desc   test RichEditor: set setCaretOffset to 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('RichEditor01_004', Level.LEVEL0, async (done: Function) => {
 
       console.info('[RichEditor01_004] START');
@@ -148,14 +148,14 @@ export default function RichEditor01() {
       done();
     });
 
-    /*
-    * @tc.number  RichEditor01_005
-    * @tc.name    RichEditor01_005
-    * @tc.desc    test RichEditor: set setCaretOffset to 100
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   0
-    */
+    /**
+     * @tc.name   RichEditor01_005
+     * @tc.number RichEditor01_005
+     * @tc.desc   test RichEditor: set setCaretOffset to 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('RichEditor01_005', Level.LEVEL0, async (done: Function) => {
 
       console.info('[RichEditor01_005] START');
@@ -174,14 +174,14 @@ export default function RichEditor01() {
       done();
     });
 
-    /*
-    * @tc.number  RichEditor01_006
-    * @tc.name    RichEditor01_006
-    * @tc.desc    test RichEditor: set setCaretOffset to 100
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   0
-    */
+    /**
+     * @tc.name   RichEditor01_006
+     * @tc.number RichEditor01_006
+     * @tc.desc   test RichEditor: set setCaretOffset to 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('RichEditor01_006', Level.LEVEL0, async (done: Function) => {
 
       console.info('[RichEditor01_006] START');

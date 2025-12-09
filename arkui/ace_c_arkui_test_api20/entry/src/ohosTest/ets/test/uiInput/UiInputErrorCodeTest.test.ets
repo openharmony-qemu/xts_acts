@@ -27,14 +27,14 @@ export default function uiInputErrorCodeTest() {
       await Utils.pushPage(`uiInput/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : errorCode_001
-    * @tc.name       : errorCode_001
-    * @tc.desc       : test OH_ArkUI_AddSupportedUIStates return 180006
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   errorCode_001
+     * @tc.number errorCode_001
+     * @tc.desc   test OH_ArkUI_AddSupportedUIStates return 180006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('errorCode_001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       let component = await driver.findComponent(ON.id('ErrorCodeButton'));
@@ -49,14 +49,14 @@ export default function uiInputErrorCodeTest() {
       done();
     })
 
-    /*
-    * @tc.number     : errorCode_002
-    * @tc.name       : errorCode_002
-    * @tc.desc       : test OH_ArkUI_AddSupportedUIStates return 0
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   errorCode_002
+     * @tc.number errorCode_002
+     * @tc.desc   test OH_ArkUI_AddSupportedUIStates return 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('errorCode_002', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       let component = await driver.findComponent(ON.id('ErrorCodeButton'));
@@ -71,14 +71,14 @@ export default function uiInputErrorCodeTest() {
       done();
     })
 
-    /*
-    * @tc.number     : errorCode_003
-    * @tc.name       : errorCode_003
-    * @tc.desc       : test OH_ArkUI_AddSupportedUIStates return 401
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   errorCode_003
+     * @tc.number errorCode_003
+     * @tc.desc   test OH_ArkUI_AddSupportedUIStates return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('errorCode_003', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       let component = await driver.findComponent(ON.id('ErrorCodeButton'));
@@ -93,14 +93,14 @@ export default function uiInputErrorCodeTest() {
       done();
     })
 
-    /*
-    * @tc.number     : errorCode_004
-    * @tc.name       : errorCode_004
-    * @tc.desc       : test OH_ArkUI_AddSupportedUIStates return 180006
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   errorCode_004
+     * @tc.number errorCode_004
+     * @tc.desc   test OH_ArkUI_AddSupportedUIStates return 180006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('errorCode_004', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       let component = await driver.findComponent(ON.id('ErrorCodeButton'));

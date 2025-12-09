@@ -75,4 +75,8 @@ napi_value ErrorCodeBufferSizeNotEnough(napi_env env, napi_callback_info info);
 napi_value CreateUIInputEventNode(napi_env env, napi_callback_info info);
 napi_value ErrorCodePostCloned(napi_env env, napi_callback_info info);
 
+napi_value GetRouterStateOnShow(napi_env env, napi_callback_info info);
+napi_value GetRouterStateOnHide(napi_env env, napi_callback_info info);
+napi_value GetRouterStateOnBackPressed(napi_env env, napi_callback_info info);
+
 #endif // NATIVE_TYPE_TEST_ARKUI_TEST_H

@@ -40,12 +40,14 @@ export default function NavigationMode04Jsunit() {
       }
       done();
     });
-     /* *
-    * @tc.number: SUB_ACE_UI_COMPONENT_NAV_NAVIGATION_MODE_0080
-    * @tc.name  : NavigationMode04Jsunit_0100
-    * @tc.desc  : The width of Navigation is greater than 600 vp. The width of Navigation is dynamically changed to less than 600 vp.
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   NavigationMode04Jsunit_0100
+     * @tc.number SUB_ACE_UI_COMPONENT_NAV_NAVIGATION_MODE_0080
+     * @tc.desc   The width of Navigation is greater than 600 vp. The width of Navigation is dynamically changed to less than 600 vp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationMode04Jsunit_0100',  Level.LEVEL0, async  (done:Function) =>{
       await CommonFunc.sleep(1000);
       let driver = await UiDriver.create()

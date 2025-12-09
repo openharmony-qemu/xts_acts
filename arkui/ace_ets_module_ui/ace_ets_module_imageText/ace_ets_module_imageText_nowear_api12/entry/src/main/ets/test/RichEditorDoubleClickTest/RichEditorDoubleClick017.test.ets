@@ -56,12 +56,12 @@ export default function RichEditorDoubleClick017() {
     });
     
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_024
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_024
-     * @tc.desc  : Double click AI recognition test using mouse gesture analogy: address, three word word, phone number to test RichEditor doubleClick event
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_024
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_024
+     * @tc.desc   Double click AI recognition test using mouse gesture analogy: address, three word word, phone number to test RichEditor doubleClick event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_024',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_024 START');

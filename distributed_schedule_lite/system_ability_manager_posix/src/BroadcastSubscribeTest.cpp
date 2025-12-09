@@ -121,10 +121,13 @@ protected:
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_AddTopic_0010
- * @tc.name      : Valid topic can be added successfully
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testAddTopic0010
+ * @tc.number DMSLite_SAMGR_AddTopic_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(BroadcastSubscribeTest, testAddTopic0010, Function | MediumTest | Level1)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
@@ -144,10 +147,13 @@ HWTEST_F(BroadcastSubscribeTest, testAddTopic0010, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_AddTopic_0020
- * @tc.name      : Topic which is nullptr or already existing can not be added
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testAddTopic0020
+ * @tc.number DMSLite_SAMGR_AddTopic_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(BroadcastSubscribeTest, testAddTopic0020, Function | MediumTest | Level2)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
@@ -172,10 +178,13 @@ HWTEST_F(BroadcastSubscribeTest, testAddTopic0020, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Subscribe_0010
- * @tc.name      : Consumer can subscribe to a topic
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testSubscribe0010
+ * @tc.number DMSLite_SAMGR_Subscribe_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(BroadcastSubscribeTest, testSubscribe0010, Function | MediumTest | Level1)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
@@ -199,10 +208,13 @@ HWTEST_F(BroadcastSubscribeTest, testSubscribe0010, Function | MediumTest | Leve
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Subscribe_0020
- * @tc.name      : Consumer can not subscribe to the topic which is nullptr or does not exist
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testSubscribe0020
+ * @tc.number DMSLite_SAMGR_Subscribe_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(BroadcastSubscribeTest, testSubscribe0020, Function | MediumTest | Level2)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
@@ -228,10 +240,13 @@ HWTEST_F(BroadcastSubscribeTest, testSubscribe0020, Function | MediumTest | Leve
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Subscribe_0030
- * @tc.name      : Consumer which is nullptr can not subscribe to a topic
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testSubscribe0030
+ * @tc.number DMSLite_SAMGR_Subscribe_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(BroadcastSubscribeTest, testSubscribe0030, Function | MediumTest | Level2)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
@@ -255,10 +270,13 @@ HWTEST_F(BroadcastSubscribeTest, testSubscribe0030, Function | MediumTest | Leve
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Subscribe_0040
- * @tc.name      : Consumer can not subscribe to the same topic twice
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testSubscribe0040
+ * @tc.number DMSLite_SAMGR_Subscribe_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(BroadcastSubscribeTest, testSubscribe0040, Function | MediumTest | Level2)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
@@ -283,10 +301,13 @@ HWTEST_F(BroadcastSubscribeTest, testSubscribe0040, Function | MediumTest | Leve
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnSubscribe_0010
- * @tc.name      : Consumer can unsubscribe a topic
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testUnsubscribe0010
+ * @tc.number DMSLite_SAMGR_UnSubscribe_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(BroadcastSubscribeTest, testUnsubscribe0010, Function | MediumTest | Level1)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
@@ -310,10 +331,13 @@ HWTEST_F(BroadcastSubscribeTest, testUnsubscribe0010, Function | MediumTest | Le
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnSubscribe_0020
- * @tc.name      : Consumer can not unsubscribe a topic if the specified topic-comsumer relationship is nullptr
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testUnsubscribe0020
+ * @tc.number DMSLite_SAMGR_UnSubscribe_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(BroadcastSubscribeTest, testUnsubscribe0020, Function | MediumTest | Level2)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
@@ -341,10 +365,13 @@ HWTEST_F(BroadcastSubscribeTest, testUnsubscribe0020, Function | MediumTest | Le
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnSubscribe_0030
- * @tc.name      : Consumer can not unsubscribe a topic if the specified topic-comsumer relationship not exist
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testUnsubscribe0030
+ * @tc.number DMSLite_SAMGR_UnSubscribe_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(BroadcastSubscribeTest, testUnsubscribe0030, Function | MediumTest | Level2)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
@@ -370,10 +397,13 @@ HWTEST_F(BroadcastSubscribeTest, testUnsubscribe0030, Function | MediumTest | Le
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnSubscribe_0040
- * @tc.name      : Consumer subscribe and unsubscribe a topic repeatedly, no memory leak.
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testUnsubscribe0040
+ * @tc.number DMSLite_SAMGR_UnSubscribe_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(BroadcastSubscribeTest, testUnsubscribe0040, Function | MediumTest | Level2)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
@@ -399,10 +429,13 @@ HWTEST_F(BroadcastSubscribeTest, testUnsubscribe0040, Function | MediumTest | Le
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_ModifyConsumer_0010
- * @tc.name      : Consumer can modify subscription relationship
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testModifyConsumer0010
+ * @tc.number DMSLite_SAMGR_ModifyConsumer_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(BroadcastSubscribeTest, testModifyConsumer0010, Function | MediumTest | Level2)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
@@ -429,10 +462,13 @@ HWTEST_F(BroadcastSubscribeTest, testModifyConsumer0010, Function | MediumTest |
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_ModifyConsumer_0020
- * @tc.name      : Consumer can not modify subscription relationship if the input parameter is nullptr
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testModifyConsumer0020
+ * @tc.number DMSLite_SAMGR_ModifyConsumer_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(BroadcastSubscribeTest, testModifyConsumer0020, Function | MediumTest | Level2)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
@@ -465,10 +501,13 @@ HWTEST_F(BroadcastSubscribeTest, testModifyConsumer0020, Function | MediumTest |
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_ModifyConsumer_0030
- * @tc.name      : Consumer can not modify subscription relationship if the specified topic not exist
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testModifyConsumer0030
+ * @tc.number DMSLite_SAMGR_ModifyConsumer_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(BroadcastSubscribeTest, testModifyConsumer0030, Function | MediumTest | Level2)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
@@ -496,10 +535,13 @@ HWTEST_F(BroadcastSubscribeTest, testModifyConsumer0030, Function | MediumTest |
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_ModifyConsumer_0040
- * @tc.name      : Consumer can not modify subscription relationship if the specified old consumer not exist
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testModifyConsumer0040
+ * @tc.number DMSLite_SAMGR_ModifyConsumer_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(BroadcastSubscribeTest, testModifyConsumer0040, Function | MediumTest | Level2)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();
@@ -527,10 +569,13 @@ HWTEST_F(BroadcastSubscribeTest, testModifyConsumer0040, Function | MediumTest |
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_ModifyConsumer_0050
- * @tc.name      : Consumer can modify subscription relationship if the new consumer is the same as old consumer
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testModifyConsumer0050
+ * @tc.number DMSLite_SAMGR_ModifyConsumer_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(BroadcastSubscribeTest, testModifyConsumer0050, Function | MediumTest | Level2)
 {
     PubSubInterface *fapi = CASE_GetIUnknown();

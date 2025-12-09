@@ -26,117 +26,117 @@ export default function commonAttrsAlignContentTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNCONTENT_0100
-     * @tc.name: testCommonAttrsAlignContent001
-     * @tc.desc: testing alignContent for stack with top start value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignContent001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNCONTENT_0100
+     * @tc.desc   testing alignContent for stack with top start value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignContent001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignContent001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNCONTENT_0200
-     * @tc.name: testCommonAttrsAlignContent002
-     * @tc.desc: testing alignContent for stack with top value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignContent002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNCONTENT_0200
+     * @tc.desc   testing alignContent for stack with top value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignContent002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignContent002()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNCONTENT_0300
-     * @tc.name: testCommonAttrsAlignContent003
-     * @tc.desc: testing alignContent for stack with top end value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignContent003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNCONTENT_0300
+     * @tc.desc   testing alignContent for stack with top end value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignContent003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignContent003()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNCONTENT_0400
-     * @tc.name: testCommonAttrsAlignContent004
-     * @tc.desc: testing alignContent for stack with start value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignContent004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNCONTENT_0400
+     * @tc.desc   testing alignContent for stack with start value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignContent004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignContent004()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNCONTENT_0500
-     * @tc.name: testCommonAttrsAlignContent005
-     * @tc.desc: testing alignContent for stack with center value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignContent005
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNCONTENT_0500
+     * @tc.desc   testing alignContent for stack with center value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignContent005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignContent005()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNCONTENT_0600
-     * @tc.name: testCommonAttrsAlignContent006
-     * @tc.desc: testing alignContent for stack with end value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignContent006
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNCONTENT_0600
+     * @tc.desc   testing alignContent for stack with end value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignContent006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignContent006()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNCONTENT_0700
-     * @tc.name: testCommonAttrsAlignContent007
-     * @tc.desc: testing alignContent for stack with bottom start value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignContent007
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNCONTENT_0700
+     * @tc.desc   testing alignContent for stack with bottom start value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignContent007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignContent007()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNCONTENT_0800
-     * @tc.name: testCommonAttrsAlignContent008
-     * @tc.desc: testing alignContent for stack with bottom value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignContent008
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNCONTENT_0800
+     * @tc.desc   testing alignContent for stack with bottom value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignContent008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignContent008()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_ALIGNCONTENT_0900
-     * @tc.name: testCommonAttrsAlignContent009
-     * @tc.desc: testing alignContent for stack with bottom end value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsAlignContent009
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ALIGNCONTENT_0900
+     * @tc.desc   testing alignContent for stack with bottom end value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAlignContent009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAlignContent009()).assertEqual(0)

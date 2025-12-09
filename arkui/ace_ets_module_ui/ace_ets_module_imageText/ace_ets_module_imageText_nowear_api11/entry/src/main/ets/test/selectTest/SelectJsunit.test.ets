@@ -43,6 +43,14 @@ export default function SelectJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   SelectJsunit_0100
+     * @tc.number SelectJsunit_0100
+     * @tc.desc   SelectJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SelectJsunit_0100', Level.LEVEL0, async (done: Function) => {
       // Get the information of the Select component
       console.info('[SelectJsunit_0100] START');
@@ -79,6 +87,14 @@ export default function SelectJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   SelectJsunit_0200
+     * @tc.number SelectJsunit_0200
+     * @tc.desc   SelectJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SelectJsunit_0200', Level.LEVEL0, async (done: Function) => {
       // Modify the properties of component select
       console.info('[SelectJsunit_0200] START');
@@ -128,6 +144,14 @@ export default function SelectJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   SelectJsunit_0300
+     * @tc.number SelectJsunit_0300
+     * @tc.desc   SelectJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SelectJsunit_0300', Level.LEVEL0, async (done: Function) => {
       // Verify the functions of the select component
       console.info('[SelectJsunit_0300] START');

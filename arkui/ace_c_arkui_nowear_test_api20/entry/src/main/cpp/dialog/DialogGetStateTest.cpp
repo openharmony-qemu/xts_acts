@@ -264,4 +264,32 @@ napi_value DialogGetStateTest::CreateNativeNode(napi_env env, napi_callback_info
 
     return exports;
 }
+
+napi_value DialogGetStateTest::GetStateErrorCode_001(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "DialogGetStateErrorCodeTest", "GetStateErrorCode_001");
+    ArkUI_DialogState state = static_cast<ArkUI_DialogState>(-1);
+    auto ret = OH_ArkUI_CustomDialog_GetState(globalCustomDialog, &state);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "DialogGetStateErrorCodeTest",
+                 "[GetStateErrorCode_001] dialog state is %{public}d", state);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "DialogGetStateErrorCodeTest",
+                 "[GetStateErrorCode_001] GetState ret %{public}d", ret);
+    ASSERT_EQ(state, ArkUI_DialogState::DIALOG_DISAPPEARED);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
+
+napi_value DialogGetStateTest::GetStateErrorCode_002(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "DialogGetStateErrorCodeTest", "GetStateErrorCode_002");
+    ArkUI_DialogState state = static_cast<ArkUI_DialogState>(-1);
+    auto ret = OH_ArkUI_CustomDialog_GetState(nullptr, &state);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "DialogGetStateErrorCodeTest",
+                 "[GetStateErrorCode_002] dialog state is %{public}d", state);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "DialogGetStateErrorCodeTest",
+                 "[GetStateErrorCode_002] GetState ret %{public}d", ret);
+    ASSERT_EQ(state, -1);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
 } // namespace ArkUICapiTest

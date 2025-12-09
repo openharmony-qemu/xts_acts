@@ -45,7 +45,6 @@ export default function ThermalTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Get_Thermal_Level_JSTest0010
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0010
      * @tc.desc   Thermal acquisition kit
@@ -69,7 +68,6 @@ export default function ThermalTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Subscribe_Thermal_Level_JSTest0020
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0020
      * @tc.desc   Thermal acquisition kit
@@ -94,7 +92,6 @@ export default function ThermalTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Unsubscribe_Thermal_Level_JSTest0030
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0020
      * @tc.desc   Thermal acquisition kit
@@ -123,7 +120,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Get_Thermal_Level_Cool_JSTest0040
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0040
      * @tc.desc   Get device thermalLevel COOL
@@ -146,7 +142,6 @@ export default function ThermalTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Get_Thermal_Level_Normal_JSTest0050
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0050
      * @tc.desc   Get device thermalLevel NORMAL
@@ -170,7 +165,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Get_Thermal_Level_Warm_JSTest0060
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0060
      * @tc.desc   Get device thermalLevel WARM
@@ -193,7 +187,6 @@ export default function ThermalTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Get_Thermal_Level_Hot_JSTest0070
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0070
      * @tc.desc   Get device thermalLevel HOT
@@ -216,7 +209,6 @@ export default function ThermalTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Get_Thermal_Level_OverHeated_JSTest0080
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0080
      * @tc.desc   Get device thermalLevel OVERHEATED
@@ -240,7 +232,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Get_Thermal_Level_Warning_JSTest0090
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0090
      * @tc.desc   Get device thermalLevel WARNING
@@ -264,7 +255,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Get_Thermal_Level_Emergency_JSTest0100
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0100
      * @tc.desc   Get device thermalLevel EMERGENCY
@@ -288,7 +278,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Get_Thermal_Level_Escape_JSTest0110
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0110
      * @tc.desc   Get device thermalLevel ESCAPE
@@ -312,7 +301,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Get_Level_JSTest0120
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0120
      * @tc.desc   Thermal acquisition kit
@@ -336,7 +324,6 @@ export default function ThermalTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Register_Thermal_Level_Callback_JSTest0130
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0130
      * @tc.desc   Thermal acquisition kit
@@ -364,7 +351,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Register_Thermal_Level_Callback_JSTest0140
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0140
      * @tc.desc   Thermal acquisition kit
@@ -386,7 +372,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   UnRegister_Thermal_Level_Callback_JSTest0150
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0150
      * @tc.desc   Thermal acquisition kit
@@ -408,7 +393,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   UnRegister_Thermal_Level_Callback_JSTest0160
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0160
      * @tc.desc   Thermal acquisition kit
@@ -431,7 +415,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   UnRegister_Thermal_Level_Callback_JSTest0170
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0170
      * @tc.desc   Thermal acquisition kit
@@ -462,7 +445,6 @@ export default function ThermalTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   Unsubscribe_Thermal_Level_Callback_JSTest0180
      * @tc.number SUB_PowerSystem_ThermalManager_JSTest_0180
      * @tc.desc   Thermal acquisition kit

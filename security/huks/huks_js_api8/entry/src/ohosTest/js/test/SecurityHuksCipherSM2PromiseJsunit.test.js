@@ -170,6 +170,14 @@ let genHuksOptions = {
 export default function SecurityHuksCipherSM2PromiseJsunit() {
     describe('SecurityHuksCipherSM2PromiseJsunit', function () {
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_SM2_101
+         * @tc.number Security_HUKS_Cipher_API8_SM2_101
+         * @tc.desc   Security_HUKS_Cipher_API8_SM2_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_SM2_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_SM2_101A';
             const newSrcKeyAlias = 'Security_HUKS_Cipher_API8_SM2_101B';
@@ -234,6 +242,14 @@ export default function SecurityHuksCipherSM2PromiseJsunit() {
 
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API8_SM2_102
+         * @tc.number Security_HUKS_Cipher_API8_SM2_102
+         * @tc.desc   Security_HUKS_Cipher_API8_SM2_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API8_SM2_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'Security_HUKS_Cipher_API8_SM2_101A';
             const newSrcKeyAlias = 'Security_HUKS_Cipher_API8_SM2_101B';
@@ -294,11 +310,12 @@ export default function SecurityHuksCipherSM2PromiseJsunit() {
         });
 
         /**
+         * @tc.name   SUB_Security_HUKS_Cipher_API8_SM2_0100
          * @tc.number SUB_Security_HUKS_Cipher_API8_SM2_0100
-         * @tc.name generate sm2 with error key size 128
-         * @tc.size Medium
-         * @tc.type Func
-         * @tc.level Level2
+         * @tc.desc   SUB_Security_HUKS_Cipher_API8_SM2_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Security_HUKS_Cipher_API8_SM2_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = 'SUB_Security_HUKS_Cipher_API8_SM2_0100';

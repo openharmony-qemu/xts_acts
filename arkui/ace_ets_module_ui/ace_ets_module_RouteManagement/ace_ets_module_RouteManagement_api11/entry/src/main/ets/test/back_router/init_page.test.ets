@@ -62,12 +62,12 @@ export default function aboutToAppearRouterTest() {
       console.info("aboutToAppearRouterTest after each called");
     });
     /**
+     * @tc.name   aboutToAppearRouterTest_0100
      * @tc.number SUB_ACE_RICHEDITOR_aboutToAppearRouterTest_0100
-     * @tc.name aboutToAppearRouterTest
-     * @tc.desc set api
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('aboutToAppearRouterTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[aboutToAppearRouterTest_0100] START');
@@ -132,12 +132,12 @@ export default function aboutToAppearRouterTest() {
     });
 
     /**
+     * @tc.name   aboutToAppearRouterTest_0200
      * @tc.number SUB_ACE_RICHEDITOR_aboutToAppearRouterTest_0100
-     * @tc.name aboutToAppearRouterTest
-     * @tc.desc set api
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('aboutToAppearRouterTest_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[aboutToAppearRouterTest_0200] START');

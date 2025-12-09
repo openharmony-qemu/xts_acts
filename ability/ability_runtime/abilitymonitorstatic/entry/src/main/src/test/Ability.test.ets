@@ -56,9 +56,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   ACTS_AddAbilityMonitor_Callback_0100
      * @tc.number ACTS_AddAbilityMonitor_Callback_0100
-     * @tc.name ACTS_AddAbilityMonitor_Callback_0100
-     * @tc.desc Use addAbilityMonitor to add a monitor then use startAbility to trigger onAbilityCreate (Callback).
+     * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility to trigger onAbilityCreate (Callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AddAbilityMonitor_Callback_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "ACTS_AddAbilityMonitor_Callback_0100";

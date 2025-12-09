@@ -26,13 +26,13 @@ export default function textInputPasswordRulesTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_PASSWORD_RULES_0001
-     * @tc.name: testTextInputPasswordRules001
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputPasswordRules001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_PASSWORD_RULES_0001
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputPasswordRules001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputPasswordRules001()).assertEqual(0)

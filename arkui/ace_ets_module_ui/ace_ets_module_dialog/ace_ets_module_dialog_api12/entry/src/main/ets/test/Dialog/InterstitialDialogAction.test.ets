@@ -48,12 +48,12 @@ export default function interstitialDialogActionTest() {
     });
 
     /**
-     * @tc.number    interstitialDialogActionTest_0010
-     * @tc.name      interstitialDialogActionTest_0010
-     * @tc.desc      interstitialDialogAction: openDialog
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   interstitialDialogActionTest_0010
+     * @tc.number interstitialDialogActionTest_0010
+     * @tc.desc   interstitialDialogAction: openDialog
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('interstitialDialogActionTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('interstitialDialogActionTest_0010 START');
@@ -69,12 +69,12 @@ export default function interstitialDialogActionTest() {
     });
 
     /**
-     * @tc.number    interstitialDialogActionTest_0020
-     * @tc.name      interstitialDialogActionTest_0020
-     * @tc.desc      interstitialDialogAction: closeDialog
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   interstitialDialogActionTest_0020
+     * @tc.number interstitialDialogActionTest_0020
+     * @tc.desc   interstitialDialogAction: closeDialog
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('interstitialDialogActionTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('interstitialDialogActionTest_0020 START');

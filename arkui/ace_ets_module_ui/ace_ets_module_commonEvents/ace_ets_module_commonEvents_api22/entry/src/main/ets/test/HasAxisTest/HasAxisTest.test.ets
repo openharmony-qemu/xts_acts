@@ -43,12 +43,12 @@ export default function HasAxisTest() {
     });
 
     /**
-     * @tc.number    HasAxis_001
-     * @tc.name      HasAxis_001
-     * @tc.desc      ScrollEvent info axis.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   HasAxis_001
+     * @tc.number HasAxis_001
+     * @tc.desc   ScrollEvent info axis.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('HasAxis_001', Level.LEVEL0, async (done: Function) => {
       console.info('[HasAxis_001] START');
@@ -57,12 +57,36 @@ export default function HasAxisTest() {
       let center = await button.getBoundsCenter();
       await CommonFunc.sleep(500);
       await driver.mouseScroll({ x: center.x, y: center.y }, true, 30);
-      let strJson: string = getInspectorByKey('has');
+      let strJson: string = getInspectorByKey('has1');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('[HasAxis_001] component obj is: ' + JSON.stringify(obj));
       console.info('[HasAxis_001] content obj is: ' + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('true');
       console.info('[HasAxis_001] END');
+      done();
+    });
+
+    /**
+     * @tc.name   HasAxis_002
+     * @tc.number HasAxis_002
+     * @tc.desc   ScrollEvent info axis.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('HasAxis_002', Level.LEVEL0, async (done: Function) => {
+      console.info('[HasAxis_002] START');
+      let driver = await Driver.create();
+      let button = await driver.findComponent(ON.id('button'));
+      let center = await button.getBoundsCenter();
+      await CommonFunc.sleep(500);
+      await driver.mouseScroll({ x: center.x, y: center.y }, true, 30);
+      let strJson: string = getInspectorByKey('has2');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info('[HasAxis_002] component obj is: ' + JSON.stringify(obj));
+      console.info('[HasAxis_002] content obj is: ' + JSON.stringify(obj.$attrs.content));
+      expect(obj.$attrs.content).assertEqual('false');
+      console.info('[HasAxis_002] END');
       done();
     });
   })

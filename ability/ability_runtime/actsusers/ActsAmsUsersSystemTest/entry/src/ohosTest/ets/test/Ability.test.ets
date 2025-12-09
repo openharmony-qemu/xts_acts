@@ -66,10 +66,13 @@ export default function abilityTest() {
     })
 
     console.debug("====>in ACTS_InterfaceMultiUsers====>");
-    /*
-     * @tc.number  : ACTS_startAbility_2000
-     * @tc.name    : start new ability
-     * @tc.desc    : Start an ability with the parameter startability with options succeeded.(promise)
+    /**
+     * @tc.name   ACTS_startAbility_2000
+     * @tc.number ACTS_startAbility_2000
+     * @tc.desc   Start an ability with the parameter startability with options succeeded.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_startAbility_2000', Level.LEVEL0, async (done: Function) => {
       let TAG = 'ACTS_startAbility_2000'
@@ -123,10 +126,13 @@ export default function abilityTest() {
       setTimeout(timeout, START_ABILITY_TIMEOUT);
     })
 
-    /*
-     * @tc.number  : ACTS_startAbility_2200
-     * @tc.name    : start new ability
-     * @tc.desc    : Start an ability with the parameter startability with options failed.(promise)
+    /**
+     * @tc.name   ACTS_startAbility_2200
+     * @tc.number ACTS_startAbility_2200
+     * @tc.desc   Start an ability with the parameter startability with options failed.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_startAbility_2200', Level.LEVEL0, async (done: Function) => {
       let TAG = 'ACTS_startAbility_2200';
@@ -145,10 +151,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_startAbility_2400
-     * @tc.name    : start new ability
-     * @tc.desc    : Start an ability with the parameter startability with options succeeded.(callback)
+    /**
+     * @tc.name   ACTS_startAbility_2400
+     * @tc.number ACTS_startAbility_2400
+     * @tc.desc   Start an ability with the parameter startability with options succeeded.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_startAbility_2400', Level.LEVEL0, async (done: Function) => {
       let TAG = 'ACTS_startAbility_2400'
@@ -202,10 +211,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number  : ACTS_startAbility_2600
-     * @tc.name    : start new ability
-     * @tc.desc    : Start an ability with the parameter startability with options failed.(callback)
+    /**
+     * @tc.name   ACTS_startAbility_2600
+     * @tc.number ACTS_startAbility_2600
+     * @tc.desc   Start an ability with the parameter startability with options failed.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_startAbility_2600', Level.LEVEL0, async (done: Function) => {
       let TAG = 'ACTS_startAbility_2600';
@@ -227,10 +239,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number  : ACTS_startAbility_2800
-     * @tc.name    : start new ability
-     * @tc.desc    : Starting mainability2 with startability succeeded.(promise)
+    /**
+     * @tc.name   ACTS_startAbility_2800
+     * @tc.number ACTS_startAbility_2800
+     * @tc.desc   Starting mainability2 with startability succeeded.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_startAbility_2800', Level.LEVEL0, async (done: Function) => {
       let TAG = 'ACTS_startAbility_2800'
@@ -282,10 +297,13 @@ export default function abilityTest() {
       setTimeout(timeout, START_ABILITY_TIMEOUT);
     })
 
-    /*
-     * @tc.number  : ACTS_startAbility_2900
-     * @tc.name    : start new ability
-     * @tc.desc    : Starting mainability2 with startability succeeded.(callback)
+    /**
+     * @tc.name   ACTS_startAbility_2900
+     * @tc.number ACTS_startAbility_2900
+     * @tc.desc   Starting mainability2 with startability succeeded.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_startAbility_2900', Level.LEVEL0, async (done: Function) => {
       let TAG = 'ACTS_startAbility_2900'
@@ -337,10 +355,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number  : ACTS_StartAbilityForResult_0100
-     * @tc.name    : start new ability for result
-     * @tc.desc    : Starting mainability3 with startAbilityForResult succeeded.(promise)
+    /**
+     * @tc.name   ACTS_StartAbilityForResult_0100
+     * @tc.number ACTS_StartAbilityForResult_0100
+     * @tc.desc   Starting mainability3 with startAbilityForResult succeeded.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StartAbilityForResult_0100', Level.LEVEL0, async (done: Function) => {
       let TAG = 'ACTS_StartAbilityForResult_0100'
@@ -370,10 +391,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_StartAbilityForResult_0200
-     * @tc.name    : start new ability for result
-     * @tc.desc    : Starting mainability3 with startAbilityForResult failed.(promise)
+    /**
+     * @tc.name   ACTS_StartAbilityForResult_0200
+     * @tc.number ACTS_StartAbilityForResult_0200
+     * @tc.desc   Starting mainability3 with startAbilityForResult failed.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StartAbilityForResult_0200', Level.LEVEL0, async (done: Function) => {
       let TAG = 'ACTS_StartAbilityForResult_0200';
@@ -393,10 +417,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_StartAbilityForResult_0300
-     * @tc.name    : start new ability for result
-     * @tc.desc    : Starting mainability3 with startAbilityForResult succeeded.(callback)
+    /**
+     * @tc.name   ACTS_StartAbilityForResult_0300
+     * @tc.number ACTS_StartAbilityForResult_0300
+     * @tc.desc   Starting mainability3 with startAbilityForResult succeeded.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StartAbilityForResult_0300', Level.LEVEL0, async (done: Function) => {
       let TAG = 'ACTS_StartAbilityForResult_0300'
@@ -425,10 +452,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_StartAbilityForResult_0400
-     * @tc.name    : start new ability for result
-     * @tc.desc    : Starting mainability3 with startAbilityForResult failed.(callback)
+    /**
+     * @tc.name   ACTS_StartAbilityForResult_0400
+     * @tc.number ACTS_StartAbilityForResult_0400
+     * @tc.desc   Starting mainability3 with startAbilityForResult failed.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StartAbilityForResult_0400', Level.LEVEL0, async (done: Function) => {
       let TAG = 'ACTS_StartAbilityForResult_0400';
@@ -450,10 +480,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number  : ACTS_StartAbilityForResult_0500
-     * @tc.name    : start new ability for result
-     * @tc.desc    : Starting mainability3 with startAbilityForResult succeeded.(promise)
+    /**
+     * @tc.name   ACTS_StartAbilityForResult_0500
+     * @tc.number ACTS_StartAbilityForResult_0500
+     * @tc.desc   Starting mainability3 with startAbilityForResult succeeded.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StartAbilityForResult_0500', Level.LEVEL0, async (done: Function) => {
       let TAG = 'ACTS_StartAbilityForResult_0500'
@@ -481,10 +514,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_StartAbilityForResult_0700
-     * @tc.name    : start new ability for result
-     * @tc.desc    : Starting mainability3 with startAbilityForResult succeeded.(callback)
+    /**
+     * @tc.name   ACTS_StartAbilityForResult_0700
+     * @tc.number ACTS_StartAbilityForResult_0700
+     * @tc.desc   Starting mainability3 with startAbilityForResult succeeded.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StartAbilityForResult_0700', Level.LEVEL0, async (done: Function) => {
       let TAG = 'ACTS_StartAbilityForResult_0700'
@@ -511,10 +547,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_TerminateSelf_0100
-     * @tc.name    : Use terminateself to terminate ability
-     * @tc.desc    : Starting mainability2 with startAbility then terminateself ability succeeded.(promise)
+    /**
+     * @tc.name   ACTS_TerminateSelf_0100
+     * @tc.number ACTS_TerminateSelf_0100
+     * @tc.desc   Starting mainability2 with startAbility then terminateself ability succeeded.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_TerminateSelf_0100', Level.LEVEL0, async (done: Function) => {
       let TAG = 'ACTS_TerminateSelf_0100'
@@ -567,10 +606,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number  : ACTS_TerminateSelf_0300
-     * @tc.name    : Use terminateself to terminate ability
-     * @tc.desc    : Starting mainability2 with startAbility then terminateself ability succeeded.(callback)
+    /**
+     * @tc.name   ACTS_TerminateSelf_0300
+     * @tc.number ACTS_TerminateSelf_0300
+     * @tc.desc   Starting mainability2 with startAbility then terminateself ability succeeded.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_TerminateSelf_0300', Level.LEVEL0, async (done: Function) => {
       let TAG = 'ACTS_TerminateSelf_0300'
@@ -622,11 +664,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number  : ACTS_TerminateSelfWithResult_0100
-     * @tc.name    : Use terminateselfwithresult to terminate ability and return result
-     * @tc.desc    : Starting mainability3 with startAbilityforresult
-     *               then terminateself ability and return result succeeded.(promise)
+    /**
+     * @tc.name   ACTS_TerminateSelfWithResult_0100
+     * @tc.number ACTS_TerminateSelfWithResult_0100
+     * @tc.desc   Starting mainability3 with startAbilityforresult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_TerminateSelfWithResult_0100', Level.LEVEL0, async (done: Function) => {
       let TAG = 'ACTS_TerminateSelfWithResult_0100'
@@ -654,11 +698,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_TerminateSelfWithResult_0300
-     * @tc.name    : Use terminateselfwithresult to terminate ability and return result
-     * @tc.desc    : Starting mainability3 with startAbilityforresult
-     *               then terminateself ability and return result succeeded.(callback)
+    /**
+     * @tc.name   ACTS_TerminateSelfWithResult_0300
+     * @tc.number ACTS_TerminateSelfWithResult_0300
+     * @tc.desc   Starting mainability3 with startAbilityforresult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_TerminateSelfWithResult_0300', Level.LEVEL0, async (done: Function) => {
       await sleep(2000);

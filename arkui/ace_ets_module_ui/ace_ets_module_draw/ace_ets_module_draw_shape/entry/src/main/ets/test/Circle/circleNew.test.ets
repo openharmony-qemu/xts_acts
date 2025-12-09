@@ -47,12 +47,12 @@ export default function circleNewTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testCircleNew001
-     * @tc.name: testCircleNew001
-     * @tc.desc: CircleAPI 
-     * @tc.level: Level 0
-     * @tc.type : Circle
-     * @tc.size : CircleTest
+     * @tc.name   testCircleNew001
+     * @tc.number SUB_ARKUI_API_testCircleNew001
+     * @tc.desc   CircleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCircleNew001', Level.LEVEL0, async () => {
       console.info('circleNew testcircleNew0011 START');
@@ -67,12 +67,12 @@ export default function circleNewTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testCircleNew002
-     * @tc.name: testCircleNew002
-     * @tc.desc: CircleAPI 
-     * @tc.level: Level 0
-     * @tc.type : Circle
-     * @tc.size : CircleTest
+     * @tc.name   testCircleNew002
+     * @tc.number SUB_ARKUI_API_testCircleNew002
+     * @tc.desc   CircleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCircleNew002', Level.LEVEL0, async () => {
       console.info('circleNew testcircleNew002 START');
@@ -87,12 +87,12 @@ export default function circleNewTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_global_console_debug_0100
-     * @tc.name: global_console_debug_0100
-     * @tc.desc: CircleAPI 
-     * @tc.level: Level 0
-     * @tc.type : Circle
-     * @tc.size : CircleTest
+     * @tc.name   global_console_debug_0100
+     * @tc.number SUB_ARKUI_API_global_console_debug_0100
+     * @tc.desc   CircleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("global_console_debug_0100", Level.LEVEL0, async () => {
       let casename = "ACE_global_003";
@@ -110,12 +110,12 @@ export default function circleNewTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_global_console_error_0200
-     * @tc.name: global_console_error_0200
-     * @tc.desc: CircleAPI 
-     * @tc.level: Level 0
-     * @tc.type : Circle
-     * @tc.size : CircleTest
+     * @tc.name   global_console_error_0200
+     * @tc.number SUB_ARKUI_API_global_console_error_0200
+     * @tc.desc   CircleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("global_console_error_0200", Level.LEVEL0, async () => {
       let casename = "ACE_global_004";
@@ -133,12 +133,12 @@ export default function circleNewTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_pushUrl_callback_0200
-     * @tc.name: pushUrl_callback_0200
-     * @tc.desc: CircleAPI 
-     * @tc.level: Level 0
-     * @tc.type : Circle
-     * @tc.size : CircleTest
+     * @tc.name   pushUrl_callback_0200
+     * @tc.number SUB_ARKUI_API_pushUrl_callback_0200
+     * @tc.desc   CircleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("pushUrl_callback_0200", Level.LEVEL0, async () => {
       console.info("-----------------------ACE_pushUrl_promise_0200 start-----------------------");
@@ -162,12 +162,12 @@ export default function circleNewTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_showAlertBeforeBackPage_0100
-     * @tc.name: showAlertBeforeBackPage_0100
-     * @tc.desc: CircleAPI 
-     * @tc.level: Level 0
-     * @tc.type : Circle
-     * @tc.size : CircleTest
+     * @tc.name   showAlertBeforeBackPage_0100
+     * @tc.number SUB_ARKUI_API_showAlertBeforeBackPage_0100
+     * @tc.desc   CircleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("showAlertBeforeBackPage_0100", Level.LEVEL0, async () => {
       console.info("-----------------------ACE_showAlertBeforeBackPage_0100-----------------------");
@@ -184,12 +184,12 @@ export default function circleNewTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_showAlertBeforeBackPage_0200
-     * @tc.name: showAlertBeforeBackPage_0200
-     * @tc.desc: CircleAPI 
-     * @tc.level: Level 0
-     * @tc.type : Circle
-     * @tc.size : CircleTest
+     * @tc.name   showAlertBeforeBackPage_0200
+     * @tc.number SUB_ARKUI_API_showAlertBeforeBackPage_0200
+     * @tc.desc   CircleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("showAlertBeforeBackPage_0200", Level.LEVEL0, async () => {
       console.info("-----------------------ACE_showAlertBeforeBackPage_0200-----------------------");
@@ -206,12 +206,12 @@ export default function circleNewTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_hideAlertBeforeBackPage_0100
-     * @tc.name: hideAlertBeforeBackPage_0100
-     * @tc.desc: CircleAPI 
-     * @tc.level: Level 0
-     * @tc.type : Circle
-     * @tc.size : CircleTest
+     * @tc.name   hideAlertBeforeBackPage_0100
+     * @tc.number SUB_ARKUI_API_hideAlertBeforeBackPage_0100
+     * @tc.desc   CircleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("hideAlertBeforeBackPage_0100", Level.LEVEL0, async () => {
       console.info("-----------------------ACE_showAlertBeforeBackPage_0200-----------------------");
@@ -226,12 +226,12 @@ export default function circleNewTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_new_testGlobal_attribute_0100
-     * @tc.name: new_testGlobal_attribute_0100
-     * @tc.desc: CircleAPI 
-     * @tc.level: Level 0
-     * @tc.type : Circle
-     * @tc.size : CircleTest
+     * @tc.name   new_testGlobal_attribute_0100
+     * @tc.number SUB_ARKUI_API_new_testGlobal_attribute_0100
+     * @tc.desc   CircleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('new_testGlobal_attribute_0100', Level.LEVEL0, async () => {
       console.info('testGlobal_attribute_0100 START');

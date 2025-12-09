@@ -42,12 +42,12 @@ export default function AsyncNestingTest() {
 
 
     /**
+     * @tc.name   AsyncNestingTest0100
      * @tc.number SUB_ASYNC_NESTING_TEST_0100
-     * @tc.name AsyncNestingTest0100
-     * @tc.desc async lazy import asyncLock three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import asyncLock three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncNestingTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = "AsyncNestingTest0100"
@@ -99,12 +99,12 @@ export default function AsyncNestingTest() {
 
 
     /**
+     * @tc.name   AsyncNestingTest0200
      * @tc.number SUB_ASYNC_NESTING_TEST_0200
-     * @tc.name AsyncNestingTest0200
-     * @tc.desc async lazy import promise three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import promise three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncNestingTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = "AsyncNestingTest0200"
@@ -150,12 +150,12 @@ export default function AsyncNestingTest() {
 
 
     /**
+     * @tc.name   AsyncNestingTest0300
      * @tc.number SUB_ASYNC_NESTING_TEST_0300
-     * @tc.name AsyncNestingTest0300
-     * @tc.desc async lazy import async three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import async three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncNestingTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = "AsyncNestingTest0300";
@@ -196,12 +196,12 @@ export default function AsyncNestingTest() {
     })
 
     /**
+     * @tc.name   AsyncNestingTest0400
      * @tc.number SUB_ASYNC_NESTING_TEST_0400
-     * @tc.name AsyncNestingTest0400
-     * @tc.desc async lazy import setTimeout three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import setTimeout three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncNestingTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = "AsyncNestingTest0400";
@@ -240,12 +240,12 @@ export default function AsyncNestingTest() {
 
 
     /**
+     * @tc.name   AsyncNestingTest0500
      * @tc.number SUB_ASYNC_NESTING_TEST_0500
-     * @tc.name AsyncNestingTest0500
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncNestingTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = "AsyncNestingTest0500";
@@ -272,12 +272,12 @@ export default function AsyncNestingTest() {
     })
 
     /**
+     * @tc.name   AsyncNestingTest0700
      * @tc.number SUB_ASYNC_NESTING_TEST_0700
-     * @tc.name AsyncNestingTest0700
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncNestingTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = "AsyncNestingTest0700";
@@ -316,12 +316,12 @@ export default function AsyncNestingTest() {
 
 
     /**
+     * @tc.name   AsyncNestingTest0800
      * @tc.number SUB_ASYNC_NESTING_TEST_0800
-     * @tc.name AsyncNestingTest0800
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AsyncNestingTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = "AsyncNestingTest0500";

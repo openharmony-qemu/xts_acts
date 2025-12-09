@@ -43,12 +43,14 @@ export default function DatePickerDialogBGColorTest() {
       console.info('textAreaInputTest after each called');
     });
 
-    /* *
-    * @tc.number: DatePickerDialogBGColorTest_001
-    * @tc.name  : DatePickerDialogBGColorTest_001
-    * @tc.desc  : To test the DatePickerDialog BackgroundColor Color.White
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   DatePickerDialogBGColorTest_001
+     * @tc.number DatePickerDialogBGColorTest_001
+     * @tc.desc   To test the DatePickerDialog BackgroundColor Color.White
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DatePickerDialogBGColorTest_001', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('ColorWhiteID'));
@@ -63,12 +65,14 @@ export default function DatePickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-    * @tc.number: DatePickerDialogBGColorTest_002
-    * @tc.name  : DatePickerDialogBGColorTest_002
-    * @tc.desc  : To test the DatePickerDialog BackgroundColor 'rgb(255, 100, 255)'
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   DatePickerDialogBGColorTest_002
+     * @tc.number DatePickerDialogBGColorTest_002
+     * @tc.desc   To test the DatePickerDialog BackgroundColor 'rgb(255, 100, 255)'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DatePickerDialogBGColorTest_002', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('rgb(255, 100, 255)ID'));
@@ -83,12 +87,14 @@ export default function DatePickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-    * @tc.number: DatePickerDialogBGColorTest_003
-    * @tc.name  : DatePickerDialogBGColorTest_003
-    * @tc.desc  : To test the DatePickerDialog BackgroundColor 0x008080
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   DatePickerDialogBGColorTest_003
+     * @tc.number DatePickerDialogBGColorTest_003
+     * @tc.desc   To test the DatePickerDialog BackgroundColor 0x008080
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DatePickerDialogBGColorTest_003', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('0x008080ID'));
@@ -103,11 +109,13 @@ export default function DatePickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: DatePickerDialogBGColorTest_004
-     * @tc.name  : DatePickerDialogBGColorTest_004
-     * @tc.desc  : To test the DatePickerDialog BackgroundColor '#00FFFF'
-     * @tc.level : Level 0
+    /**
+     * @tc.name   DatePickerDialogBGColorTest_004
+     * @tc.number DatePickerDialogBGColorTest_004
+     * @tc.desc   To test the DatePickerDialog BackgroundColor '#00FFFF'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGColorTest_004', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -123,11 +131,13 @@ export default function DatePickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: DatePickerDialogBGColorTest_005
-     * @tc.name  : DatePickerDialogBGColorTest_005
-     * @tc.desc  : To test the DatePickerDialog BackgroundColor $r('app.color.blue')
-     * @tc.level : Level 0
+    /**
+     * @tc.name   DatePickerDialogBGColorTest_005
+     * @tc.number DatePickerDialogBGColorTest_005
+     * @tc.desc   To test the DatePickerDialog BackgroundColor $r('app.color.blue')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGColorTest_005', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -143,11 +153,13 @@ export default function DatePickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: DatePickerDialogBGColorTest_006
-     * @tc.name  : DatePickerDialogBGColorTest_006
-     * @tc.desc  : To test the DatePickerDialog BackgroundColor null
-     * @tc.level : Level 0
+    /**
+     * @tc.name   DatePickerDialogBGColorTest_006
+     * @tc.number DatePickerDialogBGColorTest_006
+     * @tc.desc   To test the DatePickerDialog BackgroundColor null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGColorTest_006', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -163,11 +175,13 @@ export default function DatePickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: DatePickerDialogBGColorTest_007
-     * @tc.name  : DatePickerDialogBGColorTest_007
-     * @tc.desc  : To test the DatePickerDialog BackgroundColor undefined
-     * @tc.level : Level 0
+    /**
+     * @tc.name   DatePickerDialogBGColorTest_007
+     * @tc.number DatePickerDialogBGColorTest_007
+     * @tc.desc   To test the DatePickerDialog BackgroundColor undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGColorTest_007', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -183,11 +197,13 @@ export default function DatePickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: DatePickerDialogBGColorTest_008
-     * @tc.name  : DatePickerDialogBGColorTest_008
-     * @tc.desc  : To test the DatePickerDialog BackgroundColor 'XXX'
-     * @tc.level : Level 0
+    /**
+     * @tc.name   DatePickerDialogBGColorTest_008
+     * @tc.number DatePickerDialogBGColorTest_008
+     * @tc.desc   To test the DatePickerDialog BackgroundColor 'XXX'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGColorTest_008', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -203,11 +219,13 @@ export default function DatePickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: DatePickerDialogBGColorTest_009
-     * @tc.name  : DatePickerDialogBGColorTest_009
-     * @tc.desc  : To test the DatePickerDialog BackgroundColor -100
-     * @tc.level : Level 0
+    /**
+     * @tc.name   DatePickerDialogBGColorTest_009
+     * @tc.number DatePickerDialogBGColorTest_009
+     * @tc.desc   To test the DatePickerDialog BackgroundColor -100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogBGColorTest_009', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();

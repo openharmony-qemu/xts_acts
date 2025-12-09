@@ -46,12 +46,12 @@ export default function offsetEdgeTop() {
     });
 
     /**
-     * @tc.number    offsetEdgeTop_001
-     * @tc.name      offsetEdgeTop_001
-     * @tc.desc      Controller scrollEdge scrolls to the top of the list
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   offsetEdgeTop_0100
+     * @tc.number offsetEdgeTop_001
+     * @tc.desc   Controller scrollEdge scrolls to the top of the list
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('offsetEdgeTop_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[offsetEdgeTop_0100] START');

@@ -29,7 +29,7 @@ struct SelectionMenuOptionsDemo {
     Column() {
 
       RichEditor(this.optionsR)
-        .id('richEditor')
+        .id('richEditor_SelectionMenu')
         .onReady(() => {
           this.controllerR.addTextSpan('测试文本', {
             style: {

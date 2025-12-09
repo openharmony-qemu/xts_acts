@@ -31,6 +31,19 @@ export function GetGcmNoPaddingOptions(): huks.HuksOptions {
   return huksOptions;
 }
 
+export function GetCcmNoPaddingOptions(): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT),
+      GenParam(huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_CCM),
+      GenParam(huks.HuksTag.HUKS_TAG_PADDING, huks.HuksKeyPadding.HUKS_PADDING_NONE),
+      GenParam(huks.HuksTag.HUKS_TAG_NONCE, StringToUint8Array("7012345")),
+      GenParam(huks.HuksTag.HUKS_TAG_ASSOCIATED_DATA, StringToUint8Array("1601234567890123"))
+    )
+  };
+  return huksOptions;
+}
+
 export function GetCbcNoPaddingOptions(size: number): huks.HuksOptions {
   let huksOptions: huks.HuksOptions = {
     properties: new Array(
@@ -171,76 +184,115 @@ export function GetEcbOaepSha512Options(): huks.HuksOptions {
   return huksOptions;
 }
 
-export async function Cipher(keyAlias: string, cipherOption: huks.HuksOptions, cipherData: CipherData): Promise<boolean> {
+export async function Cipher(keyAlias: string, cipherOptions: huks.HuksOptions, cipherData: CipherData): Promise<boolean> {
   let encryptResult: CipherData;
   let decryptResult: CipherData;
-  SetParam(cipherOption, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
-  encryptResult = await DoCipher(keyAlias, cipherOption, cipherData);
-  SetParam(cipherOption, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
+  SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
+  encryptResult = await DoCipher(keyAlias, cipherOptions, cipherData);
+  SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
   PrintCipherData(encryptResult);
-  decryptResult = await DoCipher(keyAlias, cipherOption, encryptResult);
+  decryptResult = await DoCipher(keyAlias, cipherOptions, encryptResult);
   PrintCipherData(decryptResult);
   return CompareCipherData(cipherData, decryptResult);
 }
 
-export async function DoCipher(keyAlias: string, cipherOption: huks.HuksOptions, cipherData: CipherData): Promise<CipherData> {
+export async function CipherForGcm(keyAlias: string, cipherOptions: huks.HuksOptions, cipherData: CipherData, tagLength: number): Promise<CipherData> {
+  let encryptResult: CipherData;
+  let decryptResult: CipherData;
+  SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
+  PrintCipherData(cipherData);
+  encryptResult = await DoCipher(keyAlias, cipherOptions, cipherData);
+  PrintCipherData(encryptResult);
+  SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
+  let offset = encryptResult.finishData!.length - tagLength;
+  SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG, encryptResult.finishData!.slice(offset) as Uint8Array);
+  encryptResult.finishData = encryptResult.finishData!.slice(0, offset) as Uint8Array;
+  PrintCipherData(encryptResult);
+  decryptResult = await DoCipher(keyAlias, cipherOptions, encryptResult);
+  PrintCipherData(decryptResult);
+  return decryptResult;
+}
+
+export async function CipherForCcm(keyAlias: string, cipherOptions: huks.HuksOptions, cipherData: CipherData, tagLength: number): Promise<CipherData> {
+  let encryptResult: CipherData;
+  let decryptResult: CipherData;
+  SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
+  PrintCipherData(cipherData);
+  encryptResult = await DoCipher(keyAlias, cipherOptions, cipherData);
+  PrintCipherData(encryptResult);
+  SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
+  encryptResult.updateDataArr = new Array();
+  let offset = encryptResult.finishData!.length - tagLength;
+  SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG, encryptResult.finishData!.slice(offset) as Uint8Array);
+  encryptResult.finishData = encryptResult.finishData!.slice(0, offset) as Uint8Array;
+  PrintCipherData(encryptResult);
+  decryptResult = await DoCipher(keyAlias, cipherOptions, encryptResult);
+  PrintCipherData(decryptResult);
+  return decryptResult;
+}
+
+export async function DoCipher(keyAlias: string, cipherOptions: huks.HuksOptions, cipherData: CipherData): Promise<CipherData> {
   let cipherResult: CipherData = {
     updateDataArr: null,
     finishData: null
   };
-  let handle = (await huks.initSession(keyAlias, cipherOption)).handle;
+  let handle = (await huks.initSession(keyAlias, cipherOptions)).handle;
   if (cipherData.updateDataArr != null) {
-    let updateData: Array<Uint8Array> = cipherData.updateDataArr;
-    cipherResult.updateDataArr = new Array;
-    for (let i = 0; i < updateData.length; i++) {
-      cipherOption.inData = updateData[i];
-      cipherResult.updateDataArr.push((await huks.updateSession(handle, cipherOption)).outData as Uint8Array);
+    cipherResult.updateDataArr = new Array();
+    for (let i = 0; i < cipherData.updateDataArr.length; i++) {
+      cipherOptions.inData = cipherData.updateDataArr[i];
+      let updateRes = await huks.updateSession(handle, cipherOptions);
+      if (updateRes && updateRes.outData) {
+        cipherResult.updateDataArr.push(updateRes.outData);
+      } else {
+        cipherResult.updateDataArr.push(new Uint8Array());
+      }
     }
   }
-  cipherOption.inData = cipherData.finishData as Uint8Array;
-  cipherResult.finishData = (await huks.finishSession(handle, cipherOption)).outData as Uint8Array;
+  cipherOptions.inData = cipherData.finishData as Uint8Array;
+  cipherResult.finishData = (await huks.finishSession(handle, cipherOptions)).outData as Uint8Array;
   return cipherResult;
 }
 
-export async function DoCipherAsUser(userId: number, keyAlias: string, cipherOption: huks.HuksOptions, cipherData: CipherData): Promise<CipherData> {
+export async function DoCipherAsUser(userId: number, keyAlias: string, cipherOptions: huks.HuksOptions, cipherData: CipherData): Promise<CipherData> {
   let cipherResult: CipherData = {
     updateDataArr: null,
     finishData: null
   };
-  let handle = (await huks.initSessionAsUser(userId, keyAlias, cipherOption)).handle;
+  let handle = (await huks.initSessionAsUser(userId, keyAlias, cipherOptions)).handle;
   if (cipherData.updateDataArr != null) {
     let updateData: Array<Uint8Array> = cipherData.updateDataArr;
     cipherResult.updateDataArr = new Array;
     for (let i = 0; i < updateData.length; i++) {
-      cipherOption.inData = updateData[i];
-      cipherResult.updateDataArr.push((await huks.updateSession(handle, cipherOption)).outData as Uint8Array);
+      cipherOptions.inData = updateData[i];
+      cipherResult.updateDataArr.push((await huks.updateSession(handle, cipherOptions)).outData as Uint8Array);
     }
   }
-  cipherOption.inData = cipherData.finishData as Uint8Array;
-  cipherResult.finishData = (await huks.finishSession(handle, cipherOption)).outData as Uint8Array;
+  cipherOptions.inData = cipherData.finishData as Uint8Array;
+  cipherResult.finishData = (await huks.finishSession(handle, cipherOptions)).outData as Uint8Array;
   return cipherResult;
 }
 
-export async function DoCipherCallback(keyAlias: string, cipherOption: huks.HuksOptions, cipherData: CipherData): Promise<CipherData> {
+export async function DoCipherCallback(keyAlias: string, cipherOptions: huks.HuksOptions, cipherData: CipherData): Promise<CipherData> {
   let cipherResult: CipherData = {
     updateDataArr: null,
     finishData: null
   };
-  let handle = (await huksCallback.initSession(keyAlias, cipherOption)).handle;
+  let handle = (await huksCallback.initSession(keyAlias, cipherOptions)).handle;
   if (cipherData.updateDataArr != null) {
     let updateData: Array<Uint8Array> = cipherData.updateDataArr;
     cipherResult.updateDataArr = new Array;
     for (let i = 0; i < updateData.length; i++) {
-      cipherOption.inData = updateData[i];
-      cipherResult.updateDataArr.push((await huksCallback.updateSession(handle, cipherOption)).outData as Uint8Array);
+      cipherOptions.inData = updateData[i];
+      cipherResult.updateDataArr.push((await huksCallback.updateSession(handle, cipherOptions)).outData as Uint8Array);
     }
   }
-  cipherOption.inData = cipherData.finishData as Uint8Array;
-  cipherResult.finishData = (await huksCallback.finishSession(handle, cipherOption)).outData as Uint8Array;
+  cipherOptions.inData = cipherData.finishData as Uint8Array;
+  cipherResult.finishData = (await huksCallback.finishSession(handle, cipherOptions)).outData as Uint8Array;
   return cipherResult;
 }
 
-export async function cipherWithText(genKeyOption: huks.HuksOptions, cipherOption: huks.HuksOptions, text: string): Promise<boolean> {
+export async function cipherWithText(genKeyOption: huks.HuksOptions, cipherOptions: huks.HuksOptions, text: string): Promise<boolean> {
   let keyAlias: string = "cipherKey";
   let preUpdateText: Uint8Array = StringToUint8Array(text);
   let preFinishText: Uint8Array = StringToUint8Array(keyAlias);
@@ -250,22 +302,22 @@ export async function cipherWithText(genKeyOption: huks.HuksOptions, cipherOptio
   let postFinishText: Uint8Array;
   let handle: number;
   await huks.generateKeyItem(keyAlias, genKeyOption);
-  SetParam(cipherOption, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
-  handle = (await huks.initSession(keyAlias, cipherOption)).handle;
-  cipherOption.inData = preUpdateText;
-  encryptUpdateData = (await huks.updateSession(handle, cipherOption)).outData as Uint8Array;
-  cipherOption.inData = preFinishText;
-  encryptFinishData = (await huks.finishSession(handle, cipherOption)).outData as Uint8Array;
-  SetParam(cipherOption, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
-  cipherOption.inData = encryptUpdateData;
-  handle = (await huks.initSession(keyAlias, cipherOption)).handle;
-  postUpdateText = (await huks.updateSession(handle, cipherOption)).outData as Uint8Array;
-  cipherOption.inData = encryptFinishData;
-  postFinishText = (await huks.finishSession(handle, cipherOption)).outData as Uint8Array;
+  SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
+  handle = (await huks.initSession(keyAlias, cipherOptions)).handle;
+  cipherOptions.inData = preUpdateText;
+  encryptUpdateData = (await huks.updateSession(handle, cipherOptions)).outData as Uint8Array;
+  cipherOptions.inData = preFinishText;
+  encryptFinishData = (await huks.finishSession(handle, cipherOptions)).outData as Uint8Array;
+  SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
+  cipherOptions.inData = encryptUpdateData;
+  handle = (await huks.initSession(keyAlias, cipherOptions)).handle;
+  postUpdateText = (await huks.updateSession(handle, cipherOptions)).outData as Uint8Array;
+  cipherOptions.inData = encryptFinishData;
+  postFinishText = (await huks.finishSession(handle, cipherOptions)).outData as Uint8Array;
   return Uint8ArrayToString(postUpdateText) + Uint8ArrayToString(postFinishText) == text + keyAlias
 }
 
-export async function cipherWithTextCallback(genKeyOption: huks.HuksOptions, cipherOption: huks.HuksOptions, text: string): Promise<boolean> {
+export async function cipherWithTextCallback(genKeyOption: huks.HuksOptions, cipherOptions: huks.HuksOptions, text: string): Promise<boolean> {
   let keyAlias: string = "cipherKey";
   let preUpdateText: Uint8Array = StringToUint8Array(text);
   let preFinishText: Uint8Array = StringToUint8Array(keyAlias);
@@ -275,38 +327,38 @@ export async function cipherWithTextCallback(genKeyOption: huks.HuksOptions, cip
   let postFinishText: Uint8Array;
   let handle: number;
   await huksCallback.generateKeyItem(keyAlias, genKeyOption);
-  SetParam(cipherOption, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
-  handle = (await huksCallback.initSession(keyAlias, cipherOption)).handle;
-  cipherOption.inData = preUpdateText;
-  encryptUpdateData = (await huksCallback.updateSession(handle, cipherOption)).outData as Uint8Array;
-  cipherOption.inData = preFinishText;
-  encryptFinishData = (await huksCallback.finishSession(handle, cipherOption)).outData as Uint8Array;
-  SetParam(cipherOption, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
-  cipherOption.inData = encryptUpdateData;
-  handle = (await huksCallback.initSession(keyAlias, cipherOption)).handle;
-  postUpdateText = (await huksCallback.updateSession(handle, cipherOption)).outData as Uint8Array;
-  cipherOption.inData = encryptFinishData;
-  postFinishText = (await huksCallback.finishSession(handle, cipherOption)).outData as Uint8Array;
+  SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
+  handle = (await huksCallback.initSession(keyAlias, cipherOptions)).handle;
+  cipherOptions.inData = preUpdateText;
+  encryptUpdateData = (await huksCallback.updateSession(handle, cipherOptions)).outData as Uint8Array;
+  cipherOptions.inData = preFinishText;
+  encryptFinishData = (await huksCallback.finishSession(handle, cipherOptions)).outData as Uint8Array;
+  SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
+  cipherOptions.inData = encryptUpdateData;
+  handle = (await huksCallback.initSession(keyAlias, cipherOptions)).handle;
+  postUpdateText = (await huksCallback.updateSession(handle, cipherOptions)).outData as Uint8Array;
+  cipherOptions.inData = encryptFinishData;
+  postFinishText = (await huksCallback.finishSession(handle, cipherOptions)).outData as Uint8Array;
   return Uint8ArrayToString(postUpdateText) + Uint8ArrayToString(postFinishText) == text + keyAlias
 }
 
-export async function cipherAbortWithText(genKeyOption: huks.HuksOptions, cipherOption: huks.HuksOptions, text: string): Promise<boolean> {
+export async function cipherAbortWithText(genKeyOption: huks.HuksOptions, cipherOptions: huks.HuksOptions, text: string): Promise<boolean> {
   let keyAlias: string = "cipherKey";
   let preUpdateText: Uint8Array = StringToUint8Array(text);
   let encryptUpdateData: Uint8Array;
   let postUpdateText: Uint8Array;
   let handle: number;
   await huks.generateKeyItem(keyAlias, genKeyOption);
-  SetParam(cipherOption, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
-  handle = (await huks.initSession(keyAlias, cipherOption)).handle;
-  cipherOption.inData = preUpdateText;
-  encryptUpdateData = (await huks.updateSession(handle, cipherOption)).outData as Uint8Array;
-  await huks.abortSession(handle, cipherOption);
-  SetParam(cipherOption, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
-  cipherOption.inData = encryptUpdateData;
-  handle = (await huks.initSession(keyAlias, cipherOption)).handle;
-  postUpdateText = (await huks.updateSession(handle, cipherOption)).outData as Uint8Array;
-  await huks.abortSession(handle, cipherOption);
+  SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
+  handle = (await huks.initSession(keyAlias, cipherOptions)).handle;
+  cipherOptions.inData = preUpdateText;
+  encryptUpdateData = (await huks.updateSession(handle, cipherOptions)).outData as Uint8Array;
+  await huks.abortSession(handle, cipherOptions);
+  SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
+  cipherOptions.inData = encryptUpdateData;
+  handle = (await huks.initSession(keyAlias, cipherOptions)).handle;
+  postUpdateText = (await huks.updateSession(handle, cipherOptions)).outData as Uint8Array;
+  await huks.abortSession(handle, cipherOptions);
   return Uint8ArrayToString(postUpdateText) == text;
 }
 
@@ -332,34 +384,54 @@ export function BuildCipherData(dataLenArr: Array<number>) {
   return cipherData;
 }
 
-export function CompareCipherData(preData: CipherData, postData: CipherData) {
-  let preStr: string = "";
-  let postStr: string = "";
-  if (preData.updateDataArr != null) {
-    if (postData.updateDataArr == null) {
-      return false;
-    }
-    for (let i = 0; i < preData.updateDataArr.length; i++) {
-      preStr += Uint8ArrayToString(preData.updateDataArr[i]);
-      postStr += Uint8ArrayToString(postData.updateDataArr[i]);
-      // if (Uint8ArrayToString(postData.updateDataArr[i]) != Uint8ArrayToString(preData.updateDataArr[i])) {
-      //   return false;
-      // }
+export function ReBuildCipherData(cipherData: CipherData, dataLenArr: Array<number>) {
+  let mergedData = MergeCipherData(cipherData);
+  let offset = 0;
+  if (dataLenArr.length == 0) {
+    return cipherData;
+  } else if (dataLenArr.length > 1) {
+    cipherData.updateDataArr = new Array();
+    for (let i = 0; i < dataLenArr.length - 1; i++) {
+      cipherData.updateDataArr.push(mergedData.slice(offset, offset + dataLenArr[i]));
+      offset += dataLenArr[i];
     }
   }
-  preStr += Uint8ArrayToString(preData.finishData as Uint8Array);
-  postStr += Uint8ArrayToString(postData.finishData as Uint8Array);
-  return preStr == postStr;
-  // return Uint8ArrayToString(postData.finishData as Uint8Array) == Uint8ArrayToString(preData.finishData as Uint8Array);
+  cipherData.finishData = mergedData.slice(offset);
+  return cipherData;
+}
+
+export function CompareCipherData(preData: CipherData, postData: CipherData) {
+  return Uint8ArrayToString(MergeCipherData(preData)) == Uint8ArrayToString(MergeCipherData(postData));
 }
 
 export function PrintCipherData(cipherData: CipherData) {
+  let dataLenArr = GetCipherDataLenArr(cipherData);
+  let mergedData = MergeCipherData(cipherData);
+  Logger.log(mergedData.length + "(" + dataLenArr.join(", ") + "): " + Uint8ArrayToString(mergedData));
+}
+
+export function GetCipherDataLenArr(cipherData: CipherData): Array<number> {
+  let dataLenArr: Array<number> = new Array();
+  if (cipherData.updateDataArr) {
+    for (let i = 0; i < cipherData.updateDataArr.length; i++) {
+      dataLenArr.push(cipherData.updateDataArr[i].length);
+    }
+  }
+  if (cipherData.finishData) {
+    dataLenArr.push(cipherData.finishData.length);
+  }
+  return dataLenArr;
+}
+
+export function MergeCipherData(cipherData: CipherData): Uint8Array {
+  let mergedData = new Uint8Array();
   if (cipherData.updateDataArr != null) {
     for (let i = 0; i < cipherData.updateDataArr.length; i++) {
-      Logger.log(cipherData.updateDataArr[i].length + ":" + Uint8ArrayToString(cipherData.updateDataArr[i]));
+      mergedData = new Uint8Array([...mergedData, ...cipherData.updateDataArr[i]]);
     }
   }
   if (cipherData.finishData != null) {
-    Logger.log(cipherData.finishData.length + ":" + Uint8ArrayToString(cipherData.finishData));
+    mergedData = new Uint8Array([...mergedData, ...cipherData.finishData]);
   }
+  return mergedData;
 }

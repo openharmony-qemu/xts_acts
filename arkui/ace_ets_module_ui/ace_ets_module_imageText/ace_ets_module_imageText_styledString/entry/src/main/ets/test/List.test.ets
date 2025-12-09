@@ -48,6 +48,7 @@ import ThicknessScaleTest from './StyledStringTest/ThicknessScaleTest.test';
 import TextStyleTest from './StyledStringTest/TextStyleTest.test';
 import UnmarshallingErrorCodeTest from './StyledStringTest/UnmarshallingErrorCodeTest.test';
 import VerticalAlignTest from './StyledStringTest/VerticalAlignTest.test';
+import LeadingMarginSpanTest from './StyledStringTest/LeadingMarginSpanTest.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -86,4 +87,5 @@ export default function testsuite() {
   TextStyleTest()
   UnmarshallingErrorCodeTest()
   VerticalAlignTest()
+  LeadingMarginSpanTest()
 }

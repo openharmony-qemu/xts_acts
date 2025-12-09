@@ -130,12 +130,12 @@ export default function PictureSetMetadataTestSupp() {
     });
 
     /**
-     * @tc.number    PICTURE_SET_METADATA_ERROR_CODE_001
-     * @tc.name      PICTURE_SET_METADATA_ERROR_CODE_001
-     * @tc.desc      setMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_SET_METADATA_ERROR_CODE_001
+     * @tc.number PICTURE_SET_METADATA_ERROR_CODE_001
+     * @tc.desc   setMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_METADATA_ERROR_CODE_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_METADATA_ERROR_CODE_001';
@@ -147,12 +147,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_SET_METADATA_ERROR_CODE_002
-     * @tc.name      PICTURE_SET_METADATA_ERROR_CODE_002
-     * @tc.desc      setMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_SET_METADATA_ERROR_CODE_002
+     * @tc.number PICTURE_SET_METADATA_ERROR_CODE_002
+     * @tc.desc   setMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_METADATA_ERROR_CODE_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_METADATA_ERROR_CODE_002';
@@ -164,12 +164,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_SET_METADATA_ERROR_CODE_003
-     * @tc.name      PICTURE_SET_METADATA_ERROR_CODE_003
-     * @tc.desc      setMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_SET_METADATA_ERROR_CODE_003
+     * @tc.number PICTURE_SET_METADATA_ERROR_CODE_003
+     * @tc.desc   setMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_METADATA_ERROR_CODE_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_METADATA_ERROR_CODE_003';
@@ -181,12 +181,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_SET_METADATA_ERROR_CODE_004
-     * @tc.name      PICTURE_SET_METADATA_ERROR_CODE_004
-     * @tc.desc      setMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_SET_METADATA_ERROR_CODE_004
+     * @tc.number PICTURE_SET_METADATA_ERROR_CODE_004
+     * @tc.desc   setMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_METADATA_ERROR_CODE_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_METADATA_ERROR_CODE_004';
@@ -199,12 +199,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_SET_METADATA_ERROR_CODE_005
-     * @tc.name      PICTURE_SET_METADATA_ERROR_CODE_005
-     * @tc.desc      setMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_SET_METADATA_ERROR_CODE_005
+     * @tc.number PICTURE_SET_METADATA_ERROR_CODE_005
+     * @tc.desc   setMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_METADATA_ERROR_CODE_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_METADATA_ERROR_CODE_005';
@@ -217,12 +217,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_SET_METADATA_ERROR_CODE_006
-     * @tc.name      PICTURE_SET_METADATA_ERROR_CODE_006
-     * @tc.desc      setMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_SET_METADATA_ERROR_CODE_006
+     * @tc.number PICTURE_SET_METADATA_ERROR_CODE_006
+     * @tc.desc   setMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_METADATA_ERROR_CODE_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_METADATA_ERROR_CODE_006';
@@ -235,12 +235,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_SET_METADATA_ERROR_CODE_007
-     * @tc.name      PICTURE_SET_METADATA_ERROR_CODE_007
-     * @tc.desc      setMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_SET_METADATA_ERROR_CODE_007
+     * @tc.number PICTURE_SET_METADATA_ERROR_CODE_007
+     * @tc.desc   setMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_METADATA_ERROR_CODE_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_METADATA_ERROR_CODE_007';
@@ -253,12 +253,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_SET_METADATA_ERROR_CODE_008
-     * @tc.name      PICTURE_SET_METADATA_ERROR_CODE_008
-     * @tc.desc      setMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_SET_METADATA_ERROR_CODE_008
+     * @tc.number PICTURE_SET_METADATA_ERROR_CODE_008
+     * @tc.desc   setMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_METADATA_ERROR_CODE_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_METADATA_ERROR_CODE_008';
@@ -271,12 +271,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_SET_METADATA_ERROR_CODE_009
-     * @tc.name      PICTURE_SET_METADATA_ERROR_CODE_009
-     * @tc.desc      setMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_SET_METADATA_ERROR_CODE_009
+     * @tc.number PICTURE_SET_METADATA_ERROR_CODE_009
+     * @tc.desc   setMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_METADATA_ERROR_CODE_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_METADATA_ERROR_CODE_009';
@@ -289,12 +289,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_SET_METADATA_ERROR_CODE_010
-     * @tc.name      PICTURE_SET_METADATA_ERROR_CODE_010
-     * @tc.desc      setMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_SET_METADATA_ERROR_CODE_010
+     * @tc.number PICTURE_SET_METADATA_ERROR_CODE_010
+     * @tc.desc   setMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_METADATA_ERROR_CODE_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_METADATA_ERROR_CODE_010';
@@ -307,12 +307,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_SET_METADATA_ERROR_CODE_011
-     * @tc.name      PICTURE_SET_METADATA_ERROR_CODE_011
-     * @tc.desc      setMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_SET_METADATA_ERROR_CODE_011
+     * @tc.number PICTURE_SET_METADATA_ERROR_CODE_011
+     * @tc.desc   setMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_METADATA_ERROR_CODE_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_METADATA_ERROR_CODE_011';
@@ -325,12 +325,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_SET_METADATA_ERROR_CODE_012
-     * @tc.name      PICTURE_SET_METADATA_ERROR_CODE_012
-     * @tc.desc      setMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_SET_METADATA_ERROR_CODE_012
+     * @tc.number PICTURE_SET_METADATA_ERROR_CODE_012
+     * @tc.desc   setMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_METADATA_ERROR_CODE_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_METADATA_ERROR_CODE_012';
@@ -343,12 +343,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_SET_METADATA_ERROR_CODE_013
-     * @tc.name      PICTURE_SET_METADATA_ERROR_CODE_013
-     * @tc.desc      setMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_SET_METADATA_ERROR_CODE_013
+     * @tc.number PICTURE_SET_METADATA_ERROR_CODE_013
+     * @tc.desc   setMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_METADATA_ERROR_CODE_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_METADATA_ERROR_CODE_013';
@@ -362,12 +362,12 @@ export default function PictureSetMetadataTestSupp() {
     })
 
     /**
-     * @tc.number    PICTURE_SET_METADATA_ERROR_CODE_014
-     * @tc.name      PICTURE_SET_METADATA_ERROR_CODE_014
-     * @tc.desc      setMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_SET_METADATA_ERROR_CODE_014
+     * @tc.number PICTURE_SET_METADATA_ERROR_CODE_014
+     * @tc.desc   setMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_METADATA_ERROR_CODE_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_METADATA_ERROR_CODE_014';
@@ -380,12 +380,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_SET_METADATA_ERROR_CODE_015
-     * @tc.name      PICTURE_SET_METADATA_ERROR_CODE_015
-     * @tc.desc      setMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_SET_METADATA_ERROR_CODE_015
+     * @tc.number PICTURE_SET_METADATA_ERROR_CODE_015
+     * @tc.desc   setMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_METADATA_ERROR_CODE_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_METADATA_ERROR_CODE_015';
@@ -398,12 +398,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_SET_METADATA_ERROR_CODE_016
-     * @tc.name      PICTURE_SET_METADATA_ERROR_CODE_016
-     * @tc.desc      setMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_SET_METADATA_ERROR_CODE_016
+     * @tc.number PICTURE_SET_METADATA_ERROR_CODE_016
+     * @tc.desc   setMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_METADATA_ERROR_CODE_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_METADATA_ERROR_CODE_016';
@@ -417,12 +417,12 @@ export default function PictureSetMetadataTestSupp() {
     })
 
     /**
-     * @tc.number    PICTURE_SET_METADATA_ERROR_CODE_017
-     * @tc.name      PICTURE_SET_METADATA_ERROR_CODE_017
-     * @tc.desc      setMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_SET_METADATA_ERROR_CODE_017
+     * @tc.number PICTURE_SET_METADATA_ERROR_CODE_017
+     * @tc.desc   setMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_METADATA_ERROR_CODE_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_METADATA_ERROR_CODE_017';
@@ -436,12 +436,12 @@ export default function PictureSetMetadataTestSupp() {
     })
 
     /**
-     * @tc.number    PICTURE_GET_METADATA_ERROR_CODE_001
-     * @tc.name      PICTURE_GET_METADATA_ERROR_CODE_001
-     * @tc.desc      getMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_ERROR_CODE_001
+     * @tc.number PICTURE_GET_METADATA_ERROR_CODE_001
+     * @tc.desc   getMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_ERROR_CODE_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_ERROR_CODE_001';
@@ -453,12 +453,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_GET_METADATA_ERROR_CODE_002
-     * @tc.name      PICTURE_GET_METADATA_ERROR_CODE_002
-     * @tc.desc      getMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_ERROR_CODE_002
+     * @tc.number PICTURE_GET_METADATA_ERROR_CODE_002
+     * @tc.desc   getMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_ERROR_CODE_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_ERROR_CODE_002';
@@ -470,12 +470,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_GET_METADATA_ERROR_CODE_003
-     * @tc.name      PICTURE_GET_METADATA_ERROR_CODE_003
-     * @tc.desc      getMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_ERROR_CODE_003
+     * @tc.number PICTURE_GET_METADATA_ERROR_CODE_003
+     * @tc.desc   getMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_ERROR_CODE_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_ERROR_CODE_003';
@@ -487,12 +487,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_GET_METADATA_ERROR_CODE_004
-     * @tc.name      PICTURE_GET_METADATA_ERROR_CODE_004
-     * @tc.desc      getMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_ERROR_CODE_004
+     * @tc.number PICTURE_GET_METADATA_ERROR_CODE_004
+     * @tc.desc   getMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_ERROR_CODE_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_ERROR_CODE_004';
@@ -506,12 +506,12 @@ export default function PictureSetMetadataTestSupp() {
       })
 
     /**
-     * @tc.number    PICTURE_GET_METADATA_ERROR_CODE_005
-     * @tc.name      PICTURE_GET_METADATA_ERROR_CODE_005
-     * @tc.desc      getMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_ERROR_CODE_005
+     * @tc.number PICTURE_GET_METADATA_ERROR_CODE_005
+     * @tc.desc   getMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_ERROR_CODE_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_ERROR_CODE_005';
@@ -524,12 +524,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_GET_METADATA_ERROR_CODE_006
-     * @tc.name      PICTURE_GET_METADATA_ERROR_CODE_006
-     * @tc.desc      getMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_ERROR_CODE_006
+     * @tc.number PICTURE_GET_METADATA_ERROR_CODE_006
+     * @tc.desc   getMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_ERROR_CODE_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_ERROR_CODE_006';
@@ -542,12 +542,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_GET_METADATA_ERROR_CODE_007
-     * @tc.name      PICTURE_GET_METADATA_ERROR_CODE_007
-     * @tc.desc      getMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_ERROR_CODE_007
+     * @tc.number PICTURE_GET_METADATA_ERROR_CODE_007
+     * @tc.desc   getMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_ERROR_CODE_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_ERROR_CODE_007';
@@ -560,12 +560,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_GET_METADATA_ERROR_CODE_008
-     * @tc.name      PICTURE_GET_METADATA_ERROR_CODE_008
-     * @tc.desc      getMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_ERROR_CODE_008
+     * @tc.number PICTURE_GET_METADATA_ERROR_CODE_008
+     * @tc.desc   getMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_ERROR_CODE_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_ERROR_CODE_008';
@@ -578,12 +578,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_GET_METADATA_ERROR_CODE_009
-     * @tc.name      PICTURE_GET_METADATA_ERROR_CODE_009
-     * @tc.desc      getMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_ERROR_CODE_009
+     * @tc.number PICTURE_GET_METADATA_ERROR_CODE_009
+     * @tc.desc   getMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_ERROR_CODE_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_ERROR_CODE_009';
@@ -596,12 +596,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_GET_METADATA_ERROR_CODE_010
-     * @tc.name      PICTURE_GET_METADATA_ERROR_CODE_010
-     * @tc.desc      getMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_ERROR_CODE_010
+     * @tc.number PICTURE_GET_METADATA_ERROR_CODE_010
+     * @tc.desc   getMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_ERROR_CODE_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_ERROR_CODE_010';
@@ -614,12 +614,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_GET_METADATA_ERROR_CODE_011
-     * @tc.name      PICTURE_GET_METADATA_ERROR_CODE_011
-     * @tc.desc      getMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_ERROR_CODE_011
+     * @tc.number PICTURE_GET_METADATA_ERROR_CODE_011
+     * @tc.desc   getMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_ERROR_CODE_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_ERROR_CODE_011';
@@ -632,12 +632,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_GET_METADATA_ERROR_CODE_012
-     * @tc.name      PICTURE_GET_METADATA_ERROR_CODE_012
-     * @tc.desc      getMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_ERROR_CODE_012
+     * @tc.number PICTURE_GET_METADATA_ERROR_CODE_012
+     * @tc.desc   getMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_ERROR_CODE_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_ERROR_CODE_012';
@@ -650,12 +650,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_GET_METADATA_ERROR_CODE_013
-     * @tc.name      PICTURE_GET_METADATA_ERROR_CODE_013
-     * @tc.desc      getMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_ERROR_CODE_013
+     * @tc.number PICTURE_GET_METADATA_ERROR_CODE_013
+     * @tc.desc   getMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_ERROR_CODE_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_ERROR_CODE_013';
@@ -669,12 +669,12 @@ export default function PictureSetMetadataTestSupp() {
     })
 
     /**
-     * @tc.number    PICTURE_GET_METADATA_ERROR_CODE_014
-     * @tc.name      PICTURE_GET_METADATA_ERROR_CODE_014
-     * @tc.desc      getMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_ERROR_CODE_014
+     * @tc.number PICTURE_GET_METADATA_ERROR_CODE_014
+     * @tc.desc   getMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_ERROR_CODE_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_ERROR_CODE_014';
@@ -687,12 +687,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_GET_METADATA_ERROR_CODE_015
-     * @tc.name      PICTURE_GET_METADATA_ERROR_CODE_015
-     * @tc.desc      getMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_ERROR_CODE_015
+     * @tc.number PICTURE_GET_METADATA_ERROR_CODE_015
+     * @tc.desc   getMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_ERROR_CODE_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_ERROR_CODE_015';
@@ -705,12 +705,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_GET_METADATA_ERROR_CODE_016
-     * @tc.name      PICTURE_GET_METADATA_ERROR_CODE_016
-     * @tc.desc      getMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_ERROR_CODE_016
+     * @tc.number PICTURE_GET_METADATA_ERROR_CODE_016
+     * @tc.desc   getMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_ERROR_CODE_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_ERROR_CODE_016';
@@ -723,12 +723,12 @@ export default function PictureSetMetadataTestSupp() {
       })
     })
     /**
-     * @tc.number    PICTURE_GET_METADATA_ERROR_CODE_017
-     * @tc.name      PICTURE_GET_METADATA_ERROR_CODE_017
-     * @tc.desc      getMetadata abnormal input parameters
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_ERROR_CODE_017
+     * @tc.number PICTURE_GET_METADATA_ERROR_CODE_017
+     * @tc.desc   getMetadata abnormal input parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_ERROR_CODE_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_ERROR_CODE_017';

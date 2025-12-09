@@ -45,12 +45,12 @@ export default function symbolIteratorTestTest() {
 
 
     /**
+     * @tc.name   BasicIterableTest001
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_001
-     * @tc.name BasicIterableTest001
-     * @tc.desc Verify basic iterable with Symbol.iterator works with for...of
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify basic iterable with Symbol.iterator works with for...of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('BasicIterableTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test001_BasicIterable();
@@ -58,12 +58,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   IteratorNextShapeTest002
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_002
-     * @tc.name IteratorNextShapeTest002
-     * @tc.desc Verify iterator next() returns { value, done } shape
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify iterator next() returns { value, done } shape
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('IteratorNextShapeTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test002_IteratorNextShape();
@@ -71,12 +71,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   EmptyIterableTest003
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_003
-     * @tc.name EmptyIterableTest003
-     * @tc.desc Verify empty iterable returns no values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify empty iterable returns no values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('EmptyIterableTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test003_EmptyIterable();
@@ -84,12 +84,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   IteratorReturnMethodTest004
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_004
-     * @tc.name IteratorReturnMethodTest004
-     * @tc.desc Verify iterator return() method stops iteration early
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify iterator return() method stops iteration early
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('IteratorReturnMethodTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test004_IteratorReturnMethod();
@@ -97,12 +97,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   IteratorThrowErrorTest005
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_005
-     * @tc.name IteratorThrowErrorTest005
-     * @tc.desc Verify sync error in iterator next() propagates
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify sync error in iterator next() propagates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('IteratorThrowErrorTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test005_IteratorThrowError();
@@ -110,12 +110,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   ClassIterableTest006
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_006
-     * @tc.name ClassIterableTest006
-     * @tc.desc Verify class implementing Symbol.iterator creates iterable instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify class implementing Symbol.iterator creates iterable instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ClassIterableTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test006_ClassIterable();
@@ -123,12 +123,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   IteratorNextWithArgumentTest007
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_007
-     * @tc.name IteratorNextWithArgumentTest007
-     * @tc.desc Verify sync iterator next() accepts optional argument
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify sync iterator next() accepts optional argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('IteratorNextWithArgumentTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test007_IteratorNextWithArgument();
@@ -136,12 +136,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   NestedIterableTest008
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_008
-     * @tc.name NestedIterableTest008
-     * @tc.desc Verify nested iterables can be traversed with nested for...of
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify nested iterables can be traversed with nested for...of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NestedIterableTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test008_NestedIterable();
@@ -149,12 +149,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   IterableWithArrayFromTest009
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_009
-     * @tc.name IterableWithArrayFromTest009
-     * @tc.desc Verify iterable can be converted to array via Array.from
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify iterable can be converted to array via Array.from
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('IterableWithArrayFromTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test009_IterableWithArrayFrom();
@@ -162,12 +162,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   SymbolIteratorNonEnumerableTest010
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_010
-     * @tc.name SymbolIteratorNonEnumerableTest010
-     * @tc.desc Verify [Symbol.iterator] property is non-enumerable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.iterator] property is non-enumerable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolIteratorNonEnumerableTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test010_SymbolIteratorNonEnumerable();
@@ -175,12 +175,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   IteratorThrowMethodTest011
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_011
-     * @tc.name IteratorThrowMethodTest011
-     * @tc.desc Verify iterator throw() method propagates error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify iterator throw() method propagates error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('IteratorThrowMethodTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test011_IteratorThrowMethod();
@@ -190,12 +190,12 @@ export default function symbolIteratorTestTest() {
 
 
     /**
+     * @tc.name   IterableInheritFromPrototypeTest013
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_013
-     * @tc.name IterableInheritFromPrototypeTest013
-     * @tc.desc Verify iterable can inherit [Symbol.iterator] from prototype chain
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify iterable can inherit [Symbol.iterator] from prototype chain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('IterableInheritFromPrototypeTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test013_IterableInheritFromPrototype();
@@ -203,12 +203,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   StatelessIteratorMultipleTraversalsTest014
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_014
-     * @tc.name StatelessIteratorMultipleTraversalsTest014
-     * @tc.desc Verify stateless iterator supports multiple traversals
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify stateless iterator supports multiple traversals
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('StatelessIteratorMultipleTraversalsTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test014_StatelessIteratorMultipleTraversals();
@@ -216,12 +216,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   NativeStringIterableTest015
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_015
-     * @tc.name NativeStringIterableTest015
-     * @tc.desc Verify native string is iterable via Symbol.iterator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify native string is iterable via Symbol.iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NativeStringIterableTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test015_NativeStringIterable();
@@ -229,12 +229,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   IteratorNextAfterDoneTest016
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_016
-     * @tc.name IteratorNextAfterDoneTest016
-     * @tc.desc Verify next() after done: true returns consistent result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify next() after done: true returns consistent result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('IteratorNextAfterDoneTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test016_IteratorNextAfterDone();
@@ -242,12 +242,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   IteratorReturnReturnValueTest017
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_017
-     * @tc.name IteratorReturnReturnValueTest017
-     * @tc.desc Verify iterator return() returns { value, done } shape
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify iterator return() returns { value, done } shape
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('IteratorReturnReturnValueTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test017_IteratorReturnReturnValue();
@@ -255,12 +255,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   NativeSetIterableTest018
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_018
-     * @tc.name NativeSetIterableTest018
-     * @tc.desc Verify native Set is iterable via Symbol.iterator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify native Set is iterable via Symbol.iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NativeSetIterableTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test018_NativeSetIterable();
@@ -268,12 +268,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   NativeMapIterableTest019
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_019
-     * @tc.name NativeMapIterableTest019
-     * @tc.desc Verify native Map is iterable via Symbol.iterator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify native Map is iterable via Symbol.iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NativeMapIterableTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test019_NativeMapIterable();
@@ -281,12 +281,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   IteratorForOfContinueTest020
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_020
-     * @tc.name IteratorForOfContinueTest020
-     * @tc.desc Verify iterator works with continue in for...of
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify iterator works with continue in for...of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('IteratorForOfContinueTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test020_IteratorForOfContinue();
@@ -294,12 +294,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   StatefulIteratorPreserveStateTest021
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_021
-     * @tc.name StatefulIteratorPreserveStateTest021
-     * @tc.desc Verify stateful iterator preserves state across next() calls
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify stateful iterator preserves state across next() calls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('StatefulIteratorPreserveStateTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test021_StatefulIteratorPreserveState();
@@ -307,12 +307,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   SymbolIteratorConfigurableTest022
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_022
-     * @tc.name SymbolIteratorConfigurableTest022
-     * @tc.desc Verify [Symbol.iterator] property is configurable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify [Symbol.iterator] property is configurable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolIteratorConfigurableTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test022_SymbolIteratorConfigurable();
@@ -322,12 +322,12 @@ export default function symbolIteratorTestTest() {
 
 
     /**
+     * @tc.name   IteratorDoneWithValueTest025
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_025
-     * @tc.name IteratorDoneWithValueTest025
-     * @tc.desc Verify iterator can return non-undefined value when done: true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify iterator can return non-undefined value when done: true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('IteratorDoneWithValueTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test025_IteratorDoneWithValue();
@@ -336,12 +336,12 @@ export default function symbolIteratorTestTest() {
 
 
     /**
+     * @tc.name   IterableToMapTest027
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_027
-     * @tc.name IterableToMapTest027
-     * @tc.desc Verify iterable of pairs can be converted to Map via constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify iterable of pairs can be converted to Map via constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('IterableToMapTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test027_IterableToMap();
@@ -349,12 +349,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   GeneratorAsIteratorTest028
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_028
-     * @tc.name GeneratorAsIteratorTest028
-     * @tc.desc Verify generator function can be used as [Symbol.iterator]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify generator function can be used as [Symbol.iterator]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GeneratorAsIteratorTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test028_GeneratorAsIterator();
@@ -362,12 +362,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   DynamicValueIteratorTest029
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_029
-     * @tc.name DynamicValueIteratorTest029
-     * @tc.desc Verify iterator can generate dynamic values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify iterator can generate dynamic values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DynamicValueIteratorTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test029_DynamicValueIterator();
@@ -375,12 +375,12 @@ export default function symbolIteratorTestTest() {
     });
 
     /**
+     * @tc.name   IterableAsFunctionArgumentsTest030
      * @tc.number SUB_SYMBOL_ITERATOR_STANDALONE_TEST_030
-     * @tc.name IterableAsFunctionArgumentsTest030
-     * @tc.desc Verify iterable can be spread as function arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify iterable can be spread as function arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('IterableAsFunctionArgumentsTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await SymbolIteratorStandaloneTestUtils.test030_IterableAsFunctionArguments();

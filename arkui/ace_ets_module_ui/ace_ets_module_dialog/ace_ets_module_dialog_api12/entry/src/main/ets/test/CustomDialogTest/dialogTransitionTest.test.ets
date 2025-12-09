@@ -63,13 +63,13 @@ export default function dialogTransitionTest() {
     });
 
     /**
+     * @tc.name   dialogTransitionTest_0100
      * @tc.number SUB_ACE_dialogTransitionTest_0100
-     * @tc.name dialogTransitionTest_0100
-     * @tc.desc To test the Dialog transition 
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test the Dialog transition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('dialogTransitionTest_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('dialogTransitionTest_0100 START');
       let driver = await Driver.create()

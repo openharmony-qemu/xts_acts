@@ -165,12 +165,12 @@ export default function Object34Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   Object34Test001
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_0100
-     * @tc.name Object34Test001
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn01_testValueOfReturnsSelf();
@@ -178,24 +178,24 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test002
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_0200
-     * @tc.name Object34Test002
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn02_testCustomValueOfReturnsPrimitive();
       expect(res).assertEqual(true);
     });
     /**
+     * @tc.name   Object34Test003
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_0300
-     * @tc.name Object34Test003
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn03_testForcedNumberCallsValueOf();
@@ -203,12 +203,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test004
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_0400
-     * @tc.name Object34Test004
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn04_testFallbackToToStringWhenNoValueOf();
@@ -216,12 +216,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test005
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_0500
-     * @tc.name Object34Test005
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn05_testToPrimitivePriorityOverValueOf();
@@ -229,12 +229,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test006
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_0600
-     * @tc.name Object34Test006
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn06_testArrayValueOfReturnsSelf();
@@ -242,12 +242,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test007
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_0700
-     * @tc.name Object34Test007
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn07_testDateValueOfReturnsTimestamp();
@@ -255,12 +255,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test008
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_0800
-     * @tc.name Object34Test008
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn08_testValueOfReturnsObjectFallbackToString();
@@ -268,12 +268,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test009
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_0900
-     * @tc.name Object34Test009
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn09_testBooleanObjectValueOfReturnsPrimitive();
@@ -281,12 +281,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test010
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_01000
-     * @tc.name Object34Test010
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn10_testStringObjectValueOfReturnsPrimitive();
@@ -294,12 +294,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test011
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_1100
-     * @tc.name Object34Test011
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn11_testNumberObjectValueOfReturnsPrimitive();
@@ -307,12 +307,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test012
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_1200
-     * @tc.name Object34Test012
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn12_testCallValueOfWithPrimitive();
@@ -320,12 +320,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test013
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_1300
-     * @tc.name Object34Test013
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn13_testValueOfReturnsNullForcedConvert();
@@ -333,12 +333,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test014
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_1400
-     * @tc.name Object34Test014
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn14_testValueOfReturnsUndefinedForcedConvert();
@@ -346,12 +346,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test015
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_1500
-     * @tc.name Object34Test015
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn15_testMapValueOfReturnsSelf();
@@ -359,12 +359,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test016
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_1600
-     * @tc.name Object34Test016
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn16_testSetValueOfReturnsSelf();
@@ -372,12 +372,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test017
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_1700
-     * @tc.name Object34Test017
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn17_testFunctionValueOfReturnsSelf();
@@ -385,12 +385,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test018
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_1800
-     * @tc.name Object34Test018
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn18_testCustomValueOfForAddition();
@@ -398,12 +398,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test019
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_1900
-     * @tc.name Object34Test019
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn19_testObjectCompareWithoutValueOf();
@@ -411,24 +411,24 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test020
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_2000
-     * @tc.name Object34Test020
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn20_testCustomValueOfForComparison();
       expect(res).assertEqual(true);
     });
     /**
+     * @tc.name   Object34Test021
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_2100
-     * @tc.name Object34Test021
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(valueOfResult21 === primitiveSym21).assertEqual(true);
@@ -436,12 +436,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test022
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_2200
-     * @tc.name Object34Test022
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn22_testValueOfThrowErrorPropagation();
@@ -449,12 +449,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test023
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_2300
-     * @tc.name Object34Test023
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn23_testInheritedObjValueOfFromProto();
@@ -462,12 +462,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test024
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_2400
-     * @tc.name Object34Test024
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -478,12 +478,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test025
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_2500
-     * @tc.name Object34Test025
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn25_testDateCompareWithNumber();
@@ -491,12 +491,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test026
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_2600
-     * @tc.name Object34Test026
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn26_testEmptyObjValueOfStrictEqual();
@@ -504,12 +504,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test027
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_2700
-     * @tc.name Object34Test027
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn27_testValueOfReturnEmptyString();
@@ -517,12 +517,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test028
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_2800
-     * @tc.name Object34Test028
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn28_testRegExpValueOfReturnsSelf();
@@ -530,12 +530,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test029
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_2900
-     * @tc.name Object34Test029
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn29_testCustomValueOfForSubtraction();
@@ -543,12 +543,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test030
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_3000
-     * @tc.name Object34Test030
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn30_testNullCallValueOf();
@@ -556,12 +556,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test031
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_3100
-     * @tc.name Object34Test031
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn31_testUndefinedCallValueOf();
@@ -569,12 +569,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test032
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_3200
-     * @tc.name Object34Test032
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn32_testValueOfReturnNaN();
@@ -582,12 +582,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test033
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_3300
-     * @tc.name Object34Test033
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn33_testValueOfReturnInfinity();
@@ -595,12 +595,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test034
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_3400
-     * @tc.name Object34Test034
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn34_testClassStaticValueOf();
@@ -608,12 +608,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test035
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_3500
-     * @tc.name Object34Test035
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn35_testNestedObjValueOf();
@@ -621,12 +621,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test036
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_3600
-     * @tc.name Object34Test036
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn36_testCustomValueOfForMultiplication();
@@ -634,12 +634,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test037
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_3700
-     * @tc.name Object34Test037
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn37_testUint8ArrayValueOfReturnsSelf();
@@ -647,12 +647,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test038
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_3800
-     * @tc.name Object34Test038
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn38_testFloat64ArrayValueOfReturnsSelf();
@@ -660,12 +660,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test039
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_3900
-     * @tc.name Object34Test039
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn39_testJsonStringifyNotTriggerValueOf();
@@ -673,24 +673,24 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test040
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_4000
-     * @tc.name Object34Test040
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn40_testCustomValueOfForDivision();
       expect(res).assertEqual(true);
     });
     /**
+     * @tc.name   Object34Test041
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_4100
-     * @tc.name Object34Test041
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn41_testModifyProtoValueOf();
@@ -698,12 +698,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test042
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_4200
-     * @tc.name Object34Test042
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn42_testInstanceValueOfOverrideProto();
@@ -711,12 +711,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test043
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_4300
-     * @tc.name Object34Test043
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn43_testValueOfReturnBoolean();
@@ -724,12 +724,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test044
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_4400
-     * @tc.name Object34Test044
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn44_testArrayBufferValueOfReturnsSelf();
@@ -737,24 +737,24 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test045
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_4500
-     * @tc.name Object34Test045
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn45_testCustomValueOfForModulo();
       expect(res).assertEqual(true);
     });
     /**
+     * @tc.name   Object34Test046
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_4600
-     * @tc.name Object34Test046
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn46_testProxyValueOfTriggerGet();
@@ -762,12 +762,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test047
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_4700
-     * @tc.name Object34Test047
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn47_testValueOfReturnTrueString();
@@ -775,12 +775,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test048
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_4800
-     * @tc.name Object34Test048
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn48_testValueOfReturnEmptyObjForcedBool();
@@ -788,12 +788,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test049
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_4900
-     * @tc.name Object34Test049
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn49_testBigIntObjectValueOfReturnsPrimitive();
@@ -801,12 +801,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test050
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_5000
-     * @tc.name Object34Test050
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn50_testCustomValueOfForBitwiseAnd();
@@ -814,12 +814,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test051
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_5100
-     * @tc.name Object34Test051
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn51_testCustomValueOfForBitwiseOr();
@@ -827,12 +827,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test052
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_5200
-     * @tc.name Object34Test052
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn52_testDateCompareWithDate();
@@ -840,12 +840,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test053
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_5300
-     * @tc.name Object34Test053
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn53_testValueOfReturnSymbolForcedNumber();
@@ -853,12 +853,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test054
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_5400
-     * @tc.name Object34Test054
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn54_testDataViewValueOfReturnsSelf();
@@ -866,12 +866,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test055
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_5500
-     * @tc.name Object34Test055
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -882,12 +882,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test056
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_5600
-     * @tc.name Object34Test056
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -898,12 +898,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test057
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_5700
-     * @tc.name Object34Test057
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -914,12 +914,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test058
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_5800
-     * @tc.name Object34Test058
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn58_testValueOfReturnFunctionFallbackToString();
@@ -927,12 +927,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test060
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_6000
-     * @tc.name Object34Test060
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn60_testCustomValueOfForExponentiation();
@@ -940,12 +940,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test061
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_6100
-     * @tc.name Object34Test061
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn61_testValueOfReturnNaNCompare();
@@ -953,12 +953,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test063
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_6300
-     * @tc.name Object34Test063
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn63_testCustomValueOfForStringConcat();
@@ -966,12 +966,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test064
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_6400
-     * @tc.name Object34Test064
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn64_testValueOfReturnUndefinedCompare();
@@ -979,12 +979,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test065
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_6500
-     * @tc.name Object34Test065
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn65_testValueOfReturnNullCompare();
@@ -992,12 +992,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test067
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_6700
-     * @tc.name Object34Test067
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn67_testCustomValueOfForTernary();
@@ -1005,12 +1005,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test068
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_6800
-     * @tc.name Object34Test068
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn68_testValueOfReturnArrayFallbackToString();
@@ -1018,12 +1018,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test069
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_6900
-     * @tc.name Object34Test069
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn69_testIntlDateTimeFormatValueOfReturnsSelf();
@@ -1031,12 +1031,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test070
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_7000
-     * @tc.name Object34Test070
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn70_testCustomValueOfForLogicalAnd();
@@ -1044,12 +1044,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test071
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_7100
-     * @tc.name Object34Test071
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn71_testCustomValueOfForLogicalOr();
@@ -1057,12 +1057,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test072
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_7200
-     * @tc.name Object34Test072
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn72_testValueOfReturnRegExpForcedNumber();
@@ -1070,12 +1070,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test074
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_7400
-     * @tc.name Object34Test074
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn74_testCustomValueOfForNumberFunction();
@@ -1083,12 +1083,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test075
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_7500
-     * @tc.name Object34Test075
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn75_testCustomValueOfForStringFunction();
@@ -1096,12 +1096,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test076
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_7600
-     * @tc.name Object34Test076
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn76_testValueOfReturnMapFallbackToString();
@@ -1109,12 +1109,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test077
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_7700
-     * @tc.name Object34Test077
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn77_testIntlNumberFormatValueOfReturnsSelf();
@@ -1122,12 +1122,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test078
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_7800
-     * @tc.name Object34Test078
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn78_testCustomValueOfForLeftShift();
@@ -1135,12 +1135,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test079
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_7900
-     * @tc.name Object34Test079
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn79_testCustomValueOfForRightShift();
@@ -1148,12 +1148,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test081
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_8100
-     * @tc.name Object34Test081
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1164,12 +1164,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test082
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_8200
-     * @tc.name Object34Test082
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn82_testCustomValueOfForBooleanFunction();
@@ -1177,12 +1177,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test083
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_8300
-     * @tc.name Object34Test083
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn83_testIntlCollatorValueOfReturnsSelf();
@@ -1190,12 +1190,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test084
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_8400
-     * @tc.name Object34Test084
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn84_testValueOfReturnSetFallbackToString();
@@ -1203,12 +1203,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test085
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_8500
-     * @tc.name Object34Test085
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn85_testCustomValueOfForUnsignedRightShift();
@@ -1216,12 +1216,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test087
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_8700
-     * @tc.name Object34Test087
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn87_testValueOfReturnEmptyStringCompare();
@@ -1229,12 +1229,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test088
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_8800
-     * @tc.name Object34Test088
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn88_testValueOfReturnUndefinedForcedBool();
@@ -1242,12 +1242,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test089
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_8900
-     * @tc.name Object34Test089
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn89_testIntlPluralRulesValueOfReturnsSelf();
@@ -1255,12 +1255,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test090
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_9000
-     * @tc.name Object34Test090
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn90_testCustomValueOfForBitwiseXor();
@@ -1268,12 +1268,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test091
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_9100
-     * @tc.name Object34Test091
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn91_testValueOfReturnNullForcedBool();
@@ -1281,12 +1281,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test093
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_9300
-     * @tc.name Object34Test093
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn93_testCustomValueOfForCommaOperator();
@@ -1294,12 +1294,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test094
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_9400
-     * @tc.name Object34Test094
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn94_testIntlRelativeTimeFormatValueOfReturnsSelf();
@@ -1307,12 +1307,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test095
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_9500
-     * @tc.name Object34Test095
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn95_testValueOfReturnZeroString();
@@ -1320,12 +1320,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test096
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_9600
-     * @tc.name Object34Test096
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn96_testValueOfReturnMixedString();
@@ -1333,12 +1333,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test097
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_9700
-     * @tc.name Object34Test097
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn97_testIntlLocaleValueOfReturnsSelf();
@@ -1346,12 +1346,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test098
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_9800
-     * @tc.name Object34Test098
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn98_testCustomValueOfForUnaryPlus();
@@ -1359,12 +1359,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test099
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_9900
-     * @tc.name Object34Test099
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn99_testCustomValueOfForUnaryMinus();
@@ -1372,12 +1372,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test100
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_1000
-     * @tc.name Object34Test010
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn100_testValueOfReturnInfinityString();
@@ -1385,12 +1385,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test101
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_10100
-     * @tc.name Object34Test101
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn101_testIntlDisplayNamesValueOfReturnsSelf();
@@ -1398,12 +1398,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test102
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_10200
-     * @tc.name Object34Test102
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn102_testValueOfReturnSingleElemArray();
@@ -1411,12 +1411,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test103
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_10300
-     * @tc.name Object34Test103
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn103_testValueOfReturnMultiElemArray();
@@ -1424,12 +1424,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test104
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_10400
-     * @tc.name Object34Test104
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn104_testIntlDateTimeFormatValueOfStrictEqual();
@@ -1437,12 +1437,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test105
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_10500
-     * @tc.name Object34Test105
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn105_testValueOfReturnFunctionCompare();
@@ -1450,12 +1450,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test106
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_10600
-     * @tc.name Object34Test106
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn106_testCustomValueOfForParseInt();
@@ -1463,12 +1463,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test107
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_10700
-     * @tc.name Object34Test107
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn107_testCustomValueOfForParseFloat();
@@ -1476,12 +1476,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test109
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_10900
-     * @tc.name Object34Test109
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn109_testValueOfReturnFalseStringForcedBool();
@@ -1489,12 +1489,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test110
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_11000
-     * @tc.name Object34Test110
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn110_testIntlNumberFormatValueOfNotEqual();
@@ -1502,12 +1502,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test111
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_11100
-     * @tc.name Object34Test111
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn111_testValueOfReturnSymbolIterator();
@@ -1515,12 +1515,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test112
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_11200
-     * @tc.name Object34Test112
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn112_testLocalStorageValueOfReturnsSelf();
@@ -1528,12 +1528,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test113
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_11300
-     * @tc.name Object34Test113
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn113_testCustomValueOfForNegativeSubtraction();
@@ -1541,12 +1541,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test114
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_11400
-     * @tc.name Object34Test114
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn114_testIntlCollatorValueOfStrictEqual();
@@ -1554,12 +1554,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test115
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_11500
-     * @tc.name Object34Test115
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn115_testValueOfReturnSpacedString();
@@ -1567,12 +1567,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test116
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_11600
-     * @tc.name Object34Test116
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn116_testCustomValueOfForIfCondition();
@@ -1580,12 +1580,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test117
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_11700
-     * @tc.name Object34Test117
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn117_testNavigatorValueOfReturnsSelf();
@@ -1593,12 +1593,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test118
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_11800
-     * @tc.name Object34Test118
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1609,12 +1609,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test119
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_11900
-     * @tc.name Object34Test119
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn119_testCustomValueOfForDecimalMultiplication();
@@ -1622,12 +1622,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test121
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_12100
-     * @tc.name Object34Test121
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn121_testValueOfReturnNaNString();
@@ -1635,12 +1635,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test122
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_12200
-     * @tc.name Object34Test122
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn122_testIntlPluralRulesValueOfNotEqual();
@@ -1648,12 +1648,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test123
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_12300
-     * @tc.name Object34Test123
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn123_testCustomValueOfForIsNaN();
@@ -1661,12 +1661,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test124
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_12400
-     * @tc.name Object34Test124
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn124_testCanvasContextValueOfReturnsSelf();
@@ -1674,12 +1674,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test125
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_12500
-     * @tc.name Object34Test125
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn125_testValueOfReturnNaNArray();
@@ -1687,12 +1687,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test126
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_12600
-     * @tc.name Object34Test126
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn126_testCustomValueOfForStringNumberConcat();
@@ -1700,12 +1700,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test127
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_12700
-     * @tc.name Object34Test127
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn127_testIntlDisplayNamesValueOfStrictEqual();
@@ -1713,12 +1713,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test128
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_12800
-     * @tc.name Object34Test128
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn128_testValueOfReturnFunctionTypeof();
@@ -1726,12 +1726,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test130
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_13000
-     * @tc.name Object34Test130
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn130_testCustomValueOfForGreaterOrEqual();
@@ -1739,12 +1739,12 @@ export default function Object34Test() {
     });
 
     /**
+     * @tc.name   Object34Test131
      * @tc.number SUB_BUILTINS_OBJECT34_TEST_13100
-     * @tc.name Object34Test131
-     * @tc.desc test object valueOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object34Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn131_testValueOfReturnSciNotationString();

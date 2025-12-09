@@ -56,10 +56,13 @@ export default function webViewOnFirstContThree() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ACE_BASIC_ETS_WEBVIEWPATR5_API_0300
-     * @tc.name: testOnfirstcontentfulpaintloadurl
-     * @tc.desc: onfirstcontentfulpaint with web load url
+    /**
+     * @tc.name   testOnfirstcontentfulpaintloadurl
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR5_API_0300
+     * @tc.desc   onfirstcontentfulpaint with web load url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnfirstcontentfulpaintloadurl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

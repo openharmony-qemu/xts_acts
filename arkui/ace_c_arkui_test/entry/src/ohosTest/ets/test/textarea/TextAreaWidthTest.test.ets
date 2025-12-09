@@ -26,39 +26,39 @@ export default function textAreaWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_WIDTH_0100
-     * @tc.name: testTextAreaWidth001
-     * @tc.desc: testing width for textarea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaWidth001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_WIDTH_0100
+     * @tc.desc   testing width for textarea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_WIDTH_0200
-     * @tc.name: testTextAreaWidth002
-     * @tc.desc: testing width for textarea with large value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testTextAreaWidth002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_WIDTH_0200
+     * @tc.desc   testing width for textarea with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_WIDTH_0300
-     * @tc.name: testTextAreaWidth003
-     * @tc.desc: testing width for textarea with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaWidth003
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_WIDTH_0300
+     * @tc.desc   testing width for textarea with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaWidth003()).assertEqual(0)

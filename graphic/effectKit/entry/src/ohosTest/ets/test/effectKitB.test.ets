@@ -23,12 +23,12 @@ export default function effectKitBTest() {
     console.log('describe effectKitBTest start!!!');
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0010
-     * @tc.name      : testGetTopProportionColors
-     * @tc.desc      : Read the first color value of the image. The number is specified by colorCount. The result is written into the Color array and returned in synchronization mode.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetTopProportionColors
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0010
+     * @tc.desc   Read the first color value of the image. The number is specified by colorCount. The result is written into the Color array and returned in synchronization mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetTopProportionColors', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let msgStr = 'testGetTopProportionColors'
@@ -75,12 +75,12 @@ export default function effectKitBTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0020
-     * @tc.name      : testInvert
-     * @tc.desc      : Read the first color value of the image. The number is specified by colorCount. The result is written into the Color array and returned in synchronization mode.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testInvert
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0020
+     * @tc.desc   Read the first color value of the image. The number is specified by colorCount. The result is written into the Color array and returned in synchronization mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testInvert', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let msgStr = 'testInvert'
@@ -127,12 +127,12 @@ export default function effectKitBTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0030
-     * @tc.name      : testSetColorMatrix
-     * @tc.desc      : Read the first color value of the image. The number is specified by colorCount. The result is written into the Color array and returned in synchronization mode.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetColorMatrix
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0030
+     * @tc.desc   Read the first color value of the image. The number is specified by colorCount. The result is written into the Color array and returned in synchronization mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetColorMatrix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let msgStr = 'testSetColorMatrix'
@@ -185,12 +185,12 @@ export default function effectKitBTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0040
-     * @tc.name      : testTileMode
-     * @tc.desc      : Enumeration of the shader effect tile mode.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTileMode
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0040
+     * @tc.desc   Enumeration of the shader effect tile mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTileMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let msg = 'testTileMode'
@@ -203,12 +203,12 @@ export default function effectKitBTest() {
     })
     
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0050
-     * @tc.name      : testBlurTileMode
-     * @tc.desc      : Adds the blur effect to the effect list. The result is returned to the first node of the effect list
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testBlurTileMode
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0050
+     * @tc.desc   Adds the blur effect to the effect list. The result is returned to the first node of the effect list
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBlurTileMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let msgStr = 'testBlurTileMode'
@@ -239,12 +239,12 @@ export default function effectKitBTest() {
     })
     
     /**
-     * @tc.number     testGetEffectPixelMap_useCpuRender1
-     * @tc.name       testGetEffectPixelMap_useCpuRender1
-     * @tc.desc       test getEffectPixelMap useCpuRender
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   testGetEffectPixelMap_useCpuRender1
+     * @tc.number testGetEffectPixelMap_useCpuRender1
+     * @tc.desc   test getEffectPixelMap useCpuRender
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetEffectPixelMap_useCpuRender1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -268,12 +268,12 @@ export default function effectKitBTest() {
     })
     
     /**
-     * @tc.number     testGetEffectPixelMap_useCpuRender2
-     * @tc.name       testGetEffectPixelMap_useCpuRender2
-     * @tc.desc       test getEffectPixelMap useCpuRender
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   testGetEffectPixelMap_useCpuRender2
+     * @tc.number testGetEffectPixelMap_useCpuRender2
+     * @tc.desc   test getEffectPixelMap useCpuRender
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetEffectPixelMap_useCpuRender2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -297,12 +297,12 @@ export default function effectKitBTest() {
     })
     
     /**
-     * @tc.number     testGetTopProportionColors_2
-     * @tc.name       testGetTopProportionColors_2
-     * @tc.desc       test getTopProportionColors
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   testGetTopProportionColors_2
+     * @tc.number testGetTopProportionColors_2
+     * @tc.desc   test getTopProportionColors
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetTopProportionColors_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let msgStr = 'testGetTopProportionColors_2'
@@ -332,12 +332,12 @@ export default function effectKitBTest() {
     })
     
     /**
-     * @tc.number     isBlackOrWhiteOrGrayColor_2
-     * @tc.name       isBlackOrWhiteOrGrayColor_2
-     * @tc.desc       test isBlackOrWhiteOrGrayColor
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   isBlackOrWhiteOrGrayColor_2
+     * @tc.number isBlackOrWhiteOrGrayColor_2
+     * @tc.desc   test isBlackOrWhiteOrGrayColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isBlackOrWhiteOrGrayColor_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let msgStr = 'isBlackOrWhiteOrGrayColor_2'
@@ -360,12 +360,12 @@ export default function effectKitBTest() {
     })
     
     /**
-     * @tc.number     createColorPicker_callback_0100
-     * @tc.name       createColorPicker_callback_0100
-     * @tc.desc       test createColorPicker callback
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   createColorPicker_callback_0100
+     * @tc.number createColorPicker_callback_0100
+     * @tc.desc   test createColorPicker callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createColorPicker_callback_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -395,12 +395,12 @@ export default function effectKitBTest() {
     })
     
     /**
-     * @tc.number     createColorPicker_callback_0200
-     * @tc.name       createColorPicker_callback_0200
-     * @tc.desc       test createColorPicker callback
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   createColorPicker_callback_0200
+     * @tc.number createColorPicker_callback_0200
+     * @tc.desc   test createColorPicker callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createColorPicker_callback_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'createColorPicker_callback_0200';

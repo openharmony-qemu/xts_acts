@@ -54,13 +54,13 @@ function stringToArrayBuffer(str: string): ArrayBuffer {
 export default function LocalSocketTest() {
   describe('LocalSocketTest', () => {
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_LocalSocket_Bind_0100
-     * @tc.name  :  testNetworkMgrSocketLocalSocketBind0100
-     * @tc.desc  :  Bind
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketBind0100
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocket_Bind_0100
+     * @tc.desc   Bind
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketLocalSocketBind0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketBind0100';
@@ -88,13 +88,13 @@ export default function LocalSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_LocalSocket_Bind_0200
-     * @tc.name  :  testNetworkMgrSocketLocalSocketBind0200
-     * @tc.desc  :  test localSocket Bind function (401)
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketBind0200
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocket_Bind_0200
+     * @tc.desc   test localSocket Bind function (401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketLocalSocketBind0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketBind0200';
@@ -120,13 +120,13 @@ export default function LocalSocketTest() {
       }
     });
     
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_LocalSocket_Connect_0100
-     * @tc.name  :  testNetworkMgrSocketLocalSocketConnect0100
-     * @tc.desc  :  Connect to the specified socket
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketConnect0100
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocket_Connect_0100
+     * @tc.desc   Connect to the specified socket
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketLocalSocketConnect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketConnect0100';
@@ -163,13 +163,13 @@ export default function LocalSocketTest() {
       }
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_localSocket_send_0100
-     * @tc.name  :  testNetworkMgrSocketLocalSocketSendTest0100
-     * @tc.desc  :  test localSocket send function.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketSendTest0100
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_send_0100
+     * @tc.desc   test localSocket send function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketLocalSocketSendTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketSendTest0100';
@@ -211,13 +211,13 @@ export default function LocalSocketTest() {
       }
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_localSocket_send_0200
-     * @tc.name  :  testNetworkMgrSocketLocalSocketSendTest0200
-     * @tc.desc  :  test localSocket send function.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketSendTest0200
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_send_0200
+     * @tc.desc   test localSocket send function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketLocalSocketSendTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketSendTest0200';
@@ -261,13 +261,13 @@ export default function LocalSocketTest() {
       }
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_localSocket_send_0300
-     * @tc.name  :  testNetworkMgrSocketLocalSocketSendTest0300
-     * @tc.desc  :  test localSocket send function.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketSendTest0300
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_send_0300
+     * @tc.desc   test localSocket send function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketLocalSocketSendTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketSendTest0300';
@@ -312,13 +312,13 @@ export default function LocalSocketTest() {
       }
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_localSocket_send_0400
-     * @tc.name  :  testNetworkMgrSocketLocalSocketSendTest0400
-     * @tc.desc  :  test localSocket send function.(401)
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketSendTest0400
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_send_0400
+     * @tc.desc   test localSocket send function.(401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketLocalSocketSendTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketSendTest0400';
@@ -360,14 +360,14 @@ export default function LocalSocketTest() {
         done();
       }
     });
-    /* *
-    * @tc.number:  SUB_NetworkMgr_Socket_localSocket_getState_0100
-    * @tc.name  :  testNetworkMgrSocketLocalSocketGetState0100
-    * @tc.desc  :  test LocalConnection connection GetLocalAddress function.
-    * @tc.size  :  SmallTest
-    * @tc.type  :  Function
-    * @tc.level :  level 2
-    */
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketGetState0100
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_getState_0100
+     * @tc.desc   test LocalConnection connection GetLocalAddress function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrSocketLocalSocketGetState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketGetState0100';
       console.info(`${caseName} test start`);
@@ -408,14 +408,14 @@ export default function LocalSocketTest() {
         done();
       }
     });
-    /* *
-    * @tc.number:  SUB_NetworkMgr_Socket_localSocket_getSocketFd_0100
-    * @tc.name  :  testNetworkMgrSocketLocalSocketGetSocketFd0100
-    * @tc.desc  :  test LocalConnection connection GetLocalAddress function.
-    * @tc.size  :  SmallTest
-    * @tc.type  :  Function
-    * @tc.level :  level 2
-    */
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketGetSocketFd0100
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_getSocketFd_0100
+     * @tc.desc   test LocalConnection connection GetLocalAddress function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrSocketLocalSocketGetSocketFd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketGetSocketFd0100';
       console.info(`${caseName} test start`);
@@ -456,14 +456,14 @@ export default function LocalSocketTest() {
         done();
       }
     });
-    /* *
-    * @tc.number:  SUB_NetworkMgr_Socket_localSocket_setExtraOptions_0100
-    * @tc.name  :  testNetworkMgrSocketLocalSocketSetExtraOptions0100
-    * @tc.desc  :  test LocalSocket connection SetExtraOptions function.
-    * @tc.size  :  SmallTest
-    * @tc.type  :  Function
-    * @tc.level :  level 2
-    */
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketSetExtraOptions0100
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_setExtraOptions_0100
+     * @tc.desc   test LocalSocket connection SetExtraOptions function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrSocketLocalSocketSetExtraOptions0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketLocalSocketSetExtraOptions0100';
       console.info(`${caseName} test start`);
@@ -505,13 +505,13 @@ export default function LocalSocketTest() {
       }
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_LocalSocket_On_Message_0100
-     * @tc.name  :  testLocalSocketOn0100
-     * @tc.desc  :  test LocalSocket On message function.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testLocalSocketOn0100
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocket_On_Message_0100
+     * @tc.desc   test LocalSocket On message function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLocalSocketOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 ,  async (done: Function) => {
       const caseName: string = 'testLocalSocketOn0100';
@@ -570,13 +570,13 @@ export default function LocalSocketTest() {
       }
     });
 
-    /* *
-     * @tc.number:  Socket_LocalSocketConnection_ClintId_0100
-     * @tc.name  :  testLocalSocketConnectionClientId0100
-     * @tc.desc  :  test localSocketConnection ClientId.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testLocalSocketConnectionClientId0100
+     * @tc.number Socket_LocalSocketConnection_ClintId_0100
+     * @tc.desc   test localSocketConnection ClientId.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLocalSocketConnectionClientId0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       let caseName: string = 'testLocalSocketConnectionClientId0100';

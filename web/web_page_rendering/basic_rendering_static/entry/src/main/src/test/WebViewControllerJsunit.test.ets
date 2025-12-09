@@ -68,10 +68,13 @@ export default function webViewControllerJsunit() {
       await Utils.msSleep(2000);
     })
 
-    /*
-     * @tc.number: SUB_ACE_BASIC_ETS_API_STATIC_0100
-     * @tc.name: testGetWebIdStatic
-     * @tc.desc: Get the WebId
+    /**
+     * @tc.name   testGetWebIdStatic
+     * @tc.number SUB_ACE_BASIC_ETS_API_STATIC_0100
+     * @tc.desc   Get the WebId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWebIdStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -82,10 +85,13 @@ export default function webViewControllerJsunit() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ACE_BASIC_ETS_API_STATIC_0200
-     * @tc.name: emitonSwitchNextPage
-     * @tc.desc: PAGE_REDIRECT
+    /**
+     * @tc.name   emitonSwitchNextPage
+     * @tc.number SUB_ACE_BASIC_ETS_API_STATIC_0200
+     * @tc.desc   PAGE_REDIRECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

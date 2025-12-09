@@ -57,10 +57,13 @@ export default function webViewContCookieToGeoLocationError() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7700
-     *tc.name testGetCookieInitErr
-     *tc.desc test interface of getCookie with wrong format url
+    /**
+     * @tc.name   testGetCookieInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7700
+     * @tc.desc   test interface of getCookie with wrong format url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetCookieInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetCookieInitErr";
@@ -69,10 +72,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetCookieInitErr", "URL error. Possible causes:1.No valid cookie found for the specified URL. 2.The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.", 110030, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7800
-     *tc.name testSetCookieInitErr
-     *tc.desc test interface of setCookie with wrong format url
+    /**
+     * @tc.name   testSetCookieInitErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7800
+     * @tc.desc   test interface of setCookie with wrong format url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetCookieInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitSetCookieInitErr";
@@ -81,10 +87,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testSetCookieInitErr", "URL error. Possible causes:1.No valid cookie found for the specified URL. 2.The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.", 110050, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7900
-     *tc.name testSetCookieValueErr
-     *tc.desc test interface of setCookie with unsupported url value type
+    /**
+     * @tc.name   testSetCookieValueErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_7900
+     * @tc.desc   test interface of setCookie with unsupported url value type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetCookieValueErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitSetCookieValueErr";
@@ -93,10 +102,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testSetCookieValueErr", "The provided cookie value is invalid. It must follow the format specified in RFC 6265.", 110070, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8000
-     *tc.name testDeleteOriginValueNullErr
-     *tc.desc test interface of deleteOrigin with origin null
+    /**
+     * @tc.name   testDeleteOriginValueNullErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8000
+     * @tc.desc   test interface of deleteOrigin with origin null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDeleteOriginValueNullErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitDeleteOriginValueNullErr";
@@ -105,10 +117,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testDeleteOriginValueNullErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110090, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8100
-     *tc.name testDeleteOriginValueIllegalErr
-     *tc.desc test interface of deleteOrigin with origin illegal
+    /**
+     * @tc.name   testDeleteOriginValueIllegalErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8100
+     * @tc.desc   test interface of deleteOrigin with origin illegal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDeleteOriginValueIllegalErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitDeleteOriginValueIllegalErr";
@@ -117,10 +132,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testDeleteOriginValueIllegalErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110110, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8200
-     *tc.name testDeleteOriginValueErr
-     *tc.desc test interface of deleteOrigin with origin wrong
+    /**
+     * @tc.name   testDeleteOriginValueErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8200
+     * @tc.desc   test interface of deleteOrigin with origin wrong
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDeleteOriginValueErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitDeleteOriginValueErr";
@@ -129,10 +147,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testDeleteOriginValueErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110130, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8300
-     *tc.name testGetOriginsCallbackUnAPIErr
-     *tc.desc test interface of getOrigins (callback) with no using JS database API
+    /**
+     * @tc.name   testGetOriginsCallbackUnAPIErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8300
+     * @tc.desc   test interface of getOrigins (callback) with no using JS database API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetOriginsCallbackUnAPIErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetOriginsCallbackUnAPIErr";
@@ -141,10 +162,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetOriginsCallbackUnAPIErr", "Invalid web storage origin.The web storage origin is empty.", 110150, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8400
-     *tc.name testGetOriginsPromiseUnAPIErr
-     *tc.desc test interface of getOrigins (promise) with no using JS database API
+    /**
+     * @tc.name   testGetOriginsPromiseUnAPIErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8400
+     * @tc.desc   test interface of getOrigins (promise) with no using JS database API
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetOriginsPromiseUnAPIErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetOriginsPromiseUnAPIErr";
@@ -153,10 +177,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetOriginsPromiseUnAPIErr", "Invalid web storage origin.The web storage origin is empty.", 110170, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8500
-     *tc.name testGetOriginQuotaCallbackValueErr
-     *tc.desc test interface of getOriginQuota (callback) with origin wrong
+    /**
+     * @tc.name   testGetOriginQuotaCallbackValueErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8500
+     * @tc.desc   test interface of getOriginQuota (callback) with origin wrong
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetOriginQuotaCallbackValueErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetOriginQuotaCallbackValueErr";
@@ -165,10 +192,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetOriginQuotaCallbackValueErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110190, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8600
-     *tc.name testGetOriginQuotaCallbackValueIllegalErr
-     *tc.desc test interface of getOriginQuota (callback) with origin illegal
+    /**
+     * @tc.name   testGetOriginQuotaCallbackValueIllegalErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8600
+     * @tc.desc   test interface of getOriginQuota (callback) with origin illegal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetOriginQuotaCallbackValueIllegalErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetOriginQuotaCallbackValueIllegalErr";
@@ -177,10 +207,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetOriginQuotaCallbackValueIllegalErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110210, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8700
-     *tc.name testGetOriginQuotaCallbackValueNullErr
-     *tc.desc test interface of getOriginQuota (callback) with origin null
+    /**
+     * @tc.name   testGetOriginQuotaCallbackValueNullErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8700
+     * @tc.desc   test interface of getOriginQuota (callback) with origin null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetOriginQuotaCallbackValueNullErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetOriginQuotaCallbackValueNullErr";
@@ -189,10 +222,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetOriginQuotaCallbackValueNullErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110230, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8800
-     *tc.name testGetOriginQuotaPromiseValueErr
-     *tc.desc test interface of getOriginQuota (promise) with origin wrong
+    /**
+     * @tc.name   testGetOriginQuotaPromiseValueErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8800
+     * @tc.desc   test interface of getOriginQuota (promise) with origin wrong
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetOriginQuotaPromiseValueErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetOriginQuotaPromiseValueErr";
@@ -201,10 +237,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetOriginQuotaPromiseValueErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110250, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8900
-     *tc.name testGetOriginQuotaPromiseValueIllegalErr
-     *tc.desc test interface of getOriginQuota (promise) with origin illegal
+    /**
+     * @tc.name   testGetOriginQuotaPromiseValueIllegalErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_8900
+     * @tc.desc   test interface of getOriginQuota (promise) with origin illegal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetOriginQuotaPromiseValueIllegalErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetOriginQuotaPromiseValueIllegalErr";
@@ -213,10 +252,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetOriginQuotaPromiseValueIllegalErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110270, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9000
-     *tc.name testGetOriginQuotaPromiseValueNullErr
-     *tc.desc test interface of getOriginQuota (promise) with origin null
+    /**
+     * @tc.name   testGetOriginQuotaPromiseValueNullErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9000
+     * @tc.desc   test interface of getOriginQuota (promise) with origin null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetOriginQuotaPromiseValueNullErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetOriginQuotaPromiseValueNullErr";
@@ -225,10 +267,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetOriginQuotaPromiseValueNullErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110290, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9100
-     *tc.name testGetOriginUsageCallbackValueErr
-     *tc.desc test interface of getOriginUsage (callback) with origin wrong
+    /**
+     * @tc.name   testGetOriginUsageCallbackValueErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9100
+     * @tc.desc   test interface of getOriginUsage (callback) with origin wrong
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetOriginUsageCallbackValueErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetOriginUsageCallbackValueErr";
@@ -237,10 +282,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetOriginUsageCallbackValueErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110310, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9200
-     *tc.name testGetOriginUsageCallbackValueIllegalErr
-     *tc.desc test interface of getOriginUsage (callback) with origin illegal
+    /**
+     * @tc.name   testGetOriginUsageCallbackValueIllegalErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9200
+     * @tc.desc   test interface of getOriginUsage (callback) with origin illegal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetOriginUsageCallbackValueIllegalErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetOriginUsageCallbackValueIllegalErr";
@@ -249,10 +297,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetOriginUsageCallbackValueIllegalErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110330, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9300
-     *tc.name testGetOriginUsageCallbackValueNullErr
-     *tc.desc test interface of getOriginUsage (callback) with origin null
+    /**
+     * @tc.name   testGetOriginUsageCallbackValueNullErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9300
+     * @tc.desc   test interface of getOriginUsage (callback) with origin null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetOriginUsageCallbackValueNullErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetOriginUsageCallbackValueNullErr";
@@ -261,10 +312,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetOriginUsageCallbackValueNullErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110350, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9400
-     *tc.name testGetOriginUsagePromiseValueErr
-     *tc.desc test interface of getOriginUsage (promise) with origin wrong
+    /**
+     * @tc.name   testGetOriginUsagePromiseValueErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9400
+     * @tc.desc   test interface of getOriginUsage (promise) with origin wrong
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetOriginUsagePromiseValueErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetOriginUsagePromiseValueErr";
@@ -273,10 +327,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetOriginUsagePromiseValueErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110370, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9500
-     *tc.name testGetOriginUsagePromiseValueIllegalErr
-     *tc.desc test interface of getOriginUsage (promise) with origin illegal
+    /**
+     * @tc.name   testGetOriginUsagePromiseValueIllegalErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9500
+     * @tc.desc   test interface of getOriginUsage (promise) with origin illegal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetOriginUsagePromiseValueIllegalErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetOriginUsagePromiseValueIllegalErr";
@@ -285,10 +342,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetOriginUsagePromiseValueIllegalErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110390, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9600
-     *tc.name testGetOriginUsagePromiseValueNullErr
-     *tc.desc test interface of getOriginUsage (promise) with origin null
+    /**
+     * @tc.name   testGetOriginUsagePromiseValueNullErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9600
+     * @tc.desc   test interface of getOriginUsage (promise) with origin null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetOriginUsagePromiseValueNullErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetOriginUsagePromiseValueNullErr";
@@ -297,10 +357,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetOriginUsagePromiseValueNullErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110410, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9700
-     *tc.name testAllowGeolocationValueErr
-     *tc.desc test interface of allowGeolocation with origin wrong
+    /**
+     * @tc.name   testAllowGeolocationValueErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9700
+     * @tc.desc   test interface of allowGeolocation with origin wrong
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAllowGeolocationValueErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitAllowGeolocationValueErr";
@@ -309,10 +372,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testAllowGeolocationValueErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110430, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9800
-     *tc.name testAllowGeolocationValueIllegalErr
-     *tc.desc test interface of allowGeolocation with origin illegal
+    /**
+     * @tc.name   testAllowGeolocationValueIllegalErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9800
+     * @tc.desc   test interface of allowGeolocation with origin illegal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAllowGeolocationValueIllegalErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitAllowGeolocationValueIllegalErr";
@@ -321,10 +387,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testAllowGeolocationValueIllegalErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110450, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9900
-     *tc.name testAllowGeolocationValueNullErr
-     *tc.desc test interface of allowGeolocation with origin null
+    /**
+     * @tc.name   testAllowGeolocationValueNullErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_9900
+     * @tc.desc   test interface of allowGeolocation with origin null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAllowGeolocationValueNullErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitAllowGeolocationValueNullErr";
@@ -333,10 +402,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testAllowGeolocationValueNullErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110470, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_0100
-     *tc.name testDeleteGeolocationValueErr
-     *tc.desc test interface of deleteGeolocation with origin wrong
+    /**
+     * @tc.name   testDeleteGeolocationValueErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_0100
+     * @tc.desc   test interface of deleteGeolocation with origin wrong
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDeleteGeolocationValueErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitDeleteGeolocationValueErr";
@@ -345,10 +417,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testDeleteGeolocationValueErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110490, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_0200
-     *tc.name testDeleteGeolocationValueIllegalErr
-     *tc.desc test interface of deleteGeolocation with origin illegal
+    /**
+     * @tc.name   testDeleteGeolocationValueIllegalErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_0200
+     * @tc.desc   test interface of deleteGeolocation with origin illegal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDeleteGeolocationValueIllegalErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitDeleteGeolocationValueIllegalErr";
@@ -357,10 +432,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testDeleteGeolocationValueIllegalErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110510, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_0300
-     *tc.name testDeleteGeolocationValueNullErr
-     *tc.desc test interface of deleteGeolocation with origin null
+    /**
+     * @tc.name   testDeleteGeolocationValueNullErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_0300
+     * @tc.desc   test interface of deleteGeolocation with origin null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDeleteGeolocationValueNullErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitDeleteGeolocationValueNullErr";
@@ -369,10 +447,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testDeleteGeolocationValueNullErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110530, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_0400
-     *tc.name testGetAccessibleGeolocationCallbackValueErr
-     *tc.desc test interface of getAccessibleGeolocation (callback) with origin wrong
+    /**
+     * @tc.name   testGetAccessibleGeolocationCallbackValueErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_0400
+     * @tc.desc   test interface of getAccessibleGeolocation (callback) with origin wrong
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAccessibleGeolocationCallbackValueErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetAccessibleGeolocationCallbackValueErr";
@@ -381,10 +462,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetAccessibleGeolocationCallbackValueErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110550, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_0500
-     *tc.name testGetAccessibleGeolocationCallbackValueIllegalErr
-     *tc.desc test interface of getAccessibleGeolocation (callback) with origin illegal
+    /**
+     * @tc.name   testGetAccessibleGeolocationCallbackValueIllegalErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_0500
+     * @tc.desc   test interface of getAccessibleGeolocation (callback) with origin illegal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAccessibleGeolocationCallbackValueIllegalErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetAccessibleGeolocationCallbackValueIllegalErr";
@@ -393,10 +477,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetAccessibleGeolocationCallbackValueIllegalErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110570, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_0600
-     *tc.name testGetAccessibleGeolocationCallbackValueNullErr
-     *tc.desc test interface of getAccessibleGeolocation (callback) with origin null
+    /**
+     * @tc.name   testGetAccessibleGeolocationCallbackValueNullErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_0600
+     * @tc.desc   test interface of getAccessibleGeolocation (callback) with origin null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAccessibleGeolocationCallbackValueNullErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetAccessibleGeolocationCallbackValueNullErr";
@@ -405,10 +492,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetAccessibleGeolocationCallbackValueNullErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110590, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_0700
-     *tc.name testGetAccessibleGeolocationPromiseValueErr
-     *tc.desc test interface of getAccessibleGeolocation (promise) with origin wrong
+    /**
+     * @tc.name   testGetAccessibleGeolocationPromiseValueErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_0700
+     * @tc.desc   test interface of getAccessibleGeolocation (promise) with origin wrong
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAccessibleGeolocationPromiseValueErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetAccessibleGeolocationPromiseValueErr";
@@ -417,10 +507,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetAccessibleGeolocationPromiseValueErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110610, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_0800
-     *tc.name testGetAccessibleGeolocationPromiseValueIllegalErr
-     *tc.desc test interface of getAccessibleGeolocation (promise) with origin illegal
+    /**
+     * @tc.name   testGetAccessibleGeolocationPromiseValueIllegalErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_0800
+     * @tc.desc   test interface of getAccessibleGeolocation (promise) with origin illegal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAccessibleGeolocationPromiseValueIllegalErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetAccessibleGeolocationPromiseValueIllegalErr";
@@ -429,10 +522,13 @@ export default function webViewContCookieToGeoLocationError() {
       Utils.registerEvent("testGetAccessibleGeolocationPromiseValueIllegalErr", "Invalid origin.The origin format must follow defined in RFC 6454.", 110630, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_0900
-     *tc.name testGetAccessibleGeolocationPromiseValueNullErr
-     *tc.desc test interface of getAccessibleGeolocation (promise) with origin null
+    /**
+     * @tc.name   testGetAccessibleGeolocationPromiseValueNullErr
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_0900
+     * @tc.desc   test interface of getAccessibleGeolocation (promise) with origin null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAccessibleGeolocationPromiseValueNullErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetAccessibleGeolocationPromiseValueNullErr";

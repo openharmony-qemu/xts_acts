@@ -48,12 +48,12 @@ export default function onVisibleAreaApproximateChangeTest() {
     });
 
     /**
-     * @tc.number    onVisibleAreaApproximateChange_0010
-     * @tc.name      Test the api of onVisibleAreaApproximateChange
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   onVisibleAreaApproximateChange_0010
+     * @tc.number onVisibleAreaApproximateChange_0010
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onVisibleAreaApproximateChange_0010', Level.LEVEL0, async (done: Function) => {
       console.info('onVisibleAreaApproximateChange_0010 START');

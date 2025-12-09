@@ -26,51 +26,51 @@ export default function customComponentConstraintSizeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONSTRAINTSIZE_0100
-     * @tc.name       : testCustomComponentConstraintSize001
-     * @tc.desc       : testing constraintSize for column with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentConstraintSize001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONSTRAINTSIZE_0100
+     * @tc.desc   testing constraintSize for column with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentConstraintSize001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentConstraintSize001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONSTRAINTSIZE_0200
-     * @tc.name       : testCustomComponentConstraintSize002
-     * @tc.desc       : testing constraintSize for column with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentConstraintSize002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONSTRAINTSIZE_0200
+     * @tc.desc   testing constraintSize for column with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentConstraintSize002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentConstraintSize002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONSTRAINTSIZE_0300
-     * @tc.name       : testCustomComponentConstraintSize003
-     * @tc.desc       : testing constraintSize for column with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentConstraintSize003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONSTRAINTSIZE_0300
+     * @tc.desc   testing constraintSize for column with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentConstraintSize003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentConstraintSize003()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONSTRAINTSIZE_0400
-     * @tc.name       : testCustomComponentConstraintSize004
-     * @tc.desc       : testing constraintSize for column with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentConstraintSize004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONSTRAINTSIZE_0400
+     * @tc.desc   testing constraintSize for column with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentConstraintSize004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentConstraintSize004()).assertEqual(0)

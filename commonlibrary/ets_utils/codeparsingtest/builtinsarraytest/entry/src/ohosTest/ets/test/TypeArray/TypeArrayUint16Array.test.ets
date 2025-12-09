@@ -49,12 +49,12 @@ export default function typeArrayUint16ArrayTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   TypeArrayUint16Array0001
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0001
-     * @tc.name TypeArrayUint16Array0001
-     * @tc.desc Construct Uint16Array from length and verify basic properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Construct Uint16Array from length and verify basic properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint16Array0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Uint16Array(3);
@@ -67,12 +67,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0002
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0002
-     * @tc.name TypeArrayUint16Array0002
-     * @tc.desc Construct Uint16Array from regular array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Construct Uint16Array from regular array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint16Array0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Uint16Array([100, 200, 300]);
@@ -84,12 +84,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0003
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0003
-     * @tc.name TypeArrayUint16Array0003
-     * @tc.desc Construct Uint16Array from ArrayBuffer with offset
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Construct Uint16Array from ArrayBuffer with offset
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(8);
@@ -102,12 +102,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0004
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0004
-     * @tc.name TypeArrayUint16Array0004
-     * @tc.desc Verify storage of Uint16Array maximum value (65535)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify storage of Uint16Array maximum value (65535)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(1);
@@ -117,12 +117,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0005
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0005
-     * @tc.name TypeArrayUint16Array0005
-     * @tc.desc Verify truncation handling for values exceeding 65535
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify truncation handling for values exceeding 65535
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(1);
@@ -132,12 +132,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0006
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0006
-     * @tc.name TypeArrayUint16Array0006
-     * @tc.desc Verify unsigned conversion handling for negative values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify unsigned conversion handling for negative values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(1);
@@ -147,12 +147,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0007
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0007
-     * @tc.name TypeArrayUint16Array0007
-     * @tc.desc Verify modification synchronization for views sharing same ArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify modification synchronization for views sharing same ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(4);
@@ -166,12 +166,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0008
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0008
-     * @tc.name TypeArrayUint16Array0008
-     * @tc.desc Create Int32Array view from Uint16Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create Int32Array view from Uint16Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const uint16Arr = new Uint16Array([0x1234, 0x5678]);
@@ -182,12 +182,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0009
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0009
-     * @tc.name TypeArrayUint16Array0009
-     * @tc.desc Copy data from regular array using set method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Copy data from regular array using set method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(5);
@@ -202,12 +202,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0010
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0010
-     * @tc.name TypeArrayUint16Array0010
-     * @tc.desc Copy data with offset using set method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Copy data with offset using set method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(6);
@@ -224,12 +224,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0011
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0011
-     * @tc.name TypeArrayUint16Array0011
-     * @tc.desc Handle out-of-range values with set method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Handle out-of-range values with set method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(3);
@@ -242,12 +242,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0012
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0012
-     * @tc.name TypeArrayUint16Array0012
-     * @tc.desc Create subarray sharing buffer with subarray method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create subarray sharing buffer with subarray method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
@@ -261,12 +261,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0013
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0013
-     * @tc.name TypeArrayUint16Array0013
-     * @tc.desc Create non-shared copy with slice method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create non-shared copy with slice method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([10, 20, 30]);
@@ -279,12 +279,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0014
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0014
-     * @tc.name TypeArrayUint16Array0014
-     * @tc.desc Fill array with valid single value using fill method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Fill array with valid single value using fill method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(4);
@@ -298,12 +298,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0015
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0015
-     * @tc.name TypeArrayUint16Array0015
-     * @tc.desc Fill array with out-of-range value using fill method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Fill array with out-of-range value using fill method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(3);
@@ -316,12 +316,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0016
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0016
-     * @tc.name TypeArrayUint16Array0016
-     * @tc.desc Transform elements with map method (within range)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Transform elements with map method (within range)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([100, 200, 300]);
@@ -334,12 +334,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0017
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0017
-     * @tc.name TypeArrayUint16Array0017
-     * @tc.desc Transform elements with map method (out-of-range truncation)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Transform elements with map method (out-of-range truncation)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([30000, 40000, 50000]);
@@ -352,12 +352,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0018
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0018
-     * @tc.name TypeArrayUint16Array0018
-     * @tc.desc Filter elements greater than specified value with filter method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Filter elements greater than specified value with filter method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([1000, 5000, 10000, 20000, 5000]);
@@ -369,12 +369,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0019
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0019
-     * @tc.name TypeArrayUint16Array0019
-     * @tc.desc Calculate sum of elements with reduce method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Calculate sum of elements with reduce method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([100, 200, 300, 400]);
@@ -388,12 +388,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0020
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0020
-     * @tc.name TypeArrayUint16Array0020
-     * @tc.desc Verify if all elements are less than specified value with every method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify if all elements are less than specified value with every method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([5000, 10000, 15000]);
@@ -407,12 +407,12 @@ export default function typeArrayUint16ArrayTest() {
       expect(arr[2]).assertEqual(15000);
     })
     /**
+     * @tc.name   TypeArrayUint16Array0021
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0021
-     * @tc.name TypeArrayUint16Array0021
-     * @tc.desc Check existence of element with some method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check existence of element with some method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([15000, 30000, 45000]);
@@ -423,12 +423,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0022
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0022
-     * @tc.name TypeArrayUint16Array0022
-     * @tc.desc Find element with find method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Find element with find method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([8000, 16000, 24000, 16000, 32000]);
@@ -439,12 +439,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0023
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0023
-     * @tc.name TypeArrayUint16Array0023
-     * @tc.desc Find element index with findIndex method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Find element index with findIndex method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([8000, 16000, 24000, 16000, 32000]);
@@ -456,12 +456,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0024
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0024
-     * @tc.name TypeArrayUint16Array0024
-     * @tc.desc Check element existence with includes method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check element existence with includes method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([5000, 10000, 65535, 30000]);
@@ -471,12 +471,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0025
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0025
-     * @tc.name TypeArrayUint16Array0025
-     * @tc.desc Find first occurrence index with indexOf method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Find first occurrence index with indexOf method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([3000, 6000, 9000, 6000, 12000]);
@@ -488,12 +488,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0026
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0026
-     * @tc.name TypeArrayUint16Array0026
-     * @tc.desc Find last occurrence index with lastIndexOf method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Find last occurrence index with lastIndexOf method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([3000, 6000, 9000, 6000, 12000]);
@@ -503,12 +503,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0027
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0027
-     * @tc.name TypeArrayUint16Array0027
-     * @tc.desc Concatenate elements to string with join method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Concatenate elements to string with join method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([1234, 5678, 9012]);
@@ -518,12 +518,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0028
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0028
-     * @tc.name TypeArrayUint16Array0028
-     * @tc.desc Use values iterator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Use values iterator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([2000, 4000, 6000]);
@@ -536,12 +536,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0029
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0029
-     * @tc.name TypeArrayUint16Array0029
-     * @tc.desc Use keys iterator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Use keys iterator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([500, 1000, 1500]);
@@ -551,12 +551,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0030
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0030
-     * @tc.name TypeArrayUint16Array0030
-     * @tc.desc Use entries iterator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Use entries iterator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([1111, 2222, 3333]);
@@ -568,12 +568,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0031
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0031
-     * @tc.name TypeArrayUint16Array0031
-     * @tc.desc Convert to regular array with Array.from
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Convert to regular array with Array.from
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const uint16Arr = new Uint16Array([7000, 14000, 21000]);
@@ -584,12 +584,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0032
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0032
-     * @tc.name TypeArrayUint16Array0032
-     * @tc.desc Convert to regular array with spread operator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Convert to regular array with spread operator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const uint16Arr = new Uint16Array([8000, 16000, 24000]);
@@ -600,12 +600,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0033
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0033
-     * @tc.name TypeArrayUint16Array0033
-     * @tc.desc Convert to Uint32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Convert to Uint32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const uint16Arr = new Uint16Array([32000, 64000, 65535]);
@@ -616,12 +616,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0034
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0034
-     * @tc.name TypeArrayUint16Array0034
-     * @tc.desc Convert to Int16Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Convert to Int16Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const uint16Arr = new Uint16Array([32767, 32768, 65535]);
@@ -632,12 +632,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0035
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0035
-     * @tc.name TypeArrayUint16Array0035
-     * @tc.desc Convert to string with toString method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Convert to string with toString method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([10000, 20000, 30000]);
@@ -646,12 +646,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0036
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0036
-     * @tc.name TypeArrayUint16Array0036
-     * @tc.desc Convert to string with toLocaleString method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Convert to string with toLocaleString method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([12345, 6789, 54321]);
@@ -660,12 +660,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0037
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0037
-     * @tc.name TypeArrayUint16Array0037
-     * @tc.desc Interaction with JSON.stringify
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Interaction with JSON.stringify
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([100, 200, 300, 400]);
@@ -674,12 +674,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0038
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0038
-     * @tc.name TypeArrayUint16Array0038
-     * @tc.desc Handle NaN value storage
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Handle NaN value storage
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(2);
@@ -691,12 +691,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0039
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0039
-     * @tc.name TypeArrayUint16Array0039
-     * @tc.desc Handle Infinity value storage
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Handle Infinity value storage
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(2);
@@ -708,12 +708,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0040
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0040
-     * @tc.name TypeArrayUint16Array0040
-     * @tc.desc Verify buffer property of Uint16Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify buffer property of Uint16Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([500, 1000, 1500]);
@@ -722,12 +722,12 @@ export default function typeArrayUint16ArrayTest() {
       expect(buffer.byteLength).assertEqual(6);
     })
     /**
+     * @tc.name   TypeArrayUint16Array0041
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0041
-     * @tc.name TypeArrayUint16Array0041
-     * @tc.desc Handle empty Uint16Array (length 0)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Handle empty Uint16Array (length 0)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(0);
@@ -737,12 +737,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0042
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0042
-     * @tc.name TypeArrayUint16Array0042
-     * @tc.desc Create from Int8Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create from Int8Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const int8Arr = new Int8Array([-1, 127, -128]);
@@ -752,12 +752,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0043
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0043
-     * @tc.name TypeArrayUint16Array0043
-     * @tc.desc Create from Float32Array with value conversion
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create from Float32Array with value conversion
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const float32Arr = new Float32Array([-1.5, 32768.5, 70000.9]);
@@ -767,12 +767,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0044
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0044
-     * @tc.name TypeArrayUint16Array0044
-     * @tc.desc Create view with DataView and interact with Uint16Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create view with DataView and interact with Uint16Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint16Array0044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(8);
@@ -787,12 +787,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0045
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0045
-     * @tc.name TypeArrayUint16Array0045
-     * @tc.desc Handle large array (接近最大长度)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Handle large array (接近最大长度)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint16Array0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const largeLength = Math.pow(2, 27) - 1;
@@ -805,12 +805,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0046
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0046
-     * @tc.name TypeArrayUint16Array0046
-     * @tc.desc 16-bit audio sample processing
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   16-bit audio sample processing
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint16Array0046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const convertToSigned = (samples: Uint16Array) => {
@@ -823,12 +823,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0047
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0047
-     * @tc.name TypeArrayUint16Array0047
-     * @tc.desc 16-bit grayscale image processing
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   16-bit grayscale image processing
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint16Array0047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const applyThreshold = (pixels: Uint16Array, threshold: number) => {
@@ -842,12 +842,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0048
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0048
-     * @tc.name TypeArrayUint16Array0048
-     * @tc.desc Network protocol 16-bit field handling
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Network protocol 16-bit field handling
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint16Array0048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const createPacket = (flags: number, length: number, checksum: number) => {
@@ -862,12 +862,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0049
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0049
-     * @tc.name TypeArrayUint16Array0049
-     * @tc.desc 16-bit value processing in compression algorithm
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   16-bit value processing in compression algorithm
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint16Array0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const deltaEncode16 = (data: Uint16Array) => {
@@ -886,12 +886,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0050
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0050
-     * @tc.name TypeArrayUint16Array0050
-     * @tc.desc Sensor data processing with 16-bit precision
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Sensor data processing with 16-bit precision
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint16Array0050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const calibrateData = (rawData: Uint16Array, offset: number) => {
@@ -905,12 +905,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0051
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0051
-     * @tc.name TypeArrayUint16Array0051
-     * @tc.desc Game coordinate system with 16-bit values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Game coordinate system with 16-bit values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint16Array0051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const translateCoordinates = (coords: Uint16Array, x: number, y: number) => {
@@ -929,12 +929,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0052
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0052
-     * @tc.name TypeArrayUint16Array0052
-     * @tc.desc Binary file format parsing with 16-bit fields
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Binary file format parsing with 16-bit fields
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint16Array0052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const parseHeader = (data: Uint16Array) => {
@@ -953,12 +953,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0053
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0053
-     * @tc.name TypeArrayUint16Array0053
-     * @tc.desc Handling invalid buffer offset in constructor
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Handling invalid buffer offset in constructor
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint16Array0053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(8);
@@ -973,12 +973,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0054
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0054
-     * @tc.name TypeArrayUint16Array0054
-     * @tc.desc Test iteration with for...of loop
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test iteration with for...of loop
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([5, 10, 15, 20]);
@@ -991,12 +991,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0055
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0055
-     * @tc.name TypeArrayUint16Array0055
-     * @tc.desc Test sort method with numeric comparison
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test sort method with numeric comparison
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([30000, 10000, 50000, 20000]);
@@ -1006,12 +1006,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0056
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0056
-     * @tc.name TypeArrayUint16Array0056
-     * @tc.desc Test reverse method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test reverse method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
@@ -1021,12 +1021,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0058
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0058
-     * @tc.name TypeArrayUint16Array0058
-     * @tc.desc Test buffer resizing effects (indirectly)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test buffer resizing effects (indirectly)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint16Array0058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr = new Uint16Array([1, 2, 3]);
@@ -1041,12 +1041,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0059
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0059
-     * @tc.name TypeArrayUint16Array0059
-     * @tc.desc Test with large values that wrap around
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test with large values that wrap around
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(3);
@@ -1059,12 +1059,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0060
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0060
-     * @tc.name TypeArrayUint16Array0060
-     * @tc.desc Test multiple views with different offsets
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test multiple views with different offsets
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint16Array0060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(10);
@@ -1080,12 +1080,12 @@ export default function typeArrayUint16ArrayTest() {
       expect(view2.length).assertEqual(2);
     })
     /**
+     * @tc.name   TypeArrayUint16Array0061
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0061
-     * @tc.name TypeArrayUint16Array0061
-     * @tc.desc Test subarray modification affects original array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test subarray modification affects original array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const original = new Uint16Array([100, 200, 300, 400, 500]);
@@ -1104,12 +1104,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0062
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0062
-     * @tc.name TypeArrayUint16Array0062
-     * @tc.desc Test slice modification does not affect original array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test slice modification does not affect original array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const original = new Uint16Array([100, 200, 300, 400, 500]);
@@ -1128,12 +1128,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0063
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0063
-     * @tc.name TypeArrayUint16Array0063
-     * @tc.desc Test fill method with start and end indices
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test fill method with start and end indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([1, 2, 3, 4, 5, 6]);
@@ -1149,12 +1149,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0064
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0064
-     * @tc.name TypeArrayUint16Array0064
-     * @tc.desc Test map method with out-of-range values and clamping
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test map method with out-of-range values and clamping
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([30000, 40000, 50000]);
@@ -1168,12 +1168,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0065
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0065
-     * @tc.name TypeArrayUint16Array0065
-     * @tc.desc Test reduce method with initial value and overflow handling
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test reduce method with initial value and overflow handling
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([65530, 10, 5]);
@@ -1182,12 +1182,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0066
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0066
-     * @tc.name TypeArrayUint16Array0066
-     * @tc.desc Test every method with range check
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test every method with range check
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0066', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr1 = new Uint16Array([1000, 2000, 3000, 4000]);
@@ -1208,12 +1208,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0067
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0067
-     * @tc.name TypeArrayUint16Array0067
-     * @tc.desc Test some method with value existence check
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test some method with value existence check
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr1 = new Uint16Array([1234, 5678, 9012]);
@@ -1235,12 +1235,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0068
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0068
-     * @tc.name TypeArrayUint16Array0068
-     * @tc.desc Test find method with conditional check
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test find method with conditional check
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([5000, 10000, 15000, 20000, 25000]);
@@ -1252,12 +1252,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0069
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0069
-     * @tc.name TypeArrayUint16Array0069
-     * @tc.desc Test findIndex method with conditional check
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test findIndex method with conditional check
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([5000, 10000, 15000, 20000, 25000]);
@@ -1269,12 +1269,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0070
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0070
-     * @tc.name TypeArrayUint16Array0070
-     * @tc.desc Test includes method with out-of-range value
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test includes method with out-of-range value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([32767, 32768, 65535]);
@@ -1288,12 +1288,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0071
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0071
-     * @tc.name TypeArrayUint16Array0071
-     * @tc.desc Test indexOf method with duplicate values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test indexOf method with duplicate values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([100, 200, 100, 300, 100]);
@@ -1309,12 +1309,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0072
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0072
-     * @tc.name TypeArrayUint16Array0072
-     * @tc.desc Test lastIndexOf method with duplicate values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test lastIndexOf method with duplicate values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([100, 200, 100, 300, 100]);
@@ -1330,12 +1330,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0073
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0073
-     * @tc.name TypeArrayUint16Array0073
-     * @tc.desc Test join method with empty separator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test join method with empty separator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([123, 456, 789]);
@@ -1348,12 +1348,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0074
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0074
-     * @tc.name TypeArrayUint16Array0074
-     * @tc.desc Test values iterator with for...of loop
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test values iterator with for...of loop
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([2000, 4000, 6000, 8000]);
@@ -1372,12 +1372,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0075
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0075
-     * @tc.name TypeArrayUint16Array0075
-     * @tc.desc Test keys iterator with for...of loop
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test keys iterator with for...of loop
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([2000, 4000, 6000, 8000]);
@@ -1396,12 +1396,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0076
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0076
-     * @tc.name TypeArrayUint16Array0076
-     * @tc.desc Test entries iterator with for...of loop
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test entries iterator with for...of loop
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([2000, 4000, 6000]);
@@ -1418,12 +1418,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0077
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0077
-     * @tc.name TypeArrayUint16Array0077
-     * @tc.desc Test Array.from with mapping function
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Array.from with mapping function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const uint16Arr = new Uint16Array([100, 200, 300]);
@@ -1437,12 +1437,12 @@ export default function typeArrayUint16ArrayTest() {
       expect(mappedRegArr[2]).assertEqual(600);
     })
     /**
+     * @tc.name   TypeArrayUint16Array0079
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0079
-     * @tc.name TypeArrayUint16Array0079
-     * @tc.desc Test conversion to Int32Array with value preservation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test conversion to Int32Array with value preservation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const uint16Arr = new Uint16Array([32767, 32768, 65535]);
@@ -1454,12 +1454,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0080
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0080
-     * @tc.name TypeArrayUint16Array0080
-     * @tc.desc Test toLocaleString with different locales
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test toLocaleString with different locales
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([12345, 6789]);
@@ -1468,12 +1468,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0081
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0081
-     * @tc.name TypeArrayUint16Array0081
-     * @tc.desc Test JSON.stringify with nested Uint16Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test JSON.stringify with nested Uint16Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const data: GeneratedObjectLiteralInterface_2 = { id: 1, values: new Uint16Array([100, 200, 300]) };
@@ -1486,12 +1486,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0082
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0082
-     * @tc.name TypeArrayUint16Array0082
-     * @tc.desc Test handling of non-integer values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test handling of non-integer values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(3);
@@ -1506,12 +1506,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0083
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0083
-     * @tc.name TypeArrayUint16Array0083
-     * @tc.desc Test buffer byteLength matching element count
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test buffer byteLength matching element count
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([5, 10, 15, 20, 25]);
@@ -1527,12 +1527,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0084
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0084
-     * @tc.name TypeArrayUint16Array0084
-     * @tc.desc Test subarray with negative indices
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test subarray with negative indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
@@ -1551,12 +1551,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0085
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0085
-     * @tc.name TypeArrayUint16Array0085
-     * @tc.desc Test slice with negative indices
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test slice with negative indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0085', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
@@ -1575,12 +1575,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0086
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0086
-     * @tc.name TypeArrayUint16Array0086
-     * @tc.desc Test fill with negative start index
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test fill with negative start index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0086', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
@@ -1595,12 +1595,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0087
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0087
-     * @tc.name TypeArrayUint16Array0087
-     * @tc.desc Test map with negative value conversion
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test map with negative value conversion
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0087', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([100, 200, 300]);
@@ -1613,12 +1613,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0088
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0088
-     * @tc.name TypeArrayUint16Array0088
-     * @tc.desc Test filter with value range check
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test filter with value range check
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([5000, 15000, 25000, 35000, 45000]);
@@ -1630,12 +1630,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0089
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0089
-     * @tc.name TypeArrayUint16Array0089
-     * @tc.desc Test reduce with value transformation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test reduce with value transformation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([10, 20, 30, 40]);
@@ -1644,12 +1644,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0090
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0090
-     * @tc.name TypeArrayUint16Array0090
-     * @tc.desc Test every with value type check
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test every with value type check
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0090', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([100, 200, 300]);
@@ -1660,12 +1660,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0091
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0091
-     * @tc.name TypeArrayUint16Array0091
-     * @tc.desc Test some with value type check
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test some with value type check
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0091', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([100, 200, 300]);
@@ -1676,12 +1676,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0092
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0092
-     * @tc.name TypeArrayUint16Array0092
-     * @tc.desc Test find with value transformation check
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test find with value transformation check
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0092', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([500, 1000, 1500, 2000]);
@@ -1690,12 +1690,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0093
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0093
-     * @tc.name TypeArrayUint16Array0093
-     * @tc.desc Test findIndex with value transformation check
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test findIndex with value transformation check
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0093', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([500, 1000, 1500, 2000]);
@@ -1704,12 +1704,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0094
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0094
-     * @tc.name TypeArrayUint16Array0094
-     * @tc.desc Test includes with value transformation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test includes with value transformation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([1000, 2000, 3000]);
@@ -1720,12 +1720,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0095
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0095
-     * @tc.name TypeArrayUint16Array0095
-     * @tc.desc Test indexOf with start index beyond array length
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test indexOf with start index beyond array length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0095', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([100, 200, 300]);
@@ -1736,12 +1736,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0096
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0096
-     * @tc.name TypeArrayUint16Array0096
-     * @tc.desc Test lastIndexOf with start index below 0
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test lastIndexOf with start index below 0
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0096', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([100, 200, 100, 300]);
@@ -1752,12 +1752,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0097
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0097
-     * @tc.name TypeArrayUint16Array0097
-     * @tc.desc Test join with multi-character separator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test join with multi-character separator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0097', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([123, 456, 789]);
@@ -1766,12 +1766,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0098
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0098
-     * @tc.name TypeArrayUint16Array0098
-     * @tc.desc Test entries iterator with destructuring
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test entries iterator with destructuring
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0098', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([500, 1000, 1500]);
@@ -1788,12 +1788,12 @@ export default function typeArrayUint16ArrayTest() {
       expect(entries[2]).assertEqual('2:1500');
     })
     /**
+     * @tc.name   TypeArrayUint16Array0099
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0099
-     * @tc.name TypeArrayUint16Array0099
-     * @tc.desc Test Array.from with empty Uint16Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Array.from with empty Uint16Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0099', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyUint16 = new Uint16Array(0);
@@ -1803,12 +1803,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0100
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0100
-     * @tc.name TypeArrayUint16Array0100
-     * @tc.desc Test spread operator with empty Uint16Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test spread operator with empty Uint16Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyUint16 = new Uint16Array(0);
@@ -1818,12 +1818,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0101
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0101
-     * @tc.name TypeArrayUint16Array0101
-     * @tc.desc Test conversion to Uint8Array with value truncation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test conversion to Uint8Array with value truncation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const uint16Arr = new Uint16Array([255, 256, 300, 65535]);
@@ -1837,12 +1837,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0102
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0102
-     * @tc.name TypeArrayUint16Array0102
-     * @tc.desc Test toString with maximum and minimum values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test toString with maximum and minimum values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0102', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([0, 65535, 32767, 32768]);
@@ -1855,12 +1855,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0104
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0104
-     * @tc.name TypeArrayUint16Array0104
-     * @tc.desc Test JSON.stringify with large Uint16Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test JSON.stringify with large Uint16Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const largeArr = new Uint16Array(100);
@@ -1874,12 +1874,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0106
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0106
-     * @tc.name TypeArrayUint16Array0106
-     * @tc.desc Test buffer sharing with nested subarrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test buffer sharing with nested subarrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint16Array0106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const original = new Uint16Array([1, 2, 3, 4, 5, 6]);
@@ -1902,12 +1902,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0107
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0107
-     * @tc.name TypeArrayUint16Array0107
-     * @tc.desc Test slice with start index equal to array length
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test slice with start index equal to array length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0107', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([100, 200, 300]);
@@ -1917,12 +1917,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0108
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0108
-     * @tc.name TypeArrayUint16Array0108
-     * @tc.desc Test fill with end index less than start index
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test fill with end index less than start index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0108', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
@@ -1937,12 +1937,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0109
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0109
-     * @tc.name TypeArrayUint16Array0109
-     * @tc.desc Test map with return value exceeding Uint16 range multiple times
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test map with return value exceeding Uint16 range multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0109', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([10000, 20000, 30000]);
@@ -1955,12 +1955,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0110
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0110
-     * @tc.name TypeArrayUint16Array0110
-     * @tc.desc Test filter with empty result
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test filter with empty result
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([100, 200, 300]);
@@ -1970,12 +1970,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0111
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0111
-     * @tc.name TypeArrayUint16Array0111
-     * @tc.desc Test reduce with empty array and initial value
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test reduce with empty array and initial value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Uint16Array(0);
@@ -1984,12 +1984,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0112
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0112
-     * @tc.name TypeArrayUint16Array0112
-     * @tc.desc Test every with empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test every with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Uint16Array(0);
@@ -1997,12 +1997,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0113
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0113
-     * @tc.name TypeArrayUint16Array0113
-     * @tc.desc Test some with empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test some with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Uint16Array(0);
@@ -2010,12 +2010,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0114
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0114
-     * @tc.name TypeArrayUint16Array0114
-     * @tc.desc Test find with empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test find with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Uint16Array(0);
@@ -2024,12 +2024,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0115
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0115
-     * @tc.name TypeArrayUint16Array0115
-     * @tc.desc Test findIndex with empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test findIndex with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Uint16Array(0);
@@ -2038,12 +2038,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0116
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0116
-     * @tc.name TypeArrayUint16Array0116
-     * @tc.desc Test includes with empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test includes with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0116', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Uint16Array(0);
@@ -2051,12 +2051,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0117
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0117
-     * @tc.name TypeArrayUint16Array0117
-     * @tc.desc Test indexOf with empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test indexOf with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Uint16Array(0);
@@ -2064,12 +2064,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0118
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0118
-     * @tc.name TypeArrayUint16Array0118
-     * @tc.desc Test lastIndexOf with empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test lastIndexOf with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Uint16Array(0);
@@ -2077,12 +2077,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0119
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0119
-     * @tc.name TypeArrayUint16Array0119
-     * @tc.desc Test join with empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test join with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Uint16Array(0);
@@ -2090,12 +2090,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0120
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0120
-     * @tc.name TypeArrayUint16Array0120
-     * @tc.desc Test entries iterator with empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test entries iterator with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0120', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Uint16Array(0);
@@ -2103,12 +2103,12 @@ export default function typeArrayUint16ArrayTest() {
       expect(entries.length).assertEqual(0);
     })
     /**
+     * @tc.name   TypeArrayUint16Array0121
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0121
-     * @tc.name TypeArrayUint16Array0121
-     * @tc.desc Test values iterator with empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test values iterator with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0121', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Uint16Array(0);
@@ -2117,12 +2117,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0122
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0122
-     * @tc.name TypeArrayUint16Array0122
-     * @tc.desc Test keys iterator with empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test keys iterator with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Uint16Array(0);
@@ -2131,12 +2131,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0123
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0123
-     * @tc.name TypeArrayUint16Array0123
-     * @tc.desc Test Uint16Array with maximum safe integer length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Uint16Array with maximum safe integer length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint16Array0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const maxSafe = Number.MAX_SAFE_INTEGER;
@@ -2149,12 +2149,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0124
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0124
-     * @tc.name TypeArrayUint16Array0124
-     * @tc.desc Test set method with array larger than target
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test set method with array larger than target
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(3);
@@ -2168,12 +2168,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0125
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0125
-     * @tc.name TypeArrayUint16Array0125
-     * @tc.desc Test set method with negative offset
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test set method with negative offset
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0125', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(3);
@@ -2187,12 +2187,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0126
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0126
-     * @tc.name TypeArrayUint16Array0126
-     * @tc.desc Test subarray with start index beyond array length
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test subarray with start index beyond array length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([1, 2, 3]);
@@ -2201,12 +2201,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0127
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0127
-     * @tc.name TypeArrayUint16Array0127
-     * @tc.desc Test slice with start index beyond array length
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test slice with start index beyond array length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0127', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([1, 2, 3]);
@@ -2215,12 +2215,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0130
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0130
-     * @tc.name TypeArrayUint16Array0130
-     * @tc.desc Test filter with function returning non-boolean
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test filter with function returning non-boolean
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0130', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([100, 200, 300]);
@@ -2232,12 +2232,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0132
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0132
-     * @tc.name TypeArrayUint16Array0132
-     * @tc.desc Test every with function returning non-boolean
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test every with function returning non-boolean
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0132', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([100, 200, 300]);
@@ -2246,12 +2246,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0136
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0136
-     * @tc.name TypeArrayUint16Array0136
-     * @tc.desc Test Uint16Array with ArrayBuffer of maximum size
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Uint16Array with ArrayBuffer of maximum size
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint16Array0136', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, () => {
       const maxBufferSize = 2**32 - 1;
@@ -2266,12 +2266,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0137
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0137
-     * @tc.name TypeArrayUint16Array0137
-     * @tc.desc Test subarray with same start and end indices
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test subarray with same start and end indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0137', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([1, 2, 3, 4]);
@@ -2280,12 +2280,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0138
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0138
-     * @tc.name TypeArrayUint16Array0138
-     * @tc.desc Test slice with same start and end indices
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test slice with same start and end indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0138', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([1, 2, 3, 4]);
@@ -2294,12 +2294,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0139
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0139
-     * @tc.name TypeArrayUint16Array0139
-     * @tc.desc Test fill with start index equal to array length
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test fill with start index equal to array length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0139', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([1, 2, 3]);
@@ -2308,12 +2308,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0140
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0140
-     * @tc.name TypeArrayUint16Array0140
-     * @tc.desc Test map with empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test map with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0140', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Uint16Array(0);
@@ -2322,12 +2322,12 @@ export default function typeArrayUint16ArrayTest() {
       expect(mapped instanceof Uint16Array).assertEqual(true);
     })
     /**
+     * @tc.name   TypeArrayUint16Array0141
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0141
-     * @tc.name TypeArrayUint16Array0141
-     * @tc.desc Test filter with empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test filter with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0141', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Uint16Array(0);
@@ -2337,12 +2337,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0142
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0142
-     * @tc.name TypeArrayUint16Array0142
-     * @tc.desc Test reduce without initial value on non-empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test reduce without initial value on non-empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0142', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([10, 20, 30]);
@@ -2351,12 +2351,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0143
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0143
-     * @tc.name TypeArrayUint16Array0143
-     * @tc.desc Test reduce without initial value on empty array (should throw)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test reduce without initial value on empty array (should throw)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0143', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Uint16Array(0);
@@ -2370,12 +2370,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0144
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0144
-     * @tc.name TypeArrayUint16Array0144
-     * @tc.desc Test includes with value that wraps around
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test includes with value that wraps around
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0144', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([65535]);
@@ -2383,12 +2383,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0145
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0145
-     * @tc.name TypeArrayUint16Array0145
-     * @tc.desc Test indexOf with value that wraps around
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test indexOf with value that wraps around
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0145', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([65535, 100, 65535]);
@@ -2397,12 +2397,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0146
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0146
-     * @tc.name TypeArrayUint16Array0146
-     * @tc.desc Test lastIndexOf with value that wraps around
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test lastIndexOf with value that wraps around
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0146', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([65535, 100, 65535]);
@@ -2411,12 +2411,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0147
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0147
-     * @tc.name TypeArrayUint16Array0147
-     * @tc.desc Test join with empty array and custom separator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test join with empty array and custom separator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0147', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Uint16Array(0);
@@ -2424,12 +2424,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0148
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0148
-     * @tc.name TypeArrayUint16Array0148
-     * @tc.desc Test values iterator with single element array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test values iterator with single element array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0148', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([12345]);
@@ -2439,12 +2439,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0149
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0149
-     * @tc.name TypeArrayUint16Array0149
-     * @tc.desc Test keys iterator with single element array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test keys iterator with single element array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0149', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([12345]);
@@ -2454,12 +2454,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0150
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0150
-     * @tc.name TypeArrayUint16Array0150
-     * @tc.desc Test entries iterator with single element array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test entries iterator with single element array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0150', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([12345]);
@@ -2469,12 +2469,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0151
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0151
-     * @tc.name TypeArrayUint16Array0151
-     * @tc.desc Test Array.from with mapping function on empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Array.from with mapping function on empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0151', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyUint16 = new Uint16Array(0);
@@ -2483,12 +2483,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0152
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0152
-     * @tc.name TypeArrayUint16Array0152
-     * @tc.desc Test spread operator with single element array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test spread operator with single element array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0152', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const uint16Arr = new Uint16Array([54321]);
@@ -2498,12 +2498,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0153
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0153
-     * @tc.name TypeArrayUint16Array0153
-     * @tc.desc Test conversion to Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test conversion to Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0153', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const uint16Arr = new Uint16Array([0, 32768, 65535]);
@@ -2515,12 +2515,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0154
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0154
-     * @tc.name TypeArrayUint16Array0154
-     * @tc.desc Test toString with single element array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test toString with single element array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0154', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([9876]);
@@ -2528,12 +2528,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0155
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0155
-     * @tc.name TypeArrayUint16Array0155
-     * @tc.desc Test toLocaleString with single element
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test toLocaleString with single element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0155', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([12345]);
@@ -2541,12 +2541,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0156
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0156
-     * @tc.name TypeArrayUint16Array0156
-     * @tc.desc Test JSON.stringify with single element array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test JSON.stringify with single element array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0156', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([123]);
@@ -2554,12 +2554,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0158
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0158
-     * @tc.name TypeArrayUint16Array0158
-     * @tc.desc Test buffer sharing with different TypedArrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test buffer sharing with different TypedArrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint16Array0158', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const buffer = new ArrayBuffer(8);
@@ -2571,12 +2571,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0159
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0159
-     * @tc.name TypeArrayUint16Array0159
-     * @tc.desc Test slice with end index beyond array length
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test slice with end index beyond array length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0159', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([10, 20, 30]);
@@ -2586,12 +2586,12 @@ export default function typeArrayUint16ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayUint16Array0160
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT16ARRAY_0160
-     * @tc.name TypeArrayUint16Array0160
-     * @tc.desc Test fill with end index beyond array length
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test fill with end index beyond array length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint16Array0160', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([1, 2, 3, 4]);

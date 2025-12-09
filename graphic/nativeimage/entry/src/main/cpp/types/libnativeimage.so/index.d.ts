@@ -100,3 +100,4 @@ export const oHNativeImageAcquireLatestNativeWindowBufferAbNormal01: () => numbe
 export const oHNativeImageAcquireLatestNativeWindowBufferAbNormal02: () => number;
 export const oHNativeImageAcquireLatestNativeWindowBufferAbNormal03: () => number;
 export const oHNativeImageAcquireLatestNativeWindowBufferCall: () => number;
+export const oHNativeImageCreateWithSingleBufferModeChangeTextureTarget: () => number;

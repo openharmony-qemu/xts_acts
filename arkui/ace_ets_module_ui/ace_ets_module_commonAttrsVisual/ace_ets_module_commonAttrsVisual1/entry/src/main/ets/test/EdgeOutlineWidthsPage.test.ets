@@ -45,9 +45,12 @@ export default function EdgeOutlineWidthsPage() {
     });
 
     /**
+     * @tc.name   EdgeOutlineWidthsPage_0100
      * @tc.number EdgeOutlineWidthsPage_0100
-     * @tc.name EdgeOutlineWidthsPage_0100
-     * @tc.desc test EdgeOutlineWidths and EdgeColors
+     * @tc.desc   test EdgeOutlineWidths and EdgeColors
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('EdgeOutlineWidthsPage_0100', Level.LEVEL2, async (done: Function) => {
       console.info('EdgeOutlineWidthsPage_0100 START');

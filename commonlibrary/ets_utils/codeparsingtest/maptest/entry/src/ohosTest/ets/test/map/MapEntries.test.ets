@@ -90,12 +90,12 @@ export default function MapEntriesTest() {
 
 
     /**
+     * @tc.name   testMapEntries0001
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0001
-     * @tc.name testMapEntries0001
-     * @tc.desc Verify entries() returns iterator for non-empty Map
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify entries() returns iterator for non-empty Map
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testMapEntries0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const map = new Map<string, number>([['a', 1], ['b', 2]]);
@@ -106,12 +106,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0002
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0002
-     * @tc.name testMapEntries0002
-     * @tc.desc Verify entries() returns empty iterator for empty Map
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify entries() returns empty iterator for empty Map
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testMapEntries0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const map = new Map<number, string>();
@@ -120,12 +120,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0003
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0003
-     * @tc.name testMapEntries0003
-     * @tc.desc Verify entries() returns entries in insertion order
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify entries() returns entries in insertion order
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testMapEntries0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const map = new Map<number, string>();
@@ -138,12 +138,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0004
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0004
-     * @tc.name testMapEntries0004
-     * @tc.desc Verify entries() works with number keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify entries() works with number keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testMapEntries0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const map = new Map<number, string>([[1, 'one'], [2, 'two']]);
@@ -152,12 +152,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0005
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0005
-     * @tc.name testMapEntries0005
-     * @tc.desc Verify entries() works with string keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify entries() works with string keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testMapEntries0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const map = new Map<string, number>([['one', 1], ['two', 2]]);
@@ -166,12 +166,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0006
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0006
-     * @tc.name testMapEntries0006
-     * @tc.desc Verify entries() works with boolean keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with boolean keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<boolean, string>([[true, 'yes'], [false, 'no']]);
@@ -180,12 +180,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0007
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0007
-     * @tc.name testMapEntries0007
-     * @tc.desc Verify entries() works with object keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with object keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const key1: GeneratedObjectLiteralInterface_1 = { id: 1 };
@@ -196,12 +196,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0008
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0008
-     * @tc.name testMapEntries0008
-     * @tc.desc Verify entries() works with Symbol keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Symbol keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const entries0008 = MapentriesTest008();
@@ -213,12 +213,12 @@ export default function MapEntriesTest() {
 
 
     /**
+     * @tc.name   testMapEntries0009
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0009
-     * @tc.name testMapEntries0009
-     * @tc.desc Verify entries() works with BigInt keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with BigInt keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       let entries0009 = MapentriesTest009()
@@ -226,12 +226,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0010
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0010
-     * @tc.name testMapEntries0010
-     * @tc.desc Verify entries() reflects changes to Map after iterator creation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() reflects changes to Map after iterator creation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<number, string>([[1, 'one']]);
@@ -245,12 +245,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0011
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0011
-     * @tc.name testMapEntries0011
-     * @tc.desc Verify entries() iterator does not include deleted entries
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() iterator does not include deleted entries
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<number, string>([[1, 'one'], [2, 'two'], [3, 'three']]);
@@ -264,12 +264,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0012
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0012
-     * @tc.name testMapEntries0012
-     * @tc.desc Verify entries() works with Map containing null values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing null values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, null>([['a', null], ['b', null]]);
@@ -278,12 +278,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0013
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0013
-     * @tc.name testMapEntries0013
-     * @tc.desc Verify entries() works with Map containing undefined values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing undefined values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, undefined>([['a', undefined], ['b', undefined]]);
@@ -292,12 +292,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0014
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0014
-     * @tc.name testMapEntries0014
-     * @tc.desc Verify entries() works with Map containing object values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing object values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const value1: GeneratedObjectLiteralInterface_2 = { name: 'Alice' };
@@ -308,12 +308,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0015
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0015
-     * @tc.name testMapEntries0015
-     * @tc.desc Verify entries() works with large Map (100 entries)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with large Map (100 entries)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<number, number>();
@@ -328,12 +328,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0016
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0016
-     * @tc.name testMapEntries0016
-     * @tc.desc Verify entries() iterator can be iterated with for...of loop
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() iterator can be iterated with for...of loop
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, number>([['a', 1], ['b', 2], ['c', 3]]);
@@ -347,12 +347,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0017
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0017
-     * @tc.name testMapEntries0017
-     * @tc.desc Verify entries() returns new iterator each time it's called
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() returns new iterator each time it's called
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<number, string>([[1, 'one'], [2, 'two']]);
@@ -364,12 +364,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0018
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0018
-     * @tc.name testMapEntries0018
-     * @tc.desc Verify entries() works with Map created from another Map
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map created from another Map
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const original = new Map<number, string>([[1, 'one'], [2, 'two']]);
@@ -379,12 +379,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0019
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0019
-     * @tc.name testMapEntries0019
-     * @tc.desc Verify entries() works with Map containing NaN keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing NaN keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       const map = new Map<number, string>([[NaN, 'not a number'], [NaN, 'another NaN']]);
@@ -394,12 +394,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0020
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0020
-     * @tc.name testMapEntries0020
-     * @tc.desc Verify entries() works with Map containing Date objects as keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing Date objects as keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const date1 = new Date('2023-01-01');
@@ -410,12 +410,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0021
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0021
-     * @tc.name testMapEntries0021
-     * @tc.desc Verify entries() works with Map containing RegExp objects as keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing RegExp objects as keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const key1 = /test/;
@@ -426,12 +426,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0022
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0022
-     * @tc.name testMapEntries0022
-     * @tc.desc Verify entries() iterator is not affected by value modifications
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() iterator is not affected by value modifications
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<number, string>([[1, 'one'], [2, 'two']]);
@@ -444,12 +444,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0023
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0023
-     * @tc.name testMapEntries0023
-     * @tc.desc Verify entries() works with Map containing function keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing function keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const key1 = () => 'func1';
@@ -460,12 +460,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0024
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0024
-     * @tc.name testMapEntries0024
-     * @tc.desc Verify entries() iterator can be restarted by creating new iterator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() iterator can be restarted by creating new iterator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, number>([['a', 1], ['b', 2]]);
@@ -477,12 +477,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0025
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0025
-     * @tc.name testMapEntries0025
-     * @tc.desc Verify entries() works with Map containing array keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing array keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const key1 = [1, 2];
@@ -493,12 +493,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0026
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0026
-     * @tc.name testMapEntries0026
-     * @tc.desc Verify entries() iterator throws error when Map is modified during iteration with invalid operation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() iterator throws error when Map is modified during iteration with invalid operation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       const map = new Map<number, string>([[1, 'one'], [2, 'two']]);
@@ -517,12 +517,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0027
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0027
-     * @tc.name testMapEntries0027
-     * @tc.desc Verify entries() works with Map containing nested Map as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing nested Map as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const nestedMap1 = new Map<string, number>([['a', 1]]);
@@ -533,12 +533,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0028
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0028
-     * @tc.name testMapEntries0028
-     * @tc.desc Verify entries() returns entries with same object reference for object values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() returns entries with same object reference for object values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       interface test0028 {
@@ -553,12 +553,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0029
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0029
-     * @tc.name testMapEntries0029
-     * @tc.desc Verify entries() works with Map containing 0 and -0 as distinct keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing 0 and -0 as distinct keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       const map = new Map<number, string>([[0, 'zero'], [-0, 'negative zero']]);
@@ -568,12 +568,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0030
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0030
-     * @tc.name testMapEntries0030
-     * @tc.desc Verify entries() iterator can be converted to array using spread operator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() iterator can be converted to array using spread operator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, boolean>([['active', true], ['visible', false]]);
@@ -583,12 +583,12 @@ export default function MapEntriesTest() {
 
 
     /**
+     * @tc.name   testMapEntries0031
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0031
-     * @tc.name testMapEntries0031
-     * @tc.desc Verify entries() works with Map containing typed array values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing typed array values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const value1 = new Uint8Array([1, 2, 3]);
@@ -599,12 +599,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0032
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0032
-     * @tc.name testMapEntries0032
-     * @tc.desc Verify entries() works with Map after multiple set and delete operations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map after multiple set and delete operations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<number, string>();
@@ -619,12 +619,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0033
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0033
-     * @tc.name testMapEntries0033
-     * @tc.desc Verify entries() iterator's next() method returns object with value and done properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify entries() iterator's next() method returns object with value and done properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('testMapEntries0033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       let entries0033 = MapentriesTest033()
@@ -635,12 +635,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0034
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0034
-     * @tc.name testMapEntries0034
-     * @tc.desc Verify entries() works with Map containing class instances as keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing class instances as keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       class KeyClass {
@@ -661,12 +661,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0035
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0035
-     * @tc.name testMapEntries0035
-     * @tc.desc Verify entries() works with Map containing weak references (WeakMap simulation)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing weak references (WeakMap simulation)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       interface test0035 {};
@@ -682,12 +682,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0036
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0036
-     * @tc.name testMapEntries0036
-     * @tc.desc Verify entries() works with Map containing empty string keys and values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing empty string keys and values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, string>([['', 'empty key'], ['key', '']]);
@@ -696,12 +696,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0037
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0037
-     * @tc.name testMapEntries0037
-     * @tc.desc Verify entries() iterator can be used in Array.from with mapping function
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() iterator can be used in Array.from with mapping function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<number, number>([[1, 10], [2, 20]]);
@@ -710,12 +710,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0038
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0038
-     * @tc.name testMapEntries0038
-     * @tc.desc Verify entries() works with Map containing Unicode characters in keys and values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing Unicode characters in keys and values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, string>([['café', 'coffee'], ['cœur', 'heart']]);
@@ -724,12 +724,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0039
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0039
-     * @tc.name testMapEntries0039
-     * @tc.desc Verify entries() works with Map containing Infinity and -Infinity as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing Infinity and -Infinity as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, number>([['inf', Infinity], ['ninf', -Infinity]]);
@@ -738,12 +738,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0040
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0040
-     * @tc.name testMapEntries0040
-     * @tc.desc Verify entries() works with very large Map (10,000 entries)
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with very large Map (10,000 entries)
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0040', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       let entries0040 = MapentriesTest040()
@@ -752,12 +752,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0041
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0041
-     * @tc.name testMapEntries0041
-     * @tc.desc Verify entries() works with Map containing Set objects as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing Set objects as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const set1 = new Set<number>([1, 2, 3]);
@@ -768,12 +768,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0042
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0042
-     * @tc.name testMapEntries0042
-     * @tc.desc Verify entries() works with Map containing WeakSet as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing WeakSet as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       interface test0042 {}
@@ -795,12 +795,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0043
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0043
-     * @tc.name testMapEntries0043
-     * @tc.desc Verify entries() works with Map containing WeakMap as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing WeakMap as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       interface test0043 {};
@@ -820,12 +820,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0044
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0044
-     * @tc.name testMapEntries0044
-     * @tc.desc Verify entries() works with Map containing DataView objects as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing DataView objects as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const buffer1 = new ArrayBuffer(8);
@@ -841,12 +841,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0045
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0045
-     * @tc.name testMapEntries0045
-     * @tc.desc Verify entries() works with Map containing ArrayBuffer as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing ArrayBuffer as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const ab1 = new ArrayBuffer(10);
@@ -858,12 +858,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0046
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0046
-     * @tc.name testMapEntries0046
-     * @tc.desc Verify entries() works with Map containing Error objects as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing Error objects as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const err1 = new Error('Error message');
@@ -875,12 +875,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0047
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0047
-     * @tc.name testMapEntries0047
-     * @tc.desc Verify entries() works with Map containing Promise objects as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing Promise objects as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       const promise1 = Promise.resolve('resolved');
@@ -892,12 +892,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0048
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0048
-     * @tc.name testMapEntries0048
-     * @tc.desc Verify entries() works with Map containing generator objects as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing generator objects as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       let entries0048 = MapentriesTest048()
@@ -906,12 +906,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0049
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0049
-     * @tc.name testMapEntries0049
-     * @tc.desc Verify entries() works with Map containing Proxy objects as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing Proxy objects as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       let entries0049 = MapentriesTest049()
@@ -920,12 +920,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0050
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0050
-     * @tc.name testMapEntries0050
-     * @tc.desc Verify entries() works with Map containing frozen objects as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing frozen objects as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       let entries0050 = MapentriesTest050()
@@ -934,12 +934,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0051
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0051
-     * @tc.name testMapEntries0051
-     * @tc.desc Verify entries() works with Map containing sealed objects as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing sealed objects as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       let entries0051 = MapentriesTest051()
@@ -948,12 +948,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0052
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0052
-     * @tc.name testMapEntries0052
-     * @tc.desc Verify entries() works with Map containing getter/setter objects as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing getter/setter objects as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       let entries0052 = MapentriesTest052()
@@ -962,12 +962,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0053
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0053
-     * @tc.name testMapEntries0053
-     * @tc.desc Verify entries() works with Map containing Symbol values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing Symbol values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const entries0053 = MapentriesTest053();
@@ -978,12 +978,12 @@ export default function MapEntriesTest() {
 
 
     /**
+     * @tc.name   testMapEntries0054
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0054
-     * @tc.name testMapEntries0054
-     * @tc.desc Verify entries() works with Map containing multi-line string values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing multi-line string values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<number, string>([
@@ -998,12 +998,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0055
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0055
-     * @tc.name testMapEntries0055
-     * @tc.desc Verify entries() works with Map containing special Unicode characters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing special Unicode characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, string>([
@@ -1020,12 +1020,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0056
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0056
-     * @tc.name testMapEntries0056
-     * @tc.desc Verify entries() works with Map containing null prototype objects as keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing null prototype objects as keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       const entries0056 = MapentriesTest056();
@@ -1041,12 +1041,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0057
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0057
-     * @tc.name testMapEntries0057
-     * @tc.desc Verify entries() works with Map containing numbers in scientific notation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing numbers in scientific notation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<number, number>([
@@ -1061,12 +1061,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0059
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0059
-     * @tc.name testMapEntries0059
-     * @tc.desc Verify entries() works with Map containing sparse arrays as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing sparse arrays as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const arr1: number[] = [];
@@ -1085,12 +1085,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0060
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0060
-     * @tc.name testMapEntries0060
-     * @tc.desc Verify entries() works with Map created from Object.entries()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map created from Object.entries()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       interface test0060 {
@@ -1108,12 +1108,12 @@ export default function MapEntriesTest() {
 
 
     /**
+     * @tc.name   testMapEntries0061
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0061
-     * @tc.name testMapEntries0061
-     * @tc.desc Verify entries() works with Map containing Map objects as keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing Map objects as keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       const key1 = new Map<number, string>([[1, 'one']]);
@@ -1124,12 +1124,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0062
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0062
-     * @tc.name testMapEntries0062
-     * @tc.desc Verify entries() works with Map containing Date objects with same time value
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing Date objects with same time value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       const date1 = new Date(2024, 0, 1);
@@ -1142,12 +1142,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0063
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0063
-     * @tc.name testMapEntries0063
-     * @tc.desc Verify entries() works with Map containing RegExp objects with same pattern
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing RegExp objects with same pattern
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       const regex1 = /test/;
@@ -1160,12 +1160,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0064
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0064
-     * @tc.name testMapEntries0064
-     * @tc.desc Verify entries() works with Map after clear()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map after clear()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<number, string>([[1, 'one'], [2, 'two']]);
@@ -1176,12 +1176,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0065
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0065
-     * @tc.name testMapEntries0065
-     * @tc.desc Verify entries() iterator continues correctly after partial iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() iterator continues correctly after partial iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const map = new Map<string, number>([['a', 1], ['b', 2], ['c', 3], ['d', 4]]);
@@ -1200,12 +1200,12 @@ export default function MapEntriesTest() {
 
 
     /**
+     * @tc.name   testMapEntries0066
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0066
-     * @tc.name testMapEntries0066
-     * @tc.desc Verify entries() works with Map containing class instances with same properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing class instances with same properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0066', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       class TestClass {
@@ -1227,12 +1227,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0067
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0067
-     * @tc.name testMapEntries0067
-     * @tc.desc Verify entries() works with Map containing ArrayBuffer views as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing ArrayBuffer views as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(16);
@@ -1250,12 +1250,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0068
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0068
-     * @tc.name testMapEntries0068
-     * @tc.desc Verify entries() works with Map containing function values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing function values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const func1 = () => 'result1';
@@ -1269,12 +1269,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0069
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0069
-     * @tc.name testMapEntries0069
-     * @tc.desc Verify entries() works with Map containing async function values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing async function values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (): Promise<void> => {
       const asyncFunc1 = async () => 'async1';
@@ -1294,12 +1294,12 @@ export default function MapEntriesTest() {
 
 
     /**
+     * @tc.name   testMapEntries0070
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0070
-     * @tc.name testMapEntries0070
-     * @tc.desc Verify entries() works with Map containing Symbol keys with same description
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing Symbol keys with same description
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       let entries0070 = MapentriesTest070()
@@ -1309,12 +1309,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0071
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0071
-     * @tc.name testMapEntries0071
-     * @tc.desc Verify entries() works with Map containing large string values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing large string values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // Create a large string (10,000 characters)
@@ -1327,12 +1327,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0072
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0072
-     * @tc.name testMapEntries0072
-     * @tc.desc Verify entries() works with Map containing typed array keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing typed array keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       const key1 = new Uint8Array([1, 2, 3]);
@@ -1346,12 +1346,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0073
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0073
-     * @tc.name testMapEntries0073
-     * @tc.desc Verify entries() works with Map containing Buffer objects (Node.js simulation)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing Buffer objects (Node.js simulation)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       // Simulating Buffer using Uint8Array for cross-environment compatibility
@@ -1364,12 +1364,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0074
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0074
-     * @tc.name testMapEntries0074
-     * @tc.desc Verify entries() works with Map containing Map that has been modified
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing Map that has been modified
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       const nestedMap = new Map<number, string>([[1, 'one']]);
@@ -1384,12 +1384,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0075
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0075
-     * @tc.name testMapEntries0075
-     * @tc.desc Verify entries() works with Map containing Proxy objects as keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing Proxy objects as keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       interface TargetObject {
@@ -1413,12 +1413,12 @@ export default function MapEntriesTest() {
 
 
     /**
+     * @tc.name   testMapEntries0076
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0076
-     * @tc.name testMapEntries0076
-     * @tc.desc Verify entries() works with Map containing Date objects with different time zones
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing Date objects with different time zones
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       // Create dates that represent the same moment in different time zones
@@ -1434,12 +1434,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0077
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0077
-     * @tc.name testMapEntries0077
-     * @tc.desc Verify entries() works with Map containing objects with custom toString
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing objects with custom toString
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       interface CustomToString {
@@ -1463,12 +1463,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0078
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0078
-     * @tc.name testMapEntries0078
-     * @tc.desc Verify entries() works with Map containing objects with custom valueOf
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing objects with custom valueOf
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       interface TestObject {
@@ -1493,12 +1493,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0079
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0079
-     * @tc.name testMapEntries0079
-     * @tc.desc Verify entries() works with Map containing very large integer values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing very large integer values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       let entries0079 = MapentriesTest079()
@@ -1506,12 +1506,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0080
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0080
-     * @tc.name testMapEntries0080
-     * @tc.desc Verify entries() works with Map containing mixed key types
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing mixed key types
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       let entries0080 = MapentriesTest080()
@@ -1519,12 +1519,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0081
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0081
-     * @tc.name testMapEntries0081
-     * @tc.desc Verify entries() works with Map containing objects with symbol properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing objects with symbol properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       let entries0081 = MapentriesTest081()
@@ -1534,12 +1534,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0082
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0082
-     * @tc.name testMapEntries0082
-     * @tc.desc Verify entries() works with Map containing Map entries converted from JSON
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing Map entries converted from JSON
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       let entries0082 = MapentriesTest082();
@@ -1547,12 +1547,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0083
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0083
-     * @tc.name testMapEntries0083
-     * @tc.desc Verify entries() works with Map containing DOM element simulations as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing DOM element simulations as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       // Simulate DOM elements
@@ -1566,12 +1566,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0084
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0084
-     * @tc.name testMapEntries0084
-     * @tc.desc Verify entries() works with Map containing error instances with stack traces
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing error instances with stack traces
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       try {
@@ -1588,12 +1588,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0085
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0085
-     * @tc.name testMapEntries0085
-     * @tc.desc Verify entries() works with Map containing iterable objects as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify entries() works with Map containing iterable objects as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testMapEntries0085', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       let entries0085 = MapentriesTest085()
@@ -1601,12 +1601,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0086
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0086
-     * @tc.name testMapEntries0086
-     * @tc.desc Verify entries() works with Map containing read-only properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing read-only properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0086', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       let entries0086 = MapentriesTest086();
@@ -1614,12 +1614,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0087
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0087
-     * @tc.name testMapEntries0087
-     * @tc.desc Verify entries() works with Map containing accessor properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing accessor properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0087', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       let entries0087 = MapentriesTest087()
@@ -1628,12 +1628,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0088
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0088
-     * @tc.name testMapEntries0088
-     * @tc.desc Verify entries() works with Map containing objects with prototype chain
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing objects with prototype chain
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       let entries0088 = MapentriesTest088()
@@ -1643,12 +1643,12 @@ export default function MapEntriesTest() {
 
 
     /**
+     * @tc.name   testMapEntries0090
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0090
-     * @tc.name testMapEntries0090
-     * @tc.desc Verify entries() works with Map containing objects with enumerable properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing objects with enumerable properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0090', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       let entries0090 = MapentriesTest090();
@@ -1657,12 +1657,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0091
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0091
-     * @tc.name testMapEntries0091
-     * @tc.desc Verify entries() works with Map containing classes as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing classes as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0091', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       let entries0091 = MapentriesTest091()
@@ -1671,12 +1671,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0092
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0092
-     * @tc.name testMapEntries0092
-     * @tc.desc Verify entries() works with Map containing objects with symbol methods
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing objects with symbol methods
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0092', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       let entries0092 = MapentriesTest092()
@@ -1685,12 +1685,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0093
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0093
-     * @tc.name testMapEntries0093
-     * @tc.desc Verify entries() works with Map containing objects with toJSON methods
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing objects with toJSON methods
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0093', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       let entries0093 = MapentriesTest093()
@@ -1698,12 +1698,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0094
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0094
-     * @tc.name testMapEntries0094
-     * @tc.desc Verify entries() works with Map containing objects with well-known symbols
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing objects with well-known symbols
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       let entries0094 = MapentriesTest094()
@@ -1711,12 +1711,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0095
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0095
-     * @tc.name testMapEntries0095
-     * @tc.desc Verify entries() works with Map containing generator functions as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing generator functions as values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0095', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       let entries0095 = MapentriesTest095();
@@ -1725,12 +1725,12 @@ export default function MapEntriesTest() {
 
 
     /**
+     * @tc.name   testMapEntries0097
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0097
-     * @tc.name testMapEntries0097
-     * @tc.desc Verify entries() works with Map containing objects with own and inherited properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing objects with own and inherited properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0097', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
 
@@ -1740,12 +1740,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0098
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0098
-     * @tc.name testMapEntries0098
-     * @tc.desc Verify entries() works with Map containing objects with computed property names
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing objects with computed property names
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0098', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       let entries0098 = MapentriesTest098()
@@ -1754,12 +1754,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0099
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0099
-     * @tc.name testMapEntries0099
-     * @tc.desc Verify entries() works with Map containing objects with symbol keys and values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing objects with symbol keys and values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0099', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       let entries0099 = MapentriesTest099()
@@ -1768,12 +1768,12 @@ export default function MapEntriesTest() {
     });
 
     /**
+     * @tc.name   testMapEntries0100
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0100
-     * @tc.name testMapEntries0100
-     * @tc.desc Verify entries() works with Map containing very deeply nested objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify entries() works with Map containing very deeply nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testMapEntries0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
 

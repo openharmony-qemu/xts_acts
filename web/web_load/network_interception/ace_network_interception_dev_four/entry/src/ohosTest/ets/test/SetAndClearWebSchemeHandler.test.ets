@@ -58,14 +58,14 @@ export default function setAndClearWebSchemeHandler() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SETANDCLEARWEBSCHEMEHANDLER_0100
-    * @tc.name       : setAndClearWebSchemeHandler0100
-    * @tc.desc       : test setAndClearWebSchemeHandler
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   setAndClearWebSchemeHandler0100
+     * @tc.number SUB_WEB_SETANDCLEARWEBSCHEMEHANDLER_0100
+     * @tc.desc   test setAndClearWebSchemeHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('setAndClearWebSchemeHandler0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("setAndClearWebSchemeHandler0100", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -78,14 +78,14 @@ export default function setAndClearWebSchemeHandler() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SETANDCLEARWEBSCHEMEHANDLER_0200
-    * @tc.name       : setAndClearWebSchemeHandler0200
-    * @tc.desc       : test setAndClearWebSchemeHandler
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   setAndClearWebSchemeHandler0200
+     * @tc.number SUB_WEB_SETANDCLEARWEBSCHEMEHANDLER_0200
+     * @tc.desc   test setAndClearWebSchemeHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('setAndClearWebSchemeHandler0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("setAndClearWebSchemeHandler0200", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -98,14 +98,14 @@ export default function setAndClearWebSchemeHandler() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SETANDCLEARWEBSCHEMEHANDLER_0300
-    * @tc.name       : setAndClearWebSchemeHandler0300
-    * @tc.desc       : test setAndClearWebSchemeHandler
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   setAndClearWebSchemeHandler0300
+     * @tc.number SUB_WEB_SETANDCLEARWEBSCHEMEHANDLER_0300
+     * @tc.desc   test setAndClearWebSchemeHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('setAndClearWebSchemeHandler0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("setAndClearWebSchemeHandler0300", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;

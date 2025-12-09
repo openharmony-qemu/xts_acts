@@ -42,13 +42,13 @@ export default function RichEditorOnDoubleClickTest() {
       done();
     });
 
-     /**
-     * @tc.number    RichEditorOnDoubleClickTest_0010
-     * @tc.name      RichEditorOnDoubleClickTest_0010
-     * @tc.desc      test RichEditorImageSpanOptions onHover: true
-     * @tc.level:    Level 0
-     * @tc.type : 
-     * @tc.size :
+    /**
+     * @tc.name   RichEditorOnDoubleClickTest_0010
+     * @tc.number RichEditorOnDoubleClickTest_0010
+     * @tc.desc   test RichEditorImageSpanOptions onHover: true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RichEditorOnDoubleClickTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('RichEditorOnDoubleClickTest_0010 START');
@@ -67,13 +67,13 @@ export default function RichEditorOnDoubleClickTest() {
       done();
     });
 
-     /**
-     * @tc.number    RichEditorOnDoubleClickTest_0020
-     * @tc.name      RichEditorOnDoubleClickTest_0020
-     * @tc.desc      test RichEditorImageSpanOptions onHover: false
-     * @tc.level:    Level 0
-     * @tc.type : 
-     * @tc.size :
+    /**
+     * @tc.name   RichEditorOnDoubleClickTest_0020
+     * @tc.number RichEditorOnDoubleClickTest_0020
+     * @tc.desc   test RichEditorImageSpanOptions onHover: false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RichEditorOnDoubleClickTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('RichEditorOnDoubleClickTest_0020 START');

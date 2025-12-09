@@ -116,13 +116,13 @@ describe("SensorJsTest_sensor_41", function () {
     const SERVICE_EXCEPTION_MSG = "Service exception.Possible causes:" +
         "1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception."
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0010
-     * @tc.name: newAmbientLight_SensorJsTest001
-     * @tc.desc: Functional Use Cases
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest001
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0010
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("newAmbientLight_SensorJsTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('---------newAmbientLight_SensorJsTest001--------------');
@@ -148,13 +148,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0020
-     * @tc.name: newAmbientLight_SensorJsTest002
-     * @tc.desc: Illegal ID passed in
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest002
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0020
+     * @tc.desc   Illegal ID passed in
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newAmbientLight_SensorJsTest002--------------');
@@ -185,13 +185,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0030
-     * @tc.name: newAmbientLight_SensorJsTest003
-     * @tc.desc: For normal scenarios
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest003
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0030
+     * @tc.desc   For normal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newAmbientLight_SensorJsTest003--------------');
@@ -219,13 +219,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0040
-     * @tc.name: newAmbientLight_SensorJsTest004
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest004
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0040
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newAmbientLight_SensorJsTest004--------------');
@@ -268,13 +268,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0050
-     * @tc.name: newAmbientLight_SensorJsTest005
-     * @tc.desc: Once Normal Subscription Scenario Use Case
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest005
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0050
+     * @tc.desc   Once Normal Subscription Scenario Use Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'newAmbientLight_SensorJsTest005'
@@ -299,13 +299,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0060
-     * @tc.name: newAmbientLight_SensorJsTest006
-     * @tc.desc: Use case of illegal parameter passed into once interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest006
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0060
+     * @tc.desc   Use case of illegal parameter passed into once interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'newAmbientLight_SensorJsTest006'
@@ -338,13 +338,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0070
-     * @tc.name: newAmbientLight_SensorJsTest007
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest007
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0070
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'newAmbientLight_SensorJsTest007'
@@ -381,13 +381,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0080
-     * @tc.name: newAmbientLight_SensorJsTest008
-     * @tc.desc: Use case of illegal parameter passed into off interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest008
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0080
+     * @tc.desc   Use case of illegal parameter passed into off interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'newAmbientLight_SensorJsTest008'
@@ -415,13 +415,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0090
-     * @tc.name: newAmbientLight_SensorJsTest009
-     * @tc.desc: Unsubscribe directly without waiting after starting subscription
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest009
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0090
+     * @tc.desc   Unsubscribe directly without waiting after starting subscription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'newAmbientLight_SensorJsTest009'
@@ -461,13 +461,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0100
-     * @tc.name: newAmbientLight_SensorJsTest010
-     * @tc.desc:SensorId1000000 of incoming exception
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest010
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0100
+     * @tc.desc   SensorId1000000 of incoming exception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'newAmbientLight_SensorJsTest010'
@@ -497,13 +497,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0110
-     * @tc.name: newAmbientLight_SensorJsTest011
-     * @tc.desc:Call interface multiple times
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest011
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0110
+     * @tc.desc   Call interface multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'newAmbientLight_SensorJsTest011'
@@ -557,13 +557,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0120
-     * @tc.name: newAmbientLight_SensorJsTest012
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest025
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0120
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("newAmbientLight_SensorJsTest025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         TAG = 'newAmbientLight_SensorJsTest012'
@@ -591,13 +591,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0130
-     * @tc.name: newAmbientLight_SensorJsTest013
-     * @tc.desc:Call on interface and once interface respectively, and use an off interface to close
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest013
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0130
+     * @tc.desc   Call on interface and once interface respectively, and use an off interface to close
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newAmbientLight_SensorJsTest013--------------');
@@ -652,13 +652,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0140
-     * @tc.name: newAmbientLight_SensorJsTest014
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest014
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0140
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newAmbientLight_SensorJsTest014--------------');
@@ -715,13 +715,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0150
-     * @tc.name: newAmbientLight_SensorJsTest015
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest015
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0150
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newAmbientLight_SensorJsTest015--------------');
@@ -766,13 +766,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-     /*
-     * @tc.number: SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0160
-     * @tc.name: newAmbientLight_SensorJsTest016
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest016
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0160
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newAmbientLight_SensorJsTest016--------------');
@@ -810,13 +810,13 @@ describe("SensorJsTest_sensor_41", function () {
     }
     })
 
-     /*
-     * @tc.number: SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0170
-     * @tc.name: newAmbientLight_SensorJsTest017
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest017
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0170
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newAmbientLight_SensorJsTest017--------------');
@@ -854,13 +854,13 @@ describe("SensorJsTest_sensor_41", function () {
     }
     })
 
-     /*
-     * @tc.number: SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0180
-     * @tc.name: newAmbientLight_SensorJsTest018
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest018
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0180
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newAmbientLight_SensorJsTest018--------------');
@@ -891,13 +891,13 @@ describe("SensorJsTest_sensor_41", function () {
     }
     })
 
-     /*
-     * @tc.number: SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0190
-     * @tc.name: newAmbientLight_SensorJsTest019
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest019
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0190
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newAmbientLight_SensorJsTest019--------------');
@@ -929,13 +929,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0200
-     * @tc.name: newAmbientLight_SensorJsTest020
-     * @tc.desc: Functional Use Cases
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest020
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0200
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newAmbientLight_SensorJsTest020--------------');
@@ -970,13 +970,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0210
-     * @tc.name: newAmbientLight_SensorJsTest021
-     * @tc.desc: Illegal ID passed in
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest021
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0210
+     * @tc.desc   Illegal ID passed in
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'newAmbientLight_SensorJsTest021'
@@ -1012,13 +1012,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0220
-     * @tc.name: newAmbientLight_SensorJsTest022
-     * @tc.desc: For normal scenarios
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest022
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0220
+     * @tc.desc   For normal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newAmbientLight_SensorJsTest022--------------');
@@ -1055,13 +1055,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0230
-     * @tc.name: newAmbientLight_SensorJsTest023
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest023
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0230
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newAmbientLight_SensorJsTest023--------------');
@@ -1093,13 +1093,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0240
-     * @tc.name: newAmbientLight_SensorJsTest024
-     * @tc.desc: Once Normal Subscription Scenario Use Case
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest024
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0240
+     * @tc.desc   Once Normal Subscription Scenario Use Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'newAmbientLight_SensorJsTest024'
@@ -1136,13 +1136,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0250
-     * @tc.name: newAmbientLight_SensorJsTest025
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest025
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0250
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newAmbientLight_SensorJsTest025--------------');
@@ -1221,13 +1221,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0260
-     * @tc.name: newAmbientLight_SensorJsTest026
-     * @tc.desc: Once Normal Subscription Scenario Use Case
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest026
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0260
+     * @tc.desc   Once Normal Subscription Scenario Use Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = 'newAmbientLight_SensorJsTest026'
@@ -1278,13 +1278,13 @@ describe("SensorJsTest_sensor_41", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0270
-     * @tc.name: newAmbientLight_SensorJsTest027
-     * @tc.desc: Functional Use Cases
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAmbientLight_SensorJsTest027
+     * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0270
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAmbientLight_SensorJsTest027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newAmbientLight_SensorJsTest027--------------');

@@ -41,12 +41,12 @@ export default function DecimalTest033() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_33_001
-     * @tc.name      : Decimal_mod_Func_33_001
-     * @tc.desc      : Test mod
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_mod_Func_33_001
+     * @tc.number DECIMAL_TEST_33_001
+     * @tc.desc   Test mod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_mod_Func_33_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set ({
@@ -72,12 +72,12 @@ export default function DecimalTest033() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_33_002
-     * @tc.name      : Decimal_mod_Func_33_002
-     * @tc.desc      : Test mod
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_mod_Func_33_002
+     * @tc.number DECIMAL_TEST_33_002
+     * @tc.desc   Test mod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_mod_Func_33_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set ({
@@ -108,12 +108,12 @@ export default function DecimalTest033() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_33_003
-     * @tc.name      : Decimal_mod_Func_33_003
-     * @tc.desc      : Test mod
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_mod_Func_33_003
+     * @tc.number DECIMAL_TEST_33_003
+     * @tc.desc   Test mod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_mod_Func_33_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_mod_001('4.649378943629298120865999754037420765850004956622433023174e+987', '-8.06433839e+21', '7.10669696e+21', 44, 4);
@@ -134,12 +134,12 @@ export default function DecimalTest033() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_33_004
-     * @tc.name      : Decimal_mod_Func_33_004
-     * @tc.desc      : Test mod
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_mod_Func_33_004
+     * @tc.number DECIMAL_TEST_33_004
+     * @tc.desc   Test mod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_mod_Func_33_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_mod_001('4.0937805605767803276628345776693834523568082109865317580e+7653', '4129.795194087170', '9.9197199795059e+2', 78, 0);
@@ -160,12 +160,12 @@ export default function DecimalTest033() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_33_005
-     * @tc.name      : Decimal_mod_Func_33_005
-     * @tc.desc      : Test mod
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_mod_Func_33_005
+     * @tc.number DECIMAL_TEST_33_005
+     * @tc.desc   Test mod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_mod_Func_33_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_mod_001('-2.9501e+1031', '-5.705094676024e+32', '-3.086833450968e+32', 38, 0);
@@ -186,12 +186,12 @@ export default function DecimalTest033() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_33_006
-     * @tc.name      : Decimal_mod_Func_33_006
-     * @tc.desc      : Test mod
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_mod_Func_33_006
+     * @tc.number DECIMAL_TEST_33_006
+     * @tc.desc   Test mod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_mod_Func_33_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_mod_001('-6.887177370604424697705428668658450e+36', '-7.67098e+3101', '-6.88717737060442469770542866865845e+36', 73, 1);
@@ -212,12 +212,12 @@ export default function DecimalTest033() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_33_007
-     * @tc.name      : Decimal_mod_Func_33_007
-     * @tc.desc      : Test mod
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_mod_Func_33_007
+     * @tc.number DECIMAL_TEST_33_007
+     * @tc.desc   Test mod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_mod_Func_33_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_mod_001('7.01029485594801768569517050720798941155721968259835932500e+9422', '-7.0642669512907646431409065185107769129961433230267e+65', '2.2427484434740226146829404720536384416432051622105e+65', 95, 1);
@@ -238,12 +238,12 @@ export default function DecimalTest033() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_33_008
-     * @tc.name      : Decimal_mod_Func_33_008
-     * @tc.desc      : Test mod
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_mod_Func_33_008
+     * @tc.number DECIMAL_TEST_33_008
+     * @tc.desc   Test mod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_mod_Func_33_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_mod_001('3.6343105960435681326882097841415419173146739156748857909293e+163', '-21', '1.5e+1', 34, 0);
@@ -264,12 +264,12 @@ export default function DecimalTest033() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_33_009
-     * @tc.name      : Decimal_mod_Func_33_009
-     * @tc.desc      : Test mod
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_mod_Func_33_009
+     * @tc.number DECIMAL_TEST_33_009
+     * @tc.desc   Test mod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_mod_Func_33_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_mod_001('-2.672585214604e+621', '-9.578201948955624059202e+62', '-5.08879650726473396428e+61', 35, 4);
@@ -290,12 +290,12 @@ export default function DecimalTest033() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_33_010
-     * @tc.name      : Decimal_mod_Func_33_010
-     * @tc.desc      : Test mod
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_mod_Func_33_010
+     * @tc.number DECIMAL_TEST_33_010
+     * @tc.desc   Test mod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_mod_Func_33_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_mod_001('-8.2373007776535315311267037638881860091e+40', '-5.757730498009786912193794e+37', '-3.7461654995362466895783438881860091e+37', 89, 1);
@@ -311,12 +311,12 @@ export default function DecimalTest033() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_33_011
-     * @tc.name      : Decimal_mod_Func_33_011
-     * @tc.desc      : Test mod
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_mod_Func_33_011
+     * @tc.number DECIMAL_TEST_33_011
+     * @tc.desc   Test mod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_mod_Func_33_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_mod_001('-3.3610512896674974771860856952304666e+76', '9.82609790457683994410', '-5.4089915183757222993e+0', 91, 3);
@@ -335,12 +335,12 @@ export default function DecimalTest033() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_33_012
-     * @tc.name      : Decimal_mod_Func_33_012
-     * @tc.desc      : Test mod
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_mod_Func_33_012
+     * @tc.number DECIMAL_TEST_33_012
+     * @tc.desc   Test mod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_mod_Func_33_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set ({

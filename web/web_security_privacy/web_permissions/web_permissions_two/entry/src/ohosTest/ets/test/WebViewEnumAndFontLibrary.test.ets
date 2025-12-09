@@ -61,14 +61,14 @@ export default function WebViewEnumAndFontLibrary() {
 
 
 
-    /*
-    * @tc.number     : SUB_WEB_DATABASEACCESSTRUE_0100
-    * @tc.name       : testDatabaseAccessTrue001
-    * @tc.desc       : test DatabaseAccessTrue
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testDatabaseAccessTrue001
+     * @tc.number SUB_WEB_DATABASEACCESSTRUE_0100
+     * @tc.desc   test DatabaseAccessTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDatabaseAccessTrue001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitDatabaseAccessTrue", 160930)
       Utils.registerEvent("testDatabaseAccessTrue001", '"openDatabase"', 160940, done);

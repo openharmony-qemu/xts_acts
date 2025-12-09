@@ -22,14 +22,14 @@ import {
   ClickEvent,
   Web
 } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import webView from '@ohos.web.webview'
+import { State } from '@ohos.arkui.stateManagement';
+import webView from '@ohos.web.webview';
 import { BusinessError, RecordData } from '@ohos.base';
 import emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
-import { UIContext, Router } from '@ohos.arkui.UIContext'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -44,6 +44,9 @@ struct Index {
   @State step: number = -2;
   @State factor: number = 1;
   @State errorCode: string = '0';
+  @State webResult: string = ' ';
+  @State receivedFromHtml: string = 'Display received message send from HTML';
+  @State ports: Array<webView.WebMessagePort> = new Array<webView.WebMessagePort>()
 
   aboutToAppear() {
     console.info('Entry aboutToAppear');
@@ -56,11 +59,12 @@ struct Index {
   }
 
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
-    console.info(':web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      if (eventData.data != null && (eventData.data as Record<string , RecordData>)?.['ACTION'] != null) {
-        this.str = '' + (eventData.data as Record<string , RecordData>)?.['ACTION'];
+      const data = eventData.data as Record<string, RecordData>;
+      if (data != null && data['ACTION'] != null) {
+        let strValue: string = String(data['ACTION']);
+        this.str = strValue;
       }
     }
   }
@@ -143,11 +147,82 @@ struct Index {
               }
               break;
             }
+            case "emitPostMessage": {
+              try {
+                this.controllerNull.createWebMessagePorts()[1].onMessageEvent((result: webView.WebMessage) => {
+                  let msg = 'Got msg from HTML:';
+                  if (typeof (result) == "string") {
+                    console.log("received string message from html5, string is:" + result);
+                    msg = msg + result;
+                  } else if (typeof (result) == "object") {
+                    if (result instanceof ArrayBuffer) {
+                      console.log("received arraybuffer from html5, length is:" + result.byteLength);
+                      msg = msg + "lenght is " + result.byteLength;
+                    } else {
+                      console.log("not support");
+                    }
+                  } else {
+                    console.log("not support");
+                  }
+                  this.receivedFromHtml = msg;
+                })
+                this.controllerNull.postMessage('__init_port__', [this.controllerNull.createWebMessagePorts()[0]], '*');
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 1022)
+              }
+              break;
+            }
+
+            case 'testCloseError001': {
+              try {
+                this.ports = this.controller.createWebMessagePorts(true);
+                this.controller.postMessage('__init_port__', [this.ports[0]], '*');
+                this.ports[1].close();
+                this.ports[1].postMessageEvent('post message from ets to html5');
+                Utils.emitEvent('no_error', 20360)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 20360)
+              }
+              break;
+            }
+
+            case 'emitClearMatches': {
+              try {
+                this.controllerNull.clearMatches();
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 1007)
+              }
+              break;
+            }
+            case 'emitCreateWebMessagePort': {
+              try {
+                this.controllerNull.createWebMessagePorts();
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 1021)
+              }
+              break;
+            }
+
+            case 'testPrepareForPageLoadError001': {
+              try {
+                webView.WebviewController.prepareForPageLoad('www.example.com', true, 7);
+                Utils.emitEvent(true, 50025)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 50025)
+              }
+              break;
+            }
 
             case 'emitonSwitchNextPage': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
-              router.pushUrl({ url: 'pages/webViewControllerErrorCode' })
+              router.pushUrl({ url: 'pages/jsMessageExtErrorCode' })
               console.log('push URL success')
             }
 
@@ -158,6 +233,11 @@ struct Index {
       Web({ src: 'resource://rawfile/index.html', controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .zoomAccess(false)
+        .fileAccess(true)
+        .domStorageAccess(true)
+        .onlineImageAccess(true)
+        .key('ErrorCodeTestSuiteKey')
+        .javaScriptAccess(true)
     }
   }
 }

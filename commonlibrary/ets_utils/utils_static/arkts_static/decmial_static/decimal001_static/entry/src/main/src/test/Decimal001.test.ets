@@ -111,12 +111,12 @@ export default function DecimalTest001() {
     });
     console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST_001
-     * @tc.name      : Decimal_toBinary_Func_001
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toBinary_Func_001
+     * @tc.number DECIMAL_TEST_001
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Decimal_toBinary_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       Decimal.set({
@@ -140,12 +140,12 @@ export default function DecimalTest001() {
       test_toBinary_001('0b0', '0', 1, 4);
     });
     /**
-     * @tc.number    : DECIMAL_TEST1_002
-     * @tc.name      : Decimal_toBinary_Func_002
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_002
+     * @tc.number DECIMAL_TEST1_002
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -176,12 +176,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_003
-     * @tc.name      : Decimal_toBinary_Func_003
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_003
+     * @tc.number DECIMAL_TEST1_003
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -214,12 +214,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_004
-     * @tc.name      : Decimal_toBinary_Func_004
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_004
+     * @tc.number DECIMAL_TEST1_004
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -252,12 +252,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_005
-     * @tc.name      : Decimal_toBinary_Func_005
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_005
+     * @tc.number DECIMAL_TEST1_005
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -288,12 +288,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_006
-     * @tc.name      : Decimal_toBinary_Func_006
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_006
+     * @tc.number DECIMAL_TEST1_006
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -324,12 +324,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_007
-     * @tc.name      : Decimal_toBinary_Func_007
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_007
+     * @tc.number DECIMAL_TEST1_007
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -364,12 +364,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_008
-     * @tc.name      : Decimal_toBinary_Func_008
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_008
+     * @tc.number DECIMAL_TEST1_008
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -403,12 +403,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_009
-     * @tc.name      : Decimal_toBinary_Func_009
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_009
+     * @tc.number DECIMAL_TEST1_009
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -439,12 +439,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_010
-     * @tc.name      : Decimal_toBinary_Func_010
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_010
+     * @tc.number DECIMAL_TEST1_010
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -476,12 +476,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_011
-     * @tc.name      : Decimal_toBinary_Func_011
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_011
+     * @tc.number DECIMAL_TEST1_011
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -512,12 +512,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_012
-     * @tc.name      : Decimal_toBinary_Func_012
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_012
+     * @tc.number DECIMAL_TEST1_012
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -552,12 +552,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_013
-     * @tc.name      : Decimal_toBinary_Func_013
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_013
+     * @tc.number DECIMAL_TEST1_013
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -591,12 +591,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_014
-     * @tc.name      : Decimal_toBinary_Func_014
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_014
+     * @tc.number DECIMAL_TEST1_014
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -633,12 +633,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_015
-     * @tc.name      : Decimal_toBinary_Func_015
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_015
+     * @tc.number DECIMAL_TEST1_015
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -671,12 +671,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_016
-     * @tc.name      : Decimal_toBinary_Func_016
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_016
+     * @tc.number DECIMAL_TEST1_016
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -715,12 +715,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_017
-     * @tc.name      : Decimal_toBinary_Func_017
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_017
+     * @tc.number DECIMAL_TEST1_017
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -758,12 +758,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_018
-     * @tc.name      : Decimal_toBinary_Func_018
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_018
+     * @tc.number DECIMAL_TEST1_018
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -802,12 +802,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_019
-     * @tc.name      : Decimal_toBinary_Func_019
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_019
+     * @tc.number DECIMAL_TEST1_019
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -845,12 +845,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_020
-     * @tc.name      : Decimal_toBinary_Func_020
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_020
+     * @tc.number DECIMAL_TEST1_020
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -893,12 +893,12 @@ export default function DecimalTest001() {
       test_toBinary_001('0b1001111000000', '5056', 13, 4);
     });
     /**
-     * @tc.number    : DECIMAL_TEST1_021
-     * @tc.name      : Decimal_toBinary_Func_021
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_021
+     * @tc.number DECIMAL_TEST1_021
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -937,12 +937,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_022
-     * @tc.name      : Decimal_toBinary_Func_022
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_022
+     * @tc.number DECIMAL_TEST1_022
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -975,12 +975,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_023
-     * @tc.name      : Decimal_toBinary_Func_023
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_023
+     * @tc.number DECIMAL_TEST1_023
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1004,12 +1004,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_024
-     * @tc.name      : Decimal_toBinary_Func_024
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_024
+     * @tc.number DECIMAL_TEST1_024
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1031,12 +1031,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_025
-     * @tc.name      : Decimal_toBinary_Func_025
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_025
+     * @tc.number DECIMAL_TEST1_025
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1060,12 +1060,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_026
-     * @tc.name      : Decimal_toBinary_Func_026
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_026
+     * @tc.number DECIMAL_TEST1_026
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1095,12 +1095,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_027
-     * @tc.name      : Decimal_toBinary_Func_027
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_027
+     * @tc.number DECIMAL_TEST1_027
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1132,12 +1132,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_028
-     * @tc.name      : Decimal_toBinary_Func_028
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_028
+     * @tc.number DECIMAL_TEST1_028
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1167,12 +1167,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_029
-     * @tc.name      : Decimal_toBinary_Func_029
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_029
+     * @tc.number DECIMAL_TEST1_029
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1207,12 +1207,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_030
-     * @tc.name      : Decimal_toBinary_Func_030
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_030
+     * @tc.number DECIMAL_TEST1_030
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1246,12 +1246,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_031
-     * @tc.name      : Decimal_toBinary_Func_031
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_031
+     * @tc.number DECIMAL_TEST1_031
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1284,12 +1284,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_032
-     * @tc.name      : Decimal_toBinary_Func_032
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_032
+     * @tc.number DECIMAL_TEST1_032
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1324,12 +1324,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_033
-     * @tc.name      : Decimal_toBinary_Func_033
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_033
+     * @tc.number DECIMAL_TEST1_033
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1362,12 +1362,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_034
-     * @tc.name      : Decimal_toBinary_Func_034
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_034
+     * @tc.number DECIMAL_TEST1_034
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1401,12 +1401,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_035
-     * @tc.name      : Decimal_toBinary_Func_035
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_035
+     * @tc.number DECIMAL_TEST1_035
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1448,12 +1448,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_036
-     * @tc.name      : Decimal_toBinary_Func_036
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_036
+     * @tc.number DECIMAL_TEST1_036
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1494,12 +1494,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_037
-     * @tc.name      : Decimal_toBinary_Func_037
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_037
+     * @tc.number DECIMAL_TEST1_037
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1541,12 +1541,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_038
-     * @tc.name      : Decimal_toBinary_Func_038
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_038
+     * @tc.number DECIMAL_TEST1_038
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1591,12 +1591,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_039
-     * @tc.name      : Decimal_toBinary_Func_039
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_039
+     * @tc.number DECIMAL_TEST1_039
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1641,12 +1641,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_040
-     * @tc.name      : Decimal_toBinary_Func_040
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_040
+     * @tc.number DECIMAL_TEST1_040
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1693,12 +1693,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_041
-     * @tc.name      : Decimal_toBinary_Func_041
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_041
+     * @tc.number DECIMAL_TEST1_041
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1746,12 +1746,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_042
-     * @tc.name      : Decimal_toBinary_Func_042
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_042
+     * @tc.number DECIMAL_TEST1_042
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1796,12 +1796,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_043
-     * @tc.name      : Decimal_toBinary_Func_043
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_043
+     * @tc.number DECIMAL_TEST1_043
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1850,12 +1850,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_044
-     * @tc.name      : Decimal_toBinary_Func_044
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_044
+     * @tc.number DECIMAL_TEST1_044
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1904,12 +1904,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_045
-     * @tc.name      : Decimal_toBinary_Func_045
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_045
+     * @tc.number DECIMAL_TEST1_045
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -1955,12 +1955,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_046
-     * @tc.name      : Decimal_toBinary_Func_046
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_046
+     * @tc.number DECIMAL_TEST1_046
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2004,12 +2004,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_047
-     * @tc.name      : Decimal_toBinary_Func_047
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_047
+     * @tc.number DECIMAL_TEST1_047
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2044,12 +2044,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_048
-     * @tc.name      : Decimal_toBinary_Func_048
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_048
+     * @tc.number DECIMAL_TEST1_048
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2091,12 +2091,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_049
-     * @tc.name      : Decimal_toBinary_Func_049
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_049
+     * @tc.number DECIMAL_TEST1_049
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2142,12 +2142,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_050
-     * @tc.name      : Decimal_toBinary_Func_050
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_050
+     * @tc.number DECIMAL_TEST1_050
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2179,12 +2179,12 @@ export default function DecimalTest001() {
       test_toDecimalPlaces_006('-336051', '-336050.5', 0, 8);
     });
     /**
-     * @tc.number    : DECIMAL_TEST1_051
-     * @tc.name      : Decimal_toBinary_Func_051
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_051
+     * @tc.number DECIMAL_TEST1_051
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2207,12 +2207,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_052
-     * @tc.name      : Decimal_toBinary_Func_052
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_052
+     * @tc.number DECIMAL_TEST1_052
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2231,12 +2231,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_053
-     * @tc.name      : Decimal_toBinary_Func_053
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_053
+     * @tc.number DECIMAL_TEST1_053
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2266,12 +2266,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_054
-     * @tc.name      : Decimal_toBinary_Func_054
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_054
+     * @tc.number DECIMAL_TEST1_054
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2304,12 +2304,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_055
-     * @tc.name      : Decimal_toBinary_Func_055
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_055
+     * @tc.number DECIMAL_TEST1_055
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2341,12 +2341,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_056
-     * @tc.name      : Decimal_toBinary_Func_056
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_056
+     * @tc.number DECIMAL_TEST1_056
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2384,12 +2384,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_057
-     * @tc.name      : Decimal_toBinary_Func_057
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_057
+     * @tc.number DECIMAL_TEST1_057
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2423,12 +2423,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_058
-     * @tc.name      : Decimal_toBinary_Func_058
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_058
+     * @tc.number DECIMAL_TEST1_058
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2466,12 +2466,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_059
-     * @tc.name      : Decimal_toBinary_Func_059
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_059
+     * @tc.number DECIMAL_TEST1_059
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2519,12 +2519,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_060
-     * @tc.name      : Decimal_toBinary_Func_060
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_060
+     * @tc.number DECIMAL_TEST1_060
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2560,12 +2560,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_061
-     * @tc.name      : Decimal_toBinary_Func_061
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_061
+     * @tc.number DECIMAL_TEST1_061
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2605,12 +2605,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_062
-     * @tc.name      : Decimal_toBinary_Func_062
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_062
+     * @tc.number DECIMAL_TEST1_062
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2651,12 +2651,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_063
-     * @tc.name      : Decimal_toBinary_Func_063
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_063
+     * @tc.number DECIMAL_TEST1_063
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2696,12 +2696,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_064
-     * @tc.name      : Decimal_toBinary_Func_064
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_064
+     * @tc.number DECIMAL_TEST1_064
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2748,12 +2748,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_065
-     * @tc.name      : Decimal_toBinary_Func_065
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_065
+     * @tc.number DECIMAL_TEST1_065
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2804,12 +2804,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_066
-     * @tc.name      : Decimal_toBinary_Func_066
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_066
+     * @tc.number DECIMAL_TEST1_066
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2858,12 +2858,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_067
-     * @tc.name      : Decimal_toBinary_Func_067
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_067
+     * @tc.number DECIMAL_TEST1_067
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2911,12 +2911,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_068
-     * @tc.name      : Decimal_toBinary_Func_068
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_068
+     * @tc.number DECIMAL_TEST1_068
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -2969,12 +2969,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_069
-     * @tc.name      : Decimal_toBinary_Func_069
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_069
+     * @tc.number DECIMAL_TEST1_069
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3030,12 +3030,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_070
-     * @tc.name      : Decimal_toBinary_Func_070
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_070
+     * @tc.number DECIMAL_TEST1_070
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3088,12 +3088,12 @@ export default function DecimalTest001() {
       test_toExponential_009('8.4e+6', '8404542', 1);
     });
     /**
-     * @tc.number    : DECIMAL_TEST1_071
-     * @tc.name      : Decimal_toBinary_Func_071
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_071
+     * @tc.number DECIMAL_TEST1_071
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3148,12 +3148,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_072
-     * @tc.name      : Decimal_toBinary_Func_072
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_072
+     * @tc.number DECIMAL_TEST1_072
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3206,12 +3206,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_073
-     * @tc.name      : Decimal_toBinary_Func_073
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_073
+     * @tc.number DECIMAL_TEST1_073
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3268,12 +3268,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_074
-     * @tc.name      : Decimal_toBinary_Func_074
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_074
+     * @tc.number DECIMAL_TEST1_074
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3336,12 +3336,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_075
-     * @tc.name      : Decimal_toBinary_Func_075
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_075
+     * @tc.number DECIMAL_TEST1_075
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3394,12 +3394,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_076
-     * @tc.name      : Decimal_toBinary_Func_076
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_076
+     * @tc.number DECIMAL_TEST1_076
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3452,12 +3452,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_077
-     * @tc.name      : Decimal_toBinary_Func_077
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_077
+     * @tc.number DECIMAL_TEST1_077
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3508,12 +3508,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_078
-     * @tc.name      : Decimal_toBinary_Func_078
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_078
+     * @tc.number DECIMAL_TEST1_078
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3536,12 +3536,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_079
-     * @tc.name      : Decimal_toBinary_Func_079
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_079
+     * @tc.number DECIMAL_TEST1_079
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3564,12 +3564,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_080
-     * @tc.name      : Decimal_toBinary_Func_080
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_080
+     * @tc.number DECIMAL_TEST1_080
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3598,12 +3598,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_081
-     * @tc.name      : Decimal_toBinary_Func_081
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_081
+     * @tc.number DECIMAL_TEST1_081
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3628,12 +3628,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_082
-     * @tc.name      : Decimal_toBinary_Func_082
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_082
+     * @tc.number DECIMAL_TEST1_082
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3660,12 +3660,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_083
-     * @tc.name      : Decimal_toBinary_Func_083
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_083
+     * @tc.number DECIMAL_TEST1_083
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3688,12 +3688,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_084
-     * @tc.name      : Decimal_toBinary_Func_084
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_084
+     * @tc.number DECIMAL_TEST1_084
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3722,12 +3722,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_085
-     * @tc.name      : Decimal_toBinary_Func_085
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_085
+     * @tc.number DECIMAL_TEST1_085
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3757,12 +3757,12 @@ export default function DecimalTest001() {
       test_exp_011('-8.291786018917236430647515856', '0.0002505', 4, 3);
     });
     /**
-     * @tc.number    : DECIMAL_TEST1_086
-     * @tc.name      : Decimal_toBinary_Func_086
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_086
+     * @tc.number DECIMAL_TEST1_086
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3794,12 +3794,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_087
-     * @tc.name      : Decimal_toBinary_Func_087
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_087
+     * @tc.number DECIMAL_TEST1_087
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3821,12 +3821,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_088
-     * @tc.name      : Decimal_toBinary_Func_088
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_088
+     * @tc.number DECIMAL_TEST1_088
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3850,12 +3850,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_089
-     * @tc.name      : Decimal_toBinary_Func_089
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_089
+     * @tc.number DECIMAL_TEST1_089
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3886,12 +3886,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_090
-     * @tc.name      : Decimal_toBinary_Func_090
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_090
+     * @tc.number DECIMAL_TEST1_090
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3919,12 +3919,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_091
-     * @tc.name      : Decimal_toBinary_Func_091
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_091
+     * @tc.number DECIMAL_TEST1_091
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3959,12 +3959,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_092
-     * @tc.name      : Decimal_toBinary_Func_092
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_092
+     * @tc.number DECIMAL_TEST1_092
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -3991,12 +3991,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_093
-     * @tc.name      : Decimal_toBinary_Func_093
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_093
+     * @tc.number DECIMAL_TEST1_093
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -4024,12 +4024,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_094
-     * @tc.name      : Decimal_toBinary_Func_094
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_094
+     * @tc.number DECIMAL_TEST1_094
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -4063,12 +4063,12 @@ export default function DecimalTest001() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST1_095
-     * @tc.name      : Decimal_toBinary_Func_095
-     * @tc.desc      : Test toBinary
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toBinary_Func_095
+     * @tc.number DECIMAL_TEST1_095
+     * @tc.desc   Test toBinary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toBinary_Func_095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({

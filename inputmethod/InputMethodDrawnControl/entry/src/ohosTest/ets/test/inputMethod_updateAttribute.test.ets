@@ -83,7 +83,6 @@ export default function inputMethodTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_Misc_inputMethod_updateAttribute_Async_0100
      * @tc.number SUB_Misc_inputMethod_updateAttribute_Async_0100
      * @tc.desc   Function test
@@ -118,7 +117,6 @@ export default function inputMethodTest() {
     });
     
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_Misc_inputMethod_updateAttribute_Promise_0100
      * @tc.number SUB_Misc_inputMethod_updateAttribute_Promise_0100
      * @tc.desc   Function test
@@ -144,7 +142,6 @@ export default function inputMethodTest() {
     });
     
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_Misc_inputMethod_updateAttribute_Promise_0700
      * @tc.number SUB_Misc_inputMethod_updateAttribute_Promise_0700
      * @tc.desc   Function test

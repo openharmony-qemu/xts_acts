@@ -27,14 +27,14 @@ export default function uiStatesTest() {
       await Utils.pushPage(`uiState/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : uiStatesTest_001
-    * @tc.name       : uiStatesTest_001
-    * @tc.desc       : test OH_ArkUI_AddSupportedUIStates
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   uiStatesTest_001
+     * @tc.number uiStatesTest_001
+     * @tc.desc   test OH_ArkUI_AddSupportedUIStates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('uiStatesTest_001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       let component = await driver.findComponent(ON.id('textStates'));
@@ -49,14 +49,14 @@ export default function uiStatesTest() {
       done();
     })
 
-    /*
-    * @tc.number     : uiStatesTest_002
-    * @tc.name       : uiStatesTest_002
-    * @tc.desc       : test OH_ArkUI_RemoveSupportedUIStates
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   uiStatesTest_002
+     * @tc.number uiStatesTest_002
+     * @tc.desc   test OH_ArkUI_RemoveSupportedUIStates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('uiStatesTest_002', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       let component = await driver.findComponent(ON.id('textStates'));

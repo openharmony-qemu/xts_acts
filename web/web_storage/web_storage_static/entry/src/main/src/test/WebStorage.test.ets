@@ -39,12 +39,12 @@ export default function webStorageTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBSTORAGE_GETORIGINS_0001
-         * @tc.name       : testGetOrigins_static_001
-         * @tc.desc       : test getOrigins
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testGetOrigins_static_001
+         * @tc.number SUB_WEB_WEBSTORAGE_GETORIGINS_0001
+         * @tc.desc   test getOrigins
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testGetOrigins_static_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (): Promise<void> => {
             await Utils.msSleep(2000);
@@ -75,12 +75,12 @@ export default function webStorageTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBSTORAGE_GETORIGINS_0002
-         * @tc.name       : testGetOrigins_static_002
-         * @tc.desc       : test getOrigins
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testGetOrigins_static_002
+         * @tc.number SUB_WEB_WEBSTORAGE_GETORIGINS_0002
+         * @tc.desc   test getOrigins
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testGetOrigins_static_002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (): Promise<void> => {
             await Utils.msSleep(2000);
@@ -105,12 +105,12 @@ export default function webStorageTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBSTORAGE_GETORIGINUSAGE_0001
-         * @tc.name       : testGetOriginUsage_static_001
-         * @tc.desc       : test getOriginUsage
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testGetOriginUsage_static_001
+         * @tc.number SUB_WEB_WEBSTORAGE_GETORIGINUSAGE_0001
+         * @tc.desc   test getOriginUsage
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testGetOriginUsage_static_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (): Promise<void> => {
             await Utils.msSleep(2000);
@@ -133,12 +133,12 @@ export default function webStorageTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBSTORAGE_GETORIGINUSAGE_0002
-         * @tc.name       : testGetOriginUsage_static_002
-         * @tc.desc       : test getOriginUsage
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testGetOriginUsage_static_002
+         * @tc.number SUB_WEB_WEBSTORAGE_GETORIGINUSAGE_0002
+         * @tc.desc   test getOriginUsage
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testGetOriginUsage_static_002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (): Promise<void> => {
             await Utils.msSleep(2000);
@@ -155,12 +155,12 @@ export default function webStorageTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBSTORAGE_GETORIGINQUOTA_0001
-         * @tc.name       : testGetOriginQuota_static_001
-         * @tc.desc       : test getOriginQuota
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testGetOriginQuota_static_001
+         * @tc.number SUB_WEB_WEBSTORAGE_GETORIGINQUOTA_0001
+         * @tc.desc   test getOriginQuota
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testGetOriginQuota_static_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (): Promise<void> => {
             await Utils.msSleep(2000);
@@ -183,12 +183,12 @@ export default function webStorageTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBSTORAGE_GETORIGINQUOTA_0002
-         * @tc.name       : testGetOriginQuota_static_002
-         * @tc.desc       : test getOriginQuota
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testGetOriginQuota_static_002
+         * @tc.number SUB_WEB_WEBSTORAGE_GETORIGINQUOTA_0002
+         * @tc.desc   test getOriginQuota
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testGetOriginQuota_static_002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (): Promise<void> => {
             await Utils.msSleep(2000);
@@ -205,12 +205,12 @@ export default function webStorageTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBSTORAGE_DELETEORIGIN_0001
-         * @tc.name       : testDeleteOrigin_static_001
-         * @tc.desc       : test deleteOrigin
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testDeleteOrigin_static_001
+         * @tc.number SUB_WEB_WEBSTORAGE_DELETEORIGIN_0001
+         * @tc.desc   test deleteOrigin
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testDeleteOrigin_static_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (): Promise<void> => {
             await Utils.msSleep(2000);
@@ -229,12 +229,12 @@ export default function webStorageTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_WEBSTORAGE_DELETEALLDATA_0001
-         * @tc.name       : testDeleteAllData_static_001
-         * @tc.desc       : test deleteAllData
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testDeleteAllData_static_001
+         * @tc.number SUB_WEB_WEBSTORAGE_DELETEALLDATA_0001
+         * @tc.desc   test deleteAllData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testDeleteAllData_static_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (): Promise<void> => {
             await Utils.msSleep(2000);

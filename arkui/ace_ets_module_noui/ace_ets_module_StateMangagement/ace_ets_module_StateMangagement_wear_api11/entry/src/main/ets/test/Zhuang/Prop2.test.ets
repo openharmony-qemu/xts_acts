@@ -59,6 +59,14 @@ export default function Prop2() {
       router.back()
     });
 
+    /**
+     * @tc.name   Prop2_0100
+     * @tc.number Prop2_0100
+     * @tc.desc   Prop2_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Prop2_0100', Level.LEVEL0, async (done: Function) => {
       console.info('Prop2_0100 START');
       let driver = await UiDriver.create()
@@ -75,6 +83,14 @@ export default function Prop2() {
 
     });
 
+    /**
+     * @tc.name   Prop2_0200
+     * @tc.number Prop2_0200
+     * @tc.desc   Prop2_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Prop2_0200', Level.LEVEL0, async (done: Function) => {
       console.info('Prop2_0200 START');
       let driver = await UiDriver.create()
@@ -92,6 +108,14 @@ export default function Prop2() {
     });
 
 
+    /**
+     * @tc.name   Prop2_0300
+     * @tc.number Prop2_0300
+     * @tc.desc   Prop2_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Prop2_0300', Level.LEVEL0, async (done: Function) => {
       console.info('Prop2_0300 START');
       let driver = await UiDriver.create()
@@ -108,6 +132,14 @@ export default function Prop2() {
 
     });
 
+    /**
+     * @tc.name   Prop2_0400
+     * @tc.number Prop2_0400
+     * @tc.desc   Prop2_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Prop2_0400', Level.LEVEL0, async (done: Function) => {
       console.info('Prop2_0400 START');
       let driver = await UiDriver.create()
@@ -125,6 +157,14 @@ export default function Prop2() {
     });
 
 
+    /**
+     * @tc.name   Prop2_0500
+     * @tc.number Prop2_0500
+     * @tc.desc   Prop2_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Prop2_0500', Level.LEVEL0, async (done: Function) => {
       console.info('Prop2_0500 START');
       let driver = await UiDriver.create()
@@ -141,6 +181,14 @@ export default function Prop2() {
 
     });
 
+    /**
+     * @tc.name   Prop2_0600
+     * @tc.number Prop2_0600
+     * @tc.desc   Prop2_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Prop2_0600', Level.LEVEL0, async (done: Function) => {
       console.info('Prop2_0600 START');
       let driver = await UiDriver.create()
@@ -160,6 +208,14 @@ export default function Prop2() {
     });
 
 
+    /**
+     * @tc.name   Prop2_0700
+     * @tc.number Prop2_0700
+     * @tc.desc   Prop2_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Prop2_0700', Level.LEVEL0, async (done: Function) => {
       console.info('Prop2_0700 START');
       let driver = await UiDriver.create()
@@ -178,6 +234,14 @@ export default function Prop2() {
 
     });
 
+    /**
+     * @tc.name   Prop2_0800
+     * @tc.number Prop2_0800
+     * @tc.desc   Prop2_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Prop2_0800', Level.LEVEL0, async (done: Function) => {
       console.info('Prop2_0800 START');
       let driver = await UiDriver.create()

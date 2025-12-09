@@ -54,7 +54,6 @@ export default function NumberFormatInIntlTest() {
       console.info("afterAll case");
     });
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_0100
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0100
      * @tc.desc   check the number in zh
@@ -69,7 +68,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_0120
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0120
      * @tc.desc   check the number with default locale
@@ -83,7 +81,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_0140
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0140
      * @tc.desc   format the number in zh and undefined options
@@ -98,7 +95,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_0160
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0160
      * @tc.desc   format the number in zh and null options
@@ -113,7 +109,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_0200
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0200
      * @tc.desc   format the number in zh-u-nu-latn
@@ -128,7 +123,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_0300
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0300
      * @tc.desc   format the number in zh-u-nu-arab
@@ -143,7 +137,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_0400
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0400
      * @tc.desc   format the number in en
@@ -158,7 +151,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_0500
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0500
      * @tc.desc   format the number in en-u-nu-thai
@@ -173,7 +165,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_0600
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0600
      * @tc.desc   format the number in en-GB
@@ -188,7 +179,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_0700
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0700
      * @tc.desc   format the number in en-US
@@ -203,7 +193,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_0900
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0900
      * @tc.desc   check the number in zh and en list
@@ -218,7 +207,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_1000
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_1000
      * @tc.desc   check the number in en and zh list
@@ -233,7 +221,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_1100
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_1100
      * @tc.desc   check the number in en and aa list
@@ -248,7 +235,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_1200
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_1200
      * @tc.desc   check the number in aa and zh list
@@ -263,7 +249,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_1400
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_1400
      * @tc.desc   check the number in aa  bb and es list
@@ -278,7 +263,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_1500
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_1500
      * @tc.desc   check the number in aa it and bb list
@@ -293,7 +277,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_1600
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_1600
      * @tc.desc   check the number with scientific
@@ -310,7 +293,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_1700
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_1700
      * @tc.desc   check the number with currency EUR
@@ -332,7 +314,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_1800
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_1800
      * @tc.desc   check the number with currency USD
@@ -349,7 +330,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_1900
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_1900
      * @tc.desc   check the number with currency CNY
@@ -365,7 +345,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_2000
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2000
      * @tc.desc   check the number with currency JPY
@@ -381,7 +360,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_2100
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2100
      * @tc.desc   check the number with signDisplay
@@ -406,7 +384,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_2200
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2200
      * @tc.desc   check the number with meter unit
@@ -425,7 +402,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_2250
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2250
      * @tc.desc   check the number with unitUsage
@@ -442,7 +418,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_2260
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2260
      * @tc.desc   format the number with narrow value in unitUsage param
@@ -459,7 +434,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_2270
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2270
      * @tc.desc   format the number with short value in unitUsage param
@@ -476,7 +450,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_2280
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2280
      * @tc.desc   format the number with narrow value in unitUsage param
@@ -493,7 +466,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_2290
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2290
      * @tc.desc   format the number with short value in unitUsage param
@@ -510,7 +482,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_2300
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2300
      * @tc.desc   format the number with percetn style
@@ -526,7 +497,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_2400
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2400
      * @tc.desc   format the number with numberingSystem
@@ -542,7 +512,6 @@ export default function NumberFormatInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   formatNumber_test_static_2500
      * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2500
      * @tc.desc   format the number with style

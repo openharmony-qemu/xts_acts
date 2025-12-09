@@ -54,13 +54,13 @@ export default function getDialogControllerTest() {
     });
 
     /**
+     * @tc.name   getDialogControllerTest_0100
      * @tc.number SUB_ACE_getDialogControllerTest_0100
-     * @tc.name getDialogControllerTest_0100
-     * @tc.desc To test the getDialogController interface.
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test the getDialogController interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getDialogControllerTest_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('getDialogControllerTest_0100 START');
       let driver = await Driver.create()

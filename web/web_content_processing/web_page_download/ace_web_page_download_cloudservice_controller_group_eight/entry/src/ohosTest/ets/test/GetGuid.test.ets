@@ -63,12 +63,12 @@ export default function WebDownloadItem() {
     })
 
     /**
+     * @tc.name   testWebView_getGuid1000
      * @tc.number SUB_ACE_WEB_getGuid_1000
-     * @tc.name testWebView_getGuid1000
-     * @tc.desc test getGuid
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test getGuid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getGuid1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -83,12 +83,12 @@ export default function WebDownloadItem() {
     })
 
     /**
+     * @tc.name   testWebView_getGuid2000
      * @tc.number SUB_ACE_WEB_getGuid_2000
-     * @tc.name testWebView_getGuid2000
-     * @tc.desc test getGuid
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test getGuid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getGuid2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -104,12 +104,12 @@ export default function WebDownloadItem() {
     })
 
     /**
+     * @tc.name   testWebView_getGuid3000
      * @tc.number SUB_ACE_WEB_getGuid_3000
-     * @tc.name testWebView_getGuid3000
-     * @tc.desc test getGuid
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test getGuid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getGuid3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -125,12 +125,12 @@ export default function WebDownloadItem() {
     })
 
     /**
+     * @tc.name   testWebView_getGuid4000
      * @tc.number SUB_ACE_WEB_getGuid_4000
-     * @tc.name testWebView_getGuid4000
-     * @tc.desc test getGuid
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test getGuid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getGuid4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -146,12 +146,12 @@ export default function WebDownloadItem() {
     })
 
     /**
+     * @tc.name   testWebView_getGuid5000
      * @tc.number SUB_ACE_WEB_getGuid_5000
-     * @tc.name testWebView_getGuid5000
-     * @tc.desc test getGuid
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test getGuid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getGuid5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -167,12 +167,12 @@ export default function WebDownloadItem() {
     })
 
     /**
+     * @tc.name   testWebView_getGuid6000
      * @tc.number SUB_ACE_WEB_getGuid_6000
-     * @tc.name testWebView_getGuid6000
-     * @tc.desc test getGuid
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test getGuid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getGuid6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -188,12 +188,12 @@ export default function WebDownloadItem() {
     })
 
     /**
+     * @tc.name   testWebView_getGuid7000
      * @tc.number SUB_ACE_WEB_getGuid_7000
-     * @tc.name testWebView_getGuid7000
-     * @tc.desc test getGuid
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test getGuid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getGuid7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({

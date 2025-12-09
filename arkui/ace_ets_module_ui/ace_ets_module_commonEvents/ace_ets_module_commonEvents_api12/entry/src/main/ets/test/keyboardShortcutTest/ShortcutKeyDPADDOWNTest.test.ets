@@ -44,11 +44,14 @@ export default function ShortcutKeyDPADDOWNTest() {
       await CommonFunc.sleep(2000);
     });
 
-    /*
-     *tc.number api
-     *tc.name   ShortcutKeyDPADDOWNTest_0100
-     *tc.desc   Custom keyboard shortcuts TAB
-    */
+    /**
+     * @tc.name   ShortcutKeyDPADDOWNTest_0100
+     * @tc.number api
+     * @tc.desc   Custom keyboard shortcuts TAB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ShortcutKeyDPADDOWNTest_0100', Level.LEVEL0, async () => {
       let CASE = 'ShortcutKeyDPADDOWNTest_0100'
       console.info(`ShortcutKeyDPADDOWNTest_0100 START`);

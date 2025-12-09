@@ -23,13 +23,13 @@ export default function spanOnClickTest() {
 
     let PAGE_TAG = 'SpanOnClickTest';
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_SPAN_ON_CLICK_0100
-     * @tc.name       : testSpanOnClick001
-     * @tc.desc       : test span onClick with event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanOnClick001
+     * @tc.number SUB_ARKUI_CAPI_NODE_SPAN_ON_CLICK_0100
+     * @tc.desc   test span onClick with event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanOnClick001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`span/${PAGE_TAG}`);

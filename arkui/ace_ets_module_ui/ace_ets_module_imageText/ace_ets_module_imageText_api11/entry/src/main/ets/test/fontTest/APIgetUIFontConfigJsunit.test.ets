@@ -39,6 +39,14 @@ export default function APIgetUIFontConfigJsunit() {
       }
       done();
     });
+    /**
+     * @tc.name   APIgetUIFontConfigJsunit_0100
+     * @tc.number APIgetUIFontConfigJsunit_0100
+     * @tc.desc   APIgetUIFontConfigJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIgetUIFontConfigJsunit_0100', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('APIgetUIFontConfigJsunit_0100 START');

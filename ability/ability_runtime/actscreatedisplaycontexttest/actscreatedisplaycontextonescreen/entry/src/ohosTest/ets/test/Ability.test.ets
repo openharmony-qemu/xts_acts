@@ -96,13 +96,13 @@ export default function abilityTest() {
     afterAll(() => {
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_0900
-     * @tc.name: DisplayContext_UIAbilityContext_getDir_0900
-     * @tc.desc: Retrieve the path property from the displayContext created by uiAbilityContext
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_0900
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_0900
+     * @tc.desc   Retrieve the path property from the displayContext created by uiAbilityContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_0900', Level.LEVEL0, () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_0900]: start');
@@ -131,13 +131,13 @@ export default function abilityTest() {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_0900]: end');
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1000
-     * @tc.name: DisplayContext_UIAbilityContext_resourceManager_1000
-     * @tc.desc: Retrieve the resourceManager property from the displayContext created by UIAbilityContext
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1000
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1000
+     * @tc.desc   Retrieve the resourceManager property from the displayContext created by UIAbilityContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1000', Level.LEVEL0, async (done: Function) => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1000]: start');
@@ -161,13 +161,13 @@ export default function abilityTest() {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1000]: end');
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1200
-     * @tc.name: DisplayContext_UIAbilityContext_applicationInfo_1200
-     * @tc.desc: Create a display context through UIContext to obtain applicationInfo
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1200
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1200
+     * @tc.desc   Create a display context through UIContext to obtain applicationInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1200', Level.LEVEL0, () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1200]: start');
@@ -187,13 +187,13 @@ export default function abilityTest() {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1200]: end');
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1300
-     * @tc.name: DisplayContext_UIAbilityContext_processName_1300
-     * @tc.desc: Retrieve the processName property from the showContext created by UIAbilityContext
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1300
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1300
+     * @tc.desc   Retrieve the processName property from the showContext created by UIAbilityContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1300', Level.LEVEL0, () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1300]: start');
@@ -214,13 +214,13 @@ export default function abilityTest() {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1300]: end');
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1400
-     * @tc.name: DisplayContext_UIAbilityContext_createModuleContext_1400
-     * @tc.desc: Create a display context through UIContext to obtain default values for screen density and screen orientation
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1400
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1400
+     * @tc.desc   Create a display context through UIContext to obtain default values for screen density and screen orientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1400', Level.LEVEL0, async () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1400]: start');
@@ -243,13 +243,13 @@ export default function abilityTest() {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1400]: end');
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1600
-     * @tc.name: DisplayContext_UIAbilityContext_getGroupDirTest_1600
-     * @tc.desc: Create resource management object through displayContext to obtain screen density and screen orientation
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1600
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1600
+     * @tc.desc   Create resource management object through displayContext to obtain screen density and screen orientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1600', Level.LEVEL0, async (done: Function) => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1600]: start');
@@ -281,13 +281,13 @@ export default function abilityTest() {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1600]: end');
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1700
-     * @tc.name: DisplayContext_UIAbilityContext_sendableContext_1700
-     * @tc.desc: Using sendable to convert Context in the Display Context created by UIAbilityContext
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1700
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1700
+     * @tc.desc   Using sendable to convert Context in the Display Context created by UIAbilityContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1700', Level.LEVEL0, () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1700]: start');
@@ -308,13 +308,13 @@ export default function abilityTest() {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1700]: end');
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1800
-     * @tc.name: DisplayContext_UIAbilityContext_getRdbStore_1800
-     * @tc.desc: The display Context created using UIAbilityContext is passed as a parameter to rdbStore
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1800
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1800
+     * @tc.desc   The display Context created using UIAbilityContext is passed as a parameter to rdbStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1800', Level.LEVEL0, async (done: Function) => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1800]: start');
@@ -339,13 +339,13 @@ export default function abilityTest() {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1800]: end');
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1900
-     * @tc.name: DisplayContext_UIAbilityContext_displayId_null_1900
-     * @tc.desc: The display Context created by UIAbilityContext is passed in null
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1900
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1900
+     * @tc.desc   The display Context created by UIAbilityContext is passed in null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1900', Level.LEVEL0, () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1900]: start');
@@ -365,13 +365,13 @@ export default function abilityTest() {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_1900]: end');
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2000
-     * @tc.name: DisplayContext_ApplicationContext_getDir_2000
-     * @tc.desc: Retrieve the path property from the displayContext created by ApplicationContext
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2000
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2000
+     * @tc.desc   Retrieve the path property from the displayContext created by ApplicationContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2000', Level.LEVEL0, () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2000]: start');
@@ -400,13 +400,13 @@ export default function abilityTest() {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2000]: end');
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2100
-     * @tc.name: DisplayContext_ApplicationContext_on_2100
-     * @tc.desc: The interface for listening to system environment changes from the displayContext created by ApplicationContext
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2100
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2100
+     * @tc.desc   The interface for listening to system environment changes from the displayContext created by ApplicationContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2100', Level.LEVEL0, async (done: Function) => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2100]: start');
@@ -444,13 +444,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2400
-     * @tc.name: DisplayContext_ApplicationContext_setLanguage_2400
-     * @tc.desc: Call setLanguage after creating ApplicationContext through the displayContext created by UIAbilityContext
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2400
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2400
+     * @tc.desc   Call setLanguage after creating ApplicationContext through the displayContext created by UIAbilityContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2400', Level.LEVEL0, () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2400]: start');
@@ -493,13 +493,13 @@ export default function abilityTest() {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2400]: end');
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2500
-     * @tc.name: DisplayContext_ApplicationContext_ModuleContext_getDir_2500
-     * @tc.desc: Create a Context through the application, then create an Application Context and then create a Display Context to obtain the path properties
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2500
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2500
+     * @tc.desc   Create a Context through the application, then create an Application Context and then create a Display Context to obtain the path properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2500', Level.LEVEL0, async () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2500]: start');
@@ -529,13 +529,13 @@ export default function abilityTest() {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2500]: end');
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2600
-     * @tc.name: DisplayContext_ApplicationContext_resourceManager_2600
-     * @tc.desc: Create a Context through the application, then create an Application Context and then create a DisplayContext to obtain the Resource Manager
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2600
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2600
+     * @tc.desc   Create a Context through the application, then create an Application Context and then create a DisplayContext to obtain the Resource Manager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2600', Level.LEVEL0, async (done: Function) => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2600]: start');
@@ -562,13 +562,13 @@ export default function abilityTest() {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2600]: end');
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2700
-     * @tc.name: DisplayContext_ApplicationContext_applicationInfo_2700
-     * @tc.desc: Create a Context through the application, then create an Application Context and create a Display Context to obtain the Application Info
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2700
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2700
+     * @tc.desc   Create a Context through the application, then create an Application Context and create a Display Context to obtain the Application Info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2700', Level.LEVEL0, async () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2700]: start');
@@ -590,13 +590,13 @@ export default function abilityTest() {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2700]: end');
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2800
-     * @tc.name: DisplayContext_ApplicationContext_processName_2800
-     * @tc.desc: Create a Context through the application, then create an Application Context and then create a Display Context to obtain the processName
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2800
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2800
+     * @tc.desc   Create a Context through the application, then create an Application Context and then create a Display Context to obtain the processName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2800', Level.LEVEL0, async () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2800]: start');
@@ -625,13 +625,13 @@ export default function abilityTest() {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2800]: end');
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2900
-     * @tc.name: DisplayContext_ApplicationContext_sendableContext_2900
-     * @tc.desc: Create Context through Application, then create an Application Context and create a Display Context. Use Sendable to convert the context
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2900
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2900
+     * @tc.desc   Create Context through Application, then create an Application Context and create a Display Context. Use Sendable to convert the context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2900', Level.LEVEL0, async () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2900]: start');
@@ -653,13 +653,13 @@ export default function abilityTest() {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_2900]: end');
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_3000
-     * @tc.name: DisplayContext_ApplicationContext_getRdbStore_3000
-     * @tc.desc: Create a Context using an application, then create an Application Context and create a Display Context, passing it as a parameter to RdbStore
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_3000
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_3000
+     * @tc.desc   Create a Context using an application, then create an Application Context and create a Display Context, passing it as a parameter to RdbStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_3000', Level.LEVEL0, async (done: Function) => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_3000]: start');
@@ -680,13 +680,13 @@ export default function abilityTest() {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_3000]: end');
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_5000
-     * @tc.name: DisplayContext_UIAbilityContext_displayId_undefined_5000
-     * @tc.desc: The display Context created by UIAbilityContext is passed in undefined
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_5000
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_5000
+     * @tc.desc   The display Context created by UIAbilityContext is passed in undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_5000', Level.LEVEL0, () => {
       console.log('[SUB_Ability_AbilityRuntime_CreateDisplayContextByDisplayId_5000]: start');

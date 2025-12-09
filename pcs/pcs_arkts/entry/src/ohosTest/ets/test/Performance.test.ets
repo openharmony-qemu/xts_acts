@@ -39,7 +39,6 @@ export default function performanceTest() {
       done()
     })
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testShorttermTask0100
      * @tc.number STD-PERFORMANCE-0100
      * @tc.desc   【STD-PERFORMANCE-0100】为保障系统性能和能效，必须支持长时任务、短时任务管理机制
@@ -68,7 +67,6 @@ export default function performanceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testLongtermTask0100
      * @tc.number STD-PERFORMANCE-0100
      * @tc.desc   【STD-PERFORMANCE-0100】为保障系统性能和能效，必须支持长时任务、短时任务管理机制

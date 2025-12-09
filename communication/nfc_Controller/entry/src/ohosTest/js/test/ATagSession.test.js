@@ -70,7 +70,6 @@ export default function nfcATagSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_0100
          * @tc.number SUB_Communication_NFC_nfcAtage_js_0100
          * @tc.desc   Test connectTag api.
@@ -101,7 +100,6 @@ export default function nfcATagSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_0200
          * @tc.number SUB_Communication_NFC_nfcAtage_js_0200
          * @tc.desc   Test reset api.
@@ -126,7 +124,6 @@ export default function nfcATagSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_0300
          * @tc.number SUB_Communication_NFC_nfcAtage_js_0300
          * @tc.desc   Test isTagConnected api by callback.
@@ -157,7 +154,6 @@ export default function nfcATagSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_0400
          * @tc.number SUB_Communication_NFC_nfcAtage_js_0400
          * @tc.desc   Test getMaxSendLength api.
@@ -183,7 +179,6 @@ export default function nfcATagSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_0500
          * @tc.number SUB_Communication_NFC_nfcAtage_js_0500
          * @tc.desc   Test setSendDataTimeout api.
@@ -214,7 +209,6 @@ export default function nfcATagSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_0600
          * @tc.number SUB_Communication_NFC_nfcAtage_js_0600
          * @tc.desc   Test getSendDataTimeout api.
@@ -240,7 +234,6 @@ export default function nfcATagSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_0700
          * @tc.number SUB_Communication_NFC_nfcAtage_js_0700
          * @tc.desc   Test sendData api by peomise.
@@ -273,7 +266,6 @@ export default function nfcATagSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_0800
          * @tc.number SUB_Communication_NFC_nfcAtage_js_0800
          * @tc.desc   Test sendData api by callback.
@@ -309,7 +301,6 @@ export default function nfcATagSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_0900
          * @tc.number SUB_Communication_NFC_nfcAtage_js_0900
          * @tc.desc   Test reset api.
@@ -340,7 +331,6 @@ export default function nfcATagSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_1000
          * @tc.number SUB_Communication_NFC_nfcAtage_js_1000
          * @tc.desc   Test setSendDataTimeout api.
@@ -372,7 +362,6 @@ export default function nfcATagSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_1100
          * @tc.number SUB_Communication_NFC_nfcAtage_js_1100
          * @tc.desc   Test sendData api by peomise.
@@ -425,7 +414,6 @@ export default function nfcATagSessionTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_1200
          * @tc.number SUB_Communication_NFC_nfcAtage_js_1200
          * @tc.desc   Test sendData api by callback.
@@ -472,7 +460,6 @@ export default function nfcATagSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_1300
          * @tc.number SUB_Communication_NFC_nfcAtage_js_1300
          * @tc.desc   Test getMaxSendLength api.
@@ -504,7 +491,6 @@ export default function nfcATagSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_1400
          * @tc.number SUB_Communication_NFC_nfcAtage_js_1400
          * @tc.desc   Test setSendDataTimeout api.
@@ -531,7 +517,6 @@ export default function nfcATagSessionTest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_1500
          * @tc.number SUB_Communication_NFC_nfcAtage_js_1500
          * @tc.desc   Test isConnected api.
@@ -566,7 +551,6 @@ export default function nfcATagSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_1600
          * @tc.number SUB_Communication_NFC_nfcAtage_js_1600
          * @tc.desc   Test connect api.
@@ -602,7 +586,6 @@ export default function nfcATagSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_1700
          * @tc.number SUB_Communication_NFC_nfcAtage_js_1700
          * @tc.desc   Test getTagInfo api.
@@ -622,7 +605,6 @@ export default function nfcATagSessionTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_2100
          * @tc.number SUB_Communication_NFC_nfcAtage_js_2100
          * @tc.desc   Test setSendDataTimeout api.
@@ -660,7 +642,6 @@ export default function nfcATagSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_2200
          * @tc.number SUB_Communication_NFC_nfcAtage_js_2200
          * @tc.desc   Test setSendDataTimeout api.

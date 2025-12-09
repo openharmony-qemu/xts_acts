@@ -81,15 +81,12 @@ export default function imageHDR() {
     };
 
     /**
-      * @tc.number  CASE_STATIC_01
-      * @tc.name    CASE_STATIC_01
-      * @tc.desc    PixelMap toSdr
-      *                 1. create imageSource
-      *                 2. create PixelMap
-      *                 3. PixelMap toSdr
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   CASE_STATIC_01
+     * @tc.number CASE_STATIC_01
+     * @tc.desc   PixelMap toSdr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("CASE_STATIC_01", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportHdr) {
@@ -111,6 +108,11 @@ export default function imageHDR() {
               desiredDynamicRange: image.DecodingDynamicRange.SDR
             };
             let pixelmap = await imageSourceApi.createPixelMap(decodingOption);
+            if (pixelmap == undefined) {
+              console.info('CASE_STATIC_01 createPixelMap failed, pixelMap is undefined');
+              expect(false).assertTrue();
+              return undefined;
+            }
             globalpixelmap = pixelmap;
             let tempPixelmap = pixelmap
             try {
@@ -131,15 +133,12 @@ export default function imageHDR() {
     });
 
     /**
-      * @tc.number  CASE_STATIC_02
-      * @tc.name    CASE_STATIC_02
-      * @tc.desc    PixelMap toSdr
-      *                 1. create imageSource
-      *                 2. create PixelMap
-      *                 3. PixelMap toSdr
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   CASE_STATIC_02
+     * @tc.number CASE_STATIC_02
+     * @tc.desc   PixelMap toSdr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("CASE_STATIC_02", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isSupportHdr) {
@@ -162,6 +161,11 @@ export default function imageHDR() {
             };
             try {
               let pixelmap = await imageSourceApi.createPixelMap(decodingOption);
+              if (pixelmap == undefined) {
+                console.info('CASE_STATIC_02 createPixelMap failed, pixelMap is undefined');
+                expect(false).assertTrue();
+                return undefined;
+              }
               globalpixelmap = pixelmap;
               let tempPixelmap = pixelmap
               await tempPixelmap.toSdr();
