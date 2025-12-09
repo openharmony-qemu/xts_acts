@@ -48,12 +48,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0001
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0001
-     * @tc.desc   : OHImageEffectReplaceFilterSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0001
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0001
+     * @tc.desc     OHOS_PIXEL_MAP_ALPHA_TYPE_UNKNOWN
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0001', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -63,12 +63,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0002
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0002
-     * @tc.desc   : OHImageEffectReplaceFilterSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0002
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0002
+     * @tc.desc     OHOS_PIXEL_MAP_ALPHA_TYPE_OPAQUE
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0002', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -78,12 +78,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0003
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0003
-     * @tc.desc   : OHImageEffectReplaceFilterSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0003
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0003
+     * @tc.desc     OHOS_PIXEL_MAP_ALPHA_TYPE_PREMUL
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0003', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -93,12 +93,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0004
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0004
-     * @tc.desc   : OHImageEffectReplaceFilterSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0004
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0004
+     * @tc.desc     OHOS_PIXEL_MAP_ALPHA_TYPE_UNPREMUL
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ALPHA_TYPE_SUPP_0004', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -108,12 +108,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_READ_ONLY_SUPP_0001
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_READ_ONLY_SUPP_0001
-     * @tc.desc   : OHImageEffectReplaceFilterSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_READ_ONLY_SUPP_0001
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_READ_ONLY_SUPP_0001
+     * @tc.desc     OHOS_PIXEL_MAP_READ_ONLY
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_READ_ONLY_SUPP_0001', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -123,12 +123,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_EDITABLE_SUPP_0002
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_EDITABLE_SUPP_0002
-     * @tc.desc   : OHImageEffectReplaceFilterSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_EDITABLE_SUPP_0002
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_EDITABLE_SUPP_0002
+     * @tc.desc     OHOS_PIXEL_MAP_EDITABLE
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_EDITABLE_SUPP_0002', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -138,12 +138,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_NAPI_SUPP_0001
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_NAPI_SUPP_0001
-     * @tc.desc   : OHImageEffectReplaceFilterSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_NAPI_SUPP_0001
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_NAPI_SUPP_0001
+     * @tc.desc     OHOS_PIXEL_MAP_FORMAT_NONE
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_NAPI_SUPP_0001', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -153,12 +153,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_NAPI_SUPP_0002
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_NAPI_SUPP_0002
-     * @tc.desc   : OHImageEffectReplaceFilterSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_NAPI_SUPP_0002
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_NAPI_SUPP_0002
+     * @tc.desc     OHOS_PIXEL_MAP_FORMAT_RGBA_8888
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_NAPI_SUPP_0002', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -168,12 +168,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_NAPI_SUPP_0003
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_NAPI_SUPP_0003
-     * @tc.desc   : OHImageEffectReplaceFilterSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_NAPI_SUPP_0003
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_NAPI_SUPP_0003
+     * @tc.desc     OHOS_PIXEL_MAP_FORMAT_RGB_565
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_NAPI_SUPP_0003', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -183,12 +183,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0001
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0001
-     * @tc.desc   : OHImageErrorCodeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0001
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0001
+     * @tc.desc     IMAGE_UNSUPPORTED_MIME_TYPE
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0001', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -198,12 +198,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0002
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0002
-     * @tc.desc   : OHImageErrorCodeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0002
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0002
+     * @tc.desc     IMAGE_UNKNOWN_MIME_TYPE
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0002', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -213,12 +213,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0003
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0003
-     * @tc.desc   : OHImageErrorCodeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0003
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0003
+     * @tc.desc     IMAGE_TOO_LARGE
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0003', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -228,12 +228,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0004
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0004
-     * @tc.desc   : OHImageErrorCodeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0004
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0004
+     * @tc.desc     IMAGE_DMA_OPERATION_FAILED
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0004', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -243,12 +243,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0005
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0005
-     * @tc.desc   : OHImageErrorCodeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0005
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0005
+     * @tc.desc     IMAGE_UNSUPPORTED_CONVERSION
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0005', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -258,12 +258,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0006
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0006
-     * @tc.desc   : OHImageErrorCodeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0006
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0006
+     * @tc.desc     IMAGE_INVALID_REGION
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0006', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -273,12 +273,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0007
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0007
-     * @tc.desc   : OHImageErrorCodeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0007
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0007
+     * @tc.desc     IMAGE_UNSUPPORTED_MEMORY_FORMAT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0007', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -288,12 +288,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0008
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0008
-     * @tc.desc   : OHImageErrorCodeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0008
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0008
+     * @tc.desc     IMAGE_INVALID_PARAMETER
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0008', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -303,12 +303,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0009
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0009
-     * @tc.desc   : OHImageErrorCodeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0009
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0009
+     * @tc.desc     IMAGE_UNSUPPORTED_DATA_FORMAT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0009', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -318,12 +318,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0010
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0010
-     * @tc.desc   : OHImageErrorCodeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0010
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0010
+     * @tc.desc     IMAGE_LOCK_UNLOCK_FAILED
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0010', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -333,12 +333,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0011
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0011
-     * @tc.desc   : OHImageErrorCodeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0011
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0011
+     * @tc.desc     IMAGE_INIT_FAILED
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0011', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -348,12 +348,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0012
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0012
-     * @tc.desc   : OHImageErrorCodeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0012
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0012
+     * @tc.desc     IMAGE_CREATE_PIXELMAP_FAILED
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0012', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -363,12 +363,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0013
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0013
-     * @tc.desc   : OHImageErrorCodeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0013
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0013
+     * @tc.desc     IMAGE_ALLOCATOR_MODE_UNSUPPORTED
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0013', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -378,12 +378,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0014
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0014
-     * @tc.desc   : OHImageErrorCodeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0014
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0014
+     * @tc.desc     IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0014', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -393,12 +393,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0015
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0015
-     * @tc.desc   : OHImageErrorCodeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0015
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0015
+     * @tc.desc     IMAGE_SOURCE_TOO_LARGE
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0015', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -408,12 +408,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0016
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0016
-     * @tc.desc   : OHImageErrorCodeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0016
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0016
+     * @tc.desc     IMAGE_DECODE_FAILED
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0016', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -423,12 +423,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0017
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0017
-     * @tc.desc   : OHImageErrorCodeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0017
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0017
+     * @tc.desc     IMAGE_SOURCE_ALLOC_FAILED
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0017', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -438,12 +438,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0018
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0018
-     * @tc.desc   : OHImageErrorCodeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0018
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0018
+     * @tc.desc     IMAGE_ENCODE_FAILED
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0018', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -453,12 +453,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_PIXEL_MAP_SCALE_MODE_SUPP_0001
-     * @tc.name   : SUB_IMAGE_PIXEL_MAP_SCALE_MODE_SUPP_0001
-     * @tc.desc   : OHImageScaleModeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_PIXEL_MAP_SCALE_MODE_SUPP_0001
+     * @tc.name     SUB_IMAGE_PIXEL_MAP_SCALE_MODE_SUPP_0001
+     * @tc.desc     OHOS_PIXEL_MAP_SCALE_MODE_FIT_TARGET_SIZE
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_PIXEL_MAP_SCALE_MODE_SUPP_0001', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -468,12 +468,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_PIXEL_MAP_SCALE_MODE_SUPP_0002
-     * @tc.name   : SUB_IMAGE_PIXEL_MAP_SCALE_MODE_SUPP_0002
-     * @tc.desc   : OHImageScaleModeSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_PIXEL_MAP_SCALE_MODE_SUPP_0002
+     * @tc.name     SUB_IMAGE_PIXEL_MAP_SCALE_MODE_SUPP_0002
+     * @tc.desc     OHOS_PIXEL_MAP_SCALE_MODE_CENTER_CROP
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_PIXEL_MAP_SCALE_MODE_SUPP_0002', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -483,12 +483,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0001
-     * @tc.name   : SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0001
-     * @tc.desc   : OHImageAuxiliaryPictureSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0001
+     * @tc.name     SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0001
+     * @tc.desc     AUXILIARY_PICTURE_TYPE_GAINMAP
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0001', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -498,12 +498,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0002
-     * @tc.name   : SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0002
-     * @tc.desc   : OHImageAuxiliaryPictureSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0002
+     * @tc.name     SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0002
+     * @tc.desc     AUXILIARY_PICTURE_TYPE_DEPTH_MAP
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0002', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -513,12 +513,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0003
-     * @tc.name   : SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0003
-     * @tc.desc   : OHImageAuxiliaryPictureSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0003
+     * @tc.name     SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0003
+     * @tc.desc     AUXILIARY_PICTURE_TYPE_UNREFOCUS_MAP
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0003', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -528,12 +528,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0004
-     * @tc.name   : SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0004
-     * @tc.desc   : OHImageAuxiliaryPictureSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0004
+     * @tc.name     SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0004
+     * @tc.desc     AUXILIARY_PICTURE_TYPE_LINEAR_MAP
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0004', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -543,12 +543,12 @@ export default function ImageErrorSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0005
-     * @tc.name   : SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0005
-     * @tc.desc   : OHImageAuxiliaryPictureSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.number   SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0005
+     * @tc.name     SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0005
+     * @tc.desc     AUXILIARY_PICTURE_TYPE_FRAGMENT_MAP
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
      */
     it('SUB_IMAGE_AUXILIARY_PICTURE_TYPE_SUPP_0005', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
