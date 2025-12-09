@@ -13,14 +13,15 @@
  * limitations under the License.
  */
 
-#ifndef CES_CAPI_XTS_COMMON_TEST_H
-#define CES_CAPI_XTS_COMMON_TEST_H
+#ifndef CES_CAPI_DEMO_COMMON_TEST_H
+#define CES_CAPI_DEMO_COMMON_TEST_H
 
 #include <cstring>
 #include <napi/native_api.h>
 #include <hilog/log.h>
+#include "BasicServicesKit/oh_commonevent.h"
+#include "BasicServicesKit/oh_commonevent_support.h"
 
-namespace CesCapiTest {
 #define PARAM_NEGATIVE_1 (-1)
 #define PARAM_0 0
 #define PARAM_1 1
@@ -103,11 +104,11 @@ namespace CesCapiTest {
     }
 
 #define ASSERT_EA(a, b)                                                                                                \
-    do {                                                                                                               \
+    {                                                                                                                  \
         if ((a) != (b)) {                                                                                              \
             OH_LOG_ERROR(LOG_APP, "test failed", a);                                                                   \
         }                                                                                                              \
-    } while (0)
+    }
 
 static const char* COMMON_EVENT_TEST = "event_test";
 static const char* KEY_INT = "int";
@@ -131,5 +132,4 @@ static int32_t g_publishInfoCode = PARAM_0;
 static int32_t g_parametersInt = PARAM_0;
 static CommonEvent_Parameters* parameters = nullptr;
 
-}
-#endif // CES_CAPI_XTS_COMMON_TEST_H
+#endif // CES_CAPI_DEMO_COMMON_TEST_H
