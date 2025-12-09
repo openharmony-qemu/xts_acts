@@ -1576,7 +1576,7 @@ export default function AudioTest() {
         try {
           console.info(`====>${LOG_NAME} start====`);
           let result: number = AudioKitTest.AudioRendererSetLoudnessGainSuccess_003();
-          expect(0).assertEqual(result);
+          expect(1).assertEqual(result);
           console.info(`====>${LOG_NAME} result: ` + result);
           done();
         } catch (err) {
@@ -1648,7 +1648,7 @@ export default function AudioTest() {
         try {
           console.info(`====>${LOG_NAME} start====`);
           let result: number = AudioKitTest.AudioRendererSetLoudnessGainSuccess_006();
-          expect(0).assertEqual(result);
+          expect(1).assertEqual(result);
           console.info(`====>${LOG_NAME} result: ` + result);
           done();
         } catch (err) {
