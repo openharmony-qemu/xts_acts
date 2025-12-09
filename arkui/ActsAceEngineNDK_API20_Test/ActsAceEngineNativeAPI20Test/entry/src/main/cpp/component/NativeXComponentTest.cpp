@@ -23,6 +23,7 @@
 #include "node/NodeDetachTest.h"
 #include "touch/TouchPoint.h"
 #include "node/NodeAttribute.h"
+#include "componentapi/FinishCallBackLogicallyTest.h"
 
 namespace NativeXComponentTest {
 EXTERN_C_START
@@ -268,6 +269,7 @@ static void InitPushNodeAttribute3(napi_property_descriptor* desc)
         XL("testListSwipeActionItem001", ListItemSwipeActionStateTest::testListSwipeActionItem001),
         XL("testListSwipeActionItem002", ListItemSwipeActionStateTest::testListSwipeActionItem002),
         XL("testListSwipeActionItem003", ListItemSwipeActionStateTest::testListSwipeActionItem003),
+        XL("TestFinishCallBackLogically", FinishCallBackLogicallyTest::TestFinishCallBackLogically),
     };
     for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
         desc[index + offset] = descTemp[index];
