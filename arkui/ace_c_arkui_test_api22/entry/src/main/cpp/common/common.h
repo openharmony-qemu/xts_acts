@@ -25,6 +25,12 @@
 
 namespace ArkUICapiTest {
 
+#define PARAM_01 0.1
+#define PARAM_02 0.2
+#define PARAM_03 0.3
+#define PARAM_08 0.8
+#define PARAM_025 0.25
+#define PARAM_003 0.03
 #define PARAM_0_POINT_5 0.5
 #define PARAM_0_POINT_3 0.3
 #define PARAM_0_POINT_2 0.2
@@ -72,6 +78,8 @@ namespace ArkUICapiTest {
 #define PARAM_NEGATIVE_100 (-100)
 #define PARAM_64 64
 #define DEFAULT_MARGIN 10
+#define SIZE_4 4
+#define SIZE_5 5
 #define SIZE_10 10
 #define SIZE_20 20
 #define SIZE_30 30
@@ -125,6 +133,7 @@ namespace ArkUICapiTest {
 #define ON_MEASURE_EVENT_ID 6011
 #define ON_LAYOUT_EVENT_ID 6012
 #define ON_DRAW_EVENT_ID 6013
+#define ON_SCROLL_UPDATE 6014
 #define PARAM_0_POINT_8 0.8
 #define PARAM_1_POINT_0 1.0
 #define PARAM_0_POINT_2 0.2

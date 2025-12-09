@@ -47,3 +47,5 @@ export const imageSpanTest: (a: string) => void;
 export const customKeyboardTest: (a: string) => void;
 
 export const animationControllerTest: (a: string) => void;
+
+export const GridFillPolicyTest: (a: string) => void;

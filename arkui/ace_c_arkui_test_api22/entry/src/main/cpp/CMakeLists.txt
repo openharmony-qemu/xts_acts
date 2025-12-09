@@ -36,6 +36,8 @@ add_library(nativerender SHARED
     imageSpanTest/ImageSpanTest.cpp
     customKeyboard/CustomKeyboardTest.cpp
     image/AnimationControllerTest.cpp
+    component/GridComponentTest.cpp
+    grid/GridFillPolicyTest.cpp
 )
 
 add_library(nativefunc SHARED
