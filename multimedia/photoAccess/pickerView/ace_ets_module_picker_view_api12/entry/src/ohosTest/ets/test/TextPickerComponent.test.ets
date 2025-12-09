@@ -2805,5 +2805,110 @@ export default function TextPicker() {
       events_emitter.off(event.eventId);
       done();
     });
+
+    /**
+      * @tc.number      testPicker58
+      * @tc.name        testPicker58
+      * @tc.desc        Testing PhotoPicker assetFilter
+      * @tc.size        MediumTest
+      * @tc.type        Function
+      * @tc.level       Level 0
+      */
+    it('testPicker58', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      const operationItems: photoAccessHelper.OperationItem[] = [
+        {
+          operationType: photoAccessHelper.OperationType.BEGIN_WARP,
+          field: undefined,
+          value: undefined
+        },
+        {
+          operationType: photoAccessHelper.OperationType.EQUAL_TO,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [1]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.AND,
+          field: undefined,
+          value: undefined
+        },
+        {
+          operationType: photoAccessHelper.OperationType.EQUAL_TO,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.OR,
+          field: undefined,
+          value: undefined
+        },
+        {
+          operationType: photoAccessHelper.OperationType.GREATER_THAN,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.LESS_THAN,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.GREATER_THAN_OR_EQUAL_TO,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.LESS_THAN_OR_EQUAL_TO,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.IN,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.NOT_IN,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.BETWEEN,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.NOT_BETWEEN,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+        {
+          operationType: photoAccessHelper.OperationType.END_WARP,
+          field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
+          value: [0]
+        },
+      ]
+      pickerOptions.assetFilter = operationItems;
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      console.info("testPicker58 JSON.parse(strJson) is" + strJson);
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      await CommonFunc.sleep(2000);
+      router.back();
+      console.info("testPicker58 finish");
+      done();
+    });
   })
 }
