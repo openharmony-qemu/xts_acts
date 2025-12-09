@@ -137,7 +137,7 @@ export default function actsThreePartyWatchAbilityTest() {
     it('Sub_Notification_Ans_ThreePartyWatch_1056', Level.LEVEL2, async (done: Function) => {
       let TAG = commonTag + "Sub_Notification_Ans_ThreePartyWatch_1056 ";
       await notificationExtensionSubscription.getUserGrantedEnabledBundles()
-        .then((data: string[]) => {
+        .then((data: : notificationExtensionSubscription.GrantedBundleInfo[]) => {
           console.info(TAG + " getUserGrantedEnabledBundles data:" + JSON.stringify(data))
           expect(false).assertTrue();
           done();
