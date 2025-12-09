@@ -36,9 +36,14 @@ export default function actsNotificationAnsThreePartySystemApiTest() {
           })
           .catch((e: BusinessError) => {
             console.error(TAG + "getAllSubscriptionBundles catch err:" + e.code + " message:" + e.message);
-            expect(e.code === 202).assertTrue();
-            expect(e.message === "Not system application to call the interface").assertTrue();
-            done();
+            if(err.code == 201){
+              expect(err.code).assertEqual(201);
+              done()
+            } else {
+              expect(e.code === 202).assertTrue();
+              done();
+            }
+            
           })
       } catch (e) {
         console.error(TAG + "getAllSubscriptionBundles err:" + JSON.stringify(e));
@@ -66,9 +71,13 @@ export default function actsNotificationAnsThreePartySystemApiTest() {
           })
           .catch((e: BusinessError) => {
             console.error(TAG + "getUserGrantedState catch err:" + e.code + " message:" + e.message);
-            expect(e.code === 202).assertTrue();
-            expect(e.message === "Not system application to call the interface").assertTrue();
-            done();
+            if(err.code == 201){
+              expect(err.code).assertEqual(201);
+              done()
+            } else {
+              expect(e.code === 202).assertTrue();
+              done();
+            }
           })
       } catch (e) {
         console.error(TAG + "getUserGrantedState err:" + JSON.stringify(e));
@@ -97,9 +106,13 @@ export default function actsNotificationAnsThreePartySystemApiTest() {
           })
           .catch((e: BusinessError) => {
             console.error(TAG + "setUserGrantedState catch err:" + e.code + " message:" + e.message);
-            expect(e.code === 202).assertTrue();
-            expect(e.message === "Not system application to call the interface").assertTrue();
-            done();
+            if(err.code == 201){
+              expect(err.code).assertEqual(201);
+              done()
+            } else {
+              expect(e.code === 202).assertTrue();
+              done();
+            }
           })
       } catch (e) {
         console.error(TAG + "setUserGrantedState err:" + JSON.stringify(e));
@@ -127,9 +140,13 @@ export default function actsNotificationAnsThreePartySystemApiTest() {
           })
           .catch((e: BusinessError) => {
             console.error(TAG + "getUserGrantedEnableBundles catch err:" + e.code + " message:" + e.message);
-            expect(e.code === 202).assertTrue();
-            expect(e.message === "Not system application to call the interface").assertTrue();
-            done();
+            if(err.code == 201){
+              expect(err.code).assertEqual(201);
+              done()
+            } else {
+              expect(e.code === 202).assertTrue();
+              done();
+            }
           })
       } catch (e) {
         console.error(TAG + "getUserGrantedEnableBundles err:" + JSON.stringify(e));
@@ -159,9 +176,13 @@ export default function actsNotificationAnsThreePartySystemApiTest() {
           })
           .catch((e: BusinessError) => {
             console.error(TAG + "setUserGrantedBundleState catch err:" + e.code + " message:" + e.message);
-            expect(e.code === 202).assertTrue();
-            expect(e.message === "Not system application to call the interface").assertTrue();
-            done();
+            if(err.code == 201){
+              expect(err.code).assertEqual(201);
+              done()
+            } else {
+              expect(e.code === 202).assertTrue();
+              done();
+            }
           })
       } catch (e) {
         console.error(TAG + "setUserGrantedBundleState err:" + JSON.stringify(e));

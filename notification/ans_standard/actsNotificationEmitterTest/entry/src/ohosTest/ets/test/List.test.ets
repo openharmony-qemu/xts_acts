@@ -14,7 +14,9 @@
  */
 
 import ActsNotificationBadgeTest from './ActsNotificationBadgeTest.test'
+import emitterGetListenterCountTest from './EmitterGetListenerCountTest.test'
 
 export default function List() {
   ActsNotificationBadgeTest();
+  emitterGetListenterCountTest();
 }
