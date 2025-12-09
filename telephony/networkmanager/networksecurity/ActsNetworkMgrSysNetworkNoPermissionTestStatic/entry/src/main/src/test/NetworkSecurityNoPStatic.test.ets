@@ -41,12 +41,12 @@ const ExpectTrue = (n: boolean) => {
 export default function networkSecurityNoPTest() {
   describe('networkSecurityNoPTest',  () => {
     /**
-     * @tc.number : SUB_Telephony_networkSecurity_Nop_0100
-     * @tc.name   : testTelephonyNetworkSecurityNop_static_0100
-     * @tc.desc   : isCleartextPermitted No permission
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.number  SUB_Telephony_networkSecurity_Nop_0100
+     * @tc.name    testTelephonyNetworkSecurityNop_static_0100
+     * @tc.desc    isCleartextPermitted No permission
+     * @tc.level   Level 3
+     * @tc.type    Function
+     * @tc.size    MediumTest
      */
     it('testTelephonyNetworkSecurityNop_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName: string = "testTelephonyNetworkSecurityNop_static_0100";
@@ -65,12 +65,12 @@ export default function networkSecurityNoPTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_networkSecurity_Nop_0200
-     * @tc.name   : testTelephonyNetworkSecurityNop_static_0200
-     * @tc.desc   : isCleartextPermittedByHostName No permission
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.number  SUB_Telephony_networkSecurity_Nop_0200
+     * @tc.name    testTelephonyNetworkSecurityNop_static_0200
+     * @tc.desc    isCleartextPermittedByHostName No permission
+     * @tc.level   Level 3
+     * @tc.type    Function
+     * @tc.size    MediumTest
      */
     it('testTelephonyNetworkSecurityNop_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName: string = "testTelephonyNetworkSecurityNop_static_0200";
