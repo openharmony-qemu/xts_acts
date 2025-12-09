@@ -4,7 +4,7 @@ import { notificationExtensionSubscription, notificationManager } from '@kit.Not
 import { abilityAccessCtrl, UIAbility } from '@kit.AbilityKit';
 import { common } from '@kit.AbilityKit';
 import Base, { BusinessError } from '@ohos.base';
-import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
 const delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 let commonTag: string = "OpenSubscriptionSettings"
 let bundleName:string = "com.example.actsNotificationAnsThreePartyWatchThirdParty"
