@@ -22,6 +22,7 @@ import mediaQueryOffJsunit from './CommonCustom/mediaQuery.test.ets';
 import backgroundAndSizeSettingJsunit from './CommonAttrs/BackgroundAndSizeSettingJsunit.test';
 import borderJsunit from './CommonAttrs/BorderJsunit.test';
 import BorderRadiusRenderStrategyTest from './CommonAttrs/BorderRadiusRenderStrategyTest.ets';
+import FlexFourBoundaryTest from './CommonAttrs/FlexFourBoundaryTest.ets';
 
 export default function testsuite() {
   Calc01();
@@ -33,4 +34,5 @@ export default function testsuite() {
   backgroundAndSizeSettingJsunit();
   borderJsunit();
   BorderRadiusRenderStrategyTest();
+  FlexFourBoundaryTest();
 }
