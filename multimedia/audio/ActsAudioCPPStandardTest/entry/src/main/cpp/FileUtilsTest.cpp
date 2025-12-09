@@ -14,7 +14,7 @@
  */
 #ifndef TEST_COMMON_H
 #define TEST_COMMON_H
-#include "FileUtils.h"
+#include "FileUtilsTest.h"
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -207,7 +207,7 @@ std::vector<std::string> Getfileinpath(std::string path)
             if (strncmp(pdirent->d_name, ".", strlen(pdirent->d_name)) == 0 ||
                 strncmp(pdirent->d_name, "..", strlen(pdirent->d_name)) == 0) {
                 continue;
-            } else if (pdirent->d_type == 4) {
+            } else if (pdirent->d_type == DT_DIR) {
                 continue;
             } else {
                 filelist.push_back(pdirent->d_name);

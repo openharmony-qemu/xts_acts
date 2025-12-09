@@ -86,7 +86,7 @@ export default function ActsOpenslesPlayerNdkTest() {
     })
 
     /**
-     * @tc.name   openslesPlayerFunctionTest
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100
      * @tc.desc   test opensles Play audio
      * @tc.type   FUNCTION
@@ -100,7 +100,7 @@ export default function ActsOpenslesPlayerNdkTest() {
     })
 
     /**
-     * @tc.name   openslesPlayerFunctionTest
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0200
      * @tc.desc   test opensles Play audio
      * @tc.type   FUNCTION
@@ -114,7 +114,7 @@ export default function ActsOpenslesPlayerNdkTest() {
     })
 
     /**
-     * @tc.name   openslesEngineInvalidTest
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0100
      * @tc.desc   test opensles invalid interfacce
      * @tc.type   FUNCTION
@@ -128,7 +128,7 @@ export default function ActsOpenslesPlayerNdkTest() {
     })
 
     /**
-     * @tc.name   openslesEngineInvalidTest
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0200
      * @tc.desc   test opensles invalid interfacce
      * @tc.type   FUNCTION
@@ -142,7 +142,7 @@ export default function ActsOpenslesPlayerNdkTest() {
     })
 
     /**
-     * @tc.name   openslesEngineInvalidTest
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0300
      * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0300
      * @tc.desc   test opensles invalid interfacce
      * @tc.type   FUNCTION
@@ -156,7 +156,7 @@ export default function ActsOpenslesPlayerNdkTest() {
     })
 
     /**
-     * @tc.name   openslesEngineInvalidTest
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0400
      * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0400
      * @tc.desc   test opensles invalid interfacce
      * @tc.type   FUNCTION

@@ -14,5 +14,5 @@ include_directories(${NATIVERENDER_ROOT_PATH}
 add_library(audio_cpp_standard_test SHARED 
     NapiInitTest.cpp
     ActsOpenslesPlayerNdkTest.cpp
-    FileUtils.cpp)
+    FileUtilsTest.cpp)
 target_link_libraries(audio_cpp_standard_test PUBLIC libace_napi.z.so libOpenSLES.so libhilog_ndk.z.so)

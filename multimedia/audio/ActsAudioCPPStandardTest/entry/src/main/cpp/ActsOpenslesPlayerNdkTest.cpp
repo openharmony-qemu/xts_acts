@@ -17,7 +17,7 @@
 #include <SLES/OpenSLES_OpenHarmony.h>
 #include <SLES/OpenSLES_Platform.h>
 #include <string>
-#include "FileUtils.h"
+#include "FileUtilsTest.h"
 #include "hilog/log.h"
 
 #undef LOG_DOMAIN
@@ -42,7 +42,7 @@ struct WavHdr {
     uint32_t samplesPerSec = 44100; // Sampling Frequency in Hz
     uint32_t bytesPerSec = 176400; // bytes per second
     uint16_t blockAlign = 2; // 2=16-bit mono, 4=16-bit stereo
-    uint16_t bitsPerSample = 16; // Number of bits per sample
+    uint16_t bitDepth = 16; // Number of bits per sample
     /* "data" sub-chunk */
     uint8_t subchunk2Id[4] = {'d', 'a', 't', 'a'}; // "data"  string
     uint32_t subchunk2Size = 0; // Sampled data length
@@ -63,9 +63,15 @@ static SLresult OpenSlTest();
 
 static SLresult OpenSlTestConcurrent();
 
-const SLuint32 number = 3;
-// 路径缓冲区大小常量，包含null结束符
-static const size_t PATH_BUFFER_SIZE = PATH_MAX + 1;
+// 音频接口数量常量
+const SLuint32 AUDIO_INTERFACE_COUNT = 3;
+// 音量分频器常量
+const SLmillibel VOLUME_DIVIDER_HALF = 2;
+const SLmillibel VOLUME_DIVIDER_LOW = 15;
+// 播放等待时间常量（秒）
+const int MAX_PLAY_WAIT_TIME_SHORT = 2;
+const int MAX_PLAY_WAIT_TIME_MEDIUM = 3;
+const int MAX_PLAY_WAIT_TIME_LONG = 5;
 //const char* READPATH1 = "/data/audio/S16LE_2_44100.pcm";
 //const char* READPATH2 = "/data/audio/S16LE_2_64000.pcm";
 const char* READPATH1 = "/data/storage/el2/base/files/audio/S16LE_2_44100.pcm";
@@ -139,7 +145,7 @@ static SLresult CreatePlayer(SLEngineItf engineEngine, SLDataFormat_PCM *pcmForm
     SLDataSource slSource = {&slBufferQueue, pcmFormat};
 
     SLresult result = (*engineEngine)->CreateAudioPlayer(engineEngine, &pcmPlayerObject,
-        &slSource, &slSink, number, nullptr, nullptr);
+        &slSource, &slSink, AUDIO_INTERFACE_COUNT, nullptr, nullptr);
     if (SL_RESULT_SUCCESS != result) {
         OH_LOG_INFO(LOG_APP, "CreateAudioPlayer result: %{public}lu", result);
         return result;
@@ -202,7 +208,7 @@ static SLresult OpenSlTest()
 
     SLDataFormat_PCM pcmFormat = {
         SL_DATAFORMAT_PCM, g_wavHeader.numOfChan, g_wavHeader.samplesPerSec * 1000,
-        g_wavHeader.bitsPerSample, 0, 0, 0
+        g_wavHeader.bitDepth, 0, 0, 0
     };
     result = CreatePlayer(engineEngine, &pcmFormat);
     if (SL_RESULT_SUCCESS != result) {
@@ -232,7 +238,7 @@ static SLresult CreateConcurrentPlayers(SLEngineItf engineEngine,
     SLDataSource slSource2 = {&slBufferQueue, pcmFormat2};
 
     SLresult result = (*engineEngine)->CreateAudioPlayer(engineEngine, &pcmPlayerObject1,
-        &slSource1, &slSink, number, nullptr, nullptr);
+        &slSource1, &slSink, AUDIO_INTERFACE_COUNT, nullptr, nullptr);
     if (SL_RESULT_SUCCESS != result) {
         OH_LOG_INFO(LOG_APP, "CreateAudioPlayer pcmPlayerObject1 result: %{public}lu", result);
         return result;
@@ -244,7 +250,7 @@ static SLresult CreateConcurrentPlayers(SLEngineItf engineEngine,
     }
 
     result = (*engineEngine)->CreateAudioPlayer(engineEngine, &pcmPlayerObject2,
-        &slSource2, &slSink, number, nullptr, nullptr);
+        &slSource2, &slSink, AUDIO_INTERFACE_COUNT, nullptr, nullptr);
     if (SL_RESULT_SUCCESS != result) {
         OH_LOG_INFO(LOG_APP, "CreateAudioPlayer pcmPlayerObject2 result: %{public}lu", result);
         return result;
@@ -279,15 +285,13 @@ static SLresult SetupConcurrentPlayerInterfaces()
 
     SLmillibel level1 = 0;
     (*volumeItf1)->GetMaxVolumeLevel(volumeItf1, &level1);
-    SLmillibel temp = 2;
-    level1 = (SLmillibel)(level1 / temp);
+    level1 = (SLmillibel)(level1 / VOLUME_DIVIDER_HALF);
     (*volumeItf1)->SetVolumeLevel(volumeItf1, level1);
 
     (*pcmPlayerObject2)->GetInterface(pcmPlayerObject2, SL_IID_VOLUME, &volumeItf2);
     SLmillibel level2 = 0;
     (*volumeItf2)->GetMaxVolumeLevel(volumeItf2, &level2);
-    temp = 15;
-    level2 = (SLmillibel)(level2 / temp);
+    level2 = (SLmillibel)(level2 / VOLUME_DIVIDER_LOW);
     (*volumeItf2)->SetVolumeLevel(volumeItf2, level2);
     return SL_RESULT_SUCCESS;
 }
@@ -338,11 +342,11 @@ static SLresult OpenSlTestConcurrent()
 
     SLDataFormat_PCM pcmFormat1 = {
         SL_DATAFORMAT_PCM, g_wavHeader1.numOfChan, g_wavHeader1.samplesPerSec * 1000,
-        g_wavHeader1.bitsPerSample, 0, 0, 0
+        g_wavHeader1.bitDepth, 0, 0, 0
     };
     SLDataFormat_PCM pcmFormat2 = {
         SL_DATAFORMAT_PCM, g_wavHeader2.numOfChan, g_wavHeader2.samplesPerSec * 1000,
-        g_wavHeader2.bitsPerSample, 0, 0, 0
+        g_wavHeader2.bitDepth, 0, 0, 0
     };
 
     result = CreateConcurrentPlayers(engineEngine, &pcmFormat1, &pcmFormat2);
@@ -455,8 +459,8 @@ static int SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100()
     g_wavHeader2 = WavHdr();
     
     size_t headerSize = sizeof(WavHdr);
-    char path[PATH_BUFFER_SIZE] = {0x00};
-    if ((strlen(READPATH1) > PATH_MAX) || (realpath(READPATH1, path) == nullptr)) {
+    char path[PATH_MAX] = {0x00};
+    if ((strlen(READPATH1) >= PATH_MAX) || (realpath(READPATH1, path) == nullptr)) {
         OH_LOG_ERROR(LOG_APP, "Invalid path");
         return -1;
     }
@@ -465,11 +469,9 @@ static int SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100()
         OH_LOG_ERROR(LOG_APP, "AudioRendererTest: Unable to open wave file");
         return -1;
     }
-    // PCM文件无WAV头部，不读取，直接使用wavHeader的默认值
-    // fread(&g_wavHeader1, 1, headerSize, g_wavFile1);
 
     headerSize = sizeof(WavHdr);
-    if ((strlen(READPATH2) > PATH_MAX) || (realpath(READPATH2, path) == nullptr)) {
+    if ((strlen(READPATH2) >= PATH_MAX) || (realpath(READPATH2, path) == nullptr)) {
         OH_LOG_ERROR(LOG_APP, "Invalid path");
         return -1;
     }
@@ -483,8 +485,8 @@ static int SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100()
     if (result != SL_RESULT_SUCCESS) {
         return -1;
     }
-    // 最大播放时间5秒，避免无限等待
-    int maxWaitTime = 5;
+    // 最大播放时间，避免无限等待
+    int maxWaitTime = MAX_PLAY_WAIT_TIME_LONG;
     int waitCount = 0;
     while ((!feof(g_wavFile1) || !feof(g_wavFile2)) && waitCount < maxWaitTime) {
         sleep(1);
@@ -509,8 +511,8 @@ static int SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100()
 // 打开音频文件
 static int OpenAudioFile(const char* filePath, FILE **wavFile)
 {
-    char path[PATH_BUFFER_SIZE] = {0x00};
-    if ((strlen(filePath) > PATH_MAX) || (realpath(filePath, path) == nullptr)) {
+    char path[PATH_MAX] = {0x00};
+    if ((strlen(filePath) >= PATH_MAX) || (realpath(filePath, path) == nullptr)) {
         OH_LOG_ERROR(LOG_APP, "Invalid path");
         return -1;
     }
@@ -565,7 +567,7 @@ static int SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0200()
     if (result != SL_RESULT_SUCCESS) {
         return -1;
     }
-    if (PlayAndWait(3) != 0) {
+    if (PlayAndWait(MAX_PLAY_WAIT_TIME_MEDIUM) != 0) {
         return -1;
     }
     DestroyPlayerResources();
@@ -578,7 +580,7 @@ static int SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0200()
     if (result != SL_RESULT_SUCCESS) {
         return -1;
     }
-    if (PlayAndWait(2) != 0) {
+    if (PlayAndWait(MAX_PLAY_WAIT_TIME_SHORT) != 0) {
         return -1;
     }
     DestroyPlayerResources();
@@ -741,10 +743,10 @@ static int InitTestPlayer(SLEngineItf *engineEngine)
     SLDataLocator_BufferQueue slBufferQueue = {SL_DATALOCATOR_BUFFERQUEUE, 0};
     SLDataFormat_PCM pcmFormat = {
         SL_DATAFORMAT_PCM, g_wavHeader.numOfChan, g_wavHeader.samplesPerSec * 1000,
-        g_wavHeader.bitsPerSample, 0, 0, 0};
+        g_wavHeader.bitDepth, 0, 0, 0};
     SLDataSource slSource = {&slBufferQueue, &pcmFormat};
     result = (*(*engineEngine))->CreateAudioPlayer(*engineEngine, &pcmPlayerObject,
-        &slSource, &slSink, number, nullptr, nullptr);
+        &slSource, &slSink, AUDIO_INTERFACE_COUNT, nullptr, nullptr);
     if (result != SL_RESULT_SUCCESS) {
         return -1;
     }
