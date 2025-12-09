@@ -2825,7 +2825,7 @@ export default function TextPicker() {
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       const operationItems: photoAccessHelper.OperationItem[] = [
         {
-          operationType: photoAccessHelper.OperationType.BEGIN_WARP,
+          operationType: photoAccessHelper.OperationType.BEGIN_WRAP,
           field: undefined,
           value: undefined
         },
@@ -2890,7 +2890,7 @@ export default function TextPicker() {
           value: [0]
         },
         {
-          operationType: photoAccessHelper.OperationType.END_WARP,
+          operationType: photoAccessHelper.OperationType.END_WRAP,
           field: photoAccessHelper.PhotoKeys.PHOTO_TYPE,
           value: [0]
         },
