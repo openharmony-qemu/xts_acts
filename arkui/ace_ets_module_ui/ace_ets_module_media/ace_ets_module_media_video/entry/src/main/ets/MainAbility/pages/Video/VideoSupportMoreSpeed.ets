@@ -128,10 +128,10 @@ struct VideoSupportMoreSpeed {
           console.info('onStop')
         })
         .onPrepared(()=>{
-          console.log('etsVideo:onPrepared')
+          console.log("etsVideo:onPrepared")
         })
         .onAppear(() => {
-          console.log('etsVideo:onAppear')
+          console.log("etsVideo:onAppear")
         })
     }
     .width('100%')

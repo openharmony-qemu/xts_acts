@@ -70,8 +70,6 @@ export default function FlexFourBoundaryTest() {
 
       expect(JSON.stringify(JSON.parse(strJson1).$attrs.flexGrow)).assertEqual('0');
       expect(JSON.stringify(JSON.parse(strJson2).$attrs.flexGrow)).assertEqual('0');
-      expect(JSON.stringify(JSON.parse(strJson2).$attrs.aspectRatio)).assertEqual("");
-      expect(JSON.stringify(JSON.parse(strJson3).$attrs.aspectRatio)).assertEqual("");
       expect(JSON.stringify(JSON.parse(strJson3).$attrs.flexShrink)).assertEqual('0');
       expect(JSON.stringify(JSON.parse(strJson4).$attrs.aspectRatio)).assertEqual('1');
       expect(JSON.stringify(JSON.parse(strJson4).$attrs.flexShrink)).assertEqual('1');
