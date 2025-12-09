@@ -19,6 +19,42 @@ import window from '@ohos.window';
 import ohosWindow from '@ohos.window';
 import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
+import { display } from '@kit.ArkUI';
+
+let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
+
+async function startAbility7(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility7'
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest7') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility7(caseName: string) {
+  let pageContext = AppStorage.get('contextTest7') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
 
 export default function windowMaximizeTest() {
   describe('windowMaximize_test', () => {
@@ -1403,6 +1439,128 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
         }
       });
     });
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0300
+     * @tc.number testMaximizeAcrossDisplaywithTrue
+     * @tc.desc   testMaximizeAcrossDisplaywithTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMaximizeAcrossDisplaywithTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testMaximizeAcrossDisplaywithTrue';
+      console.log(caseName + 'begin');
+      let windowStageStart = await startAbility7(caseName, context);
+      let mainWindow = windowStageStart.getMainWindowSync();
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      let isInFreeWindowMode = mainWindow.isInFreeWindowMode();
+      console.log(caseName + ' isInFreeWindowMode: ' + isInFreeWindowMode);
+      try {
+        if (isInFreeWindowMode) {
+          await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
+          let windowRect1 = mainWindow.getWindowProperties().windowRect;
+          console.log(caseName + ' windowRect1: ' + JSON.stringify(windowRect1));
+          let displayRes1 = display.getDefaultDisplaySync();
+          console.log(caseName + ' displayRes1: ' + JSON.stringify(displayRes1));
+          expect(windowRect1.width).assertEqual(displayRes1.width)
+          expect(windowRect1.height).assertEqual(displayRes1.height)
+
+          await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, true);
+          let windowRect2 = mainWindow.getWindowProperties().windowRect;
+          console.log(caseName + ' windowRect2: ' + JSON.stringify(windowRect2));
+          let displayRes2 = display.getDefaultDisplaySync();
+          console.log(caseName + ' displayRes2: ' + JSON.stringify(displayRes2));
+          if (isPCStatus != ''&& display.getFoldStatus() == display.FoldStatus.FOLD_STATUS_HALF_FOLDED) {
+            expect(windowRect2.width).assertEqual(displayRes2.width)
+            expect(windowRect2.height).assertEqual(displayRes2.height * 2)
+          } else {
+            expect(windowRect2.width).assertEqual(displayRes2.width)
+            expect(windowRect2.height).assertEqual(displayRes2.height)
+          }
+          await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, false);
+          let windowRect3 = mainWindow.getWindowProperties().windowRect;
+          console.log(caseName + ' windowRect3: ' + JSON.stringify(windowRect3));
+          let displayRes3 = display.getDefaultDisplaySync();
+          console.log(caseName + ' displayRes3: ' + JSON.stringify(displayRes3));
+          expect(windowRect3.width).assertEqual(displayRes3.width)
+          expect(windowRect3.height).assertEqual(displayRes3.height)
+
+          await terminateAbility7(caseName);
+          done();
+        } else {
+          await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
+        }
+      } catch (err) {
+        console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+        await terminateAbility7(caseName);
+        if (!isSupport) {
+          expect(err.code).assertEqual(801)
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0400
+     * @tc.number testMaximizeAcrossDisplaywithFalse
+     * @tc.desc   testMaximizeAcrossDisplaywithFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMaximizeAcrossDisplaywithFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testMaximizeAcrossDisplaywithFalse';
+      console.log(caseName + 'begin');
+      let windowStageStart = await startAbility7(caseName, context);
+      let mainWindow = windowStageStart.getMainWindowSync();
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      let isInFreeWindowMode = mainWindow.isInFreeWindowMode();
+      console.log(caseName + ' isInFreeWindowMode: ' + isInFreeWindowMode);
+      try {
+        if (isInFreeWindowMode) {
+          await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
+          let windowRect1 = mainWindow.getWindowProperties().windowRect;
+          console.log(caseName + ' windowRect1: ' + JSON.stringify(windowRect1));
+          let displayRes1 = display.getDefaultDisplaySync();
+          console.log(caseName + ' displayRes1: ' + JSON.stringify(displayRes1));
+          let displayRectArr = await display.getAllDisplayPhysicalResolution();
+          console.log(caseName + ' displayRectArr: ' + JSON.stringify(displayRectArr));
+          for (let i = 0; i < displayRectArr.length; i++) {
+            if (displayRectArr[i].foldDisplayMode = display.FoldDisplayMode.FOLD_DISPLAY_MODE_UNKNOWN) {
+              if (isPCStatus != ''&& display.getFoldStatus() == display.FoldStatus.FOLD_STATUS_HALF_FOLDED) {
+                expect(windowRect1.width).assertEqual(displayRectArr[i].physicalWidth)
+                expect(windowRect1.height * 2).assertEqual(displayRectArr[i].physicalHeight)
+              }
+              break;
+            }
+          }
+          expect(windowRect1.width).assertEqual(displayRes1.width)
+          expect(windowRect1.height).assertEqual(displayRes1.height)
+
+          await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, false);
+          let windowRect2 = mainWindow.getWindowProperties().windowRect;
+          console.log(caseName + ' windowRect2: ' + JSON.stringify(windowRect2));
+          let displayRes2 = display.getDefaultDisplaySync();
+          console.log(caseName + ' displayRes2: ' + JSON.stringify(displayRes2));
+          expect(windowRect2.width).assertEqual(displayRes2.width)
+          expect(windowRect2.height).assertEqual(displayRes2.height)
+
+          await terminateAbility7(caseName);
+          done();
+        }
+      } catch (err) {
+        console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+        await terminateAbility7(caseName);
+        expect().assertFail();
+        done();
+      }
+    });
+
 
   })
 }

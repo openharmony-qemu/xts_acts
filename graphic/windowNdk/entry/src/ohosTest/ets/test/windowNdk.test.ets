@@ -19,6 +19,7 @@ import windowNdkTest from 'libentry.so';
 import { BusinessError } from '@ohos.base';
 import { image } from '@kit.ImageKit';
 import settings from '@ohos.settings';
+import { Driver, ON } from '@ohos.UiTest';
 
 function sleep(ms: number): Promise<string> {
   return new Promise((resolve) => {
@@ -1683,6 +1684,353 @@ export default function windowNdk() {
         } else {
           expect(Result).assertEqual(801);
         }
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0300
+     * @tc.number testLockCursorwithNotExistedWindowid
+     * @tc.desc   testLockCursorwithNotExistedWindowid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testLockCursorwithNotExistedWindowid', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testLockCursorwithNotExistedWindowid ';
+      try {
+        console.info(`${caseName} start`);
+        let windowClass = windowStage.getMainWindowSync();
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(`${caseName} windowId: ${windowId}`);
+        let Result: number = windowNdkTest.testLockCursorwithNotExistedWindowid(10000);
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(1300002);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0400
+     * @tc.number testLockCursorwithDestroyedWindow
+     * @tc.desc   testLockCursorwithDestroyedWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testLockCursorwithDestroyedWindow', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testLockCursorwithDestroyedWindow ';
+      let subWindowClass: window.Window | undefined
+      try {
+        console.info(`${caseName} start`);
+        subWindowClass = await windowStage.createSubWindow('testLockCursorwithDestroyedWindow');
+        let windowId = subWindowClass.getWindowProperties().id;
+        console.info(`${caseName} windowId: ${windowId}`);
+        await subWindowClass.destroyWindow();
+        let Result: number = windowNdkTest.testLockCursorwithDestroyedWindow(windowId);
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(1300002);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        await subWindowClass?.destroyWindow();
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0500
+     * @tc.number testLockCursorwithUnfocusableWindow
+     * @tc.desc   testLockCursorwithUnfocusableWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testLockCursorwithUnfocusableWindow', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testLockCursorwithUnfocusableWindow ';
+      let subWindowClass: window.Window | undefined
+      try {
+        console.info(`${caseName} start`);
+        subWindowClass = await windowStage.createSubWindow('testLockCursorwithUnfocusableWindow');
+        let windowId = subWindowClass.getWindowProperties().id;
+        console.info(`${caseName} windowId: ${windowId}`);
+        await subWindowClass.setFocusable(false);
+        let Result: number = windowNdkTest.testLockCursorwithUnfocusableWindow(windowId);
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(1300002);
+        await subWindowClass.destroyWindow();
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        await subWindowClass?.destroyWindow();
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0600
+     * @tc.number testLockCursorandUnLockCursor
+     * @tc.desc   testLockCursorandUnLockCursor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testLockCursorandUnLockCursor', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testLockCursorandUnLockCursor ';
+      let subWindowClass: window.Window | undefined
+      try {
+        console.info(`${caseName} start`);
+        let windowClass = windowStage.getMainWindowSync();
+        subWindowClass = await windowStage.createSubWindow('testLockCursorandUnLockCursor');
+        let windowProperties = subWindowClass.getWindowProperties();
+        console.info(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
+        let windowId = windowProperties.id;
+        console.info(`${caseName} windowId: ${windowId}`);
+        let Result: number = windowNdkTest.testLockCursorandUnLockCursor1(windowId);
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(0);
+        let driver: Driver = Driver.create();
+        let xPoint = windowProperties.windowRect.left/2;
+        let yPoint = windowProperties.windowRect.top/2;
+        console.info(`${caseName} xPoint: ${JSON.stringify(xPoint)}, yPoint: ${JSON.stringify(yPoint)}`);
+        await driver.click(xPoint, yPoint);
+        let isSubFocus = subWindowClass.getWindowProperties().focusable;
+        console.info(`${caseName} isSubFocus: ${isSubFocus}`);
+        expect(isSubFocus).assertEqual(true);
+        let Result2: number = windowNdkTest.testLockCursorandUnLockCursor2(windowId);
+        console.info(`${caseName} Result: ${Result2}`);
+        expect(Result2).assertEqual(0);
+        await driver.click(xPoint, yPoint);
+        let isSubFocus2 = subWindowClass.getWindowProperties().focusable;
+        console.info(`${caseName} isSubFocus2: ${isSubFocus2}`);
+        expect(isSubFocus2).assertEqual(false);
+        let isMainFocus = windowClass.getWindowProperties().focusable;
+        console.info(`${caseName} isMainFocus: ${isMainFocus}`);
+        expect(isSubFocus2).assertEqual(true);
+        await subWindowClass.destroyWindow();
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        await subWindowClass?.destroyWindow();
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0300
+     * @tc.number testUnLockCursorwithNotExistedWindowid
+     * @tc.desc   testUnLockCursorwithNotExistedWindowid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testUnLockCursorwithNotExistedWindowid', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testUnLockCursorwithNotExistedWindowid ';
+      try {
+        console.info(`${caseName} start`);
+        let windowClass = windowStage.getMainWindowSync()
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(`${caseName} windowId: ${windowId}`);
+        let Result: number = windowNdkTest.testUnLockCursorwithNotExistedWindowid(10000);
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(1300002);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0400
+     * @tc.number testUnLockCursorwithDestroyedWindow
+     * @tc.desc   testUnLockCursorwithDestroyedWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testUnLockCursorwithDestroyedWindow', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testUnLockCursorwithDestroyedWindow ';
+      let subWindowClass: window.Window | undefined
+      try {
+        console.info(`${caseName} start`);
+        subWindowClass = await windowStage.createSubWindow('testUnLockCursorwithDestroyedWindow');
+        let windowId = subWindowClass.getWindowProperties().id;
+        console.info(`${caseName} windowId: ${windowId}`);
+        await subWindowClass.destroyWindow();
+        let Result: number = windowNdkTest.testUnLockCursorwithDestroyedWindow(windowId);
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(1300002);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        await subWindowClass?.destroyWindow();
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0500
+     * @tc.number testUnLockCursorwithUnfocusableWindow
+     * @tc.desc   testUnLockCursorwithUnfocusableWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testUnLockCursorwithUnfocusableWindow', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testUnLockCursorwithUnfocusableWindow ';
+      let subWindowClass: window.Window | undefined
+      try {
+        console.info(`${caseName} start`);
+        subWindowClass = await windowStage.createSubWindow('testUnLockCursorwithUnfocusableWindow');
+        let windowId = subWindowClass.getWindowProperties().id;
+        console.info(`${caseName} windowId: ${windowId}`);
+        await subWindowClass.setFocusable(false);
+        let Result: number = windowNdkTest.testUnLockCursorwithUnfocusableWindow(windowId);
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(1300002);
+        await subWindowClass.destroyWindow();
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        await subWindowClass?.destroyWindow();
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DISPLAY_MANAGER_ERRORCODE_0100
+     * @tc.number testNativeDisplayManager_ErrorCode_enum
+     * @tc.desc   testNativeDisplayManager_ErrorCode_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeDisplayManager_ErrorCode_enum', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testNativeDisplayManager_ErrorCode_enum ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = windowNdkTest.testNativeDisplayManager_ErrorCode_enum();
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+    
+    /**
+     * @tc.name   SUB_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_0100
+     * @tc.number testNativeDisplayManager_FoldDisplayMode_enum
+     * @tc.desc   testNativeDisplayManager_FoldDisplayMode_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeDisplayManager_FoldDisplayMode_enum', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testNativeDisplayManager_FoldDisplayMode_enum ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = windowNdkTest.testNativeDisplayManager_FoldDisplayMode_enum();
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DISPLAY_SOURCE_MODE_0100
+     * @tc.number testNativeDisplayManager_SourceMode_enum
+     * @tc.desc   testNativeDisplayManager_SourceMode_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeDisplayManager_SourceMode_enum', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testNativeDisplayManager_SourceMode_enum ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = windowNdkTest.testNativeDisplayManager_SourceMode_enum();
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+   
+    /**
+     * @tc.name   SUB_WindowManager_ErrorCode_0100
+     * @tc.number testWindowManager_ErrorCode_enum
+     * @tc.desc   testWindowManager_ErrorCode_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWindowManager_ErrorCode_enum', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testWindowManager_ErrorCode_enum ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = windowNdkTest.testWindowManager_ErrorCode_enum();
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+  
+    /**
+     * @tc.name   SUB_PictureInPicture_PipState_0100
+     * @tc.number testPictureInPicture_PipState_enum
+     * @tc.desc   testPictureInPicture_PipState_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPictureInPicture_PipState_enum', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testPictureInPicture_PipState_enum ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = windowNdkTest.testPictureInPicture_PipState_enum();
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(0);
         done()
       } catch (err) {
         console.error(`${caseName} catch err: ` + JSON.stringify(err));

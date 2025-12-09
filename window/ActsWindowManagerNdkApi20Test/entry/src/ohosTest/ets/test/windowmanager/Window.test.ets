@@ -1023,5 +1023,125 @@ export default function WindowTest() {
       }
     })
 
+    /**
+     * @tc.name   SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0100
+     * @tc.number testLockCursorwithOutofRange
+     * @tc.desc   testLockCursorwithOutofRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testLockCursorwithOutofRange', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testLockCursorwithOutofRange';
+      try {
+        console.info(`====>${caseName} start<====`);
+        let windowClass = windowStage.getMainWindowSync();
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(`====>${caseName} windowId: ${windowId}`);
+        let Result: Array<number> = windowndkapi20.testLockCursorwithOutofRange(windowId);
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(401);
+        expect(Result[1]).assertEqual(401);
+        expect(Result[2]).assertEqual(1300002);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0200
+     * @tc.number testLockCursorwithoutPermission
+     * @tc.desc   testLockCursorwithoutPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testLockCursorwithoutPermission', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testLockCursorwithoutPermission';
+      try {
+        console.info(`====>${caseName} start<====`);
+        let windowClass = windowStage.getMainWindowSync();
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(`====>${caseName} windowId: ${windowId}`);
+        let Result: number = windowndkapi20.testLockCursorwithoutPermission(windowId);
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        if (Result == 801) {
+          done()
+        } else {
+          expect(Result).assertEqual(201);
+          done()
+        }
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0100
+     * @tc.number testUnLockCursorwithOutofRange
+     * @tc.desc   testUnLockCursorwithOutofRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testUnLockCursorwithOutofRange', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testUnLockCursorwithOutofRange';
+      try {
+        console.info(`====>${caseName} start<====`);
+        let windowClass = windowStage.getMainWindowSync();
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(`====>${caseName} windowId: ${windowId}`);
+        let Result: Array<number> = windowndkapi20.testUnLockCursorwithOutofRange(windowId);
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(401);
+        expect(Result[1]).assertEqual(401);
+        expect(Result[2]).assertEqual(1300002);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0200
+     * @tc.number testUnLockCursorwithoutPermission
+     * @tc.desc   testUnLockCursorwithoutPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testUnLockCursorwithoutPermission', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testUnLockCursorwithoutPermission';
+      try {
+        console.info(`====>${caseName} start<====`);
+        let windowClass = windowStage.getMainWindowSync();
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(`====>${caseName} windowId: ${windowId}`);
+        let Result: number = windowndkapi20.testUnLockCursorwithoutPermission(windowId);
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        if (Result == 801) {
+          done()
+        } else {
+          expect(Result).assertEqual(201);
+          done()
+        }
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
   })
 }

@@ -3,6 +3,10 @@
     "testability/pages/Index",
     "testability/pages/Index2",
     "testability/pages/makeUniqueTest",
-    "testability/pages/getSurfaceId"
+    "testability/pages/getSurfaceId",
+    "testability/pages/createVirtualScreen1",
+    "testability/pages/createVirtualScreen2",
+    "testability/pages/createVirtualScreen3",
+    "testability/pages/createVirtualScreen4"
   ]
 }
