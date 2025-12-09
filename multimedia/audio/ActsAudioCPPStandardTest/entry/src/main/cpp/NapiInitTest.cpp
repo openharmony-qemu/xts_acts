@@ -1,20 +1,52 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
 #include "napi/native_api.h"
 #include "ActsOpenslesPlayerNdkTest.cpp"
-#include <cassert>
 
-static napi_value createResultValue(napi_env env, int result) {
+// 常量定义，避免魔法数字
+enum PlayerFunctionCaseNum {
+    PLAYER_FUNCTION_CASE_0100 = 0,
+    PLAYER_FUNCTION_CASE_0200 = 1
+};
+
+enum EngineInvalidCaseNum {
+    ENGINE_INVALID_CASE_0100 = 0,
+    ENGINE_INVALID_CASE_0200 = 1,
+    ENGINE_INVALID_CASE_0300 = 2,
+    ENGINE_INVALID_CASE_0400 = 3
+};
+
+static napi_value createResultValue(napi_env env, int result)
+{
     napi_value resultValue;
     napi_create_int32(env, result, &resultValue);
     return resultValue;
 }
 
 // NAPI function for PALYER_FUNCTION test cases
-static napi_value openslesPlayerFunctionTest(napi_env env, napi_callback_info info) {
+static napi_value openslesPlayerFunctionTest(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1];
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    assert(status == napi_ok);
-    
+    if (status != napi_ok) {
+        return createResultValue(env, -1);
+    }
+
     napi_valuetype valuetype;
     napi_typeof(env, args[0], &valuetype);
     if (valuetype != napi_number) {
@@ -24,31 +56,37 @@ static napi_value openslesPlayerFunctionTest(napi_env env, napi_callback_info in
 
     int32_t caseNum = -1;
     status = napi_get_value_int32(env, args[0], &caseNum);
-    assert(status == napi_ok);
-    
-    int result;
-    switch (caseNum) {
-    case 0:
-        result = SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100();
-        break;
-    case 1:
-        result = SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0200();
-        break;
-    default:
-        napi_throw_type_error(env, nullptr, "The range of case must be 0 to 1");
+    if (status != napi_ok) {
         return createResultValue(env, -1);
     }
-    
+
+    int result;
+    switch (caseNum) {
+        case PLAYER_FUNCTION_CASE_0100:
+            result = SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100();
+            break;
+        case PLAYER_FUNCTION_CASE_0200:
+            result = SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0200();
+            break;
+        default:
+            napi_throw_type_error(env, nullptr,
+                "The range of case must be PLAYER_FUNCTION_CASE_0100 to PLAYER_FUNCTION_CASE_0200");
+            return createResultValue(env, -1);
+    }
+
     return createResultValue(env, result);
 }
 
 // NAPI function for ENGINEITF_INVALID test cases
-static napi_value openslesEngineInvalidTest(napi_env env, napi_callback_info info) {
+static napi_value openslesEngineInvalidTest(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1];
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    assert(status == napi_ok);
-    
+    if (status != napi_ok) {
+        return createResultValue(env, -1);
+    }
+
     napi_valuetype valuetype;
     napi_typeof(env, args[0], &valuetype);
     if (valuetype != napi_number) {
@@ -58,27 +96,30 @@ static napi_value openslesEngineInvalidTest(napi_env env, napi_callback_info inf
 
     int32_t caseNum = -1;
     status = napi_get_value_int32(env, args[0], &caseNum);
-    assert(status == napi_ok);
-    
-    int result;
-    switch (caseNum) {
-    case 0:
-        result = SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0100();
-        break;
-    case 1:
-        result = SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0200();
-        break;
-    case 2:
-        result = SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0300();
-        break;
-    case 3:
-        result = SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0400();
-        break;
-    default:
-        napi_throw_type_error(env, nullptr, "The range of case must be 0 to 3");
+    if (status != napi_ok) {
         return createResultValue(env, -1);
     }
-    
+
+    int result;
+    switch (caseNum) {
+        case ENGINE_INVALID_CASE_0100:
+            result = SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0100();
+            break;
+        case ENGINE_INVALID_CASE_0200:
+            result = SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0200();
+            break;
+        case ENGINE_INVALID_CASE_0300:
+            result = SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0300();
+            break;
+        case ENGINE_INVALID_CASE_0400:
+            result = SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0400();
+            break;
+        default:
+            napi_throw_type_error(env, nullptr,
+                "The range of case must be ENGINE_INVALID_CASE_0100 to ENGINE_INVALID_CASE_0400");
+            return createResultValue(env, -1);
+    }
+
     return createResultValue(env, result);
 }
 

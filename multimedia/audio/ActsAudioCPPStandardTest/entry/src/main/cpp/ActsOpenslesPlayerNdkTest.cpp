@@ -17,7 +17,7 @@
 #include <SLES/OpenSLES_OpenHarmony.h>
 #include <SLES/OpenSLES_Platform.h>
 #include <string>
-#include "file_utils.h"
+#include "FileUtils.h"
 #include "hilog/log.h"
 
 #undef LOG_DOMAIN
@@ -29,26 +29,24 @@ using namespace std;
 
 namespace {
 
-struct WAV_HEADER {
+struct WavHdr {
     /* RIFF Chunk Descriptor */
-    uint8_t RIFF[4] = {'R', 'I', 'F', 'F'}; // RIFF Header Magic header
-    uint32_t ChunkSize = 0; // RIFF Chunk Size
-    uint8_t WAVE[4] = {'W', 'A', 'V', 'E'}; // WAVE Header
+    uint8_t riff[4] = {'R', 'I', 'F', 'F'}; // RIFF Header Magic header
+    uint32_t chunkSize = 0; // RIFF Chunk Size
+    uint8_t wave[4] = {'W', 'A', 'V', 'E'}; // WAVE Header
     /* "fmt" sub-chunk */
     uint8_t fmt[4] = {'f', 'm', 't', ' '}; // FMT header
-    uint32_t Subchunk1Size = 16; // Size of the fmt chunk
-    uint16_t AudioFormat = 1; // Audio format 1=PCM
-    uint16_t NumOfChan = 2; // Number of channels 1=Mono 2=Stereo
-    uint32_t SamplesPerSec = 44100; // Sampling Frequency in Hz
+    uint32_t subchunk1Size = 16; // Size of the fmt chunk
+    uint16_t audioFormat = 1; // Audio format 1=PCM
+    uint16_t numOfChan = 2; // Number of channels 1=Mono 2=Stereo
+    uint32_t samplesPerSec = 44100; // Sampling Frequency in Hz
     uint32_t bytesPerSec = 176400; // bytes per second
     uint16_t blockAlign = 2; // 2=16-bit mono, 4=16-bit stereo
     uint16_t bitsPerSample = 16; // Number of bits per sample
     /* "data" sub-chunk */
-    uint8_t Subchunk2ID[4] = {'d', 'a', 't', 'a'}; // "data"  string
-    uint32_t Subchunk2Size = 0; // Sampled data length
+    uint8_t subchunk2Id[4] = {'d', 'a', 't', 'a'}; // "data"  string
+    uint32_t subchunk2Size = 0; // Sampled data length
 };
-
-using wav_hdr = struct WAV_HEADER;
 
 void SetUpTestCase() {}
 void TearDownTestCase() {}
@@ -66,16 +64,18 @@ static SLresult OpenSlTest();
 static SLresult OpenSlTestConcurrent();
 
 const SLuint32 number = 3;
+// 路径缓冲区大小常量，包含null结束符
+static const size_t PATH_BUFFER_SIZE = PATH_MAX + 1;
 //const char* READPATH1 = "/data/audio/S16LE_2_44100.pcm";
 //const char* READPATH2 = "/data/audio/S16LE_2_64000.pcm";
 const char* READPATH1 = "/data/storage/el2/base/files/audio/S16LE_2_44100.pcm";
 const char* READPATH2 = "/data/storage/el2/base/files/audio/S16LE_2_64000.pcm";
-FILE *wavFile_ = nullptr;
-FILE *wavFile1_ = nullptr;
-FILE *wavFile2_ = nullptr;
-wav_hdr wavHeader_;
-wav_hdr wavHeader1_;
-wav_hdr wavHeader2_;
+FILE *g_wavFile = nullptr;
+FILE *g_wavFile1 = nullptr;
+FILE *g_wavFile2 = nullptr;
+WavHdr g_wavHeader;
+WavHdr g_wavHeader1;
+WavHdr g_wavHeader2;
 SLObjectItf engineObject = nullptr;
 SLObjectItf outputMixObject = nullptr;
 SLPlayItf playItf;
@@ -90,275 +90,285 @@ SLObjectItf pcmPlayerObject = nullptr;
 SLObjectItf pcmPlayerObject1 = nullptr;
 SLObjectItf pcmPlayerObject2 = nullptr;
 
-static SLresult OpenSlTest()
+// 创建并初始化引擎
+static SLresult CreateEngine(SLEngineItf *engineEngine)
 {
-    OH_LOG_INFO(LOG_APP, "OpenSlTest enter");
-    // DEBUG_TAG_START
-    OH_LOG_INFO(LOG_APP, "[DEBUG_LOG] OpenSlTest wavHeader: NumOfChan=%{public}d, SamplesPerSec=%{public}d, bitsPerSample=%{public}d",
-        wavHeader_.NumOfChan, wavHeader_.SamplesPerSec, wavHeader_.bitsPerSample);
-    // DEBUG_TAG_END
     engineObject = nullptr;
-    SLEngineItf engineEngine = nullptr;
     SLresult result = slCreateEngine(&engineObject, 0, nullptr, 0, nullptr, nullptr);
-    // get engine object
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTest slCreateEngine result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "slCreateEngine result: %{public}lu", result);
         return result;
     }
     result = (*engineObject)->Realize(engineObject, SL_BOOLEAN_FALSE);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTest Realize result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "engineObject Realize result: %{public}lu", result);
         return result;
     }
-    // get engineEngine object
-    result = (*engineObject)->GetInterface(engineObject, SL_IID_ENGINE, &engineEngine);
+    result = (*engineObject)->GetInterface(engineObject, SL_IID_ENGINE, engineEngine);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTest get engineEngine result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "get engineEngine result: %{public}lu", result);
         return result;
     }
+    return SL_RESULT_SUCCESS;
+}
+
+// 创建并初始化输出混音器
+static SLresult CreateOutputMix(SLEngineItf engineEngine)
+{
     outputMixObject = nullptr;
-    result = (*engineEngine)->CreateOutputMix(engineEngine, &outputMixObject, 0, nullptr, nullptr);
+    SLresult result = (*engineEngine)->CreateOutputMix(
+        engineEngine, &outputMixObject, 0, nullptr, nullptr);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTest CreateOutputMix result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "CreateOutputMix result: %{public}lu", result);
         return result;
     }
     result = (*outputMixObject)->Realize(outputMixObject, SL_BOOLEAN_FALSE);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTest outPut Realize result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "outputMix Realize result: %{public}lu", result);
         return result;
     }
+    return SL_RESULT_SUCCESS;
+}
 
+// 创建音频播放器
+static SLresult CreatePlayer(SLEngineItf engineEngine, SLDataFormat_PCM *pcmFormat)
+{
     SLDataLocator_OutputMix slOutputMix = {SL_DATALOCATOR_OUTPUTMIX, outputMixObject};
     SLDataSink slSink = {&slOutputMix, nullptr};
-    SLDataLocator_BufferQueue slBufferQueue = {
-        SL_DATALOCATOR_BUFFERQUEUE,
-        0
-    };
-    SLDataFormat_PCM pcmFormat = {
-        SL_DATAFORMAT_PCM,
-        wavHeader_.NumOfChan,
-        wavHeader_.SamplesPerSec * 1000,
-        wavHeader_.bitsPerSample,
-        0,
-        0,
-        0
-    };
-    SLDataSource slSource = {&slBufferQueue, &pcmFormat};
-    // DEBUG_TAG_START
-    OH_LOG_INFO(LOG_APP, "[DEBUG_LOG] OpenSlTest pcmFormat: numChannels=%{public}d, samplesPerSec=%{public}d, bitsPerSample=%{public}d",
-        pcmFormat.numChannels, pcmFormat.samplesPerSec, pcmFormat.bitsPerSample);
-    // DEBUG_TAG_END
+    SLDataLocator_BufferQueue slBufferQueue = {SL_DATALOCATOR_BUFFERQUEUE, 0};
+    SLDataSource slSource = {&slBufferQueue, pcmFormat};
 
-    result = (*engineEngine)->CreateAudioPlayer(engineEngine, &pcmPlayerObject,
+    SLresult result = (*engineEngine)->CreateAudioPlayer(engineEngine, &pcmPlayerObject,
         &slSource, &slSink, number, nullptr, nullptr);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTest CreateAudioPlayer result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "CreateAudioPlayer result: %{public}lu", result);
         return result;
     }
     result = (*pcmPlayerObject)->Realize(pcmPlayerObject, SL_BOOLEAN_FALSE);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTest CreateAudioPlayer Realize result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "pcmPlayerObject Realize result: %{public}lu", result);
         return result;
     }
-    // get bufferQueueItf object
-    result = (*pcmPlayerObject)->GetInterface(pcmPlayerObject, SL_IID_PLAY, &playItf);
+    return SL_RESULT_SUCCESS;
+}
+
+// 获取播放器接口并注册回调
+static SLresult SetupPlayerCallback(FILE *wavFile)
+{
+    SLresult result = (*pcmPlayerObject)->GetInterface(pcmPlayerObject, SL_IID_PLAY, &playItf);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTest get playItf result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "get playItf result: %{public}lu", result);
         return result;
     }
     SLVolumeItf volumeItf;
     result = (*pcmPlayerObject)->GetInterface(pcmPlayerObject, SL_IID_VOLUME, &volumeItf);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTest get volumeItf result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "get volumeItf result: %{public}lu", result);
         return result;
     }
     SLmillibel pLevel = 0;
     result = (*volumeItf)->GetVolumeLevel(volumeItf, &pLevel);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTest GetVolumeLevel result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "GetVolumeLevel result: %{public}lu", result);
         return result;
     }
-    result = (*pcmPlayerObject)->GetInterface(pcmPlayerObject, SL_IID_OH_BUFFERQUEUE, &bufferQueueItf);
+    result = (*pcmPlayerObject)->GetInterface(
+        pcmPlayerObject, SL_IID_OH_BUFFERQUEUE, &bufferQueueItf);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTest get bufferQueueItf result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "get bufferQueueItf result: %{public}lu", result);
         return result;
     }
-    result = (*bufferQueueItf)->RegisterCallback(bufferQueueItf, BuqqerQueueCallback, wavFile_);
+    result = (*bufferQueueItf)->RegisterCallback(bufferQueueItf, BuqqerQueueCallback, wavFile);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTest RegisterCallback result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "RegisterCallback result: %{public}lu", result);
         return result;
     }
-    result = PlayerStart(playItf, bufferQueueItf, wavFile_);
+    return SL_RESULT_SUCCESS;
+}
+
+static SLresult OpenSlTest()
+{
+    OH_LOG_INFO(LOG_APP, "OpenSlTest enter");
+
+    SLEngineItf engineEngine = nullptr;
+    SLresult result = CreateEngine(&engineEngine);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTest PlayerStart result: %{public}lu", result);
         return result;
     }
-    OH_LOG_INFO(LOG_APP, "OpenSlTest return  result: %{public}lu", result);
+    result = CreateOutputMix(engineEngine);
+    if (SL_RESULT_SUCCESS != result) {
+        return result;
+    }
+
+    SLDataFormat_PCM pcmFormat = {
+        SL_DATAFORMAT_PCM, g_wavHeader.numOfChan, g_wavHeader.samplesPerSec * 1000,
+        g_wavHeader.bitsPerSample, 0, 0, 0
+    };
+    result = CreatePlayer(engineEngine, &pcmFormat);
+    if (SL_RESULT_SUCCESS != result) {
+        return result;
+    }
+    result = SetupPlayerCallback(g_wavFile);
+    if (SL_RESULT_SUCCESS != result) {
+        return result;
+    }
+    result = PlayerStart(playItf, bufferQueueItf, g_wavFile);
+    if (SL_RESULT_SUCCESS != result) {
+        OH_LOG_INFO(LOG_APP, "PlayerStart result: %{public}lu", result);
+        return result;
+    }
+    OH_LOG_INFO(LOG_APP, "OpenSlTest return result: %{public}lu", result);
     return result;
 }
 
-static SLresult OpenSlTestConcurrent()
+// 创建两个并发播放器
+static SLresult CreateConcurrentPlayers(SLEngineItf engineEngine,
+    SLDataFormat_PCM *pcmFormat1, SLDataFormat_PCM *pcmFormat2)
 {
-    OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent start");
-    // DEBUG_TAG_START
-    OH_LOG_INFO(LOG_APP, "[DEBUG_LOG] OpenSlTestConcurrent wavHeader1: NumOfChan=%{public}d, SamplesPerSec=%{public}d, bitsPerSample=%{public}d",
-        wavHeader1_.NumOfChan, wavHeader1_.SamplesPerSec, wavHeader1_.bitsPerSample);
-    OH_LOG_INFO(LOG_APP, "[DEBUG_LOG] OpenSlTestConcurrent wavHeader2: NumOfChan=%{public}d, SamplesPerSec=%{public}d, bitsPerSample=%{public}d",
-        wavHeader2_.NumOfChan, wavHeader2_.SamplesPerSec, wavHeader2_.bitsPerSample);
-    // DEBUG_TAG_END
-    engineObject = nullptr;
-    SLEngineItf engineEngine = nullptr;
-    SLresult result = slCreateEngine(&engineObject, 0, nullptr, 0, nullptr, nullptr);
-    if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent slCreateEngine result: %{public}lu", result);
-        return result;
-    }
-    result = (*engineObject)->Realize(engineObject, SL_BOOLEAN_FALSE);
-    if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent Realize result: %{public}lu", result);
-        return result;
-    }
-
-    result = (*engineObject)->GetInterface(engineObject, SL_IID_ENGINE, &engineEngine);
-    if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent get engineEngine result: %{public}lu", result);
-        return result;
-    }
-
-    outputMixObject = nullptr;
-    result = (*engineEngine)->CreateOutputMix(engineEngine, &outputMixObject, 0, nullptr, nullptr);
-    if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent CreateOutputMix result: %{public}lu", result);
-        return result;
-    }
-    result = (*outputMixObject)->Realize(outputMixObject, SL_BOOLEAN_FALSE);
-    if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent outPut Realize result: %{public}lu", result);
-        return result;
-    }
-    SLuint32 state;
-    result = (*outputMixObject)->GetState(outputMixObject, &state);
-    if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent outPut GetState result: %{public}lu", result);
-        return result;
-    }
-
     SLDataLocator_OutputMix slOutputMix = {SL_DATALOCATOR_OUTPUTMIX, outputMixObject};
     SLDataSink slSink = {&slOutputMix, nullptr};
-    SLDataLocator_BufferQueue slBufferQueue = {
-        SL_DATALOCATOR_BUFFERQUEUE,
-        0
-    };
-    SLDataFormat_PCM pcmFormat1 = {
-        SL_DATAFORMAT_PCM,
-        wavHeader1_.NumOfChan,
-        wavHeader1_.SamplesPerSec * 1000,
-        wavHeader1_.bitsPerSample,
-        0,
-        0,
-        0
-    };
-    SLDataFormat_PCM pcmFormat2 = {
-        SL_DATAFORMAT_PCM,
-        wavHeader2_.NumOfChan,
-        wavHeader2_.SamplesPerSec * 1000,
-        wavHeader2_.bitsPerSample,
-        0,
-        0,
-        0
-    };
-    SLDataSource slSource1 = {&slBufferQueue, &pcmFormat1};
-    SLDataSource slSource2 = {&slBufferQueue, &pcmFormat2};
-    // DEBUG_TAG_START
-    OH_LOG_INFO(LOG_APP, "[DEBUG_LOG] OpenSlTestConcurrent pcmFormat1: numChannels=%{public}d, samplesPerSec=%{public}d, bitsPerSample=%{public}d",
-        pcmFormat1.numChannels, pcmFormat1.samplesPerSec, pcmFormat1.bitsPerSample);
-    OH_LOG_INFO(LOG_APP, "[DEBUG_LOG] OpenSlTestConcurrent pcmFormat2: numChannels=%{public}d, samplesPerSec=%{public}d, bitsPerSample=%{public}d",
-        pcmFormat2.numChannels, pcmFormat2.samplesPerSec, pcmFormat2.bitsPerSample);
-    // DEBUG_TAG_END
+    SLDataLocator_BufferQueue slBufferQueue = {SL_DATALOCATOR_BUFFERQUEUE, 0};
+    SLDataSource slSource1 = {&slBufferQueue, pcmFormat1};
+    SLDataSource slSource2 = {&slBufferQueue, pcmFormat2};
 
-    result = (*engineEngine)->CreateAudioPlayer(engineEngine, &pcmPlayerObject1, &slSource1,
-        &slSink, number, nullptr, nullptr);
+    SLresult result = (*engineEngine)->CreateAudioPlayer(engineEngine, &pcmPlayerObject1,
+        &slSource1, &slSink, number, nullptr, nullptr);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent CreateAudioPlayer pcmPlayerObject1 Realize result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "CreateAudioPlayer pcmPlayerObject1 result: %{public}lu", result);
         return result;
     }
     result = (*pcmPlayerObject1)->Realize(pcmPlayerObject1, SL_BOOLEAN_FALSE);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent outPut Realize pcmPlayerObject1 result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "Realize pcmPlayerObject1 result: %{public}lu", result);
         return result;
     }
 
-    result = (*engineEngine)->CreateAudioPlayer(engineEngine, &pcmPlayerObject2, &slSource2, &slSink,
-        number, nullptr, nullptr);
+    result = (*engineEngine)->CreateAudioPlayer(engineEngine, &pcmPlayerObject2,
+        &slSource2, &slSink, number, nullptr, nullptr);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent CreateAudioPlayer pcmPlayerObject2 result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "CreateAudioPlayer pcmPlayerObject2 result: %{public}lu", result);
         return result;
     }
     result = (*pcmPlayerObject2)->Realize(pcmPlayerObject2, SL_BOOLEAN_FALSE);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent Realize pcmPlayerObject2 result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "Realize pcmPlayerObject2 result: %{public}lu", result);
         return result;
     }
+    return SL_RESULT_SUCCESS;
+}
 
-    result = (*pcmPlayerObject1)->GetInterface(pcmPlayerObject1, SL_IID_PLAY, &playItf1);
+// 设置两个播放器的接口和音量
+static SLresult SetupConcurrentPlayerInterfaces()
+{
+    SLresult result = (*pcmPlayerObject1)->GetInterface(
+        pcmPlayerObject1, SL_IID_PLAY, &playItf1);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent playItf1 result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "get playItf1 result: %{public}lu", result);
         return result;
     }
     result = (*pcmPlayerObject2)->GetInterface(pcmPlayerObject2, SL_IID_PLAY, &playItf2);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent playItf2 result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "get playItf2 result: %{public}lu", result);
         return result;
     }
     result = (*pcmPlayerObject1)->GetInterface(pcmPlayerObject1, SL_IID_VOLUME, &volumeItf1);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent volumeItf1 result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "get volumeItf1 result: %{public}lu", result);
         return result;
     }
 
     SLmillibel level1 = 0;
     (*volumeItf1)->GetMaxVolumeLevel(volumeItf1, &level1);
-    SLmillibel temp = 2; // SetVolumeLevel level1
-    level1 = (SLmillibel) (level1 / temp);
+    SLmillibel temp = 2;
+    level1 = (SLmillibel)(level1 / temp);
     (*volumeItf1)->SetVolumeLevel(volumeItf1, level1);
+
     (*pcmPlayerObject2)->GetInterface(pcmPlayerObject2, SL_IID_VOLUME, &volumeItf2);
     SLmillibel level2 = 0;
     (*volumeItf2)->GetMaxVolumeLevel(volumeItf2, &level2);
-    temp = 15; // SetVolumeLevel level2
-    level2 = (SLmillibel) (level2 / temp);
+    temp = 15;
+    level2 = (SLmillibel)(level2 / temp);
     (*volumeItf2)->SetVolumeLevel(volumeItf2, level2);
+    return SL_RESULT_SUCCESS;
+}
 
-    result = (*pcmPlayerObject1)->GetInterface(pcmPlayerObject1, SL_IID_OH_BUFFERQUEUE, &bufferQueueItf1);
+// 设置两个播放器的缓冲队列回调
+static SLresult SetupConcurrentCallbacks()
+{
+    SLresult result = (*pcmPlayerObject1)->GetInterface(
+        pcmPlayerObject1, SL_IID_OH_BUFFERQUEUE, &bufferQueueItf1);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent bufferQueueItf1 result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "get bufferQueueItf1 result: %{public}lu", result);
         return result;
     }
-    result = (*pcmPlayerObject2)->GetInterface(pcmPlayerObject2, SL_IID_OH_BUFFERQUEUE, &bufferQueueItf2);
+    result = (*pcmPlayerObject2)->GetInterface(
+        pcmPlayerObject2, SL_IID_OH_BUFFERQUEUE, &bufferQueueItf2);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent bufferQueueItf2 result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "get bufferQueueItf2 result: %{public}lu", result);
         return result;
     }
-    result = (*bufferQueueItf1)->RegisterCallback(bufferQueueItf1, BuqqerQueueCallback, wavFile1_);
+    result = (*bufferQueueItf1)->RegisterCallback(
+        bufferQueueItf1, BuqqerQueueCallback, g_wavFile1);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent RegisterCallback1 result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "RegisterCallback1 result: %{public}lu", result);
         return result;
     }
-    result = (*bufferQueueItf2)->RegisterCallback(bufferQueueItf2, BuqqerQueueCallback, wavFile2_);
+    result = (*bufferQueueItf2)->RegisterCallback(
+        bufferQueueItf2, BuqqerQueueCallback, g_wavFile2);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent RegisterCallback2 result: %{public}lu", result);
+        OH_LOG_INFO(LOG_APP, "RegisterCallback2 result: %{public}lu", result);
         return result;
     }
-    result = PlayerStart(playItf1, bufferQueueItf1, wavFile1_);
+    return SL_RESULT_SUCCESS;
+}
+
+static SLresult OpenSlTestConcurrent()
+{
+    OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent start");
+
+    SLEngineItf engineEngine = nullptr;
+    SLresult result = CreateEngine(&engineEngine);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent playItf1 PlayerStart result: %{public}lu", result);
         return result;
     }
-    result = PlayerStart(playItf2, bufferQueueItf2, wavFile2_);
+    result = CreateOutputMix(engineEngine);
     if (SL_RESULT_SUCCESS != result) {
-        OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent playItf2 PlayerStart result: %{public}lu", result);
         return result;
     }
-    OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent return  result: %{public}lu", result);
+
+    SLDataFormat_PCM pcmFormat1 = {
+        SL_DATAFORMAT_PCM, g_wavHeader1.numOfChan, g_wavHeader1.samplesPerSec * 1000,
+        g_wavHeader1.bitsPerSample, 0, 0, 0
+    };
+    SLDataFormat_PCM pcmFormat2 = {
+        SL_DATAFORMAT_PCM, g_wavHeader2.numOfChan, g_wavHeader2.samplesPerSec * 1000,
+        g_wavHeader2.bitsPerSample, 0, 0, 0
+    };
+
+    result = CreateConcurrentPlayers(engineEngine, &pcmFormat1, &pcmFormat2);
+    if (SL_RESULT_SUCCESS != result) {
+        return result;
+    }
+    result = SetupConcurrentPlayerInterfaces();
+    if (SL_RESULT_SUCCESS != result) {
+        return result;
+    }
+    result = SetupConcurrentCallbacks();
+    if (SL_RESULT_SUCCESS != result) {
+        return result;
+    }
+
+    result = PlayerStart(playItf1, bufferQueueItf1, g_wavFile1);
+    if (SL_RESULT_SUCCESS != result) {
+        OH_LOG_INFO(LOG_APP, "playItf1 PlayerStart result: %{public}lu", result);
+        return result;
+    }
+    result = PlayerStart(playItf2, bufferQueueItf2, g_wavFile2);
+    if (SL_RESULT_SUCCESS != result) {
+        OH_LOG_INFO(LOG_APP, "playItf2 PlayerStart result: %{public}lu", result);
+        return result;
+    }
+    OH_LOG_INFO(LOG_APP, "OpenSlTestConcurrent return result: %{public}lu", result);
     return result;
 }
 
@@ -441,43 +451,42 @@ static SLresult PlayerStop(SLPlayItf sPlayItf, SLOHBufferQueueItf sBufferQueueIt
 static int SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100()
 {
     // 重新初始化 wavHeader，确保使用默认值
-    wavHeader1_ = wav_hdr();
-    wavHeader2_ = wav_hdr();
+    g_wavHeader1 = WavHdr();
+    g_wavHeader2 = WavHdr();
     
-    size_t headerSize = sizeof(wav_hdr);
-    char path[PATH_MAX + 1] = {0x00};
+    size_t headerSize = sizeof(WavHdr);
+    char path[PATH_BUFFER_SIZE] = {0x00};
     if ((strlen(READPATH1) > PATH_MAX) || (realpath(READPATH1, path) == nullptr)) {
         OH_LOG_ERROR(LOG_APP, "Invalid path");
         return -1;
     }
-    wavFile1_ = fopen(path, "rb");
-    if (wavFile1_ == nullptr) {
+    g_wavFile1 = fopen(path, "rb");
+    if (g_wavFile1 == nullptr) {
         OH_LOG_ERROR(LOG_APP, "AudioRendererTest: Unable to open wave file");
         return -1;
     }
     // PCM文件无WAV头部，不读取，直接使用wavHeader的默认值
-    // fread(&wavHeader1_, 1, headerSize, wavFile1_);
+    // fread(&g_wavHeader1, 1, headerSize, g_wavFile1);
 
-    headerSize = sizeof(wav_hdr);
+    headerSize = sizeof(WavHdr);
     if ((strlen(READPATH2) > PATH_MAX) || (realpath(READPATH2, path) == nullptr)) {
         OH_LOG_ERROR(LOG_APP, "Invalid path");
         return -1;
     }
-    wavFile2_ = fopen(path, "rb");
-    if (wavFile2_ == nullptr) {
+    g_wavFile2 = fopen(path, "rb");
+    if (g_wavFile2 == nullptr) {
         OH_LOG_ERROR(LOG_APP, "AudioRendererTest: Unable to open wave file");
         return -1;
     }
-    // PCM文件无WAV头部，不读取，直接使用wavHeader的默认值
-    // fread(&wavHeader2_, 1, headerSize, wavFile2_);
+
     SLresult result = OpenSlTestConcurrent();
     if (result != SL_RESULT_SUCCESS) {
         return -1;
     }
-    // 最大播放时间5秒，避免无限等待导致ANR
+    // 最大播放时间5秒，避免无限等待
     int maxWaitTime = 5;
     int waitCount = 0;
-    while ((!feof(wavFile1_) || !feof(wavFile2_)) && waitCount < maxWaitTime) {
+    while ((!feof(g_wavFile1) || !feof(g_wavFile2)) && waitCount < maxWaitTime) {
         sleep(1);
         waitCount++;
     }
@@ -497,6 +506,45 @@ static int SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100()
     return 0;
 }
 
+// 打开音频文件
+static int OpenAudioFile(const char* filePath, FILE **wavFile)
+{
+    char path[PATH_BUFFER_SIZE] = {0x00};
+    if ((strlen(filePath) > PATH_MAX) || (realpath(filePath, path) == nullptr)) {
+        OH_LOG_ERROR(LOG_APP, "Invalid path");
+        return -1;
+    }
+    *wavFile = fopen(path, "rb");
+    if (*wavFile == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "Unable to open wave file");
+        return -1;
+    }
+    return 0;
+}
+
+// 播放并等待完成
+static int PlayAndWait(int maxWaitTime)
+{
+    int waitCount = 0;
+    while (!feof(g_wavFile) && waitCount < maxWaitTime) {
+        sleep(1);
+        waitCount++;
+    }
+    SLresult result = PlayerStop(playItf, bufferQueueItf);
+    if (result != SL_RESULT_SUCCESS) {
+        return -1;
+    }
+    return 0;
+}
+
+// 销毁播放器资源
+static void DestroyPlayerResources()
+{
+    (*pcmPlayerObject)->Destroy(pcmPlayerObject);
+    (*outputMixObject)->Destroy(outputMixObject);
+    (*engineObject)->Destroy(engineObject);
+}
+
 /**
  * @tc.name   SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0200
  * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0200
@@ -507,76 +555,101 @@ static int SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100()
  */
 static int SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0200()
 {
-    // 重新初始化 wavHeader，确保使用默认值
-    wavHeader_ = wav_hdr();
-    
-    size_t headerSize = sizeof(wav_hdr);
-        char path[PATH_MAX + 1] = {0x00};
-        if ((strlen(READPATH1) > PATH_MAX) || (realpath(READPATH1, path) == nullptr)) {
-            OH_LOG_ERROR(LOG_APP, "Invalid path");
-            return -1;
-        }
-        wavFile_ = fopen(path, "rb");
-        if (wavFile_ == nullptr) {
-            OH_LOG_ERROR(LOG_APP, "AudioRendererTest: Unable to open wave file");
-            return -1;
-        }
-        // PCM文件无WAV头部，不读取，直接使用wavHeader的默认值
-        // fread(&wavHeader_, 1, headerSize, wavFile_);
+    g_wavHeader = WavHdr();
 
-        SLresult result = OpenSlTest();
-        if (result != SL_RESULT_SUCCESS) {
-            return -1;
-        }
+    // 第一次播放
+    if (OpenAudioFile(READPATH1, &g_wavFile) != 0) {
+        return -1;
+    }
+    SLresult result = OpenSlTest();
+    if (result != SL_RESULT_SUCCESS) {
+        return -1;
+    }
+    if (PlayAndWait(3) != 0) {
+        return -1;
+    }
+    DestroyPlayerResources();
 
-        // 最大播放时间2秒（两个文件共计4秒，避免超过6秒ANR阈值）
-        int maxWaitTime = 3;
-        int waitCount = 0;
-        while (!feof(wavFile_) && waitCount < maxWaitTime) {
-            sleep(1);
-            waitCount++;
-        }
-        result = PlayerStop(playItf, bufferQueueItf);
-        if (result != SL_RESULT_SUCCESS) {
-            return -1;
-        }
-        (*pcmPlayerObject)->Destroy(pcmPlayerObject);
-        (*outputMixObject)->Destroy(outputMixObject);
-        (*engineObject)->Destroy(engineObject);
+    // 第二次播放
+    if (OpenAudioFile(READPATH2, &g_wavFile) != 0) {
+        return -1;
+    }
+    result = OpenSlTest();
+    if (result != SL_RESULT_SUCCESS) {
+        return -1;
+    }
+    if (PlayAndWait(2) != 0) {
+        return -1;
+    }
+    DestroyPlayerResources();
+    return 0;
+}
 
-        char path2[PATH_MAX + 1] = {0x00};
-        if ((strlen(READPATH2) > PATH_MAX) || (realpath(READPATH2, path2) == nullptr)) {
-            OH_LOG_ERROR(LOG_APP, "Invalid path");
-            return -1;
-        }
-        wavFile_ = fopen(path2, "rb");
-        if (wavFile_ == nullptr) {
-            OH_LOG_ERROR(LOG_APP, "AudioRendererTest: Unable to open wave file");
-            return -1;
-        }
-        // PCM文件无WAV头部，不读取，直接使用wavHeader的默认值
-        // fread(&wavHeader_, 1, headerSize, wavFile_);
+// 测试引擎不支持的设备创建接口
+static int TestEngineCreateDevices(SLEngineItf engineEngine)
+{
+    SLresult result1 = (*engineEngine)->CreateLEDDevice(
+        engineEngine, nullptr, 0, 0, nullptr, nullptr);
+    if (result1 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    SLresult result2 = (*engineEngine)->CreateVibraDevice(
+        engineEngine, nullptr, 0, 0, nullptr, nullptr);
+    if (result2 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    SLresult result4 = (*engineEngine)->CreateListener(
+        engineEngine, nullptr, 0, nullptr, nullptr);
+    if (result4 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    SLresult result5 = (*engineEngine)->Create3DGroup(
+        engineEngine, nullptr, 0, nullptr, nullptr);
+    if (result5 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    SLresult result6 = (*engineEngine)->CreateMetadataExtractor(
+        engineEngine, nullptr, nullptr, 0, nullptr, nullptr);
+    if (result6 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    SLresult result7 = (*engineEngine)->CreateExtensionObject(
+        engineEngine, nullptr, nullptr, 0, 0, nullptr, nullptr);
+    if (result7 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    return 0;
+}
 
-        result = OpenSlTest();
-        if (result != SL_RESULT_SUCCESS) {
-            return -1;
-        }
-
-        // 最大播放时间2秒
-        maxWaitTime = 2;
-        waitCount = 0;
-        while (!feof(wavFile_) && waitCount < maxWaitTime) {
-            sleep(1);
-            waitCount++;
-        }
-        result = PlayerStop(playItf, bufferQueueItf);
-        if (result != SL_RESULT_SUCCESS) {
-            return -1;
-        }
-        (*pcmPlayerObject)->Destroy(pcmPlayerObject);
-        (*outputMixObject)->Destroy(outputMixObject);
-        (*engineObject)->Destroy(engineObject);
-        return 0;
+// 测试引擎不支持的查询接口
+static int TestEngineQueryInterfaces(SLEngineItf engineEngine)
+{
+    SLresult result8 = (*engineEngine)->QueryNumSupportedInterfaces(
+        engineEngine, 0, nullptr);
+    if (result8 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    SLresult result9 = (*engineEngine)->QuerySupportedInterfaces(
+        engineEngine, 0, 0, nullptr);
+    if (result9 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    SLresult result10 = (*engineEngine)->QueryNumSupportedExtensions(
+        engineEngine, nullptr);
+    if (result10 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    SLresult result11 = (*engineEngine)->QuerySupportedExtension(
+        engineEngine, 0, nullptr, nullptr);
+    if (result11 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    SLresult result12 = (*engineEngine)->IsExtensionSupported(
+        engineEngine, nullptr, nullptr);
+    if (result12 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    return 0;
 }
 
 /**
@@ -595,65 +668,15 @@ static int SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0100()
     if (result != SL_RESULT_SUCCESS) {
         return -1;
     }
-
     result = (*engineObject)->GetInterface(engineObject, SL_IID_ENGINE, &engineEngine);
     if (result != SL_RESULT_SUCCESS) {
         return -1;
     }
 
-    SLresult result1 = (*engineEngine)->CreateLEDDevice(engineEngine, nullptr, 0, 0, nullptr, nullptr);
-    if (result1 != SL_RESULT_FEATURE_UNSUPPORTED) {
+    if (TestEngineCreateDevices(engineEngine) != 0) {
         return -1;
     }
-
-    SLresult result2 = (*engineEngine)->CreateVibraDevice(engineEngine, nullptr, 0, 0, nullptr, nullptr);
-    if (result2 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-
-    SLresult result4 = (*engineEngine)->CreateListener(engineEngine, nullptr, 0, nullptr, nullptr);
-    if (result4 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-
-    SLresult result5 = (*engineEngine)->Create3DGroup(engineEngine, nullptr, 0, nullptr, nullptr);
-    if (result5 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-
-    SLresult result6 = (*engineEngine)->CreateMetadataExtractor(engineEngine, nullptr, nullptr, 0, nullptr, nullptr);
-    if (result6 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-
-    SLresult result7 = (*engineEngine)->CreateExtensionObject(engineEngine, nullptr, nullptr, 0,
-        0, nullptr, nullptr);
-    if (result7 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-
-    SLresult result8 = (*engineEngine)->QueryNumSupportedInterfaces(engineEngine, 0, nullptr);
-    if (result8 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-
-    SLresult result9 = (*engineEngine)->QuerySupportedInterfaces(engineEngine, 0, 0, nullptr);
-    if (result9 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-
-    SLresult result10 = (*engineEngine)->QueryNumSupportedExtensions(engineEngine, nullptr);
-    if (result10 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-
-    SLresult result11 = (*engineEngine)->QuerySupportedExtension(engineEngine, 0, nullptr, nullptr);
-    if (result11 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-
-    SLresult result12 = (*engineEngine)->IsExtensionSupported(engineEngine, nullptr, nullptr);
-    if (result12 != SL_RESULT_FEATURE_UNSUPPORTED) {
+    if (TestEngineQueryInterfaces(engineEngine) != 0) {
         return -1;
     }
     return 0;
@@ -699,6 +722,81 @@ static int SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0200()
     return 0;
 }
 
+// 初始化测试用播放器
+static int InitTestPlayer(SLEngineItf *engineEngine)
+{
+    engineObject = nullptr;
+    SLresult result = slCreateEngine(&engineObject, 0, nullptr, 0, nullptr, nullptr);
+    if (result != SL_RESULT_SUCCESS) {
+        return -1;
+    }
+    result = (*engineObject)->GetInterface(engineObject, SL_IID_ENGINE, engineEngine);
+    if (result != SL_RESULT_SUCCESS) {
+        return -1;
+    }
+
+    pcmPlayerObject = nullptr;
+    SLDataLocator_OutputMix slOutputMix = {SL_DATALOCATOR_OUTPUTMIX, outputMixObject};
+    SLDataSink slSink = {&slOutputMix, nullptr};
+    SLDataLocator_BufferQueue slBufferQueue = {SL_DATALOCATOR_BUFFERQUEUE, 0};
+    SLDataFormat_PCM pcmFormat = {
+        SL_DATAFORMAT_PCM, g_wavHeader.numOfChan, g_wavHeader.samplesPerSec * 1000,
+        g_wavHeader.bitsPerSample, 0, 0, 0};
+    SLDataSource slSource = {&slBufferQueue, &pcmFormat};
+    result = (*(*engineEngine))->CreateAudioPlayer(*engineEngine, &pcmPlayerObject,
+        &slSource, &slSink, number, nullptr, nullptr);
+    if (result != SL_RESULT_SUCCESS) {
+        return -1;
+    }
+    return 0;
+}
+
+// 测试PlayItf不支持的接口
+static int TestPlayItfUnsupported(SLPlayItf sPlayItf)
+{
+    SLresult result1 = (*sPlayItf)->GetDuration(sPlayItf, nullptr);
+    if (result1 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    SLresult result2 = (*sPlayItf)->GetPositionUpdatePeriod(sPlayItf, nullptr);
+    if (result2 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    SLresult result3 = (*sPlayItf)->RegisterCallback(sPlayItf, nullptr, nullptr);
+    if (result3 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    SLresult result4 = (*sPlayItf)->SetCallbackEventsMask(sPlayItf, 0);
+    if (result4 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    SLresult result5 = (*sPlayItf)->GetCallbackEventsMask(sPlayItf, 0);
+    if (result5 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    SLresult result6 = (*sPlayItf)->SetMarkerPosition(sPlayItf, 0);
+    if (result6 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    SLresult result7 = (*sPlayItf)->GetMarkerPosition(sPlayItf, nullptr);
+    if (result7 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    SLresult result8 = (*sPlayItf)->SetPositionUpdatePeriod(sPlayItf, 0);
+    if (result8 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    SLresult result9 = (*sPlayItf)->ClearMarkerPosition(sPlayItf);
+    if (result9 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    SLresult result10 = (*sPlayItf)->GetPosition(sPlayItf, nullptr);
+    if (result10 != SL_RESULT_FEATURE_UNSUPPORTED) {
+        return -1;
+    }
+    return 0;
+}
+
 /**
  * @tc.name   SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0300
  * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0300
@@ -709,96 +807,46 @@ static int SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0200()
  */
 static int SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0300()
 {
-    // get engineObject
-    engineObject = nullptr;
-    SLresult result = slCreateEngine(&engineObject, 0, nullptr, 0, nullptr, nullptr);
-    if (result != SL_RESULT_SUCCESS) {
-        return -1;
-    }
-
-    // get engineEngine
     SLEngineItf engineEngine = nullptr;
-    result = (*engineObject)->GetInterface(engineObject, SL_IID_ENGINE, &engineEngine);
-    if (result != SL_RESULT_SUCCESS) {
+    if (InitTestPlayer(&engineEngine) != 0) {
         return -1;
     }
 
-    // get pcmPlayerObject
-    pcmPlayerObject = nullptr;
-    SLDataLocator_OutputMix slOutputMix = {SL_DATALOCATOR_OUTPUTMIX, outputMixObject};
-    SLDataSink slSink = {&slOutputMix, nullptr};
-    SLDataLocator_BufferQueue slBufferQueue = {
-        SL_DATALOCATOR_BUFFERQUEUE,
-        0};
-    SLDataFormat_PCM pcmFormat = {
-        SL_DATAFORMAT_PCM,
-        wavHeader_.NumOfChan,
-        wavHeader_.SamplesPerSec * 1000,
-        wavHeader_.bitsPerSample,
-        0,
-        0,
-        0};
-    SLDataSource slSource = {&slBufferQueue, &pcmFormat};
-    result = (*engineEngine)->CreateAudioPlayer(engineEngine, &pcmPlayerObject, &slSource, &slSink,
-        number, nullptr, nullptr);
-    if (result != SL_RESULT_SUCCESS) {
-        return -1;
-    }
-
-    // get playItf
     playItf = nullptr;
-    result = (*pcmPlayerObject)->GetInterface(pcmPlayerObject, SL_IID_PLAY, &playItf);
+    SLresult result = (*pcmPlayerObject)->GetInterface(
+        pcmPlayerObject, SL_IID_PLAY, &playItf);
     if (result != SL_RESULT_SUCCESS) {
         return -1;
     }
 
-    SLresult result1 = (*playItf)->GetDuration(playItf, nullptr);
+    return TestPlayItfUnsupported(playItf);
+}
+
+// 测试VolumeItf不支持的接口
+static int TestVolumeItfUnsupported(SLVolumeItf sVolumeItf)
+{
+    SLresult result1 = (*sVolumeItf)->SetMute(sVolumeItf, SL_BOOLEAN_FALSE);
     if (result1 != SL_RESULT_FEATURE_UNSUPPORTED) {
         return -1;
     }
-
-    SLresult result2 = (*playItf)->GetPositionUpdatePeriod(playItf, nullptr);
+    SLresult result2 = (*sVolumeItf)->GetMute(sVolumeItf, nullptr);
     if (result2 != SL_RESULT_FEATURE_UNSUPPORTED) {
         return -1;
     }
-
-    SLresult result3 = (*playItf)->RegisterCallback(playItf, nullptr, nullptr);
+    SLresult result3 = (*sVolumeItf)->EnableStereoPosition(sVolumeItf, SL_BOOLEAN_FALSE);
     if (result3 != SL_RESULT_FEATURE_UNSUPPORTED) {
         return -1;
     }
-
-    SLresult result4 = (*playItf)->SetCallbackEventsMask(playItf, 0);
+    SLresult result4 = (*sVolumeItf)->IsEnabledStereoPosition(sVolumeItf, nullptr);
     if (result4 != SL_RESULT_FEATURE_UNSUPPORTED) {
         return -1;
     }
-
-    SLresult result5 = (*playItf)->GetCallbackEventsMask(playItf, 0);
+    SLresult result5 = (*sVolumeItf)->SetStereoPosition(sVolumeItf, 0);
     if (result5 != SL_RESULT_FEATURE_UNSUPPORTED) {
         return -1;
     }
-
-    SLresult result6 = (*playItf)->SetMarkerPosition(playItf, 0);
+    SLresult result6 = (*sVolumeItf)->GetStereoPosition(sVolumeItf, nullptr);
     if (result6 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-
-    SLresult result7 = (*playItf)->GetMarkerPosition(playItf, nullptr);
-    if (result7 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-
-    SLresult result8 = (*playItf)->SetPositionUpdatePeriod(playItf, 0);
-    if (result8 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-
-    SLresult result9 = (*playItf)->ClearMarkerPosition(playItf);
-    if (result9 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-
-    SLresult result10 = (*playItf)->GetPosition(playItf, nullptr);
-    if (result10 != SL_RESULT_FEATURE_UNSUPPORTED) {
         return -1;
     }
     return 0;
@@ -814,77 +862,17 @@ static int SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0300()
  */
 static int SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0400()
 {
-    // get engineObject
-    engineObject = nullptr;
-    SLresult result = slCreateEngine(&engineObject, 0, nullptr, 0, nullptr, nullptr);
-    if (result != SL_RESULT_SUCCESS) {
-        return -1;
-    }
-
-    // get engineEngine
     SLEngineItf engineEngine = nullptr;
-    result = (*engineObject)->GetInterface(engineObject, SL_IID_ENGINE, &engineEngine);
-    if (result != SL_RESULT_SUCCESS) {
+    if (InitTestPlayer(&engineEngine) != 0) {
         return -1;
     }
 
-    // get pcmPlayerObject
-    pcmPlayerObject = nullptr;
-    SLDataLocator_OutputMix slOutputMix = {SL_DATALOCATOR_OUTPUTMIX, outputMixObject};
-    SLDataSink slSink = {&slOutputMix, nullptr};
-    SLDataLocator_BufferQueue slBufferQueue = {
-        SL_DATALOCATOR_BUFFERQUEUE,
-        0};
-    SLDataFormat_PCM pcmFormat = {
-        SL_DATAFORMAT_PCM,
-        wavHeader_.NumOfChan,
-        wavHeader_.SamplesPerSec * 1000,
-        wavHeader_.bitsPerSample,
-        0,
-        0,
-        0};
-    SLDataSource slSource = {&slBufferQueue, &pcmFormat};
-    result = (*engineEngine)->CreateAudioPlayer(engineEngine, &pcmPlayerObject, &slSource,
-        &slSink, number, nullptr, nullptr);
-    if (result != SL_RESULT_SUCCESS) {
-        return -1;
-    }
-
-    // get volumeItf
     SLVolumeItf volumeItf = nullptr;
-    result = (*pcmPlayerObject)->GetInterface(pcmPlayerObject, SL_IID_VOLUME, &volumeItf);
+    SLresult result = (*pcmPlayerObject)->GetInterface(
+        pcmPlayerObject, SL_IID_VOLUME, &volumeItf);
     if (result != SL_RESULT_SUCCESS) {
         return -1;
     }
 
-    SLresult result1 = (*volumeItf)->SetMute(volumeItf, SL_BOOLEAN_FALSE);
-    if (result1 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-
-    SLresult result2 = (*volumeItf)->GetMute(volumeItf, nullptr);
-    if (result2 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-
-    SLresult result3 = (*volumeItf)->EnableStereoPosition(volumeItf, SL_BOOLEAN_FALSE);
-    if (result3 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-
-    SLresult result4 = (*volumeItf)->IsEnabledStereoPosition(volumeItf, nullptr);
-    if (result4 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-
-    SLresult result5 = (*volumeItf)->SetStereoPosition(volumeItf, 0);
-    if (result5 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-
-    SLresult result6 = (*volumeItf)->GetStereoPosition(volumeItf, nullptr);
-    if (result6 != SL_RESULT_FEATURE_UNSUPPORTED) {
-        return -1;
-    }
-    return 0;
+    return TestVolumeItfUnsupported(volumeItf);
 }

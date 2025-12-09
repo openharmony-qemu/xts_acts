@@ -39,7 +39,7 @@ bool CompareString(const std::string& x, const std::string& y);
 int GetTxtLine(std::string filename);
 std::string ReadFile(std::string filename);
 void CleanCmd();
-std::string ReadOneLine(std::string m_path, char* rBuf, int n);
+std::string ReadOneLine(std::string mPath, char* rBuf, int n);
 void SaveCmdOutput(std::string cmd, std::string saveFile);
-std::vector<std::string> getfileinpath(std::string path);
+std::vector<std::string> Getfileinpath(std::string path);
 #endif // HIVIEWDFX_UTILS_NATIVE_FILE_UTILS_H_

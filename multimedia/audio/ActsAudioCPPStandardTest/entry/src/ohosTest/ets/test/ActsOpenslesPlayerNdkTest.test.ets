@@ -1,5 +1,5 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import audio_cpp_standard_test from 'libaudio_cpp_standard_test.so';
 import fs from '@ohos.file.fs';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -84,38 +84,86 @@ export default function ActsOpenslesPlayerNdkTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    
-    it('SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100', 0, () => {
+
+    /**
+     * @tc.name   openslesPlayerFunctionTest
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100
+     * @tc.desc   test opensles Play audio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100', Level.LEVEL0, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0100 begin');
       const result:number = audio_cpp_standard_test.openslesPlayerFunctionTest(0);
       expect(result).assertEqual(0);
     })
 
-    it('SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0200', 0, () => {
+    /**
+     * @tc.name   openslesPlayerFunctionTest
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0200
+     * @tc.desc   test opensles Play audio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0200', Level.LEVEL0, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_MULTIMEDIA_AUDIO_OPENSELES_PALYER_FUNCTION_0200 begin');
       const result:number  = audio_cpp_standard_test.openslesPlayerFunctionTest(1);
       expect(result).assertEqual(0);
     })
 
-    it('SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0100', 0, () => {
+    /**
+     * @tc.name   openslesEngineInvalidTest
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0100
+     * @tc.desc   test opensles invalid interfacce
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0100', Level.LEVEL0, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0100 begin');
       const result:number  = audio_cpp_standard_test.openslesEngineInvalidTest(0);
       expect(result).assertEqual(0);
     })
 
-    it('SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0200', 0, () => {
+    /**
+     * @tc.name   openslesEngineInvalidTest
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0200
+     * @tc.desc   test opensles invalid interfacce
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0200', Level.LEVEL0, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0200 begin');
       const result:number  = audio_cpp_standard_test.openslesEngineInvalidTest(1);
       expect(result).assertEqual(0);
     })
 
-    it('SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0300', 0, () => {
+    /**
+     * @tc.name   openslesEngineInvalidTest
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0300
+     * @tc.desc   test opensles invalid interfacce
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0300', Level.LEVEL0, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0300 begin');
       const result:number  = audio_cpp_standard_test.openslesEngineInvalidTest(2);
       expect(result).assertEqual(0);
     })
 
-    it('SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0400', 0, () => {
+    /**
+     * @tc.name   openslesEngineInvalidTest
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0400
+     * @tc.desc   test opensles invalid interfacce
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0400', Level.LEVEL0, () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_MULTIMEDIA_AUDIO_OPENSELES_ENGINEITF_INVALID_0400 begin');
       const result:number  = audio_cpp_standard_test.openslesEngineInvalidTest(3);
       expect(result).assertEqual(0);

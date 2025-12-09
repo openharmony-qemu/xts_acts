@@ -14,7 +14,7 @@
  */
 #ifndef TEST_COMMON_H
 #define TEST_COMMON_H
-#include "file_utils.h"
+#include "FileUtils.h"
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -29,8 +29,6 @@
 #include <dirent.h>
 #include <condition_variable>
 #include <vector>
-//#include "include/securec.h"
-//#include "string_util.h"
 
 //using namespace OHOS::HiviewDFX;
 int ExecCmdWithRet(std::string cmd, std::vector<std::string> &resvec)
@@ -40,10 +38,14 @@ int ExecCmdWithRet(std::string cmd, std::vector<std::string> &resvec)
     }
 
     std::cout<< "cmd is " + cmd <<std::endl;
-    if ((cmd.find("hilog") == std::string::npos) && (cmd.find("hidumper") == std::string::npos)
-        && (cmd.find("ps") == std::string::npos) && (cmd.find("rm") == std::string::npos) &&
-        (cmd.find("hiperf") == std::string::npos) && (cmd.find("hisysevent") == std::string::npos) &&
-        (cmd.find("mkdir") == std::string::npos) && (cmd.find("dd") == std::string::npos)) {
+    if ((cmd.find("hilog") == std::string::npos) &&
+        (cmd.find("hidumper") == std::string::npos) &&
+        (cmd.find("ps") == std::string::npos) &&
+        (cmd.find("rm") == std::string::npos) &&
+        (cmd.find("hiperf") == std::string::npos) &&
+        (cmd.find("hisysevent") == std::string::npos) &&
+        (cmd.find("mkdir") == std::string::npos) &&
+        (cmd.find("dd") == std::string::npos)) {
         std::cout<<"unsupport cmd!" + cmd <<std::endl;
         return 0;
     }
@@ -194,7 +196,7 @@ std::string ReadFile(std::string filename)
     return buf.str();
 }
 
-std::vector<std::string> getfileinpath(std::string path)
+std::vector<std::string> Getfileinpath(std::string path)
 {
     std::vector<std::string> filelist;
     DIR *dir;
