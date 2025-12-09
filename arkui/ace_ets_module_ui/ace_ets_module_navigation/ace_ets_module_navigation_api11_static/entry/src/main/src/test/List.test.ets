@@ -81,73 +81,76 @@ import navigationJsunittt from './Navigation/NavigationJsunittt.test';
 import navigatorCodeJsunit from './Navigation/NavigatorCodeJsunit.test';
 
 export default function testsuite() {
-  NavDestinationInfoStateJsunit(); //fail 2 observer.onNavDestinationUpdate app died
-  QueryNavDestinationInfoNavDestinationJsunit(); // fail 2 observer.onNavDestinationUpdate app died
+  NavigationApi();
+  navigationNavbar01();
+  navigationTypeTest();
+  NavigationParamTest();
+
+  NavigationApi2();
+  NavigationApi3();
+  NavPathStackApi1();
+  NavPathStackApi2();
+  NavPathStackApi3();
+
+
+  navigationJsunit();
+  navigatorJsunit();
+  NavRouterJsunit();
+
+
+  NavigationJsunit();
+  navigationNavbar02();
+  navigationPosition();
+  NavigationStack10Jsunit();
+  NavigationStack11Jsunit();
+  NavigationStack12Jsunit();
+  NavigationStack13Jsunit();
+  NavigationStack14Jsunit();
+  NavigationStack15Jsunit();
+  NavigationStack16Jsunit();
+  NavigationStack17Jsunit();
+  NavigationStack18Jsunit();
+  NavigationStack19Jsunit();
+  NavigationStack20Jsunit();
+  NavigationStack21Jsunit();
+  NavigationStack23Jsunit();
+  NavigationStack24Jsunit();
+  NavigationStack25Jsunit();
+  NavigationStack26Jsunit();
+  NavigationMode01Jsunit();
+  NavigationMode02Jsunit();
+  NavigationMode03Jsunit();
+  NavigationMode04Jsunit();
+  NavigationMode05Jsunit();
+  NavigationMode06Jsunit();
+  NavigationMode07Jsunit();
+  NavigationMode08Jsunit();
+  NavigationMode09Jsunit();
+  NavigationMode10Jsunit();
+  NavigationMode11Jsunit();
+  NavigationMode12Jsunit();
+  NavigationMode13Jsunit();
+  NavigationMode14Jsunit();
+  NavigationMode15Jsunit();
+  NavigationMode16Jsunit();
+  NavigationMode17Jsunit();
+  navigationuxtest()
+  transitionJsunit();
+  sharedTransitionJsunit();
+  NavigationApiFirst()
+  NavigationApiOther()
+  navigatorTargetJsunit()
+  pageRouteTest()
+  searchOnCutJsunit()
+  navigationJsunittt();
+  navigatorCodeJsunit();
+  NavRouter_onStateChange1();
+  NavRouter_onStateChange2();
+  NavDestination_onBackPressed();
   navigationApi1();//fail 1 customNavContentTransition app died
   NavigationAttr();//fail 1 customNavContentTransition app died
-  NavDestination_onBackPressed();//fail 1 可能JSON.stringify问题 Error in NavDestination_onBackPressed_static_0100, expect {} equals {"number":1}
-  // navigationNavbar01();
-  // navigationTypeTest();
-  // NavigationParamTest();
-  // NavigationApi();
-  // NavigationApi2();
-  // NavigationApi3();
-  // NavPathStackApi1();
-  // NavPathStackApi2();
-  // NavPathStackApi3();
-  //
-  //
-  // navigationJsunit();
-  // navigatorJsunit();
-  // NavRouterJsunit();
-  //
-  //
-  // NavigationJsunit();
-  // navigationNavbar02();
-  // navigationPosition();
-  // NavigationStack10Jsunit();
-  // NavigationStack11Jsunit();
-  // NavigationStack12Jsunit();
-  // NavigationStack13Jsunit();
-  // NavigationStack14Jsunit();
-  // NavigationStack15Jsunit();
-  // NavigationStack16Jsunit();
-  // NavigationStack17Jsunit();
-  // NavigationStack18Jsunit();
-  // NavigationStack19Jsunit();
-  // NavigationStack20Jsunit();
-  // NavigationStack21Jsunit();
-  // NavigationStack23Jsunit();
-  // NavigationStack24Jsunit();
-  // NavigationStack25Jsunit();
-  // NavigationStack26Jsunit();
-  // NavigationMode01Jsunit();
-  // NavigationMode02Jsunit();
-  // NavigationMode03Jsunit();
-  // NavigationMode04Jsunit();
-  // NavigationMode05Jsunit();
-  // NavigationMode06Jsunit();
-  // NavigationMode07Jsunit();
-  // NavigationMode08Jsunit();
-  // NavigationMode09Jsunit();
-  // NavigationMode10Jsunit();
-  // NavigationMode11Jsunit();
-  // NavigationMode12Jsunit();
-  // NavigationMode13Jsunit();
-  // NavigationMode14Jsunit();
-  // NavigationMode15Jsunit();
-  // NavigationMode16Jsunit();
-  // NavigationMode17Jsunit();
-  // navigationuxtest()
-  // transitionJsunit();
-  // sharedTransitionJsunit();
-  // NavigationApiFirst()
-  // NavigationApiOther()
-  // navigatorTargetJsunit()
-  // pageRouteTest()
-  // searchOnCutJsunit()
-  // navigationJsunittt();
-  // navigatorCodeJsunit();
-  // NavRouter_onStateChange1();
-  // NavRouter_onStateChange2();
+  NavDestinationInfoStateJsunit(); //fail 2 observer.onNavDestinationUpdate app died
+  QueryNavDestinationInfoNavDestinationJsunit(); // fail 2 observer.onNavDestinationUpdate app died
+
+
 }

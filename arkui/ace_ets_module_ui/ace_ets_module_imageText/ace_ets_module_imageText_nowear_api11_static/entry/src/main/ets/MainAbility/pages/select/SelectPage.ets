@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { MessageManager, Callback, Message } from '../../common/MessageManager';
-import { Entry, Text, Column, Component, Select, Font, Color } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
+import { Entry, Text, Column, Component, Select, Font, Color,ResourceColor } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import { AppStorage } from '@ohos.arkui.stateManagement'
-
+import events_emitter from '@ohos.events.emitter';
 
 @Entry
 @Component
@@ -27,59 +26,54 @@ struct SelectPage {
   @State selected: int = 0
   @State selectValue: string = 'SelectButton'
   @State selectFont: Font = { size: 16, weight: 500 } as Font
-  @State fontColor: Color = Color.Black
-  @State selectedOptionBgColor: Color = Color.Grey
+  @State fontColor: ResourceColor = Color.Black
+  @State selectedOptionBgColor: ResourceColor = Color.Grey
   @State selectedOptionFont: Font = { size: 16, weight: 400 } as Font
-  @State selectedOptionFontColor: Color = Color.Red
-  @State optionBgColor: Color = Color.White
+  @State selectedOptionFontColor: ResourceColor = Color.Red
+  @State optionBgColor: ResourceColor = Color.White
   @State optionFont: Font = { size: 16, weight: 400 } as Font
-  @State optionFontColor: Color = Color.Green
-  @State indexValue: number = 0
-  messageManager:MessageManager<string|int|Font|Color> = new MessageManager<string|int|Font|Color>()
+  @State optionFontColor: ResourceColor = Color.Green
+  @State indexValue: string = ''
+  stateChangCallBack:(eventData: events_emitter.EventData) => void =  (eventData: events_emitter.EventData) =>  {
+    let eventD = eventData.data as Record<String,undefined|null|Object>
+    if (eventData != null && eventD != null) {
+      if (eventD!['selected']) {
+        this.selected = eventD!['selected'] as int
+      } else if (eventD!['selectValue']!= null) {
+        this.selectValue =  eventD!['selectValue'] as string
+      } else if (eventD!['selectFont']!= null) {
+        this.selectFont = eventD!['selectFont'] as Font
 
-  onPageShow() {
-    console.info('SelectPage onPageShow')
-    AppStorage.setOrCreate<MessageManager<string|int|Font|Color>>("messageManager", this.messageManager);
-    let callback: (message: Message<string|int|Font|Color>)=>void = (message: Message<string|int|Font|Color>) => {
-      console.error('message = ' + message.name + "--" + message.value)
-      if (message.name == 'optionValue') {
-        this.optionValue = (message as Message<string>).value
-      }
-      if (message.name == 'icon') {
-        this.icon = (message as Message<string>).value
-      }
-      if (message.name == 'selected') {
-        this.selected = (message as Message<int>).value
-      }
-      if (message.name == 'selectValue') {
-        this.selectValue = (message as Message<string>).value
-      }
-      if (message.name == 'selectFont') {
-        this.selectFont = (message as Message<Font>).value
-      }
-      if (message.name == 'fontColor') {
-        this.fontColor = (message as Message<Color>).value
-      }
-      if (message.name == 'selectedOptionBgColor') {
-        this.selectedOptionBgColor = (message as Message<Color>).value
-      }
-      if (message.name == 'selectedOptionFont') {
-        this.selectedOptionFont = (message as Message<Font>).value
-      }
-      if (message.name == 'selectedOptionFontColor') {
-        this.selectedOptionFontColor = (message as Message<Color>).value
-      }
-      if (message.name == 'optionBgColor') {
-        this.optionBgColor = (message as Message<Color>).value
-      }
-      if (message.name == 'optionFont') {
-        this.optionFont = (message as Message<Font>).value
-      }
-      if (message.name == 'optionFontColor') {
-        this.optionFontColor = (message as Message<Color>).value
+      } else if (eventD!['selectedOptionBgColor']!= null) {
+        this.selectedOptionBgColor = eventD!['selectedOptionBgColor'] as ResourceColor
+      } else if (eventD!['selectedOptionFont']!= null) {
+        this.selectedOptionFont = eventD!['selectedOptionFont'] as Font
+      } else if (eventD!['selectedOptionFontColor']!= null) {
+        this.selectedOptionFontColor = eventD!['selectedOptionFontColor'] as ResourceColor
+      }else if (eventD!['optionBgColor']!= null) {
+        this.optionBgColor = eventD!['optionBgColor'] as ResourceColor
+      }else if (eventD!['optionFont']!= null) {
+        this.optionFont = eventD!['optionFont'] as Font
+      }else if (eventD!['optionFontColor']!= null) {
+        this.optionFontColor = eventD!['optionFontColor'] as ResourceColor
+      }else if (eventD!['fontColor']!= null) {
+        this.fontColor = eventD!['fontColor'] as ResourceColor
+      }else if (eventD!['optionValue']!= null) {
+        this.optionValue = eventD!['optionValue'] as string
+      }else if (eventD!['icon']!= null) {
+        this.icon = eventD!['icon'] as string
+      }else if (eventD!['indexValue']!= null) {
+        this.indexValue = eventD!['indexValue'] as string
       }
     }
-    this.messageManager.registerCallback(callback)
+  }
+  onPageShow() {
+    let stateChangeEvent: events_emitter.InnerEvent = {
+      eventId: 25,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+
   }
 
   build() {
@@ -100,7 +94,7 @@ struct SelectPage {
         .optionFont(this.optionFont)
         .optionFontColor(this.optionFontColor)
         .onSelect((index: int) :void => {
-          this.indexValue = index
+          this.indexValue = String(index)
           console.info('Select:' + index)
         })
     }.width('100%')

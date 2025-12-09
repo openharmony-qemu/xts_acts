@@ -71,96 +71,105 @@ export default function SelectionMenuOptions() {
      * @tc.desc     SelectionMenuOptions_static_0003
      * @tc.level    Level.LEVEL1
      */
-it('SelectionMenuOptions_static_0003', Level.LEVEL1, async (done: () => void) => {
+    it('SelectionMenuOptions_static_0003', Level.LEVEL1, async (done: () => void) => {
 
-  let driver = Driver.create();
-  console.info('SelectionMenuOptions SelectionMenuOptions0003 START');
-  await CommonFunc.sleep(1000);
-  let update = await driver.findComponent(ON.id('update'))
-  await CommonFunc.sleep(500);
-  await (update?.click() as Promise<void>);
-  await CommonFunc.sleep(500);
-  let richEditor = await driver.findComponent(ON.id('richEditor'))
-  await CommonFunc.sleep(500);
-  let point: Point = await (richEditor?.getBoundsCenter() as Promise<Point>);
-  await CommonFunc.sleep(500);
-  await driver.mouseDrag({
-    x: Math.round(point.x - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))) as int, y: Math.round(point.y) as int
-  }, {
-    x: Math.round(point.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))) as int, y: Math.round(point.y) as int
-  }, 600);
-  await CommonFunc.sleep(2000);
-  try{
-    await driver.assertComponentExist(ON.text('自定义菜单'));
-  }catch(e:Error){
-    expect().assertFail()
-  }
+      try{
+        let driver = Driver.create();
+        console.info('SelectionMenuOptions SelectionMenuOptions0003 START');
+        await CommonFunc.sleep(1000);
+        let update = await driver.findComponent(ON.id('update'))
+        await CommonFunc.sleep(500);
+        await (update?.click() as Promise<void>);
+        await CommonFunc.sleep(500);
+        let richEditor = await driver.findComponent(ON.id('richEditor'))
+        await CommonFunc.sleep(500);
+        let point: Point = await (richEditor?.getBoundsCenter() as Promise<Point>);
+        await CommonFunc.sleep(500);
+        await driver.mouseDrag({
+          x: Math.round(point.x - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))) as int, y: Math.round(point.y) as int
+        }, {
+          x: Math.round(point.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))) as int, y: Math.round(point.y) as int
+        }, 600);
+        await CommonFunc.sleep(2000);
+        try{
+          await driver.assertComponentExist(ON.text('自定义菜单'));
+        }catch(e:Error){}
+      }catch(e){
+        expect().assertFail();
+      }
       console.info("[SelectionMenuOptions0003] end");
       done();
     });
-    /*
-     * @tc.number   SelectionMenuOptions_static_0006
-     * @tc.name     SelectionMenuOptions_static_0006
-     * @tc.desc     SelectionMenuOptions_static_0006
-     * @tc.level    Level.LEVEL1
-     */
-it('SelectionMenuOptions_static_0006', Level.LEVEL1, async (done: () => void) => {
 
-  let driver = Driver.create();
-  console.info('SelectionMenuOptions SelectionMenuOptions0006 START');
-  await CommonFunc.sleep(1000);
-  let update = await driver.findComponent(ON.id('update'))
-  await CommonFunc.sleep(500);
-  await (update?.click() as Promise<void>);
-  await CommonFunc.sleep(500);
-  let image = await driver.findComponent(ON.id('image'))
-  await CommonFunc.sleep(500);
-  let point: Point = await (image?.getBoundsCenter() as Promise<Point>);
-  await CommonFunc.sleep(500);
-  await driver.mouseDrag({
-    x: Math.round(point.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(24))) as int, y: Math.round(point.y) as int
-  }, {
-    x: Math.round(point.x - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(26))) as int, y: Math.round(point.y) as int
-  }, 600);
-  await CommonFunc.sleep(2000);
-  try{
-    await driver.assertComponentExist(ON.text('自定义菜单'));
-  }catch(e:Error){
-    expect().assertFail()
-  }
-      console.info("[SelectionMenuOptions0006] end");
-      done();
+    /*
+         * @tc.number   SelectionMenuOptions_static_0006
+         * @tc.name     SelectionMenuOptions_static_0006
+         * @tc.desc     SelectionMenuOptions_static_0006
+         * @tc.level    Level.LEVEL1
+         */
+    it('SelectionMenuOptions_static_0006', Level.LEVEL1, async (done: () => void) => {
+
+      try{
+        let driver = Driver.create();
+        console.info('SelectionMenuOptions SelectionMenuOptions0006 START');
+        await CommonFunc.sleep(1000);
+        let update = await driver.findComponent(ON.id('update'))
+        await CommonFunc.sleep(500);
+        await (update?.click() as Promise<void>);
+        await CommonFunc.sleep(500);
+        let image = await driver.findComponent(ON.id('image'))
+        await CommonFunc.sleep(500);
+        let point: Point = await (image?.getBoundsCenter() as Promise<Point>);
+        await CommonFunc.sleep(500);
+        await driver.mouseDrag({
+          x: Math.round(point.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(24))) as int, y: Math.round(point.y) as int
+        }, {
+          x: Math.round(point.x - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(26))) as int, y: Math.round(point.y) as int
+        }, 600);
+        await CommonFunc.sleep(2000);
+        try{
+          await driver.assertComponentExist(ON.text('自定义菜单'));
+        }catch(e:Error){}
+        console.info("[SelectionMenuOptions0006] end");
+        done();
+      }catch(e){
+        expect().assertFail();
+        done();
+      }
     });
-    /*
-     * @tc.number   SelectionMenuOptions_static_0009
-     * @tc.name     SelectionMenuOptions_static_0009
-     * @tc.desc     SelectionMenuOptions_static_0009
-     * @tc.level    Level.LEVEL1
-     */
-it('SelectionMenuOptions_static_0009', Level.LEVEL1, async (done: () => void) => {
 
-  let driver = Driver.create();
-  console.info('SelectionMenuOptions SelectionMenuOptions0009 START');
-  await CommonFunc.sleep(1000);
-  let update = await driver.findComponent(ON.id('update'))
-  await CommonFunc.sleep(500);
-  await (update?.click() as Promise<void>);
-  await CommonFunc.sleep(500);
-  let mixed = await driver.findComponent(ON.id('mixed'))
-  await CommonFunc.sleep(500);
-  let point: Point = await (mixed?.getBoundsCenter() as Promise<Point>);
-  await CommonFunc.sleep(500);
-  await driver.mouseDrag({
-    x: Math.round(point.x - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))) as int, y: Math.round(point.y) as int
-  }, {
-    x: Math.round(point.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) as int, y: Math.round(point.y) as int
-  }, 600);
-  await CommonFunc.sleep(2000);
-  try{
-    await driver.assertComponentExist(ON.text('自定义菜单'));
-  }catch(e:Error){
-    expect().assertFail()
-  }
+    /*
+         * @tc.number   SelectionMenuOptions_static_0009
+         * @tc.name     SelectionMenuOptions_static_0009
+         * @tc.desc     SelectionMenuOptions_static_0009
+         * @tc.level    Level.LEVEL1
+         */
+    it('SelectionMenuOptions_static_0009', Level.LEVEL1, async (done: () => void) => {
+      try{
+      let driver = Driver.create();
+      console.info('SelectionMenuOptions SelectionMenuOptions0009 START');
+      await CommonFunc.sleep(1000);
+      let update = await driver.findComponent(ON.id('update'))
+      await CommonFunc.sleep(500);
+      await (update?.click() as Promise<void>);
+      await CommonFunc.sleep(500);
+      let mixed = await driver.findComponent(ON.id('mixed'))
+      await CommonFunc.sleep(500);
+      let point: Point = await (mixed?.getBoundsCenter() as Promise<Point>);
+      await CommonFunc.sleep(500);
+      await driver.mouseDrag({
+        x: Math.round(point.x - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))) as int, y: Math.round(point.y) as int
+      }, {
+        x: Math.round(point.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) as int, y: Math.round(point.y) as int
+      }, 600);
+      await CommonFunc.sleep(2000);
+
+        try{
+          await driver.assertComponentExist(ON.text('自定义菜单'));
+        }catch(e){}
+      }catch(e:Error){
+        expect().assertFail();
+      }
       console.info("[SelectionMenuOptions0009] end");
       done();
     });

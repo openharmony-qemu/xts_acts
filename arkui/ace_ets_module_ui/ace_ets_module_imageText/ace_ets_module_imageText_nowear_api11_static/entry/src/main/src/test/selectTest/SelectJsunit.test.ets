@@ -28,7 +28,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import {UtilsTest, startAbility, stopApplication} from "../Util.test"
 import { Color, Font }  from '@ohos.arkui.component'
-
+import events_emitter from '@ohos.events.emitter';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -38,10 +38,7 @@ export default function SelectJsunit() {
   describe('SelectJsunit', () => {
     beforeAll(() => {
       console.info("Builder0050TestJsunit beforeEach start");
-
-      await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility("async (done: ()=>void ) => {", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility");
     });
     beforeEach(async (): Promise<void> => {
       console.info("SelectJsunit beforeEach start");
@@ -118,27 +115,27 @@ it('SelectJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
 it('SelectJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       // Modify the properties of component select
       console.info('[SelectJsunit_0200] START');
-  AppStorage.get<MessageManager<number>>("messageManager")!.notify({name:'selected',value:2})
-  await CommonFunc.sleep(500);
-  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'selectValue',value:'testButton'})
-  await CommonFunc.sleep(500);
-  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'selectFont',value:'{ size: 16, weight: 500 }'})
-  await CommonFunc.sleep(500);
-  AppStorage.get<MessageManager<Color>>("messageManager")!.notify({name:'selectedOptionBgColor',value:Color.Blue})
-  await CommonFunc.sleep(500);
-  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'selectedOptionFont',value:'{ size: 16, weight: 400 }'})
-  await CommonFunc.sleep(500);
-  AppStorage.get<MessageManager<Color>>("messageManager")!.notify({name:'selectedOptionFontColor',value:Color.Yellow})
-  await CommonFunc.sleep(500);
-  AppStorage.get<MessageManager<Color>>("messageManager")!.notify({name:'optionBgColor',value:Color.Grey})
-  await CommonFunc.sleep(500);
-  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'optionFont',value:'{ size: 16, weight: 400 }'})
-  await CommonFunc.sleep(500);
-  AppStorage.get<MessageManager<Color>>("messageManager")!.notify({name:'optionFontColor',value:Color.Red})
-  await CommonFunc.sleep(500);
-  AppStorage.get<MessageManager<Color>>("messageManager")!.notify({name:'fontColor',value:Color.Green})
-  await CommonFunc.sleep(500);
-
+  let eventData: events_emitter.EventData = {
+    data: {
+      "selected": 2 as int,
+      "selectValue":'testButton',
+      "selectFont":{ size: 16, weight: 500 } as Font,
+      "selectedOptionBgColor":Color.Blue,
+      "selectedOptionFont":{ size: 16, weight: 400 } as Font,
+      "selectedOptionFontColor":Color.Yellow,
+      "optionBgColor":Color.Grey,
+      "optionFont":{ size: 16, weight: 400 } as Font,
+      "optionFontColor":Color.Red,
+      "fontColor":Color.Green
+    } as Record<String,undefined|null|Object>
+  } as events_emitter.EventData
+  let indexEvent: events_emitter.InnerEvent = {
+    eventId: 25,
+    priority: events_emitter.EventPriority.LOW
+  }
+  console.info("[SelectJsunit_static_0200] start to publish emit");
+  events_emitter.emit(indexEvent, eventData);
+  await CommonFunc.sleep(2000);
       // Get the propoties value of the select component
       let strJson = inspector.getInspectorByKey('select');
       let obj = JSON.parseJsonElement(strJson);
@@ -213,34 +210,29 @@ it('SelectJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
 it('SelectJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       // Illegal modification of properties of component select
       console.info('[SelectJsunit_0400] START');
-      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'optionValue',value:'-20'})
-      await CommonFunc.sleep(2000);
-
-      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'icon',value:'10'})
-      await CommonFunc.sleep(2000);
-
-      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'selected',value:'test'})
-      await CommonFunc.sleep(2000);
-
-      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'selectValue',value:'10'})
-      await CommonFunc.sleep(2000);
-      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'selectFont',value:'###'})
-      await CommonFunc.sleep(2000);
-      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'fontColor',value:'123'})
-      await CommonFunc.sleep(2000);
-      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'selectedOptionBgColor',value:'0'})
-      await CommonFunc.sleep(2000);
-      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'selectedOptionFont',value:'%666'})
-      await CommonFunc.sleep(2000);
-      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'selectedOptionFontColor',value:'hello'})
-      await CommonFunc.sleep(2000);
-      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'optionBgColor',value:'-10'})
-      await CommonFunc.sleep(2000);
-      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'optionFont',value:'aaa'})
-      await CommonFunc.sleep(2000);
-      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'optionFontColor',value:'123'})
-      await CommonFunc.sleep(2000);
-      AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'indexValue',value:'bbb'})
+  let eventData: events_emitter.EventData = {
+    data: {
+      "optionValue": '-20',
+      "icon":'10',
+      "selected":0 as int,
+      "selectValue":'10',
+      "selectFont":{ size: 16, weight: 500 } as Font,
+      "fontColor":'123',
+      "selectedOptionBgColor":'0',
+      "selectedOptionFont":{ size: 16, weight: 500 } as Font,
+      "selectedOptionFontColor":'hello',
+      "optionBgColor":'-10',
+      "optionFont":{ size: 16, weight: 500 } as Font,
+      "optionFontColor":'123',
+      "indexValue":'bbb'
+    } as Record<String,undefined|null|Object>
+  } as events_emitter.EventData
+  let indexEvent: events_emitter.InnerEvent = {
+    eventId: 25,
+    priority: events_emitter.EventPriority.LOW
+  }
+  console.info("[SelectJsunit_static_0400] start to publish emit");
+  events_emitter.emit(indexEvent, eventData);
       await CommonFunc.sleep(2000);
 
       // Get the propoties value of the select component

@@ -33,7 +33,7 @@ import {
   TextInputStyle
 } from '@ohos.arkui.component'
 import {
-  State,StorageProp
+  State,StoragePropRef
 } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog';
 
@@ -48,12 +48,12 @@ struct Index {
   @State errFlag: boolean = false
   @State onIconFlag: boolean = false
   @State offIconFlag: boolean = false
-  @StorageProp('passwordIcon') passwordIcon: PasswordIcon|undefined = {
+  @StoragePropRef('passwordIcon') passwordIcon: PasswordIcon|undefined = {
     onIconSrc: "",
     offIconSrc: ""
   } as PasswordIcon
-  @StorageProp('showUnderline') showUnderline: boolean|undefined = undefined
-  @StorageProp('showError') showError: ResourceStr | undefined = ''
+  @StoragePropRef('showUnderline') showUnderline: boolean|undefined = undefined
+  @StoragePropRef('showError') showError: ResourceStr | undefined = ''
   @Builder
   ShowUnit() {
     Column() {
