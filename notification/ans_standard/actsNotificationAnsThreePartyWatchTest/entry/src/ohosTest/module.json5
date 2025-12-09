@@ -51,7 +51,7 @@
         "srcEntry": "./ets/notificationsubscriberextability/NotificationSubscriberExtAbility.ets",
         "type": "notificationSubscriber",
         "description": "$string:NotificationSubscriberExtAbility_desc",
-        "icon": "$media:layered_image",
+        "icon": "$media:icon",
         "label": "$string:NotificationSubscriberExtAbility_label",
         "exported": true
       }
