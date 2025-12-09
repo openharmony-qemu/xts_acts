@@ -47,7 +47,7 @@ ohos_moduletest_suite("ActsCryptoFrameworkNAPITest") {
     "src/crypto_framework_kdf_test.cpp",
     "src/crypto_framework_random_test.cpp",
     "src/crypto_framework_mac_test.cpp",
-    "crypto_framework_reinforcement_test.cpp",
+    "src/crypto_framework_reinforcement_test.cpp",
   ]
 
   include_dirs = [
