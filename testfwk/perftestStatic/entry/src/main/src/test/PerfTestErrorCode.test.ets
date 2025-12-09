@@ -39,8 +39,8 @@ export default function perfTestErrorTest() {
 
 
         /**
-         * @tc.number perfTestErrorTest_001
          * @tc.name test_PerfTest_create_32400003_static
+         * @tc.number perfTestErrorTest_001
          * @tc.desc create 32400003 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -90,8 +90,8 @@ export default function perfTestErrorTest() {
         })
 
         /**
-         * @tc.number perfTestErrorTest_002
          * @tc.name test_PerfTest_create_32400007_static
+         * @tc.number perfTestErrorTest_002
          * @tc.desc create 32400007 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -120,13 +120,13 @@ export default function perfTestErrorTest() {
                 console.log(`${TestTag}, test_PerfTest_create_32400007_static error is: ${JSON.stringify(e)}`);
                 expect(e.code).assertEqual(NotSupportErrorCode);
             }
-            await Utils.msSleep(6000);
+            await Utils.msSleep(9000);
             console.log(`${TestTag}, test_PerfTest_create_32400007_static end`);
         })
 
         /**
-         * @tc.number perfTestErrorTest_003
          * @tc.name test_PerfTest_run_32400007_static
+         * @tc.number perfTestErrorTest_003
          * @tc.desc create 32400007 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -154,13 +154,13 @@ export default function perfTestErrorTest() {
                 console.log(`${TestTag}, test_PerfTest_run_32400007_static error is: ${JSON.stringify(e)}`);
                 expect(e.code).assertEqual(NotSupportErrorCode);
             }
-            await Utils.msSleep(6000);
+            await Utils.msSleep(9000);
             console.log(`${TestTag}, test_PerfTest_run_32400007_static end`);
         })
 
         /**
-         * @tc.number perfTestErrorTest_004
          * @tc.name test_PerfTest_run_32400005_bundleName_static
+         * @tc.number perfTestErrorTest_004
          * @tc.desc run 32400005 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -195,8 +195,8 @@ export default function perfTestErrorTest() {
         })
 
         /**
-         * @tc.number perfTestErrorTest_005
          * @tc.name test_PerfTest_run_32400004_actionCode_static
+         * @tc.number perfTestErrorTest_005
          * @tc.desc run 32400004 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -228,8 +228,8 @@ export default function perfTestErrorTest() {
         })
 
         /**
-         * @tc.number perfTestErrorTest_006
          * @tc.name test_PerfTest_run_32400004_resetCode_static
+         * @tc.number perfTestErrorTest_006
          * @tc.desc run 32400004 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -261,8 +261,8 @@ export default function perfTestErrorTest() {
         })
 
         /**
-         * @tc.number perfTestErrorTest_007
          * @tc.name test_PerfTest_run_32400004_actionCodeError_static
+         * @tc.number perfTestErrorTest_007
          * @tc.desc run 32400004 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -297,8 +297,8 @@ export default function perfTestErrorTest() {
         })
 
         /**
-         * @tc.number perfTestErrorTest_008
          * @tc.name test_PerfTest_run_32400004_resetCodeError_static
+         * @tc.number perfTestErrorTest_008
          * @tc.desc run 32400004 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -334,8 +334,8 @@ export default function perfTestErrorTest() {
         })
 
         /**
-         * @tc.number perfTestErrorTest_009
          * @tc.name test_PerfTest_run_32400004_actionCodeTimeOut_static
+         * @tc.number perfTestErrorTest_009
          * @tc.desc run 32400004 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -371,8 +371,8 @@ export default function perfTestErrorTest() {
         })
 
         /**
-         * @tc.number perfTestErrorTest_010
          * @tc.name test_PerfTest_run_32400004_resetCodeTimeOut_static
+         * @tc.number perfTestErrorTest_010
          * @tc.desc run 32400004 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -408,8 +408,8 @@ export default function perfTestErrorTest() {
         })
 
         /**
-         * @tc.number perfTestErrorTest_011
          * @tc.name test_PerfTest_run_32400002_afterDestroy_static
+         * @tc.number perfTestErrorTest_011
          * @tc.desc run 32400002 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -445,8 +445,8 @@ export default function perfTestErrorTest() {
         })
 
         /**
-         * @tc.number perfTestErrorTest_012
          * @tc.name test_PerfTest_getMeasureResult_32400007_static
+         * @tc.number perfTestErrorTest_012
          * @tc.desc getMeasureResult 32400007 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -479,8 +479,8 @@ export default function perfTestErrorTest() {
         })
 
         /**
-         * @tc.number perfTestErrorTest_013
          * @tc.name test_PerfTest_getMeasureResult_32400006_noRun_static
+         * @tc.number perfTestErrorTest_013
          * @tc.desc getMeasureResult 32400006 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -515,8 +515,8 @@ export default function perfTestErrorTest() {
         })
 
         /**
-         * @tc.number perfTestErrorTest_015
          * @tc.name test_PerfTest_getMeasureResult_32400002_static
+         * @tc.number perfTestErrorTest_015
          * @tc.desc getMeasureResult 32400002 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -554,8 +554,8 @@ export default function perfTestErrorTest() {
         })
 
         /**
-         * @tc.number perfTestErrorTest_016
          * @tc.name test_PerfTest_destroy_32400007_static
+         * @tc.number perfTestErrorTest_016
          * @tc.desc destroy 32400007 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -589,8 +589,8 @@ export default function perfTestErrorTest() {
 
 
         /**
-         * @tc.number perfTestErrorTest_017
          * @tc.name test_PerfTest_destroy_32400002_static
+         * @tc.number perfTestErrorTest_017
          * @tc.desc destroy 32400002 test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST

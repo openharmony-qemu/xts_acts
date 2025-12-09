@@ -42,8 +42,8 @@ export default function perfTestTest() {
         })
 
         /**
-         * @tc.number perfTest_20001
          * @tc.name testPerfTestCalculate_static
+         * @tc.number perfTest_20001
          * @tc.desc Test the performance of computing scenarios
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -88,8 +88,8 @@ export default function perfTestTest() {
         })
 
         /**
-         * @tc.number perfTest_20002
          * @tc.name testPerfTestPageSwitch_static
+         * @tc.number perfTest_20002
          * @tc.desc Test the performance of page swipe scenarios
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -132,8 +132,8 @@ export default function perfTestTest() {
         })
 
         /**
-         * @tc.number perfTest_20003
          * @tc.name testPerfTestListSwipe_static
+         * @tc.number perfTest_20003
          * @tc.desc Test the performance of list swipe scenarios
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -188,8 +188,8 @@ export default function perfTestTest() {
         })
 
         /**
-         * @tc.number perfTest_20004
          * @tc.name testPerfTest_Keep_static
+         * @tc.number perfTest_20004
          * @tc.desc Test the performance of Page keep
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -228,8 +228,8 @@ export default function perfTestTest() {
         })
 
         /**
-         * @tc.number perfTest_20005
          * @tc.name testPerfTest_NavigationChange_static
+         * @tc.number perfTest_20005
          * @tc.desc Test the performance of Page switching(Navigation)
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -298,8 +298,8 @@ export default function perfTestTest() {
         })
 
         /**
-         * @tc.number perfTest_20007
          * @tc.name testPerfTest_Start_static
+         * @tc.number perfTest_20007
          * @tc.desc Test the performance of App launch
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -361,8 +361,8 @@ export default function perfTestTest() {
         })
 
         /**
-         * @tc.number perfTest_20009
          * @tc.name testPerfTest_resetCode_static
+         * @tc.number perfTest_20009
          * @tc.desc Test the performance of the resetCode null
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
