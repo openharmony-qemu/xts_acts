@@ -31,11 +31,13 @@ export default function actsNotificationAnsThreePartyOpenSubscriptionSettingsTes
     */
     it('Sub_Notification_Ans_ThreePartyWatch_1005', Level.LEVEL0, async (done: Function) => {
       let TAG = commonTag + "Sub_Notification_Ans_ThreePartyWatch_1005 ";
+      let count : number = 0
         try {
         console.info(TAG + "Open popup");
         await notificationExtensionSubscription.openSubscriptionSettings(
           (await delegator.getCurrentTopAbility()).context
         );
+        count++;
         console.info(TAG + "Wait for popup to load");
         await sleep(100);
         const driver = Driver.create();
@@ -49,7 +51,7 @@ export default function actsNotificationAnsThreePartyOpenSubscriptionSettingsTes
           console.info(TAG + "Button not found, skip clicking");
         }
         await sleep(500);
-        expect(true).assertTrue();
+        expect(count == 1).assertTrue();
         console.info(TAG + "Test passed");
         done();
       } catch (error) {
@@ -64,14 +66,14 @@ export default function actsNotificationAnsThreePartyOpenSubscriptionSettingsTes
       }
       })
 
-   /*
-  * @tc.number    Sub_Notification_Ans_ThreePartyWatch_1023
-  * @tc.name      Sub_Notification_Ans_ThreePartyWatch_1023
-  * @tc.desc      【isUserGranted】获取用户授权状态
-  * @tc.size      LargeTest
-  * @tc.type      功能测试
-  * @tc.level     Level 1
-*/
+    /**
+      * @tc.number    Sub_Notification_Ans_ThreePartyWatch_1023
+      * @tc.name      Sub_Notification_Ans_ThreePartyWatch_1023
+      * @tc.desc      【isUserGranted】获取用户授权状态
+      * @tc.size      LargeTest
+      * @tc.type      功能测试
+      * @tc.level     Level 1
+     */
     it('Sub_Notification_Ans_ThreePartyWatch_1023', Level.LEVEL1, async (done: Function) => {
       const TAG = commonTag + "Sub_Notification_Ans_ThreePartyWatch_1005 ";
       let driver: Driver | null = null;
@@ -146,14 +148,14 @@ export default function actsNotificationAnsThreePartyOpenSubscriptionSettingsTes
         }
       }
     });
-    /*
-          * @tc.number    Sub_Notification_Ans_ThreePartyWatch_1001
-          * @tc.name      Sub_Notification_Ans_ThreePartyWatch_1001
-          * @tc.desc      ：【openSubscriptionSeetings】已经拉起了通知弹窗，再次请求接口，报错1600018
-          * @tc.size      大型测试
-          * @tc.type      功能测试
-          * @tc.level     Level 2
-        */
+    /**
+      * @tc.number    Sub_Notification_Ans_ThreePartyWatch_1001
+      * @tc.name      Sub_Notification_Ans_ThreePartyWatch_1001
+      * @tc.desc      【openSubscriptionSeetings】已经拉起了通知弹窗，再次请求接口，报错1600018
+      * @tc.size      大型测试
+      * @tc.type      功能测试
+      * @tc.level     Level 2
+      */
     it('Sub_Notification_Ans_ThreePartyWatch_1001', Level.LEVEL2, async (done: Function) => {
       let TAG = commonTag + "Sub_Notification_Ans_ThreePartyWatch_1001 ";
 
