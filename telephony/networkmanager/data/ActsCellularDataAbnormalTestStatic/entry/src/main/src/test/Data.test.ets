@@ -54,12 +54,12 @@ export default function dataTest() {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
         /* *
-          * @tc.number: SUB_Telephony_Data_IsCellularDataRoamingEnabledSync_0200
-          * @tc.name  : testTelephonyDataIsCellularDataEnabledSync_static_0200
-          * @tc.desc  : Check whether cellular data services are enabled.
-          * @tc.size  : MediumTest
-          * @tc.type  : Function
-          * @tc.level : level 3
+          * @tc.number  SUB_Telephony_Data_IsCellularDataRoamingEnabledSync_0200
+          * @tc.name    testTelephonyDataIsCellularDataEnabledSync_static_0200
+          * @tc.desc    Check whether cellular data services are enabled.
+          * @tc.size    MediumTest
+          * @tc.type    Function
+          * @tc.level   level 3
          */
         it('testTelephonyDataIsCellularDataEnabledSync_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyDataIsCellularDataEnabledSync_static_0200';
@@ -79,12 +79,12 @@ export default function dataTest() {
         })
 		
 		/* *
-         * @tc.number: SUB_Telephony_CellularData_getDefaultCellularDataSlotId_Promise_0500
-         * @tc.name  : testTelephonyCellularDataGetDefaultCellularDataSlotIdPromise_static_0500
-         * @tc.desc  : Get the default cellular data card.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : level 3
+         * @tc.number  SUB_Telephony_CellularData_getDefaultCellularDataSlotId_Promise_0500
+         * @tc.name    testTelephonyCellularDataGetDefaultCellularDataSlotIdPromise_static_0500
+         * @tc.desc    Get the default cellular data card.
+         * @tc.size    MediumTest
+         * @tc.type    Function
+         * @tc.level   level 3
          */
         it('testTelephonyCellularDataGetDefaultCellularDataSlotIdPromise_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyCellularDataGetDefaultCellularDataSlotIdPromise_static_0500';
@@ -111,12 +111,12 @@ export default function dataTest() {
         })
 		
 		/* *
-          * @tc.number: SUB_Telephony_CellularData_getDefaultCellularDataSlotIdSync_0100
-          * @tc.name  : testTelephonyCellularDataGetDefaultCellularDataSlotIdSync_static_0100
-          * @tc.desc  : Get the default cellular data card.
-          * @tc.size  : MediumTest
-          * @tc.type  : Function
-          * @tc.level : level 3
+          * @tc.number  SUB_Telephony_CellularData_getDefaultCellularDataSlotIdSync_0100
+          * @tc.name    testTelephonyCellularDataGetDefaultCellularDataSlotIdSync_static_0100
+          * @tc.desc    Get the default cellular data card.
+          * @tc.size    MediumTest
+          * @tc.type    Function
+          * @tc.level   level 3
          */
         it('testTelephonyCellularDataGetDefaultCellularDataSlotIdSync_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyCellularDataGetDefaultCellularDataSlotIdSync_static_0100';
@@ -135,12 +135,12 @@ export default function dataTest() {
         })
 		
 		/* *
-          * @tc.number: SUB_Telephony_CellularData_isCellularDataRoamingEnabled_Async_0200
-          * @tc.name  : testTelephonyCellularDataisCellularDataRoamingEnabledAsync_static_0200
-          * @tc.desc  : Check whether roaming is enabled for cellular data services.
-          * @tc.size  : MediumTest
-          * @tc.type  : Function
-          * @tc.level : level 3
+          * @tc.number  SUB_Telephony_CellularData_isCellularDataRoamingEnabled_Async_0200
+          * @tc.name    testTelephonyCellularDataisCellularDataRoamingEnabledAsync_static_0200
+          * @tc.desc    Check whether roaming is enabled for cellular data services.
+          * @tc.size    MediumTest
+          * @tc.type    Function
+          * @tc.level   level 3
          */
         it('testTelephonyCellularDataisCellularDataRoamingEnabledAsync_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyCellularDataisCellularDataRoamingEnabledAsync_static_0200';
@@ -164,12 +164,12 @@ export default function dataTest() {
         })
 		
 		/* *
-         * @tc.number: SUB_Telephony_CellularData_isCellularDataRoamingEnabled_Promise_0200
-         * @tc.name  : testTelephonyCellularDataisCellularDataRoamingEnabledPromise_static_0200
-         * @tc.desc  : Check whether roaming is enabled for cellular data services.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : level 3
+         * @tc.number  SUB_Telephony_CellularData_isCellularDataRoamingEnabled_Promise_0200
+         * @tc.name    testTelephonyCellularDataisCellularDataRoamingEnabledPromise_static_0200
+         * @tc.desc    Check whether roaming is enabled for cellular data services.
+         * @tc.size    MediumTest
+         * @tc.type    Function
+         * @tc.level   level 3
          */
         it('testTelephonyCellularDataisCellularDataRoamingEnabledPromise_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testTelephonyCellularDataisCellularDataRoamingEnabledPromise_static_0200';
