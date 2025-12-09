@@ -381,8 +381,8 @@ static void BuqqerQueueCallback(SLOHBufferQueueItf sBufferQueueItf, void *pConte
     FILE *wavFile = (FILE *)pContext;
     if (!feof(wavFile)) {
         SLuint8 *buffer = nullptr;
-        SLuint32 pSize = 0;
-        SLresult result = (*sBufferQueueItf)->GetBuffer(sBufferQueueItf, &buffer, &pSize);
+        SLuint32 bufferSize = 0;
+        SLresult result = (*sBufferQueueItf)->GetBuffer(sBufferQueueItf, &buffer, &bufferSize);
         if (SL_RESULT_SUCCESS != result) {
             OH_LOG_INFO(LOG_APP, "BuqqerQueueCallback GetBuffer result: %{public}lu", result);
             return ;
@@ -413,14 +413,14 @@ static SLresult PlayerStart(SLPlayItf sPlayItf, SLOHBufferQueueItf sBufferQueueI
     }
     if (!feof(wavFile)) {
         SLuint8* buffer = nullptr;
-        SLuint32 pSize = 0;
-        result = (*sBufferQueueItf)->GetBuffer(sBufferQueueItf, &buffer, &pSize);
+        SLuint32 bufferSize = 0;
+        result = (*sBufferQueueItf)->GetBuffer(sBufferQueueItf, &buffer, &bufferSize);
         if (SL_RESULT_SUCCESS != result) {
             OH_LOG_INFO(LOG_APP, "PlayerStart GetBuffer result: %{public}lu", result);
             return result;
         }
-        fread(buffer, 1, pSize, wavFile);
-        result = (*sBufferQueueItf)->Enqueue(sBufferQueueItf, buffer, pSize);
+        fread(buffer, 1, bufferSize, wavFile);
+        result = (*sBufferQueueItf)->Enqueue(sBufferQueueItf, buffer, bufferSize);
         if (SL_RESULT_SUCCESS != result) {
             OH_LOG_INFO(LOG_APP, "PlayerStart Enqueue result: %{public}lu", result);
             return result;
