@@ -14,9 +14,10 @@
  */
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { window } from '@kit.ArkUI';
+import { window, UIContext } from '@kit.ArkUI';
 import { BusinessError } from '@ohos.base';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl'
+import { utils } from '../MainAbility/common/SubWindow'
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam){
@@ -39,6 +40,30 @@ export default class EntryAbility extends UIAbility {
       console.error(`Failed to permission CAPTURE_SCREEN.  Cause:  code: ${err.code}, message: ${err.message}`);
     });
 
+    // 测试用例 start
+    let allContext = UIContext.getAllUIContexts();
+    hilog.info(0x00, 'testTag', 'getAllUIContexts' + allContext.length);
+    AppStorage.SetOrCreate('getAllUIContextsNull', allContext.length);
+
+    let callingScopeUIContext = UIContext.getCallingScopeUIContext();
+    hilog.info(0x00, 'testTag', 'getCallingScopeUIContext : ' + callingScopeUIContext);
+    AppStorage.SetOrCreate('getCallingScopeUIContextUndefined', callingScopeUIContext);
+
+    let lastFocusedUIContext = UIContext.getLastFocusedUIContext();
+    hilog.info(0x00, 'testTag', 'getLastFocusedUIContext : ' + lastFocusedUIContext);
+    AppStorage.SetOrCreate('getLastFocusedUIContextUndefined', lastFocusedUIContext);
+
+    let lastForegroundUIContext = UIContext.getLastForegroundUIContext();
+    hilog.info(0x00, 'testTag', 'getLastForegroundUIContext : ' + lastForegroundUIContext);
+    AppStorage.SetOrCreate('getLastForegroundUIContextUndefined', lastForegroundUIContext);
+
+    let resolveUIContext5 = UIContext.resolveUIContext();
+    hilog.info(0x00, 'testTag', `resolveUIContext5: ${resolveUIContext5?.getId()},
+        strategy: ${resolveUIContext5.strategy}`);
+    AppStorage.SetOrCreate('resolveUIContextStrategy5', resolveUIContext5.strategy);
+
+    // 测试用例 end
+
     globalThis.windowStage = windowStage
     globalThis.abilityContext = this.context
     windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError, data) => {
@@ -46,6 +71,14 @@ export default class EntryAbility extends UIAbility {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
       }
+      // 测试用例 start
+      let resolveUIContext3 = UIContext.resolveUIContext();
+      hilog.info(0x00, 'testTag', `resolveUIContext3: ${resolveUIContext3?.getId()},
+          strategy: ${resolveUIContext3.strategy}`);
+      AppStorage.SetOrCreate('resolveUIContextStrategy3', resolveUIContext3.strategy);
+
+      // 测试用例 end
+
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
       let windowClass: window.Window | undefined = undefined;
       windowStage.getMainWindow((err: BusinessError, data) => {
@@ -81,6 +114,9 @@ export default class EntryAbility extends UIAbility {
         }
       })
     });
+
+    let window0 = utils.createWindow(this.context) //1
+
   }
 
   onWindowStageDestroy():void{

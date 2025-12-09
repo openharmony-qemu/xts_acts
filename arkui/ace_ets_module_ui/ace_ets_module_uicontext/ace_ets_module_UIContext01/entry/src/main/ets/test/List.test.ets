@@ -28,6 +28,7 @@ import UIContextGetOpacityTest from './ContextTest/UIContextGetOpacity.test';
 import IsAvailableTest from './ContextTest/IsAvailableTest.test';
 import IsFollowingSystemFontScaleFalseTest from './ContextTest/IsFollowingSystemFontScaleFalseTest.test';
 import IdTest from './UIContext/IdTest.test';
+import GetUIContextMethodTest from './getUIContext/GetUIContextMethodTest.test';
 
 export default function testsuite() {
   UIContextApi1();
@@ -46,4 +47,5 @@ export default function testsuite() {
   PixelUnitsConversion();
   atomicServiceBarTest();
   IdTest();
+  GetUIContextMethodTest();
 }
