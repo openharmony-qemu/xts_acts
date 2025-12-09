@@ -482,7 +482,7 @@ napi_value OHImageEffectReleaseSupp(napi_env env, napi_callback_info info)
         break;
     case CASE_INDEX_2:
         imageEffect = nullptr;
-         code = OH_ImageEffect_Release(imageEffect);
+        code = OH_ImageEffect_Release(imageEffect);
         break;
     default:
         break;
