@@ -36,8 +36,8 @@ export default function actsNotificationAnsThreePartySystemApiTest() {
           })
           .catch((e: BusinessError) => {
             console.error(TAG + "getAllSubscriptionBundles catch err:" + e.code + " message:" + e.message);
-            if(err.code == 201){
-              expect(err.code).assertEqual(201);
+            if(e.code == 201){
+              expect(e.code).assertEqual(201);
               done()
             } else {
               expect(e.code === 202).assertTrue();
@@ -71,8 +71,8 @@ export default function actsNotificationAnsThreePartySystemApiTest() {
           })
           .catch((e: BusinessError) => {
             console.error(TAG + "getUserGrantedState catch err:" + e.code + " message:" + e.message);
-            if(err.code == 201){
-              expect(err.code).assertEqual(201);
+            if(e.code == 201){
+              expect(e.code).assertEqual(201);
               done()
             } else {
               expect(e.code === 202).assertTrue();
@@ -106,8 +106,8 @@ export default function actsNotificationAnsThreePartySystemApiTest() {
           })
           .catch((e: BusinessError) => {
             console.error(TAG + "setUserGrantedState catch err:" + e.code + " message:" + e.message);
-            if(err.code == 201){
-              expect(err.code).assertEqual(201);
+            if(e.code == 201){
+              expect(e.code).assertEqual(201);
               done()
             } else {
               expect(e.code === 202).assertTrue();
@@ -140,8 +140,8 @@ export default function actsNotificationAnsThreePartySystemApiTest() {
           })
           .catch((e: BusinessError) => {
             console.error(TAG + "getUserGrantedEnableBundles catch err:" + e.code + " message:" + e.message);
-            if(err.code == 201){
-              expect(err.code).assertEqual(201);
+            if(e.code == 201){
+              expect(e.code).assertEqual(201);
               done()
             } else {
               expect(e.code === 202).assertTrue();
@@ -176,8 +176,8 @@ export default function actsNotificationAnsThreePartySystemApiTest() {
           })
           .catch((e: BusinessError) => {
             console.error(TAG + "setUserGrantedBundleState catch err:" + e.code + " message:" + e.message);
-            if(err.code == 201){
-              expect(err.code).assertEqual(201);
+            if(e.code == 201){
+              expect(e.code).assertEqual(201);
               done()
             } else {
               expect(e.code === 202).assertTrue();
