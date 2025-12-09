@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import actsThreePartyWatchAbilityTest from './actsThreePartyWatch.test';
+import actsThreePartyWatchAbilityTest from './ActsThreePartyWatch.test';
 
 export default function testsuite() {
 
