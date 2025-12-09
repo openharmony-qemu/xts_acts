@@ -29,6 +29,8 @@ import NodeSwiperItemFillpolocyTest from "./swiper/NodeSwiperItemFillpolocy.test
 import finishAnimationTest from "./swiper/finishAnimationTest.test";
 import imageSpanTest from "./imageSpanTest/ImageSpanTest.test";
 import customKeyboardTest from "./customKeyboard/CustomKeyboardTest.test";
+import animationControllerTest from "./image/animationControllerTest.test";
+import ImageDrawableErrorTest from "./image/drawableDescriptorError.test";
 
 export default function testsuite() {
   CoastingAxisTest();
@@ -48,4 +50,6 @@ export default function testsuite() {
   finishAnimationTest();
   imageSpanTest();
   customKeyboardTest();
+  animationControllerTest();
+  ImageDrawableErrorTest();
 }

@@ -45,3 +45,5 @@ export const FinishAnimationTest: (a: string) => void;
 export const imageSpanTest: (a: string) => void;
 
 export const customKeyboardTest: (a: string) => void;
+
+export const animationControllerTest: (a: string) => void;

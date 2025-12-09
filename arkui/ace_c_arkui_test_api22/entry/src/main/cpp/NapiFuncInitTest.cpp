@@ -14,6 +14,7 @@
  */
 #include "common/common.h"
 #include "swiper/NodeSwiperItemFillpolocyTest.cpp"
+#include "image/ImageDrawableErrorTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -27,6 +28,14 @@ static napi_value Init(napi_env env, napi_value exports)
     napi_property_descriptor desc[] = {
         {"testNodeSwiperItemFillpolocy001", nullptr, NodeSwiperItemFillpolocyTest, nullptr,
             nullptr, nullptr, napi_default, nullptr},
+        {"testImageDrawable001", nullptr, TestImageDrawable001, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"testImageDrawable002", nullptr, TestImageDrawable002, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"testImageDrawable003", nullptr, TestImageDrawable003, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"testImageDrawable004", nullptr, TestImageDrawable004, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

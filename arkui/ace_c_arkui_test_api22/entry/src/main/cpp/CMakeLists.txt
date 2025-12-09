@@ -35,10 +35,12 @@ add_library(nativerender SHARED
     swiper/FinishAnimationTest.cpp
     imageSpanTest/ImageSpanTest.cpp
     customKeyboard/CustomKeyboardTest.cpp
+    image/AnimationControllerTest.cpp
 )
 
 add_library(nativefunc SHARED
     NapiFuncInitTest.cpp
+    image/ImageDrawableErrorTest.cpp
 )
 
 find_library(
