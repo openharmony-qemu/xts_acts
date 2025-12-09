@@ -39,13 +39,19 @@ export default function FinishAnimationTest(){
       await Utils.pushPage(`swiper/${PAGE_TAG}`);
       await Utils.sleep(SLEEP_TIME);
       let strJsonNew:string = getInspectorByKey('button1');
+      let strJson3:string = getInspectorByKey('button3');
       console.log('FinishAnimationTest001: '+JSON.parse(strJsonNew).$attrs.label)
+      console.log('FinishAnimationTest001: '+JSON.parse(strJson3).$attrs.label)
       expect(JSON.parse(strJsonNew).$attrs.label).assertEqual('StartStart');
+      expect(JSON.parse(strJson3).$attrs.label).assertEqual('init');
 
       await Utils.sleep(SLEEP_TIME_2);
       strJsonNew = getInspectorByKey('button1');
+      strJson3 = getInspectorByKey('button3');
       console.log('FinishAnimationTest001: '+JSON.parse(strJsonNew).$attrs.label)
+      console.log('FinishAnimationTest001: strJson3 '+JSON.parse(strJson3).$attrs.label)
       expect(JSON.parse(strJsonNew).$attrs.label).assertEqual('EndEnd');
+      expect(JSON.parse(strJson3).$attrs.label).assertEqual('0');
       await Utils.sleep(SLEEP_TIME);
       done();
     });
