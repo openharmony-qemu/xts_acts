@@ -47,6 +47,7 @@ export default function webViewSrollableJsunit() {
       } catch (err) {
         console.error("push scroll page error: " + err);
       }
+
       done()
     });
     beforeEach(async  (done: Function) =>{
