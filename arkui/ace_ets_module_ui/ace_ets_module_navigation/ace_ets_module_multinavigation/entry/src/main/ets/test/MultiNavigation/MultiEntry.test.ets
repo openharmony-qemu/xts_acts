@@ -314,5 +314,36 @@ export default function MultiEntry() {
       console.info('MultiEntry_0800 END');
       done();
     });
+
+    /**
+     * @tc.number    MultiEntry_0900
+     * @tc.name      MultiEntry_0900
+     * @tc.desc      Test MultiNavPathStack moveIndexToTop -1
+     * @tc.level     Level 0
+     */
+    it('MultiEntry_0900', Level.LEVEL0, async (done: Function) => {
+      console.info('MultiEntry_0900 START');
+      await CommonFunc.sleep(500);
+
+      let driver = Driver.create();
+      await CommonFunc.sleep(200);
+
+      let btn2 = await driver.findComponent(ON.id('pushPathByNameId'));
+      await btn2.click()
+      console.info('[MultiEntry_0900] btn2 click');
+      await CommonFunc.sleep(1000);
+
+      let btn1 = await driver.findComponent(ON.text('moveIndexToTop-1'));
+      await btn1.click()
+      console.info('[MultiEntry_0900] btn1 click');
+      await CommonFunc.sleep(1000);
+      let strJson: string = getInspectorByKey('detailTextId');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info('[MultiEntry_0900] component obj is: ' + JSON.stringify(obj));
+      console.info('[MultiEntry_0900] content obj is: ' + JSON.stringify(obj.$attrs.content));
+      expect(obj.$attrs.content).assertEqual('PageDetail');
+      console.info('MultiEntry_0900 END');
+      done();
+    });
   })
 }
