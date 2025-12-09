@@ -94,12 +94,12 @@
     } while (0)
 
 #define ASSERT_TRUE(a)                                                                                               \
-    do {                                                                                                                \
+    do {                                                                                                             \
         ASSERT_EA(a, true);                                                                                          \
     } while (0)
 
 #define ASSERT_FALSE(a)                                                                                              \
-    do {                                                                                                                \
+    do {                                                                                                             \
         ASSERT_EA(a, false);                                                                                         \
     } while (0)
 
