@@ -971,6 +971,180 @@ napi_value AudioRendererSetLoudnessGainSuccess(napi_env env, napi_callback_info 
     return nullptr;
 }
 
+napi_value AudioRendererSetLoudnessGainSuccess_001(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder *builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
+    OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_MUSIC;
+    OH_AudioDevice_Type deviceType = AUDIO_DEVICE_TYPE_SPEAKER;
+    loudnessGain = 
+    OH_AudioStreamBuilder_Create(&builder, type);
+
+    // 2. set builder params
+    OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
+
+    OH_AudioRenderer_Callbacks callbacks;
+    callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteData;
+    OH_AudioStreamBuilder_SetRendererCallback(builder, callbacks, nullptr);
+
+    // 3. generate audiorenderer
+    OH_AudioRenderer *audioRenderer;
+    OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    float loudnessGainMin = -90.0f;
+    auto result = OH_AudioRenderer_SetLoudnessGain(audioRenderer, loudnessGainMin);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_value res;
+        napi_create_int32(env, result, &res);
+        return res;
+    }
+    return nullptr;
+}
+
+napi_value AudioRendererSetLoudnessGainSuccess_002(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder *builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
+    OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_MUSIC;
+    OH_AudioDevice_Type deviceType = AUDIO_DEVICE_TYPE_SPEAKER;
+    loudnessGain = 
+    OH_AudioStreamBuilder_Create(&builder, type);
+
+    // 2. set builder params
+    OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
+
+    OH_AudioRenderer_Callbacks callbacks;
+    callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteData;
+    OH_AudioStreamBuilder_SetRendererCallback(builder, callbacks, nullptr);
+
+    // 3. generate audiorenderer
+    OH_AudioRenderer *audioRenderer;
+    OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    float loudnessGainMin = -90.0f;
+    auto result = OH_AudioRenderer_SetLoudnessGain(audioRenderer, loudnessGainMin + 1);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_value res;
+        napi_create_int32(env, result, &res);
+        return res;
+    }
+    return nullptr;
+}
+
+napi_value AudioRendererSetLoudnessGainSuccess_003(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder *builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
+    OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_MUSIC;
+    OH_AudioDevice_Type deviceType = AUDIO_DEVICE_TYPE_SPEAKER;
+    loudnessGain = 
+    OH_AudioStreamBuilder_Create(&builder, type);
+
+    // 2. set builder params
+    OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
+
+    OH_AudioRenderer_Callbacks callbacks;
+    callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteData;
+    OH_AudioStreamBuilder_SetRendererCallback(builder, callbacks, nullptr);
+
+    // 3. generate audiorenderer
+    OH_AudioRenderer *audioRenderer;
+    OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    float loudnessGainMin = -90.0f;
+    auto result = OH_AudioRenderer_SetLoudnessGain(audioRenderer, loudnessGainMin - 1);
+    if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_value res;
+        napi_create_int32(env, result, &res);
+        return res;
+    }
+    return nullptr;
+}
+
+napi_value AudioRendererSetLoudnessGainSuccess_004(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder *builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
+    OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_MUSIC;
+    OH_AudioDevice_Type deviceType = AUDIO_DEVICE_TYPE_SPEAKER;
+    loudnessGain = 
+    OH_AudioStreamBuilder_Create(&builder, type);
+
+    // 2. set builder params
+    OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
+
+    OH_AudioRenderer_Callbacks callbacks;
+    callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteData;
+    OH_AudioStreamBuilder_SetRendererCallback(builder, callbacks, nullptr);
+
+    // 3. generate audiorenderer
+    OH_AudioRenderer *audioRenderer;
+    OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    float loudnessGainMax = 24.0f;
+    auto result = OH_AudioRenderer_SetLoudnessGain(audioRenderer, loudnessGainMax);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_value res;
+        napi_create_int32(env, result, &res);
+        return res;
+    }
+    return nullptr;
+}
+
+napi_value AudioRendererSetLoudnessGainSuccess_005(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder *builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
+    OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_MUSIC;
+    OH_AudioDevice_Type deviceType = AUDIO_DEVICE_TYPE_SPEAKER;
+    loudnessGain = 
+    OH_AudioStreamBuilder_Create(&builder, type);
+
+    // 2. set builder params
+    OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
+
+    OH_AudioRenderer_Callbacks callbacks;
+    callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteData;
+    OH_AudioStreamBuilder_SetRendererCallback(builder, callbacks, nullptr);
+
+    // 3. generate audiorenderer
+    OH_AudioRenderer *audioRenderer;
+    OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    float loudnessGainMax = 24.0f;
+    auto result = OH_AudioRenderer_SetLoudnessGain(audioRenderer, loudnessGainMax - 1);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_value res;
+        napi_create_int32(env, result, &res);
+        return res;
+    }
+    return nullptr;
+}
+
+napi_value AudioRendererSetLoudnessGainSuccess_006(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder *builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
+    OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_MUSIC;
+    OH_AudioDevice_Type deviceType = AUDIO_DEVICE_TYPE_SPEAKER;
+    loudnessGain = 
+    OH_AudioStreamBuilder_Create(&builder, type);
+
+    // 2. set builder params
+    OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
+
+    OH_AudioRenderer_Callbacks callbacks;
+    callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteData;
+    OH_AudioStreamBuilder_SetRendererCallback(builder, callbacks, nullptr);
+
+    // 3. generate audiorenderer
+    OH_AudioRenderer *audioRenderer;
+    OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    float loudnessGainMax = 24.0f;
+    auto result = OH_AudioRenderer_SetLoudnessGain(audioRenderer, loudnessGainMax + 1);
+    if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_value res;
+        napi_create_int32(env, result, &res);
+        return res;
+    }
+    return nullptr;
+}
+
 napi_value AudioRendererGetLoudnessGainInvalidParam(napi_env env, napi_callback_info info)
 {
     auto result = OH_AudioRenderer_GetLoudnessGain(nullptr, 0);
