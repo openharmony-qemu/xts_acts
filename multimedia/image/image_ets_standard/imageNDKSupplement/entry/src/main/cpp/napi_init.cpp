@@ -39,7 +39,7 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHImageEffectGetFilterSupp", OHImageEffectGetFilterSupp),
     DESCRIPTOR("OHImageEffectSetInputPictureSupp", OHImageEffectSetInputPictureSupp),
     DESCRIPTOR("OHImageEffectSetOutputPictureSupp", OHImageEffectSetOutputPictureSupp),
-    DESCRIPTOR("OHImageEffectReleaseSupp", OHImageEffectReleaseSupp), 
+    DESCRIPTOR("OHImageEffectReleaseSupp", OHImageEffectReleaseSupp),
     DESCRIPTOR("OHImageEffectReplaceFilterByFilterSupp", OHImageEffectReplaceFilterByFilterSupp),
 };
 
