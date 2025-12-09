@@ -3733,12 +3733,12 @@ export default function windowImmersiveTest() {
           } catch (error) {
             console.error(caseName + ' failed1, error: ' + JSON.stringify(error));
             await terminateAbility7(caseName);
-            if (error.code == 801) {
-              done()
+            if (!canIUseRes) {
+              expect(error.code).assertEqual(801)
             } else {
               expect().assertFail();
-              done()
             }
+            done()
           }
 
           try {
@@ -3768,12 +3768,12 @@ export default function windowImmersiveTest() {
           } catch (error) {
             console.error(caseName + ' failed2, error: ' + JSON.stringify(error));
             await terminateAbility7(caseName);
-            if (error.code == 801) {
-              done()
+            if (!canIUseRes) {
+              expect(error.code).assertEqual(801)
             } else {
               expect().assertFail();
-              done()
             }
+            done()
           }
 
           try {
@@ -3786,7 +3786,11 @@ export default function windowImmersiveTest() {
             done()
           } catch (error) {
             console.error(caseName + ' failed3, error: ' + JSON.stringify(error));
-            expect(error.code).assertEqual(1300016)
+            if (!canIUseRes) {
+              expect(error.code).assertEqual(801)
+            } else {
+              expect(error.code).assertEqual(1300016)
+            }
           }
 
           try {
@@ -3818,7 +3822,8 @@ export default function windowImmersiveTest() {
           } catch (error) {
             console.error(caseName + ' failed4, error: ' + JSON.stringify(error));
             await terminateAbility7(caseName);
-            if (error.code == 801) {
+            if (!canIUseRes) {
+              expect(error.code).assertEqual(801)
               done()
             } else {
               expect().assertFail();
@@ -3884,12 +3889,12 @@ export default function windowImmersiveTest() {
           } catch (error) {
             console.error(caseName + ' failed1, error: ' + JSON.stringify(error));
             await terminateAbility7(caseName);
-            if (error.code == 801) {
-              done()
+            if (!canIUseRes) {
+              expect(error.code).assertEqual(801)
             } else {
               expect().assertFail();
-              done()
             }
+            done()
           }
 
           try {
@@ -3919,12 +3924,12 @@ export default function windowImmersiveTest() {
           } catch (error) {
             console.error(caseName + ' failed2, error: ' + JSON.stringify(error));
             await terminateAbility7(caseName);
-            if (error.code == 801) {
-              done()
+            if (!canIUseRes) {
+              expect(error.code).assertEqual(801)
             } else {
               expect().assertFail();
-              done()
             }
+            done()
           }
 
           try {
@@ -3937,7 +3942,11 @@ export default function windowImmersiveTest() {
             done()
           } catch (error) {
             console.error(caseName + ' failed3, error: ' + JSON.stringify(error));
-            expect(error.code).assertEqual(1300016)
+            if (!canIUseRes) {
+              expect(error.code).assertEqual(801)
+            } else {
+              expect(error.code).assertEqual(1300016)
+            }
           }
 
           try {
@@ -3969,12 +3978,12 @@ export default function windowImmersiveTest() {
           } catch (error) {
             console.error(caseName + ' failed4, error: ' + JSON.stringify(error));
             await terminateAbility7(caseName);
-            if (error.code == 801) {
-              done()
+            if (!canIUseRes) {
+              expect(error.code).assertEqual(801)
             } else {
               expect().assertFail();
-              done()
             }
+            done()
           }
         } else {
           await terminateAbility7(caseName);
@@ -4083,12 +4092,12 @@ export default function windowImmersiveTest() {
           } catch (error) {
             console.error(caseName + ' failed1, error: ' + JSON.stringify(error));
             await terminateAbility7(caseName);
-            if (error.code == 801) {
-              done()
+            if (!canIUseRes) {
+              expect(error.code).assertEqual(801)
             } else {
               expect().assertFail();
-              done()
             }
+            done()
           }
 
           try {
@@ -4118,12 +4127,12 @@ export default function windowImmersiveTest() {
           } catch (error) {
             console.error(caseName + ' failed2, error: ' + JSON.stringify(error));
             await terminateAbility7(caseName);
-            if (error.code == 801) {
-              done()
+            if (!canIUseRes) {
+              expect(error.code).assertEqual(801)
             } else {
               expect().assertFail();
-              done()
             }
+            done()
           }
 
           try {
@@ -4136,7 +4145,11 @@ export default function windowImmersiveTest() {
             done()
           } catch (error) {
             console.error(caseName + ' failed3, error: ' + JSON.stringify(error));
-            expect(error.code).assertEqual(1300016)
+            if (!canIUseRes) {
+              expect(error.code).assertEqual(801)
+            } else {
+              expect(error.code).assertEqual(1300016)
+            }
           }
 
           try {
@@ -4168,12 +4181,12 @@ export default function windowImmersiveTest() {
           } catch (error) {
             console.error(caseName + ' failed4, error: ' + JSON.stringify(error));
             await terminateAbility7(caseName);
-            if (error.code == 801) {
-              done()
+            if (!canIUseRes) {
+              expect(error.code).assertEqual(801)
             } else {
               expect().assertFail();
-              done()
             }
+            done()
           }
         } else {
           await terminateAbility7(caseName);
@@ -4182,12 +4195,12 @@ export default function windowImmersiveTest() {
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
         await terminateAbility7(caseName);
-        if (err.code == 801) {
-          done()
+        if (!canIUseRes) {
+          expect(err.code).assertEqual(801)
         } else {
           expect().assertFail();
-          done()
         }
+        done()
       }
     });
 

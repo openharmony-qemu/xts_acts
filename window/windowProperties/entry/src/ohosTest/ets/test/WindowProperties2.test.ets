@@ -2774,7 +2774,7 @@ export default function windowPropertiesTest2() {
       } catch (err) {
         console.error(caseName + 'failed, error: ' + JSON.stringify(err));
         await subWindow?.destroyWindow();
-        if (isSupported) {
+        if (!isSupported) {
           expect(err.code).assertEqual(801)
           done()
         } else {
@@ -2981,7 +2981,6 @@ export default function windowPropertiesTest2() {
       } catch (err) {
         console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
         expect(err.code).assertEqual(1300002);
-        // 这里不对
         expect(err.message != null).assertTrue();
         done();
       }
