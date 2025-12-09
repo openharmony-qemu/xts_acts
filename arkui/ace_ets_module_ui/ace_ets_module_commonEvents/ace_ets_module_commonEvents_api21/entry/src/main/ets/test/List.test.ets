@@ -16,9 +16,11 @@
 import getPinchAxisScaleValue from './AxisEvent/getPinchAxisScaleValue.test';
 import postInputEvent from './BuilderNode/postInputEvent.test';
 import measureFromViewportTest from "./onVisiable/measureFromViewport.test";
+import SourceType from './SourceType/SourceType.test';
 
 export default function testsuite() {
   getPinchAxisScaleValue();
   postInputEvent();
   measureFromViewportTest();
+  SourceType()
 }

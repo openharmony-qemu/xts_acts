@@ -25,6 +25,7 @@ import ImageContentTransitionEffectTest from './Image/ImageContentTransitionEffe
 import ListDraggingEventTest from './list/ListDraggingEventTest.test'
 import ListFlingEventTest from './list/ListFlingEventTest.test'
 import ImageSupportSvg2Test from './imageSupportSvg2/ImageSupportSvg2Test.test'
+import SourceTypeTest from './sourceType/SourceTypeTest.test'
 
 export default function testsuite() {
   TestInvalidateAttributes();
@@ -40,4 +41,5 @@ export default function testsuite() {
   ListDraggingEventTest();
   ListFlingEventTest();
   ImageSupportSvg2Test();
+  SourceTypeTest();
 }
