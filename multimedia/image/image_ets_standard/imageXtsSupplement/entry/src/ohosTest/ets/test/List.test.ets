@@ -134,7 +134,6 @@ import imagePackerPackingPictureTest from './image/ImagePackerPackingPicture.tes
 import ImagePackerPackingToFilePictureTest from './image/ImagePackerPackingToFilePicture.test';
 import ImagePixelMapCropTest from './image/ImagePixelMapCrop.Test.test';
 import ImagePictureSetAuxiliaryPictureTest from './image/ImagePictureSetAuxiliaryPicture.Test.test';
-import ImagePixelMapCropTest from './image/ImagePixelMapCrop.Test.test';
 
 import UpdateDataTest from './image/ImageSourceUpdateDataTest.test';
 import SendableImageTest from './image/SendableImageTest.test';
