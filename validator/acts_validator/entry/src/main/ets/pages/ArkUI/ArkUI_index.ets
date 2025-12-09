@@ -149,6 +149,7 @@ struct IndexPage {
     { title: 'TabBarIndicatorPixmap', uri: 'pages/ArkUI/TabBarIndicatorPixmap' },
     { title: 'RichEditiorComponentContentKeyboard', uri: 'pages/ArkUI/RichEditiorComponentContentKeyboard' },
     { title: 'WindowSizeLayoutBreakpointChange', uri: 'pages/ArkUI/WindowSizeLayoutBreakpointChange' },
+    { title: 'AccessibilityActionOptionsScrollStep', uri: 'pages/ArkUI/AccessibilityActionOptionsScrollStep' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];
