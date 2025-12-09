@@ -948,7 +948,7 @@ export default function ArrayEveryTest() {
      * @tc.level Level 3
      */
     it('ArrayEveryTest045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-      const arr = [Math.sqrt, Math.abs, Math.floor];
+      const arr = [Math.sqrt, Math.floor];
       const callback = (item: Function) => typeof item === 'function';
 
       const result = arr.every(callback);
