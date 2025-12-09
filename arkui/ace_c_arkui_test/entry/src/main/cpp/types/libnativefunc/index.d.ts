@@ -2421,6 +2421,10 @@ export const testImageAniMatorImageFramelnfo003: () => number;
 
 export const testImageAniMatorImageFramelnfo004: () => number;
 
+export const testImageAniMatorImageFramelnfo005: () => number;
+
+export const testImageAniMatorImageFramelnfo006: () => number;
+
 export const testImageAnimatorImages001: () => number;
 
 export const testImageAnimatorImages002: () => number;
@@ -6688,6 +6692,18 @@ export const testAnimateCurve009: () => number;
 export const testAnimateCurve010: () => number;
 
 export const testAnimateCurve011: () => number;
+
+export const testAnimateCurve012: () => number;
+
+export const testAnimateCurve013: () => number;
+
+export const testAnimateCurve014: () => number;
+
+export const testAnimateCurve015: () => number;
+
+export const testAnimateCurve016: () => number;
+
+export const testAnimateCurve017: () => number;
 
 export const testKeyframeAnimateOption001: () => number;
 

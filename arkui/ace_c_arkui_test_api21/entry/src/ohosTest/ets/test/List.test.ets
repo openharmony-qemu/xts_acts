@@ -27,6 +27,7 @@ import ImageContentTransitionEffectTest from './Image/ImageContentTransitionEffe
 import ListDraggingEventTest from './list/ListDraggingEventTest.test'
 import ListFlingEventTest from './list/ListFlingEventTest.test'
 import ImageSupportSvg2Test from './imageSupportSvg2/ImageSupportSvg2Test.test'
+import SourceTypeTest from './sourceType/SourceTypeTest.test'
 
 export default function testsuite() {
   NodeUtilsMethodTest(); // 此条特殊用例请放在首行，勿动
@@ -44,4 +45,5 @@ export default function testsuite() {
   ListDraggingEventTest();
   ListFlingEventTest();
   ImageSupportSvg2Test();
+  SourceTypeTest();
 }

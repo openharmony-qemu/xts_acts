@@ -25,12 +25,14 @@ public:
     ~TextPickerCascadeTest();
     static napi_value TextPickerCascadeTest_a(napi_env env, napi_callback_info info);
     static napi_value TextPickerCascadeTest_a1(napi_env env, napi_callback_info info);
+    static napi_value TextPickerCascadeTest_a2(napi_env env, napi_callback_info info);
     static napi_value TextPickerCascadeTest_b(napi_env env, napi_callback_info info);
     static napi_value TextPickerCascadeTest_b1(napi_env env, napi_callback_info info);
     static napi_value TextPickerCascadeTest_c(napi_env env, napi_callback_info info);
     static napi_value TextPickerCascadeTest_c1(napi_env env, napi_callback_info info);
     static napi_value TextPickerCascadeTest_d(napi_env env, napi_callback_info info);
     static napi_value TextPickerCascadeTest_d1(napi_env env, napi_callback_info info);
+    static napi_value TextPickerCascadeTest_d2(napi_env env, napi_callback_info info);
     static napi_value TextPickerCascadeTest_e(napi_env env, napi_callback_info info);
     static napi_value TextPickerCascadeTest_e1(napi_env env, napi_callback_info info);
     static napi_value TextPickerCascadeTest_f(napi_env env, napi_callback_info info);

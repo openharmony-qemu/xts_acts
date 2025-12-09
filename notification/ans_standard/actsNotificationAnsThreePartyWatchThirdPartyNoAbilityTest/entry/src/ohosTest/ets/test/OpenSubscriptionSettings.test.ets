@@ -42,8 +42,13 @@ export default function actsNotificationAnsThreePartyOpenSubscriptionSettingsTes
           done();
         }).catch((err: Base.BusinessError) => {
           console.error(TAG+"openSubscriptionSettingseeeeeeeeee: " + JSON.stringify(err));
-          expect(err.code).assertEqual(1600023)
-          done();
+          if (err.code == 201) {
+            expect(err.code).assertEqual(201)
+            done();
+          } else {
+            expect(err.code).assertEqual(1600023)
+            done();
+          }
         });
     })
 

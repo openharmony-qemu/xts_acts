@@ -22,7 +22,7 @@ add_library(nativerender SHARED
     list/ListDraggingEventTest.cpp
     list/ListFlingEventTest.cpp
     Image/ImageSupportSvg2Test.cpp
-    nodeUtil/NodeUtilsReturnTest.cpp
+    sourceType/SourceTypeTest.cpp
 )
 
 add_library(nativefunc SHARED

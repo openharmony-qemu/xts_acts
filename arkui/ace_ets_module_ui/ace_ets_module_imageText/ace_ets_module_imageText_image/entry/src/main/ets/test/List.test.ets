@@ -47,8 +47,14 @@ import ImageOrientationTest from './ImageOrientationTest/ImageOrientation.test';
 import ImageMatrixTest from './ImageMatrix/ImageMatrix.test';
 import ImageHdrBrightnessTest from './ImageHdrBrightnessTest/ImageHdrBrightness.test';
 import ImageLoaderTest from './ImageLoaderTest/ImageLoader.test';
+import getUIContextApi01 from './ImageGetUIContext/getUIContextApi01.test';
+import getUIContextApi02 from './ImageGetUIContext/getUIContextApi02.test';
+import getUIContextApi03 from './ImageGetUIContext/getUIContextApi03.test';
 
 export default function testsuite() {
+  getUIContextApi01();
+  getUIContextApi02();
+  getUIContextApi03();
   APIClipMaskShapeTest();
   AboutToRecycleImageJSTest();
   ImageBasicAttributesTest();

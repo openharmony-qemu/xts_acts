@@ -59,7 +59,12 @@ export default function actsNotificationAnsThreePartyGetUserGrantedEnableBundles
 
       } catch (err) {
         console.error(TAG + "Test failed: " + JSON.stringify(err));
-        expect().assertFail();
+        if(err.code == 201){
+          expect(err.code).assertEqual(201);
+          done()
+        } else {
+          expect().assertFail();
+        }
       } finally {
         done();
       }

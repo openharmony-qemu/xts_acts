@@ -91,6 +91,7 @@ struct PickerComponent {
     result.maxVideoSelectNumber = this.pickerOptions.maxVideoSelectNumber ?? 500;
     result.pickerIndex = this.pickerOptions.pickerIndex ?? -1;
     result.preselectedInfos = this.pickerOptions.preselectedInfos ?? [];
+     result.isSlidingSupported = this.pickerOptions.isSlidingSupported ?? false;
     return result;
   }
 

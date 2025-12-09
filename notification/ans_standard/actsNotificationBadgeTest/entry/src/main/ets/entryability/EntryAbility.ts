@@ -12,13 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import {ConfigurationConstant} from '@kit.AbilityKit';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 
+const DOMAIN = 0x0000;
+
 export default class EntryAbility extends UIAbility {
   onCreate(want, launchParam) {
+    try {
+      this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
+    } catch (err) {
+      hilog.error(DOMAIN, 'testTag', 'Failed to set colorMode. Cause: %{public}s', JSON.stringify(err));
+    }
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
   }
 

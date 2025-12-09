@@ -24,7 +24,7 @@
 #include "list/ListDraggingEventTest.h"
 #include "list/ListFlingEventTest.h"
 #include "Image/ImageSupportSvg2Test.h"
-#include "nodeUtil/NodeUtilsReturnTest.h"
+#include "sourceType/SourceTypeTest.h"
 
 namespace ArkUICapiTest
 {
@@ -124,8 +124,8 @@ namespace ArkUICapiTest
                nullptr, nullptr, napi_default, nullptr},
             {"createImageSupportSvg2NativeRoot", nullptr, ImageSupportSvg2Test::CreateImageSupportSvg2NativeRoot,
                nullptr, nullptr, nullptr, napi_default, nullptr},
-            {"testGetPositionGetSize", nullptr, NodeUtilsReturnTest::testGetPositionGetSize001,
-             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"SourceTypeTest", nullptr, ButtonSourceTypeTest::CreateNativeNode,
+               nullptr, nullptr, nullptr, napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {

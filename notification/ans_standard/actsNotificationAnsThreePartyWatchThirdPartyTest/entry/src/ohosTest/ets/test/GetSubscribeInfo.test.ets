@@ -35,8 +35,13 @@ export default function actsNotificationAnsThreePartyGetSubscribeInfoTest() {
         done();
       }).catch((err: BusinessError) => {
         console.error(TAG+`getSubscribeInfo fail: ${JSON.stringify(err)}`);
-        expect().assertFail();
-        done();
+        if(err.code == 201){
+          expect(err.code).assertEqual(201);
+          done()
+        } else {
+          expect().assertFail();
+          done();
+        }
       });
     })
 

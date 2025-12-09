@@ -16,11 +16,160 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 import notificationManager from '@ohos.notificationManager'
 import { BusinessError } from '@ohos.base'
+import { common } from '@kit.AbilityKit';
+import { Driver, ON } from '@kit.TestKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+function sleep(time: number) {
+  return new Promise<void>((resolve: Function) => setTimeout(resolve, time));
+}
+let ctx = getContext(this) as common.UIAbilityContext;
 
 export default function ActsNotificationBadgeTest() {
   describe('SUB_NOTIFICATION_ANS_BADGE_TEST', () => {
     let TAG = 'SUB_NOTIFICATION_ANS_MANAGER_BADGE_test ===>'
     console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_BADGE_test START')
+    beforeAll(async (done: Function) => {
+      notificationManager.requestEnableNotification(ctx).then(() => {
+        console.info(`${TAG} requestEnableNotification succeeded`);
+        done()
+      }).catch((err: Error) => {
+        console.info(`${TAG} requestEnableNotification err: `+ JSON.stringify(err));
+        expect(err).assertNull()
+        done()
+      });
+      await sleep(1500);
+      let driver = Driver.create();
+      await sleep(1500)
+      let button = await driver.findComponent(ON.text('允许'));
+      console.info(`button is ${JSON.stringify(button)}`);
+      if (button !== null) {
+        await sleep(1500);
+        await button.click();
+        await sleep(500);
+        done()
+      } else {
+        console.info('null button');
+        expect(button).assertContain('允许')
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  Sub_Notification_Ans_Corner_Query_0004
+     * @tc.name    Sub_Notification_Ans_Corner_Query_0004
+     * @tc.desc    non-system application invokes the onBadgeNumberQuery and offBadgeNumberQuery interfaces.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('Sub_Notification_Ans_Corner_Query_0004', Level.LEVEL2, async (done: Function) => {
+      TAG = TAG + "Sub_Notification_Ans_Corner_Query_0004 "
+      try{
+        notificationManager.onBadgeNumberQuery(
+          async (bundleOption: notificationManager.BundleOption) => {
+            return 1;
+          }
+        );
+      } catch(err) {
+        hilog.info(0x0000, TAG, `onBadgeNumberQuery failed, code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(202)
+      }
+      await sleep(500)
+      try{
+        notificationManager.offBadgeNumberQuery();
+      } catch(err) {
+        hilog.info(0x0000, TAG, `offBadgeNumberQuery failed, code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(202)
+        console.info(TAG + "Sub_Notification_Ans_Corner_Query_0004 PASS");
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  Sub_Notification_Ans_Corner_Query_0011
+     * @tc.name    Sub_Notification_Ans_Corner_Query_0011
+     * @tc.desc    If registration is not required, set the corner mark. The value is 0.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('Sub_Notification_Ans_Corner_Query_0011', Level.LEVEL1, async (done: Function) => {
+      TAG = TAG + "Sub_Notification_Ans_Corner_Query_0011 "
+      try {
+        notificationManager.getBadgeNumber().then((badge) => {
+          console.info(TAG, '角标=' + badge);
+          expect(badge).assertEqual(0)
+          console.info(TAG + "Sub_Notification_Ans_Corner_Query_0011 PASS");
+          done()
+        }).catch((err: BusinessError) => {
+          console.info(TAG, "getBadgeNumber error" + JSON.stringify(err));
+          expect(err.code).assertNull()
+          done()
+        })
+      } catch (e) {
+        console.info(TAG, "getBadgeNumber error" + JSON.stringify(e));
+        expect(e).assertNull()
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  Sub_Notification_Ans_Corner_Query_0008
+     * @tc.name    Sub_Notification_Ans_Corner_Query_0008
+     * @tc.desc    Invoke the getBadgeNumber interface to obtain the number of corner marks.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('Sub_Notification_Ans_Corner_Query_0008', Level.LEVEL0, async (done: Function) => {
+      TAG = TAG + "Sub_Notification_Ans_Corner_Query_0008 "
+      let badgeNumber: number = 10;
+      let notificationRequest: notificationManager.NotificationRequest = {
+        id: 11,
+        content: {
+          notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+          normal: {
+            title: "test",
+            text: "test_text",
+            additionalText: "test_additionalText"
+          }
+        },
+        badgeNumber: 15
+      };
+      await notificationManager.setBadgeNumber(badgeNumber).then(() => {
+        console.info(`${TAG} Succeeded in setting badge number.`);
+      }).catch((err: BusinessError) => {
+        console.error(`Failed to set badge number. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(0)
+      });
+      await sleep(500)
+      await notificationManager.publish(notificationRequest).then(() => {
+        console.info(`${TAG} Succeeded in publishing notification.`);
+      }).catch((err: BusinessError) => {
+        console.error(`${TAG} Failed to publish notification. Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(0)
+        done()
+      });
+      await sleep(500)
+      try {
+        notificationManager.getBadgeNumber().then((badge) => {
+          console.info(TAG, '角标=' + badge);
+          expect(badge).assertEqual(25)
+          console.info(TAG + "Sub_Notification_Ans_Corner_Query_0008 PASS");
+          done()
+        }).catch((err: BusinessError) => {
+          console.info(TAG, "getBadgeNumber error" + JSON.stringify(err));
+          expect(err).assertNull()
+          done()
+        })
+      } catch (e) {
+        console.info(TAG, "getBadgeNumber error" + JSON.stringify(e));
+        expect(e).assertNull()
+        done()
+      }
+    })
+
     /**
      * @tc.name   Sub_Notification_Ans_Corner_SetNum_0900
      * @tc.number Sub_Notification_Ans_Corner_SetNum_0900
