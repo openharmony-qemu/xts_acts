@@ -108,12 +108,12 @@ export default function NetworkManagerWebsocketTestStatic() {
   describe('NetworkManagerWebsocketTestStatic', () => {
 
     /**
-     * @tc.number: SUB_Telephony_Netstack_WebSocket_CertVerify_Xts_0100
-     * @tc.name: testTelephonyNetstackWebSocketCertVerifyXts_static_0100
-     * @tc.desc: Test connect property
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.number  SUB_Telephony_Netstack_WebSocket_CertVerify_Xts_0100
+     * @tc.name    testTelephonyNetstackWebSocketCertVerifyXts_static_0100
+     * @tc.desc    Test connect property
+     * @tc.level   3
+     * @tc.type    Function
+     * @tc.size    SmallTest
      */
     it("testTelephonyNetstackWebSocketCertVerifyXts_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>  {
@@ -143,12 +143,12 @@ export default function NetworkManagerWebsocketTestStatic() {
     })
 
     /**
-     * @tc.number: SUB_Telephony_Netstack_WebSocket_CertVerify_Xts_0200
-     * @tc.name: testTelephonyNetstackWebSocketCertVerifyXts_static_0200
-     * @tc.desc: Test connect property
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.number  SUB_Telephony_Netstack_WebSocket_CertVerify_Xts_0200
+     * @tc.name    testTelephonyNetstackWebSocketCertVerifyXts_static_0200
+     * @tc.desc    Test connect property
+     * @tc.level   3
+     * @tc.type    Function
+     * @tc.size    SmallTest
      */
     it("testTelephonyNetstackWebSocketCertVerifyXts_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -168,12 +168,12 @@ export default function NetworkManagerWebsocketTestStatic() {
     })
 
     /**
-     * @tc.number: SUB_Telephony_Netstack_WebSocket_CertVerify_Xts_0300
-     * @tc.name: testTelephonyNetstackWebSocketCertVerifyXts_static_0300
-     * @tc.desc: Test connect property
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.number  SUB_Telephony_Netstack_WebSocket_CertVerify_Xts_0300
+     * @tc.name    testTelephonyNetstackWebSocketCertVerifyXts_static_0300
+     * @tc.desc    Test connect property
+     * @tc.level   3
+     * @tc.type    Function
+     * @tc.size    SmallTest
      */
     it("testTelephonyNetstackWebSocketCertVerifyXts_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -195,12 +195,12 @@ export default function NetworkManagerWebsocketTestStatic() {
     })
 
     /**
-     * @tc.number: SUB_Telephony_Netstack_WebSocket_CertVerify_Xts_0400
-     * @tc.name: testTelephonyNetstackWebSocketCertVerifyXts_static_0400
-     * @tc.desc: Test connect property
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.number  SUB_Telephony_Netstack_WebSocket_CertVerify_Xts_0400
+     * @tc.name    testTelephonyNetstackWebSocketCertVerifyXts_static_0400
+     * @tc.desc    Test connect property
+     * @tc.level   3
+     * @tc.type    Function
+     * @tc.size    SmallTest
      */
     it("testTelephonyNetstackWebSocketCertVerifyXts_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -220,12 +220,12 @@ export default function NetworkManagerWebsocketTestStatic() {
     })
 
     /**
-     * @tc.number: SUB_Telephony_Netstack_WebSocket_CertVerify_Xts_0500
-     * @tc.name: testTelephonyNetstackWebSocketCertVerifyXts_static_0500
-     * @tc.desc: Test connect property
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.number  SUB_Telephony_Netstack_WebSocket_CertVerify_Xts_0500
+     * @tc.name    testTelephonyNetstackWebSocketCertVerifyXts_static_0500
+     * @tc.desc    Test connect property
+     * @tc.level   3
+     * @tc.type    Function
+     * @tc.size    SmallTest
      */
     it("testTelephonyNetstackWebSocketCertVerifyXts_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -245,12 +245,12 @@ export default function NetworkManagerWebsocketTestStatic() {
     })
 
     /**
-     * @tc.number: SUB_Telephony_Netstack_WebSocket_CertVerify_Xts_0600
-     * @tc.name: testTelephonyNetstackWebSocketCertVerifyXts_static_0600
-     * @tc.desc: Test connect property
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.number  SUB_Telephony_Netstack_WebSocket_CertVerify_Xts_0600
+     * @tc.name    testTelephonyNetstackWebSocketCertVerifyXts_static_0600
+     * @tc.desc    Test connect property
+     * @tc.level   3
+     * @tc.type    Function
+     * @tc.size    SmallTest
      */
     it("testTelephonyNetstackWebSocketCertVerifyXts_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
