@@ -392,7 +392,18 @@ struct webViewContCreatePdfAndOthersError {
               }
               break;
             }
-
+            case 'emitSetSoftKeyboardBehaviorModeErr': {
+              try {
+                this.controllerNull.setSoftKeyboardBehaviorMode(web_webview.WebSoftKeyboardBehaviorMode.DEFAULT);
+              } catch (error) {
+                console.error(`emitSetSiteIsolationModeErr333 ErrorCode: ${error.code},  Message: ${error.message}`);
+                this.errorCode = error.code;
+                this.errorMsg = error.message;
+                Utils.emitEvent(this.errorCode, 20151223)
+                Utils.emitEvent(this.errorMsg, 20151224)
+              }
+              break;
+            }
 
           }
         })
