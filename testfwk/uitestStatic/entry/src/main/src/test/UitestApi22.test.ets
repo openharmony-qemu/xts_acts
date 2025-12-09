@@ -39,9 +39,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_001
      * @tc.name testComponentEventOccurOptionsClickMonitor_static
+     * @tc.number uitestDriverTest_Api22_001
      * @tc.desc monitor component click.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsClickMonitor_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_static start`);
@@ -84,9 +87,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_020
      * @tc.name testComponentEventOccurOptionsClickMonitor_nullOn_static
+     * @tc.number uitestDriverTest_Api22_020
      * @tc.desc monitor component click.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsClickMonitor_nullOn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static start`);
@@ -128,9 +134,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_022
      * @tc.name testComponentEventOccurOptionsClickMonitor_nullType_static
+     * @tc.number uitestDriverTest_Api22_022
      * @tc.desc monitor component click.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsClickMonitor_nullType_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static start`);
@@ -170,9 +179,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_0011
      * @tc.name testComponentEventOccurOptionsClickMonitor_notOn_static
+     * @tc.number uitestDriverTest_Api22_0011
      * @tc.desc monitor component click.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsClickMonitor_notOn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_notOn_static start`);
@@ -207,9 +219,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_002
      * @tc.name testComponentEventOccurOptionsLongClickMonitor_static
+     * @tc.number uitestDriverTest_Api22_002
      * @tc.desc monitor component LongClick.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsLongClickMonitor_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_static start`);
@@ -251,9 +266,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_023
      * @tc.name testComponentEventOccurOptionsLongClickMonitor_nullOn_static
+     * @tc.number uitestDriverTest_Api22_023
      * @tc.desc monitor component LongClick.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsLongClickMonitor_nullOn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static start`);
@@ -295,9 +313,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_024
      * @tc.name testComponentEventOccurOptionsLongClickMonitor_nullType_static
+     * @tc.number uitestDriverTest_Api22_024
      * @tc.desc monitor component LongClick.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsLongClickMonitor_nullType_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static start`);
@@ -337,9 +358,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_0021
      * @tc.name testComponentEventOccurOptionsLongClickMonitor_notOn_static
+     * @tc.number uitestDriverTest_Api22_0021
      * @tc.desc monitor component LongClick.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsLongClickMonitor_notOn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_notOn_static start`);
@@ -372,9 +396,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_004
      * @tc.name testComponentEventOccurOptionsScrollStartMonitor_static
+     * @tc.number uitestDriverTest_Api22_004
      * @tc.desc monitor component Scroll start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsScrollStartMonitor_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_static start`);
@@ -419,9 +446,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_025
      * @tc.name testComponentEventOccurOptionsScrollStartMonitor_nullNo_static
+     * @tc.number uitestDriverTest_Api22_025
      * @tc.desc monitor component Scroll start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsScrollStartMonitor_nullNo_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static start`);
@@ -467,9 +497,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_026
      * @tc.name testComponentEventOccurOptionsScrollStartMonitor_nullType_static
+     * @tc.number uitestDriverTest_Api22_026
      * @tc.desc monitor component Scroll start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsScrollStartMonitor_nullType_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static start`);
@@ -513,9 +546,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_0041
      * @tc.name testComponentEventOccurOptionsScrollStartMonitor_notOn_static
+     * @tc.number uitestDriverTest_Api22_0041
      * @tc.desc monitor component Scroll start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsScrollStartMonitor_notOn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_notOn_static start`);
@@ -550,9 +586,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_005
      * @tc.name testComponentEventOccurOptionsScrollEndMonitor_static
+     * @tc.number uitestDriverTest_Api22_005
      * @tc.desc monitor component Scroll end.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsScrollEndMonitor_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_static start`);
@@ -598,9 +637,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_027
      * @tc.name testComponentEventOccurOptionsScrollEndMonitor_nullOn_static
+     * @tc.number uitestDriverTest_Api22_027
      * @tc.desc monitor component Scroll end.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsScrollEndMonitor_nullOn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static start`);
@@ -646,9 +688,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_028
      * @tc.name testComponentEventOccurOptionsScrollEndMonitor_nullType_static
+     * @tc.number uitestDriverTest_Api22_028
      * @tc.desc monitor component Scroll end.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsScrollEndMonitor_nullType_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static start`);
@@ -692,9 +737,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_0051
      * @tc.name testComponentEventOccurOptionsScrollEndMonitor_notOn_static
+     * @tc.number uitestDriverTest_Api22_0051
      * @tc.desc monitor component Scroll end.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsScrollEndMonitor_notOn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_notOn_static start`);
@@ -731,9 +779,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_006
      * @tc.name testComponentEventOccurOptionsTextContentMonitor_static
+     * @tc.number uitestDriverTest_Api22_006
      * @tc.desc monitor component text changed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsTextContentMonitor_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_static start`);
@@ -783,9 +834,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_029
      * @tc.name testComponentEventOccurOptionsTextContentMonitor_nullOn_static
+     * @tc.number uitestDriverTest_Api22_029
      * @tc.desc monitor component text changed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsTextContentMonitor_nullOn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static start`);
@@ -836,9 +890,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_030
      * @tc.name testComponentEventOccurOptionsTextContentMonitor_nullType_static
+     * @tc.number uitestDriverTest_Api22_030
      * @tc.desc monitor component text changed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsTextContentMonitor_nullType_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static start`);
@@ -887,9 +944,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_0061
      * @tc.name testComponentEventOccurOptionsTextContentMonitor_notOn_static
+     * @tc.number uitestDriverTest_Api22_0061
      * @tc.desc monitor component text changed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsTextContentMonitor_notOn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_notOn_static start`);
@@ -932,9 +992,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_007
      * @tc.name testComponentEventOccurOptionsTimeOutClickMonitor_static
+     * @tc.number uitestDriverTest_Api22_007
      * @tc.desc monitor component click.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentEventOccurOptionsTimeOutClickMonitor_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
       hilog.info(domain, tag, `testComponentEventOccurOptionsTimeOutClickMonitor_static start`);
@@ -977,9 +1040,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_008
      * @tc.name tesIsComponentPresentWhenLongClickTrue_static
+     * @tc.number uitestDriverTest_Api22_008
      * @tc.desc isComponentPresentWhenLongClick test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('tesIsComponentPresentWhenLongClickTrue_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, tesIsComponentPresentWhenLongClickTrue_static start`);
@@ -1015,9 +1081,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_09
      * @tc.name tesIsComponentPresentWhenLongClickFalse_static
+     * @tc.number uitestDriverTest_Api22_09
      * @tc.desc isComponentPresentWhenLongClick test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('tesIsComponentPresentWhenLongClickFalse_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, tesIsComponentPresentWhenLongClickNotCom start`);
@@ -1057,9 +1126,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_010
      * @tc.name tesIsComponentPresentWhenDragTrue_static
+     * @tc.number uitestDriverTest_Api22_010
      * @tc.desc isComponentPresentWhenDrag test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('tesIsComponentPresentWhenDragTrue_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_static start`);
@@ -1093,9 +1165,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_0101
      * @tc.name tesIsComponentPresentWhenDragTrue_speed_static
+     * @tc.number uitestDriverTest_Api22_0101
      * @tc.desc isComponentPresentWhenDrag test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('tesIsComponentPresentWhenDragTrue_speed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_speed_static start`);
@@ -1129,9 +1204,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_011
      * @tc.name tesIsComponentPresentWhenDragFalse_static
+     * @tc.number uitestDriverTest_Api22_011
      * @tc.desc isComponentPresentWhenDrag test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('tesIsComponentPresentWhenDragFalse_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, tesIsComponentPresentWhenDragFalse_static start`);
@@ -1175,9 +1253,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_012
      * @tc.name tesIsComponentPresentWhenSwipeTrue_static
+     * @tc.number uitestDriverTest_Api22_012
      * @tc.desc isComponentPresentWhenSwipe test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('tesIsComponentPresentWhenSwipeTrue_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue_static start`);
@@ -1201,9 +1282,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_013
      * @tc.name tesIsComponentPresentWhenSwipeFalse_static
+     * @tc.number uitestDriverTest_Api22_013
      * @tc.desc isComponentPresentWhenSwipe test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('tesIsComponentPresentWhenSwipeFalse_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, tesIsComponentPresentWhenSwipeFalse_static start`);
@@ -1229,9 +1313,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_014
      * @tc.name tesKnuckleKnockSingle_static
+     * @tc.number uitestDriverTest_Api22_014
      * @tc.desc isComponentPresentWhenLongClick test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('tesKnuckleKnockSingle_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, tesKnuckleKnockSingle_static start`);
@@ -1258,9 +1345,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_015
      * @tc.name tesKnuckleKnockDouble_static
+     * @tc.number uitestDriverTest_Api22_015
      * @tc.desc isComponentPresentWhenLongClick test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('tesKnuckleKnockDouble_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, tesKnuckleKnockDouble_static start`);
@@ -1288,9 +1378,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_016
      * @tc.name tesKnuckleKnockS_static
+     * @tc.number uitestDriverTest_Api22_016
      * @tc.desc isComponentPresentWhenLongClick test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('tesKnuckleKnockS_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, tesKnuckleKnockS_static start`);
@@ -1340,9 +1433,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_017
      * @tc.name tesKnuckleKnockRect_static
+     * @tc.number uitestDriverTest_Api22_017
      * @tc.desc isComponentPresentWhenLongClick test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('tesKnuckleKnockRect_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, tesKnuckleKnockRect_static start`);
@@ -1385,9 +1481,12 @@ export default function uitestDriverTestApi22() {
 
 
     /**
-     * @tc.number uitestDriverTest_Api22_018
      * @tc.name teTouchPadTwoFingersScrollVer_Static
+     * @tc.number uitestDriverTest_Api22_018
      * @tc.desc isComponentPresentWhenLongClick test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('teTouchPadTwoFingersScrollVer_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, teTouchPadTwoFingersScrollVer_Static start`);
@@ -1419,9 +1518,12 @@ export default function uitestDriverTestApi22() {
     })
 
     /**
-     * @tc.number uitestDriverTest_Api22_019
      * @tc.name teTouchPadTwoFingersScrollHor_static
+     * @tc.number uitestDriverTest_Api22_019
      * @tc.desc isComponentPresentWhenLongClick test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('teTouchPadTwoFingersScrollHor_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, teTouchPadTwoFingersScrollHor_static start`);
