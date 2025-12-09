@@ -21,7 +21,7 @@ import image from "@ohos.multimedia.image";
 import { BusinessError } from '@kit.BasicServicesKit';
 
 const AUDIO_SOURCE = 'mjpeg_mp3.mp3';
-const VIDEO_SOURCE = 'test1.mp4';
+const VIDEO_SOURCE = 'H264_AAC_Matedata.mp4';
 const VIDEO_NOSUPPORT = 'No_Support_Format.mov'
 const HTTP_SOURCE = 'http://XXX';
 const TAG = "MetadataDemo"
