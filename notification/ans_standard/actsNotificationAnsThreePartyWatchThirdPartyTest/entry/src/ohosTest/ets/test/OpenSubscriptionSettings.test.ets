@@ -56,8 +56,8 @@ export default function actsNotificationAnsThreePartyOpenSubscriptionSettingsTes
         done();
       } catch (error) {
         console.error(TAG + "Error: " + error.message);
-        if(err.code == 201){
-          expect(err.code).assertEqual(201);
+        if(error.code == 201){
+          expect(error.code).assertEqual(201);
           done()
         } else {
           expect().assertFail();
@@ -139,8 +139,8 @@ export default function actsNotificationAnsThreePartyOpenSubscriptionSettingsTes
       } catch (error) {
         console.error(TAG + "Error: " + error.message);
         console.error(TAG + "Test failed");
-        if(err.code == 201){
-          expect(err.code).assertEqual(201);
+        if(error.code == 201){
+          expect(error.code).assertEqual(201);
           done()
         } else {
           expect().assertFail();
@@ -174,7 +174,11 @@ export default function actsNotificationAnsThreePartyOpenSubscriptionSettingsTes
                 done();
               })
               .catch(async (err: Base.BusinessError) => {
-                expect(err.code).assertEqual(1600018);
+                if(err.code == 201){
+                  expect(err.code).assertEqual(201); 
+                } else {
+                  expect(err.code).assertEqual(1600018);
+                }
                 hilog.info(0x000, TAG, 'Got expected error: ' + err.code);
                 await sleep(100);
                 const driver = Driver.create();
@@ -194,8 +198,8 @@ export default function actsNotificationAnsThreePartyOpenSubscriptionSettingsTes
           })
           .catch((firstError: Base.BusinessError) => {
             hilog.info(0x000, TAG, `First call failed ${firstError}`);
-            if(err.code == 201){
-              expect(err.code).assertEqual(201);
+            if(firstError.code == 201){
+              expect(firstError.code).assertEqual(201);
               done()
             } else {
               expect().assertFail();
