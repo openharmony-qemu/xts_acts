@@ -1513,7 +1513,150 @@ export default function AudioTest() {
           done();
         }
       })
+    
+    /**
+     * @tc.name   testMultimediaAudioRendererSetLoudnessGain0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0300
+     * @tc.desc   Testing OH_AudioRenderer_SetLoudnessGain returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMultimediaAudioRendererSetLoudnessGain0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        const LOG_NAME = `SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0300`;
+        try {
+          console.info(`====>${LOG_NAME} start====`);
+          let result: number = AudioKitTest.AudioRendererSetLoudnessGainSuccess_001();
+          expect(0).assertEqual(result);
+          console.info(`====>${LOG_NAME} result: ` + result);
+          done();
+        } catch (err) {
+          console.error(`====>${LOG_NAME} catch err: ` + err);
+          expect(false).assertEqual(ABILITY_ERR_OK);
+          done();
+        }
+      })
 
+    /**
+     * @tc.name   testMultimediaAudioRendererSetLoudnessGain0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0400
+     * @tc.desc   Testing OH_AudioRenderer_SetLoudnessGain returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMultimediaAudioRendererSetLoudnessGain0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        const LOG_NAME = `SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0400`;
+        try {
+          console.info(`====>${LOG_NAME} start====`);
+          let result: number = AudioKitTest.AudioRendererSetLoudnessGainSuccess_002();
+          expect(0).assertEqual(result);
+          console.info(`====>${LOG_NAME} result: ` + result);
+          done();
+        } catch (err) {
+          console.error(`====>${LOG_NAME} catch err: ` + err);
+          expect(false).assertEqual(ABILITY_ERR_OK);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testMultimediaAudioRendererSetLoudnessGain0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0500
+     * @tc.desc   Testing OH_AudioRenderer_SetLoudnessGain returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMultimediaAudioRendererSetLoudnessGain0500',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        const LOG_NAME = `SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0500`;
+        try {
+          console.info(`====>${LOG_NAME} start====`);
+          let result: number = AudioKitTest.AudioRendererSetLoudnessGainSuccess_003();
+          expect(1).assertEqual(result);
+          console.info(`====>${LOG_NAME} result: ` + result);
+          done();
+        } catch (err) {
+          console.error(`====>${LOG_NAME} catch err: ` + err);
+          expect(false).assertEqual(ABILITY_ERR_OK);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testMultimediaAudioRendererSetLoudnessGain0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0600
+     * @tc.desc   Testing OH_AudioRenderer_SetLoudnessGain returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMultimediaAudioRendererSetLoudnessGain0600',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        const LOG_NAME = `SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0600`;
+        try {
+          console.info(`====>${LOG_NAME} start====`);
+          let result: number = AudioKitTest.AudioRendererSetLoudnessGainSuccess_004();
+          expect(0).assertEqual(result);
+          console.info(`====>${LOG_NAME} result: ` + result);
+          done();
+        } catch (err) {
+          console.error(`====>${LOG_NAME} catch err: ` + err);
+          expect(false).assertEqual(ABILITY_ERR_OK);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testMultimediaAudioRendererSetLoudnessGain0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0700
+     * @tc.desc   Testing OH_AudioRenderer_SetLoudnessGain returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMultimediaAudioRendererSetLoudnessGain0700',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        const LOG_NAME = `SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0700`;
+        try {
+          console.info(`====>${LOG_NAME} start====`);
+          let result: number = AudioKitTest.AudioRendererSetLoudnessGainSuccess_005();
+          expect(0).assertEqual(result);
+          console.info(`====>${LOG_NAME} result: ` + result);
+          done();
+        } catch (err) {
+          console.error(`====>${LOG_NAME} catch err: ` + err);
+          expect(false).assertEqual(ABILITY_ERR_OK);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testMultimediaAudioRendererSetLoudnessGain0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0800
+     * @tc.desc   Testing OH_AudioRenderer_SetLoudnessGain returns a successful code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMultimediaAudioRendererSetLoudnessGain0800',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        const LOG_NAME = `SUB_MULTIMEDIA_AUDIO_RENDERER_SETLOUDNESSGAIN_0800`;
+        try {
+          console.info(`====>${LOG_NAME} start====`);
+          let result: number = AudioKitTest.AudioRendererSetLoudnessGainSuccess_006();
+          expect(1).assertEqual(result);
+          console.info(`====>${LOG_NAME} result: ` + result);
+          done();
+        } catch (err) {
+          console.error(`====>${LOG_NAME} catch err: ` + err);
+          expect(false).assertEqual(ABILITY_ERR_OK);
+          done();
+        }
+      })                  
     /**
      * @tc.name   testMultimediaAudioRendererGetLoudnessGain0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETLOUDNESSGAIN_0100
