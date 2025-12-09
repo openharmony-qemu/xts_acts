@@ -88,7 +88,7 @@ napi_value OHEffectFilterInfoSetFilterNameSupplementTest(napi_env env, napi_call
         break;
     }
     
-     OH_EffectFilterInfo_Release(filterInfo);
+    OH_EffectFilterInfo_Release(filterInfo);
 
     napi_value ret;
     napi_create_int32(env, code, &ret);
