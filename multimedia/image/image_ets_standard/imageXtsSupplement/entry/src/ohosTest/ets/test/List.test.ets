@@ -138,6 +138,10 @@ import ImagePixelMapCropTest from './image/ImagePixelMapCrop.Test.test';
 
 import UpdateDataTest from './image/ImageSourceUpdateDataTest.test';
 import SendableImageTest from './image/SendableImageTest.test';
+import ImageSourceCreatePixelMapUsingAllocatorTest from './image/ImageSourceCreatePixelMapUsingAllocator.test';
+import ImagePixmapSetColorSpaceTest from './image/ImagePixmapSetColorSpace.test';
+import GetImagePropertyJPGNullTest from './image/GetImagePropertyJPGNull.test';
+import GetImagePropertyPNGNullTest from './image/GetImagePropertyPNGNull.test';
 export default function testsuite() {
   ImagePropertyKeyTest();
   ImageCreateImageSourceBufTest();
@@ -259,4 +263,8 @@ export default function testsuite() {
   sendableWritePixelsTest();
   UpdateDataTest();
   SendableImageTest();
+  ImageSourceCreatePixelMapUsingAllocatorTest();
+  ImagePixmapSetColorSpaceTest();
+  GetImagePropertyJPGNullTest();
+  GetImagePropertyPNGNullTest();
 }
