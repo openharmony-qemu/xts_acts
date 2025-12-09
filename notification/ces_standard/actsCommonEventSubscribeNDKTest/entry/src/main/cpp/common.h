@@ -131,5 +131,5 @@ static int32_t g_publishInfoCode = PARAM_0;
 static int32_t g_parametersInt = PARAM_0;
 static CommonEvent_Parameters* parameters = nullptr;
 
-} // namespace CesCapiTest
+}
 #endif // CES_CAPI_XTS_COMMON_TEST_H
