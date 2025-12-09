@@ -53,3 +53,5 @@ export const testUnregisterAllLifeCycleListeners: (mainWindowId: number) => numb
 export const testSetPipInitialSurfaceRect: (mainWindowId: number) => number;
 export const testSetPipInitialSurfaceRectwithInvalidWidth: (mainWindowId: number) => number;
 export const testUnsetPipInitialSurfaceRect: (mainWindowId: number) => number;
+export const testPipSetParentWindowIdwithNonExistedWindowId: (windowId: number) => number;
+export const testPipSetParentWindowId: (windowId: number) => number;

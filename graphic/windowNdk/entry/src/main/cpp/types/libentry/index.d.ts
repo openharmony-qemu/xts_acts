@@ -84,3 +84,18 @@ export const testInjectTouchEventwithHideSubWindowDown: (windowId: number, width
 
 export const test_OH_WindowManager_GetAllMainWindowInfo_0100: () => number;
 export const test_OH_WindowManager_GetMainWindowSnapshot_0100: (windowId: number) => number;
+
+export const testLockCursorwithNotExistedWindowid: (windowId: number) => number;
+export const testLockCursorwithDestroyedWindow: (windowId: number) => number;
+export const testLockCursorwithUnfocusableWindow: (windowId: number) => number;
+export const testLockCursorandUnLockCursor1: (windowId: number) => number;
+export const testLockCursorandUnLockCursor2: (windowId: number) => number;
+export const testUnLockCursorwithNotExistedWindowid: (windowId: number) => number;
+export const testUnLockCursorwithDestroyedWindow: (windowId: number) => number;
+export const testUnLockCursorwithUnfocusableWindow: (windowId: number) => number;
+
+export const testNativeDisplayManager_ErrorCode_enum: () => number;
+export const testNativeDisplayManager_FoldDisplayMode_enum: () => number;
+export const testNativeDisplayManager_SourceMode_enum: () => number;
+export const testWindowManager_ErrorCode_enum: () => number;
+export const testPictureInPicture_PipState_enum: () => number;
