@@ -12,7 +12,7 @@ endif()
 include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/include)
 
-add_library(entry SHARED napi_init.cpp ComponentCallbackTest.cpp)
+add_library(entry SHARED NapiInitTest.cpp ComponentCallbackTest.cpp)
 
 find_library(
     # Sets the name of the path variable.
