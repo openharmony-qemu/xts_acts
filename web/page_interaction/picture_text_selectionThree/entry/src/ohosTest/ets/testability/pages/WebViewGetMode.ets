@@ -41,6 +41,7 @@ struct webViewController {
   @State isPageEnd: number = -1;
   @State FileSelectorParaGetAcceptType: Array<String> = []
   @State FileSelectorParaGetMode: number = 0
+  @State uri: string = "file://docs/storage/Users/currentUser/Documents/1.json";
   @State FileSelectorParaGetModeArr:Array<FileSelectorMode> = [FileSelectorMode.FileOpenMode,FileSelectorMode.FileOpenMultipleMode,FileSelectorMode.FileOpenFolderMode,FileSelectorMode.FileSaveMode]
 
   onPageShow() {
@@ -190,6 +191,7 @@ struct webViewController {
             console.info('getAcceptType:', event.fileSelector.getAcceptType())
             console.info('isCapture:', event.fileSelector.isCapture())
             this.FileSelectorParaGetMode = event.fileSelector.getMode();
+            event.result.handleFileList([this.uri]);
             console.info('getMimeTypes:', event.fileSelector.getMimeTypes())
           }
           return true
