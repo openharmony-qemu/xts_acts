@@ -112,8 +112,7 @@ void OnURLRequestStart(const ArkWeb_SchemeHandler *schemeHandler, ArkWeb_Resourc
      result_all = -1;
     OH_LOG_INFO(LOG_APP, "OnURLRequestStart");
 
-    int32_t p = 6;
-    int* value = &p;
+    int32_t *value = new int32_t(6);
     testSchemeHandlerSetUserData = OH_ArkWebSchemeHandler_SetUserData(g_schemeHandler, &value);
 
     *intercept = true;
