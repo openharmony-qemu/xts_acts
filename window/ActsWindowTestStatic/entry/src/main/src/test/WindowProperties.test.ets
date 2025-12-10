@@ -581,7 +581,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.on("windowVisibilityChange", (res: boolean) => {
+                        subWin!.onWindowVisibilityChange((res: boolean) => {
                         });
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowVisibilityChange.');
                         expect(false).assertTrue();
@@ -619,7 +619,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.off("windowVisibilityChange", (res: boolean) => {
+                        subWin!.offWindowVisibilityChange((res: boolean) => {
                         });
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowVisibilityChange.');
                         expect(false).assertTrue();
