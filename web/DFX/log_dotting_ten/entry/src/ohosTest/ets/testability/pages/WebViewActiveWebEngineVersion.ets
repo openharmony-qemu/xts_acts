@@ -213,7 +213,7 @@ struct Index {
                 break;
               }
 
-              case "emitIsActiveWebEngineEvergreen01": {
+              case "emitIsActiveWebEngineEvergreen009": {
                 await Utils.sleep(2000);
                 Utils.emitEvent(webview.WebviewController.isActiveWebEngineEvergreen(), 20251225)
                 break;
