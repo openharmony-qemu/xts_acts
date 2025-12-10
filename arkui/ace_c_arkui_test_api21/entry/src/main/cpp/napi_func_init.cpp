@@ -17,6 +17,7 @@
 #include "commonEvent/RegisterCommonEventTest.cpp"
 #include "allowForceDark/AllowForceDarkTest.cpp"
 #include "Image/ImageContentTransitionEffectTest.cpp"
+#include "nodeUtil/NodeUtilsMethodTest.cpp"
 
 namespace ArkUICapiTest
 {
@@ -43,6 +44,16 @@ namespace ArkUICapiTest
             {"TestImageContentTransitionEffect001", nullptr, TestAllowForceDark, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
             {"TestImageContentTransitionEffect002", nullptr, TestAllowForceDark, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestMethodReturnValue001", nullptr, TestMethodReturnValue001, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestMethodReturnValue002", nullptr, TestMethodReturnValue002, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestMethodReturnValue003", nullptr, TestMethodReturnValue003, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestMethodReturnValue004", nullptr, TestMethodReturnValue004, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestMethodReturnValue005", nullptr, TestMethodReturnValue005, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
