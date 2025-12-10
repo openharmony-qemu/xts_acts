@@ -42,8 +42,6 @@ static void OnEventReceive(ArkUI_NodeCustomEvent* event)
                      "ArkUI_IntOffset.x: %{public}d ArkUI_IntOffset.y: %{public}d",
                      OH_ArkUI_NodeCustomEvent_GetPositionInLayout(event).x,
                      OH_ArkUI_NodeCustomEvent_GetPositionInLayout(event).y);
-
-
         auto *drawContext = OH_ArkUI_NodeCustomEvent_GetDrawContextInDraw(event);
         auto *canvas1 = OH_ArkUI_DrawContext_GetCanvas(drawContext);
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager",
