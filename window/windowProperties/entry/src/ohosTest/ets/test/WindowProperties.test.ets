@@ -7882,7 +7882,6 @@ export default function windowPropertiesTest() {
             windowClass.on('frameMetricsMeasured', callback1);
             let windowProperties = windowClass.getWindowProperties();
             console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
-            let driver: Driver = await Driver.create();
             let dragFromX = windowProperties.windowRect.width/4 +windowProperties.windowRect.left;
             console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
             let dragToX = windowProperties.windowRect.width/2 +windowProperties.windowRect.left;
