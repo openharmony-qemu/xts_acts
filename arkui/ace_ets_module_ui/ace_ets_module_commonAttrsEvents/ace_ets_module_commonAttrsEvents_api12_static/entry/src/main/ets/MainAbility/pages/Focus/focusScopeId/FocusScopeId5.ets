@@ -62,26 +62,26 @@ struct FocusScopeId5 {
         Column({ space: 5 } as ColumnOptions) {
           Button('btn1')
             .focusOnTouch(true)
-            // .focusBox({
-            //   margin: new LengthMetrics(0),
-            //   strokeColor: ColorMetrics.rgba(255, 0, 0)
-            // })
+            .focusBox({
+              margin: new LengthMetrics(0),
+              strokeColor: ColorMetrics.rgba(255, 0, 0)
+            })
 
           Button('btn2')
             .focusOnTouch(true)
-            // .focusBox({
-            //   margin: new LengthMetrics(0),
-            //   strokeColor: ColorMetrics.rgba(255, 0, 0)
-            // })
+            .focusBox({
+              margin: new LengthMetrics(0),
+              strokeColor: ColorMetrics.rgba(255, 0, 0)
+            })
         }.focusScopeId('FocusScopeId5_focusGroup7', true)
         .borderWidth(1)
 
         Button('btn3')
           .focusOnTouch(true)
-          // .focusBox({
-          //   margin: new LengthMetrics(0),
-          //   strokeColor: ColorMetrics.rgba(255, 0, 0)
-          // })
+          .focusBox({
+            margin: new LengthMetrics(0),
+            strokeColor: ColorMetrics.rgba(255, 0, 0)
+          })
 
       }
     }.title('pageOne')

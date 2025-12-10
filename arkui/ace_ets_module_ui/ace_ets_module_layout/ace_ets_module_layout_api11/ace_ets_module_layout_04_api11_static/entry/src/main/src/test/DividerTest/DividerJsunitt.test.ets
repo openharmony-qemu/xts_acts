@@ -89,7 +89,7 @@ it('dividerTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<vo
       console.info("dividerTest_static_0200 component strJson:" + strJson);
      let obj = JSON.parseJsonElement(strJson);
      console.info("dividerTest_static_0200 component obj is: " + JSON.stringify(obj));
-     expect(obj.getElement('$attrs').getString('color')).assertEqual('#FFCCCCCC');
+     expect(obj.getElement('$attrs').getString('color')).assertEqual('#FFFF0000');
       console.info('dividerTest_static_0200 END');
       done();
     });
@@ -103,7 +103,7 @@ it('dividerTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<vo
 it('dividerTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('dividerTest_static_0300 START');
       try {
-        AppStorage.setOrCreate<ResourceColor>('color', '#FF000990');
+        AppStorage.setOrCreate<ResourceColor>('diColor', '#FF000990');
       } catch (err) {
         console.log("dividerTest_static_0300 change component data error: " + (err as Error)?.message);
       }

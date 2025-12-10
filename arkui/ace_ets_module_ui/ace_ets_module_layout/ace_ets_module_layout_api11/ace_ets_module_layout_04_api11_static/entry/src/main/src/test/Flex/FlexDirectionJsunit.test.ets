@@ -103,7 +103,7 @@ it('flexDirection_static_0200', Level.LEVEL0, async (done: () => void): Promise<
      let obj = JSON.parseJsonElement(strJson);
      console.info("flexDirection_static_0200 component obj is: " + JSON.stringify(obj));
      expect(obj.getElement('$attrs').getString('height')).assertEqual("40.00vp");
-     expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual("#FFD2B48C");
+     expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual("#FFFF0000");
       console.info('flexDirection_static_0200 END');
       done();
     });
@@ -145,7 +145,7 @@ it('flexDirection_static_0400', Level.LEVEL0, async (done: () => void): Promise<
      let obj = JSON.parseJsonElement(strJson);
      console.info("flexDirection_static_0400 component obj is: " + JSON.stringify(obj));
      expect(obj.getElement('$attrs').getString('height')).assertEqual("40.00vp");
-     expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual("#FFD2B48C");
+     expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual("#FFFF0000");
       console.info('flexDirection_static_0400 END');
       done();
     });
@@ -187,7 +187,7 @@ it('flexDirection_static_0600', Level.LEVEL0, async (done: () => void): Promise<
      let obj = JSON.parseJsonElement(strJson);
      console.info("flexDirection_static_0600 component obj is: " + JSON.stringify(obj));
      expect(obj.getElement('$attrs').getString('height')).assertEqual("40.00vp");
-     expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual("#FFD2B48C");
+     expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual("#FFFF0000");
       console.info('flexDirection_static_0600 END');
       done();
     });

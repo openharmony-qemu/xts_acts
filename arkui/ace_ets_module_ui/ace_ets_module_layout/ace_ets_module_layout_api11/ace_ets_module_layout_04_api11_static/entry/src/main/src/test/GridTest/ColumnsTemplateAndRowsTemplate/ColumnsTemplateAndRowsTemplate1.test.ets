@@ -78,7 +78,7 @@ export default function ColumnsTemplateAndRowsTemplate1() {
     it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0100', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0100] START');
-        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+        AppStorage.get<MessageManager<int>>('messageManager')?.notify({
           name: 'columnEnd1', value: 2
         })
 
@@ -119,7 +119,7 @@ export default function ColumnsTemplateAndRowsTemplate1() {
     it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0200', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0200] START');
-          AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+          AppStorage.get<MessageManager<int>>('messageManager')?.notify({
             name: 'columnStart1', value: 2
           })
           await CommonFunc.sleep(1000);
@@ -149,7 +149,7 @@ export default function ColumnsTemplateAndRowsTemplate1() {
     it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0400', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0400] START');
-        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+        AppStorage.get<MessageManager<int>>('messageManager')?.notify({
           name: 'columnStart1', value: 5
         })
         await CommonFunc.sleep(2000);
@@ -187,7 +187,7 @@ export default function ColumnsTemplateAndRowsTemplate1() {
     it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0500', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0500] START');
-        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+        AppStorage.get<MessageManager<int>>('messageManager')?.notify({
           name: 'rowStart1', value: 0
         })
         await CommonFunc.sleep(2000);
@@ -226,7 +226,7 @@ export default function ColumnsTemplateAndRowsTemplate1() {
     it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0600', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_006] START');
-        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+        AppStorage.get<MessageManager<int>>('messageManager')?.notify({
           name: 'rowStart1', value: 2
         })
         await CommonFunc.sleep(2000);
@@ -263,7 +263,7 @@ export default function ColumnsTemplateAndRowsTemplate1() {
     it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0700', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0700] START');
-        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+        AppStorage.get<MessageManager<int>>('messageManager')?.notify({
           name: 'rowStart1', value: 5
         })
         await CommonFunc.sleep(2000);

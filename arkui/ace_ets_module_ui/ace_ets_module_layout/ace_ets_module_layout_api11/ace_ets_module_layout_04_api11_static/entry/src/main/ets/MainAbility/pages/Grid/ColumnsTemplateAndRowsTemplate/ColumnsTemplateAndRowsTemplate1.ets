@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 import { Entry, Component, Column, ColumnOptions, Grid, GridItem, Text, TextAlign } from '@ohos.arkui.component'
-import { State, AppStorage,StorageProp } from '@ohos.arkui.stateManagement';
+import { State, AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement';
 import { MessageManager, Callback, Message } from '../../../common/MessageManager';
 
 @Entry
 @Component
 struct ColumnsTemplateAndRowsTemplate1 {
-  @StorageProp('columnStart1') columnStart1: int = 0;
+  @StoragePropRef('columnStart1') columnStart1: int = 0;
   @State columnEnd1: int = 1;
   @State rowStart1: int = 1;
   @State rowEnd1: int = 1;

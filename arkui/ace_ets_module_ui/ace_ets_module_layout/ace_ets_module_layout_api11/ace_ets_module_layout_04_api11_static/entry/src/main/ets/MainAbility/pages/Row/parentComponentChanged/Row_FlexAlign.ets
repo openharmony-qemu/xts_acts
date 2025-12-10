@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { Entry, Component, Column, Text, Row, FlexAlign, RowOptions } from '@ohos.arkui.component'
-import { State, AppStorage,StorageProp } from '@ohos.arkui.stateManagement';
+import { State, AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement';
 import { MessageManager, Callback, Message } from '../../../common/MessageManager';
 
 @Entry

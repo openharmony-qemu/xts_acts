@@ -69,30 +69,30 @@ struct FocusScopeId15 {
   pageOne() {
     NavDestination() {
       Column({ space: 5 } as ColumnOptions) {
-        Text('���������������focuxBox')
+        Text('焦点组内组件设置focuxBox')
         Column({ space: 5 } as ColumnOptions) {
           Button('btn1')
             .focusOnTouch(true)
-            // .focusBox({
-            //   margin: new LengthMetrics(0),
-            //   strokeColor: ColorMetrics.rgba(255, 0, 0)
-            // })
+            .focusBox({
+              margin: new LengthMetrics(0),
+              strokeColor: ColorMetrics.rgba(255, 0, 0)
+            })
 
           Button('btn2')
             .focusOnTouch(true)
-            // .focusBox({
-            //   margin: new LengthMetrics(0),
-            //   strokeColor: ColorMetrics.rgba(255, 0, 0)
-            // })
+            .focusBox({
+              margin: new LengthMetrics(0),
+              strokeColor: ColorMetrics.rgba(255, 0, 0)
+            })
         }.focusScopeId('FocusScopeId15_focusGroup7', true)
         .borderWidth(1)
 
         Button('btn3')
           .focusOnTouch(true)
-          // .focusBox({
-          //   margin: new LengthMetrics(0),
-          //   strokeColor: ColorMetrics.rgba(255, 0, 0)
-          // })
+          .focusBox({
+            margin: new LengthMetrics(0),
+            strokeColor: ColorMetrics.rgba(255, 0, 0)
+          })
 
       }
     }.title('pageOne')
@@ -104,7 +104,7 @@ struct FocusScopeId15 {
         Scroll() {
           Column({ space: 5 } as ColumnOptions) {
 
-            Text('������1����ɾ��')
+            Text('焦点组1，可删除')
             if (this.flag) {
               Column({ space: 5 } as ColumnOptions) {
                 Button('btn1').focusOnTouch(true).id('FocusScopeId15_btn1_1')
@@ -120,7 +120,7 @@ struct FocusScopeId15 {
               })
 
 
-            Text('������2')
+            Text('焦点组2')
             Column({ space: 5 } as ColumnOptions) {
               Button('btn1').focusOnTouch(true).id('FocusScopeId15_btn1_2')
               Button('btn2').focusOnTouch(true).id('FocusScopeId15_btn2_2')
@@ -132,7 +132,7 @@ struct FocusScopeId15 {
             Button('button').focusOnTouch(true).id('FocusScopeId15_btn_btn')
 
 
-            Text('������3���޿ɻ���������������ɻ�')
+            Text('焦点组3内无可获焦子组件，父容器可获焦')
             Column({ space: 5 } as ColumnOptions) {
               Text('132')
             }
@@ -140,7 +140,7 @@ struct FocusScopeId15 {
             .borderWidth(1)
 
 
-            Text('������4�������ò��ɼ�')
+            Text('焦点组4，可设置不可见')
             Column({ space: 5 } as ColumnOptions) {
               Button('btn1').focusOnTouch(true)
               Button('btn2').focusOnTouch(true)
@@ -149,7 +149,7 @@ struct FocusScopeId15 {
             .borderWidth(1)
             .visibility(this.visibilityValue)
 
-            Button('����')
+            Button('隐藏')
               .id('FocusScopeId15_btn_hide')
               .focusOnTouch(true)
               .onClick((e: ClickEvent) => {
@@ -158,16 +158,16 @@ struct FocusScopeId15 {
               })
 
 
-            Text('������5')
+            Text('焦点组5')
             Column({ space: 5 } as ColumnOptions) {
-              Button('����')
+              Button('单栏')
                 .id('FocusScopeId15_btn1_5')
                 .onClick((e: ClickEvent) => {
                   this.modeValue = NavigationMode.Stack
                 })
                 .focusOnTouch(true)
 
-              Button('˫��')
+              Button('双栏')
                 .id('FocusScopeId15_btn2_5')
                 .onClick((e: ClickEvent) => {
                   this.modeValue = NavigationMode.Split
@@ -186,7 +186,7 @@ struct FocusScopeId15 {
             .borderWidth(1)
 
 
-            Text('������6����������ť����Ĭ�ϻ�')
+            Text('焦点组6，第三个按钮设置默认获焦')
             Column({ space: 5 } as ColumnOptions) {
               Button('btn1').focusOnTouch(true)
                 .id('FocusScopeId15_btn1_6')
@@ -207,14 +207,14 @@ struct FocusScopeId15 {
                   this.getUIContext().getFocusController().clearFocus()
                 })
 
-              Button('requestFocus_������1 btn2')
+              Button('requestFocus_焦点组1 btn2')
                 .id('FocusScopeId15_requestFocus1')
                 .focusOnTouch(true)
                 .onClick((e: ClickEvent) => {
                   this.getUIContext().getFocusController().requestFocus('FocusScopeId15_btn2_1')
                 })
 
-              Button('requestFocus_������2 btn2')
+              Button('requestFocus_焦点组2 btn2')
                 .id('FocusScopeId15_requestFocus2')
                 .focusOnTouch(true)
                 .onClick((e: ClickEvent) => {
@@ -222,7 +222,7 @@ struct FocusScopeId15 {
                 })
 
 
-              Button('���ĵ�һ���������id:' + String(this.focusId[this.focusIdIndex]))
+              Button('更改第一个焦点组的id:' + String(this.focusId[this.focusIdIndex]))
                 .id('FocusScopeId15_changFocusId')
                 .focusOnTouch(true)
                 .onClick((e: ClickEvent) => {
@@ -232,7 +232,7 @@ struct FocusScopeId15 {
                   }
                 })
 
-              Button('���ĵ�һ���������isGroup:' + this.isGroupValue)
+              Button('更改第一个焦点组的isGroup:' + this.isGroupValue)
                 .id('FocusScopeId15_changIsGroup')
                 .focusOnTouch(true)
                 .onClick((e: ClickEvent) => {

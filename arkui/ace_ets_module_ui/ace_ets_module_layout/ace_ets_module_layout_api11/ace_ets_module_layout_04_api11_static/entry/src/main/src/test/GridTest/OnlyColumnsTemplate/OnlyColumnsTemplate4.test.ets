@@ -81,16 +81,16 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate4_static_0300', Level.LEVEL0, async (done: (
       let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
       let GridItem_02: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnStart1', value: 5
       })
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnEnd1', value: 1
       })
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnStart2', value: 5
       })
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnEnd2', value: 1
       })
       await CommonFunc.sleep(2000);
@@ -126,16 +126,16 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate4_static_0500', Level.LEVEL0, async (done: (
       let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
       let GridItem_02: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnStart1', value: 2
       })
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnEnd1', value: 1
       })
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnStart2', value: 2
       })
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'columnEnd2', value: 1
       })
       await CommonFunc.sleep(1000);

@@ -20,9 +20,9 @@ import ProgressJsunit from './ProgressTest/ProgressJsunit.test'
 import progressSec from './ProgressTest/progressSec.test'
 
 export default function testsuite() {
-  // progress()//run: 24, Failure: 5, Error: 0, Pass: 19  ArkUX_Stage_Progress_updateColor_static_1500, expect #FF000000 equals #99182431 通用属性
-  // progress2()
-  // progress3()
-  // ProgressJsunit()
-  progressSec()//Failure: 13, Error: 1, Pass: 166
+  progress()
+  progress2()
+  progress3()
+  ProgressJsunit()
+  progressSec()
 }

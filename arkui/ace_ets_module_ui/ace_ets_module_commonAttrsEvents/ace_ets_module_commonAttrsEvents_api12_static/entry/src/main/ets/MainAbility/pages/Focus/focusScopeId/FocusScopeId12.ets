@@ -54,7 +54,7 @@ struct CustomDialogExampleFocusScopeId12 {
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
-      Text('������')
+      Text('焦点组')
       Column({ space: 5 } as ColumnOptions) {
         Button('btn1').focusOnTouch(true).id('FocusScopeId12_btn1_1')
         Button('btn2').focusOnTouch(true)

@@ -71,16 +71,16 @@ export default function OnlyRowsTemplate3() {
      */
 it('SUB_ACE_GRID_OnlyRowsTemplate3_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_GRID_OnlyRowsTemplate3_static_0300] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'rowStart1', value: 5
       })
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'rowEnd1', value: 1
       })
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'rowStart2', value: 5
       })
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'rowEnd2', value: 1
       })
       await CommonFunc.sleep(2000);
