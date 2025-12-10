@@ -2292,9 +2292,10 @@ export default function SensorJsStaticTest() {
       })
 
     /*
-     * @tc.name:fusion_pressure_SensorJsTest_static_071
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorsSystem_static_JsTest_0710
+     *
+     * @tc.number     SUB_SensorsSystem_static_JsTest_0710
+     * @tc.name       fusion_pressure_SensorJsTest_static_071
+     * @tc.desc       Verification results of the incorrect parameters of the test interface.
      */
     it("fusion_pressure_SensorJsTest_static_071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -2322,9 +2323,10 @@ export default function SensorJsStaticTest() {
       })
 
     /*
-     * @tc.name:fusionPressureParamError_SensorJsTest_static_072
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorsSystem_static_JsTest_0720
+     *
+     * @tc.number     SUB_SensorsSystem_static_JsTest_0720
+     * @tc.name       fusionPressureParamError_SensorJsTest_static_072
+     * @tc.desc       Verification results of the incorrect parameters of the test interface.
      */
     it("fusionPressureParamError_SensorJsTest_static_072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
