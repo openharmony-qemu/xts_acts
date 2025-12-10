@@ -27,7 +27,7 @@ static napi_value AccessibilityProviderCreateTest(napi_env env, napi_callback_in
     ArkUI_AccessibilityProvider* provider = OH_ArkUI_AccessibilityProvider_Create(nullptr);
     ASSERT_OBJ(provider, nullptr);
     NAPI_END;
-} 
+}
 
 static napi_value EmbeddedComponentOptionTest(napi_env env, napi_callback_info info)
 {

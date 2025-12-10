@@ -38,7 +38,6 @@ static void OnEventReceive(ArkUI_NodeCustomEvent* event)
 
     auto nodeHandler = OH_ArkUI_NodeCustomEvent_GetNodeHandle(event);
     if (eventId == ON_DRAW_EVENT_ID) {
-
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager", "on OH_ArkUI_NodeCustomEvent_GetPositionInLayout "
                      "ArkUI_IntOffset.x: %{public}d ArkUI_IntOffset.y: %{public}d",
                      OH_ArkUI_NodeCustomEvent_GetPositionInLayout(event).x,
@@ -47,7 +46,6 @@ static void OnEventReceive(ArkUI_NodeCustomEvent* event)
 
         auto *drawContext = OH_ArkUI_NodeCustomEvent_GetDrawContextInDraw(event);
         auto *canvas1 = OH_ArkUI_DrawContext_GetCanvas(drawContext);
-
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager",
                      "registerCustomNodeEventReceiver width == %{public}d  "
                      "height == %{public}d",
@@ -58,7 +56,6 @@ static void OnEventReceive(ArkUI_NodeCustomEvent* event)
         auto y = OH_ArkUI_NodeCustomEvent_GetPositionInLayout(event).y;
         auto width = OH_ArkUI_DrawContext_GetSize(drawContext).width;
         auto height = OH_ArkUI_DrawContext_GetSize(drawContext).height;
-        
         if (x < 0 && y >0 && width > 0 && height > 0) {
             ArkUI_NumberValue background_color_value[] = { { .u32 = COLOR_GREEN } };
             ArkUI_AttributeItem background_color_item = { background_color_value,
