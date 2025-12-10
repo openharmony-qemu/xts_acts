@@ -53,6 +53,7 @@ import { fileUri } from '@kit.CoreFileKit';
 const SEEK_START = 3;
 const SEEK_FINISH = 4;
 const SELECTED_STATUS = 0;
+const MEDIA_TYPE_OF_VIDEO = 2;
 
 async function routeToUrl(options: router.RouterOptions) {
   try {
@@ -864,7 +865,10 @@ export default function TextPicker() {
         expect(result.photoSubType).not().assertUndefined();
         expect(result.dynamicRangeType).not().assertUndefined();
         expect(result.orientation).not().assertUndefined();
-        expect(result.videoMode).not().assertUndefined();
+        if (result.mimeType === MEDIA_TYPE_OF_VIDEO) { //如果是 视频 则有返回值
+          expect(result.videoMode).not().assertUndefined();
+        }
+        
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
