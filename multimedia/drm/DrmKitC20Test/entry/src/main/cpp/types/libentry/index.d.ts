@@ -17,6 +17,7 @@ export const mediaKeySession_GenerateMediaKeyRequestInvalue: () => number;
 export const mediaKeySession_ProcessMediaKeyResponseInvalue: () => number;
 export const mediaKeySession_ClearMediaKeysInvalue: () => number;
 export const mediaKeySession_GenerateOfflineReleaseRequestInvalue: () => number;
+export const mediaKeySession_GenerateOfflineReleaseRequestInvalueOne: () => number;
 export const mediaKeySession_ProcessOfflineReleaseResponseInvalue: () => number;
 export const mediaKeySession_RestoreOfflineMediaKeysInvalue: () => number;
 export const mediaKeySession_GetContentProtectionLevelInvalue: () => number;
