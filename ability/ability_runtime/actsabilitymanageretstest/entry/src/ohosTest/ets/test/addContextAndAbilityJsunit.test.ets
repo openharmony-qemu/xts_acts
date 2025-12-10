@@ -148,6 +148,27 @@ export default function addContextAndAbilityJsunit() {
       console.log('------------------ ' + TAG_TEST_0300 + ' end -------------------');
     })
 
+    /**
+     * @tc.name   context_printDrawnCompleted_test_0200
+     * @tc.number context_printDrawnCompleted_test_0200
+     * @tc.desc   Check the return value of the interface (by callBack)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it(context_printDrawnCompleted_test_0200, Level.LEVEL0, async (done: Function) => {
+      let detailed: ESObject;
+      console.info('context_printDrawnCompleted_test_0200 callBack START');
+      let context = ability_featureAbility.getContext();
+      await context.printDrawnCompleted((err, data)=>{
+        console.info('context_printDrawnCompleted_test_0200 callBack data is:' + JSON.stringify(data));
+        detailed = data;
+        expect(detailed).assertEqual(null);
+        done();
+      })
+      console.log('------------------ context_printDrawnCompleted_test_0200' + ' end -------------------');
+    })
+
 
     /**
      * @tc.name   TAG_TEST_0400
