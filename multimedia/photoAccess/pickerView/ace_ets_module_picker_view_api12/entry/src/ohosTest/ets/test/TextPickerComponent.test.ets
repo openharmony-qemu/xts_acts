@@ -53,7 +53,7 @@ import { fileUri } from '@kit.CoreFileKit';
 const SEEK_START = 3;
 const SEEK_FINISH = 4;
 const SELECTED_STATUS = 0;
-const MEDIA_TYPE_OF_VIDEO = 2;
+const MEDIA_TYPE_OF_VIDEO = '2';
 
 async function routeToUrl(options: router.RouterOptions) {
   try {
