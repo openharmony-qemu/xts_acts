@@ -30,6 +30,7 @@ napi_property_descriptor desc1[] = {
 
     DESCRIPTOR("OHEffectFilterCreateSupp", OHEffectFilterCreateSupp),
     DESCRIPTOR("OHEffectFilterLookUpFiltersSupp", OHEffectFilterLookUpFiltersSupp),
+    DESCRIPTOR("OHEffectFilterLookUpFiltersNullptrSupp", OHEffectFilterLookUpFiltersNullptrSupp),
     DESCRIPTOR("OHEffectFilterSetValueSupp", OHEffectFilterSetValueSupp),
     DESCRIPTOR("OHEffectFilterGetValueSupp", OHEffectFilterGetValueSupp),
     DESCRIPTOR("OHEffectFilterRegisterSupp", OHEffectFilterRegisterSupp),
