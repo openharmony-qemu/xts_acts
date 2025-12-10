@@ -135,7 +135,15 @@ napi_value OHEffectFilterLookUpFiltersSupp(napi_env env, napi_callback_info info
     napi_create_int32(env, code, &ret);
     return ret;
 }
-
+napi_value OHEffectFilterLookUpFiltersNullptrSupp(napi_env env, napi_callback_info info) {
+    ImageEffect_FilterNames *lookupFilters = nullptr;
+    lookupFilters = OH_EffectFilter_LookupFilters(nullptr);
+    napi_value ret;
+    if (lookupFilters == nullptr) {
+        napi_get_undefined(env, &ret);
+    }
+    return ret;
+}
 napi_value OHEffectFilterSetValueSupp(napi_env env, napi_callback_info info) {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
