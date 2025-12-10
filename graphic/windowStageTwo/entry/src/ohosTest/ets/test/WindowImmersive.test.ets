@@ -20,7 +20,6 @@ import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
 import { display } from '@kit.ArkUI';
 import { StartOptions } from '@kit.AbilityKit';
-import StartTestAbility7 from '../testability/StartTestAbility7';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 
@@ -49,6 +48,39 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
 
 async function terminateAbility(caseName: string) {
   let pageContext = AppStorage.get('contextTest') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
+
+async function startAbility3(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility3'
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest3') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility3(caseName: string) {
+  let pageContext = AppStorage.get('contextTest3') as common.UIAbilityContext
   await pageContext.terminateSelf().then(() => {
     console.log(`${caseName} terminateSelf success`);
   }).catch((err: BusinessError) => {
@@ -3592,9 +3624,8 @@ export default function windowImmersiveTest() {
       let caseName = 'testFreeMultWindowFullScreenGetWindowAvoidAreaIgnoringVisibility';
       let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
       console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
-      let windowStageStart = await startAbility7(caseName, context);
+      let windowStageStart = await startAbility3(caseName, context);
       let windowClass = windowStageStart.getMainWindowSync();
-      await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT)
       let isInFreeWindowMode = windowClass.isInFreeWindowMode();
       console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
       try {
@@ -3620,15 +3651,15 @@ export default function windowImmersiveTest() {
           expect(avoidArea.bottomRect.width).assertEqual(0);
           expect(avoidArea.bottomRect.height).assertEqual(0);
           await subWindow.destroyWindow();
-          await terminateAbility7(caseName);
+          await terminateAbility3(caseName);
           done()
         } else {
-          await terminateAbility7(caseName);
+          await terminateAbility3(caseName);
           done();
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        await terminateAbility7(caseName);
+        await terminateAbility3(caseName);
         expect().assertFail();
         done();
       }
@@ -3704,7 +3735,6 @@ export default function windowImmersiveTest() {
       console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
       try {
         if (!isInFreeWindowMode) {
-          // 主窗setWindowSystemBarEnable为true 这啥意思？？？
           await windowClass.setWindowSystemBarEnable(['status', 'navigation']);
           try {
             let avoidArea1 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_SYSTEM);
@@ -3854,9 +3884,8 @@ export default function windowImmersiveTest() {
       let caseName = 'testNotFreeMultWindowMainWindowHideGetWindowAvoidAreaIgnoringVisibility';
       let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
       console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
-      let windowStageStart = await startAbility7(caseName, context);
+      let windowStageStart = await startAbility3(caseName, context);
       let windowClass = windowStageStart.getMainWindowSync();
-      await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT)
       let isInFreeWindowMode = windowClass.isInFreeWindowMode();
       console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
       try {
@@ -3888,7 +3917,7 @@ export default function windowImmersiveTest() {
             expect(avoidArea1.bottomRect.height).assertEqual(0);
           } catch (error) {
             console.error(caseName + ' failed1, error: ' + JSON.stringify(error));
-            await terminateAbility7(caseName);
+            await terminateAbility3(caseName);
             if (!canIUseRes) {
               expect(error.code).assertEqual(801)
             } else {
@@ -3923,7 +3952,7 @@ export default function windowImmersiveTest() {
             expect(avoidArea3.bottomRect.height).assertEqual(avoidArea4.bottomRect.height);
           } catch (error) {
             console.error(caseName + ' failed2, error: ' + JSON.stringify(error));
-            await terminateAbility7(caseName);
+            await terminateAbility3(caseName);
             if (!canIUseRes) {
               expect(error.code).assertEqual(801)
             } else {
@@ -3937,7 +3966,7 @@ export default function windowImmersiveTest() {
             console.info(caseName + ' avoidArea5: ' + JSON.stringify(avoidArea5));
             let avoidArea6 = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_KEYBOARD)
             console.info(caseName + ' avoidArea6: ' + JSON.stringify(avoidArea6));
-            await terminateAbility7(caseName);
+            await terminateAbility3(caseName);
             expect().assertFail();
             done()
           } catch (error) {
@@ -3973,11 +4002,11 @@ export default function windowImmersiveTest() {
             // expect(avoidArea7.bottomRect.top).assertEqual(avoidArea8.bottomRect.top);
             expect(avoidArea7.bottomRect.width).assertEqual(0);
             expect(avoidArea7.bottomRect.height).assertEqual(0);
-            await terminateAbility7(caseName);
+            await terminateAbility3(caseName);
             done()
           } catch (error) {
             console.error(caseName + ' failed4, error: ' + JSON.stringify(error));
-            await terminateAbility7(caseName);
+            await terminateAbility3(caseName);
             if (!canIUseRes) {
               expect(error.code).assertEqual(801)
             } else {
@@ -3986,13 +4015,13 @@ export default function windowImmersiveTest() {
             done()
           }
         } else {
-          await terminateAbility7(caseName);
+          await terminateAbility3(caseName);
           done();
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
         expect().assertFail();
-        await terminateAbility7(caseName);
+        await terminateAbility3(caseName);
         done();
       }
     });
@@ -4048,9 +4077,8 @@ export default function windowImmersiveTest() {
       let caseName = 'testNotFreeMultWindowMainWindowSubwindowGetWindowAvoidAreaIgnoringVisibilityKeyboard';
       let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
       console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
-      let windowStageStart = await startAbility7(caseName, context);
+      let windowStageStart = await startAbility3(caseName, context);
       let windowClass = windowStageStart.getMainWindowSync();
-      await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT)
       let isInFreeWindowMode = windowClass.isInFreeWindowMode();
       console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
       try {
@@ -4091,7 +4119,7 @@ export default function windowImmersiveTest() {
             expect(avoidArea1.bottomRect.height).assertEqual(avoidArea2.bottomRect.height);
           } catch (error) {
             console.error(caseName + ' failed1, error: ' + JSON.stringify(error));
-            await terminateAbility7(caseName);
+            await terminateAbility3(caseName);
             if (!canIUseRes) {
               expect(error.code).assertEqual(801)
             } else {
@@ -4126,7 +4154,7 @@ export default function windowImmersiveTest() {
             expect(avoidArea3.bottomRect.height).assertEqual(avoidArea4.bottomRect.height);
           } catch (error) {
             console.error(caseName + ' failed2, error: ' + JSON.stringify(error));
-            await terminateAbility7(caseName);
+            await terminateAbility3(caseName);
             if (!canIUseRes) {
               expect(error.code).assertEqual(801)
             } else {
@@ -4140,7 +4168,7 @@ export default function windowImmersiveTest() {
             console.info(caseName + ' avoidArea5: ' + JSON.stringify(avoidArea5));
             let avoidArea6 = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_KEYBOARD)
             console.info(caseName + ' avoidArea6: ' + JSON.stringify(avoidArea6));
-            await terminateAbility7(caseName);
+            await terminateAbility3(caseName);
             expect().assertFail();
             done()
           } catch (error) {
@@ -4176,11 +4204,11 @@ export default function windowImmersiveTest() {
             expect(avoidArea7.bottomRect.top).assertEqual(avoidArea8.bottomRect.top);
             expect(avoidArea7.bottomRect.width).assertEqual(avoidArea8.bottomRect.width);
             expect(avoidArea7.bottomRect.height).assertEqual(avoidArea8.bottomRect.height);
-            await terminateAbility7(caseName);
+            await terminateAbility3(caseName);
             done()
           } catch (error) {
             console.error(caseName + ' failed4, error: ' + JSON.stringify(error));
-            await terminateAbility7(caseName);
+            await terminateAbility3(caseName);
             if (!canIUseRes) {
               expect(error.code).assertEqual(801)
             } else {
@@ -4189,12 +4217,12 @@ export default function windowImmersiveTest() {
             done()
           }
         } else {
-          await terminateAbility7(caseName);
+          await terminateAbility3(caseName);
           done();
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        await terminateAbility7(caseName);
+        await terminateAbility3(caseName);
         if (!canIUseRes) {
           expect(err.code).assertEqual(801)
         } else {
