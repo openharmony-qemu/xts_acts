@@ -799,6 +799,10 @@ export default function audioSessionManagerTest() {
             expect(device.encodingTypes?.[0]).assertLargerOrEqual(0);
             console.info(`DeviceInfo spatializationSupported: ${device.spatializationSupported}`);
             expect(device.spatializationSupported).assertInstanceOf('Boolean');
+            console.info(`DeviceInfo model: ${device.model}`);
+            expect(device.model).assertInstanceOf('String');
+            console.info(`DeviceInfo capabilities: ${device.capabilities[0]}`);
+            expect(device.capabilities[0]).assertLargerOrEqual(0);
             console.info('Succeeded in doing getSelectedMediaInputDevice.');
             done();
           }).catch((selectErr: BusinessError) => {
