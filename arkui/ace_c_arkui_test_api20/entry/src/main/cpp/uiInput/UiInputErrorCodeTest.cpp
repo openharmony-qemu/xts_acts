@@ -79,10 +79,12 @@ namespace ArkUICapiTest {
             OH_LOG_INFO(LOG_APP, "on list AxisAction %{public}d",
                         OH_ArkUI_AxisEvent_GetAxisAction(uiInputEvent));
             ArkUI_ErrorCode isError = OH_ArkUI_UIInputEvent_GetLatestStatus();
-            std::string isErrrorState = std::to_string(isError);
-            const char* isErrrorState1 = isErrrorState.c_str();
-            ArkUI_AttributeItem contentItem = {.string =  isErrrorState1};
-            nodeAPI->setAttribute(text, NODE_TEXT_CONTENT, &contentItem);
+            if (isError == ARKUI_ERROR_INPUT_EVENT_TYPE_NOT_SUPPORTED) {
+                std::string isErrrorState = std::to_string(isError);
+                const char* isErrrorState1 = isErrrorState.c_str();
+                ArkUI_AttributeItem contentItem = {.string =  isErrrorState1};
+                nodeAPI->setAttribute(text, NODE_TEXT_CONTENT, &contentItem);
+            }
 
             OH_LOG_INFO(LOG_APP, "on list DisplayX %{public}f",
                         OH_ArkUI_PointerEvent_GetDisplayX(uiInputEvent));
