@@ -1169,7 +1169,6 @@ export default function PipWindowNdkTest() {
         await subWindowClass?.destroyWindow()
         if(error.code == 801){
           expect(error.message!=null).assertTrue();
-          expect(true).assertTrue();
           done();
         } else{
           expect().assertFail();

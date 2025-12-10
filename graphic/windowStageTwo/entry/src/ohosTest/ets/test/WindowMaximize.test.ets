@@ -20,6 +20,7 @@ import ohosWindow from '@ohos.window';
 import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
 import { display } from '@kit.ArkUI';
+import { StartOptions } from '@kit.AbilityKit';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 

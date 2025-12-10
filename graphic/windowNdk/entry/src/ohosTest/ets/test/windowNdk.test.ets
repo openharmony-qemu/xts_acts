@@ -1693,8 +1693,8 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.name   SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0300
-     * @tc.number testLockCursorwithNotExistedWindowid
+     * @tc.name   testLockCursorwithNotExistedWindowid
+     * @tc.number SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0300
      * @tc.desc   testLockCursorwithNotExistedWindowid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1720,8 +1720,8 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.name   SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0400
-     * @tc.number testLockCursorwithDestroyedWindow
+     * @tc.name   testLockCursorwithDestroyedWindow
+     * @tc.number SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0400
      * @tc.desc   testLockCursorwithDestroyedWindow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1750,8 +1750,8 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.name   SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0500
-     * @tc.number testLockCursorwithUnfocusableWindow
+     * @tc.name   testLockCursorwithUnfocusableWindow
+     * @tc.number SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0500
      * @tc.desc   testLockCursorwithUnfocusableWindow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1781,8 +1781,8 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.name   SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0600
-     * @tc.number testLockCursorandUnLockCursor
+     * @tc.name   testLockCursorandUnLockCursor
+     * @tc.number SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0600
      * @tc.desc   testLockCursorandUnLockCursor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1832,8 +1832,8 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.name   SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0300
-     * @tc.number testUnLockCursorwithNotExistedWindowid
+     * @tc.name   testUnLockCursorwithNotExistedWindowid
+     * @tc.number SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0300
      * @tc.desc   testUnLockCursorwithNotExistedWindowid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1859,8 +1859,8 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.name   SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0400
-     * @tc.number testUnLockCursorwithDestroyedWindow
+     * @tc.name   testUnLockCursorwithDestroyedWindow
+     * @tc.number SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0400
      * @tc.desc   testUnLockCursorwithDestroyedWindow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1889,8 +1889,8 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.name   SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0500
-     * @tc.number testUnLockCursorwithUnfocusableWindow
+     * @tc.name   testUnLockCursorwithUnfocusableWindow
+     * @tc.number SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0500
      * @tc.desc   testUnLockCursorwithUnfocusableWindow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1920,8 +1920,8 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.name   SUB_DISPLAY_MANAGER_ERRORCODE_0100
-     * @tc.number testNativeDisplayManager_ErrorCode_enum
+     * @tc.name   testNativeDisplayManager_ErrorCode_enum
+     * @tc.number SUB_DISPLAY_MANAGER_ERRORCODE_0100
      * @tc.desc   testNativeDisplayManager_ErrorCode_enum
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1944,8 +1944,8 @@ export default function windowNdk() {
     })
     
     /**
-     * @tc.name   SUB_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_0100
-     * @tc.number testNativeDisplayManager_FoldDisplayMode_enum
+     * @tc.name   testNativeDisplayManager_FoldDisplayMode_enum
+     * @tc.number SUB_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_0100
      * @tc.desc   testNativeDisplayManager_FoldDisplayMode_enum
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1968,8 +1968,8 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.name   SUB_DISPLAY_SOURCE_MODE_0100
-     * @tc.number testNativeDisplayManager_SourceMode_enum
+     * @tc.name   testNativeDisplayManager_SourceMode_enum
+     * @tc.number SUB_DISPLAY_SOURCE_MODE_0100
      * @tc.desc   testNativeDisplayManager_SourceMode_enum
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1992,8 +1992,8 @@ export default function windowNdk() {
     })
    
     /**
-     * @tc.name   SUB_WindowManager_ErrorCode_0100
-     * @tc.number testWindowManager_ErrorCode_enum
+     * @tc.name   testWindowManager_ErrorCode_enum
+     * @tc.number SUB_WindowManager_ErrorCode_0100
      * @tc.desc   testWindowManager_ErrorCode_enum
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2016,8 +2016,8 @@ export default function windowNdk() {
     })
   
     /**
-     * @tc.name   SUB_PictureInPicture_PipState_0100
-     * @tc.number testPictureInPicture_PipState_enum
+     * @tc.name   testPictureInPicture_PipState_enum
+     * @tc.number SUB_PictureInPicture_PipState_0100
      * @tc.desc   testPictureInPicture_PipState_enum
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

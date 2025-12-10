@@ -1258,7 +1258,7 @@ napi_value TestLockCursorwithNotExistedWindowid(napi_env env, napi_callback_info
     int32_t windowId = 0;
     napi_get_value_int32(env, args[0], &windowId);
     int32_t result = OH_WindowManager_LockCursor(windowId, false);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+    OH_LOG_Print(LOG_APP, LOG_INFO, "windowNdkTest", "Window",
         "TestLockCursorwithNotExistedWindowid: %{public}d", result);
     napi_value retValue;
     napi_create_int32(env, result, &retValue);
@@ -1279,7 +1279,7 @@ napi_value TestLockCursorwithDestroyedWindow(napi_env env, napi_callback_info in
     int32_t windowId = 0;
     napi_get_value_int32(env, args[0], &windowId);
     int32_t result = OH_WindowManager_LockCursor(windowId, true);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+    OH_LOG_Print(LOG_APP, LOG_INFO, "windowNdkTest", "Window",
         "TestLockCursorwithDestroyedWindow: %{public}d", result);
     napi_value retValue;
     napi_create_int32(env, result, &retValue);
@@ -1300,7 +1300,7 @@ napi_value TestLockCursorwithUnfocusableWindow(napi_env env, napi_callback_info 
     int32_t windowId = 0;
     napi_get_value_int32(env, args[0], &windowId);
     int32_t result = OH_WindowManager_LockCursor(windowId, true);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+    OH_LOG_Print(LOG_APP, LOG_INFO, "windowNdkTest", "Window",
         "TestLockCursorwithUnfocusableWindow: %{public}d", result);
     napi_value retValue;
     napi_create_int32(env, result, &retValue);
@@ -1321,10 +1321,10 @@ napi_value TestLockCursorandUnLockCursor1(napi_env env, napi_callback_info info)
     int32_t windowId = 0;
     napi_get_value_int32(env, args[0], &windowId);
     int32_t result = OH_WindowManager_LockCursor(windowId, true);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+    OH_LOG_Print(LOG_APP, LOG_INFO, "windowNdkTest", "Window",
         "TestLockCursorandUnLockCursor1 OH_WindowManager_LockCursor: %{public}d", result);
     napi_value retValue;
-    if (result == 0/* success*/) {
+    if (result == 0) {
         napi_create_int32(env, 0, &retValue);
     } else {
         napi_create_int32(env, -1, &retValue);
@@ -1346,10 +1346,10 @@ napi_value TestLockCursorandUnLockCursor2(napi_env env, napi_callback_info info)
     int32_t windowId = 0;
     napi_get_value_int32(env, args[0], &windowId);
     int32_t result1 = OH_WindowManager_UnlockCursor(windowId);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+    OH_LOG_Print(LOG_APP, LOG_INFO, "windowNdkTestwindowNdkTest", "Window",
         "TestLockCursorandUnLockCursor2 OH_WindowManager_UnlockCursor: %{public}d", result1);
     napi_value retValue;
-    if (result1 == 0/* success*/) {
+    if (result1 == 0) {
         napi_create_int32(env, 0, &retValue);
     } else {
         napi_create_int32(env, -1, &retValue);
@@ -1371,7 +1371,7 @@ napi_value TestUnLockCursorwithNotExistedWindowid(napi_env env, napi_callback_in
     int32_t windowId = 0;
     napi_get_value_int32(env, args[0], &windowId);
     int32_t result = OH_WindowManager_UnlockCursor(windowId);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+    OH_LOG_Print(LOG_APP, LOG_INFO, "windowNdkTest", "Window",
         "TestUnLockCursorwithNotExistedWindowid: %{public}d", result);
     napi_value retValue;
     napi_create_int32(env, result, &retValue);
@@ -1391,8 +1391,8 @@ napi_value TestUnLockCursorwithDestroyedWindow(napi_env env, napi_callback_info 
     }
     int32_t windowId = 0;
     napi_get_value_int32(env, args[0], &windowId);
-    int32_t result = OH_WindowManager_UnlockCursor(windowId, true);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+    int32_t result = OH_WindowManager_UnlockCursor(windowId);
+    OH_LOG_Print(LOG_APP, LOG_INFO, "windowNdkTest", "Window",
         "TestUnLockCursorwithDestroyedWindow: %{public}d", result);
     napi_value retValue;
     napi_create_int32(env, result, &retValue);
@@ -1412,8 +1412,8 @@ napi_value TestUnLockCursorwithUnfocusableWindow(napi_env env, napi_callback_inf
     }
     int32_t windowId = 0;
     napi_get_value_int32(env, args[0], &windowId);
-    int32_t result = OH_WindowManager_UnlockCursor(windowId, true);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+    int32_t result = OH_WindowManager_UnlockCursor(windowId);
+    OH_LOG_Print(LOG_APP, LOG_INFO, "windowNdkTest", "Window",
         "TestUnLockCursorwithUnfocusableWindow: %{public}d", result);
     napi_value retValue;
     napi_create_int32(env, result, &retValue);
@@ -1442,9 +1442,9 @@ napi_value TestNativeDisplayManager_FoldDisplayMode_enum(napi_env env, napi_call
     }
     napi_value retValue;
     if (NativeDisplayManager_FoldDisplayMode::DISPLAY_MANAGER_FOLD_DISPLAY_MODE_UNKNOWN == PARAM_0 &&
-        NativeDisplayManager_FoldDisplayMode::DISPLAY_MANAGER_FOLD_DISPLAY_MODE_FULL == PARAM_1 && 
+        NativeDisplayManager_FoldDisplayMode::DISPLAY_MANAGER_FOLD_DISPLAY_MODE_FULL == PARAM_1 &&
         NativeDisplayManager_FoldDisplayMode::DISPLAY_MANAGER_FOLD_DISPLAY_MODE_MAIN == PARAM_2 &&
-        NativeDisplayManager_FoldDisplayMode::DISPLAY_MANAGER_FOLD_DISPLAY_MODE_SUB == PARAM_3 && 
+        NativeDisplayManager_FoldDisplayMode::DISPLAY_MANAGER_FOLD_DISPLAY_MODE_SUB == PARAM_3 &&
         NativeDisplayManager_FoldDisplayMode::DISPLAY_MANAGER_FOLD_DISPLAY_MODE_COORDINATION == PARAM_4) {
         napi_create_int32(env, 0, &retValue);
     } else {
@@ -1570,7 +1570,7 @@ static napi_value windowCursorInit(napi_env env, napi_value exports)
             TestLockCursorwithUnfocusableWindow, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testLockCursorandUnLockCursor1", nullptr,
             TestLockCursorandUnLockCursor1, nullptr, nullptr, nullptr, napi_default, nullptr},
-         {"testLockCursorandUnLockCursor2", nullptr,
+        {"testLockCursorandUnLockCursor2", nullptr,
             TestLockCursorandUnLockCursor2, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testUnLockCursorwithNotExistedWindowid", nullptr,
             TestUnLockCursorwithNotExistedWindowid, nullptr, nullptr, nullptr, napi_default, nullptr},

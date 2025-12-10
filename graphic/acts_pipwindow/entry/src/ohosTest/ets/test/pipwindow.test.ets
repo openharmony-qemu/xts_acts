@@ -4765,9 +4765,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               console.log(`${tag} ${caseName} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
               let displayInfo = display.getDefaultDisplaySync();
               console.log(`${tag} ${caseName} displayInfo: ${JSON.stringify(displayInfo)}`);
-              let dragToX = pipWindowCenter.X + displayInfo.width;
-              let dragToY = pipWindowCenter.Y;
-              await driver.drag(pipWindowCenter.X, pipWindowCenter.Y, dragToX, dragToY);
+              let dragToX = pipWindowCenter.x + displayInfo.width;
+              let dragToY = pipWindowCenter.y;
+              await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
               while (callbackIndex != 2) {
                 await sleep(300);
               }
@@ -4861,9 +4861,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               console.log(`${tag} ${caseName} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
               let displayInfo = display.getDefaultDisplaySync();
               console.log(`${tag} ${caseName} displayInfo: ${JSON.stringify(displayInfo)}`);
-              let dragToX = pipWindowCenter.X + displayInfo.width;
-              let dragToY = pipWindowCenter.Y;
-              await driver.drag(pipWindowCenter.X, pipWindowCenter.Y, dragToX, dragToY);
+              let dragToX = pipWindowCenter.x + displayInfo.width;
+              let dragToY = pipWindowCenter.y;
+              await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
               while (callbackIndex1 != 2 && callbackIndex2 != 2) {
                 await sleep(300);
               }
@@ -4946,9 +4946,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               console.log(`${tag} ${caseName} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
               let displayInfo = display.getDefaultDisplaySync();
               console.log(`${tag} ${caseName} displayInfo: ${JSON.stringify(displayInfo)}`);
-              let dragToX = pipWindowCenter.X + displayInfo.width;
-              let dragToY = pipWindowCenter.Y;
-              await driver.drag(pipWindowCenter.X, pipWindowCenter.Y, dragToX, dragToY);
+              let dragToX = pipWindowCenter.x + displayInfo.width;
+              let dragToY = pipWindowCenter.y;
+              await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
               while (callbackIndex != 2) {
                 await sleep(300);
               }
@@ -5035,9 +5035,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               console.log(`${tag} ${caseName} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
               let displayInfo = display.getDefaultDisplaySync();
               console.log(`${tag} ${caseName} displayInfo: ${JSON.stringify(displayInfo)}`);
-              let dragToX = pipWindowCenter.X + displayInfo.width;
-              let dragToY = pipWindowCenter.Y;
-              await driver.drag(pipWindowCenter.X, pipWindowCenter.Y, dragToX, dragToY);
+              let dragToX = pipWindowCenter.x + displayInfo.width;
+              let dragToY = pipWindowCenter.y;
+              await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
               while (callbackIndex != 2) {
                 await sleep(300);
               }
