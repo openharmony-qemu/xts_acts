@@ -864,6 +864,7 @@ export default function TextPicker() {
         expect(result.photoSubType).not().assertUndefined();
         expect(result.dynamicRangeType).not().assertUndefined();
         expect(result.orientation).not().assertUndefined();
+        expect(result.videoMode).not().assertUndefined();
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
