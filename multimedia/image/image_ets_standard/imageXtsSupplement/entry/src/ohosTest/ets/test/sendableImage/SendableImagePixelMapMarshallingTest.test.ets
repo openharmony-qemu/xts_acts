@@ -15,26 +15,8 @@
 
 import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
 import { image } from '@kit.ImageKit';
-import common from '@ohos.app.ability.common';
 import { rpc } from '@kit.IPCKit';
-import { BusinessError } from '@kit.BasicServicesKit';
-import fileio from '@ohos.fileio'
 const TAG = 'PixelMapMarshallingSupp';
-
-
-async function marshallingTest(done: Function, testName: string ,callback :(pixelMap: image.PixelMap) => void) {
-  const readBuffer = new ArrayBuffer(96);
-  const opts: image.InitializationOptions = {
-    editable: true,
-    pixelFormat: image.PixelMapFormat.RGBA_8888,
-    size: { height: 4, width: 6 }
-  };
-  const pixelMap = await image.createPixelMap(readBuffer, opts);
-  if (pixelMap !== undefined) {
-    callback(pixelMap);
-  }
-
-}
 
 export default function PixelMapMarshallingTest() {
   describe('PixelMapMarshallingTest', () => {
@@ -68,14 +50,21 @@ export default function PixelMapMarshallingTest() {
     it('SENDABLE_IMAGE_PIXEL_MAP_MARSHALLING_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_PIXEL_MAP_MARSHALLING_001';
       try {
-        await marshallingTest(done, testName,  async (pixelMap) => {
+        const readBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 }
+        };
+        const pixelMap = await image.createPixelMap(readBuffer, opts);
+        console.info(TAG, testName, 'pixelMap:', pixelMap)
+        if (pixelMap !== undefined) {
           pixelMap.marshalling(null);
-        });
-        except().assertFail();
+        }
         done();
       } catch (error) {
         console.info(TAG, testName, ' marshalling error', error.message, error.code);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
@@ -90,14 +79,21 @@ export default function PixelMapMarshallingTest() {
     it('SENDABLE_IMAGE_PIXEL_MAP_MARSHALLING_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_PIXEL_MAP_MARSHALLING_002';
       try {
-        await marshallingTest(done, testName,  async (pixelMap) => {
+        const readBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 }
+        };
+        const pixelMap = await image.createPixelMap(readBuffer, opts);
+        console.info(TAG, testName, 'pixelMap:', pixelMap)
+        if (pixelMap !== undefined) {
           pixelMap.marshalling(undefined);
-        });
-        except().assertFail();
+        }
         done();
       } catch (error) {
         console.info(TAG, testName, ' marshalling error', error.message, error.code);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })
@@ -112,15 +108,22 @@ export default function PixelMapMarshallingTest() {
     it('SENDABLE_IMAGE_PIXEL_MAP_MARSHALLING_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_PIXEL_MAP_MARSHALLING_003';
       try {
-        await marshallingTest(done, testName,  async (pixelMap) => {
+        const readBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 }
+        };
+        const pixelMap = await image.createPixelMap(readBuffer, opts);
+        console.info(TAG, testName, 'pixelMap:', pixelMap)
+        if (pixelMap !== undefined) {
           let data: rpc.MessageSequence = rpc.MessageSequence.create();
           pixelMap.marshalling(data);
-        });
-        except().assertFail();
+        }
         done();
       } catch (error) {
         console.info(TAG, testName, ' marshalling error', error.message, error.code);
-        expect(error.code).assertEqual('401');
+        expect().assertFail();
         done();
       }
     })

@@ -102,8 +102,8 @@ export default function sendablePixelMapWriteBufferToPixelsSyncTest() {
     })
 
     /**
-     * @tc.number     PIXEL_MAP_WRITE_BUFFER_TO_PIXELS_TEST_003
-     * @tc.name       PIXEL_MAP_WRITE_BUFFER_TO_PIXELS_TEST_003
+     * @tc.number     PIXEL_MAP_WRITE_BUFFER_TO_PIXELS_SYNC_TEST_003
+     * @tc.name       PIXEL_MAP_WRITE_BUFFER_TO_PIXELS_SYNC_TEST_003
      * @tc.desc       第一个参数null覆盖情况
      * @tc.size       MEDIUM
      * @tc.type       Function

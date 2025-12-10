@@ -35,15 +35,11 @@ async function createPictureObj(done:Function,testName: string, pathUri: string)
     console.error(TAG, testName, ` failed; error:`, JSON.stringify(error), error.code);
     expect().assertFail()
     return error;
-
-
   }
 }
 export default function ImagePackerPackingToFilePictureTest() {
   describe('ImagePackerPackingToFilePictureTest', () => {
-
     beforeAll(async () => {
-
       await getPermission();
       await driveFn();
       await sleep(2000);
@@ -63,17 +59,15 @@ export default function ImagePackerPackingToFilePictureTest() {
       AppStorage.delete("emptyString")
       console.info(TAG, 'afterAll case.');
     });
-
-
+    
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_001
-     * @tc.name      : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_001
-     * @tc.desc      : Test_imagePacker_Packing_To_File
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_001
+     * @tc.name    IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_001
+     * @tc.desc    Test_imagePacker_Packing_To_File
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
-
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_001';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -104,14 +98,13 @@ export default function ImagePackerPackingToFilePictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_002
-     * @tc.name      : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_002
-     * @tc.desc      : Test_imagePacker_Packing_To_File
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_002
+     * @tc.name    IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_002
+     * @tc.desc    Test_imagePacker_Packing_To_File
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
-
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_002';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -139,17 +132,15 @@ export default function ImagePackerPackingToFilePictureTest() {
         done();
       }
     })
-
-
+    
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_003
-     * @tc.name      : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_003
-     * @tc.desc      : Test_imagePacker_Packing_To_File
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_003
+     * @tc.name    IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_003
+     * @tc.desc    Test_imagePacker_Packing_To_File
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
-
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_003';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -179,14 +170,13 @@ export default function ImagePackerPackingToFilePictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_004
-     * @tc.name      : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_004
-     * @tc.desc      : Test_imagePacker_Packing_To_File
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_004
+     * @tc.name    IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_004
+     * @tc.desc    Test_imagePacker_Packing_To_File
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
-
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_004';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -210,14 +200,13 @@ export default function ImagePackerPackingToFilePictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_005
-     * @tc.name      : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_005
-     * @tc.desc      : Test_imagePacker_Packing_To_File
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_005
+     * @tc.name    IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_005
+     * @tc.desc    Test_imagePacker_Packing_To_File
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
-
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_005';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -239,15 +228,15 @@ export default function ImagePackerPackingToFilePictureTest() {
         done();
       }
     })
+    
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_006
-     * @tc.name      : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_006
-     * @tc.desc      : Test_imagePacker_Packing_To_File
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_006
+     * @tc.name    IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_006
+     * @tc.desc    Test_imagePacker_Packing_To_File
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
-
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_006';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -269,17 +258,15 @@ export default function ImagePackerPackingToFilePictureTest() {
         done();
       }
     })
-
-
+    
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_007
-     * @tc.name      : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_007
-     * @tc.desc      : Test_imagePacker_Packing_To_File
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_007
+     * @tc.name    IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_007
+     * @tc.desc    Test_imagePacker_Packing_To_File
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
-
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_007';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -310,14 +297,13 @@ export default function ImagePackerPackingToFilePictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_008
-     * @tc.name      : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_008
-     * @tc.desc      : Test_imagePacker_Packing_To_File
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_008
+     * @tc.name    IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_008
+     * @tc.desc    Test_imagePacker_Packing_To_File
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
-
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_008';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -346,16 +332,14 @@ export default function ImagePackerPackingToFilePictureTest() {
       }
     })
 
-
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_009
-     * @tc.name      : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_009
-     * @tc.desc      : Test_imagePacker_Packing_To_File
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_009
+     * @tc.name    IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_009
+     * @tc.desc    Test_imagePacker_Packing_To_File
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
-
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_009';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -385,14 +369,13 @@ export default function ImagePackerPackingToFilePictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_010
-     * @tc.name      : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_010
-     * @tc.desc      : Test_imagePacker_Packing_To_File
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_010
+     * @tc.name    IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_010
+     * @tc.desc    Test_imagePacker_Packing_To_File
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
-
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_010';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -416,14 +399,13 @@ export default function ImagePackerPackingToFilePictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_011
-     * @tc.name      : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_011
-     * @tc.desc      : Test_imagePacker_Packing_To_File
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_011
+     * @tc.name    IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_011
+     * @tc.desc    Test_imagePacker_Packing_To_File
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
-
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_011';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -445,15 +427,15 @@ export default function ImagePackerPackingToFilePictureTest() {
         done();
       }
     })
+    
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_012
-     * @tc.name      : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_012
-     * @tc.desc      : Test_imagePacker_Packing_To_File
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_012
+     * @tc.name    IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_012
+     * @tc.desc    Test_imagePacker_Packing_To_File
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
-
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_012';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -477,14 +459,13 @@ export default function ImagePackerPackingToFilePictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_013
-     * @tc.name      : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_013
-     * @tc.desc      : Test_imagePacker_Packing_To_File
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_013
+     * @tc.name    IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_013
+     * @tc.desc    Test_imagePacker_Packing_To_File
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
-
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_013';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -515,14 +496,13 @@ export default function ImagePackerPackingToFilePictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_014
-     * @tc.name      : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_014
-     * @tc.desc      : Test_imagePacker_Packing_To_File
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_014
+     * @tc.name    IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_014
+     * @tc.desc    Test_imagePacker_Packing_To_File
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
-
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_014';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -550,17 +530,15 @@ export default function ImagePackerPackingToFilePictureTest() {
         done();
       }
     })
-
-
+    
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_015
-     * @tc.name      : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_015
-     * @tc.desc      : Test_imagePacker_Packing_To_File
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_015
+     * @tc.name    IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_015
+     * @tc.desc    Test_imagePacker_Packing_To_File
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
-
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_015';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -590,14 +568,13 @@ export default function ImagePackerPackingToFilePictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_016
-     * @tc.name      : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_016
-     * @tc.desc      : Test_imagePacker_Packing_To_File
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_016
+     * @tc.name    IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_016
+     * @tc.desc    Test_imagePacker_Packing_To_File
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
-
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_016';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -621,14 +598,13 @@ export default function ImagePackerPackingToFilePictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_017
-     * @tc.name      : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_017
-     * @tc.desc      : Test_imagePacker_Packing_To_File
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_017
+     * @tc.name    IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_017
+     * @tc.desc    Test_imagePacker_Packing_To_File
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
-
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_017';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -650,15 +626,15 @@ export default function ImagePackerPackingToFilePictureTest() {
         done();
       }
     })
+    
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_018
-     * @tc.name      : IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_018
-     * @tc.desc      : Test_imagePacker_Packing_To_File
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_018
+     * @tc.name    IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_018
+     * @tc.desc    Test_imagePacker_Packing_To_File
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
-
     it('IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_018';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
