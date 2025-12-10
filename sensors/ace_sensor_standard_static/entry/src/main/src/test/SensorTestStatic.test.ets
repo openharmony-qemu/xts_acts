@@ -2291,7 +2291,7 @@ export default function SensorJsStaticTest() {
         }
       })
 
-    /*
+    /**
      *
      * @tc.number     SUB_SensorsSystem_static_JsTest_0710
      * @tc.name       fusion_pressure_SensorJsTest_static_071
@@ -2322,7 +2322,7 @@ export default function SensorJsStaticTest() {
         }
       })
 
-    /*
+    /**
      *
      * @tc.number     SUB_SensorsSystem_static_JsTest_0720
      * @tc.name       fusionPressureParamError_SensorJsTest_static_072
