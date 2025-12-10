@@ -1442,8 +1442,8 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
     });
 
     /**
-     * @tc.name   SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0300
-     * @tc.number testMaximizeAcrossDisplaywithTrue
+     * @tc.name   testMaximizeAcrossDisplaywithTrue
+     * @tc.number SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0300
      * @tc.desc   testMaximizeAcrossDisplaywithTrue
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1506,8 +1506,8 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
     });
 
     /**
-     * @tc.name   SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0400
-     * @tc.number testMaximizeAcrossDisplaywithFalse
+     * @tc.name   testMaximizeAcrossDisplaywithFalse
+     * @tc.number SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0400
      * @tc.desc   testMaximizeAcrossDisplaywithFalse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

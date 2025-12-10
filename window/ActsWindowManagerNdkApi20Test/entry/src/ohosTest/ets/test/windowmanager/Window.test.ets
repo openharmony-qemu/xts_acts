@@ -1024,8 +1024,8 @@ export default function WindowTest() {
     })
 
     /**
-     * @tc.name   SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0100
-     * @tc.number testLockCursorwithOutofRange
+     * @tc.name   testLockCursorwithOutofRange
+     * @tc.number SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0100
      * @tc.desc   testLockCursorwithOutofRange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1053,8 +1053,8 @@ export default function WindowTest() {
     })
 
     /**
-     * @tc.name   SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0200
-     * @tc.number testLockCursorwithoutPermission
+     * @tc.name   testLockCursorwithoutPermission
+     * @tc.number SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0200
      * @tc.desc   testLockCursorwithoutPermission
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1084,8 +1084,8 @@ export default function WindowTest() {
     })
 
     /**
-     * @tc.name   SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0100
-     * @tc.number testUnLockCursorwithOutofRange
+     * @tc.name   testUnLockCursorwithOutofRange
+     * @tc.number SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0100
      * @tc.desc   testUnLockCursorwithOutofRange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1113,8 +1113,8 @@ export default function WindowTest() {
     })
 
     /**
-     * @tc.name   SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0200
-     * @tc.number testUnLockCursorwithoutPermission
+     * @tc.name   testUnLockCursorwithoutPermission
+     * @tc.number SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0200
      * @tc.desc   testUnLockCursorwithoutPermission
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
