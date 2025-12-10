@@ -19,6 +19,7 @@ import PixelUnitsConversion from './xts/PixelUnitsConversion.test';
 import atomicServiceBarTest from "./UIContext/autoservice/atomicServiceBar.test";
 import UIContextApi1 from './UIContext/UIContextApi1.test';
 import UIContextTestCase from './UIContext/UIContextTestCase.test';
+import GetUIContextMethodTest from './getUIContext/GetUIContextMethodTest.test';
 
 import CacheMaxCountForHSPTest from './CacheMaxCountTest/CacheMaxCountForHSPTest.test';
 import GetNodeByIdNullTest from './ContextTest/GetNodeByIdNullTest.test';
@@ -27,7 +28,6 @@ import UIContextWithoutWindowTest from './ContextTest/UIContextWithoutWindow.tes
 import UIContextGetOpacityTest from './ContextTest/UIContextGetOpacity.test';
 import IsAvailableTest from './ContextTest/IsAvailableTest.test';
 import IsFollowingSystemFontScaleFalseTest from './ContextTest/IsFollowingSystemFontScaleFalseTest.test';
-import GetUIContextMethodTest from './getUIContext/GetUIContextMethodTest.test';
 import IdTest from './UIContext/IdTest.test';
 
 export default function testsuite() {
@@ -40,12 +40,12 @@ export default function testsuite() {
   UIContextGetOpacityTest();
   IsAvailableTest();
   IsFollowingSystemFontScaleFalseTest();
+  GetUIContextMethodTest();
 
   APIgetFrameNodeByUniqueId();
   UIContextOnIdle();
   GetWindowWidthAndHeight();
   PixelUnitsConversion();
   atomicServiceBarTest();
-  GetUIContextMethodTest();
   IdTest();
 }
