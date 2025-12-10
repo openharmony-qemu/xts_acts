@@ -978,12 +978,12 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1400', Level.LEVEL1, async (done: 
      */
 it('ArkUX_Stage_TextInput_PasswordIcon_static_1500', Level.LEVEL1, async (done: ()=>void) => {
       try {
-        let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInput'));
+        let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInputNO'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1500 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1500 obj Icon :' + JSON.stringify(Icon));
-        expect(Icon.getElement('onIconSrc')).assertEqual(983328);
-        expect(Icon.getElement('offIconSrc')).assertEqual(983327);
+        expect(Icon.getDouble('onIconSrc')).assertEqual(983328);
+        expect(Icon.getDouble('offIconSrc')).assertEqual(983327);
         expect(obj.getElement('$attrs').getBoolean('showErrorText')).assertEqual(false);
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('undefined');

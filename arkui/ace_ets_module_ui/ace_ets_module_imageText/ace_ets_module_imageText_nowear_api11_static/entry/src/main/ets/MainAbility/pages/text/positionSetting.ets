@@ -134,7 +134,6 @@ struct PositionSetting {
     events_emitter.on(stateChangeEvent, this.stateChangCallBack);
   }
   stateChangCallBack:(eventData: events_emitter.EventData) => void =  (eventData: events_emitter.EventData) =>  {
-    console.info("position page stateChangCallBack" + eventData);
     let eventD = eventData.data as Record<String,undefined|null|Object>
     if (eventData != null && eventD != null) {
       if (eventD!['textAlign']) {

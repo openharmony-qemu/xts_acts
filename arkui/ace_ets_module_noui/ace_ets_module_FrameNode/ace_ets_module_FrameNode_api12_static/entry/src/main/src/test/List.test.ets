@@ -20,8 +20,9 @@ import nodeContainerTest from './frameNodeTest/nodeContainerTest.test';
 import frameNodeGetInterfaceTest from './frameNodeTest/frameNodeTestGetInterface.test';
 
 export default function testsuite() {
+  frameNodeGetInterfaceTest()
   frameNodeTest()
   frameNodeTest1()
   nodeContainerTest()
-  frameNodeGetInterfaceTest()
+
 }

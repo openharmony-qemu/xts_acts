@@ -85,9 +85,6 @@ struct NavigationApi1 {
         this.pageOneTmp()
       }.title('NavIndex')
       .customNavContentTransition((from: NavContentInfo, to: NavContentInfo, operation: NavigationOperation) => {
-        if (from.mode == NavDestinationMode.DIALOG || to.mode == NavDestinationMode.DIALOG) {
-          return undefined;
-        }
         this.customNavContentTransitionTest = '222'
         console.log('customNavContentTransition改变1:' + this.customNavContentTransitionTest);
         console.log('customNavContentTransition改变2:' + this.customNavContentTransitionTest);

@@ -34,30 +34,28 @@ import RichTextJsunit from './RichEditorTest/RichTextJsunit.test'
 import getcomponentadd from './buttonTest/getcomponentadd.test';
 import segmentbutton from './SegmentButtonTest/segmentbutton.test';
 import SelectJsunit from './selectTest/SelectJsunit.test';
-import SelectJsunit01 from './selectTest/SelectJsunit01.test';
 import richTextJsunitFOUR from './RichEditorTest/RichTextJsunitFOUR.test'
 
 export default function testsuite() {
-  // SearchJsunit(); //fail 1  SearchJsunit_static_0300 可能mouseClick问题
-  // RichEditor01();// fail 2 RichEditor01_static_006,RichEditor01_static_004,
-  // RichTextJsunit();// fail 1 web
-  // segmentbutton();// fail 3 @ohos.arkui.advanced.SegmentButton未交付
-  // positionSettingJsunit();
-  // textAreaBC1Jsunit(); //fail 1 textAreaBC1Jsunit_static_0900, expect doing equals Nodoing
-  // OnTextSelectionChangeTest();
-  // TextInputPageJsunit();
-  // textAreaUIJsunit();
-  // richEditorApi1();
-  // TextStateJsunit();
-  // textArea_center();
-  // textAreaInputTest();
-  // text_drag();
-  // RichEditorApi222();
-  // richTextJsunitFOUR();
-  // getcomponentadd();
-  // search_center();
-  // search_gesture();
-  // SelectJsunit()
-  // SelectJsunit01();
-  // textinputSec();
+  SearchJsunit(); //fail 1  SearchJsunit_static_0300 可能mouseClick问题
+  RichEditor01();// fail 2 RichEditor01_static_006,RichEditor01_static_004,
+  RichTextJsunit();// fail 1 web
+  segmentbutton();// fail 3 @ohos.arkui.advanced.SegmentButton未交付
+  positionSettingJsunit();
+  textAreaBC1Jsunit(); //fail 1 textAreaBC1Jsunit_static_0900, expect doing equals Nodoing
+  OnTextSelectionChangeTest();
+  TextInputPageJsunit();
+  textAreaUIJsunit();
+  richEditorApi1();
+  TextStateJsunit();
+  textArea_center();
+  textAreaInputTest();
+  text_drag();
+  RichEditorApi222();
+  richTextJsunitFOUR();
+  getcomponentadd();
+  search_center();
+  search_gesture();
+  SelectJsunit()
+  textinputSec();
 }
